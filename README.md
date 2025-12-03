@@ -4,12 +4,14 @@ This repository is a collection of projects focusing on **Complex Adaptive Syste
 
 ## 📂 Repository Structure
 
-| Folder | Description |
-| :--- | :--- |
-| `simulation-models/` | Projects that simulate ecological or physical processes to study emergent behavior. |
-| `neural-networks/` | Implementations of neural networks and learning algorithms. |
-| `data-analysis/` | Tools and scripts for analyzing the results of the simulation models. |
-| `tools/` | Helper scripts or libraries for visualization and processing. |
+| Folder | Description | Focus |
+| :--- | :--- | :--- |
+| `simulation-models/` | Code implementing specific models of self-organization (e.g., Cellular Automata, Agent-Based Systems). | **Practical Work** |
+| `neural-networks/` | Code and notebooks for AI/ML projects exploring learning and pattern recognition. | **AI/ML** |
+| `data-analysis/` | Scripts and utilities for processing, plotting, and statistical evaluation of simulation results. | **Metrics & Validation** |
+| `tools/` | Helper scripts, visualization libraries, and general utilities used across projects. | **Utilities** |
+| `theory/` | Conceptual write-ups, white papers, and essays detailing the underlying philosophical and mathematical concepts. | **Concepts & Essays** |
+| `meta/` | Foundational documents concerning ethics, epistemology, and the fundamental limits of intelligence/computation. | **Philosophy & Ethics** |
 
 ---
 
