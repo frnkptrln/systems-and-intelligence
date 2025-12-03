@@ -1,53 +1,59 @@
 # 🧠 systems-and-intelligence
 
-Dieses Repository ist eine Sammlung von Projekten, die sich mit **komplexen adaptiven Systemen (CAS)**, **emergenter Intelligenz** und **Selbstregulierung** in Software- und Simulationsmodellen beschäftigen. Der Fokus liegt darauf, zu verstehen, wie einfache Regeln zu komplexem, intelligentem oder stabilen globalen Verhalten führen können.
+This repository is a collection of projects focusing on **Complex Adaptive Systems (CAS)**, **Emergent Intelligence**, and **Self-Regulation** in software and simulation models. The goal is to explore how simple, local rules can lead to complex, intelligent, or stable global behavior.
 
-## 📂 Struktur des Repositories
+## 📂 Repository Structure
 
-| Ordner | Beschreibung |
+| Folder | Description |
 | :--- | :--- |
-| `simulation-models/` | Projekte, die ökologische oder physikalische Prozesse simulieren, um emergentes Verhalten zu untersuchen. |
-| `neural-networks/` | Implementierungen von neuronalen Netzen und Lernalgorithmen. |
-| `data-analysis/` | Tools und Skripte zur Analyse der Ergebnisse der Simulationsmodelle. |
-| `tools/` | Hilfsskripte oder -bibliotheken zur Visualisierung oder Verarbeitung. |
+| `simulation-models/` | Projects that simulate ecological or physical processes to study emergent behavior. |
+| `neural-networks/` | Implementations of neural networks and learning algorithms. |
+| `data-analysis/` | Tools and scripts for analyzing the results of the simulation models. |
+| `tools/` | Helper scripts or libraries for visualization and processing. |
 
 ---
 
-## 🔬 Hervorgehobenes Projekt: Ökosystem-Regulierung
+## 🔬 Featured Project: Ecosystem Regulation
 
-**Pfad:** `simulation-models/ecosystem-regulation/`
+**Path:** `simulation-models/ecosystem-regulation/`
 
-Dieses Projekt demonstriert die **Homeostase** in einem zellulären Automaten. Es erweitert das klassische *Game of Life* um einen globalen Feedback-Mechanismus, der die Population des Systems auf einem vordefinierten Füllgrad hält, während lokale, komplexe Dynamiken (Wachstum und Zerfall von Mustern) beibehalten werden.
+This project demonstrates **Homeostasis** in a cellular automaton. It extends the classic *Game of Life* with a global feedback mechanism that keeps the system's population at a predefined target density while preserving complex local dynamics (pattern growth and decay). 
 
-### 📜 Das Modell: Robuste Dynamik (B3/S234 Mod.)
+[Image of the Homeostasis negative feedback loop]
 
-Das Skript `homeostatic_life.py` verwendet eine modifizierte Regel, um eine langanhaltende, aber stabile Aktivität zu gewährleisten, die einem Ökosystem ähnelt.
 
-#### Regeln
+### 📜 The Model: Robust Dynamics (B3/S234 Mod.)
 
-| Zustand | Nachbar-Anzahl | Ergebnis (Nächste Generation) |
-| :---: | :---: | :---: |
-| **Lebende Zelle** (`#`) | $2$ oder $3$ | Überlebt (100% Chance) |
-| **Lebende Zelle** (`#`) | $4$ | Überlebt mit $50\%$ Wahrscheinlichkeit |
-| **Lebende Zelle** (`#`) | $<2$ oder $>4$ | Stirbt (Unter-/Überbevölkerung) |
-| **Leere Zelle** (` `) | $3$ | Geburt, **aber nur mit dynamischer Wahrscheinlichkeit** ($P_{Geburt}$) |
+The script `homeostatic_life.py` uses a modified rule set to enforce long-lasting, controlled activity, mimicking a stable ecosystem under constant localized pressure.
 
-#### Homeostase-Mechanismus
+#### Rules Summary
 
-Die Wahrscheinlichkeit einer Geburt ($P_{Geburt}$) wird in jeder Generation dynamisch angepasst.
+| State | Neighbor Count | Outcome (Next Generation) | Rule Type |
+| :---: | :---: | :---: | :---: |
+| **Live Cell** (`#`) | 2 or 3 | Survives (100% chance) | Survival (S23) |
+| **Live Cell** (`#`) | 4 | Survives with **50% probability** | Modified Survival (S4) |
+| **Live Cell** (`#`) | $<2$ or $>4$ | Dies (Under/Overpopulation) | |
+| **Empty Cell** (` `) | 3 | Birth, **with dynamic probability** ($P_{Birth}$) | Birth (B3) |
 
-* Ist der **Füllgrad zu niedrig**, steigt $P_{Geburt}$.
-* Ist der **Füllgrad zu hoch**, sinkt $P_{Geburt}$.
+#### Homeostasis Mechanism
+
+The birth probability ($P_{Birth}$) is dynamically adjusted in every generation, acting as a negative feedback loop based on the deviation from the target fill ratio ($F_{Target}$):
+
+* If the **Fill Ratio is too low**, $P_{Birth}$ increases.
+* If the **Fill Ratio is too high**, $P_{Birth}$ decreases.
 
 ---
 
-## 🚀 Installation & Ausführung
+## 🚀 Installation & Execution
 
-### Voraussetzungen
-Stellen Sie sicher, dass Sie Python 3 installiert haben. Es sind keine externen Bibliotheken erforderlich.
+### Prerequisites
+Ensure you have Python 3 installed. No external libraries are required.
 
-### Ausführung der Homeostase-Simulation
+### Running the Homeostasis Simulation
 
 ```bash
+# Navigate to the project directory
 cd simulation-models/ecosystem-regulation
+
+# Run the simulation
 python3 homeostatic_life.py
