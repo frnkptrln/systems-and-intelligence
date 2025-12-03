@@ -34,9 +34,7 @@ Das Skript `homeostatic_life.py` verwendet eine modifizierte Regel, um eine lang
 
 #### Homeostase-Mechanismus
 
-Die Wahrscheinlichkeit einer Geburt ($P_{Geburt}$) wird in jeder Generation dynamisch angepasst. Dies ist der Mechanismus zur Selbstregulierung:
-
-$$P_{Geburt} = \text{max} \left( 0.0, \text{min} \left( 1.0, \text{BASE\_BIRTH\_PROB} + \text{ADJUST\_FACTOR} \cdot (TARGET\_FILL - \text{Füllgrad}) \right) \right)$$
+Die Wahrscheinlichkeit einer Geburt ($P_{Geburt}$) wird in jeder Generation dynamisch angepasst.
 
 * Ist der **Füllgrad zu niedrig**, steigt $P_{Geburt}$.
 * Ist der **Füllgrad zu hoch**, sinkt $P_{Geburt}$.
