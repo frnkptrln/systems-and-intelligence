@@ -1,61 +1,43 @@
 # 🧠 systems-and-intelligence
 
-This repository is a collection of projects focusing on **Complex Adaptive Systems (CAS)**, **Emergent Intelligence**, and **Self-Regulation** in software and simulation models. The goal is to explore how simple, local rules can lead to complex, intelligent, or stable global behavior.
+This repository explores how **intelligence**, **adaptation**, and **structure**
+emerge from the interaction of simple components.  
+It brings together simulation models, theoretical notes, and learning systems
+that illustrate how **local rules can generate global behavior**, how systems
+stabilize themselves, and how observers learn from the dynamics they inhabit.
 
-## 📂 Repository Structure
+The project spans several layers:
 
-| Folder | Description | Focus |
-| :--- | :--- | :--- |
-| `simulation-models/` | Code implementing specific models of self-organization (e.g., Cellular Automata, Agent-Based Systems). | **Practical Work** |
-| `neural-networks/` | Code and notebooks for AI/ML projects exploring learning and pattern recognition. | **AI/ML** |
-| `data-analysis/` | Scripts and utilities for processing, plotting, and statistical evaluation of simulation results. | **Metrics & Validation** |
-| `tools/` | Helper scripts, visualization libraries, and general utilities used across projects. | **Utilities** |
-| `theory/` | Conceptual write-ups, white papers, and essays detailing the underlying philosophical and mathematical concepts. | **Concepts & Essays** |
-| `meta/` | Foundational documents concerning ethics, epistemology, and the fundamental limits of intelligence/computation. | **Philosophy & Ethics** |
+- **Self-organization**  
+- **Nested learning**  
+- **Emergent regulation**  
+- **Feedback and control**  
+- **Limits of computation and intelligence**
 
----
-
-## 🔬 Featured Project: Ecosystem Regulation
-
-**Path:** `simulation-models/ecosystem-regulation/`
-
-This project demonstrates **Homeostasis** in a cellular automaton. It extends the classic *Game of Life* with a global feedback mechanism that keeps the system's population at a predefined target density while preserving complex local dynamics (pattern growth and decay). 
-
-[Image of the Homeostasis negative feedback loop]
-
-
-### 📜 The Model: Robust Dynamics (B3/S234 Mod.)
-
-The script `homeostatic_life.py` uses a modified rule set to enforce long-lasting, controlled activity, mimicking a stable ecosystem under constant localized pressure.
-
-#### Rules Summary
-
-| State | Neighbor Count | Outcome (Next Generation) | Rule Type |
-| :---: | :---: | :---: | :---: |
-| **Live Cell** (`#`) | 2 or 3 | Survives (100% chance) | Survival (S23) |
-| **Live Cell** (`#`) | 4 | Survives with **50% probability** | Modified Survival (S4) |
-| **Live Cell** (`#`) | $<2$ or $>4$ | Dies (Under/Overpopulation) | |
-| **Empty Cell** (` `) | 3 | Birth, **with dynamic probability** ($P_{Birth}$) | Birth (B3) |
-
-#### Homeostasis Mechanism
-
-The birth probability ($P_{Birth}$) is dynamically adjusted in every generation, acting as a negative feedback loop based on the deviation from the target fill ratio ($F_{Target}$):
-
-* If the **Fill Ratio is too low**, $P_{Birth}$ increases.
-* If the **Fill Ratio is too high**, $P_{Birth}$ decreases.
+Each folder represents a different perspective on these themes.
 
 ---
 
-## 🚀 Installation & Execution
+## 📂 Repository Overview
 
-### Prerequisites
-Ensure you have Python 3 installed. No external libraries are required.
+| Folder | Purpose |
+| :--- | :--- |
+| **`simulation-models/`** | Concrete dynamical systems: cellular automata, agent-based simulations, homeostasis models, nested-learning examples. |
+| **`neural-networks/`** | Experiments with artificial learners, simple networks, and adaptive models. |
+| **`data-analysis/`** | Tools for plotting, measuring, and evaluating emergent behavior across simulations. |
+| **`tools/`** | Shared utilities for visualization, randomness, grid manipulation, and reproducibility. |
+| **`theory/`** | Conceptual notes and essays on systems, intelligence, and emergent behavior. |
+| **`meta/`** | Reflections on epistemology, ethics, and the limits of formal systems and computation. |
 
-### Running the Homeostasis Simulation
+Each subfolder contains its own README with context and details.
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository:
 
 ```bash
-# Navigate to the project directory
-cd simulation-models/ecosystem-regulation
+git clone https://github.com/frnkptrln/systems-and-intelligence.git
+cd systems-and-intelligence
 
-# Run the simulation
-python3 homeostatic_life.py
