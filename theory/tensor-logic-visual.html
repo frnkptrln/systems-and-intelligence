@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tensor Logic Visualisation</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a; /* slate-900 */
+      color: #f8fafc;           /* slate-50 */
+      margin: 0;
+    }
+
+    .chart-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      height: 350px;
+      max-height: 400px;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .chart-container {
+        height: 400px;
+      }
+    }
+
+    header {
+      background: linear-gradient(to right, #020617, #0f172a, #020617);
+      padding: 3rem 1rem;
+      border-bottom: 1px solid #1d4ed8;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    main {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 2.5rem 1rem 3rem 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background-color: #0f172a;
+      border-radius: 1rem;
+      border: 1px solid #1f2937;
+      padding: 1.5rem;
+    }
+
+    .diagram-box {
+      border: 2px solid #3b82f6;
+      background-color: #1e293b;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .arrow-down {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 15px solid #64748b;
+      margin: 0.5rem auto;
+    }
+
+    footer {
+      border-top: 1px solid #1f2937;
+      padding: 1.5rem;
+      text-align: center;
+      color: #9ca3af;
+      font-size: 0.875rem;
+    }
+
+    a {
+      color: #60a5fa;
+    }
+    a:hover {
+      color: #93c5fd;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <header>
+    <h1><span style="color:#60a5fa;">Tensor</span> Logic</h1>
+    <p style="color:#cbd5f5; margin-top:0.75rem;">
+      A tiny visual companion to the mini paper &amp; Python experiment
+    </p>
+  </header>
+
+  <main>
+    <!-- Intro -->
+    <section>
+      <h2 style="font-size:1.5rem; margin-bottom:0.75rem;">1. Idea in One Sentence</h2>
+      <p style="color:#e5e7eb;">
+        Logical relations, vector embeddings and probabilistic inference can all be written
+        as tensor operations. By changing a single parameter – the <strong>temperature T</strong> –
+        we move from strict symbolic logic to smooth analogical reasoning.
+      </p>
+    </section>
+
+    <!-- Heatmap -->
+    <section>
+      <h2 style="font-size:1.5rem; margin-bottom:0.75rem;">2. Symbolic Relation (Parent)</h2>
+      <p style="color:#cbd5f5; font-size:0.9rem; margin-bottom:0.75rem;">
+        In the toy example, the world contains the facts
+        <code>Parent(Alice, Bob)</code>, <code>Parent(Bob, Charlie)</code>,
+        <code>Parent(Charlie, David)</code>. As a matrix this becomes:
+      </p>
+      <div class="card">
+        <div id="heatmapContainer" class="chart-container"
+             aria-label="Parent adjacency matrix heatmap"
+             role="img"></div>
+      </div>
+      <p style="color:#9ca3af; font-size:0.75rem; margin-top:0.5rem; text-align:center;">
+        Figure 1: Boolean adjacency matrix of the Parent relation
+      </p>
+    </section>
+
+    <!-- Temperature / Sigmoid -->
+    <section>
+      <h2 style="font-size:1.5rem; margin-bottom:0.75rem;">3. Temperature &amp; Sigmoid</h2>
+      <p style="color:#cbd5f5; font-size:0.9rem; margin-bottom:0.75rem;">
+        Scores from the relation tensor are turned into probabilities via a logistic function
+        with baseline and temperature. Low <em>T</em> behaves like hard logic, higher
+        <em>T</em> allows graded analogy.
+      </p>
+      <div class="card">
+        <div class="chart-container">
+          <canvas id="sigmoidChart"
+                  aria-label="Effect of temperature on the sigmoid decision function"
+                  role="img"></canvas>
+        </div>
+      </div>
+      <p style="color:#9ca3af; font-size:0.75rem; margin-top:0.5rem; text-align:center;">
+        Figure 2: Two sigmoids for different temperatures (T=0.2 and T=1.5)
+      </p>
+    </section>
+
+    <!-- Query results -->
+    <section>
+      <h2 style="font-size:1.5rem; margin-bottom:0.75rem;">4. Toy World Query Results</h2>
+      <p style="color:#cbd5f5; font-size:0.9rem; margin-bottom:0.75rem;">
+        The Python script prints both logical truth values and tensor scores.
+        Here is a subset of the centred scores from one run:
+      </p>
+
+      <div class="card" style="margin-bottom:1.5rem; overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.9rem; color:#e5e7eb;">
+          <thead>
+            <tr style="border-bottom:1px solid #374151;">
+              <th style="padding:0.5rem; text-align:left;">Query</th>
+              <th style="padding:0.5rem; text-align:left;">Logic</th>
+              <th style="padding:0.5rem; text-align:right;">Score (centred)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #111827;">
+              <td style="padding:0.5rem; font-family:monospace; color:#93c5fd;">Parent(Alice, Bob)</td>
+              <td style="padding:0.5rem;">
+                <span style="background-color:rgba(16,185,129,0.15); color:#6ee7b7; padding:0.15rem 0.4rem; border-radius:999px;">True</span>
+              </td>
+              <td style="padding:0.5rem; text-align:right; font-weight:600;">+0.54</td>
+            </tr>
+            <tr style="border-bottom:1px solid #111827;">
+              <td style="padding:0.5rem; font-family:monospace; color:#fbbf24;">Parent(Alice, Charlie)</td>
+              <td style="padding:0.5rem;">
+                <span style="background-color:rgba(248,113,113,0.15); color:#fecaca; padding:0.15rem 0.4rem; border-radius:999px;">False</span>
+              </td>
+              <td style="padding:0.5rem; text-align:right; font-weight:600;">+0.29</td>
+            </tr>
+            <tr>
+              <td style="padding:0.5rem; font-family:monospace; color:#9ca3af;">Parent(Alice, David)</td>
+              <td style="padding:0.5rem;">
+                <span style="background-color:rgba(248,113,113,0.15); color:#fecaca; padding:0.15rem 0.4rem; border-radius:999px;">False</span>
+              </td>
+              <td style="padding:0.5rem; text-align:right; color:#9ca3af;">-0.18</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="color:#9ca3af; font-size:0.75rem; margin-top:0.5rem;">
+          Note: Alice–Charlie is logically false for <code>Parent</code>, but the positive
+          tensor score reveals the latent ancestral connection.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="chart-container">
+          <canvas id="resultsChart"
+                  aria-label="Bar chart of tensor scores for three queries"
+                  role="img"></canvas>
+        </div>
+      </div>
+      <p style="color:#9ca3af; font-size:0.75rem; margin-top:0.5rem; text-align:center;">
+        Figure 3: Tensor scores for three different query pairs
+      </p>
+    </section>
+
+    <!-- Systems view -->
+    <section>
+      <h2 style="font-size:1.5rem; margin-bottom:0.75rem;">5. Systems View in One Diagram</h2>
+      <p style="color:#cbd5f5; font-size:0.9rem; margin-bottom:0.75rem;">
+        In Tensor Logic, intelligence is not stored in one place. It is an emergent projection of
+        how states, constraints and operations interact:
+      </p>
+
+      <div style="max-width:40rem; margin:0 auto;">
+        <div class="diagram-box">Embeddings<br /><span style="font-size:0.75rem; color:#9ca3af;">State vectors</span></div>
+        <div class="arrow-down"></div>
+        <div class="diagram-box" style="border-color:#f97373; color:#fecaca;">
+          Relations<br /><span style="font-size:0.75rem; color:#9ca3af;">Constraints / tensors</span>
+        </div>
+        <div class="arrow-down"></div>
+        <div class="diagram-box" style="border-color:#f59e0b; color:#fed7aa;">
+          Operations<br /><span style="font-size:0.75rem; color:#9ca3af;">Contractions</span>
+        </div>
+        <div class="arrow-down"></div>
+        <div class="diagram-box" style="border-color:#6366f1; color:#e5e7eb;">
+          Emergent reasoning (projection)
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Based on "Tensor Logic as a Unified Model for Symbolic and Continuous Reasoning" by
+      Frank Peterlein (2025).
+    </p>
+    <p style="margin-top:0.5rem;">
+      Code &amp; paper:
+      <a href="https://github.com/DEIN-USER/systems-and-intelligence">
+        systems-and-intelligence
+      </a>
+    </p>
+  </footer>
+
+  <!-- LIBRARIES (am Ende, damit sie sicher vor unserem Script geladen werden) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+  <!-- MAIN SCRIPT -->
+  <script>
+    // --- Heatmap (Plotly) ---
+    const entities = ['Alice', 'Bob', 'Charlie', 'David'];
+    const zData = [
+      [0, 1, 0, 0],
+      [0, 0, 1, 0],
+      [0, 0, 0, 1],
+      [0, 0, 0, 0]
+    ];
+
+    Plotly.newPlot(
+      'heatmapContainer',
+      [{
+        z: zData,
+        x: entities,
+        y: entities,
+        type: 'heatmap',
+        colorscale: [
+          [0, '#0f172a'],
+          [1, '#3b82f6']
+        ],
+        showscale: false
+      }],
+      {
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        plot_bgcolor: 'rgba(0,0,0,0)',
+        margin: { t: 20, r: 20, b: 40, l: 40 },
+        xaxis: {
+          tickvals: [0, 1, 2, 3],
+          ticktext: entities,
+          gridcolor: '#334155',
+          tickfont: { color: '#e5e7eb' }
+        },
+        yaxis: {
+          tickvals: [0, 1, 2, 3],
+          ticktext: entities,
+          autorange: 'reversed',
+          gridcolor: '#334155',
+          tickfont: { color: '#e5e7eb' }
+        }
+      },
+      { responsive: true, displayModeBar: false }
+    );
+
+    // --- Sigmoid curves (Chart.js) ---
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.font.family = "'Inter', sans-serif";
+
+    const xVals = [];
+    const yLow = [];
+    const yHigh = [];
+    for (let x = -5; x <= 5; x += 0.25) {
+      xVals.push(x.toFixed(2));
+      yLow.push(1 / (1 + Math.exp(-x / 0.2)));  // T=0.2
+      yHigh.push(1 / (1 + Math.exp(-x / 1.5))); // T=1.5
+    }
+
+    new Chart(document.getElementById('sigmoidChart').getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: xVals,
+        datasets: [
+          {
+            label: 'T = 0.2 (Logic mode)',
+            data: yLow,
+            borderColor: '#3b82f6',
+            borderWidth: 3,
+            pointRadius: 0,
+            tension: 0.1
+          },
+          {
+            label: 'T = 1.5 (Analogy mode)',
+            data: yHigh,
+            borderColor: '#f59e0b',
+            borderWidth: 3,
+            pointRadius: 0,
+            borderDash: [5, 5],
+            tension: 0.3
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: '#e5e7eb' } }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 'Tensor score', color: '#9ca3af' },
+            grid: { color: '#334155' }
+          },
+          y: {
+            title: { display: true, text: 'Probability', color: '#9ca3af' },
+            min: 0,
+            max: 1,
+            grid: { color: '#334155' }
+          }
+        }
+      }
+    });
+
+    // --- Bar chart of results (Chart.js) ---
+    const labels = [
+      'Parent(Alice, Bob)',
+      'Parent(Alice, Charlie)',
+      'Parent(Alice, David)'
+    ];
+    const scores = [0.54, 0.29, -0.18];
+
+    new Chart(document.getElementById('resultsChart').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{
+          label: 'Tensor score (centred)',
+          data: scores,
+          borderRadius: 6,
+          backgroundColor: (ctx) => {
+            const v = ctx.raw;
+            if (v > 0.4) return '#3b82f6';
+            if (v > 0) return '#06b6d4';
+            return '#f97373';
+          }
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        indexAxis: 'y',
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 'Alignment score', color: '#9ca3af' },
+            grid: { color: '#334155' }
+          },
+          y: {
+            grid: { display: false },
+            ticks: { color: '#e5e7eb', font: { weight: '600' } }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
