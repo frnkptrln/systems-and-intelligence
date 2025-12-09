@@ -43,27 +43,16 @@ def get_neighbourhood(grid: np.ndarray) -> np.ndarray:
     """
     Returns an array of shape (H, W, 8) with the 8 neighbours of each cell
     using periodic boundary conditions.
-
-    Order of neighbours (for reference):
-
-        0: up
-        1: down
-        2: left
-        3: right
-        4: up-left
-        5: up-right
-        6: down-left
-        7: down-right
     """
     up    = np.roll(grid, -1, axis=0)
     down  = np.roll(grid,  1, axis=0)
     left  = np.roll(grid, -1, axis=1)
     right = np.roll(grid,  1, axis=1)
 
-    up_left     = np.roll(up,   -1, axis=1)
-    up_right    = np.roll(up,    1, axis=1)
-    down_left   = np.roll(down, -1, axis=1)
-    down_right  = np.roll(down,  1, axis=1)
+    up_left       = np.roll(up,   -1, axis=1)
+    up_right      = np.roll(up,    1, axis=1)
+    down_left     = np.roll(down, -1, axis=1)
+    down_right    = np.roll(down,  1, axis=1)
 
     neighbours = np.stack(
         [up, down, left, right, up_left, up_right, down_left, down_right],
@@ -74,7 +63,7 @@ def get_neighbourhood(grid: np.ndarray) -> np.ndarray:
 
 def world_update_gol(grid: np.ndarray) -> np.ndarray:
     """
-    Apply Conway's Game of Life rule:
+    Apply Conway's Game of Life rule (B3/S23):
 
         - A live cell with 2 or 3 neighbours survives.
         - A dead cell with exactly 3 neighbours becomes alive.
@@ -98,6 +87,7 @@ def world_update_gol(grid: np.ndarray) -> np.ndarray:
 # Learning model
 # -----------------------------
 def sigmoid(x: np.ndarray) -> np.ndarray:
+    """The sigmoid activation function."""
     return 1.0 / (1.0 + np.exp(-x))
 
 
@@ -177,12 +167,14 @@ def run():
 
         # Input vectors x = [1, N1..N8], shape: (H, W, 9)
         bias = np.ones_like(grid)
+        # Stacks the bias (1) and the 8 neighbors for all cells
         x = np.stack(
             [bias] + [neighbours[..., i] for i in range(8)],
             axis=-1
         )
 
         # Predictions: sigmoid(w · x)
+        # Logits are the weighted sum: sum(weights * x) over the last axis (9 dimensions)
         logits = np.sum(weights * x, axis=-1)
         preds = sigmoid(logits)
 
@@ -190,12 +182,13 @@ def run():
         next_grid = world_update_gol(grid)
 
         # Prediction error
-        error = next_grid - preds          # signed error
+        error = next_grid - preds          # signed error (y_true - y_pred)
         abs_error = np.abs(error)
         error_field = abs_error
 
         # Weight update (local learning)
         # Simple gradient-style update: w <- w + eta * (y_true - y_pred) * x
+        # error[..., None] broadcasts the HxW error to HxWx1 to multiply with HxWx9 input x
         weights += LEARNING_RATE * error[..., None] * x
 
         # Clip weights for numerical stability (prevents huge logits)
@@ -213,8 +206,8 @@ def run():
         )
 
         fig.canvas.draw_idle()
-        plt.pause(0.001)           # Events abarbeiten
-        time.sleep(DISPLAY_INTERVAL)  # tatsächliche Frame-Pause
+        plt.pause(0.001)                # Events abarbeiten
+        time.sleep(DISPLAY_INTERVAL)    # tatsächliche Frame-Pause
 
     plt.ioff()
     plt.close(fig)
@@ -222,4 +215,3 @@ def run():
 
 if __name__ == "__main__":
     run()
-
