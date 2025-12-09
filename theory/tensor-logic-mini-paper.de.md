@@ -1,5 +1,4 @@
 Tensor-Logik als einheitliches Modell für symbolisches und kontinuierliches Schließen
-Frank Peterlein — 2025
 
 Abstract
 

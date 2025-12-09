@@ -1,5 +1,4 @@
 Tensor Logic as a Unified Model for Symbolic and Continuous Reasoning
-Frank Peterlein — 2025
 
 Abstract
 
