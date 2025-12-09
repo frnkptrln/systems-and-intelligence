@@ -1,6 +1,6 @@
-Tensor Logic as a Unified Model for Symbolic and Continuous Reasoning
+# Tensor Logic as a Unified Model for Symbolic and Continuous Reasoning
 
-Abstract
+## Abstract
 
 This document provides a concise conceptual and computational introduction to Tensor Logic, a framework introduced by Pedro Domingos that unifies symbolic reasoning, neural embeddings, and probabilistic inference into a single mathematical system: tensor algebra.
 
@@ -11,7 +11,7 @@ Embeddings transform these relations into smooth operators that interpolate betw
 The accompanying Python code in this repository (simulation-models/tensor-logic-reasoning) demonstrates the framework in a minimal four-entity world with a simple Parent relation.
 
 
-# 1. Introduction
+## 1. Introduction
 
 Contemporary AI is commonly divided into two paradigms:
 
@@ -33,12 +33,14 @@ can be expressed as a tensor contraction over the Boolean adjacency matrix of th
 This note aims to:
 
 • isolate the core of Tensor Logic
+
 • illustrate it through minimal code
+
 • connect it to a systems-theoretic perspective on intelligence
 
-# 2. Relations as Tensors
+## 2. Relations as Tensors
 
-## 2.1 Symbolic level
+### 2.1 Symbolic level
 
 Any binary relation R(x, y) over a finite set of entities can be expressed as a Boolean matrix:
 
@@ -53,7 +55,7 @@ Repeated application yields the transitive closure.
 
 Symbolic reasoning is Boolean tensor algebra.
 
-## 2.2 Continuous Level
+### 2.2 Continuous Level
 
 Now assume that each entity x is represented by a continuous embedding vector Emb[x] in R^d.
 
@@ -67,6 +69,7 @@ The full relation becomes the superposition of all these patches.
 This construction is closely related to a Tucker decomposition:
 
 • entity embeddings form the factor matrices
+
 • the relation tensor EmbR acts as the core tensor
 
 The result:
@@ -76,11 +79,12 @@ Relations = superpositions of embedding outer products.
 This provides the first bridge between symbolic and continuous representations.
 
 
-# 3. Reasoning in Embedding Space
+## 3. Reasoning in Embedding Space
 
 Given:
 
 • a relation tensor EmbR
+
 • embeddings for all entities
 
 we can evaluate a candidate pair (a, b) by computing a reasoning score:
@@ -99,6 +103,7 @@ where σ(z) = 1 / (1 + exp(−z)).
 Temperature T controls the sharpness of the decision boundary:
 
 • T → 0 reproduces hard Boolean logic
+
 • Larger T yields soft, graded, analogy-like reasoning
 
 Thus:
@@ -107,13 +112,16 @@ Reasoning = similarity-weighted tensor contraction with temperature.
 Logic appears as the special case where T approaches zero.
 
 
-# 4. Toy Experiment
+## 4. Toy Experiment
 
 The script in simulation-models/tensor-logic-reasoning/tensor_logic_demo.py constructs a minimal world containing four entities:
 
 • Alice
+
 • Bob
+
 • Charlie
+
 • David
 
 with the following parenthood structure:
@@ -138,7 +146,9 @@ Construct the embedding-based relation tensor EmbParent by summing outer product
 
 Evaluate several Parent queries using:
 • pure logical lookup (0 or 1)
+
 • embedding-based score
+
 • probability using a logistic with temperature
 
 Below is an example outcome from a typical run, using centered scores and T = 1.0:
@@ -166,21 +176,24 @@ Probability ≈ 0.46
 Interpretation:
 
 • Direct parent pairs receive the strongest positive scores.
+
 • Indirect ancestor pairs (like Alice → Charlie) still receive positive scores,
 revealing latent structure not visible in the strict Parent relation.
+
 • Pairs unsupported by the relation remain near baseline or below.
 
 This tiny example already shows the main idea of Tensor Logic:
 symbolic structure emerges naturally from geometric alignment in embedding space.
 
 
-# 5. A Systems-Theoretic View
+## 5. A Systems-Theoretic View
 
 Tensor Logic provides a way to reinterpret intelligent behavior from a systems perspective.
 
 Rather than locating intelligence in:
 
 • symbolic rules, or
+
 • neural weights
 
 Tensor Logic suggests that intelligence emerges from the interaction of three components:
@@ -201,7 +214,9 @@ but a property of their couplings.
 This fits naturally with ideas from systems theory, where:
 
 • structure (constraints),
+
 • state (embeddings), and
+
 • dynamics (operations)
 
 jointly shape the behavior of a system.
@@ -209,7 +224,7 @@ jointly shape the behavior of a system.
 Tensor Logic becomes a formal language for describing such coupled systems — a way to express how local interactions give rise to global reasoning patterns.
 
 
-# 6. Conclusion
+## 6. Conclusion
 
 Tensor Logic offers a unified mathematical lens through which symbolic and neural approaches to AI can be seen as two regimes of the same underlying machinery.
 
@@ -231,9 +246,13 @@ Tensor Logic therefore becomes a promising candidate for a unified reasoning fra
 Future extensions may include:
 
 • learning embeddings directly via Tensor-Logic objectives
+
 • handling higher-arity relations and temporal dynamics
+
 • modeling context-dependent or hierarchical temperatures
+
 • connecting Tensor Logic to ecological or multi-agent systems
+
 • embedding Tensor Logic within larger architectures (transformers, GFlowNets, etc.)
 
 Appendix: Repository Context
@@ -243,15 +262,21 @@ This mini-paper is part of the systems-and-intelligence project.
 Files of interest:
 
 • theory/tensor-logic-mini-paper.en.md — this document
+
 • theory/tensor-logic-mini-paper.de.md — German version
+
 • theory/tensor-logic-visual.html — interactive visualization of core concepts
+
 • simulation-models/tensor-logic-reasoning/ — Python implementation of the toy example
 
 The goal of this structure is to combine:
 
 • theoretical exposition
+
 • executable simulation
+
 • visualization
+
 • systems-theoretic interpretation
 
 into one coherent framework.
