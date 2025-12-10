@@ -1,6 +1,6 @@
-Tensor-Logik als einheitliches Modell für symbolisches und kontinuierliches Schließen
+# Tensor-Logik als einheitliches Modell für symbolisches und kontinuierliches Schließen
 
-Abstract
+## Abstract
 
 Dieses Kurzpapier führt in die Grundidee der Tensor-Logik ein, ein Rahmenwerk von Pedro Domingos, das symbolisches Schließen, neuronale Einbettungen und probabilistische Inferenz in einer einzigen mathematischen Sprache zusammenführt: Tensoralgebra.
 
@@ -11,7 +11,7 @@ Einbettungsvektoren verwandeln diese Relationen in kontinuierliche Operatoren, d
 Der zugehörige Python-Code in diesem Repository (simulation-models/tensor-logic-reasoning) zeigt das Konzept anhand einer minimalen Vier-Entitäten-Welt mit einer einfachen Parent-Relation.
 
 
-# 1. Einleitung
+## 1. Einleitung
 
 Die aktuelle KI-Landschaft ist von einem grundlegenden Gegensatz geprägt:
 
@@ -33,13 +33,15 @@ lässt sich als Tensor-Kontraktion über der Booleschen Adjazenzmatrix der Paren
 Dieses Dokument verfolgt drei Ziele:
 
 • die Kernintuition der Tensor-Logik präzise herauszuarbeiten
+
 • sie anhand eines minimalen Experiments zu illustrieren
+
 • sie in einen systemtheoretischen Kontext einzubetten
 
 
-# 2. Relationen als Tensoren
+## 2. Relationen als Tensoren
 
-## 2.1 Symbolische Ebene
+### 2.1 Symbolische Ebene
 
 Eine binäre Relation R(x, y) über einer endlichen Menge von Entitäten lässt sich als Boolesche Matrix darstellen.
 
@@ -56,7 +58,7 @@ Damit gilt:
 
 Symbolisches Schließen = Boolesche Tensoralgebra.
 
-## 2.2 Kontinuierliche Ebene
+### 2.2 Kontinuierliche Ebene
 
 Nun sei jede Entität x durch einen Einbettungsvektor Emb[x] in R^d repräsentiert.
 
@@ -70,6 +72,7 @@ Die Gesamtrelation ergibt sich als Superposition all dieser Flecken.
 Dieses Konstrukt ist eng verwandt mit einer Tucker-Zerlegung:
 
 • die Einbettungsmatrix sammelt alle Emb[x]
+
 • der Relationstensor EmbR spielt die Rolle des Kern­tensors
 
 Die Konsequenz:
@@ -79,11 +82,12 @@ Relationen = Superpositionen von äußeren Produkten der Einbettungsvektoren.
 Damit ist die erste Brücke zwischen symbolischer und kontinuierlicher Darstellung geschlagen.
 
 
-# 3. Schlussfolgern im Einbettungsraum
+## 3. Schlussfolgern im Einbettungsraum
 
 Hat man:
 
 • einen Relationstensor EmbR
+
 • Einbettungsvektoren für alle Entitäten
 
 dann lässt sich für ein Kandidatenpaar (a, b) ein Schlussfolgerungs-Score berechnen:
@@ -114,13 +118,16 @@ Schlussfolgern = ähnlichkeitssensitive Tensor-Kontraktion mit Temperatur.
 Strikte Logik erscheint als Spezialfall der Tensoralgebra, wenn T gegen Null geht.
 
 
-# 4. Mini-Experiment: Eine Vier-Entitäten-Welt
+## 4. Mini-Experiment: Eine Vier-Entitäten-Welt
 
 Das Skript simulation-models/tensor-logic-reasoning/tensor_logic_demo.py konstruiert eine minimale Welt mit vier Entitäten:
 
 • Alice
+
 • Bob
+
 • Charlie
+
 • David
 
 und der linearen Abstammungskette:
@@ -145,47 +152,52 @@ Konstruktion des Relationstensors EmbParent durch Überlagerung der äußeren Pr
 
 Bewertung verschiedener Parent-Anfragen mittels:
 • rein logischem Lookup (0 oder 1)
+
 • embedding-basiertem Score
+
 • Wahrscheinlichkeit über eine Logistikfunktion mit Temperatur
 
 Ein exemplarisches Ergebnis eines typischen Durchlaufs (zentrische Scores, T = 1.0):
 
 Parent(Alice, Bob):
-– Logischer Wahrheitswert = 1
-– Zentrierter Score = +0.54
-– Wahrscheinlichkeit ≈ 0.63
+Logischer Wahrheitswert = 1
+Zentrierter Score = +0.54
+Wahrscheinlichkeit ≈ 0.63
 
 Parent(Bob, Charlie):
-– Logischer Wahrheitswert = 1
-– Zentrierter Score = +0.62
-– Wahrscheinlichkeit ≈ 0.65
+Logischer Wahrheitswert = 1
+Zentrierter Score = +0.62
+Wahrscheinlichkeit ≈ 0.65
 
 Parent(Alice, Charlie):
-– Logischer Wahrheitswert = 0
-– Zentrierter Score = +0.29
-– Wahrscheinlichkeit ≈ 0.57
+Logischer Wahrheitswert = 0
+Zentrierter Score = +0.29
+Wahrscheinlichkeit ≈ 0.57
 
 Parent(Alice, David):
-– Logischer Wahrheitswert = 0
-– Zentrierter Score = −0.18
-– Wahrscheinlichkeit ≈ 0.46
+Logischer Wahrheitswert = 0
+Zentrierter Score = −0.18
+Wahrscheinlichkeit ≈ 0.46
 
 Interpretation:
 
 • Direkte Eltern-Kind-Paare erhalten die stärksten positiven Scores.
+
 • Indirekte Abstammungsbeziehungen (z. B. Alice → Charlie) erzeugen immer noch einen positiven Score — ein Hinweis auf latente Struktur, die im strikten Parent-Prädikat verborgen bleibt.
+
 • Nicht gestützte Paare liegen nahe der Basislinie oder darunter.
 
 Damit zeigt dieses kleine Beispiel bereits die Kernintuition der Tensor-Logik:
 symbolische Struktur erscheint als emergentes Muster geometrischer Ausrichtung im Einbettungsraum.
 
 
-# 5. Eine systemtheoretische Perspektive
+## 5. Eine systemtheoretische Perspektive
 
 Die Tensor-Logik erlaubt es, intelligentes Verhalten aus der Sicht der Systemtheorie neu zu interpretieren.
 Anstatt Intelligenz in einzelnen Komponenten zu lokalisieren — beispielsweise in:
 
 • symbolischen Regeln, oder
+
 • neuronalen Gewichten —
 
 verschiebt sich der Fokus auf die Interaktionen zwischen Strukturen, Zuständen und Operationen.
@@ -213,8 +225,11 @@ Intelligenz ist eine emergente Eigenschaft der relationalen Struktur eines Syste
 Die Tensor-Logik liefert hierfür eine präzise mathematische Form:
 
 • Struktur = Relationstensor
+
 • Zustand = Einbettungsvektor
+
 • Dynamik = Kontraktionen
+
 • Beobachtung = Score oder Entscheidung
 
 Die beobachtbare „Vernunft“ ist also eine Projektion dieser tieferen Kopplungsdynamik.
@@ -223,7 +238,7 @@ Damit lässt sich Tensor-Logik auch als Brückentechnologie verstehen:
 Sie verbindet formale Logik, geometrische Repräsentationen und systemtheoretische Konzepte in einer einheitlichen Sprache.
 
 
-# 6. Schlussfolgerung
+## 6. Schlussfolgerung
 
 Die Tensor-Logik bietet eine einheitliche mathematische Perspektive, in der symbolisches und neuronales Schließen nicht als Gegensätze erscheinen, sondern als zwei Regime desselben Mechanismus.
 
@@ -243,15 +258,21 @@ Stattdessen entsteht Logik als Grenzfall kontinuierlicher Tensoralgebra, wenn di
 Tensor-Logik wird damit zu einem potenziellen Rahmen für zukünftige KI-Systeme:
 
 • streng genug für logische Strukturen
+
 • flexibel genug für analoges Denken
+
 • mathematisch kohärent über beide Welten hinweg
 
 Mögliche Erweiterungen umfassen:
 
 • Lernen der Einbettungen direkt über Tensor-Logik-Optimierungsziele
+
 • Umgang mit höherstelligen Relationen oder zeitlicher Dynamik
+
 • adaptive, kontextabhängige Temperaturen
+
 • Verbindung zu ökologischen, agentenbasierten oder zirkulären Systemen
+
 • Integration in bestehende Architekturen wie Transformer, GFlowNets oder differentiable logic systems
 
 Tensor-Logik dient somit als Brücke — zwischen Logik, Geometrie und Systemtheorie.
@@ -263,8 +284,11 @@ Dieses Mini-Paper gehört zum systems-and-intelligence-Projekt.
 Relevante Dateien:
 
 • theory/tensor-logic-mini-paper.de.md — diese Datei
+
 • theory/tensor-logic-mini-paper.en.md — englische Version
+
 • theory/tensor-logic-visual.html — interaktive HTML-Visualisierung
+
 • simulation-models/tensor-logic-reasoning/ — Python-Implementierung des Beispielmodells
 
 Die Struktur verfolgt das Ziel, Theorie, Simulation, Visualisierung und systemtheoretische Einordnung in einem konsistenten Rahmen zu verbinden.
