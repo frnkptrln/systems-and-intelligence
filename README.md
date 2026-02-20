@@ -23,7 +23,7 @@ Each folder represents a different perspective on these themes.
 | Folder | Purpose |
 | :--- | :--- |
 | **`simulation-models/`** | Concrete dynamical systems: cellular automata, agent-based simulations, homeostasis models, nested-learning examples. |
-| **`data-analysis/`** | Tools for plotting, measuring, and evaluating emergent behavior across simulations. |
+| **`data-analysis/`** | Information-theoretic measures (entropy, mutual information, transfer entropy, integration) and comparative analysis tools. |
 | **`tools/`** | Shared utilities for visualization, randomness, grid manipulation, and reproducibility. |
 | **`theory/`** | Conceptual notes and essays on systems, intelligence, and emergent behavior. |
 | **`meta/`** | Reflections on epistemology, ethics, and the limits of formal systems and computation. |
@@ -41,14 +41,38 @@ Each subfolder contains its own README with context and details.
 | `stigmergy-swarm/` | 🐜 Ant-like agents with pheromone trails – emergent path optimization |
 | `meta-learning-regime-shift/` | 🔄 Meta-learner that adapts η under regime shifts |
 | `coupled-oscillators/` | 🔗 Kuramoto model – emergent synchronization of phase oscillators |
+| `reaction-diffusion/` | 🌊 Gray-Scott model – Turing patterns from two diffusing chemicals |
+| `hebbian-memory/` | 🧬 Hopfield network – self-organizing associative memory via Hebb's rule |
+| `boids-flocking/` | 🐦 Reynolds' Boids – emergent collective motion from three local rules |
+| `lenia/` | 🌌 Lenia – continuous cellular automata producing lifelike organisms |
+| `self-organized-criticality/` | ⚡ Bak's Sandpile – power-law avalanches without parameter tuning |
 
 ---
 
 ## 🚀 Getting Started
 
-Clone the repository:
+Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/frnkptrln/systems-and-intelligence.git
 cd systems-and-intelligence
+pip install -r requirements.txt
 ```
+
+Then run any simulation:
+
+```bash
+cd simulation-models/lenia
+python3 lenia.py
+```
+
+Press `ESC` in any simulation window to exit.
+
+---
+
+## 🗺 Conceptual Map
+
+For a guide to how all the models connect, see
+[Konzeptuelle Karte](theory/konzeptuelle-karte.md) – the conceptual map
+that traces the arc from self-organization through learning to
+system intelligence and its limits.

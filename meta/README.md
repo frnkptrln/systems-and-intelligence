@@ -1,13 +1,20 @@
-# 🧩 Meta
+# 🔭 Meta
 
-This section covers broader reflections on:
+Reflections on epistemology, ethics, and the limits of formal systems
+and computation.
 
-- epistemology  
-- ethics  
-- limits of computation  
-- Gödel-inspired notions of incompleteness  
-- how systems relate to their observers  
+---
 
-These notes touch on the deeper questions behind intelligence,
-computation, and the boundaries of formal systems.
+## 📜 Contents
 
+### [Grenzen formaler Systeme und die Frage nach Intelligenz](grenzen-formaler-systeme.md)
+
+Gödel, Turing, Chaitin – und was die prinzipiellen Grenzen des
+Formalisierbaren für die Frage nach Intelligenz bedeuten. Warum
+Intelligenz vielleicht kein *Zustand* ist, sondern ein *Prozess*,
+der an diesen Grenzen operiert.
+
+---
+
+These essays are intentionally informal and exploratory.
+They accompany the simulations and theory in this repository.
