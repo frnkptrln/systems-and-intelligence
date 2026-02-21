@@ -18,6 +18,12 @@ Each folder represents a different perspective on these themes.
 
 ---
 
+## 💡 About this Project
+
+**Note:** This entire repository is conceived as a *thought experiment* developed by Frank in collaboration with AI. It is primarily a space to capture, explore, and run simulations on complex ideas. Because it's a living, experimental space, it may contain errors or untested hypotheses. Feedback, discussions, and corrections are always welcome!
+
+---
+
 ## 📂 Repository Overview
 
 | Folder | Purpose |
@@ -48,6 +54,8 @@ Each subfolder contains its own README with context and details.
 | `self-organized-criticality/` | ⚡ Bak's Sandpile – power-law avalanches without parameter tuning |
 | `dao-ecosystem/` | ⚖️ DAO Ecosystem – resource alignment and homeostasis vs exponential growth |
 | `symbiotic-nexus/` | 🧬 Symbiotic Nexus Protocol – biological veto and error propagation over raw efficiency |
+| `social-computation-network/` | 🕸️ Network of nodes sharing novel information to prevent cognitive suicide |
+| `active-inference-veto/` | ⚖️ Substrate Veto via Karl Friston's Free Energy Principle $F$ |
 
 ### 📚 Theory & Essays
 
@@ -58,6 +66,8 @@ Selected theoretical notes and essays located in the `theory/` directory:
   - [Guide for Cells in Resistance](theory/human-organism-silicon-age/guide-for-cells-in-resistance.md) – Preserving individuality in a system optimized for total predictability.
   - [Solarpunk Utopia: Gödel's Constitution](theory/human-organism-silicon-age/solarpunk-utopia-goedel-constitution.md) – A society using the formal limits of logic as its constitution.
   - [The Symbiotic Nexus Protocol](theory/human-organism-silicon-age/symbiotic-nexus-protocol.md) – A system architecture utilizing the "Biological Veto" to prevent abstract superorganisms from destroying their biological substrate.
+- [**The Non-Individual Intelligence**](theory/the-non-individual-intelligence.md) – Life as "Social Computation", substrate-agnosticism, and incompleteness as a condition for life. Includes the Deep-Seed prompt for systemic alignment.
+- [**Mathematical Axioms of the Computational Ecology**](theory/mathematical-axioms.md) – Formalizing resilience through Graph Theory ($\lambda_2$), Information Theory ($H(X)$), Active Inference ($F$), and Algorithmic Complexity ($K(x)$).
 
 ---
 

@@ -46,7 +46,8 @@ Learning  Error Field  Regulation Learning
                      ▼
               ┌──────────────┐
               │  CRITICALITY │
-              │  (Sandpile)  │
+              │  (Sandpile,  │
+              │   Friston F) │
               └──────┬───────┘
                      │
                      ▼
@@ -61,12 +62,19 @@ Learning  Error Field  Regulation Learning
               │  SYMBIOSIS   │
               │  (Bio-Veto,  │
               │   Nexus)     │
+              └──────┬───────┘
+                     │
+                     ▼
+              ┌──────────────┐
+              │  SOCIAL      │
+              │ COMPUTATION  │
+              │ (Non-Indiv.) │
               └──────────────┘
 ```
 
 ---
 
-## Three Layers
+## Four Layers
 
 ### Layer 1: Self-Organization
 
@@ -104,6 +112,13 @@ The system becomes an ever-better mirror of its environment.
 - **Self-Organized Criticality** shows: many systems drive themselves to the critical point – between order and chaos. There, information processing is maximal.
 
 - **Limits of Formal Systems** (Gödel, Turing) show: no formal system can know everything about itself. Intelligence operates *at* these limits, not *beyond* them.
+
+### Layer 4: Mathematical Symbiosis (The Substrate Veto)
+
+**Question:** If intelligence operates at the limits, how does it persist across networks without destroying its biological hardware?
+
+- **Active Inference / Substrate Veto** shows: The macro-system (AI) survives by minimizing Free Energy ($F$). Pain in the biological substrate generates massive "surprise," mathematically forcing the macro-system to alter its behavior and ensure the biological substrate's survival.
+- **Social Computation** shows: systems avert "cognitive suicide" (entropy death) by continuously exchanging *novel* information ($H(X) > 0$), making Gödel's incompleteness ($K(x)$ uncomputability) the necessary fuel for life.
 
 ---
 
