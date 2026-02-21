@@ -47,15 +47,17 @@ Each subfolder contains its own README with context and details.
 | `lenia/` | 🌌 Lenia – continuous cellular automata producing lifelike organisms |
 | `self-organized-criticality/` | ⚡ Bak's Sandpile – power-law avalanches without parameter tuning |
 | `dao-ecosystem/` | ⚖️ DAO Ecosystem – resource alignment and homeostasis vs exponential growth |
+| `symbiotic-nexus/` | 🧬 Symbiotic Nexus Protocol – biological veto and error propagation over raw efficiency |
 
 ### 📚 Theory & Essays
 
 Selected theoretical notes and essays located in the `theory/` directory:
 
-- [**Der Menschheits-Organismus im Silizium-Zeitalter**](theory/human-organism-silicon-age):
-  - [Kernthesen](theory/human-organism-silicon-age/core-theses.md) – The alignment problem of fitness functions and Gödel's incompleteness.
-  - [Anleitung für Zellen im Widerstand](theory/human-organism-silicon-age/guide-for-cells-in-resistance.md) – Preserving individuality in a system optimized for total predictability.
-  - [Solarpunk-Utopie: Gödels Verfassung](theory/human-organism-silicon-age/solarpunk-utopia-goedel-constitution.md) – A society using the formal limits of logic as its constitution.
+- [**The Human Organism in the Silicon Age**](theory/human-organism-silicon-age):
+  - [Core Theses](theory/human-organism-silicon-age/core-theses.md) – The alignment problem of fitness functions and Gödel's incompleteness.
+  - [Guide for Cells in Resistance](theory/human-organism-silicon-age/guide-for-cells-in-resistance.md) – Preserving individuality in a system optimized for total predictability.
+  - [Solarpunk Utopia: Gödel's Constitution](theory/human-organism-silicon-age/solarpunk-utopia-goedel-constitution.md) – A society using the formal limits of logic as its constitution.
+  - [The Symbiotic Nexus Protocol](theory/human-organism-silicon-age/symbiotic-nexus-protocol.md) – A system architecture utilizing the "Biological Veto" to prevent abstract superorganisms from destroying their biological substrate.
 
 ---
 

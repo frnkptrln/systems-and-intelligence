@@ -54,6 +54,13 @@ Learning  Error Field  Regulation Learning
               │   LIMITS     │
               │  (Gödel,     │
               │   Turing)    │
+              └──────┬───────┘
+                     │
+                     ▼
+              ┌──────────────┐
+              │  SYMBIOSIS   │
+              │  (Bio-Veto,  │
+              │   Nexus)     │
               └──────────────┘
 ```
 
