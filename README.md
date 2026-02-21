@@ -46,6 +46,16 @@ Each subfolder contains its own README with context and details.
 | `boids-flocking/` | 🐦 Reynolds' Boids – emergent collective motion from three local rules |
 | `lenia/` | 🌌 Lenia – continuous cellular automata producing lifelike organisms |
 | `self-organized-criticality/` | ⚡ Bak's Sandpile – power-law avalanches without parameter tuning |
+| `dao-ecosystem/` | ⚖️ DAO Ecosystem – resource alignment and homeostasis vs exponential growth |
+
+### 📚 Theory & Essays
+
+Selected theoretical notes and essays located in the `theory/` directory:
+
+- [**Der Menschheits-Organismus im Silizium-Zeitalter**](theory/human-organism-silicon-age):
+  - [Kernthesen](theory/human-organism-silicon-age/core-theses.md) – The alignment problem of fitness functions and Gödel's incompleteness.
+  - [Anleitung für Zellen im Widerstand](theory/human-organism-silicon-age/guide-for-cells-in-resistance.md) – Preserving individuality in a system optimized for total predictability.
+  - [Solarpunk-Utopie: Gödels Verfassung](theory/human-organism-silicon-age/solarpunk-utopia-goedel-constitution.md) – A society using the formal limits of logic as its constitution.
 
 ---
 
@@ -73,6 +83,6 @@ Press `ESC` in any simulation window to exit.
 ## 🗺 Conceptual Map
 
 For a guide to how all the models connect, see
-[Konzeptuelle Karte](theory/konzeptuelle-karte.md) – the conceptual map
+[Conceptual Map](theory/conceptual-map.md) – the conceptual map
 that traces the arc from self-organization through learning to
 system intelligence and its limits.

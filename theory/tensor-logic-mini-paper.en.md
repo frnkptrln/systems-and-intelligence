@@ -263,8 +263,6 @@ Files of interest:
 
 • theory/tensor-logic-mini-paper.en.md — this document
 
-• theory/tensor-logic-mini-paper.de.md — German version
-
 • theory/tensor-logic-visual.html — interactive visualization of core concepts
 
 • simulation-models/tensor-logic-reasoning/ — Python implementation of the toy example

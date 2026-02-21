@@ -7,12 +7,9 @@ and computation.
 
 ## 📜 Contents
 
-### [Grenzen formaler Systeme und die Frage nach Intelligenz](grenzen-formaler-systeme.md)
+### [Limits of Formal Systems and the Question of Intelligence](limits-of-formal-systems.md)
 
-Gödel, Turing, Chaitin – und was die prinzipiellen Grenzen des
-Formalisierbaren für die Frage nach Intelligenz bedeuten. Warum
-Intelligenz vielleicht kein *Zustand* ist, sondern ein *Prozess*,
-der an diesen Grenzen operiert.
+Gödel, Turing, Chaitin – and what the fundamental limits of the formalizable mean for the question of intelligence. Why intelligence might not be a *state*, but a *process* that operates at these boundaries.
 
 ---
 
