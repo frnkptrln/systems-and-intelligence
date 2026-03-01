@@ -1,149 +1,149 @@
-# Emergenz & Downward Causation
+# Emergence & Downward Causation
 
-*Gedanken über das Verhältnis von Teilen und Ganzem in komplexen Systemen.*
+*Thoughts on the relationship between parts and wholes in complex systems.*
 
 ---
 
-## 1. Was ist Emergenz?
+## 1. What Is Emergence?
 
-Emergenz beschreibt das Auftreten von **Eigenschaften eines Ganzen**,
-die in keinem seiner Teile für sich allein zu finden sind.
+Emergence describes the appearance of **properties of a whole**
+that cannot be found in any of its parts taken individually.
 
-Ein einzelnes Neuron denkt nicht.  
-Ein einzelner Vogel „schwarmt" nicht.  
-Eine einzelne Ameise optimiert keinen Pfad.
+A single neuron does not think.  
+A single bird does not "flock."  
+A single ant does not optimise a path.
 
-Und doch: aus dem Zusammenspiel vieler Teile entstehen Phänomene – Denken,
-Schwarmformation, Pfadoptimierung – die auf der Ebene der Teile nicht
-existieren.
+And yet: from the interaction of many parts, phenomena arise — thinking,
+swarm formation, path optimisation — that do not exist at the level
+of the individual parts.
 
-> „More is different."  
+> "More is different."  
 > — Philip W. Anderson, 1972
 
 ---
 
-## 2. Schwache vs. starke Emergenz
+## 2. Weak vs. Strong Emergence
 
-Die philosophische Literatur unterscheidet zwei Lesarten:
+The philosophical literature distinguishes two readings:
 
-| | Schwache Emergenz | Starke Emergenz |
+| | Weak Emergence | Strong Emergence |
 |:---|:---|:---|
-| **Claim** | Makroeigenschaften sind *in principle* aus Mikroregeln ableitbar, aber überraschend und schwer vorherzusagen | Makroeigenschaften sind *prinzipiell* nicht auf Mikroregeln reduzierbar |
-| **Beispiel** | Turbulenzmuster aus Navier-Stokes | Bewusstsein (?) |
-| **Status** | Weitgehend akzeptiert | Philosophisch kontrovers |
-| **Relevanz für Simulationen** | Hoch – alle Modelle in diesem Repo zeigen schwache Emergenz | Unklar – kein Simulationsmodell zeigt (bisher) starke Emergenz |
+| **Claim** | Macro-properties are *in principle* derivable from micro-rules, but surprising and hard to predict | Macro-properties are *in principle* not reducible to micro-rules |
+| **Example** | Turbulence patterns from Navier-Stokes | Consciousness (?) |
+| **Status** | Widely accepted | Philosophically controversial |
+| **Relevance for simulations** | High — all models in this repo show weak emergence | Unclear — no simulation model (yet) shows strong emergence |
 
-Alle Simulationen in diesem Repository sind **schwach emergent**:
-die Makrophänomene (Synchronisation, Schwarmformationen, Turing-Muster)
-folgen deterministisch aus den lokalen Regeln – aber sie sind
-*überraschend*, *nicht-trivial*, und *nicht aus der Einzelregel ablesbar*.
+All simulations in this repository are **weakly emergent**:
+the macro-phenomena (synchronisation, swarm formations, Turing patterns)
+follow deterministically from the local rules — but they are
+*surprising*, *non-trivial*, and *not readable from the individual rule alone*.
 
 ---
 
-## 3. Epistemisch vs. ontologisch
+## 3. Epistemic vs. Ontological
 
-Ein verwandter Schnitt:
+A related distinction:
 
-- **Epistemische Emergenz:** Wir *könnten* die Makroebene ableiten,
-  aber es ist zu komplex, also brauchen wir neue Beschreibungsebenen
-  (Thermodynamik, Ökologie, Psychologie).
+- **Epistemic emergence:** We *could* derive the macro-level,
+  but it is too complex, so we need new levels of description
+  (thermodynamics, ecology, psychology).
 
-- **Ontologische Emergenz:** Die Makroebene *existiert* auf eine Weise,
-  die nicht vollständig durch die Mikroebene determiniert ist –
-  es gibt echte „neue Kausalität".
+- **Ontological emergence:** The macro-level *exists* in a way
+  that is not fully determined by the micro-level —
+  there is genuine "new causality."
 
-Die meisten Naturwissenschaftler arbeiten implizit mit **epistemischer
-Emergenz**: Temperatur ist nichts anderes als mittlere kinetische Energie,
-aber es macht Sinn, von „Temperatur" zu reden, weil es Prognosen
-erleichtert.
+Most natural scientists implicitly work with **epistemic
+emergence**: temperature is nothing other than average kinetic energy,
+but it makes sense to speak of "temperature" because it facilitates
+predictions.
 
-Ob es darüber hinaus **ontologische** Emergenz gibt, ist eine offene
-Frage – und eine der tiefsten in der Philosophie des Geistes.
+Whether there is **ontological** emergence beyond this remains an open
+question — and one of the deepest in the philosophy of mind.
 
 ---
 
 ## 4. Downward Causation
 
-Wenn Makroeigenschaften emergent sind – können sie dann auf die
-Teile *zurückwirken*?
+If macro-properties are emergent — can they then act *back upon* the
+parts?
 
-### Das starke Argument
+### The Strong Argument
 
-> Die Schwarmformation bestimmt, wohin der einzelne Vogel fliegt.
+> The swarm formation determines where the individual bird flies.
 
-Im Boids-Modell wirkt die globale Formation auf jedes Individuum zurück:
-der Kohäsions-Vektor zeigt zum Schwerpunkt der Nachbarn, der *eine
-Eigenschaft des Kollektivs* ist.
+In the Boids model, the global formation acts back on each individual:
+the cohesion vector points toward the centre of mass of the neighbours,
+which is *a property of the collective*.
 
-### Das Gegenargument
+### The Counter-Argument
 
-Es gibt keine mysteriöse „Abwärtskraft". Was auf den einzelnen Boid
-wirkt, sind die Positionen seiner Nachbarn – alles bleibt auf der
-Mikro-Ebene. Die „Schwarmformation" ist nur eine *Beschreibung*
-dieser Positionen.
+There is no mysterious "downward force." What acts on the individual
+boid are the positions of its neighbours — everything remains at the
+micro-level. The "swarm formation" is merely a *description*
+of these positions.
 
-### Position in diesem Repository
+### Position in This Repository
 
-Wir nehmen eine **pragmatische Haltung** ein:
+We take a **pragmatic stance**:
 
-Downward Causation ist ein **nützliches Erklärungsmuster**, auch wenn
-sie sich möglicherweise vollständig mikro-reduktiv auflösen lässt.
+Downward Causation is a **useful explanatory pattern**, even if
+it may be fully reducible to micro-level interactions.
 
-- In `ecosystem-regulation/`: die *globale Dichte* wirkt auf die lokale
-  Geburtswahrscheinlichkeit zurück.
-- In `meta-learning-regime-shift/`: der *globale Vorhersagefehler*
-  moduliert die Lernrate des Einzelagenten.
-- In `boids-flocking/`: die *lokale Nachbarschaftsstruktur* erzeugt
-  globale Formationen, die wiederum die Nachbarschaft bestimmen.
-- In `reaction-diffusion/`: makroskopische Konzentrationsmuster
-  bestimmen die lokale Reaktionsrate.
+- In `ecosystem-regulation/`: the *global density* feeds back on the local
+  birth probability.
+- In `meta-learning-regime-shift/`: the *global prediction error*
+  modulates the individual agent's learning rate.
+- In `boids-flocking/`: the *local neighbourhood structure* creates
+  global formations, which in turn determine the neighbourhood.
+- In `reaction-diffusion/`: macroscopic concentration patterns
+  determine the local reaction rate.
 
-In jedem Fall lässt sich beobachten: **die Beschreibung auf der
-Makroebene macht das System verständlicher**, auch wenn die Kausalität
-technisch mikro-lokal bleibt.
-
----
-
-## 5. Verbindung zum System Intelligence Index
-
-Im [System Intelligence Index](system-intelligence-index.md) taucht
-Emergenz auf drei Ebenen auf:
-
-1. **Predictive Power (P):** Das interne Modell eines Systems bildet
-   emergente Regelmäßigkeiten ab – nicht Atome, sondern *Muster*.
-
-2. **Regulation (R):** Homöostase ist eine Makro-Eigenschaft.
-   Die „Zielgröße" (z.B. Populationsdichte) existiert nicht auf
-   Zellebene – sie emergiert.
-
-3. **Adaptive Capacity (A):** Meta-Learning verändert *wie* ein System
-   lernt – eine Wirkung der Performanceebene auf die Lernebene.
-
-Das SII-Framework selbst ist ein Versuch, den *Grad* emergenter
-Intelligenz zu erfassen – ohne zu behaupten, dass Intelligenz etwas
-anderes als ein Makro-Phänomen ist.
+In every case, we can observe: **describing at the macro-level makes
+the system more comprehensible**, even though causality is technically
+micro-local.
 
 ---
 
-## 6. Offene Fragen
+## 5. Connection to the System Intelligence Index
 
-- Kann Emergenz *zwischen Simulationsmodellen* verglichen werden?
-  (Ist ein Schwarm „emergenter" als ein zellulärer Automat?)
+In the [System Intelligence Index](system-intelligence-index.md),
+emergence appears on three levels:
 
-- Gibt es einen Zusammenhang zwischen **Emergenzgrad** und
-  **Informationsmaßen** (integrierte Information, mutual information)?
+1. **Predictive Power (P):** A system's internal model captures
+   emergent regularities — not atoms, but *patterns*.
 
-- Lässt sich Downward Causation **operational definieren** –
-  z.B. als: „Das Verhalten eines Mikro-Elements ist besser
-  vorhersagbar, wenn man die Makro-Ebene kennt"?
+2. **Regulation (R):** Homeostasis is a macro-property.
+   The "target variable" (e.g. population density) does not exist at
+   cell level — it emerges.
 
-- Wie verhält sich Emergenz zu **Komplexität**?
-  (Nicht jedes komplexe System ist emergent, und nicht jede Emergenz
-  erfordert hohe Komplexität.)
+3. **Adaptive Capacity (A):** Meta-learning alters *how* a system
+   learns — an effect of the performance level on the learning level.
+
+The SII framework itself is an attempt to capture the *degree* of emergent
+intelligence — without claiming that intelligence is anything other
+than a macro-phenomenon.
 
 ---
 
-## 7. Literaturhinweise
+## 6. Open Questions
+
+- Can emergence be *compared across simulation models*?
+  (Is a swarm "more emergent" than a cellular automaton?)
+
+- Is there a connection between **degree of emergence** and
+  **information measures** (integrated information, mutual information)?
+
+- Can Downward Causation be **operationally defined** —
+  e.g. as: "The behaviour of a micro-element is better
+  predictable when one knows the macro-level"?
+
+- How does emergence relate to **complexity**?
+  (Not every complex system is emergent, and not every emergence
+  requires high complexity.)
+
+---
+
+## 7. References
 
 - Anderson, P. W. (1972). *More is Different*. Science, 177(4047).
 - Bedau, M. A. (1997). *Weak Emergence*. Philosophical Perspectives.
@@ -154,6 +154,6 @@ anderes als ein Makro-Phänomen ist.
 
 ---
 
-*Dieser Essay ist absichtlich informell und explorativ.
-Er begleitet die Simulationen im Repository und soll zum
-Weiterdenken einladen.*
+*This essay is intentionally informal and exploratory.
+It accompanies the simulations in this repository and is meant to
+invite further thinking.*

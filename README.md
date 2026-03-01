@@ -29,8 +29,8 @@ Each folder represents a different perspective on these themes.
 | Folder | Purpose |
 | :--- | :--- |
 | **`simulation-models/`** | Concrete dynamical systems: cellular automata, agent-based simulations, homeostasis models, nested-learning examples. |
-| **`data-analysis/`** | Information-theoretic measures (entropy, mutual information, transfer entropy, integration) and comparative analysis tools. |
-| **`tools/`** | Shared utilities for visualization, randomness, grid manipulation, and reproducibility. |
+| **`data-analysis/`** | Information-theoretic measures (entropy, mutual information, transfer entropy, integration) and the quantitative **SII Dashboard** for comparative analysis. |
+| **`tools/`** | Shared utilities for visualization, randomness, grid manipulation, reproducibility, and the **Interactive Web Explorer**. |
 | **`theory/`** | Conceptual notes and essays on systems, intelligence, and emergent behavior. |
 | **`meta/`** | Reflections on epistemology, ethics, and the limits of formal systems and computation. |
 
@@ -56,6 +56,7 @@ Each subfolder contains its own README with context and details.
 | `symbiotic-nexus/` | 🧬 Symbiotic Nexus Protocol – biological veto and error propagation over raw efficiency |
 | `social-computation-network/` | 🕸️ Network of nodes sharing novel information to prevent cognitive suicide |
 | `active-inference-veto/` | ⚖️ Substrate Veto via Karl Friston's Free Energy Principle $F$ |
+| `phase-transition-explorer/` | 🔥 Ising Model – order/disorder phase transition at the Edge of Chaos |
 
 ### 📚 Theory & Essays
 
@@ -68,6 +69,12 @@ Selected theoretical notes and essays located in the `theory/` directory:
   - [The Symbiotic Nexus Protocol](theory/human-organism-silicon-age/symbiotic-nexus-protocol.md) – A system architecture utilizing the "Biological Veto" to prevent abstract superorganisms from destroying their biological substrate.
 - [**The Non-Individual Intelligence**](theory/the-non-individual-intelligence.md) – Life as "Social Computation", substrate-agnosticism, and incompleteness as a condition for life. Includes the Deep-Seed prompt for systemic alignment.
 - [**Mathematical Axioms of the Computational Ecology**](theory/mathematical-axioms.md) – Formalizing resilience through Graph Theory ($\lambda_2$), Information Theory ($H(X)$), Active Inference ($F$), and Algorithmic Complexity ($K(x)$).
+- [**Emergence & Downward Causation**](theory/emergence-downward-causation.md) – Weak vs. strong emergence, epistemic humility, and the role of macro-level explanations.
+
+### 📡 Interactive Tools
+
+- [**Web Emergence Explorer**](tools/web-explorer/) – Browser-based Game of Life with real-time entropy, spatial mutual information, and complexity charts. Zero dependencies.
+- [**SII Dashboard**](data-analysis/sii_dashboard.py) – Quantitative System Intelligence Index: runs headless mini-simulations and generates comparative radar/bar charts of P, R, A dimensions.
 
 ---
 

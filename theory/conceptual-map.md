@@ -47,6 +47,7 @@ Learning  Error Field  Regulation Learning
               ┌──────────────┐
               │  CRITICALITY │
               │  (Sandpile,  │
+              │   Ising,     │
               │   Friston F) │
               └──────┬───────┘
                      │
@@ -111,6 +112,8 @@ The system becomes an ever-better mirror of its environment.
 
 - **Self-Organized Criticality** shows: many systems drive themselves to the critical point – between order and chaos. There, information processing is maximal.
 
+- **Phase Transition Explorer** (Ising model) shows: below $T_c$ the system is frozen (order), above it is random (noise). At exactly $T_c \approx 2.269$, correlations diverge and the system becomes scale-free – the Edge of Chaos made tangible.
+
 - **Limits of Formal Systems** (Gödel, Turing) show: no formal system can know everything about itself. Intelligence operates *at* these limits, not *beyond* them.
 
 ### Layer 4: Mathematical Symbiosis (The Substrate Veto)
@@ -140,11 +143,14 @@ None alone is "the answer" – together they form a **landscape of thought** whe
 
 ```
 What we have:                     What is still missing:
-✓ 12 Simulations                  ? More quantitative SII measurements
-✓ Information-theoretic measures  ? Comparative phase diagrams
-✓ System Intelligence Index       ? Real data (biological systems?)
-✓ Theory Essays                   ? Interactive web visualizations
-✓ Tensor Logic                    ? Formal proofs about SII properties
+✓ 17 Simulations                  ? Real data (biological systems?)
+✓ Information-theoretic measures  ? Formal proofs about SII properties
+✓ System Intelligence Index       ? Agent-based economic models
+✓ Theory Essays                   ? Multi-model coupling experiments
+✓ Tensor Logic
+✓ Quantitative SII Dashboard
+✓ Phase Transition Explorer
+✓ Interactive Web Explorer
 ```
 
 This repository is not a finished product. It is a **living experiment** – an invitation to think, code, and marvel about systems, intelligence, and emergence.
