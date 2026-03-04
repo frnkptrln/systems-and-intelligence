@@ -57,6 +57,8 @@ Each subfolder contains its own README with context and details.
 | `social-computation-network/` | 🕸️ Network of nodes sharing novel information to prevent cognitive suicide |
 | `active-inference-veto/` | ⚖️ Substrate Veto via Karl Friston's Free Energy Principle $F$ |
 | `phase-transition-explorer/` | 🔥 Ising Model – order/disorder phase transition at the Edge of Chaos |
+| `economic-trust-network/` | 🤝 Trade network where specialization, reputation, and wealth emerge |
+| `coupled-lenia-boids/` | 🌪️ Multi-model coupling: Continuous CA (Lenia) ↔ Foraging Agents (Boids) |
 
 ### 📚 Theory & Essays
 

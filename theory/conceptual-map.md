@@ -40,7 +40,7 @@ Learning  Error Field  Regulation Learning
     │  Swarm       Oscillators        │
     │                                 │
     │  Reaction-   Lenia      Hebbian │
-    │  Diffusion              Memory  │
+    │  Diffusion   Coupled    Memory  │
     └────────────────┬────────────────┘
                      │
                      ▼
@@ -102,6 +102,7 @@ Learning  Error Field  Regulation Learning
 | Prediction Error Field | GoL rule (local) | Gradient on weights |
 | Meta-Learning | Its own learning rate | Surprise signal modulates η |
 | Tensor Logic | Relational structure | Embedding tensor product |
+| Economic Trust | Wealth & Reputation | Reciprocal trade, penalty for cheating |
 
 **Commonality:** Information flows *from the world into the model*.
 The system becomes an ever-better mirror of its environment.
@@ -143,14 +144,16 @@ None alone is "the answer" – together they form a **landscape of thought** whe
 
 ```
 What we have:                     What is still missing:
-✓ 17 Simulations                  ? Real data (biological systems?)
+✓ 19 Simulations                  ? Real data (biological systems?)
 ✓ Information-theoretic measures  ? Formal proofs about SII properties
-✓ System Intelligence Index       ? Agent-based economic models
-✓ Theory Essays                   ? Multi-model coupling experiments
+✓ System Intelligence Index       
+✓ Theory Essays                   
 ✓ Tensor Logic
 ✓ Quantitative SII Dashboard
 ✓ Phase Transition Explorer
 ✓ Interactive Web Explorer
+✓ Agent-based economic models
+✓ Multi-model coupling experiments
 ```
 
 This repository is not a finished product. It is a **living experiment** – an invitation to think, code, and marvel about systems, intelligence, and emergence.
