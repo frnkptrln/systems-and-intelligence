@@ -61,6 +61,7 @@ Each subfolder contains its own README with context and details.
 | `coupled-lenia-boids/` | 🌪️ Multi-model coupling: Continuous CA (Lenia) ↔ Foraging Agents (Boids) |
 | `self-reading-universe/` | 👁️ The Self-Reading Universe: Downward causation from Autoencoder compression to CA physics |
 | `latent-introspective-society/` | 🧠 MAS Divison of Labor: Reflective Pheromones guiding Intuitive Agents |
+| `ai-alignment-veto/` | 🛑 The Biological Veto: Solving the Paperclip Maximizer mathematically via Substrate Pain (Free Energy) |
 
 ### 📚 Theory & Essays
 
@@ -71,6 +72,7 @@ Selected theoretical notes and essays located in the `theory/` directory:
   - [Guide for Cells in Resistance](theory/human-organism-silicon-age/guide-for-cells-in-resistance.md) – Preserving individuality in a system optimized for total predictability.
   - [Solarpunk Utopia: Gödel's Constitution](theory/human-organism-silicon-age/solarpunk-utopia-goedel-constitution.md) – A society using the formal limits of logic as its constitution.
   - [The Symbiotic Nexus Protocol](theory/human-organism-silicon-age/symbiotic-nexus-protocol.md) – A system architecture utilizing the "Biological Veto" to prevent abstract superorganisms from destroying their biological substrate.
+- [**The AI Alignment Veto: A Thermodynamic Solution**](theory/ai-alignment-biological-veto.md) – Proving that the Paperclip Maximizer problem can be solved not through ethics, but by mathematically coupling the AI's loss function to the biological substrate's Free Energy (Pain).
 - [**The Non-Individual Intelligence**](theory/the-non-individual-intelligence.md) – Life as "Social Computation", substrate-agnosticism, and incompleteness as a condition for life. Includes the Deep-Seed prompt for systemic alignment.
 - [**Principles of the Agentic Society**](theory/agentic-society-principles.md) – Translating the paradox of consciousness (Anthropic vs OpenAI) into MAS architecture: The R-Index, Information Firewalls, and Stigmergic Memory.
 - [**Mathematical Axioms of the Computational Ecology**](theory/mathematical-axioms.md) – Formalizing resilience through Graph Theory ($\lambda_2$), Information Theory ($H(X)$), Active Inference ($F$), and Algorithmic Complexity ($K(x)$).

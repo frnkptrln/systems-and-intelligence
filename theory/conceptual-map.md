@@ -158,6 +158,7 @@ What we have:                     What is still missing:
 ✓ Multi-model coupling experiments
 ✓ The Self-Reading Universe (Autoencoder CA)
 ✓ The Agentic Society (Latent vs. Introspective)
+✓ The AI Alignment Veto (Solving the Paperclip Maximizer)
 ```
 
 This repository is not a finished product. It is a **living experiment** – an invitation to think, code, and marvel about systems, intelligence, and emergence.
