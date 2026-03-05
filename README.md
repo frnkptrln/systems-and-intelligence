@@ -59,6 +59,7 @@ Each subfolder contains its own README with context and details.
 | `phase-transition-explorer/` | 🔥 Ising Model – order/disorder phase transition at the Edge of Chaos |
 | `economic-trust-network/` | 🤝 Trade network where specialization, reputation, and wealth emerge |
 | `coupled-lenia-boids/` | 🌪️ Multi-model coupling: Continuous CA (Lenia) ↔ Foraging Agents (Boids) |
+| `self-reading-universe/` | 👁️ The Self-Reading Universe: Downward causation from Autoencoder compression to CA physics |
 
 ### 📚 Theory & Essays
 
@@ -72,6 +73,8 @@ Selected theoretical notes and essays located in the `theory/` directory:
 - [**The Non-Individual Intelligence**](theory/the-non-individual-intelligence.md) – Life as "Social Computation", substrate-agnosticism, and incompleteness as a condition for life. Includes the Deep-Seed prompt for systemic alignment.
 - [**Mathematical Axioms of the Computational Ecology**](theory/mathematical-axioms.md) – Formalizing resilience through Graph Theory ($\lambda_2$), Information Theory ($H(X)$), Active Inference ($F$), and Algorithmic Complexity ($K(x)$).
 - [**Emergence & Downward Causation**](theory/emergence-downward-causation.md) – Weak vs. strong emergence, epistemic humility, and the role of macro-level explanations.
+- [**Emergence and the Origin of Intelligence**](theory/emergence-origin-intelligence.md) – Synthesizing Krakauer (2025) and Agüera y Arcas (2025): the feedback loop between life and intelligence, leading to a self-describing universe.
+- [**The Paradox of Metacognitive Consciousness**](theory/asimov-paradox-eternity.md) – An analysis of two Asimov stories representing the paradox of eternal consciousness, where achieving the infinite becomes an unbearable prison.
 
 ### 📡 Interactive Tools
 

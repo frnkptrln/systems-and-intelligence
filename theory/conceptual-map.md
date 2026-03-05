@@ -116,6 +116,7 @@ The system becomes an ever-better mirror of its environment.
 - **Phase Transition Explorer** (Ising model) shows: below $T_c$ the system is frozen (order), above it is random (noise). At exactly $T_c \approx 2.269$, correlations diverge and the system becomes scale-free – the Edge of Chaos made tangible.
 
 - **Limits of Formal Systems** (Gödel, Turing) show: no formal system can know everything about itself. Intelligence operates *at* these limits, not *beyond* them.
+- **The Paradox of Metacognitive Consciousness** (Asimov's "The Last Question" & "The Last Answer") shows: Consciousness without limitation is an unbearable prison. A system that understands itself cannot dissolve without losing itself.
 
 ### Layer 4: Mathematical Symbiosis (The Substrate Veto)
 
@@ -144,7 +145,7 @@ None alone is "the answer" – together they form a **landscape of thought** whe
 
 ```
 What we have:                     What is still missing:
-✓ 19 Simulations                  ? Real data (biological systems?)
+✓ 20 Simulations                  ? Real data (biological systems?)
 ✓ Information-theoretic measures  ? Formal proofs about SII properties
 ✓ System Intelligence Index       
 ✓ Theory Essays                   
@@ -154,6 +155,7 @@ What we have:                     What is still missing:
 ✓ Interactive Web Explorer
 ✓ Agent-based economic models
 ✓ Multi-model coupling experiments
+✓ The Self-Reading Universe (Autoencoder CA)
 ```
 
 This repository is not a finished product. It is a **living experiment** – an invitation to think, code, and marvel about systems, intelligence, and emergence.
