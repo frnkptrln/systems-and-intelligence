@@ -157,6 +157,7 @@ What we have:                     What is still missing:
 ✓ Agent-based economic models
 ✓ Multi-model coupling experiments
 ✓ The Self-Reading Universe (Autoencoder CA)
+✓ The Agentic Society (Latent vs. Introspective)
 ```
 
 This repository is not a finished product. It is a **living experiment** – an invitation to think, code, and marvel about systems, intelligence, and emergence.

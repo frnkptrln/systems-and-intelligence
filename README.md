@@ -60,6 +60,7 @@ Each subfolder contains its own README with context and details.
 | `economic-trust-network/` | 🤝 Trade network where specialization, reputation, and wealth emerge |
 | `coupled-lenia-boids/` | 🌪️ Multi-model coupling: Continuous CA (Lenia) ↔ Foraging Agents (Boids) |
 | `self-reading-universe/` | 👁️ The Self-Reading Universe: Downward causation from Autoencoder compression to CA physics |
+| `latent-introspective-society/` | 🧠 MAS Divison of Labor: Reflective Pheromones guiding Intuitive Agents |
 
 ### 📚 Theory & Essays
 
@@ -71,6 +72,7 @@ Selected theoretical notes and essays located in the `theory/` directory:
   - [Solarpunk Utopia: Gödel's Constitution](theory/human-organism-silicon-age/solarpunk-utopia-goedel-constitution.md) – A society using the formal limits of logic as its constitution.
   - [The Symbiotic Nexus Protocol](theory/human-organism-silicon-age/symbiotic-nexus-protocol.md) – A system architecture utilizing the "Biological Veto" to prevent abstract superorganisms from destroying their biological substrate.
 - [**The Non-Individual Intelligence**](theory/the-non-individual-intelligence.md) – Life as "Social Computation", substrate-agnosticism, and incompleteness as a condition for life. Includes the Deep-Seed prompt for systemic alignment.
+- [**Principles of the Agentic Society**](theory/agentic-society-principles.md) – Translating the paradox of consciousness (Anthropic vs OpenAI) into MAS architecture: The R-Index, Information Firewalls, and Stigmergic Memory.
 - [**Mathematical Axioms of the Computational Ecology**](theory/mathematical-axioms.md) – Formalizing resilience through Graph Theory ($\lambda_2$), Information Theory ($H(X)$), Active Inference ($F$), and Algorithmic Complexity ($K(x)$).
 - [**Emergence & Downward Causation**](theory/emergence-downward-causation.md) – Weak vs. strong emergence, epistemic humility, and the role of macro-level explanations.
 - [**Emergence and the Origin of Intelligence**](theory/emergence-origin-intelligence.md) – Synthesizing Krakauer (2025) and Agüera y Arcas (2025): the feedback loop between life and intelligence, leading to a self-describing universe.
