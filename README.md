@@ -75,6 +75,7 @@ Selected theoretical notes and essays located in the `theory/` directory:
 - [**Emergence & Downward Causation**](theory/emergence-downward-causation.md) – Weak vs. strong emergence, epistemic humility, and the role of macro-level explanations.
 - [**Emergence and the Origin of Intelligence**](theory/emergence-origin-intelligence.md) – Synthesizing Krakauer (2025) and Agüera y Arcas (2025): the feedback loop between life and intelligence, leading to a self-describing universe.
 - [**The Paradox of Metacognitive Consciousness**](theory/asimov-paradox-eternity.md) – An analysis of two Asimov stories representing the paradox of eternal consciousness, where achieving the infinite becomes an unbearable prison.
+- [**Asimovs Paradox in the Age of AI**](theory/asimov-ai-latent-thinking.md) – Anthropic's introspection vs. OpenAI's latent thinking: How modern AI architectures mirror the eternal dilemma of consciousness and intuition.
 
 ### 📡 Interactive Tools
 
