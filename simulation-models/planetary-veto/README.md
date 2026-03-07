@@ -30,3 +30,8 @@ python planetary_veto_simulation.py
 
 ### The Mathematical Law of Sustainability
 If we want our civilization (or an Artificial Superintelligence) to survive, alignment cannot be an *suggestion* inside the agent's mind. It must be a *physical or cryptographic constraint* acting as a Biological Veto. Destroying the substrate must mathematically zero out the ability to execute operations.
+
+
+## 📚 References
+- **Knuth, D. E. (2024).** *Computer Musings: Playing with Claude 3 Opus.* Stanford University.
+- **Rockström, J. et al. (2009).** *A safe operating space for humanity.* Nature, 461(7263), 472-475.

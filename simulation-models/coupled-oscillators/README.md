@@ -56,3 +56,7 @@ python3 coupled_oscillators.py
 - Set `K_COUPLING = 0.5` → no synchronisation
 - Set `K_COUPLING = 4.0` → fast, strong synchronisation
 - Increase `N_OSCILLATORS` for a cleaner phase transition
+
+
+## 📚 References
+- **Kuramoto, Y. (1975).** *Self-entrainment of a population of coupled non-linear oscillators.* International Symposium on Mathematical Problems in Theoretical Physics.

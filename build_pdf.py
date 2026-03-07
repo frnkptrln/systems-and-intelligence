@@ -17,6 +17,7 @@ def generate_pdf():
     # Ensure chapters are read in order
     chapters = sorted([f for f in os.listdir(book_dir) if f.endswith('.md')])
     
+    # Exclude non-book markdown if any, though all 00-07 are book.
     # Accumulate all markdown content
     full_markdown = "# Systems & Intelligence\n\n## The Grand Synthesis\n\n*By Frank Peterlein*\n\n<div style='page-break-after: always;'></div>\n\n"
     

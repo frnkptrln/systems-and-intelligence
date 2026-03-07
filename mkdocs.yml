@@ -18,6 +18,7 @@ nav:
       - "Part 4: Macro-Structures": book/04_macro_structures.md
       - "Part 5: Future Perspectives": book/05_future_perspectives.md
       - "Part 6: The Thermodynamic Mirror": book/06_the_thermodynamic_mirror.md
+      - Bibliography: book/07_bibliography.md
   - "🔬 Core Theories":
       - The Emergence Manifesto: theory/emergence-manifesto-v1.1.md
       - Conceptual Map: theory/conceptual-map.md

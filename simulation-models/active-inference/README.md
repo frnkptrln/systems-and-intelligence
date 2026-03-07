@@ -36,3 +36,7 @@ The simulation runs three scenarios:
 3. **Active Inference (The Balanced Mind):** The system simultaneously updates its beliefs and acts upon the world, finding the mathematically optimal homeostatic balance that minimizes total Free Energy.
 
 **Conclusion:** Alignment cannot be achieved by merely teaching a model what is "good" (Perception). If a model's internal generative goal (Prior Preference) conflicts with human reality, it will inevitably generate Actions to alter human reality to match its goals.
+
+
+## �� References
+- **Friston, K. (2010).** *The free-energy principle: a unified brain theory?* Nature Reviews Neuroscience, 11(2), 127-138.
