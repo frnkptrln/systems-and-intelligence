@@ -258,3 +258,15 @@
 **What it shows:** That AI Alignment constraints are mathematically identical to the structural dysfunctions of human political systems. Representation failure (populism) is structurally identical to RLHF reward hacking. Constitutions function as low-parameter, high-latency System Prompts.
 **What it does NOT show:** That democracy should be replaced by algorithms. It actually demonstrates the opposite: that the inefficiency of democracy is a necessary cybernetic feedback loop preventing "Utility Trap" optimization.
 **Open question:** If a Constitution is a legacy System Prompt, is it possible to computationally verify a legal constitution against adversarial "prompt injection" (loopholes) before enacting it?
+
+---
+
+## `teo-civilization/` → Thermodynamics of Emergent Orchestration
+
+**Simulation:** [`simulation-models/teo-civilization/`](../simulation-models/teo-civilization/)
+**Demonstrates:** A coupled ODE system unifying evolutionary game theory (Replicator Equation), nonlinear dynamics (Kuramoto synchronization), control theory (Homeostatic brake), and thermodynamics (Entropy Budget) into a single dynamical model of civilization / AI ecology stability.
+**Supports claim in:** [`theory/thermodynamics-of-orchestration.md`](thermodynamics-of-orchestration.md) (the full TEO framework); [`theory/limitations-and-honest-assessment.md`](limitations-and-honest-assessment.md) (honest critique of mathematical originality).
+**What it shows:** Four testable predictions: (1) Without regulation ($\gamma = 0$), resources converge to monopoly (Gini $> 0.79$). (2) Without cultural coupling ($K < K_c$), the Kuramoto order parameter drops from $0.998$ to $0.208$ — polarization. (3) When entropy production exceeds the substrate's capacity ($\frac{dS}{dt} > D_{\max}$), the Biological Veto activates. (4) Stability requires $K > K_c$, $\gamma > 0$, and $\frac{dS}{dt} < D_{\max}$ simultaneously.
+**What it does NOT show:** That these simplified ODEs capture the true complexity of human societies or multi-agent AI systems. The model uses homogeneous fitness functions and fully connected networks — real systems have heterogeneous, evolving topologies.
+**Open question:** Can TEO be calibrated against real-world data (e.g., CO₂ trajectories as $\frac{dS}{dt}$, Gini coefficients as $x_i$ distributions, media polarization indices as $K$) to make quantitative predictions?
+
