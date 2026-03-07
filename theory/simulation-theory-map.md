@@ -247,3 +247,14 @@
 **What it shows:** That "values" can be formalized as structural attractors in a continuous state-space, and that alignment can be modeled as a control-theory problem (Continuous External Forcing vs. Internal Drift), distinct from the physical Substrate Veto.
 **What it does NOT show:** How to actually compute the exact utility vector of a production LLM in real-time, or how to practically enforce Citizen Assembly weights on a live model's activations without retraining.
 **Open question:** Can we design a "Utility Observer" that is mathematically guaranteed not to perturb the very utility function it is measuring (an epistemic boundary)?
+
+---
+
+## `political-utility-formalization/` → Statecraft as Utility Engineering
+
+**Simulation:** [`simulation-models/political-utility-formalization/`](../simulation-models/political-utility-formalization/)
+**Demonstrates:** Instrumental Convergence in politics (power-seeking overtakes terminal goals) and the "Mathematics of Sacrifice" (hidden state utility functions during resource crises).
+**Supports claim in:** [`theory/fractal-architecture-of-emergence.md`](fractal-architecture-of-emergence.md) (scale-invariance of emergence); [`theory/agentic-society-principles.md`](agentic-society-principles.md) (homeostatic regulation vs pure optimization).
+**What it shows:** That AI Alignment constraints are mathematically identical to the structural dysfunctions of human political systems. Representation failure (populism) is structurally identical to RLHF reward hacking. Constitutions function as low-parameter, high-latency System Prompts.
+**What it does NOT show:** That democracy should be replaced by algorithms. It actually demonstrates the opposite: that the inefficiency of democracy is a necessary cybernetic feedback loop preventing "Utility Trap" optimization.
+**Open question:** If a Constitution is a legacy System Prompt, is it possible to computationally verify a legal constitution against adversarial "prompt injection" (loopholes) before enacting it?
