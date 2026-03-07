@@ -27,6 +27,7 @@ nav:
       - Black Swans & Downward Causation: theory/black-swans-and-downward-causation.md
   - "💻 Simulation Modules":
       - Utility Engineering: simulation-models/utility-engineering/README.md
+      - Active Inference: simulation-models/active-inference/README.md
       - Political Formalization: simulation-models/political-utility-formalization/README.md
       - TEO Civilization: simulation-models/teo-civilization/README.md
       - Black Swan Resilience: simulation-models/black-swan-resilience/README.md

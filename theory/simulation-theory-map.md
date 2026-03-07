@@ -229,7 +229,18 @@
 
 ---
 
-## `grokking-phase-transition/` → Memory to Intelligence Transition
+### 2. Active Inference (Free Energy Principle)
+**Location:** [`simulation-models/active-inference/active_inference_simulation.py`](../simulation-models/active-inference/active_inference_simulation.py)
+
+**What it shows:**
+Karl Friston's formulation that systems minimize prediction error (surprisal) through two coupled mechanisms: Perception (changing beliefs to match the world) and Action (changing the world to match beliefs).
+
+**What it proves:**
+Goal-seeking behavior is not an added module. An agent with a strong "prior belief" about its optimal state will automatically exert energy (action) to alter the physical environment until reality matches its expectation. The script proves this mathematically via simple gradient descent on Variational Free Energy ($F$).
+
+---
+
+### 3. Grokking Phase Transition (Substrate Saturation) Intelligence Transition
 
 **Simulation:** [`simulation-models/grokking-phase-transition/`](../simulation-models/grokking-phase-transition/)
 **Demonstrates:** A neural network trained on modular arithmetic undergoes a sudden phase transition from memorization to generalization — "grokking."
