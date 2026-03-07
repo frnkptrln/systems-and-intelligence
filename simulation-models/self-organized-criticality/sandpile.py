@@ -159,7 +159,7 @@ def run():
 
     for grain_i in range(1, NUM_GRAINS + 1):
         if exit_flag["stop"]:
-            print("\nSimulation beendet (ESC).")
+            print("\nSimulation ended (ESC).")
             break
 
         # Drop grain at random position

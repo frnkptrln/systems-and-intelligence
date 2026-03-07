@@ -336,7 +336,7 @@ def run():
         print("\nAll patterns recalled. Close the window to exit.")
         plt.show()
     else:
-        print("\nSimulation beendet (ESC).")
+        print("\nSimulation ended (ESC).")
         plt.close(fig)
 
 

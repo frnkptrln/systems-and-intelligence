@@ -1,46 +1,46 @@
 # Tensor Logic Reasoning
 
-Kleines Experiment inspiriert von Pedro Domingos' Paper  
-**"Tensor Logic: The Language of AI"** und seinem Auftritt bei  
+A small experiment inspired by Pedro Domingos' paper  
+**"Tensor Logic: The Language of AI"** and his appearance on  
 **Machine Learning Street Talk**.
 
-Ziel: Auf minimaler Fläche zeigen, wie
+Goal: Show on minimal surface area how
 
-- Fakten (`Parent(Alice, Bob)`)
-- Regeln (`Ancestor(x, z)` als transitive Hülle von `Parent`)
-- logische Inferenz
+- Facts (`Parent(Alice, Bob)`)
+- Rules (`Ancestor(x, z)` as the transitive closure of `Parent`)
+- Logical inference
 - Embeddings
-- reasoning im Embedding-Space
+- Reasoning in embedding space
 
-in einem gemeinsamen Tensor-Formalismus gedacht werden können.
+can be thought of within a unified tensor formalism.
 
-## Idee
+## Concept
 
-Das Script `tensor_logic_demo.py`:
+The script `tensor_logic_demo.py`:
 
-1. Definiert eine kleine Welt mit vier Entitäten:
+1. Defines a small world with four entities:
    - Alice, Bob, Charlie, David
 
-2. Legt eine `Parent`-Relation als boolsche Matrix an.
+2. Creates a `Parent` relation as a boolean matrix.
 
-3. Berechnet die `Ancestor`-Relation als transitiven Abschluss von `Parent`.
+3. Computes the `Ancestor` relation as the transitive closure of `Parent`.
 
-4. Erzeugt zufällige, normierte Embeddings für jede Entität.
+4. Generates random, normalized embeddings for each entity.
 
-5. Baut einen Relationstensor `EmbParent[i, j]`, der
-   die Superposition der Tensorprodukte aller Parent-Paare enthält.
+5. Builds a relation tensor `EmbParent[i, j]` containing
+   the superposition of tensor products of all Parent pairs.
 
-6. Beantwortet Queries `Parent(a, b)` auf zwei Arten:
-   - **Logisch:** direkt aus der Parent-Matrix
-   - **Embedding-basiert:** via
+6. Answers queries `Parent(a, b)` in two ways:
+   - **Logical:** directly from the Parent matrix
+   - **Embedding-based:** via
 
      \[
      \text{score}(a,b) = Emb[a]^T \cdot EmbParent \cdot Emb[b]
      \]
 
-     und einer logistischen Funktion mit Temperatur \(T\).
+     and a logistic function with temperature \(T\).
 
-## Nutzung
+## Usage
 
 ```bash
 cd simulation-models/tensor-logic-reasoning

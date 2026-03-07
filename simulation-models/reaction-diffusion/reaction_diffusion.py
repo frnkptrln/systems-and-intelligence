@@ -154,7 +154,7 @@ def run():
 
     for step in range(1, MAX_STEPS + 1):
         if exit_flag["stop"]:
-            print("\nSimulation beendet (ESC).")
+            print("\nSimulation ended (ESC).")
             break
 
         U, V = gray_scott_step(U, V)

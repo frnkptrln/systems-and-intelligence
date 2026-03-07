@@ -157,7 +157,7 @@ def run():
     # ------------------------------------
     while True:
         if exit_flag["stop"]:
-            print("\nSimulation beendet (ESC gedrückt).")
+            print("\nSimulation ended (ESC pressed).")
             break
 
         step_count += 1

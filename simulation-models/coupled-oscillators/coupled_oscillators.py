@@ -126,7 +126,7 @@ def run():
     # ── Simulation loop ──
     for step in range(1, MAX_STEPS + 1):
         if exit_flag["stop"]:
-            print("\nSimulation beendet (ESC).")
+            print("\nSimulation ended (ESC).")
             break
 
         theta, r, psi = kuramoto_step(theta, omega, K_COUPLING, DT)

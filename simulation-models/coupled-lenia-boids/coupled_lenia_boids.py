@@ -330,7 +330,7 @@ def run():
 
     for step in range(1, MAX_STEPS + 1):
         if exit_flag["stop"]:
-            print("\nSimulation beendet (ESC).")
+            print("\nSimulation ended (ESC).")
             break
 
         sys.step()
