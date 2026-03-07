@@ -146,7 +146,7 @@ None alone is "the answer" – together they form a **landscape of thought** whe
 
 ```
 What we have:                     What is still missing:
-✓ 20 Simulations                  ? Real data (biological systems?)
+✓ 23 Simulations                  ? Real data (biological systems?)
 ✓ Information-theoretic measures  ? Formal proofs about SII properties
 ✓ System Intelligence Index       
 ✓ Theory Essays                   

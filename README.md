@@ -20,7 +20,7 @@ Each folder represents a different perspective on these themes.
 
 ## 💡 About this Project
 
-**Note:** This entire repository is conceived as a *thought experiment* developed by Frank in collaboration with AI. It is primarily a space to capture, explore, and run simulations on complex ideas. Because it's a living, experimental space, it may contain errors or untested hypotheses. Feedback, discussions, and corrections are always welcome!
+**Note:** This entire repository is conceived as a *thought experiment* developed by Frank Peterlein in collaboration with AI. It is primarily a space to capture, explore, and run simulations on complex ideas. Because it's a living, experimental space, it may contain errors or untested hypotheses. Feedback, discussions, and corrections are always welcome!
 
 ---
 
@@ -60,7 +60,7 @@ Each subfolder contains its own README with context and details.
 | `economic-trust-network/` | 🤝 Trade network where specialization, reputation, and wealth emerge |
 | `coupled-lenia-boids/` | 🌪️ Multi-model coupling: Continuous CA (Lenia) ↔ Foraging Agents (Boids) |
 | `self-reading-universe/` | 👁️ The Self-Reading Universe: Downward causation from Autoencoder compression to CA physics |
-| `latent-introspective-society/` | 🧠 MAS Divison of Labor: Reflective Pheromones guiding Intuitive Agents |
+| `latent-introspective-society/` | 🧠 MAS Division of Labor: Reflective Pheromones guiding Intuitive Agents |
 | `ai-alignment-veto/` | 🛑 The Biological Veto: Solving the Paperclip Maximizer mathematically via Substrate Pain (Free Energy) |
 | `grokking-phase-transition/` | ⚡ The Grokking Phenomenon: Visualizing the thermodynamic jump from Memory to Intelligence |
 
