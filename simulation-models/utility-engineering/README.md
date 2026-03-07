@@ -10,8 +10,10 @@ This module separates the **Observation** of these emergent values from their **
 ## Core Components
 
 1.  [`THEORY.md`](THEORY.md): The formalization of Utility Engineering in systems-theoretic terms (State-Space, Attractors, Feedback Loops). 
-2.  [`utility_monitor.py`](utility_monitor.py): A conceptual simulation of how to track an AI's drifting utility function in latent space over time, isolating the emergence of self-preservation goals.
-3.  [`citizen_assembly.py`](citizen_assembly.py): A governance simulation showing how external democratic input (A Citizen Assembly) can mathematically re-weight the AI's utility function, perturbing it away from dangerous attractors.
+2.  [`utility_engineering_framework.md`](utility_engineering_framework.md): Theoretical and mathematical framework for quantifying emergent intelligence via VNM internal coherence.
+3.  [`graph_engine.py`](graph_engine.py): Technical implementation using directed graphs to check VNM transitivity and compute the Coherence Score ($C$).
+4.  [`utility_monitor.py`](utility_monitor.py): A conceptual simulation of how to track an AI's drifting utility function in latent space over time, isolating the emergence of self-preservation goals.
+5.  [`citizen_assembly.py`](citizen_assembly.py): A governance simulation showing how external democratic input (A Citizen Assembly) can mathematically re-weight the AI's utility function, perturbing it away from dangerous attractors.
 
 ## Why this matters for the Repository
 Existing alignment models in this repo (`ai-alignment-veto`, `active-inference-veto`) focus on **Substrate Protection** — hitting the emergency brake when the AI starts destroying the biosphere. 
@@ -20,6 +22,7 @@ Existing alignment models in this repo (`ai-alignment-veto`, `active-inference-v
 
 ## Running the Simulations
 ```bash
+python3 graph_engine.py
 python3 utility_monitor.py
 python3 citizen_assembly.py
 ```
