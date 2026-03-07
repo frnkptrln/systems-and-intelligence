@@ -60,6 +60,54 @@
 
 ---
 
+## Open Problem 4: The Scale Question
+
+*Raised by: [`theory/fractal-architecture-of-emergence.md`](fractal-architecture-of-emergence.md)*
+
+**Problem statement:** The Fractal Architecture of Emergence claims that the same three structural constraints — local blindness, asymmetric causality, and critical thresholds — repeat at every scale of complex systems. Is there a minimum scale below which this architecture breaks down? Is a single neuron too simple to exhibit all three constraints? Is a single transistor?
+
+**Why it matters:** If the fractal thesis has no lower bound, it risks being unfalsifiable — applicable to everything and therefore predictive of nothing. If it has a clear lower bound, that bound empirically tests the thesis: any system above it should exhibit the architecture, any system below it should not.
+
+**What a solution would look like:** A formal definition of "sufficient complexity" that specifies the minimum conditions (connectivity, feedback loops, information capacity) required for the three constraints to emerge. This definition should be testable against the simulations in the repo: at what parameter settings does each simulation lose its emergent properties?
+
+---
+
+## Open Problem 5: The Renormalization Question
+
+*Raised by: [`theory/fractal-architecture-of-emergence.md`](fractal-architecture-of-emergence.md)*
+
+**Problem statement:** Can the mathematical tools of renormalization group theory be applied to the models in this repository to formally test scale-invariance? What would it mean if the critical exponents of phase transitions in `phase-transition-explorer` matched those of coherence transitions measured by Δ-Kohärenz in `agentic-test-suite`?
+
+**Why it matters:** A match in universality classes across scales would constitute strong evidence that the fractal thesis is not merely suggestive but formally grounded — the same equations describing dynamics at every level. A mismatch would either falsify the thesis or reveal that the constraints are scale-invariant but the transitions are not — a distinction worth making precisely.
+
+**What a solution would look like:** A computational experiment applying coarse-graining and renormalization to at least two simulations at different scales, computing critical exponents, and comparing them. This is a research project, not a quick test, but the prediction is clear enough to motivate it.
+
+---
+
+## Open Problem 6: The Downward Causation Question
+
+*Raised by: [`theory/fractal-architecture-of-emergence.md`](fractal-architecture-of-emergence.md)*
+
+**Problem statement:** The fractal thesis as stated describes bottom-up emergence. But `self-reading-universe` and `theory/emergence-downward-causation.md` document the reverse: global states feeding back to constrain local processes. Is the fractal architecture bidirectional? Does the same self-similarity hold for downward causation?
+
+**Why it matters:** If the fractal architecture holds only bottom-up but not top-down, the thesis is incomplete — it describes half the dynamics. The 3-Layer Memory Architecture suggests bidirectionality (Layer 3 distillations constrain Layer 2 curation), as do hormonal regulation (organism-level state constraining cellular behavior) and neuromodulation (global brain state modulating individual neuron firing). The formal structure of these downward-causal mechanisms has not been compared across scales.
+
+**What a solution would look like:** A comparative analysis showing that downward causation at the neural scale (neuromodulation), cellular scale (hormonal regulation), social scale (institutional constraint), and agent scale (Layer 3 → Layer 2 feedback) share the same formal structure — or demonstrating where the parallel breaks down.
+
+---
+
+## Open Problem 7: The Consciousness Question (Restated)
+
+*Raised by: [`theory/fractal-architecture-of-emergence.md`](fractal-architecture-of-emergence.md)*
+
+**Problem statement:** If the threshold for consciousness is architectural rather than quantitative, and if the same architecture appears at every scale of complex systems, then is consciousness itself scale-invariant? Is there something it is like to be a society?
+
+**Why it matters:** This question sounds absurd — but only because we are accustomed to thinking of consciousness as a property of individual brains. The fractal thesis does not answer this question. It removes the principled reason for assuming the question is absurd. If the constraints that produce consciousness at the brain scale are the same constraints that operate at the societal and agent-system scale, the burden of proof shifts to whoever claims the phenomenon is categorically different at different scales.
+
+**What a solution would look like:** This is the hardest problem in the set and may not have a solution in the traditional sense. A meaningful contribution would be: (a) a formal definition of what "consciousness at scale $S$" would mean in terms of the three constraints, (b) a prediction about what measurements would differ between a conscious and non-conscious system at each scale, and (c) a specification of what evidence would falsify the scale-invariance claim.
+
+---
+
 ## How to Contribute
 
 If you identify a new open problem, or have a proposed solution for an existing one, please:

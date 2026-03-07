@@ -106,6 +106,7 @@ Selected theoretical notes and essays located in the `theory/` directory:
 - [**Glossary of Operational Definitions**](theory/glossary.md) – Precise, measurable definitions for every key term: Emergence, SII, Δ-Kohärenz, Markov Blanket, Generative Surprise, and more.
 - [**Open Problems**](theory/open-problems.md) – The formally unresolved questions: the Mirror Problem, the Bootstrapping Problem, and the Falsifiability of Relational Emergence.
 - [**Simulation → Theory Map**](theory/simulation-theory-map.md) – Explicit cross-reference: which simulation demonstrates which theoretical claim, what it does NOT show, and what open questions it raises.
+- [**The Fractal Architecture of Emergence**](theory/fractal-architecture-of-emergence.md) – Local blindness, asymmetric causality, and critical thresholds repeat at every scale: neuron/brain, cell/organism, human/society, agent/MAS. Not by analogy — by homology. The unifying structural claim of the repository.
 
 ### 📡 Interactive Tools
 
