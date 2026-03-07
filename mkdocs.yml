@@ -24,10 +24,12 @@ nav:
       - Simulation Map: theory/simulation-theory-map.md
       - Thermodynamics of Orchestration (TEO): theory/thermodynamics-of-orchestration.md
       - Limitations & Honest Assessment: theory/limitations-and-honest-assessment.md
+      - Black Swans & Downward Causation: theory/black-swans-and-downward-causation.md
   - "💻 Simulation Modules":
       - Utility Engineering: simulation-models/utility-engineering/README.md
       - Political Formalization: simulation-models/political-utility-formalization/README.md
       - TEO Civilization: simulation-models/teo-civilization/README.md
+      - Black Swan Resilience: simulation-models/black-swan-resilience/README.md
       - Systems Orchestration: systems-orchestration/README.md
       - Agentic Identity Suite: agentic-test-suite/README.md
   - "📚 Reference":

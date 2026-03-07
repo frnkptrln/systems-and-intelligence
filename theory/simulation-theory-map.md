@@ -270,3 +270,14 @@
 **What it does NOT show:** That these simplified ODEs capture the true complexity of human societies or multi-agent AI systems. The model uses homogeneous fitness functions and fully connected networks — real systems have heterogeneous, evolving topologies.
 **Open question:** Can TEO be calibrated against real-world data (e.g., CO₂ trajectories as $\frac{dS}{dt}$, Gini coefficients as $x_i$ distributions, media polarization indices as $K$) to make quantitative predictions?
 
+---
+
+## `black-swan-resilience/` → Fat Tails, $\lambda_2$, and the Biological Veto
+
+**Simulation:** [`simulation-models/black-swan-resilience/`](../simulation-models/black-swan-resilience/)
+**Demonstrates:** How optimizing a networked sandpile for pure throughput guarantees catastrophic, fat-tailed regime shifts (Black Swans). By measuring early-warning signals (proxies for Transfer Entropy), an Active Inference Agent can trigger a Biological Veto to save the topology at the cost of short-term efficiency.
+**Supports claim in:** [`theory/black-swans-and-downward-causation.md`](black-swans-and-downward-causation.md) (fat-tails, downward causation).
+**What it shows:** That local optimizations create global tension, leading to downward causation where macro-avalanches enslave local nodes. The simulation proves you cannot engineer away Black Swans; you can only trade efficiency for survival.
+**What it does NOT show:** It models the Veto externally. True biological systems often encode the veto inherently into the chemistry of the components (e.g., cell apoptosis or neurotransmitter depletion).
+**Open question:** Can we design "apoptosis" into individual LLM agents so that a decentralized Veto naturally emerges without needing an external orchestrator measuring global entropy?
+
