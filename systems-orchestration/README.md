@@ -19,7 +19,8 @@ Based directly on the `"Systems & Intelligence" Architect Prompt`, the architect
 
 ## Usage
 
+To see the Multi-Paradigm architecture in action, run the live demonstration script. This will spin up three virtual LLM agents (with diverging utility functions) and route tasks dynamically between the Harmonic, Homeostatic, Market, and Flow paradigms:
+
 ```bash
-# Test the agent utility manager
-python3 agents/manager.py
+python3 live_demo.py
 ```
