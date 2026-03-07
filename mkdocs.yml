@@ -5,17 +5,17 @@ repo_url: https://github.com/frnkptrln/systems-and-intelligence
 repo_name: systems-and-intelligence
 edit_uri: blob/main/
 
-docs_dir: '.'
+docs_dir: 'docs'
 nav:
-  - Welcome: docs/index.md
-  - 📖 The Book: The Grand Synthesis:
-      - Introduction: docs/book/00_introduction.md
-      - Part 1 - Mechanics of Emergence: docs/book/01_mechanics_of_emergence.md
-      - Part 2 - Measuring the Mind: docs/book/02_measuring_the_mind.md
-      - Part 3 - Alignment & Control: docs/book/03_alignment_and_control.md
-      - Part 4 - Macro-Structures: docs/book/04_macro_structures.md
-      - Part 5 - Future Perspectives: docs/book/05_future_perspectives.md
-  - 🔬 Core Theories:
+  - Welcome: index.md
+  - "📖 The Book - The Grand Synthesis":
+      - Introduction: book/00_introduction.md
+      - Part 1 - Mechanics of Emergence: book/01_mechanics_of_emergence.md
+      - Part 2 - Measuring the Mind: book/02_measuring_the_mind.md
+      - Part 3 - Alignment & Control: book/03_alignment_and_control.md
+      - Part 4 - Macro-Structures: book/04_macro_structures.md
+      - Part 5 - Future Perspectives: book/05_future_perspectives.md
+  - "🔬 Core Theories":
       - The Emergence Manifesto: theory/emergence-manifesto-v1.1.md
       - Conceptual Map: theory/conceptual-map.md
       - Simulation Map: theory/simulation-theory-map.md
@@ -72,23 +72,4 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
-nav:
-  - Welcome: index.md
-  - 📖 The Book: The Grand Synthesis:
-      - Introduction: book/00_introduction.md
-      - Part 1 - Mechanics of Emergence: book/01_mechanics_of_emergence.md
-      - Part 2 - Measuring the Mind: book/02_measuring_the_mind.md
-      - Part 3 - Alignment & Control: book/03_alignment_and_control.md
-      - Part 4 - Macro-Structures: book/04_macro_structures.md
-  - 🔬 Core Theories:
-      - The Emergence Manifesto: theory/emergence-manifesto-v1.1.md
-      - Conceptual Map: theory/conceptual-map.md
-      - Simulation Map: theory/simulation-theory-map.md
-  - 💻 Simulation Modules:
-      - Utility Engineering: simulation-models/utility-engineering/README.md
-      - Political Formalization: simulation-models/political-utility-formalization/README.md
-      - Systems Orchestration: systems-orchestration/README.md
-      - Agentic Identity Suite: agentic-test-suite/README.md
-  - 📚 Reference:
-      - Glossary: theory/glossary.md
-      - Open Problems: theory/open-problems.md
+

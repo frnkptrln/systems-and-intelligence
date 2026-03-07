@@ -20,6 +20,12 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install mkdocs-material python-markdown-math
+      - name: Copy theoretical models into docs
+        run: |
+          cp -r theory docs/
+          cp -r simulation-models docs/
+          cp -r systems-orchestration docs/
+          cp -r agentic-test-suite docs/
       - run: mkdocs build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
