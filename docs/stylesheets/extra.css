@@ -1,30 +1,41 @@
 /* ============================================================
-   Systems & Intelligence — Custom Theme
-   A dark, premium aesthetic inspired by research labs & observatories
+   Systems & Intelligence — Premium Academic Theme
+   Dark observatory aesthetic with purple-blue gradient accents
    ============================================================ */
 
-/* --- Import a refined font --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* --- Import refined fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 /* --- Root Variables (Slate / Dark Mode) --- */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #0d0d0d;
-  --md-primary-fg-color--light: #1a1a2e;
+  --md-primary-fg-color: #0a0a0f;
+  --md-primary-fg-color--light: #12121f;
   --md-primary-fg-color--dark: #000000;
-  --md-accent-fg-color: #7c4dff;
-  --md-default-bg-color: #0d0f12;
-  --md-default-fg-color: #e0e0e0;
-  --md-default-fg-color--light: #b0b0b0;
-  --md-code-bg-color: #141820;
+  --md-accent-fg-color: #9c7cff;
+  --md-default-bg-color: #0c0e14;
+  --md-default-fg-color: #dcdde0;
+  --md-default-fg-color--light: #a0a4ac;
+  --md-code-bg-color: #12151e;
   --md-code-fg-color: #c9d1d9;
-  --md-typeset-a-color: #b388ff;
+  --md-typeset-a-color: #b49aff;
+  --si-glow: rgba(156, 124, 255, 0.12);
+  --si-gradient-start: #7c4dff;
+  --si-gradient-end: #00b0ff;
+  --si-surface: rgba(255, 255, 255, 0.03);
+  --si-border: rgba(156, 124, 255, 0.12);
 }
 
 /* --- Root Variables (Light Mode) --- */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color: #1a1a2e;
-  --md-accent-fg-color: #651fff;
+  --md-primary-fg-color: #f5f5fa;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: #5e35b1;
   --md-typeset-a-color: #5e35b1;
+  --si-glow: rgba(94, 53, 177, 0.08);
+  --si-gradient-start: #5e35b1;
+  --si-gradient-end: #1565c0;
+  --si-surface: rgba(0, 0, 0, 0.02);
+  --si-border: rgba(94, 53, 177, 0.1);
 }
 
 /* --- Typography --- */
@@ -34,108 +45,274 @@
 }
 
 .md-typeset {
-  font-size: 1rem;
-  line-height: 1.8;
-  letter-spacing: 0.01em;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  letter-spacing: 0.005em;
 }
 
+/* --- Headings with Outfit display font --- */
 .md-typeset h1 {
+  font-family: "Outfit", var(--md-text-font);
   font-weight: 700;
+  font-size: 2.2rem;
   letter-spacing: -0.03em;
-  color: var(--md-accent-fg-color);
-  border-bottom: 2px solid rgba(124, 77, 255, 0.2);
-  padding-bottom: 0.4em;
+  background: linear-gradient(135deg, var(--si-gradient-start), var(--si-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom: none;
+  padding-bottom: 0.2em;
   margin-bottom: 1em;
 }
 
 .md-typeset h2 {
+  font-family: "Outfit", var(--md-text-font);
   font-weight: 600;
+  font-size: 1.55rem;
   letter-spacing: -0.02em;
-  margin-top: 2em;
+  margin-top: 2.5em;
   color: var(--md-default-fg-color);
 }
 
 .md-typeset h3 {
+  font-family: "Outfit", var(--md-text-font);
   font-weight: 500;
-  opacity: 0.9;
+  font-size: 1.2rem;
+  opacity: 0.92;
 }
 
-/* --- Hero Banner (Index page) --- */
+/* --- Hero Banner (Landing page) --- */
 .md-typeset .hero-banner {
   text-align: center;
-  padding: 3rem 1rem;
-  margin-bottom: 2rem;
-  background: linear-gradient(135deg, rgba(124, 77, 255, 0.08), rgba(0, 176, 255, 0.05));
+  padding: 4rem 2rem 3.5rem;
+  margin-bottom: 2.5rem;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(124, 77, 255, 0.15), transparent 55%),
+    radial-gradient(ellipse at 70% 80%, rgba(0, 176, 255, 0.08), transparent 55%),
+    var(--si-surface);
+  border-radius: 16px;
+  border: 1px solid var(--si-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.md-typeset .hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237c4dff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.md-typeset .hero-banner h2 {
+  font-family: "Outfit", var(--md-text-font);
+  font-weight: 800;
+  font-size: 2.4rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--si-gradient-start), var(--si-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+
+.md-typeset .hero-banner em {
+  font-size: 1.15rem;
+  font-weight: 300;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.md-typeset .hero-banner strong {
+  font-weight: 400;
+  opacity: 0.6;
+  font-size: 0.95rem;
+}
+
+/* --- Cards for navigation sections --- */
+.md-typeset .grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.md-typeset .card {
+  background: var(--si-surface);
+  border: 1px solid var(--si-border);
   border-radius: 12px;
-  border: 1px solid rgba(124, 77, 255, 0.15);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.md-typeset .card:hover {
+  border-color: var(--md-accent-fg-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 77, 255, 0.08);
+}
+
+.md-typeset .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--si-gradient-start), var(--si-gradient-end));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.md-typeset .card:hover::after {
+  opacity: 1;
+}
+
+.md-typeset .card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.md-typeset .card p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  line-height: 1.6;
 }
 
 /* --- Code Blocks --- */
 .md-typeset code {
-  border-radius: 4px;
-  padding: 0.15em 0.4em;
-  font-size: 0.88em;
+  border-radius: 5px;
+  padding: 0.2em 0.45em;
+  font-size: 0.87em;
+  background: var(--md-code-bg-color);
 }
 
 .md-typeset pre {
-  border-radius: 8px;
-  border: 1px solid rgba(124, 77, 255, 0.12);
+  border-radius: 10px;
+  border: 1px solid var(--si-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .md-typeset pre>code {
-  font-size: 0.88rem;
+  font-size: 0.87rem;
 }
 
 /* --- Admonitions --- */
 .md-typeset .admonition,
 .md-typeset details {
-  border-radius: 8px;
+  border-radius: 10px;
   border-left-width: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  background: var(--si-surface);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-family: "Outfit", var(--md-text-font);
+  font-weight: 600;
 }
 
 /* --- Math blocks --- */
 .md-typeset .MathJax {
-  font-size: 1.05em;
+  font-size: 1.08em;
 }
 
-/* --- Navigation --- */
-.md-nav__link {
-  font-size: 0.88rem;
-  letter-spacing: 0.01em;
-}
-
+/* --- Navigation tabs (top bar) --- */
 .md-tabs__link {
+  font-family: "Outfit", var(--md-text-font);
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
 }
 
-/* --- Header polish --- */
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  opacity: 1;
+}
+
+/* --- Sidebar navigation --- */
+.md-nav__link {
+  font-size: 0.88rem;
+  letter-spacing: 0.005em;
+  border-radius: 4px;
+  padding: 0.3em 0.6em;
+  transition: all 0.15s ease;
+}
+
+.md-nav__link:hover {
+  background: var(--si-glow);
+}
+
+.md-nav__item--active>.md-nav__link {
+  font-weight: 600;
+  color: var(--md-accent-fg-color);
+}
+
+/* --- Header (frosted glass) --- */
 .md-header {
-  background: rgba(13, 15, 18, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(156, 124, 255, 0.06);
 }
 
 [data-md-color-scheme="default"] .md-header {
-  background: rgba(26, 26, 46, 0.97);
+  background: rgba(245, 245, 250, 0.95);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
 }
 
 /* --- Footer --- */
 .md-footer {
-  border-top: 1px solid rgba(124, 77, 255, 0.1);
+  border-top: 1px solid var(--si-border);
 }
 
 .md-footer-meta {
   background: var(--md-default-bg-color);
 }
 
-/* --- Content container width --- */
+/* --- Content width & reading experience --- */
 .md-content__inner {
-  max-width: 52rem;
+  max-width: 54rem;
+}
+
+/* --- Buttons --- */
+.md-typeset .md-button {
+  border-radius: 8px;
+  font-family: "Outfit", var(--md-text-font);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0.7em 1.6em;
+  transition: all 0.25s ease;
+}
+
+.md-typeset .md-button--primary {
+  background: linear-gradient(135deg, var(--si-gradient-start), var(--si-gradient-end));
+  border: none;
+  color: white;
+  box-shadow: 0 4px 16px rgba(124, 77, 255, 0.25);
+}
+
+.md-typeset .md-button--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(124, 77, 255, 0.35);
+}
+
+.md-typeset .md-button:not(.md-button--primary) {
+  border: 1px solid var(--si-border);
+  background: var(--si-surface);
+}
+
+.md-typeset .md-button:not(.md-button--primary):hover {
+  border-color: var(--md-accent-fg-color);
+  background: var(--si-glow);
 }
 
 /* --- Smooth transitions --- */
@@ -145,39 +322,124 @@ a {
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-/* --- Blockquotes (used in the book heavily) --- */
+/* --- Blockquotes --- */
 .md-typeset blockquote {
   border-left: 3px solid var(--md-accent-fg-color);
-  background: rgba(124, 77, 255, 0.04);
-  border-radius: 0 6px 6px 0;
-  padding: 0.8em 1.2em;
-  margin: 1.2em 0;
+  background: var(--si-glow);
+  border-radius: 0 8px 8px 0;
+  padding: 1em 1.4em;
+  margin: 1.5em 0;
+  font-style: italic;
+}
+
+.md-typeset blockquote p {
+  margin: 0;
 }
 
 /* --- Tables --- */
 .md-typeset table:not([class]) {
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--si-border);
 }
 
 .md-typeset table:not([class]) th {
-  background: rgba(124, 77, 255, 0.1);
+  background: linear-gradient(135deg, rgba(124, 77, 255, 0.1), rgba(0, 176, 255, 0.05));
+  font-family: "Outfit", var(--md-text-font);
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.82rem;
-  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.9em 1em;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.8em 1em;
+  border-bottom: 1px solid var(--si-border);
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: var(--si-glow);
 }
 
 /* --- Horizontal Rules --- */
 .md-typeset hr {
   border: none;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(124, 77, 255, 0.3), transparent);
-  margin: 2.5em 0;
+  background: linear-gradient(90deg, transparent, var(--si-gradient-start), var(--si-gradient-end), transparent);
+  margin: 3em 0;
+  opacity: 0.4;
 }
 
 /* --- Selection highlight --- */
 ::selection {
   background: rgba(124, 77, 255, 0.3);
+}
+
+/* --- Tooltip / annotations --- */
+.md-annotation__index {
+  background: var(--md-accent-fg-color) !important;
+}
+
+/* --- Stats bar on landing page --- */
+.md-typeset .stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--si-surface);
+  border: 1px solid var(--si-border);
+  border-radius: 12px;
+}
+
+.md-typeset .stat {
+  text-align: center;
+}
+
+.md-typeset .stat-number {
+  font-family: "Outfit", var(--md-text-font);
+  font-weight: 700;
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--si-gradient-start), var(--si-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  line-height: 1.1;
+}
+
+.md-typeset .stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+/* --- Smooth page load --- */
+.md-content {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Print improvements --- */
+@media print {
+  .md-typeset h1 {
+    -webkit-text-fill-color: #333;
+    color: #333;
+  }
 }
