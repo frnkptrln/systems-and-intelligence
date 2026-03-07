@@ -34,8 +34,8 @@
 }
 
 .md-typeset {
-  font-size: 0.82rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.8;
   letter-spacing: 0.01em;
 }
 
@@ -74,7 +74,7 @@
 .md-typeset code {
   border-radius: 4px;
   padding: 0.15em 0.4em;
-  font-size: 0.82em;
+  font-size: 0.88em;
 }
 
 .md-typeset pre {
@@ -82,8 +82,8 @@
   border: 1px solid rgba(124, 77, 255, 0.12);
 }
 
-.md-typeset pre > code {
-  font-size: 0.78rem;
+.md-typeset pre>code {
+  font-size: 0.88rem;
 }
 
 /* --- Admonitions --- */
@@ -101,15 +101,15 @@
 
 /* --- Navigation --- */
 .md-nav__link {
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   letter-spacing: 0.01em;
 }
 
 .md-tabs__link {
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
 }
 
 /* --- Header polish --- */
@@ -139,7 +139,9 @@
 }
 
 /* --- Smooth transitions --- */
-.md-nav__link, .md-tabs__link, a {
+.md-nav__link,
+.md-tabs__link,
+a {
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
@@ -163,8 +165,8 @@
   background: rgba(124, 77, 255, 0.1);
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
 }
 
 /* --- Horizontal Rules --- */

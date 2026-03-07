@@ -8,7 +8,7 @@
 
 **By Frank Peterlein** · Independent Research · 2024–2026
 
-[Read the Book :material-book-open-variant:](#){ .md-button .md-button--primary } [View on GitHub :fontawesome-brands-github:](https://github.com/frnkptrln/systems-and-intelligence){ .md-button }
+[Read the Book :material-book-open-variant:](book/00_introduction.md){ .md-button .md-button--primary } [View on GitHub :fontawesome-brands-github:](https://github.com/frnkptrln/systems-and-intelligence){ .md-button }
 
 </div>
 
