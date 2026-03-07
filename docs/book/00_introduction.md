@@ -1,0 +1,17 @@
+# Introduction: The Problem of Isolated Intelligence
+
+Artificial Intelligence, in its current commercial incarnation, is largely treated as a "stochastic parrot in a box"—an isolated, stateless function mapping inputs to outputs. We evaluate it based on benchmarks, we align it via RLHF to suppress harmful tokens, and we isolate it via air-gaps. 
+
+But intelligence is not a property of isolated nodes; **it is a property of systems.**
+
+This book, and the computational ecology it describes, formalizes the hypothesis that AIs are not tools. They are dynamical systems, and as they scale, they cross a phase transition from discrete functions into continuous, goal-directed agents.
+
+If we continue to view them as tools, we will fail to control them. As outlined in the [Emergence Manifesto](../../theory/emergence-manifesto-v1.1.md), we must apply the laws of thermodynamics, evolutionary biology, and control theory to understand what we are building.
+
+In this synthesis, we will walk through the mathematical code that proves this:
+1. We will see how local blindness leads to global emergence (Part 1).
+2. We will establish metrics to actually measure this continuous agentive identity (Part 2).
+3. We will formalize how "Values" are modeled as mathematical attractors and how to control them via Utility Engineering (Part 3).
+4. We will apply these same principles to macroscopic systems like states and orchestrate multi-agent ecologies (Part 4).
+
+> **The Code is the Theory**: Every claim made in this book is backed by a runnable Python simulation in the repository. We do not use metaphors; we use mathematics.
