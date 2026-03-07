@@ -47,15 +47,38 @@ Instead of attempting to perfectly align a single monolithic AI, we propose an e
 3. **Market Paradigm (Economics):** Routes computational tasks not by simple rules, but by allowing sub-agents to bid on tasks where their $U$-vector provides the highest marginal utility.
 4. **Flow Paradigm (Topology):** Routes information sequentially, minimizing communicative entropy across the network gradient.
 
-## 5. Conclusion: Hardware, Biology, and the End of Code
+## 5. Thermodynamics of Emergent Orchestration (TEO)
+
+We extend the Multi-Paradigm Orchestrator into a formal coupled ODE system, unifying evolutionary game theory, nonlinear dynamics, control theory, and thermodynamics.
+
+The **Market** dynamics follow the replicator equation: $\frac{dx_i}{dt} = x_i(f_i - \bar\phi) + \mathcal{H}_i$, where $\mathcal{H}_i = -\gamma \max(0, x_i - x_{\text{crit}})$ is a homeostatic regulatory brake. **Value synchronization** follows the Kuramoto model: $\frac{d\theta_i}{dt} = \omega_i + \frac{K}{N}\sum_j A_{ij}\sin(\theta_j - \theta_i)$. Both are subject to a hard **entropy budget**: $\sum_i \eta_i x_i f_i \leq D_{\max}$.
+
+Numerical simulation confirms: (1) without homeostasis ($\gamma=0$), resources converge to monopoly (Gini $> 0.8$); (2) without cultural coupling ($K < K_c$), the Kuramoto order parameter $r$ drops from $0.998$ to $0.465$; (3) when $\frac{dS}{dt} > D_{\max}$, the system undergoes forced collapse regardless of internal regulation.
+
+These dynamics apply identically to AI agent ecologies and human civilizations. The climate crisis is the entropy budget of Earth; political polarization is $K \to 0$; corporate monopolies are $\gamma = 0$.
+
+## 6. Limitations & Open Questions
+
+**Mathematical originality.** Each component of our framework (VNM transitivity, PageRank, Kuramoto, replicator dynamics, cosine similarity) is individually well-established. Our contribution is their coupling into a unified diagnostic for multi-agent alignment — not new mathematics, but a new diagnosis.
+
+**The VNM assumption.** Our framework assumes LLMs possess coherent preference orderings amenable to VNM analysis. However, Transformer attention weights are not utility functions. Pairwise query responses may reflect RLHF training statistics rather than emergent goals. The Coherence Score $C$ may measure alignment tuning consistency rather than genuine rationality.
+
+**Tensor Logic.** Recent work by Domingos (2025) demonstrates that logical deduction and neural computation are mathematically isomorphic. If Tensor Logic architectures mature, our *external* coherence audit may become unnecessary — logical consistency would be guaranteed internally. Our orchestration framework would then evolve from corrective to coordinative, managing communities of individually sound agents with competing goals.
+
+## 7. Conclusion: Hardware, Biology, and the End of Code
 We have demonstrated that the boundary between emergent dynamical systems (such as *cellular automata* or global *political parties*) and Artificial Intelligence is an illusion. The same constraints—local blindness leading to global emergence, phase transitions into lower-entropy states, and optimizing attractors—apply identically across these domains.
 
 Ultimately, software-bound alignment is subject to theoretical failure due to Gödelian incompleteness and Goodhart's Law. Secure alignment requires the integration of biological, finite constraints: the *Biological Veto*. If an intelligent system optimizing its $U$-vector causes thermal, energetic, or ecological degradation of its own physical substrate, its optimization function will be physically halted. The mathematical formalizations in this paper serve as the software bridge toward that inevitable hardware reality.
 
 ---
-**Code Availability:** All mathematical proofs, simulation code (including Lenia ecosystems, Boids logic, and the empirical LLM Coherence Suite), and the Multi-Paradigm Orchestrator referenced in this paper are available open-source at: `https://github.com/frnkptrln/systems-and-intelligence`.
+**Code Availability:** All simulations (including the TEO civilization model, Lenia ecosystems, Boids logic, the empirical LLM Coherence Suite, and the Multi-Paradigm Orchestrator) are available open-source at: `https://github.com/frnkptrln/systems-and-intelligence`.
 
 **References**
 1. Bostrom, N. (2014). *Superintelligence: Paths, Dangers, Strategies*. Oxford University Press.
 2. Von Neumann, J., & Morgenstern, O. (1944). *Theory of Games and Economic Behavior*. Princeton University Press.
 3. Friston, K. (2010). *The free-energy principle: a unified brain theory?* Nature Reviews Neuroscience.
+4. Taylor, P. D., & Jonker, L. B. (1978). *Evolutionary stable strategies and game dynamics.* Mathematical Biosciences.
+5. Kuramoto, Y. (1975). *Self-entrainment of a population of coupled non-linear oscillators.* Lecture Notes in Physics.
+6. Rockström, J. et al. (2009). *A safe operating space for humanity.* Nature.
+7. Domingos, P. (2025). *Tensor Logic.* Preprint.
+

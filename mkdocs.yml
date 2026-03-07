@@ -17,13 +17,17 @@ nav:
       - "Part 3: Alignment & Control": book/03_alignment_and_control.md
       - "Part 4: Macro-Structures": book/04_macro_structures.md
       - "Part 5: Future Perspectives": book/05_future_perspectives.md
+      - "Part 6: The Thermodynamic Mirror": book/06_the_thermodynamic_mirror.md
   - "🔬 Core Theories":
       - The Emergence Manifesto: theory/emergence-manifesto-v1.1.md
       - Conceptual Map: theory/conceptual-map.md
       - Simulation Map: theory/simulation-theory-map.md
+      - Thermodynamics of Orchestration (TEO): theory/thermodynamics-of-orchestration.md
+      - Limitations & Honest Assessment: theory/limitations-and-honest-assessment.md
   - "💻 Simulation Modules":
       - Utility Engineering: simulation-models/utility-engineering/README.md
       - Political Formalization: simulation-models/political-utility-formalization/README.md
+      - TEO Civilization: simulation-models/teo-civilization/README.md
       - Systems Orchestration: systems-orchestration/README.md
       - Agentic Identity Suite: agentic-test-suite/README.md
   - "📚 Reference":
