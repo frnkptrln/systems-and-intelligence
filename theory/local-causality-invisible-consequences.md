@@ -135,8 +135,8 @@ The neuron doesn't get to watch the thought form. The grain doesn't get to watch
 |:------|:----------|:--------------------|
 | Local blindness is the baseline condition | Algorithmic Complexity $K(x)$ | [`theory/mathematical-axioms.md`](mathematical-axioms.md) |
 | Global coherence without central coordination | Fiedler value $\lambda_2$ (graph connectivity) | [`theory/mathematical-axioms.md`](mathematical-axioms.md) |
-| Invisible causal propagation | Transfer Entropy | [`data-analysis/`](../data-analysis/) |
-| Critical threshold for coherence collapse | Phase transition / Ising model | [`simulation-models/phase-transition-explorer/`](../simulation-models/phase-transition-explorer/) |
+| Invisible causal propagation | Transfer Entropy | [`data-analysis/`](../data-analysis/README.md) |
+| Critical threshold for coherence collapse | Phase transition / Ising model | [`simulation-models/phase-transition-explorer/`](../simulation-models/phase-transition-explorer/README.md) |
 | Agent's inability to observe own global properties | Δ-Kohärenz (Ω) | [`agentic-test-suite/metrics/delta_coherence.py`](../agentic-test-suite/metrics/delta_coherence.py) |
 | Self-referential closure as minimum condition | Free Energy $F$ (Active Inference) | [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md) |
 

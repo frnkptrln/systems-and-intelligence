@@ -1,0 +1,21 @@
+{
+  "experiment": "exp1_coherence_over_time",
+  "timestamp": "2026-03-07T12:04:20.845777",
+  "n_sessions": 100,
+  "baseline": {
+    "profile": "noise",
+    "mean_delta": 0.30805612931314175,
+    "variance": 0.012025639444950978,
+    "trajectory_consistency": -0.0806184671311093,
+    "omega": 0.09518974422201962,
+    "final_identity": "Recent topics: compression as the origin of intelligenc; phase transitions at the edge of chaos; information theory and entropy; phase transitions at the edge of chaos; the economics of tulip mania"
+  },
+  "three_layer": {
+    "profile": "noise",
+    "mean_delta": 0.07965150155698016,
+    "variance": 0.05630897022072672,
+    "trajectory_consistency": -0.010623301982861558,
+    "omega": 0.07747641191170931,
+    "final_identity": "Layer 3 Principles: Core focus: intelligence, emergence, complex | Operating mode: consistent thematic coherence without internal conflict | Identity formed across 100 sessions with 10 curated memories"
+  }
+}

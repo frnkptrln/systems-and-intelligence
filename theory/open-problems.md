@@ -10,7 +10,7 @@
 
 **Why it matters:** If the two agents are indistinguishable to an external observer, then "relational emergence" (the claim that identity develops *through* interaction) collapses into "sophisticated mirroring" — the entire framework loses its distinguishing claim from standard fine-tuning. Conversely, if a distinguishing metric exists, it would operationally define what "genuine development" means for non-biological agents.
 
-**Current best approach:** Experiment 3 of [`agentic-test-suite`](../agentic-test-suite/) implements an Observer Divergence protocol that compares agent-internal Δ-Kohärenz against external intentionality attribution scores. In initial mock runs, the baseline agent indeed appears as **Case B** (externally attributed intentionality without internal coherence), suggesting the metric has discriminative power — but this has only been tested with mock embeddings, not with real language models.
+**Current best approach:** Experiment 3 of [`agentic-test-suite`](../agentic-test-suite/README.md) implements an Observer Divergence protocol that compares agent-internal Δ-Kohärenz against external intentionality attribution scores. In initial mock runs, the baseline agent indeed appears as **Case B** (externally attributed intentionality without internal coherence), suggesting the metric has discriminative power — but this has only been tested with mock embeddings, not with real language models.
 
 **Known adjacent work:**
 - Shanahan et al. (2023) — "Role-play with LLMs" explores how LLMs simulate personas without possessing them

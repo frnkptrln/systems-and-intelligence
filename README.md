@@ -126,7 +126,7 @@ Selected theoretical notes and essays located in the `theory/` directory:
 
 ### 📡 Interactive Tools
 
-- [**Web Emergence Explorer**](tools/web-explorer/) – Browser-based Game of Life with real-time entropy, spatial mutual information, and complexity charts. Zero dependencies.
+- [**Web Emergence Explorer**](tools/web-explorer/README.md) – Browser-based Game of Life with real-time entropy, spatial mutual information, and complexity charts. Zero dependencies.
 - [**SII Dashboard**](data-analysis/sii_dashboard.py) – Quantitative System Intelligence Index: runs headless mini-simulations and generates comparative radar/bar charts of P, R, A dimensions.
 
 ---

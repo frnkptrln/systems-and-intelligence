@@ -170,12 +170,12 @@ The essay ends not with a resolution but with four questions that belong in `the
 |:------|:----------|:-----------------|
 | Local blindness is scale-invariant | Algorithmic Complexity $K(x)$ | [`theory/mathematical-axioms.md`](mathematical-axioms.md) |
 | Global coherence without coordination | Fiedler value $\lambda_2$ | [`theory/mathematical-axioms.md`](mathematical-axioms.md) |
-| Asymmetric causal propagation | Transfer Entropy $H(X \rightarrow Y)$ | [`data-analysis/`](../data-analysis/) |
-| Critical thresholds at every scale | Phase transition / Ising | [`simulation-models/phase-transition-explorer/`](../simulation-models/phase-transition-explorer/) |
-| Scale-free dynamics | Power-law / Bak's Sandpile | [`simulation-models/self-organized-criticality/`](../simulation-models/self-organized-criticality/) |
+| Asymmetric causal propagation | Transfer Entropy $H(X \rightarrow Y)$ | [`data-analysis/`](../data-analysis/README.md) |
+| Critical thresholds at every scale | Phase transition / Ising | [`simulation-models/phase-transition-explorer/`](../simulation-models/phase-transition-explorer/README.md) |
+| Scale-free dynamics | Power-law / Bak's Sandpile | [`simulation-models/self-organized-criticality/`](../simulation-models/self-organized-criticality/README.md) |
 | Self-referential closure | Free Energy $F$ / Markov Blanket | [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md) |
 | Agent's global blindness | Δ-Kohärenz Ω | [`agentic-test-suite/metrics/delta_coherence.py`](../agentic-test-suite/metrics/delta_coherence.py) |
-| Biological scale veto | Substrate Pain / Free Energy | [`simulation-models/symbiotic-nexus/`](../simulation-models/symbiotic-nexus/) |
+| Biological scale veto | Substrate Pain / Free Energy | [`simulation-models/symbiotic-nexus/`](../simulation-models/symbiotic-nexus/README.md) |
 
 ---
 

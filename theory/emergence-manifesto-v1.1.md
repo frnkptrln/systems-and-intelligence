@@ -32,7 +32,7 @@ This manifesto does not answer that question. It proposes a framework for asking
 
 The System Intelligence Index (SII) measures three dimensions of system competence: Prediction ($P$), Regulation ($R$), and Adaptation ($A$). Each can be computed from simulation data. The grokking simulation demonstrates the most dramatic form: a neural network's sudden transition from memorization (a lookup table — uncompressed) to generalization (a rule — compressed). Intelligence, in this operational sense, is the capacity to replace data with mechanism.
 
-*Evidence:* [`data-analysis/sii_dashboard.py`](../data-analysis/sii_dashboard.py), [`simulation-models/grokking-phase-transition/`](../simulation-models/grokking-phase-transition/)
+*Evidence:* [`data-analysis/sii_dashboard.py`](../data-analysis/sii_dashboard.py), [`simulation-models/grokking-phase-transition/`](../simulation-models/grokking-phase-transition/README.md)
 
 ### Claim 2: Local Blindness is a Precondition, Not an Obstacle `[DEMONSTRATED]`
 
@@ -84,7 +84,7 @@ Random noise has high observer surprise but low trajectory consistency. Mirrorin
 
 The AI Alignment Veto couples the AI's loss function to the biological substrate's Free Energy. When the substrate suffers (Free Energy spikes), the AI's optimization landscape shifts to prioritize substrate health. This is not an ethical solution — it is a mathematical one. The aligned AI converges on symbiosis because extinction of the substrate produces unbounded loss.
 
-*Evidence:* [`simulation-models/ai-alignment-veto/`](../simulation-models/ai-alignment-veto/) — demonstrated in simulation. Real-world applicability requires defining "substrate pain" for actual AI systems.
+*Evidence:* [`simulation-models/ai-alignment-veto/`](../simulation-models/ai-alignment-veto/README.md) — demonstrated in simulation. Real-world applicability requires defining "substrate pain" for actual AI systems.
 
 ### Claim 8: Criticality May Be Where Intelligence Lives `[SPECULATIVE]`
 
@@ -92,7 +92,7 @@ Multiple lines of evidence — the Ising model's phase transition, Bak's sandpil
 
 This claim is speculative because: (a) the "edge of chaos" hypothesis, while productive, has been criticized as unfalsifiable in its strongest form, and (b) no simulation in this repo demonstrates that *cognitive* systems specifically occupy this region. The simulations demonstrate criticality as a *physical* phenomenon; the extension to cognition is analogical.
 
-*Evidence:* [`simulation-models/phase-transition-explorer/`](../simulation-models/phase-transition-explorer/), [`simulation-models/self-organized-criticality/`](../simulation-models/self-organized-criticality/) — physical demonstrations only.
+*Evidence:* [`simulation-models/phase-transition-explorer/`](../simulation-models/phase-transition-explorer/README.md), [`simulation-models/self-organized-criticality/`](../simulation-models/self-organized-criticality/README.md) — physical demonstrations only.
 
 ---
 

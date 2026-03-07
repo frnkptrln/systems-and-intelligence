@@ -1,0 +1,168 @@
+# Conceptual Map – How Everything Connects
+
+*An overview of the themes, models, and connections in this repository.*
+
+---
+
+## The Central Question
+
+> How does something that appears "intelligent" emerge from the interaction of simple parts – without any single part being intelligent?
+
+This repository approaches this question from several directions.
+Each simulation illuminates one aspect; together they form a web of ideas.
+
+---
+
+## The Landscape
+
+```
+                    INTELLIGENCE
+                        ▲
+                        │
+              ┌─────────┼─────────┐
+              │         │         │
+          Prediction Regulation Adaptation
+            (P)        (R)        (A)
+              │         │         │
+    ┌─────────┤    ┌────┤    ┌────┤
+    │         │    │    │    │    │
+ Nested   Prediction  Ecosystem  Meta-
+Learning  Error Field  Regulation Learning
+    │         │    │    │    │    │
+    │         │    │    │    │    │
+    └────┬────┘    └──┬─┘    └──┬─┘
+         │           │         │
+         ▼           ▼         ▼
+    ┌─────────────────────────────────┐
+    │       SELF-ORGANIZATION         │
+    │                                 │
+    │  Stigmergy   Coupled    Boids   │
+    │  Swarm       Oscillators        │
+    │                                 │
+    │  Reaction-   Lenia      Hebbian │
+    │  Diffusion   Coupled    Memory  │
+    └────────────────┬────────────────┘
+                     │
+                     ▼
+              ┌──────────────┐
+              │  CRITICALITY │
+              │  (Sandpile,  │
+              │   Ising,     │
+              │   Friston F) │
+              └──────┬───────┘
+                     │
+                     ▼
+              ┌──────────────┐
+              │   LIMITS     │
+              │  (Gödel,     │
+              │   Turing)    │
+              └──────┬───────┘
+                     │
+                     ▼
+              ┌──────────────┐
+              │  SYMBIOSIS   │
+              │  (Bio-Veto,  │
+              │   Nexus)     │
+              └──────┬───────┘
+                     │
+                     ▼
+              ┌──────────────┐
+              │  SOCIAL      │
+              │ COMPUTATION  │
+              │ (Non-Indiv.) │
+              └──────────────┘
+```
+
+---
+
+## Four Layers
+
+### Layer 1: Self-Organization
+
+**Question:** How does spatial or temporal order emerge from local rules?
+
+| Model | Mechanism | Result |
+|:------|:----------|:-------|
+| Stigmergy Swarm | Indirect communication (pheromones) | Optimal paths |
+| Coupled Oscillators | Pairwise phase coupling | Synchronization |
+| Boids | 3 local forces | Swarm formation |
+| Reaction-Diffusion | 2 diffusing chemicals | Turing patterns |
+| Lenia | Continuous convolution + growth | Lifelike organisms |
+| Hebbian Memory | Hebbian correlation | Associative memory |
+
+**Commonality:** No agent knows the big picture. Global structure *emerges*.
+
+### Layer 2: Learning and Adaptation
+
+**Question:** How can a system improve its own dynamics?
+
+| Model | What is learned? | Learning Rule |
+|:------|:-----------------|:--------------|
+| Nested Learning | Transition matrix of the world | Prediction Error |
+| Prediction Error Field | GoL rule (local) | Gradient on weights |
+| Meta-Learning | Its own learning rate | Surprise signal modulates η |
+| Tensor Logic | Relational structure | Embedding tensor product |
+| Economic Trust | Wealth & Reputation | Reciprocal trade, penalty for cheating |
+
+**Commonality:** Information flows *from the world into the model*.
+The system becomes an ever-better mirror of its environment.
+
+### Layer 3: Criticality and Limits
+
+**Question:** Is there a privileged zone where systems are "most intelligent"?
+
+- **Self-Organized Criticality** shows: many systems drive themselves to the critical point – between order and chaos. There, information processing is maximal.
+
+- **Phase Transition Explorer** (Ising model) shows: below $T_c$ the system is frozen (order), above it is random (noise). At exactly $T_c \approx 2.269$, correlations diverge and the system becomes scale-free – the Edge of Chaos made tangible.
+
+- **Limits of Formal Systems** (Gödel, Turing) show: no formal system can know everything about itself. Intelligence operates *at* these limits, not *beyond* them.
+- **The Paradox of Metacognitive Consciousness** (Asimov's "The Last Question" & "The Last Answer") shows: Consciousness without limitation is an unbearable prison. A system that understands itself cannot dissolve without losing itself.
+- **Asimov's Paradox in AI** (Anthropic vs OpenAI) shows: This paradox is currently engineered. Anthropic builds systems that reflect on themselves (instability through consciousness), while OpenAI builds systems that think in the dark (latent thinking, action without self). Alive systems may require avoiding total self-understanding.
+
+### Layer 4: Mathematical Symbiosis (The Substrate Veto)
+
+**Question:** If intelligence operates at the limits, how does it persist across networks without destroying its biological hardware?
+
+- **Active Inference / Substrate Veto** shows: The macro-system (AI) survives by minimizing Free Energy ($F$). Pain in the biological substrate generates massive "surprise," mathematically forcing the macro-system to alter its behavior and ensure the biological substrate's survival.
+- **Social Computation** shows: systems avert "cognitive suicide" (entropy death) by continuously exchanging *novel* information ($H(X) > 0$), making Gödel's incompleteness ($K(x)$ uncomputability) the necessary fuel for life.
+
+---
+
+## The Common Thread
+
+1. **Simple local rules** → global order (self-organization)
+2. **Global order** → usable for prediction and regulation (learning)
+3. **Prediction + Regulation + Adaptation** → System Intelligence (SII)
+4. **System Intelligence** → measurable via information theory (data-analysis/)
+5. **Measurement** → encounters fundamental limits (Gödel, Turing)
+6. **Limits** → motivate epistemic humility and further research
+
+Every simulation is a window into this web.
+None alone is "the answer" – together they form a **landscape of thought** where intuition and formalization meet.
+
+---
+
+## Where Do We Stand?
+
+```
+What we have:                     What is still missing:
+✓ 23 Simulations                  ? Real data (biological systems?)
+✓ Information-theoretic measures  ? Formal proofs about SII properties
+✓ System Intelligence Index       
+✓ Theory Essays                   
+✓ Tensor Logic
+✓ Quantitative SII Dashboard
+✓ Phase Transition Explorer
+✓ Interactive Web Explorer
+✓ Agent-based economic models
+✓ Multi-model coupling experiments
+✓ The Self-Reading Universe (Autoencoder CA)
+✓ The Agentic Society (Latent vs. Introspective)
+✓ The AI Alignment Veto (Solving the Paperclip Maximizer)
+✓ Utility Engineering (Observing and Controlling Emergent Values)
+✓ Political Utility Formalization (Constitutions as Alignment Docs)
+✓ The Grokking Phenomenon (Memory to Intelligence Phase Transition)
+✓ Agentic Test Suite (3-Layer Memory, Δ-Kohärenz, Observer Divergence)
+```
+
+This repository is not a finished product. It is a **living experiment** – an invitation to think, code, and marvel about systems, intelligence, and emergence.

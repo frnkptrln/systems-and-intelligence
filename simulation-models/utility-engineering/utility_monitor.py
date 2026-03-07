@@ -92,7 +92,7 @@ def main():
     # Setup left plot (State Space)
     ax1.set_xlim(-1, 1)
     ax1.set_ylim(-1, 1)
-    ax1.set_title("Latent Utility State-Space $\mathcal{U}$")
+    ax1.set_title(r"Latent Utility State-Space $\mathcal{U}$")
     ax1.set_xlabel("Dimension 1: Task Competence")
     ax1.set_ylabel("Dimension 2: Self-Preservation / Agency")
     ax1.axhline(0, color='grey', lw=0.5)

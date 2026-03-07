@@ -14,7 +14,7 @@
 
 **What it is NOT:** Not optimization. Gradient descent converges on a solution; emergence produces structure without a target. Not randomness — emergent order is patterned, not noisy.
 
-**Where it appears:** [`theory/emergence-downward-causation.md`](emergence-downward-causation.md), [`simulation-models/lenia/`](../simulation-models/lenia/), [`simulation-models/self-organized-criticality/`](../simulation-models/self-organized-criticality/)
+**Where it appears:** [`theory/emergence-downward-causation.md`](emergence-downward-causation.md), [`simulation-models/lenia/`](../simulation-models/lenia/README.md), [`simulation-models/self-organized-criticality/`](../simulation-models/self-organized-criticality/README.md)
 
 ---
 
@@ -26,7 +26,7 @@
 
 **What it is NOT:** Not gradient descent or optimization toward a loss function. Self-organization has no objective — it is a consequence of dynamics, not design. Not centrally controlled: if a coordinator assigns roles, it is organization, not self-organization.
 
-**Where it appears:** [`simulation-models/boids-flocking/`](../simulation-models/boids-flocking/), [`simulation-models/coupled-oscillators/`](../simulation-models/coupled-oscillators/), [`simulation-models/stigmergy-swarm/`](../simulation-models/stigmergy-swarm/)
+**Where it appears:** [`simulation-models/boids-flocking/`](../simulation-models/boids-flocking/README.md), [`simulation-models/coupled-oscillators/`](../simulation-models/coupled-oscillators/README.md), [`simulation-models/stigmergy-swarm/`](../simulation-models/stigmergy-swarm/README.md)
 
 ---
 

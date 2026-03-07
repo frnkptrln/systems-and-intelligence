@@ -1,6 +1,6 @@
 # 🔄 Meta-Learning Regime Shift
 
-This simulation extends the [nested-learning two-state model](../nested-learning-two-state/)
+This simulation extends the [nested-learning two-state model](../nested-learning-two-state/README.md)
 by adding **regime shifts** and a **meta-learner** that adapts the learning
 rate in response to prediction error.
 
