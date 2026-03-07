@@ -30,13 +30,13 @@ To read the formal, academic synthesis of multiple frameworks within this reposi
 ---
 
 ## ⚖️ License & Intellectual Property
-This repository and its theoretical frameworks (including the $C$-Score, The Planetary Veto, and Systems Orchestration) are licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
+This repository and its mathematical frameworks (including the $C$-Score, The Planetary Veto, and Systems Orchestration) are licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**. 
 
 **What this means:**
-- **Attribution:** Academics, researchers, and developers are free to share, copy, and adapt this work for research purposes, provided they give appropriate credit to **Frank Peterlein**.
-- **Non-Commercial:** You may **NOT** use this material (including the mathematical models, essays, or the MkDocs structure) for commercial purposes. 
+- **Open Science & Open Source:** Academics, researchers, and open-source developers are free to use, modify, and distribute this work. Startups and individuals are encouraged to build upon these simulations.
+- **Corporate Protection (Copyleft):** If you integrate this framework (specifically the Orchestrator or Utility metrics) into a commercial application and offer it as a service over a network (e.g., a Cloud API or Web App), **you must open-source your entire application code under the AGPL.** 
 
-This ensures that the *Fractal Architecture of Emergence* remains a freely accessible public good for the advancement of science, rather than a commodity for closed-source corporate exploitation.
+This ensures that the *Fractal Architecture of Emergence* remains a true open-source public good. It fosters an open ecosystem while preventing closed-source tech giants from privately hoarding and exploiting the architecture without giving back to the community.
 
 ---
 
