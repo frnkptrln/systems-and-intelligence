@@ -53,19 +53,22 @@ theme:
     repo: fontawesome/brands/github
     logo: material/brain
   palette:
+    # Palette toggle for dark mode (default)
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
       accent: deep purple
       toggle:
-        icon: material/weather-sunny
+        icon: material/brightness-4
         name: Switch to light mode
+
+    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
       accent: deep purple
       toggle:
-        icon: material/weather-night
+        icon: material/brightness-7
         name: Switch to dark mode
   features:
     - navigation.tabs
