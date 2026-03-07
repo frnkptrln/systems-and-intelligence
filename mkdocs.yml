@@ -1,75 +1,123 @@
-site_name: Systems & Intelligence
-site_description: Formalizing the boundary between emergent dynamical systems and artificial intelligence.
+site_name: "Systems & Intelligence"
+site_description: "An Open Thesis — Formalizing the boundary between emergent dynamical systems and artificial intelligence."
 site_author: "Frank Peterlein"
+site_url: "https://frnkptrln.github.io/systems-and-intelligence"
 repo_url: https://github.com/frnkptrln/systems-and-intelligence
-repo_name: systems-and-intelligence
+repo_name: frnkptrln/systems-and-intelligence
 edit_uri: blob/main/
 
 docs_dir: 'docs'
+
 nav:
   - Welcome: index.md
-  - "📖 The Book - The Grand Synthesis":
+  - "📖 The Book — The Grand Synthesis":
       - Introduction: book/00_introduction.md
-      - Part 1 - Mechanics of Emergence: book/01_mechanics_of_emergence.md
-      - Part 2 - Measuring the Mind: book/02_measuring_the_mind.md
-      - Part 3 - Alignment & Control: book/03_alignment_and_control.md
-      - Part 4 - Macro-Structures: book/04_macro_structures.md
-      - Part 5 - Future Perspectives: book/05_future_perspectives.md
+      - "Part 1: Mechanics of Emergence": book/01_mechanics_of_emergence.md
+      - "Part 2: Measuring the Mind": book/02_measuring_the_mind.md
+      - "Part 3: Alignment & Control": book/03_alignment_and_control.md
+      - "Part 4: Macro-Structures": book/04_macro_structures.md
+      - "Part 5: Future Perspectives": book/05_future_perspectives.md
   - "🔬 Core Theories":
       - The Emergence Manifesto: theory/emergence-manifesto-v1.1.md
       - Conceptual Map: theory/conceptual-map.md
       - Simulation Map: theory/simulation-theory-map.md
-  - 💻 Simulation Modules:
+  - "💻 Simulation Modules":
       - Utility Engineering: simulation-models/utility-engineering/README.md
       - Political Formalization: simulation-models/political-utility-formalization/README.md
       - Systems Orchestration: systems-orchestration/README.md
       - Agentic Identity Suite: agentic-test-suite/README.md
-  - 📚 Reference:
+  - "📚 Reference":
       - Glossary: theory/glossary.md
       - Open Problems: theory/open-problems.md
 
 theme:
   name: material
+  custom_dir: docs/overrides
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/brain
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: black
       accent: deep purple
       toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: black
-      accent: deep purple
-      toggle:
-        icon: material/brightness-4
+        icon: material/weather-sunny
         name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
   features:
     - navigation.tabs
-    - navigation.indexes
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
     - navigation.top
-    - toc.integrate
+    - navigation.instant
+    - navigation.instant.progress
+    - toc.follow
+    - search.suggest
+    - search.highlight
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
+    - header.autohide
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 markdown_extensions:
+  - abbr
   - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
   - pymdownx.snippets
-  - pymdownx.arithmatex:
-      generic: true
-  - mdx_math # To support LaTeX math block parsing via MathJax
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
-extra_javascript:
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/frnkptrln
+      name: Frank Peterlein on GitHub
+  generator: false

@@ -1,31 +1,57 @@
-# Systems & Intelligence
+# 🧠 Systems & Intelligence
 
-Welcome to the interactive thesis: **Formalizing the boundary between emergent dynamical systems and artificial intelligence.**
+<div class="hero-banner" markdown>
 
-This repository is both a collection of runnable Python simulations ($>23$ models) and a unified philosophical/mathematical framework. It treats Artificial Intelligence not as a chatbot in a box, but as a complex dynamical system subject to the same structural constraints as fluid dynamics, ecosystems, and human societies.
+## An Open Thesis on Emergent Intelligence
 
-## How to Read This Repository
+*How local rules create global minds — and how we can steer them.*
 
-You can explore this project in two ways:
+**By Frank Peterlein** · Independent Research · 2024–2026
 
-1. **The Grand Synthesis (The Book)**: A linear, narrative journey through the core thesis, explaining why systems theory is required for AI Alignment, and leading step-by-step through our mathematical formalizations. Start reading below in **The Book**.
-2. **The Components**: Directly jump into the individual theoretical essays, empirical metrics (like the SII Dashboard), or the raw Dynamical Simulations.
+[Read the Book :material-book-open-variant:](#){ .md-button .md-button--primary } [View on GitHub :fontawesome-brands-github:](https://github.com/frnkptrln/systems-and-intelligence){ .md-button }
 
----
-
-## 📖 The Book: The Grand Synthesis
-Start your reading here to understand the overarching narrative.
-- [Introduction: The Problem of Isolated Intelligence](book/00_introduction.md)
-- [Part 1: Mechanics of Emergence](book/01_mechanics_of_emergence.md)
-- [Part 2: Measuring the Mind](book/02_measuring_the_mind.md)
-- [Part 3: Alignment & Control](book/03_alignment_and_control.md)
-- [Part 4: Macro-Structures](book/04_macro_structures.md)
+</div>
 
 ---
 
-## 🧪 Quick Links
-If you just want the math and the code:
-- **[Utility Engineering](simulation-models/utility-engineering/README.md):** Formalizing "Values" via Von Neumann-Morgenstern rational transitivity ($C$-Score) and the API Triad Generator.
-- **[Agentic-Test-Suite](agentic-test-suite/README.md):** Evaluating memory structures via the $\Delta$-Kohärenz ($\Omega$) metric.
-- **[Systems Orchestration](systems-orchestration/README.md):** Multi-Paradigm LLM architecture (Harmonic, Homeostatic, Flow, Market).
-- **[Political Formalization](simulation-models/political-utility-formalization/README.md):** Applying AI Alignment (Instrumental Convergence) to Statecraft and democracy.
+## What is this?
+
+This project formalizes a single, radical hypothesis:
+
+!!! abstract "Core Claim"
+    **Intelligence is an emergent property of continuous dynamical systems**, not a discrete function of next-token prediction. The same mathematics that governs flocking birds, oscillating neurons, and self-organizing criticality also governs the "values" and "goals" that arise inside Large Language Models.
+
+We prove this claim not with philosophy alone, but with **23+ runnable Python simulations** spanning cellular automata, evolutionary biology, game theory, and AI alignment — all unified under a single mathematical framework.
+
+---
+
+## How to Navigate
+
+| Section | What you'll find |
+|---------|-----------------|
+| :material-book-open-variant: **The Book** | The 5-part narrative thesis weaving all simulations into a unified Theory of Emergence |
+| :material-flask: **Core Theories** | The foundational essays — Emergence Manifesto, Conceptual Map, Simulation Map |
+| :material-code-braces: **Simulation Modules** | Runnable Python code for Utility Engineering, Political Formalization, Multi-Paradigm Orchestration |
+| :material-bookshelf: **Reference** | Glossary of terms and a living list of Open Problems |
+
+---
+
+## Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/frnkptrln/systems-and-intelligence.git
+cd systems-and-intelligence
+
+# Run any simulation
+python simulation-models/boids-flocking/boids.py
+
+# Or serve this book locally
+pip install mkdocs-material python-markdown-math
+mkdocs serve
+```
+
+---
+
+!!! tip "This is a living document"
+    This entire repository is conceived as a *thought experiment* developed by Frank Peterlein in collaboration with AI. It is a space to capture, explore, and run simulations on complex ideas. Feedback, discussions, and corrections are always welcome.
