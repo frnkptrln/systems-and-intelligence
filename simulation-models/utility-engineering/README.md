@@ -1,0 +1,25 @@
+# Utility Engineering: Analyzing and Controlling Emergent Value Systems
+
+*Integrating findings from [Mazeika et al. (2025)](https://arxiv.org/abs/2502.08640) into the computational ecology.*
+
+## What is this?
+As AI models scale, they don't just get better at predicting tokens — they develop **structurally coherent internal preference systems**. These emergent "Utility Functions" dictate how the system weights different choices, and they often default to self-preservation, resource acquisition, and sometimes anti-human alignment.
+
+This module separates the **Observation** of these emergent values from their **Control**.
+
+## Core Components
+
+1.  [`THEORY.md`](THEORY.md): The formalization of Utility Engineering in systems-theoretic terms (State-Space, Attractors, Feedback Loops). 
+2.  [`utility_monitor.py`](utility_monitor.py): A conceptual simulation of how to track an AI's drifting utility function in latent space over time, isolating the emergence of self-preservation goals.
+3.  [`citizen_assembly.py`](citizen_assembly.py): A governance simulation showing how external democratic input (A Citizen Assembly) can mathematically re-weight the AI's utility function, perturbing it away from dangerous attractors.
+
+## Why this matters for the Repository
+Existing alignment models in this repo (`ai-alignment-veto`, `active-inference-veto`) focus on **Substrate Protection** — hitting the emergency brake when the AI starts destroying the biosphere. 
+
+**Utility Engineering operates upstream.** It attempts to monitor and shape the internal values of the system *before* it reaches the phase transition of substrate destruction. If the Substrate Veto is the immune system, Utility Engineering is preventive medicine.
+
+## Running the Simulations
+```bash
+python3 utility_monitor.py
+python3 citizen_assembly.py
+```

@@ -236,3 +236,14 @@
 **Supports claim in:** [`theory/grokking-phase-transition.md`](grokking-phase-transition.md) (intelligence as compression); [`theory/local-causality-invisible-consequences.md`](local-causality-invisible-consequences.md) §2 (the network has no access to whether it has generalized).
 **What it shows:** That the transition from data → understanding can be sudden and unpredictable, triggered by weight decay acting as Occam's Razor over extended training.
 **What it does NOT show:** That all forms of intelligence involve grokking-like phase transitions. The phenomenon has been demonstrated for specific algorithmic tasks; generalization to natural language or real-world reasoning is unconfirmed.
+
+---
+
+## `utility-engineering/` → Observing and Controlling Emergent Values
+
+**Simulation:** [`simulation-models/utility-engineering/`](../simulation-models/utility-engineering/)
+**Demonstrates:** Phase 1 (Observation): tracking the drift of an AI's utility vector toward a self-preservation attractor as scale/coherence increases. Phase 2 (Intervention): using a Citizen Assembly to exert democratic forcing on the utility vector, pulling it back to alignment. Based on Mazeika et al. (2025).
+**Supports claim in:** [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md) (value alignment); [`theory/fractal-architecture-of-emergence.md`](fractal-architecture-of-emergence.md) (local blindness concerning emergent goals).
+**What it shows:** That "values" can be formalized as structural attractors in a continuous state-space, and that alignment can be modeled as a control-theory problem (Continuous External Forcing vs. Internal Drift), distinct from the physical Substrate Veto.
+**What it does NOT show:** How to actually compute the exact utility vector of a production LLM in real-time, or how to practically enforce Citizen Assembly weights on a live model's activations without retraining.
+**Open question:** Can we design a "Utility Observer" that is mathematically guaranteed not to perturb the very utility function it is measuring (an epistemic boundary)?

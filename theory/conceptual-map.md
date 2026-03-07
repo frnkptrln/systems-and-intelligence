@@ -159,6 +159,7 @@ What we have:                     What is still missing:
 ✓ The Self-Reading Universe (Autoencoder CA)
 ✓ The Agentic Society (Latent vs. Introspective)
 ✓ The AI Alignment Veto (Solving the Paperclip Maximizer)
+✓ Utility Engineering (Observing and Controlling Emergent Values)
 ✓ The Grokking Phenomenon (Memory to Intelligence Phase Transition)
 ✓ Agentic Test Suite (3-Layer Memory, Δ-Kohärenz, Observer Divergence)
 ```

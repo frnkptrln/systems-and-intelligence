@@ -47,6 +47,7 @@ We believe intellectual honesty about these distinctions makes the project *more
 | Folder | Purpose |
 | :--- | :--- |
 | **`simulation-models/`** | Concrete dynamical systems: cellular automata, agent-based simulations, homeostasis models, nested-learning examples. |
+| **`utility-engineering/`** | Observing and controlling emergent value systems via Citizen Assembly democratic forcing. |
 | **`agentic-test-suite/`** | 🧪 Empirical test suite for agent identity: 3-Layer Memory, Δ-Kohärenz metric, perturbation response, and extended 4-axis SII Dashboard (P/R/A/Ω). |
 | **`data-analysis/`** | Information-theoretic measures (entropy, mutual information, transfer entropy, integration) and the quantitative **SII Dashboard** for comparative analysis. |
 | **`tools/`** | Shared utilities for visualization, randomness, grid manipulation, reproducibility, and the **Interactive Web Explorer**. |
@@ -81,6 +82,7 @@ Each subfolder contains its own README with context and details.
 | `self-reading-universe/` | 👁️ The Self-Reading Universe: Downward causation from Autoencoder compression to CA physics |
 | `latent-introspective-society/` | 🧠 MAS Division of Labor: Reflective Pheromones guiding Intuitive Agents |
 | `ai-alignment-veto/` | 🛑 The Biological Veto: Solving the Paperclip Maximizer mathematically via Substrate Pain (Free Energy) |
+| `utility-engineering/` | ⚖️ Utility Engineering: Monitoring AI utility drift and aligning it via Citizen Assembly feedback (arXiv:2502.08640) |
 | `grokking-phase-transition/` | ⚡ The Grokking Phenomenon: Visualizing the thermodynamic jump from Memory to Intelligence |
 
 ### 📚 Theory & Essays
