@@ -1,7 +1,7 @@
 # 🧠 systems-and-intelligence
 
-> **📖 The Grand Synthesis: [Read the Interactive Book](docs/index.md)**
-> Over the lifespan of this repository, we have developed 23+ dynamical simulations connecting physics, biology, and cybernetics to AI Alignment. To read the unified mathematical thesis linking all these models behind a single Theory of Emergence, start reading the book above. *(To build locally: `pip install mkdocs-material mdx-math && mkdocs serve`)*
+> **📖 The Grand Synthesis: [Read the Interactive Book Online](https://frnkptrln.github.io/systems-and-intelligence)**  
+> *(You can also compile it locally via `mkdocs serve`)*
 
 ---
 
@@ -20,6 +20,12 @@ The project spans several layers:
 - **Limits of computation and intelligence**
 
 Each folder represents a different perspective on these themes.
+
+---
+
+## 📜 Scientific Publications
+To read the formal, academic synthesis of multiple frameworks within this repository (including the mathematical deduction of emergent utility and Multi-Paradigm Orchestration), refer to the draft whitepaper:
+- **[Quantifying Emergent Utility & Stability in Multi-Agent LLM Ecosystems](papers/quantifying-emergent-utility-in-llms.md)**
 
 ---
 
