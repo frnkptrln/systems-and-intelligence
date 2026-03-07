@@ -1,7 +1,7 @@
 # 🧠 systems-and-intelligence
 
 > **📖 The Grand Synthesis: [Read the Interactive Book Online](https://frnkptrln.github.io/systems-and-intelligence)**  
-> *(You can also compile it locally via `mkdocs serve`)*
+> *(You can also compile it locally via `pip install mkdocs-material python-markdown-math` and then `mkdocs serve`)*
 
 ---
 
