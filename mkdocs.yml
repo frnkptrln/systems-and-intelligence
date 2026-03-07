@@ -26,6 +26,10 @@ nav:
       - Thermodynamics of Orchestration (TEO): theory/thermodynamics-of-orchestration.md
       - Limitations & Honest Assessment: theory/limitations-and-honest-assessment.md
       - Black Swans & Downward Causation: theory/black-swans-and-downward-causation.md
+  - "🕹️ Interactive Tools":
+      - Web Emergence Explorer: interactive/web-explorer.md
+      - Tensor Logic Visualizer: interactive/tensor-logic.md
+      - SII Dashboard: interactive/sii-dashboard.md
   - "💻 Simulation Modules":
       - Utility Engineering: simulation-models/utility-engineering/README.md
       - Active Inference: simulation-models/active-inference/README.md

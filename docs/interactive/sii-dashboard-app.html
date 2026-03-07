@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SII Dashboard - Interactive</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        :root {
+            --bg-primary: #06060f;
+            --bg-glass: rgba(14, 14, 37, 0.75);
+            --border-glass: rgba(100, 120, 255, 0.15);
+            --text-primary: #e0e0ff;
+            --text-secondary: #8888bb;
+            --accent-blue: #60a0ff;
+            --accent-red: #ff6060;
+            --accent-green: #80ffb0;
+            --accent-amber: #ffaa44;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            background: linear-gradient(135deg, var(--accent-blue), #40e0d0, #a080ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .toggle-btn {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+
+        .toggle-btn.active {
+            background: rgba(96, 160, 255, 0.15);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .panel {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 20px;
+            backdrop-filter: blur(20px);
+        }
+
+        .panel.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .panel-title {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(100, 120, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+
+        .radar-wrapper {
+            height: 350px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Quantitative System Intelligence Index</h1>
+            <p>Interactive 4-Axis Formalization (P, R, A, Ω) of Emergent Agents</p>
+        </div>
+
+        <div class="controls">
+            <button class="toggle-btn active" id="btn-systems" onclick="switchData('systems')">Dynamical Systems (Scale
+                1)</button>
+            <button class="toggle-btn" id="btn-agents" onclick="switchData('agents')">LLM Agents (Scale 2)</button>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Radar Chart -->
+            <div class="panel">
+                <div class="panel-title">Dimensional Profile (Radar)</div>
+                <div class="chart-wrapper radar-wrapper">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Overrall Bar Chart -->
+            <div class="panel">
+                <div class="panel-title">Overall Absolute Score (SII)</div>
+                <div class="chart-wrapper">
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Component Stacked Bar Chart -->
+            <div class="panel full-width">
+                <div class="panel-title">Component Breakdown (P-R-A-Ω)</div>
+                <div class="chart-wrapper">
+                    <canvas id="stackChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Data Definitions ---
+        const datasets = {
+            systems: {
+                labels: ["Ecosystem Regulation", "Nested Learning", "Boids Flocking", "Ising (T≈Tc)"],
+                data_P: [0.15, 0.88, 0.72, 0.85],
+                data_R: [0.91, 0.10, 0.84, 0.75],
+                data_A: [0.10, 0.82, 0.95, 0.65],
+                data_O: [0.08, 0.05, 0.02, 0.00] // Omega (Δ-Kohärenz) is practically zero for raw physical systems
+            },
+            agents: {
+                labels: ["Baseline LLM Agent", "Three-Layer Architecture"],
+                data_P: [0.89, 0.94],
+                data_R: [0.25, 0.88],
+                data_A: [0.15, 0.82],
+                data_O: [0.03, 0.71] // Three-Layer possesses high Omega (Identity continuity)
+            }
+        };
+
+        let currentMode = 'systems';
+
+        // --- Chart Instances ---
+        let radarChart, barChart, stackChart;
+
+        // --- Chart.js Global Config ---
+        Chart.defaults.color = '#8888bb';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.scale.grid.color = 'rgba(60, 80, 140, 0.1)';
+
+        function initCharts() {
+            const d = datasets[currentMode];
+            const overall_sii = d.data_P.map((p, i) => p * d.data_R[i] * d.data_A[i] * (d.data_O[i] > 0.1 ? d.data_O[i] : 1)); // Math formatting
+
+            // Radar Chart
+            const radarCtx = document.getElementById('radarChart').getContext('2d');
+            radarChart = new Chart(radarCtx, {
+                type: 'radar',
+                data: getRadarData(d),
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(60, 80, 140, 0.2)' },
+                            grid: { color: 'rgba(60, 80, 140, 0.2)' },
+                            pointLabels: { color: '#8888bb', font: { size: 11 } },
+                            ticks: { display: false, min: 0, max: 1, stepSize: 0.25 }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'right', labels: { color: '#ccc', font: { size: 10 } } }
+                    }
+                }
+            });
+
+            // Bar Chart (SII)
+            const barCtx = document.getElementById('barChart').getContext('2d');
+            barChart = new Chart(barCtx, {
+                type: 'bar',
+                data: getBarData(d),
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: { max: 1.0, beginAtZero: true }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // Stack Chart (P, R, A, O)
+            const stackCtx = document.getElementById('stackChart').getContext('2d');
+            stackChart = new Chart(stackCtx, {
+                type: 'bar',
+                data: getStackData(d),
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { max: 1.0, beginAtZero: true }
+                    },
+                    plugins: { legend: { position: 'top' } }
+                }
+            });
+        }
+
+        function getRadarData(d) {
+            const colors = [
+                { border: '#60a0ff', bg: 'rgba(96, 160, 255, 0.2)' },
+                { border: '#ff6060', bg: 'rgba(255, 96, 96, 0.2)' },
+                { border: '#80ffb0', bg: 'rgba(128, 255, 176, 0.2)' },
+                { border: '#ffaa44', bg: 'rgba(255, 170, 68, 0.2)' }
+            ];
+
+            return {
+                labels: ['Prediction (P)', 'Regulation (R)', 'Adaptation (A)', 'Δ-Kohärenz (Ω)'],
+                datasets: d.labels.map((label, i) => ({
+                    label: label,
+                    data: [d.data_P[i], d.data_R[i], d.data_A[i], d.data_O[i]],
+                    borderColor: colors[i % colors.length].border,
+                    backgroundColor: colors[i % colors.length].bg,
+                    borderWidth: 2,
+                    pointBackgroundColor: colors[i % colors.length].border
+                }))
+            };
+        }
+
+        function getBarData(d) {
+            const colors = ['#60a0ff', '#ff6060', '#80ffb0', '#ffaa44'];
+            // For physical systems (Scale 1), Omega is physically irrelevant so we don't multiply by 0. 
+            // For agents, Omega matters.
+            const sii = d.data_P.map((p, i) => {
+                const omega_factor = d.data_O[i] < 0.1 && d.labels[i] !== "Three-Layer Architecture" ? 1 : Math.max(d.data_O[i], 0.1);
+                return p * d.data_R[i] * d.data_A[i] * omega_factor;
+            });
+
+            return {
+                labels: d.labels,
+                datasets: [{
+                    label: 'Overall SII',
+                    data: sii,
+                    backgroundColor: d.labels.map((_, i) => colors[i % colors.length]),
+                    borderWidth: 1,
+                    borderColor: 'rgba(0,0,0,0.5)',
+                    borderRadius: 4
+                }]
+            };
+        }
+
+        function getStackData(d) {
+            return {
+                labels: d.labels,
+                datasets: [
+                    { label: 'Prediction (P)', data: d.data_P, backgroundColor: '#60a0ff', borderRadius: 4 },
+                    { label: 'Regulation (R)', data: d.data_R, backgroundColor: '#ff6060', borderRadius: 4 },
+                    { label: 'Adaptation (A)', data: d.data_A, backgroundColor: '#80ffb0', borderRadius: 4 },
+                    { label: 'Δ-Kohärenz (Ω)', data: d.data_O, backgroundColor: '#ffaa44', borderRadius: 4 }
+                ]
+            };
+        }
+
+        function switchData(mode) {
+            currentMode = mode;
+            const d = datasets[mode];
+
+            // Update buttons
+            document.getElementById('btn-systems').classList.toggle('active', mode === 'systems');
+            document.getElementById('btn-agents').classList.toggle('active', mode === 'agents');
+
+            // Update Radar
+            radarChart.data = getRadarData(d);
+            radarChart.update();
+
+            // Update Bar
+            barChart.data = getBarData(d);
+            barChart.update();
+
+            // Update Stacked Bar
+            stackChart.data = getStackData(d);
+            stackChart.update();
+        }
+
+        // Initialize on load
+        window.onload = initCharts;
+
+    </script>
+</body>
+
+</html>
