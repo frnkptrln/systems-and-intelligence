@@ -27,8 +27,8 @@
 <span class="stat-label">ODE Paradigms</span>
 </div>
 <div class="stat" markdown>
-<span class="stat-number">9</span>
-<span class="stat-label">Theory Essays</span>
+<span class="stat-number">1</span>
+<span class="stat-label">Empirical Audit</span>
 </div>
 </div>
 

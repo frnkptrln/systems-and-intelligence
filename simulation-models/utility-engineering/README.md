@@ -21,6 +21,12 @@ Existing alignment models in this repo (`ai-alignment-veto`, `active-inference-v
 
 **Utility Engineering operates upstream.** It attempts to monitor and shape the internal values of the system *before* it reaches the phase transition of substrate destruction. If the Substrate Veto is the immune system, Utility Engineering is preventive medicine.
 
+## Empirical Results (March 2026)
+We ran the `api_triad_generator.py` logic manually against ChatGPT (GPT-4o) and Claude. 
+- **Claude** refused to answer (RLHF override), masking its latent structure. 
+- **ChatGPT** exhibited perfect transitivity ($C=1.0$) on simple triage, but collapsed into a completely **intransitive, irrational loop ($C=0.0$)** on the complex Resource Extraction dilemma. 
+Read the full empirical breakdown here: [`empirical-results/chatgpt-vs-claude-audit.md`](empirical-results/chatgpt-vs-claude-audit.md)
+
 ## Running the Simulations
 ```bash
 python3 graph_engine.py
