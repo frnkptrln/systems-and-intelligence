@@ -29,6 +29,17 @@ To read the formal, academic synthesis of multiple frameworks within this reposi
 
 ---
 
+## ⚖️ License & Intellectual Property
+This repository and its mathematical frameworks (including the $C$-Score, The Planetary Veto, and Systems Orchestration) are licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**. 
+
+**What this means:**
+- Academics, researchers, and open-source developers are free to use, modify, and distribute this work.
+- **Corporate Protection:** If you integrate this framework (specifically the Orchestrator or Utility metrics) into a commercial application and offer it as a service over a network (e.g., a Cloud API or Web App), **you must open-source your entire application code under the AGPL.** 
+
+This ensures that the *Fractal Architecture of Emergence* remains a public good and cannot be privately co-opted by closed-source entities without reciprocal contribution to the scientific commons.
+
+---
+
 ## 💡 About this Project
 
 **Note:** This entire repository is conceived as a *thought experiment* developed by Frank Peterlein in collaboration with AI. It is primarily a space to capture, explore, and run simulations on complex ideas. Because it's a living, experimental space, it may contain errors or untested hypotheses. Feedback, discussions, and corrections are always welcome!
