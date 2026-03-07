@@ -30,7 +30,7 @@ $$\frac{d\theta_i}{dt} = \omega_i + \frac{K}{N} \sum_j A_{ij} \sin(\theta_j - \t
 **Subject to the hard physical constraint**:
 $$\sum_i \eta_i x_i f_i(\mathbf{x}) \leq D_{\max}$$
 
-For the full derivation, see the [TEO Theory Essay](../../theory/thermodynamics-of-orchestration.md). For the runnable simulation, see [teo_simulation.py](../../simulation-models/teo-civilization/teo_simulation.py).
+For the full derivation, see the [TEO Theory Essay](../theory/thermodynamics-of-orchestration.md). For the runnable simulation, see [teo_simulation.py](../simulation-models/teo-civilization/teo_simulation.py).
 
 ## Four Ways a Civilization Dies (Simulation Results)
 
@@ -52,7 +52,7 @@ No matter how well-regulated or culturally cohesive a system is, if its total en
 
 This framework is built entirely from established mathematics — replicator dynamics (1978), Kuramoto oscillators (1975), standard control theory. We invented none of these tools. Our contribution is the **diagnosis**: that these tools, scattered across separate disciplines, describe a single unified phenomenon that applies identically to AI swarms and human civilizations.
 
-For a complete, unsparing account of what is novel and what is borrowed, see [Limitations & Honest Assessment](../../theory/limitations-and-honest-assessment.md).
+For a complete, unsparing account of what is novel and what is borrowed, see [Limitations & Honest Assessment](../theory/limitations-and-honest-assessment.md).
 
 ## The Tensor Logic Horizon
 

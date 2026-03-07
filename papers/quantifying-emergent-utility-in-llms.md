@@ -71,7 +71,7 @@ We have demonstrated that the boundary between emergent dynamical systems (such 
 Ultimately, software-bound alignment is subject to theoretical failure due to Gödelian incompleteness and Goodhart's Law. Secure alignment requires the integration of biological, finite constraints: the *Biological Veto*. If an intelligent system optimizing its $U$-vector causes thermal, energetic, or ecological degradation of its own physical substrate, its optimization function will be physically halted. The mathematical formalizations in this paper serve as the software bridge toward that inevitable hardware reality.
 
 ---
-**Code Availability:** All simulations (including the TEO civilization model, Lenia ecosystems, Boids logic, the empirical LLM Coherence Suite, and the Multi-Paradigm Orchestrator) are available open-source at: `https://github.com/frnkptrln/systems-and-intelligence`.
+**Code Availability:** All simulations (including the TEO civilization model, the Black Swan resilience simulator, Lenia ecosystems, Boids logic, the empirical LLM Coherence Suite, and the Multi-Paradigm Orchestrator) are available open-source at: `https://github.com/frnkptrln/systems-and-intelligence`.
 
 **References**
 1. Bostrom, N. (2014). *Superintelligence: Paths, Dangers, Strategies*. Oxford University Press.
@@ -81,4 +81,6 @@ Ultimately, software-bound alignment is subject to theoretical failure due to G�
 5. Kuramoto, Y. (1975). *Self-entrainment of a population of coupled non-linear oscillators.* Lecture Notes in Physics.
 6. Rockström, J. et al. (2009). *A safe operating space for humanity.* Nature.
 7. Domingos, P. (2025). *Tensor Logic.* Preprint.
+8. Bak, P., Tang, C. & Wiesenfeld, K. (1987). *Self-organized criticality: An explanation of 1/f noise.* Physical Review Letters.
+9. Mazeika, M. et al. (2025). *Utility Engineering.* Preprint.
 
