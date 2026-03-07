@@ -1,5 +1,10 @@
 # 🧠 systems-and-intelligence
 
+> **📖 The Grand Synthesis: [Read the Interactive Book](docs/index.md)**
+> Over the lifespan of this repository, we have developed 23+ dynamical simulations connecting physics, biology, and cybernetics to AI Alignment. To read the unified mathematical thesis linking all these models behind a single Theory of Emergence, start reading the book above. *(To build locally: `pip install mkdocs-material mdx-math && mkdocs serve`)*
+
+---
+
 This repository explores how **intelligence**, **adaptation**, and **structure**
 emerge from the interaction of simple components.
 It brings together simulation models, theoretical notes, and learning systems
