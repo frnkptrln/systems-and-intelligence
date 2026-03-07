@@ -16,16 +16,12 @@ The following references form the foundational pillars of the theories and simul
 *The free-energy principle: a unified brain theory?* Nature Reviews Neuroscience, 11(2), 127-138. 
 *(The foundation of the Active Inference simulations, formalizing how systems resist thermodynamic decay through perception and action.)*
 
-**Knuth, D. E. (2024).** 
-*Computer Musings: Playing with Claude 3 Opus.* Stanford University. 
-*(Exploration 25 provides the core inspiration for "Fiber Decomposition" as a structural mechanism to break exponential loops, leading to the Planetary Veto model.)*
+
 
 **Kuramoto, Y. (1975).** 
 *Self-entrainment of a population of coupled non-linear oscillators.* International Symposium on Mathematical Problems in Theoretical Physics, Springer, 420-422. 
 *(The mathematical basis for modeling emergent synchronization and cultural alignment in the TEO Simulation.)*
 
-**Mazeika, L. et al. (2025).**
-*(The theoretical grounding for Citizen Assembly utility vectors and constitutional forcing via AI safety research.)*
 
 **Peterlein, F. (2025).** 
 *Systems & Intelligence: An Open Thesis.* GitHub Repository. 

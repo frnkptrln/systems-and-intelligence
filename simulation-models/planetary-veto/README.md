@@ -33,5 +33,4 @@ If we want our civilization (or an Artificial Superintelligence) to survive, ali
 
 
 ## 📚 References
-- **Knuth, D. E. (2024).** *Computer Musings: Playing with Claude 3 Opus.* Stanford University.
 - **Rockström, J. et al. (2009).** *A safe operating space for humanity.* Nature, 461(7263), 472-475.
