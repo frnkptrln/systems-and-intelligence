@@ -292,3 +292,13 @@ Goal-seeking behavior is not an added module. An agent with a strong "prior beli
 **What it does NOT show:** It models the Veto externally. True biological systems often encode the veto inherently into the chemistry of the components (e.g., cell apoptosis or neurotransmitter depletion).
 **Open question:** Can we design "apoptosis" into individual LLM agents so that a decentralized Veto naturally emerges without needing an external orchestrator measuring global entropy?
 
+---
+
+## `planetary-veto/` → The Mathematical Law of Sustainability (Fiber Decomposition)
+
+**Simulation:** [`simulation-models/planetary-veto/`](../simulation-models/planetary-veto/)
+**Demonstrates:** An ODE-based formalization of the "Biological Veto", utilizing Donald Knuth's concept of Fiber Decomposition. It pits $N$ utility-maximizing agents against a finite Planetary Substrate ($S$).
+**Supports claim in:** [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md) (The Biological Veto).
+**What it shows:** Semantic alignment (guidelines, RLHF) merely delays tragedy-of-the-commons collapse. The only way to stabilize a resource-hungry optimization process is to mathematically tie its Coherence Score ($C$) directly to the physical Substrate ($S$). As $S \to S_{crit}$, the Veto function must drop $C \to 0$, forcing $dU/dt = 0$. Sustainability requires a hard mathematical/physical constraint (Fiber Decomposition), not a moral choice.
+**What it does NOT show:** How to physically enforce this computational limit on decentralized global actors who might try to hardware-bypass the Coherence Score constraint.
+**Open question:** Can we build a cryptographic global ledger that enforces this Biological Veto on energy consumption at the bare-metal hardware level?
