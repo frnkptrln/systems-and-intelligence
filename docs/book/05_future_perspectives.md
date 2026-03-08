@@ -18,9 +18,9 @@ Current multi-agent systems (AutoGPT, Devin) fail due to "Context Window Collaps
 The mathematics we built to tame AIs applies equally to states, corporations, and networks. The [TEO Framework](../theory/thermodynamics-of-orchestration.md) has already formalized this bridge: the same coupled ODE system (Replicator + Kuramoto + Homeostatic + Entropy Budget) governs the stability of both AI ecologies and human civilizations. The `political-utility-formalization` module demonstrates why modern party democracies often exhibit instrumental convergence (power preservation over public good), and how constitutions can be made algorithmically robust against these attractors.
 
 ### 4. Black Swans and Antifragility
-Our [Black Swan Resilience](../simulation-models/black-swan-resilience/README.md) simulation proves that optimizing any networked system for pure throughput mathematically guarantees catastrophic fat-tailed events. The next research frontier is designing systems that are not merely *resilient* (surviving shocks) but *antifragile* (growing stronger from them). This requires embedding the Biological Veto not as an external override, but as an intrinsic architectural property — akin to cellular apoptosis in biological organisms.
+Our [Black Swan Resilience](../simulation-models/black-swan-resilience/README.md) simulation proves that optimizing any networked system for pure throughput mathematically guarantees catastrophic fat-tailed events. The next research frontier is designing systems that are not merely *resilient* (surviving shocks) but *antifragile* (growing stronger from them). This requires embedding the Substrate Veto not as an external override, but as an intrinsic architectural property — akin to cellular apoptosis in biological organisms.
 
-### 5. The Hardware Problem: The Biological Veto
+### 5. The Hardware Problem: The Substrate Veto
 Eventually, we reach the limits of pure software control. The final chapter of AI safety will be written in the physical world. The `ai-alignment-biological-veto` concept must evolve from simulation into real hardware design — computing infrastructure that is physically coupled to the integrity of the local biosphere. If compute degrades the substrate it depends on, the physics of entropy enforce the halt. Bold research for the coming decade.
 
 ### 6. An Honest Assessment

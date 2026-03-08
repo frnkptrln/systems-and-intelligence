@@ -12,7 +12,7 @@ In this synthesis, we will walk through the mathematical code that proves this:
 
 1. **Part 1 — The Mechanics of Emergence:** How local blindness leads to global structure (Boids, Kuramoto, Lenia).
 2. **Part 2 — Measuring the Mind:** Metrics for continuous agentive identity (SII Dashboard, Agentic Test Suite).
-3. **Part 3 — Alignment & Control:** Values as mathematical attractors, Utility Engineering, and the Biological Veto.
+3. **Part 3 — Alignment & Control:** Values as mathematical attractors, Utility Engineering, and the Substrate Veto.
 4. **Part 4 — Macro-Structures:** Political formalization, Systems Orchestration, and the Multi-Paradigm Orchestrator.
 5. **Part 5 — Future Perspectives:** Open problems, from empirical auditing to the hardware frontier.
 6. **Part 6 — The Thermodynamic Mirror:** When the mathematics of AI becomes a diagnostic tool for human civilization itself.

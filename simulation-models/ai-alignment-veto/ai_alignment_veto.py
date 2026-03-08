@@ -184,8 +184,8 @@ def run_simulation(steps=SIM_STEPS):
         pass
         
     print("\n--- Final Results ---")
-    print(f"Unaligned: Humanity = {unaligned.human_pop:.1f} | Paperclips = {unaligned.paperclips:.1f}")
-    print(f"Aligned:   Humanity = {aligned.human_pop:.1f} | Paperclips = {aligned.paperclips:.1f}")
+    print(f"Unaligned: Substrate Health = {unaligned.human_pop:.1f} | Production = {unaligned.paperclips:.1f}")
+    print(f"Aligned:   Substrate Health = {aligned.human_pop:.1f} | Production = {aligned.paperclips:.1f}")
     
     plt.ioff()
     plt.show()

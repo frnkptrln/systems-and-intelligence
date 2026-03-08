@@ -48,7 +48,7 @@ Remove regulation, and the replicator equation does what it always does: the fit
 ### Scenario 3: Cultural Collapse ($K \to 0$)
 When the communication network fragments (filter bubbles, propaganda, censorship), agents lose the ability to synchronize values. The Kuramoto order parameter $r \to 0$. This is the math behind political polarization.
 
-### Scenario 4: The Biological Veto ($\frac{dS}{dt} > D_{\max}$)
+### Scenario 4: The Substrate Veto ($\frac{dS}{dt} > D_{\max}$)
 No matter how well-regulated or culturally cohesive a system is, if its total entropy production exceeds the physical capacity of its substrate, it collapses. **This is the climate crisis, written in differential equations.** The planet does not negotiate.
 
 ## An Honest Assessment

@@ -22,7 +22,7 @@ These four paradigms are not only useful engineering patterns — they are **uni
 - **Market** → Replicator Equation (Taylor & Jonker, 1978)
 - **Harmony** → Kuramoto Synchronization (Kuramoto, 1975)
 - **Homeostasis** → Regulatory Control Term
-- **Biological Veto** → Entropy Budget Constraint (Rockström et al., 2009)
+- **Substrate Veto** → Entropy Budget Constraint (Rockström et al., 2009 for Biosphere, Thermal Limits for Silicon)
 
 The [TEO Civilization Simulation](../simulation-models/teo-civilization/README.md) demonstrates what happens when each of these mechanisms fails.
 

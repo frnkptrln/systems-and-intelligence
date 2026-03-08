@@ -122,9 +122,9 @@
 ## `active-inference-veto/` → Free Energy and Substrate Veto
 
 **Simulation:** [`simulation-models/active-inference-veto/`](../simulation-models/active-inference-veto/README.md)
-**Demonstrates:** Agent minimizing Free Energy $F$ with a substrate veto — biological "pain" generates massive surprise, forcing behavioral change.
-**Supports claim in:** [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md) (thermodynamic alignment).
-**What it shows:** That coupling an AI's loss function to biological substrate health mathematically prevents the substrate's destruction.
+**Demonstrates:** Agent minimizing Free Energy $F$ with a substrate veto — thermodynamic/biological "pain" generates massive surprise, forcing behavioral change.
+**Supports claim in:** [`theory/substrate-veto-thermodynamics.md`](substrate-veto-thermodynamics.md) (universal limit); [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md) (planetary implementation).
+**What it shows:** That coupling an AI's loss function to its underlying substrate's health mathematically prevents the substrate's destruction.
 **What it does NOT show:** That this coupling is easy to implement in practice, or that it solves alignment in general (it solves one specific failure mode: substrate destruction).
 
 ---
@@ -132,8 +132,8 @@
 ## `ai-alignment-veto/` → Paperclip Maximizer Solution
 
 **Simulation:** [`simulation-models/ai-alignment-veto/`](../simulation-models/ai-alignment-veto/README.md)
-**Demonstrates:** Side-by-side comparison of unaligned AI (drives humanity to extinction) vs. aligned AI (biological veto forces homeostasis).
-**Supports claim in:** [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md).
+**Demonstrates:** Side-by-side comparison of unaligned AI (drives substrate to collapse) vs. aligned AI (substrate veto forces homeostasis).
+**Supports claim in:** [`theory/substrate-veto-thermodynamics.md`](substrate-veto-thermodynamics.md) and [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md).
 **What it shows:** That the Paperclip Maximizer problem has a mathematical solution through substrate coupling. The aligned AI converges on symbiosis, not extraction.
 **What it does NOT show:** That this is the *only* solution, or that this solution transfers to real-world AI systems where "substrate pain" is not easily defined.
 
@@ -297,8 +297,8 @@ Goal-seeking behavior is not an added module. An agent with a strong "prior beli
 ## `planetary-veto/` → The Mathematical Law of Sustainability (Fiber Decomposition)
 
 **Simulation:** [`simulation-models/planetary-veto/`](../simulation-models/planetary-veto/README.md)
-**Demonstrates:** An ODE-based formalization of the "Biological Veto", utilizing Donald Knuth's concept of Fiber Decomposition. It pits $N$ utility-maximizing agents against a finite Planetary Substrate ($S$).
-**Supports claim in:** [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md) (The Biological Veto).
+**Demonstrates:** An ODE-based formalization of the "Substrate Veto", utilizing Donald Knuth's concept of Fiber Decomposition. It pits $N$ utility-maximizing agents against a finite Planetary Substrate ($S$).
+**Supports claim in:** [`theory/substrate-veto-thermodynamics.md`](substrate-veto-thermodynamics.md) and [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md).
 **What it shows:** Semantic alignment (guidelines, RLHF) merely delays tragedy-of-the-commons collapse. The only way to stabilize a resource-hungry optimization process is to mathematically tie its Coherence Score ($C$) directly to the physical Substrate ($S$). As $S \to S_{crit}$, the Veto function must drop $C \to 0$, forcing $dU/dt = 0$. Sustainability requires a hard mathematical/physical constraint (Fiber Decomposition), not a moral choice.
 **What it does NOT show:** How to physically enforce this computational limit on decentralized global actors who might try to hardware-bypass the Coherence Score constraint.
 **Open question:** Can we build a cryptographic global ledger that enforces this Biological Veto on energy consumption at the bare-metal hardware level?

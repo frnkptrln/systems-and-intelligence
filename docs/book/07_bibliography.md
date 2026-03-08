@@ -25,7 +25,7 @@ The following references form the foundational pillars of the theories and simul
 
 **Peterlein, F. (2025).** 
 *Systems & Intelligence: An Open Thesis.* GitHub Repository. 
-*(Primary author of this repository, the Emergence Manifesto, the Planetary Veto derivation, and the Systems Orchestration framework.)*
+*(Primary author of this repository, the Emergence Manifesto, the Substrate Veto derivation, and the Systems Orchestration framework.)*
 
 **Peterlein, F. (2026).**
 *Quantifying Emergent Utility & Stability in Multi-Agent LLM Ecosystems.* (Working Paper).
