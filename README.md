@@ -1,15 +1,20 @@
 # 🧠 systems-and-intelligence
 
-> **📖 The Grand Synthesis: [Read the Interactive Book Online](https://frnkptrln.github.io/systems-and-intelligence)**  
-> *(You can also compile it locally via `pip install mkdocs-material python-markdown-math` and then `mkdocs serve`)*
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Simulations](https://img.shields.io/badge/25_Simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
+[![Docs](https://img.shields.io/badge/docs-Interactive_Book-blue)](https://frnkptrln.github.io/systems-and-intelligence)
+
+<div align="center">
+  <h3><i>The Fractal Architecture of Emergence</i></h3>
+  <p>Exploring how intelligence, adaptation, and structure emerge from the interaction of simple, local rules.</p>
+</div>
 
 ---
 
-This repository explores how **intelligence**, **adaptation**, and **structure**
-emerge from the interaction of simple components.
-It brings together simulation models, theoretical notes, and learning systems
-that illustrate how **local rules can generate global behavior**, how systems
-stabilize themselves, and how observers learn from the dynamics they inhabit.
+**This project brings together simulation models, theoretical notes, and learning systems** that illustrate how local actions generate global behavior, how systems stabilize themselves, and how observers learn from the dynamics they inhabit.
+
+> **📖 The Grand Synthesis: [Read the Interactive Book Online](https://frnkptrln.github.io/systems-and-intelligence)**  
+> *(You can also compile it locally via `pip install mkdocs-material python-markdown-math` and then `mkdocs serve`)*
 
 The project spans several layers:
 
@@ -30,13 +35,13 @@ To read the formal, academic synthesis of multiple frameworks within this reposi
 ---
 
 ## ⚖️ License & Intellectual Property
-This repository and its mathematical frameworks (including the $C$-Score, The Planetary Veto, and Systems Orchestration) are licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**. 
+This repository and its mathematical frameworks (including the $C$-Score, The Planetary Veto, and Systems Orchestration) are licensed under the **MIT License**.
 
 **What this means:**
 - **Open Science & Open Source:** Academics, researchers, and open-source developers are free to use, modify, and distribute this work. Startups and individuals are encouraged to build upon these simulations.
-- **Corporate Protection (Copyleft):** If you integrate this framework (specifically the Orchestrator or Utility metrics) into a commercial application and offer it as a service over a network (e.g., a Cloud API or Web App), **you must open-source your entire application code under the AGPL.** 
+- **Permissive Use:** You are free to use this code for both open-source and commercial applications without being required to open-source your own code, as long as the original copyright notice is included.
 
-This ensures that the *Fractal Architecture of Emergence* remains a true open-source public good. It fosters an open ecosystem while preventing closed-source tech giants from privately hoarding and exploiting the architecture without giving back to the community.
+This ensures that the *Fractal Architecture of Emergence* remains a true open-source public good, fostering an open ecosystem for everyone.
 
 ---
 
