@@ -316,20 +316,25 @@
 /* --- Content width & reading experience --- */
 .md-content__inner {
   max-width: 58rem;
-  /* Slightly wider for general reading */
 }
 
-/* Aggressive Specific override for Interactive Dashboard pages */
+/* Responsive embed for Interactive Dashboard pages */
 .md-typeset iframe[src*="app.html"] {
-  width: 90vw !important;
-  max-width: 1400px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100% !important;
+  max-width: 1200px;
   display: block;
-  margin: 2rem 0 !important;
+  margin: 2rem auto !important;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Allow the surrounding container to stretch safely without breaking flex boundaries */
+.md-grid {
+  max-width: 90%;
+}
+
+.md-content__inner {
+  max-width: 100%;
 }
 
 
