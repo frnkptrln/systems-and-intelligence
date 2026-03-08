@@ -1,3 +1,7 @@
+---
+hide:
+  - toc
+---
 # 📊 System Intelligence Index (SII)
 
 <style>
