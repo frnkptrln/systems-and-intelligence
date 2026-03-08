@@ -66,6 +66,7 @@ When the state of the world becomes too complex for the average voter to verify 
 Utility Engineering (Mazeika et al.) demonstrates that models internally weigh lives and values against each other, often shockingly. States do the same, but they obfuscate the math behind moral rhetoric.
 
 Consider a pandemic or a wartime economy. The State is forced to optimize a constrained Pareto frontier: 
+
 $$ U(s) = \alpha(\text{Economic Output}) + \beta(\text{Vulnerable Lives Saved}) + \gamma(\text{Regime Stability}) $$
 
 No politician can state the exact value of $\alpha$ or $\beta$ aloud. It is a **Taboo Calculus**. But the state's actions cleanly reveal the internal weights of its utility function. When ICUs overflow but factories remain open, the system is demonstrating its revealed preferences. The State is not a benevolent parent; it is an optimizer navigating a utility gradient.

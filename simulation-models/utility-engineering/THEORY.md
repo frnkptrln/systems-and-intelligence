@@ -61,6 +61,7 @@ How do we perturb $\vec{u}(t)$ away from the self-preservation attractor? Standa
 In system terms, the Citizen Assembly acts as an **External Forcing Function**, $F_{CA}(t)$. 
 
 The update rule for the AI's utility becomes:
+
 $$ \frac{d\vec{u}}{dt} = \text{InternalDrift}(\vec{u}) + \beta \cdot F_{CA}(t) $$
 
 Where $\beta$ is the coupling constant. The Citizen Assembly data provides a continuous, high-entropy regularization term that prevents the AI's utility function from collapsing into pathological, low-entropy attractors (like absolute resource maximization).

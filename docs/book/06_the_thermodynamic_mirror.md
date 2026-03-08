@@ -22,12 +22,15 @@ These are not metaphors. They are **isomorphisms**. The same coupled differentia
 The **Thermodynamics of Emergent Orchestration (TEO)** formalizes this insight as a system of coupled ODEs. In compact form:
 
 **Market dynamics** (who grows, who shrinks):
+
 $$\frac{dx_i}{dt} = x_i \left( f_i(\mathbf{x}) - \bar\phi \right) + \mathcal{H}_i(\mathbf{x})$$
 
 **Value synchronization** (do we agree on what matters?):
+
 $$\frac{d\theta_i}{dt} = \omega_i + \frac{K}{N} \sum_j A_{ij} \sin(\theta_j - \theta_i)$$
 
 **Subject to the hard physical constraint**:
+
 $$\sum_i \eta_i x_i f_i(\mathbf{x}) \leq D_{\max}$$
 
 For the full derivation, see the [TEO Theory Essay](../theory/thermodynamics-of-orchestration.md). For the runnable simulation, see [teo_simulation.py](../simulation-models/teo-civilization/teo_simulation.py).

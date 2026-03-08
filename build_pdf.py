@@ -1,4 +1,6 @@
 import os
+import re
+import urllib.parse
 import markdown
 from weasyprint import HTML, CSS
 from weasyprint.text.fonts import FontConfiguration
@@ -25,10 +27,22 @@ def generate_pdf():
         filepath = os.path.join(book_dir, chapter)
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
-            # Replace relative links for PDF format (strip them or make them absolute if needed)
-            # For a printed book, we just leave them or strip the hrefs, but basic MD is fine.
             content = content.replace("../../", "") 
             full_markdown += content + "\n\n<div style='page-break-after: always;'></div>\n\n"
+
+    # Pre-process math into SVG images via Codecogs
+    def block_repl(match):
+        math_expr = match.group(1).strip()
+        encoded = urllib.parse.quote(math_expr)
+        return f'\n<div style="text-align: center; margin: 1.5em 0;"><img src="https://latex.codecogs.com/svg.image?\\color{{black}}{encoded}" alt="{math_expr}" /></div>\n'
+    
+    def inline_repl(match):
+        math_expr = match.group(1).strip()
+        encoded = urllib.parse.quote(math_expr)
+        return f'<img src="https://latex.codecogs.com/svg.image?\\color{{black}}{encoded}" alt="{math_expr}" style="vertical-align: middle; height: 1.2em;" />'
+
+    full_markdown = re.sub(r'\$\$(.*?)\$\$', block_repl, full_markdown, flags=re.DOTALL)
+    full_markdown = re.sub(r'(?<!\$)\$(?!\$)(.*?)(?<!\$)\$(?!\$)', inline_repl, full_markdown)
 
     # Convert Markdown to HTML
     # We use extensions to support tables, footnotes, and code blocks
