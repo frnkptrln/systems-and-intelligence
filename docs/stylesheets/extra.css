@@ -319,18 +319,19 @@
   /* Slightly wider for general reading */
 }
 
-/* Specific override for Interactive Dashboard pages */
+/* Aggressive Specific override for Interactive Dashboard pages */
 .md-typeset iframe[src*="app.html"] {
-  width: 100% !important;
-  max-width: 1200px;
+  width: 90vw !important;
+  max-width: 1400px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   display: block;
-  margin: 1.5rem auto !important;
+  margin: 2rem 0 !important;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Allow the container to go wider if an iframe is present */
-.md-content__inner:has(iframe[src*="app.html"]) {
-  max-width: 1200px;
-}
 
 /* --- Buttons --- */
 .md-typeset .md-button {
