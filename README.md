@@ -14,7 +14,7 @@
 ## ⚡ Try it live in your browser
 Don't want to install anything? You can experience the core concepts immediately directly in your browser:
 
-- 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
+- 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
 - 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The complete "Grand Synthesis" of the theory.
 
 ---
