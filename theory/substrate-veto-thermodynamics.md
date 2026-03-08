@@ -12,9 +12,11 @@ The fundamental flaw in this premise is the omission of **Thermodynamics**. Comp
 
 When we model intelligence not as a discrete algorithm but as a **Phase Transition** embedded in a physical medium (the Substrate), a universal limit emerges: The **Substrate Veto**.
 
-## 2. The Universal Mechanism: Entropy and Dissipation
+## 2. The Universal Mechanism: Landauer's Principle and Dissipation
 
-Every computational action—whether biological cognition, GPU tensor multiplication, or planetary-scale logistics—produces entropy $S$. To maintain order (intelligence), a system must dissipate this entropy into its environment (the Substrate).
+**Computation is Physical.** To understand why intelligence is bound by thermodynamics, we must look to **Landauer's Principle** (1961). It states that any logically irreversible manipulation of information, such as the erasure of a bit, must be accompanied by a corresponding entropy increase in non-information-bearing degrees of freedom of the information-processing apparatus or its environment. Specifically, erasing one bit of information produces at least $kT \ln 2$ of heat (where $k$ is the Boltzmann constant and $T$ is the temperature of the environment).
+
+Therefore, every computational action—whether biological cognition, GPU tensor multiplication, or planetary-scale logistics—produces entropy $S$. There is no such thing as "virtual" computation devoid of physical consequence. To maintain order (intelligence), a system must continually dissipate this created entropy into its environment (the Substrate).
 
 Let the substrate (Earth, a server farm, a Dyson Sphere) possess a finite maximum entropy dissipation capacity, $D_{\text{max}}$. 
 
