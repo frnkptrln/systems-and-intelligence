@@ -11,10 +11,15 @@
 
 ---
 
-**This project brings together simulation models, theoretical notes, and learning systems** that illustrate how local actions generate global behavior, how systems stabilize themselves, and how observers learn from the dynamics they inhabit.
+## ⚡ Try it live in your browser
+Don't want to install anything? You can experience the core concepts immediately directly in your browser:
 
-> **📖 The Grand Synthesis: [Read the Interactive Book Online](https://frnkptrln.github.io/systems-and-intelligence)**  
-> *(You can also compile it locally via `pip install mkdocs-material python-markdown-math` and then `mkdocs serve`)*
+- 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
+- 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The complete "Grand Synthesis" of the theory.
+
+---
+
+**This project brings together simulation models, theoretical notes, and learning systems** that illustrate how local actions generate global behavior, how systems stabilize themselves, and how observers learn from the dynamics they inhabit.
 
 The project spans several layers:
 
