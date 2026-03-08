@@ -315,7 +315,21 @@
 
 /* --- Content width & reading experience --- */
 .md-content__inner {
-  max-width: 54rem;
+  max-width: 58rem;
+  /* Slightly wider for general reading */
+}
+
+/* Specific override for Interactive Dashboard pages */
+.md-typeset iframe[src*="app.html"] {
+  width: 100% !important;
+  max-width: 1200px;
+  display: block;
+  margin: 1.5rem auto !important;
+}
+
+/* Allow the container to go wider if an iframe is present */
+.md-content__inner:has(iframe[src*="app.html"]) {
+  max-width: 1200px;
 }
 
 /* --- Buttons --- */
