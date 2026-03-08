@@ -6,7 +6,6 @@
 
 <div align="center">
   <h3><i>The Fractal Architecture of Emergence</i></h3>
-  <img src="docs/assets/gifs/lenia_demo.gif" width="400" alt="Lenia Cellular Automata Simulation" />
   <p>Exploring how intelligence, adaptation, and structure emerge from the interaction of simple, local rules.</p>
 </div>
 
@@ -87,10 +86,6 @@ We believe intellectual honesty about these distinctions makes the project *more
 Each subfolder contains its own README with context and details.
 
 ### 🧪 Simulation Models
-
-<div align="center">
-  <img src="docs/assets/gifs/boids_demo.gif" width="250" alt="Boids Flocking Simulation" />
-</div>
 
 | Model | Theme |
 | :--- | :--- |
