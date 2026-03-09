@@ -41,7 +41,7 @@ Recent work by Pedro Domingos (2025) on **Tensor Logic** demonstrates that logic
 - Our *external* Coherence Score $C$ could become unnecessary — logical consistency would be guaranteed *internally* by the network weights.
 - The Multi-Paradigm Orchestrator would shift from a *corrective* role (fixing broken agents) to a *coordinative* role (managing healthy agents with competing goals).
 
-This does not invalidate our framework. It evolves it. Tensor Logic solves the *single-agent* alignment problem. Our orchestration architecture solves the *multi-agent* coordination problem. These are complementary, not competing.
+This does not invalidate our framework. It evolves it. If Tensor Logic matures into a practical architecture with strong internal consistency guarantees, it could reduce the need for some *single-agent* external alignment scaffolding. Our orchestration architecture is aimed at *multi-agent* coordination dynamics; the two directions are plausibly complementary rather than competing.
 
 ## What Must Come Next
 

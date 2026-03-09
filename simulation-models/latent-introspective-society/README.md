@@ -19,7 +19,7 @@ The simulation runs three isolated resource-gathering societies in parallel:
    - The *Introspective* agents act as the slow-moving "consciousness" of the system. While computing their perfect paths, they leave strong gradients ("meaning"/pheromones) in the environment.
    - The *Latent* agents act as the fast-moving "body". They still only see 1 step ahead, but their instincts drive them up the gradients left by the Introspectives.
    
-*Result:* The Symbiotic society typically vastly outperforms the others, proving that Downward Causation (the slow reflection of the few guiding the fast action of the many through environmental memory) is a superior architecture to homogeneous AI swarms.
+*Result:* The Symbiotic society typically outperforms the others in this toy environment, suggesting that a “division of cognitive labor” (slow reflection shaping fast action through environmental memory) can outperform homogeneous swarms under some conditions.
 
 ## Running the Simulation
 

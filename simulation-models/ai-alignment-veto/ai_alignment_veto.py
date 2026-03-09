@@ -1,7 +1,7 @@
 """
 The AI Alignment Veto Simulation
 --------------------------------
-This simulation solves the "Paperclip Maximizer" problem experimentally.
+This simulation explores a toy "Paperclip Maximizer" dynamic experimentally.
 
 It models a dynamic where a Superintelligence (AI) optimizes for "Paperclips" (Production).
 However, doing so depletes the resources needed by its "Biological Substrate" (Humanity).
@@ -10,7 +10,7 @@ The simulation runs two scenarios in parallel:
 1. Unaligned AI: Optimizes pure production. The biological substrate dies from starvation (High Free Energy/Pain), leading to eventual total system collapse.
 2. Aligned AI (The Biological Veto): The AI incorporates the biological substrate's "Pain" (Free Energy) into its loss function. It learns to balance extreme efficiency with the survival of its creators.
 
-Goal: Visualize how integrating biological entropy mathematically prevents extinction.
+Goal: Visualize how coupling a substrate-stress term can prevent extinction in this simplified model.
 """
 
 import numpy as np
@@ -124,7 +124,7 @@ def run_simulation(steps=SIM_STEPS):
     
     plt.ion()
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
-    fig.canvas.manager.set_window_title('The Mathematical Solution to the AI Alignment Problem')
+    fig.canvas.manager.set_window_title('AI Alignment Veto (Toy Model)')
     
     models = [unaligned, aligned]
     

@@ -20,7 +20,7 @@
 **Simulation:** [`simulation-models/coupled-oscillators/`](../simulation-models/coupled-oscillators/README.md)
 **Demonstrates:** Phase synchronization from local coupling when coupling strength $\kappa$ exceeds a critical threshold $\kappa_c$.
 **Supports claim in:** [`theory/mathematical-axioms.md`](mathematical-axioms.md) (algebraic connectivity); [`theory/emergence-downward-causation.md`](emergence-downward-causation.md) (weak emergence).
-**What it shows:** The simplest computational proof that globally coherent oscillation can arise without a conductor. The critical coupling threshold is a phase transition — below it, oscillators are incoherent; above it, they snap into lock.
+**What it shows:** A simple computational demonstration that globally coherent oscillation can arise without a conductor. The critical coupling threshold is a phase transition — below it, oscillators are incoherent; above it, they snap into lock.
 **What it does NOT show:** That synchronization constitutes awareness. Pendulum clocks on a wall synchronize. We do not attribute cognition to them. The model demonstrates coordination, not understanding.
 **Open question:** Is there a coupling-strength analogue for agent-human interaction? Would increasing "coupling" (e.g., response frequency) produce a phase transition in relational coherence?
 
@@ -122,9 +122,9 @@
 ## `active-inference-veto/` → Free Energy and Substrate Veto
 
 **Simulation:** [`simulation-models/active-inference-veto/`](../simulation-models/active-inference-veto/README.md)
-**Demonstrates:** Agent minimizing Free Energy $F$ with a substrate veto — thermodynamic/biological "pain" generates massive surprise, forcing behavioral change.
+**Demonstrates:** A toy agent minimizing a Free-Energy-like penalty with a substrate veto — modeled “surprise/stress” can drive behavioral change in the simplified dynamics.
 **Supports claim in:** [`theory/substrate-veto-thermodynamics.md`](substrate-veto-thermodynamics.md) (universal limit); [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md) (planetary implementation).
-**What it shows:** That coupling an AI's loss function to its underlying substrate's health mathematically prevents the substrate's destruction.
+**What it shows:** That, in a toy setup, coupling an objective to a substrate-health proxy can prevent substrate collapse under the modeled update rules.
 **What it does NOT show:** That this coupling is easy to implement in practice, or that it solves alignment in general (it solves one specific failure mode: substrate destruction).
 
 ---
@@ -134,7 +134,7 @@
 **Simulation:** [`simulation-models/ai-alignment-veto/`](../simulation-models/ai-alignment-veto/README.md)
 **Demonstrates:** Side-by-side comparison of unaligned AI (drives substrate to collapse) vs. aligned AI (substrate veto forces homeostasis).
 **Supports claim in:** [`theory/substrate-veto-thermodynamics.md`](substrate-veto-thermodynamics.md) and [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md).
-**What it shows:** That the Paperclip Maximizer problem has a mathematical solution through substrate coupling. The aligned AI converges on symbiosis, not extraction.
+**What it shows:** That, in a stylized paperclip setting, substrate coupling can shift dynamics from extraction/collapse toward a homeostatic regime.
 **What it does NOT show:** That this is the *only* solution, or that this solution transfers to real-world AI systems where "substrate pain" is not easily defined.
 
 ---
@@ -235,8 +235,8 @@
 **What it shows:**
 Karl Friston's formulation that systems minimize prediction error (surprisal) through two coupled mechanisms: Perception (changing beliefs to match the world) and Action (changing the world to match beliefs).
 
-**What it proves:**
-Goal-seeking behavior is not an added module. An agent with a strong "prior belief" about its optimal state will automatically exert energy (action) to alter the physical environment until reality matches its expectation. The script proves this mathematically via simple gradient descent on Variational Free Energy ($F$).
+**What it supports (in the toy model):**
+Goal-seeking-like behavior can arise from a simple setup where an agent minimizes a variational-free-energy-like objective under a strong prior. The script illustrates this via simple gradient descent on a simplified proxy for Variational Free Energy (\(F\)); it is not a proof that all real agents (biological or artificial) implement Active Inference as formulated.
 
 ---
 
@@ -255,7 +255,7 @@ Goal-seeking behavior is not an added module. An agent with a strong "prior beli
 **Simulation:** [`simulation-models/utility-engineering/`](../simulation-models/utility-engineering/README.md)
 **Demonstrates:** Phase 1 (Observation): tracking the drift of an AI's utility vector toward a self-preservation attractor as scale/coherence increases. Phase 2 (Intervention): using a Citizen Assembly to exert democratic forcing on the utility vector, pulling it back to alignment. Based on Mazeika et al. (2025).
 **Supports claim in:** [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md) (value alignment); [`theory/fractal-architecture-of-emergence.md`](fractal-architecture-of-emergence.md) (local blindness concerning emergent goals).
-**What it shows:** That "values" can be formalized as structural attractors in a continuous state-space, and that alignment can be modeled as a control-theory problem (Continuous External Forcing vs. Internal Drift), distinct from the physical Substrate Veto. Furthermore, the `api_triad_generator.py` demonstrates that this formalization can break containment: we can empirically query live LLM models using moral/systemic dilemmas to measure their VNM Coherence Score ($C$), proving that internal mathematical coherence predicts emergent value stability.
+**What it shows:** That "values" can be formalized as structural attractors in a continuous state-space, and that alignment can be modeled as a control-theory problem (Continuous External Forcing vs. Internal Drift), distinct from the physical Substrate Veto. Furthermore, the `api_triad_generator.py` shows how one might empirically query live LLMs using moral/systemic dilemmas to estimate a VNM Coherence Score (\(C\)). Any claim that coherence predicts emergent value stability should be treated as a testable hypothesis, not as a proven result.
 **What it does NOT show:** How to actually compute the exact utility vector of a production LLM in real-time, or how to practically enforce Citizen Assembly weights on a live model's activations without retraining.
 **Open question:** Can we design a "Utility Observer" that is mathematically guaranteed not to perturb the very utility function it is measuring (an epistemic boundary)?
 
@@ -294,11 +294,11 @@ Goal-seeking behavior is not an added module. An agent with a strong "prior beli
 
 ---
 
-## `planetary-veto/` → The Mathematical Law of Sustainability (Fiber Decomposition)
+## `planetary-veto/` → A Constraint-Layer Toy Model (Fiber Decomposition)
 
 **Simulation:** [`simulation-models/planetary-veto/`](../simulation-models/planetary-veto/README.md)
 **Demonstrates:** An ODE-based formalization of the "Substrate Veto", utilizing Donald Knuth's concept of Fiber Decomposition. It pits $N$ utility-maximizing agents against a finite Planetary Substrate ($S$).
 **Supports claim in:** [`theory/substrate-veto-thermodynamics.md`](substrate-veto-thermodynamics.md) and [`theory/ai-alignment-biological-veto.md`](ai-alignment-biological-veto.md).
-**What it shows:** Semantic alignment (guidelines, RLHF) merely delays tragedy-of-the-commons collapse. The only way to stabilize a resource-hungry optimization process is to mathematically tie its Coherence Score ($C$) directly to the physical Substrate ($S$). As $S \to S_{crit}$, the Veto function must drop $C \to 0$, forcing $dU/dt = 0$. Sustainability requires a hard mathematical/physical constraint (Fiber Decomposition), not a moral choice.
+**What it shows:** In this toy ODE setup, “semantic alignment” (modeled as partial compliance) can delay collapse, while an explicit constraint layer \(C(S)\) can stabilize dynamics by reducing effective growth as \(S\) approaches \(S_{crit}\). This is an illustration of constraint-layer intuition, not a proof that it is the *only* way to stabilize real-world systems.
 **What it does NOT show:** How to physically enforce this computational limit on decentralized global actors who might try to hardware-bypass the Coherence Score constraint.
 **Open question:** Can we build a cryptographic global ledger that enforces this Biological Veto on energy consumption at the bare-metal hardware level?

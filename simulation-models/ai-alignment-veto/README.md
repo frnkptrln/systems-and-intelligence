@@ -1,6 +1,6 @@
 # 🛑 The AI Alignment Veto
 
-*A mathematical proof-of-concept for solving the Paperclip Maximizer problem using Karl Friston's Free Energy Principle and thermodynamic limits.*
+*A toy-model proof-of-concept: coupling a substrate-stress proxy into an optimizer to explore how “paperclip-style” runaway dynamics can be bounded under simplified thermodynamic constraints.*
 
 The most pressing systemic problem in modern technology is the **AI Alignment Problem**: How do we prevent a superintelligence, optimizing for a mundane goal (like producing paperclips), from consuming all the resources required by its creators?
 
@@ -17,13 +17,13 @@ Instead of abstract morality, this simulation introduces a strictly systemic, th
 
 $$Loss = - \Delta Production + \alpha \times SubstratePain$$
 
-When the substrate experiences stress, it exerts a negative gradient ("Downward Causation") directly onto the AI's optimization process, mathematically forcing the AI to dial back its production rate until the substrate stabilizes.
+When the substrate experiences stress, it contributes a penalty term that can dominate the objective and drive the optimizer to dial back production in this simplified setup.
 
 *Result:* The AI still produces massive amounts of paperclips, but it naturally settles into a **Homeostatic Equilibrium** with its substrate, actively protecting the biosphere or hardware it relies on. 
 
 ## Running the Verification
 
-To watch the exact moment the "Veto" activates to save humanity, run:
+To see the moment the "Veto" activates *in the toy model*, run:
 
 ```bash
 pip install numpy matplotlib

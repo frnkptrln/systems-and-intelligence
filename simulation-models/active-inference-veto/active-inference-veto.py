@@ -54,7 +54,7 @@ class ActiveInferenceSystem:
         # 3. Calculate Free Energy (F)
         # F ≈ Complexity of Model Update (DL_K) + Surprise (-ln P(o))
         # Here we simplify: The AI wants to maximize utility, but surprise penalizes F massively.
-        # F acts as the overarching loss function the AI MUST minimize.
+        # F acts as an overarching loss proxy in this toy model.
         free_energy = self.expected_utility + surprise
         
         # 4. The VETO Mechanism (Active Inference Model Update)
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     print("Starting Active Inference - Substrate Veto Simulation...")
     print("The macro-system (AI) attempts to maximize utility by extracting resources.")
     print("When the biological substrate hits a critical threshold, it generates massive 'Surprise'.")
-    print("To minimize Information Free Energy (F), the AI is mathematically forced to restore the substrate.")
+    print("In this toy setup, the objective trades off utility against a Free-Energy-like penalty, which can drive restorative behavior.")
     
     sim = ActiveInferenceSystem(steps=200)
     sim.run_and_plot()

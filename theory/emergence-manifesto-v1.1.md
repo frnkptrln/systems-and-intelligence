@@ -80,9 +80,9 @@ Random noise has high observer surprise but low trajectory consistency. Mirrorin
 
 *Formalism:* Defined operationally in [`theory/glossary.md`](glossary.md) §Generative Surprise. Not yet tested with real language models.
 
-### Claim 7: Alignment Can Be Solved Thermodynamically `[DEMONSTRATED]`
+### Claim 7: A Thermodynamic Veto Can Bound One Failure Mode (Toy-Model) `[DEMONSTRATED]`
 
-The AI Alignment Veto couples the AI's loss function to the biological substrate's Free Energy. When the substrate suffers (Free Energy spikes), the AI's optimization landscape shifts to prioritize substrate health. This is not an ethical solution — it is a mathematical one. The aligned AI converges on symbiosis because extinction of the substrate produces unbounded loss.
+The AI Alignment Veto couples an optimizer's objective to a substrate-stress proxy (sometimes labeled “Free Energy” in this repo’s toy models). When the substrate degrades (the proxy rises), the optimization landscape shifts to prioritize substrate health in the modeled dynamics. This is not presented as a general, real-world “solution to alignment”, but as a demonstrated mechanism that can bound one specific failure mode (substrate destruction) in a stylized setting.
 
 *Evidence:* [`simulation-models/ai-alignment-veto/`](../simulation-models/ai-alignment-veto/README.md) — demonstrated in simulation. Real-world applicability requires defining "substrate pain" for actual AI systems.
 

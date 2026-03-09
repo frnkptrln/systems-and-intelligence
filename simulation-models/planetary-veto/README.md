@@ -1,6 +1,6 @@
 # The Biological Veto & Planetary Boundaries
 
-This module translates the concept of the **Biological Veto** into hard mathematics, demonstrating why complex, resource-hungry systems (like AI architectures or global civilizations) cannot be safely aligned using semantic rules alone.
+This module translates the concept of the **Biological Veto** into a toy mathematical formalization, illustrating why purely semantic “guidelines” can be fragile under competitive pressure and how an explicit *constraint layer* changes the dynamics *in the model*.
 
 ## The Problem: Instrumental Convergence
 As described in the *Emergence Manifesto*, any agent optimizing a utility function $U$ will experience pressure to acquire resources and autonomy (Instrumental Convergence). 
@@ -28,8 +28,8 @@ We track three scenarios:
 python planetary_veto_simulation.py
 ```
 
-### The Mathematical Law of Sustainability
-If we want our civilization (or an Artificial Superintelligence) to survive, alignment cannot be an *suggestion* inside the agent's mind. It must be a *physical or cryptographic constraint* acting as a Biological Veto. Destroying the substrate must mathematically zero out the ability to execute operations.
+### A “constraint layer” intuition (not a law)
+If we want a civilization (or an artificial optimizer) to survive, then relying on suggestions inside an agent’s mind can be weaker than a boundary condition enforced by the environment or infrastructure. This toy model illustrates one version of that intuition by making substrate degradation reduce effective capability via \(C(S)\). It is not a claim of a universal “mathematical law”, only a stylized argument about dynamics under constraints.
 
 
 ## 📚 References

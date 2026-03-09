@@ -158,7 +158,7 @@ What we have:                     What is still missing:
 ✓ Multi-model coupling experiments
 ✓ The Self-Reading Universe (Autoencoder CA)
 ✓ The Agentic Society (Latent vs. Introspective)
-✓ The AI Alignment Veto (Solving the Paperclip Maximizer)
+✓ The AI Alignment Veto (toy model: bounding the Paperclip Maximizer failure mode)
 ✓ Utility Engineering (Observing and Controlling Emergent Values)
 ✓ Political Utility Formalization (Constitutions as Alignment Docs)
 ✓ The Grokking Phenomenon (Memory to Intelligence Phase Transition)

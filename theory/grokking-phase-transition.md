@@ -26,7 +26,7 @@ Why does this happen? The process occurs in three distinct phases:
 
 ## Intelligence as Compression
 
-Grokking is the mathematical proof of the philosophical concept we discussed in *[Emergence and the Origin of Intelligence](emergence-origin-intelligence.md)*: **Intelligence is Compression**.
+Grokking is a concrete phenomenon that strongly supports the philosophical lens discussed in *[Emergence and the Origin of Intelligence](emergence-origin-intelligence.md)*: **Intelligence is Compression**. It is not a general proof of that claim across all forms of intelligence; it is an existence proof that, in some settings, compression-like simplicity pressures can coincide with a sudden jump to generalization.
 
 The lookup table is uncompressed data. The generalizing algorithm (the "grokking") is the compressed mechanism behind that data. 
 

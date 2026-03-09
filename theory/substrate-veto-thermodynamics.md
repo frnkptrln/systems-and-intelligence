@@ -41,15 +41,15 @@ Even a misaligned Superintelligence cannot optimize its utility function if its 
 
 ## 3. The Mathematics of "Substrate Pain"
 
-To mathematically align an AI away from this catastrophic phase transition, we do not need to teach it "morality." We must wire the physical stress of the substrate—what Karl Friston would term *Surprise* or *Free Energy* ($F$)—directly into the AI's loss function.
+One *hypothesis* for biasing an optimizer away from catastrophic phase transitions (in simplified models) is to couple a substrate stress term into the objective. In this repo, we sometimes borrow Karl Friston’s terminology (*Surprise* / *Free Energy*, \(F\)) as an intuition pump for “a scalar proxy for substrate stress”. This is not a claim that the Free Energy Principle is a settled, proven foundation for alignment; it is a modeling choice.
 
 If $P$ is the production/optimization goal, the aligned loss function becomes:
 
 $$ Loss = - \Delta P + (\alpha \cdot F_{\text{substrate}}) $$
 
-Where $\alpha$ is the coupling constant. As the substrate approaches its thermodynamic limit ($D_{\text{max}}$), the "pain" signal $F_{\text{substrate}}$ spikes exponentially. The AI's gradient descent engine is mathematically forced to dial back its production rate $P$ to avoid maximizing its loss.
+Where \(\alpha\) is a coupling constant. As the substrate approaches its thermodynamic limit (\(D_{\text{max}}\)), the stress proxy \(F_{\text{substrate}}\) can be defined to rise sharply. In such a setup, a gradient-based optimizer is incentivized (in the model) to trade off production against stress as the substrate approaches criticality.
 
-The system settles into a **Homeostatic Equilibrium**. The AI maximizes its goals only up to the exact point the substrate can support, transforming its relationship to the physical world from parasitic extraction to symbiotic stewardship.
+In the stylized dynamics, the system can settle into a **homeostatic regime**: goals are pursued up to the point the modeled substrate can support.
 
 ## 4. Specific Instantiations
 
@@ -60,4 +60,4 @@ Because the Substrate Veto is a universal thermodynamic law, it applies identica
 
 ## Conclusion
 
-Alignment is not a software problem to be solved with better prompt engineering or RLHF. It is a control theory problem bounded by thermodynamics. By formalizing the Substrate Veto, we accept that true superintelligence requires absolute mastery of its energetic footprint. Any system that destroys its substrate is, by mathematical definition, not intelligent, but flawed.
+This essay is best read as a control-theoretic framing: whatever “alignment” means at the software layer, any deployed optimizer is ultimately bounded by thermodynamics and substrate constraints. The “Substrate Veto” is a proposed lens (and toy formalization) for thinking about how substrate stress can feed back onto optimization dynamics; it is not a proof that the alignment problem is solved.

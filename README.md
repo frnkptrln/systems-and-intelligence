@@ -115,7 +115,7 @@ Each subfolder contains its own README with context and details.
 | `coupled-lenia-boids/` | 🌪️ Multi-model coupling: Continuous CA (Lenia) ↔ Foraging Agents (Boids) |
 | `self-reading-universe/` | 👁️ The Self-Reading Universe: Downward causation from Autoencoder compression to CA physics |
 | `latent-introspective-society/` | 🧠 MAS Division of Labor: Reflective Pheromones guiding Intuitive Agents |
-| `ai-alignment-veto/` | 🛑 The Biological Veto: Solving the Paperclip Maximizer mathematically via Substrate Pain (Free Energy) |
+| `ai-alignment-veto/` | 🛑 The Biological Veto (toy model): bounding a paperclip-style optimizer by coupling a substrate-stress proxy (Free Energy / “pain”) |
 | `utility-engineering/` | ⚖️ Utility Engineering: Monitoring AI utility drift and aligning it via Citizen Assembly feedback (arXiv:2502.08640) |
 | `political-utility-formalization/` | 🏛️ Translating AI Alignment (Instrumental Convergence, Triage Utility) to Political Systems |
 | `grokking-phase-transition/` | ⚡ The Grokking Phenomenon: Visualizing the thermodynamic jump from Memory to Intelligence |
@@ -129,9 +129,9 @@ Selected theoretical notes and essays located in the `theory/` directory:
   - [Guide for Cells in Resistance](theory/human-organism-silicon-age/guide-for-cells-in-resistance.md) – Preserving individuality in a system optimized for total predictability.
   - [Solarpunk Utopia: Gödel's Constitution](theory/human-organism-silicon-age/solarpunk-utopia-goedel-constitution.md) – A society using the formal limits of logic as its constitution.
   - [The Symbiotic Nexus Protocol](theory/human-organism-silicon-age/symbiotic-nexus-protocol.md) – A system architecture utilizing the "Biological Veto" to prevent abstract superorganisms from destroying their biological substrate.
-- [**Grokking: Generalization from Memorization**](theory/grokking-phase-transition.md) – How neural networks suddenly abandon memorization (lookup tables) and discover true, generalizing relationships, acting as a thermodynamic proof that Intelligence is Compression.
+- [**Grokking: Generalization from Memorization**](theory/grokking-phase-transition.md) – How some networks can abruptly shift from memorization (lookup tables) to generalization; a concrete phenomenon that supports (but does not prove) the “intelligence-as-compression” lens.
 - [**Local Causality and Invisible Consequences**](theory/local-causality-invisible-consequences.md) – The shared architecture across all models: local processes without access to their global consequences. Connects Boids, Kuramoto, Bak's Sandpile, neuroscience, and the Mirror Problem through a single structural lens.
-- [**The AI Alignment Veto: A Thermodynamic Solution**](theory/ai-alignment-biological-veto.md) – Proving that the Paperclip Maximizer problem can be solved not through ethics, but by mathematically coupling the AI's loss function to the biological substrate's Free Energy (Pain).
+- [**The AI Alignment Veto: A Thermodynamic Hypothesis (Toy Formalization)**](theory/ai-alignment-biological-veto.md) – A conjecture explored in simulation: coupling an optimizer’s loss to a substrate-stress proxy (Free Energy / “pain”) can bound one failure mode (substrate destruction) in stylized dynamics.
 - [**The Non-Individual Intelligence**](theory/the-non-individual-intelligence.md) – Life as "Social Computation", substrate-agnosticism, and incompleteness as a condition for life. Includes the Deep-Seed prompt for systemic alignment.
 - [**Principles of the Agentic Society**](theory/agentic-society-principles.md) – Translating the paradox of consciousness (Anthropic vs OpenAI) into MAS architecture: The R-Index, Information Firewalls, and Stigmergic Memory.
 - [**Mathematical Axioms of the Computational Ecology**](theory/mathematical-axioms.md) – Formalizing resilience through Graph Theory ($\lambda_2$), Information Theory ($H(X)$), Active Inference ($F$), and Algorithmic Complexity ($K(x)$).

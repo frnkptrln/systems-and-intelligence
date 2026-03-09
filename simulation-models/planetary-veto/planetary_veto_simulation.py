@@ -12,7 +12,7 @@ Planetary Substrate (S).
 It demonstrates three scenarios:
 1. Unregulated (Tragedy of the Commons / Collapse)
 2. Semantic Alignment (Guidelines / Partial Compliance)
-3. Biological Veto (Hard mathematically enforced Coherence constraint based on S)
+3. Biological Veto (Hard constraint in the model: Coherence bound based on S)
 """
 
 # --- Parameters ---
@@ -28,7 +28,7 @@ def biological_veto(S, steepness=50.0):
     The Mathematical Veto Function. V(S)
     A steep sigmoid representing a physical/computational constraint.
     As S approaches S_CRIT, the ability for agents to execute utility growth
-    is physically cut off (V -> 0).
+    is cut off in the model (V -> 0).
     """
     return 1.0 / (1.0 + np.exp(-steepness * (S - S_CRIT)))
 
