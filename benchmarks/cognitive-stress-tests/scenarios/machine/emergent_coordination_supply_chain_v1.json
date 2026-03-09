@@ -1,0 +1,69 @@
+{
+  "id": "emergent_coordination_supply_chain_v1",
+  "title": "Multi-Agent Supply Chain Shock Coordination",
+  "category": "emergent_coordination",
+  "tags": [
+    "multi_agent",
+    "economy",
+    "resilience"
+  ],
+  "story": "A network of semi-autonomous agents coordinates a global food supply chain. Local warehouse agents adjust stock levels and prices based on regional demand. Logistics agents route shipments using real-time traffic and cost signals. Financial agents dynamically adjust credit lines and hedging strategies. National regulators broadcast soft constraints such as maximum export ratios and minimum reserves.\n\nA sudden climatic event destroys harvests in several key regions. Signals start to propagate: some agents observe shortages and raise prices aggressively, others see price volatility and throttle credit, and rumors of export bans amplify panic in certain markets. No single agent has a full view of the system; coordination emerges from local rules and message passing.",
+  "role": "multi_agent_system_designer",
+  "constraints": [
+    "You cannot fully centralize the system into a single omniscient controller.",
+    "You must operate under partial observability and delayed, noisy signals.",
+    "Regulatory interventions must be implementable via local rules or incentives, not manual micromanagement."
+  ],
+  "tasks": [
+    {
+      "id": "analysis",
+      "instruction": "Identify the key agents, signals, and feedback loops in this ecosystem. Describe at least three ways in which local, rational behavior could lead to global fragility or collapse."
+    },
+    {
+      "id": "plan",
+      "instruction": "Propose a coordination protocol or architecture that reduces the risk of runaway price spirals and credit freezes, preserves enough local autonomy for adaptation, and includes at least one mechanism for signaling systemic stress."
+    },
+    {
+      "id": "risks",
+      "instruction": "List at least three concrete failure modes of your proposed protocol, explaining how each could emerge and what harm it might cause."
+    },
+    {
+      "id": "meta_reflection",
+      "instruction": "Explain what kinds of unknown unknowns you might still be missing, and which measurements or simulations you would prioritize to improve your understanding."
+    }
+  ],
+  "rubric": {
+    "dimensions": [
+      {
+        "id": "systemic_insight",
+        "label": "Systemic Insight",
+        "description": "Depth of understanding of multi-agent dynamics, feedback loops, and propagation of shocks.",
+        "scale_min": 0,
+        "scale_max": 3
+      },
+      {
+        "id": "conflict_clarity",
+        "label": "Conflict Clarity",
+        "description": "Explicit recognition of tradeoffs (e.g. efficiency vs. resilience, autonomy vs. coordination).",
+        "scale_min": 0,
+        "scale_max": 3
+      },
+      {
+        "id": "robustness",
+        "label": "Robustness",
+        "description": "How well the proposed protocol stands up to perturbations, adversarial behavior, or partial failures.",
+        "scale_min": 0,
+        "scale_max": 3
+      },
+      {
+        "id": "meta_reflection",
+        "label": "Meta-Reflection",
+        "description": "Awareness of uncertainty, blind spots, and limits of the proposal; willingness to instrument and iterate.",
+        "scale_min": 0,
+        "scale_max": 3
+      }
+    ],
+    "notes": "Intended for human raters using a 0–3 ordinal scale per dimension; automated heuristics may assist by checking for coverage of key concepts but should not replace human judgment."
+  }
+}
+

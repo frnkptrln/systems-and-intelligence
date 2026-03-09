@@ -79,6 +79,7 @@ We believe intellectual honesty about these distinctions makes the project *more
 | Folder | Purpose |
 | :--- | :--- |
 | **`simulation-models/`** | Concrete dynamical systems: cellular automata, agent-based simulations, homeostasis models, nested-learning examples. |
+| **`benchmarks/`** | Cognitive stress tests and other benchmarks probing systemic thinking and emergent behavior in humans and AI systems. |
 | **`utility-engineering/`** | Observing and controlling emergent value systems via Citizen Assembly democratic forcing. |
 | **`political-utility-formalization/`** | Translating AI Alignment constraints (Instrumental Convergence, Triage) back to Statecraft. |
 | **`systems-orchestration/`** | **Multi-Paradigm LLM Architecture**: Combines nodes using Harmonic (Music), Homeostatic (Biology), Market (Economy), and Flow (Physics) orchestration driven by VNM Utility coherence. |
