@@ -162,6 +162,12 @@ cd systems-and-intelligence
 pip install -r requirements.txt
 ```
 
+Some simulations use optional ML dependencies (e.g. PyTorch). Install them with:
+
+```bash
+pip install -r requirements-ml.txt
+```
+
 Then run any simulation:
 
 ```bash
