@@ -11,8 +11,9 @@ SII dimensions:
     P  –  Predictive Power
     R  –  Regulation Ability
     A  –  Adaptive Capacity
+    IP –  Identity Persistence (Chord vs. Arpeggio)
 
-    SII = P × R × A   (each normalised to [0, 1])
+    SII = P × R × A × IP  (each normalised to [0, 1])
 
 The results are displayed as:
     1. A console table with numerical P, R, A, SII scores
@@ -80,8 +81,10 @@ def sim_ecosystem(steps=300, grid_size=50, target_density=0.35):
 
     # A: low (fixed rules)
     A = 0.1
+    # IP: Low (no self-model co-instantiation)
+    IP = 0.1
 
-    return P, R, A, densities
+    return P, R, A, IP, densities
 
 
 # ── 2. Nested Learning ───────────────────────
@@ -153,7 +156,10 @@ def sim_nested_learning(steps=500):
     late_err = np.mean(errors_post[-50:])
     A = max(0, min(1, (early_err - late_err) / max(early_err, 0.01)))
 
-    return P, R, A, errors
+    # IP: Medium (state persistence)
+    IP = 0.5
+
+    return P, R, A, IP, errors
 
 
 # ── 3. Boids Flocking ────────────────────────
@@ -239,7 +245,10 @@ def sim_boids(steps=300, n_boids=80):
     post_scatter = np.mean(cohesion_strengths[200:250])
     A = max(0, min(1, post_scatter / max(pre_scatter, 0.01)))
 
-    return P, R, A, cohesion_strengths
+    # IP: Collective persistence
+    IP = 0.6
+
+    return P, R, A, IP, cohesion_strengths
 
 
 # ── 4. Ising Model ───────────────────────────
@@ -313,7 +322,10 @@ def sim_ising(steps=200, grid_size=32, T=2.27):
     late = np.mean(mag_quench[-20:])
     A = max(0, min(1, (late - early) / max(1.0 - early, 0.01)))
 
-    return P, R, A, mag_history
+    # IP: High (global attractor/phase stability)
+    IP = 0.9
+
+    return P, R, A, IP, mag_history
 
 
 # ═════════════════════════════════════════════
@@ -364,28 +376,28 @@ def run_dashboard():
     results = {}
 
     print("  [1/4] Ecosystem Regulation...", end=" ", flush=True)
-    P, R, A, _ = sim_ecosystem()
-    results["Ecosystem\nRegulation"] = (P, R, A)
-    sii = P * R * A
-    print(f"P={P:.2f}  R={R:.2f}  A={A:.2f}  SII={sii:.3f}")
+    P, R, A, IP, _ = sim_ecosystem()
+    results["Ecosystem\nRegulation"] = (P, R, A, IP)
+    sii = P * R * A * IP
+    print(f"P={P:.2f}  R={R:.2f}  A={A:.2f}  IP={IP:.2f}  SII={sii:.3f}")
 
     print("  [2/4] Nested Learning...", end=" ", flush=True)
-    P, R, A, _ = sim_nested_learning()
-    results["Nested\nLearning"] = (P, R, A)
-    sii = P * R * A
-    print(f"P={P:.2f}  R={R:.2f}  A={A:.2f}  SII={sii:.3f}")
+    P, R, A, IP, _ = sim_nested_learning()
+    results["Nested\nLearning"] = (P, R, A, IP)
+    sii = P * R * A * IP
+    print(f"P={P:.2f}  R={R:.2f}  A={A:.2f}  IP={IP:.2f}  SII={sii:.3f}")
 
     print("  [3/4] Boids Flocking...", end=" ", flush=True)
-    P, R, A, _ = sim_boids()
-    results["Boids\nFlocking"] = (P, R, A)
-    sii = P * R * A
-    print(f"P={P:.2f}  R={R:.2f}  A={A:.2f}  SII={sii:.3f}")
+    P, R, A, IP, _ = sim_boids()
+    results["Boids\nFlocking"] = (P, R, A, IP)
+    sii = P * R * A * IP
+    print(f"P={P:.2f}  R={R:.2f}  A={A:.2f}  IP={IP:.2f}  SII={sii:.3f}")
 
     print("  [4/4] Ising Model (T ≈ T_c)...", end=" ", flush=True)
-    P, R, A, _ = sim_ising()
-    results["Ising\n(T ≈ T_c)"] = (P, R, A)
-    sii = P * R * A
-    print(f"P={P:.2f}  R={R:.2f}  A={A:.2f}  SII={sii:.3f}")
+    P, R, A, IP, _ = sim_ising()
+    results["Ising\n(T ≈ T_c)"] = (P, R, A, IP)
+    sii = P * R * A * IP
+    print(f"P={P:.2f}  R={R:.2f}  A={A:.2f}  IP={IP:.2f}  SII={sii:.3f}")
 
     # ── Visualise results ────────────────────
     fig = plt.figure(figsize=(15, 7))
@@ -397,18 +409,18 @@ def run_dashboard():
 
     # Radar chart
     ax_radar = fig.add_subplot(gs[0, 0], projection="polar")
-    radar_chart(ax_radar, ["Prediction (P)", "Regulation (R)", "Adaptation (A)"],
+    radar_chart(ax_radar, ["Prediction (P)", "Regulation (R)", "Adaptation (A)", "Persistence (IP)"],
                 results, title="SII Dimensions")
 
     # Bar chart: overall SII
     ax_bar = fig.add_subplot(gs[0, 1])
     ax_bar.set_facecolor("#0e0e25")
     names = [k.replace("\n", " ") for k in results.keys()]
-    sii_values = [P * R * A for P, R, A in results.values()]
+    sii_values = [P * R * A * IP for P, R, A, IP in results.values()]
     colors = ["#60a0ff", "#ff6060", "#80ffb0", "#ffaa44"]
     bars = ax_bar.barh(names, sii_values, color=colors, edgecolor="#333", height=0.6)
     ax_bar.set_xlim(0, max(sii_values) * 1.3 + 0.01)
-    ax_bar.set_title("Overall SII = P × R × A", fontsize=11, color="#e0e0ff",
+    ax_bar.set_title("Overall SII = P × R × A × IP", fontsize=11, color="#e0e0ff",
                      fontweight="bold")
     ax_bar.tick_params(colors="#999", labelsize=9)
     for spine in ax_bar.spines.values():
@@ -425,12 +437,14 @@ def run_dashboard():
     P_vals = [v[0] for v in results.values()]
     R_vals = [v[1] for v in results.values()]
     A_vals = [v[2] for v in results.values()]
+    IP_vals = [v[3] for v in results.values()]
 
     x = np.arange(len(names))
-    width = 0.25
-    ax_stack.bar(x - width, P_vals, width, color="#60a0ff", label="P (Prediction)", edgecolor="#333")
-    ax_stack.bar(x, R_vals, width, color="#ff6060", label="R (Regulation)", edgecolor="#333")
-    ax_stack.bar(x + width, A_vals, width, color="#80ffb0", label="A (Adaptation)", edgecolor="#333")
+    width = 0.2
+    ax_stack.bar(x - 1.5*width, P_vals, width, color="#60a0ff", label="P (Prediction)", edgecolor="#333")
+    ax_stack.bar(x - 0.5*width, R_vals, width, color="#ff6060", label="R (Regulation)", edgecolor="#333")
+    ax_stack.bar(x + 0.5*width, A_vals, width, color="#80ffb0", label="A (Adaptation)", edgecolor="#333")
+    ax_stack.bar(x + 1.5*width, IP_vals, width, color="#ffaa44", label="IP (Persistence)", edgecolor="#333")
     ax_stack.set_xticks(x)
     ax_stack.set_xticklabels(names, fontsize=8, color="#999", rotation=30, ha="right")
     ax_stack.set_ylim(0, 1.1)
@@ -451,10 +465,10 @@ def run_dashboard():
     print("\n" + "═" * 60)
     print("  Summary")
     print("═" * 60)
-    for name, (P, R, A) in results.items():
+    for name, (P, R, A, IP) in results.items():
         clean_name = name.replace("\n", " ")
-        sii = P * R * A
-        print(f"  {clean_name:25s}  P={P:.2f}  R={R:.2f}  A={A:.2f}  │  SII={sii:.4f}")
+        sii = P * R * A * IP
+        print(f"  {clean_name:25s}  P={P:.2f}  R={R:.2f}  A={A:.2f}  IP={IP:.2f}  │  SII={sii:.4f}")
     print("═" * 60)
     print("\n  Note: SII is multiplicative — a zero in any dimension")
     print("  collapses the overall score. This reflects the idea that")

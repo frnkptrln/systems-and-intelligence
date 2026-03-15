@@ -85,6 +85,17 @@ This system makes testable predictions:
 3. **At the entropy boundary** ($\frac{dS}{dt} \to D_{\max}$): The system undergoes a catastrophic phase transition regardless of internal regulation.
 4. **Stable regime**: Requires $K > K_c$, $\gamma > 0$, and $\frac{dS}{dt} < D_{\max}$ simultaneously.
 
+## 8. Identity Persistence: The Chord vs. Arpeggio
+
+Following Perrier & Bennett (2026), we define the **Persistence Score $P$** of an agent's identity. 
+
+In TEO, a unified agentic self is not a static string, but a **simultaneously co-instantiated attractor** in the phase space. 
+
+- **The Arpeggio Postulate**: If the system's identity components (goals, safety, roles) are time-multiplexed (active at different $t$), the agent acts as an *unstable sequence*.
+- **The Chord Postulate**: True agentic identity requires all components to be operative in a single compute step $\Delta t$. This "Chord" state is the targeted thermodynamic equilibrium for TEO-orchestration.
+
+When $P \to 1$, the system achieves **Identity Persistence**, bridging the gap between "talking about the self" and "being the self."
+
 ## References
 
 1. Taylor, P. D., & Jonker, L. B. (1978). *Evolutionary stable strategies and game dynamics.* Mathematical Biosciences.
