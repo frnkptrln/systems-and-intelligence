@@ -344,8 +344,8 @@ def radar_chart(ax, labels, values_dict, title=""):
                 color=colors[idx % len(colors)], markersize=4)
         ax.fill(angles, values, alpha=0.12, color=colors[idx % len(colors)])
 
-    ax.legend(loc="upper right", bbox_to_anchor=(1.4, 1.15),
-              fontsize=8, facecolor="#0e0e25", edgecolor="#333",
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.2),
+              ncol=2, fontsize=8, facecolor="#0e0e25", edgecolor="#333",
               labelcolor="#ccc")
 
     if title:
@@ -432,7 +432,7 @@ def run_dashboard():
     ax_stack.bar(x, R_vals, width, color="#ff6060", label="R (Regulation)", edgecolor="#333")
     ax_stack.bar(x + width, A_vals, width, color="#80ffb0", label="A (Adaptation)", edgecolor="#333")
     ax_stack.set_xticks(x)
-    ax_stack.set_xticklabels(names, fontsize=8, color="#999", rotation=15, ha="right")
+    ax_stack.set_xticklabels(names, fontsize=8, color="#999", rotation=30, ha="right")
     ax_stack.set_ylim(0, 1.1)
     ax_stack.set_title("P, R, A Breakdown", fontsize=11, color="#e0e0ff",
                        fontweight="bold")
@@ -443,7 +443,8 @@ def run_dashboard():
         spine.set_color("#333")
     ax_stack.grid(True, alpha=0.15, axis="y", color="#555")
 
-    plt.tight_layout()
+    plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+    plt.subplots_adjust(wspace=0.4, hspace=0.4)
     plt.show()
 
     # Final summary
