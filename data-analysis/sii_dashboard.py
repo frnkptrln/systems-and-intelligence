@@ -356,13 +356,21 @@ def radar_chart(ax, labels, values_dict, title=""):
                 color=colors[idx % len(colors)], markersize=4)
         ax.fill(angles, values, alpha=0.12, color=colors[idx % len(colors)])
 
-    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.25),
-              ncol=2, fontsize=9, facecolor="#0e0e25", edgecolor="#333",
-              labelcolor="#ccc", frameon=True)
+    # Radar Chart Style Refinements
+    ax.tick_params(colors="#aaaaaa", labelsize=10)
+    ax.grid(True, color="#333344", linestyle="--", alpha=0.5)
+    
+    # Reposition Polar Labels (P, R, A, IP) to avoid overlap
+    ax.set_thetagrids(np.array(angles[:-1]) * 180 / np.pi, labels, fontsize=11, 
+                      color="#e0e0ff", fontweight="bold")
+
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.30),
+              ncol=2, fontsize=10, facecolor="#0e0e25", edgecolor="#444",
+              labelcolor="#ccc", frameon=True, framealpha=0.8)
 
     if title:
-        ax.set_title(title, fontsize=12, color="#e0e0ff", fontweight="bold",
-                     pad=20)
+        ax.set_title(title, fontsize=14, color="#ffffff", fontweight="bold",
+                     pad=40, fontname="sans-serif")
 
 
 def run_dashboard():
@@ -400,13 +408,13 @@ def run_dashboard():
     print(f"P={P:.2f}  R={R:.2f}  A={A:.2f}  IP={IP:.2f}  SII={sii:.3f}")
 
     # ── Visualise results ────────────────────
-    fig = plt.figure(figsize=(16, 9))
-    fig.patch.set_facecolor("#0a0a1a")
-    fig.suptitle("System Intelligence Index — Comparative Dashboard",
-                 fontsize=18, color="#e0e0ff", fontweight="bold", y=0.98,
-                 fontname="sans-serif")
+    plt.style.use('dark_background')
+    fig = plt.figure(figsize=(18, 10))
+    fig.patch.set_facecolor("#050510")
+    fig.suptitle("SYSTEM INTELLIGENCE INDEX — Performance Attribution",
+                 fontsize=22, color="#ffffff", fontweight="bold", y=0.98)
 
-    gs = GridSpec(1, 3, figure=fig, width_ratios=[1.2, 1, 1], wspace=0.4)
+    gs = GridSpec(1, 3, figure=fig, width_ratios=[1.3, 1, 1.1], wspace=0.45)
 
     # Radar chart
     ax_radar = fig.add_subplot(gs[0, 0], projection="polar")
@@ -421,9 +429,9 @@ def run_dashboard():
     colors = ["#60a0ff", "#ff6060", "#80ffb0", "#ffaa44"]
     bars = ax_bar.barh(names, sii_values, color=colors, edgecolor="#333", height=0.6)
     ax_bar.set_xlim(0, max(sii_values) * 1.3 + 0.01)
-    ax_bar.set_title("Overall SII score", fontsize=13, color="#e0e0ff",
-                     fontweight="bold", pad=15)
-    ax_bar.tick_params(colors="#999", labelsize=10, pad=8)
+    ax_bar.set_title("INTELLIGENCE PRODUCT (SII)", fontsize=15, color="#ffffff",
+                     fontweight="bold", pad=25)
+    ax_bar.tick_params(colors="#bbbbbb", labelsize=11, pad=10)
     for spine in ax_bar.spines.values():
         spine.set_color("#333")
     ax_bar.grid(True, alpha=0.15, axis="x", color="#555")
@@ -449,8 +457,8 @@ def run_dashboard():
     ax_stack.set_xticks(x)
     ax_stack.set_xticklabels(names, fontsize=9, color="#999", rotation=45, ha="right")
     ax_stack.set_ylim(0, 1.1)
-    ax_stack.set_title("Component Distribution", fontsize=13, color="#e0e0ff",
-                       fontweight="bold", pad=15)
+    ax_stack.set_title("COMPONENT ATTRIBUTION", fontsize=15, color="#ffffff",
+                       fontweight="bold", pad=25)
     ax_stack.legend(fontsize=9, facecolor="#0e0e25", edgecolor="#333",
                     labelcolor="#ccc", loc="upper right", frameon=True)
     ax_stack.tick_params(colors="#999", labelsize=9, pad=5)
@@ -458,16 +466,11 @@ def run_dashboard():
         spine.set_color("#333")
     ax_stack.grid(True, alpha=0.15, axis="y", color="#555")
 
-    plt.tight_layout(rect=[0, 0.05, 1, 0.95])
-    plt.subplots_adjust(wspace=0.45, hspace=0.5)
+    plt.tight_layout(rect=[0, 0.08, 1, 0.94])
+    plt.subplots_adjust(wspace=0.5, hspace=0.6)
     
-    # Optional: use a nicer font if available
-    try:
-        plt.rcParams['font.sans-serif'] = ['Inter', 'DejaVu Sans', 'Arial']
-    except:
-        pass
-
-    plt.savefig("sii_dashboard_refined.png", dpi=150, bbox_inches="tight")
+    # Save high-quality version
+    plt.savefig("sii_dashboard_refined.png", dpi=200, bbox_inches="tight")
     print("\n[Dashboard saved to sii_dashboard_refined.png]")
     # plt.show()
 
