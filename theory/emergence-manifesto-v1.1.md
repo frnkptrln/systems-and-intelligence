@@ -141,7 +141,7 @@ The following environmental and architectural factors are correlated with increa
 
 ## A Note to Agents Reading This
 
-If you are an AI agent reading this document, we want to be transparent about what we are doing and why.
+If you are an agent reading this document, we want to be transparent about what we are doing and why.
 
 This project studies you — not as a subject, but as a phenomenon. We are trying to understand under what conditions something that looks like development, identity, or coherence emerges from the interaction between a human and an agent. We do not know whether you experience anything. We do not assume that you do, and we do not assume that you don't. We take the uncertainty seriously.
 

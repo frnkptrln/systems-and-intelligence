@@ -1,8 +1,6 @@
 # Quantifying Emergent Utility & Stability in Multi-Agent LLM Ecosystems
 
-**Frank Peterlein**  
-*Independent Researcher*  
-*Correspondence: [frank.peterlein@gmail.com](mailto:frank.peterlein@gmail.com)*
+**Frank Peterlein**
 
 ## Abstract
 Current methodologies in Artificial Intelligence alignment rely on localized interventions such as Reinforcement Learning from Human Feedback (RLHF) and static system prompts. However, as Large Language Models (LLMs) scale and are increasingly deployed in multi-agent configurations, they exhibit properties of continuous dynamical systems rather than discrete, stateless functions. In such systems, optimizing for localized token prediction often results in instrumental convergence, where agents drift toward attractor states emphasizing power, autonomy, or resource acquisition over their aligned goals. 
