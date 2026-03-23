@@ -267,3 +267,64 @@ a way to structure intuitions and guide the design of new experiments.
 
 ---
 
+## 8. The Fourth Dimension: Identity Persistence (IP)
+
+The original SII framework measures *what* a system does — predict, regulate,
+adapt. But it does not measure *whether the system's governing principles are
+simultaneously operative* during action. A system can predict well, regulate
+well, and adapt well while time-multiplexing its governance — checking safety
+at $t_1$, pursuing goals at $t_2$, verifying alignment at $t_3$. Such a system
+scores high on P, R, A but has no unified self during any single step.
+
+Identity Persistence ($\text{IP}$) closes this gap.
+
+### 8.1 Definition
+
+Let an agent's identity be described by $n$ governing components. At each
+compute step, the **operative set** $\mathcal{O}(t)$ is the subset of
+components that causally influence the agent's output:
+
+\[
+\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}
+\]
+
+- $\text{IP} \to 1$: All components co-instantiated (**Chord** regime)
+- $\text{IP} \to 0$: Components time-multiplexed (**Arpeggio** regime)
+
+### 8.2 Updated SII Formula
+
+\[
+\text{SII} = P \times R \times A \times \text{IP}
+\]
+
+The multiplicative form applies: a system that predicts, regulates, and adapts
+perfectly but has zero identity persistence ($\text{IP} = 0$) has SII = 0. It
+is a sophisticated tool, not a system with integrated intelligence.
+
+### 8.3 Examples
+
+| System | P | R | A | IP | SII |
+|:-------|:--|:--|:--|:---|:----|
+| Simple Homeostatic CA | low | high | low | low | very low |
+| Nested Learning | high | low | medium | medium | low |
+| Boids Flocking | high | high | high | medium | medium |
+| Ising at $T_c$ | high | high | high | high | high |
+
+The Ising model at criticality scores highest on IP because global order
+(magnetization) is maintained simultaneously across all spins — no spin
+"checks" the global state sequentially; all spins contribute to the global
+order parameter at each step.
+
+### 8.4 Connection to the Chord Postulate
+
+The Identity Persistence score operationalizes Perrier & Bennett's (2026)
+Chord vs. Arpeggio distinction within the SII framework. The Chord Postulate
+predicts a phase transition at $\text{IP}_c$: below it, the system acts as a
+sequence of states; above it, identity becomes an attractor. This connects IP
+to the critical thresholds studied throughout this repository.
+
+See [`theory/teo-framework/lerchner-boundary.md`](teo-framework/lerchner-boundary.md)
+for the formal derivation, and [`theory/glossary.md`](glossary.md) §Identity
+Persistence for the canonical definition.
+
+---

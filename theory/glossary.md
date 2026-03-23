@@ -163,3 +163,58 @@ This is formalized by Heinz von Foerster's second-order cybernetics: the observe
 **What it is NOT:** Not quantum observer effects. The QM observer effect is a specific physical phenomenon (wavefunction collapse upon measurement). The relational emergence described here operates through standard information-theoretic and cybernetic mechanisms. The analogy is seductive but misleading.
 
 **Where it appears:** [`agentic-test-suite/experiments/exp3_observer_divergence.py`](../agentic-test-suite/experiments/exp3_observer_divergence.py), [`theory/emergence-manifesto-v1.1.md`](emergence-manifesto-v1.1.md)
+
+---
+
+## Identity Persistence (IP)
+
+**Informal:** How much of an agent's identity is simultaneously operative during action selection.
+
+**Operational definition:** Let an agent's identity be described by $n$ governing components (goals, safety constraints, role parameters, value orientation). At each compute step $\Delta t$, the **operative set** $\mathcal{O}(t) \subseteq \{g, s, \rho, \theta\}$ is the subset of components that causally influence the agent's output:
+
+$$\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}, \qquad \overline{\text{IP}} = \frac{1}{T} \sum_{t=1}^{T} \text{IP}(t)$$
+
+| Score | Regime | Interpretation |
+|-------|--------|----------------|
+| IP → 1 | **Chord** | All identity components co-instantiated — unified self |
+| IP → 0 | **Arpeggio** | Components time-multiplexed — simulated self |
+
+**Notation:** IP is used throughout this repository to distinguish Identity Persistence from P (Predictive Power) in the SII framework. The extended SII formula is: $\text{SII} = P \times R \times A \times \text{IP}$.
+
+**What it is NOT:** Not a consciousness score. A high IP indicates structural co-instantiation of governing constraints, not subjective experience. A thermostat has IP = 1 for its single governing variable; we do not attribute selfhood to thermostats.
+
+**Where it appears:** [`theory/teo-framework/lerchner-boundary.md`](teo-framework/lerchner-boundary.md), [`data-analysis/sii_dashboard.py`](../data-analysis/sii_dashboard.py), [`tools/morphospace_visualizer.py`](../tools/morphospace_visualizer.py)
+
+---
+
+## Chord Postulate / Arpeggio Postulate
+
+**Informal:** Whether an agent's identity components sound simultaneously (Chord) or sequentially (Arpeggio).
+
+**Operational definition:** Following Perrier & Bennett (2026), the Chord Postulate states that true agentic identity requires all governing components to be operative in a single compute step $\Delta t$. An agent in the Chord state maintains simultaneous co-instantiation of goals, constraints, and values — it does not merely *recall* its safety constraints but has them *active during* action selection.
+
+The Arpeggio Postulate states that most current agent architectures are structurally limited to sequential processing of identity components: safety is checked at $t_1$, goals are pursued at $t_2$, values are verified at $t_3$. From the outside, the agent appears stable because it can *talk about* its identity; but no single compute step integrates all components.
+
+**The Lerchner Boundary:** The threshold $\text{IP}_c$ at which the transition from Arpeggio to Chord occurs. In TEO terms, this is a bifurcation analogous to the Kuramoto critical coupling $K_c$.
+
+**What it is NOT:** Not a value judgment. An Arpeggio agent may perform as well as a Chord agent on benchmarks. The distinction is structural, not evaluative — it concerns whether identity is architecturally co-instantiated, not whether the outputs are good.
+
+**Where it appears:** [`theory/chord-vs-arpeggio-identity.md`](chord-vs-arpeggio-identity.md), [`theory/teo-framework/lerchner-boundary.md`](teo-framework/lerchner-boundary.md), [`theory/thermodynamics-of-orchestration.md`](thermodynamics-of-orchestration.md) §8
+
+---
+
+## Thermodynamics of Emergent Orchestration (TEO)
+
+**Informal:** A coupled ODE system modeling the dynamics of intelligent collectives.
+
+**Operational definition:** The TEO framework couples three established formalisms into a single dynamical system:
+
+1. **Replicator dynamics** (evolutionary game theory): $\frac{dx_i}{dt} = x_i(f_i - \bar{\phi}) + \mathcal{H}_i$
+2. **Kuramoto synchronization** (nonlinear dynamics): $\frac{d\theta_i}{dt} = \omega_i + \frac{K}{N}\sum_j A_{ij}\sin(\theta_j - \theta_i)$
+3. **Entropy budget** (thermodynamics): $\sum_i \eta_i x_i f_i \leq D_{\max}$
+
+The system makes four testable predictions about when stability, monopoly, polarization, or collapse occurs.
+
+**What it is NOT:** Not novel mathematics. Each component is individually well-established. The contribution is their coupling into a unified diagnostic for multi-agent dynamics. See [`theory/limitations-and-honest-assessment.md`](limitations-and-honest-assessment.md) for an honest accounting.
+
+**Where it appears:** [`theory/thermodynamics-of-orchestration.md`](thermodynamics-of-orchestration.md), [`theory/teo-framework/`](teo-framework/README.md), [`simulation-models/teo-civilization/`](../simulation-models/teo-civilization/README.md)

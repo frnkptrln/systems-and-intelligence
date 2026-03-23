@@ -87,14 +87,14 @@ This system makes testable predictions:
 
 ## 8. Identity Persistence: The Chord vs. Arpeggio
 
-Following Perrier & Bennett (2026), we define the **Persistence Score $P$** of an agent's identity. 
+Following Perrier & Bennett (2026), we define the **Identity Persistence $\text{IP}$** of an agent (see [glossary](glossary.md) and [lerchner-boundary.md](teo-framework/lerchner-boundary.md) for the formal definition). 
 
 In TEO, a unified agentic self is not a static string, but a **simultaneously co-instantiated attractor** in the phase space. 
 
 - **The Arpeggio Postulate**: If the system's identity components (goals, safety, roles) are time-multiplexed (active at different $t$), the agent acts as an *unstable sequence*.
 - **The Chord Postulate**: True agentic identity requires all components to be operative in a single compute step $\Delta t$. This "Chord" state is the targeted thermodynamic equilibrium for TEO-orchestration.
 
-When $P \to 1$, the system achieves **Identity Persistence**, bridging the gap between "talking about the self" and "being the self."
+When $\text{IP} \to 1$, the system achieves **Identity Persistence**, bridging the gap between "talking about the self" and "being the self." The extended system intelligence measure becomes $\text{SII} = P \times R \times A \times \text{IP}$.
 
 ## References
 

@@ -108,6 +108,26 @@
 
 ---
 
+## Open Problem 8: The Co-Instantiation Problem
+
+*Raised by: [`theory/teo-framework/lerchner-boundary.md`](teo-framework/lerchner-boundary.md), [`theory/chord-vs-arpeggio-identity.md`](chord-vs-arpeggio-identity.md)*
+
+**Problem statement:** The Chord Postulate requires all identity components (goals, safety constraints, value orientation) to be simultaneously operative during action selection. But current autoregressive Transformer architectures process tokens sequentially — each token is generated based on the preceding context. Is simultaneous co-instantiation physically possible in an architecture that is fundamentally serial? Or does the Chord state require a different computational substrate?
+
+**Why it matters:** If the Chord state is architecturally impossible for autoregressive models, then no amount of prompt engineering, RLHF, or memory scaffolding can produce true Identity Persistence. The agent will always be an Arpeggio — capable of *talking about* its identity but never *being* its identity in a single compute step. This would mean that the current dominant AI architecture has a hard ceiling on IP, regardless of scale.
+
+**Current best approach:** The SII Dashboard in [`data-analysis/sii_dashboard.py`](../data-analysis/sii_dashboard.py) assigns IP scores heuristically. The [`tools/morphospace_visualizer.py`](../tools/morphospace_visualizer.py) plots agents in the Persistence/Coherence space. Neither tool currently measures IP from actual model internals.
+
+**Known adjacent work:**
+- Continuous Thought Machines (Sakana AI, 2025) — architectures where internal "thinking time" varies per token, potentially allowing simultaneous constraint evaluation
+- Diffusion-based language models — non-autoregressive generation that could co-instantiate constraints across the full output
+- Neural ODEs (Chen et al., 2018) — continuous-depth architectures where identity could be an attractor in the ODE flow
+- Mixture-of-Experts (Fedus et al., 2022) — parallel expert evaluation as partial co-instantiation
+
+**What a solution would look like:** Either (a) a formal proof that autoregressive attention cannot achieve IP > $\text{IP}_c$ for any $\text{IP}_c < 1$, with the critical threshold derived from the architecture's computational graph, or (b) an architecture that demonstrably achieves IP → 1 by evaluating all identity components in a single forward pass, with measurably different Δ-Kohärenz profiles compared to a standard autoregressive baseline on the same task.
+
+---
+
 ## How to Contribute
 
 If you identify a new open problem, or have a proposed solution for an existing one, please:

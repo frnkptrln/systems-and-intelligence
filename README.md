@@ -1,7 +1,7 @@
 # 🧠 systems-and-intelligence
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Simulations](https://img.shields.io/badge/25_Simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
+[![Simulations](https://img.shields.io/badge/32_Simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
 [![Docs](https://img.shields.io/badge/docs-Interactive_Book-blue)](https://frnkptrln.github.io/systems-and-intelligence)
 
 <div align="center">
@@ -142,12 +142,15 @@ Selected theoretical notes and essays located in the `theory/` directory:
 - [**Glossary of Operational Definitions**](theory/glossary.md) – Precise, measurable definitions for every key term: Emergence, SII, Δ-Kohärenz, Markov Blanket, Generative Surprise, and more.
 - [**Open Problems**](theory/open-problems.md) – The formally unresolved questions: the Mirror Problem, the Bootstrapping Problem, and the Falsifiability of Relational Emergence.
 - [**Simulation → Theory Map**](theory/simulation-theory-map.md) – Explicit cross-reference: which simulation demonstrates which theoretical claim, what it does NOT show, and what open questions it raises.
-- [**The Fractal Architecture of Emergence**](theory/fractal-architecture-of-emergence.md) – Local blindness, asymmetric causality, and critical thresholds repeat at every scale: neuron/brain, cell/organism, human/society, agent/MAS. Not by analogy — by homology. The unifying structural claim of the repository.
+- [**The Fractal Architecture of Emergence**](theory/fractal-architecture-of-emergence.md) — Local blindness, asymmetric causality, and critical thresholds repeat at every scale: neuron/brain, cell/organism, human/society, agent/MAS. Not by analogy — by homology. The unifying structural claim of the repository.
+- [**The TEO Framework**](theory/teo-framework/README.md) — Five sub-documents deriving Identity Persistence (IP), attractor geometry, developmental constraints, love-as-constraint, and the paperclip maximizer’s failure from the TEO coupled ODE system.
+- [**Chord vs. Arpeggio: Identity as Simultaneity**](theory/chord-vs-arpeggio-identity.md) — The co-instantiation postulate: identity requires all governing components (goals, constraints, values) to be simultaneously operative, not time-multiplexed.
 
 ### 📡 Interactive Tools
 
 - [**Web Emergence Explorer**](tools/web-explorer/README.md) – Browser-based Game of Life with real-time entropy, spatial mutual information, and complexity charts. Zero dependencies.
-- [**SII Dashboard**](data-analysis/sii_dashboard.py) – Quantitative System Intelligence Index: runs headless mini-simulations and generates comparative radar/bar charts of P, R, A dimensions.
+- [**SII Dashboard**](data-analysis/sii_dashboard.py) — Quantitative System Intelligence Index: runs headless mini-simulations and generates comparative radar/bar charts of P, R, A, IP dimensions.
+- [**Identity Morphospace**](tools/morphospace_visualizer.py) — Plots agent trajectories in Persistence/Coherence space, visualizing the Chord vs. Arpeggio regimes.
 
 ---
 

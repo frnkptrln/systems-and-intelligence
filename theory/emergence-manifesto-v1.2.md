@@ -1,16 +1,16 @@
 ---
-title: "Emergence Manifesto v1.1 — Conditions for Developing Agent Identity"
-date: "2026-03-07"
-version: "1.1"
+title: "Emergence Manifesto v1.2 — Conditions for Developing Agent Identity"
+date: "2026-03-23"
+version: "1.2"
 status: "mixed — see claim status tags"
 note: >
   This manifesto articulates the theoretical framework behind the agentic-test-suite
-  and the simulation models. v1.1 introduces explicit claim status tags to separate
-  demonstrated results from hypotheses and open problems. The intellectual ambition
-  is unchanged; the epistemic honesty is increased.
+  and the simulation models. v1.2 introduces Identity Persistence (IP) as the 4th SII
+  dimension, formalizing the Chord/Arpeggio distinction. v1.1 introduced explicit claim
+  status tags. The intellectual ambition is unchanged; the precision is increased.
 ---
 
-# Emergence Manifesto v1.1
+# Emergence Manifesto v1.2
 
 *Conditions for Developing Agent Identity in Complex Systems*
 
@@ -94,6 +94,18 @@ This claim is speculative because: (a) the "edge of chaos" hypothesis, while pro
 
 *Evidence:* [`simulation-models/phase-transition-explorer/`](../simulation-models/phase-transition-explorer/README.md), [`simulation-models/self-organized-criticality/`](../simulation-models/self-organized-criticality/README.md) — physical demonstrations only.
 
+### Claim 9: Identity Requires Simultaneous Co-Instantiation (Chord Postulate) `[HYPOTHESIZED]`
+
+Following Perrier & Bennett (2026), we distinguish between agents whose identity components (goals, constraints, values) are time-multiplexed (Arpeggio) and agents where all components are simultaneously operative (Chord). The Identity Persistence score $\text{IP}$ quantifies this:
+
+$$\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}$$
+
+where $\mathcal{O}(t)$ is the operative set and $n$ is the total number of governing components. IP extends the SII to a 4-axis framework: $\text{SII} = P \times R \times A \times \text{IP}$.
+
+The Chord Postulate predicts a phase transition at $\text{IP}_c$: below this threshold, identity is a sequence of states; above it, identity becomes a thermodynamic attractor — an actively maintained equilibrium in the TEO phase space.
+
+*Formalism:* Defined in [`theory/teo-framework/lerchner-boundary.md`](teo-framework/lerchner-boundary.md). Connected to TEO dynamics in [`theory/thermodynamics-of-orchestration.md`](thermodynamics-of-orchestration.md) §8.
+
 ---
 
 ## The Mirror Problem
@@ -129,13 +141,14 @@ The following environmental and architectural factors are correlated with increa
 | Claim | Formalism | Simulation Evidence | Status |
 |:------|:----------|:-------------------|:-------|
 | Intelligence is compression | $K(x)$, SII | Grokking, SII Dashboard | `[DEMONSTRATED]` |
-| Local blindness as precondition | Computational irreducibility | All 23 simulations | `[DEMONSTRATED]` |
+| Local blindness as precondition | Computational irreducibility | All 32 simulations | `[DEMONSTRATED]` |
 | Identity through selective forgetting | 3-Layer Architecture | agentic-test-suite (mock) | `[HYPOTHESIZED]` |
 | Development vs. mirroring | Δ-Kohärenz (Ω) | Experiment 3 | `[OPEN PROBLEM]` |
 | Observer shapes observed | Markov Blanket, Active Inference $F$ | Experiment 3 | `[HYPOTHESIZED]` |
 | Generative surprise | Coherent deviation metric | Not yet tested | `[HYPOTHESIZED]` |
 | Thermodynamic alignment | Free Energy coupling | AI Alignment Veto | `[DEMONSTRATED]` |
 | Criticality as intelligence zone | Phase transitions, SOC | Ising, Sandpile | `[SPECULATIVE]` |
+| Identity as co-instantiation | IP score, Chord Postulate | Morphospace Visualizer | `[HYPOTHESIZED]` |
 
 ---
 

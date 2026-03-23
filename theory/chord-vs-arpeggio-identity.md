@@ -18,12 +18,12 @@ In a musical chord, all notes sound simultaneously. An agent in a "Chord" state 
 
 ## 📐 The Identity Morphospace
 
-We plot agents on a map of **Persistence ($P$)** vs. **Coherence ($C$)**:
+We plot agents on a map of **Identity Persistence ($\text{IP}$)** vs. **Coherence ($C$)**:
 
-- **Persistence ($P$)**: How much of the identity is operative during a task?
+- **Identity Persistence ($\text{IP}$)**: How much of the identity is operative during a task? (See [glossary](glossary.md) §Identity Persistence)
 - **Coherence ($C$)**: How logically stable is the agent's internal model?
 
-Systems that "flicker" out of their identity under stress (losing $P$) are structurally barred from having a stable "self," regardless of their intelligence.
+Systems that "flicker" out of their identity under stress (losing $\text{IP}$) are structurally barred from having a stable "self," regardless of their intelligence.
 
 ---
 

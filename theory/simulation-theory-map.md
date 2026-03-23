@@ -302,3 +302,14 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 **What it shows:** In this toy ODE setup, “semantic alignment” (modeled as partial compliance) can delay collapse, while an explicit constraint layer \(C(S)\) can stabilize dynamics by reducing effective growth as \(S\) approaches \(S_{crit}\). This is an illustration of constraint-layer intuition, not a proof that it is the *only* way to stabilize real-world systems.
 **What it does NOT show:** How to physically enforce this computational limit on decentralized global actors who might try to hardware-bypass the Coherence Score constraint.
 **Open question:** Can we build a cryptographic global ledger that enforces this Biological Veto on energy consumption at the bare-metal hardware level?
+
+---
+
+## Identity Morphospace & TEO Framework → Chord vs. Arpeggio
+
+**Tools:** [`tools/morphospace_visualizer.py`](../tools/morphospace_visualizer.py), [`theory/teo-framework/`](../theory/teo-framework/README.md)
+**Demonstrates:** The Identity Persistence (IP) score plotted in a 2D morphospace (Persistence vs. Coherence), showing trajectories of agents under varying stress. The TEO Framework sub-documents derive IP formally from the coupled Replicator-Kuramoto-Entropy ODE system.
+**Supports claim in:** [`theory/chord-vs-arpeggio-identity.md`](chord-vs-arpeggio-identity.md) (Chord/Arpeggio distinction); [`theory/emergence-manifesto-v1.1.md`](emergence-manifesto-v1.1.md) Claim 9 (Identity as co-instantiation); [`theory/thermodynamics-of-orchestration.md`](thermodynamics-of-orchestration.md) §8 (Identity Persistence in TEO).
+**What it shows:** That agents under stress can be classified into Chord (high P, high C — identity maintained) and Arpeggio (flickering P, decaying C — identity fragmented) regimes. The TEO framework predicts this as a bifurcation analogous to the Kuramoto critical coupling.
+**What it does NOT show:** That IP is measurable from real LLM internals. The morphospace currently uses simulated trajectories. Bridging IP to actual model activations is an open challenge.
+**Open question:** Open Problem 8 — The Co-Instantiation Problem: can autoregressive architectures achieve the Chord state, or does IP require fundamentally different computational substrates?

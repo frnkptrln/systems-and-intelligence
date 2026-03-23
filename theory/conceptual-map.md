@@ -29,7 +29,6 @@ Each simulation illuminates one aspect; together they form a web of ideas.
  Nested   Prediction  Ecosystem  Meta-
 Learning  Error Field  Regulation Learning
     │         │    │    │    │    │
-    │         │    │    │    │    │
     └────┬────┘    └──┬─┘    └──┬─┘
          │           │         │
          ▼           ▼         ▼
@@ -49,6 +48,14 @@ Learning  Error Field  Regulation Learning
               │  (Sandpile,  │
               │   Ising,     │
               │   Friston F) │
+              └──────┬───────┘
+                     │
+                     ▼
+              ┌──────────────┐
+              │   IDENTITY   │
+              │  (IP, Chord/ │
+              │  Arpeggio,   │
+              │  Morphospace)│
               └──────┬───────┘
                      │
                      ▼
@@ -133,9 +140,10 @@ The system becomes an ever-better mirror of its environment.
 1. **Simple local rules** → global order (self-organization)
 2. **Global order** → usable for prediction and regulation (learning)
 3. **Prediction + Regulation + Adaptation** → System Intelligence (SII)
-4. **System Intelligence** → measurable via information theory (data-analysis/)
-5. **Measurement** → encounters fundamental limits (Gödel, Turing)
-6. **Limits** → motivate epistemic humility and further research
+4. **Identity Persistence (IP)** → the 4th dimension: are governing constraints co-instantiated? (Chord vs. Arpeggio)
+5. **System Intelligence** → measurable via information theory (data-analysis/)
+6. **Measurement** → encounters fundamental limits (Gödel, Turing)
+7. **Limits** → motivate epistemic humility and further research
 
 Every simulation is a window into this web.
 None alone is "the answer" – together they form a **landscape of thought** where intuition and formalization meet.
@@ -146,23 +154,26 @@ None alone is "the answer" – together they form a **landscape of thought** whe
 
 ```
 What we have:                     What is still missing:
-✓ 23 Simulations                  ? Real data (biological systems?)
+✓ 32 Simulation Models            ? Real data (biological systems?)
 ✓ Information-theoretic measures  ? Formal proofs about SII properties
 ✓ System Intelligence Index       
 ✓ Theory Essays                   
 ✓ Tensor Logic
-✓ Quantitative SII Dashboard
+✓ Quantitative SII Dashboard (4-axis: P/R/A/IP)
 ✓ Phase Transition Explorer
 ✓ Interactive Web Explorer
 ✓ Agent-based economic models
 ✓ Multi-model coupling experiments
 ✓ The Self-Reading Universe (Autoencoder CA)
 ✓ The Agentic Society (Latent vs. Introspective)
-✓ The AI Alignment Veto (toy model: bounding the Paperclip Maximizer failure mode)
+✓ The AI Alignment Veto (toy model)
 ✓ Utility Engineering (Observing and Controlling Emergent Values)
 ✓ Political Utility Formalization (Constitutions as Alignment Docs)
 ✓ The Grokking Phenomenon (Memory to Intelligence Phase Transition)
 ✓ Agentic Test Suite (3-Layer Memory, Δ-Kohärenz, Observer Divergence)
+✓ TEO Framework (Replicator + Kuramoto + Entropy Budget)
+✓ Identity Morphospace (Chord/Arpeggio, IP Score)
+✓ Continuous Thought Machines integration
 ```
 
 This repository is not a finished product. It is a **living experiment** – an invitation to think, code, and marvel about systems, intelligence, and emergence.
