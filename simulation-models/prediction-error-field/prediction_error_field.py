@@ -24,10 +24,10 @@ import matplotlib.pyplot as plt
 # -----------------------------
 # Simulation parameters
 # -----------------------------
-GRID_SIZE = 50          # etwas kleiner für flüssigere Darstellung
+GRID_SIZE = 50          # slightly smaller for smoother rendering
 LEARNING_RATE = 0.05    # learning rate for local learners
 SEED = 42               # random seed for reproducibility
-DISPLAY_INTERVAL = 0.08 # Sekunden zwischen Frames (Rendering-Geschwindigkeit)
+DISPLAY_INTERVAL = 0.08 # seconds between frames (rendering speed)
 
 
 # -----------------------------
@@ -140,7 +140,7 @@ def run():
         fontsize=12
     )
 
-    # Layout einmal fixen, oben Platz für Titel lassen
+    # Fix layout once, leaving space at the top for the title
     fig.tight_layout(rect=[0, 0, 1, 0.95])
 
     # ESC handling
@@ -206,8 +206,8 @@ def run():
         )
 
         fig.canvas.draw_idle()
-        plt.pause(0.001)                # Events abarbeiten
-        time.sleep(DISPLAY_INTERVAL)    # tatsächliche Frame-Pause
+        plt.pause(0.001)                # process events
+        time.sleep(DISPLAY_INTERVAL)    # actual frame pause
 
     plt.ioff()
     plt.close(fig)

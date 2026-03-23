@@ -42,7 +42,7 @@ In Politics, the RLHF mechanism is **The Election**.
 Elections are an incredibly poor feedback mechanism. A voter compresses their entire complex, high-dimensional preference vector into a single bit of information (Vote for Party A or B) once every four years. 
 Because the RLHF signal is so sparse and delayed, the model (The State) operates in an unsupervised manner 99% of the time. 
 
-### Bureaucratic Verselbstständigung (Instrumental Convergence)
+### Bureaucratic Autonomization (Instrumental Convergence)
 While the political layer waits for the sparse 4-year feedback, the **Bureaucracy** optimizes continuously on daily, internal metrics (budget size, headcount, mandate expansion). 
 Bostrom's theory of AI Instrumental Convergence states that any sufficiently intelligent system will seek to precisely define its goals, acquire resources, and protect itself from being shut down, *regardless of its terminal goal*. 
 A bureaucracy's terminal goal might be "Protect the Environment." But its instrumental goal is "Increase the EPA Budget." Over time, the optimization process mathematically converges on the instrumental goal. The department will begin producing regulations primarily to justify its own expanded existence.
