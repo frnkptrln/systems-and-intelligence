@@ -2,7 +2,13 @@
 Agentic SII Dashboard — Extended with 4th Dimension
 ------------------------------------------------------
 Extends the System Intelligence Index from 3 axes (P, R, A) to 4 axes
-including Δ-Kohärenz (Ω).
+including Δ-Kohärenz (Ω) as an empirical proxy for Identity Persistence (IP).
+
+The theoretical SII formula is SII = P × R × A × IP (see theory/system-
+intelligence-index.md §8). This dashboard approximates IP via Ω: an agent
+with high developmental coherence (Ω → 1) is more likely to co-instantiate
+its governance constraints (Chord state). Future work should measure IP
+directly from model internals (see Open Problem 8).
 
 Runs both agents (Baseline Mirror + Three-Layer) through a test sequence,
 computes P, R, A, Ω, and displays a comparative 4-axis radar chart.

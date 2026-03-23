@@ -15,11 +15,11 @@
 
 <div class="stats-bar" markdown>
 <div class="stat" markdown>
-<span class="stat-number">23+</span>
+<span class="stat-number">32</span>
 <span class="stat-label">Simulations</span>
 </div>
 <div class="stat" markdown>
-<span class="stat-number">6</span>
+<span class="stat-number">7</span>
 <span class="stat-label">Book Chapters</span>
 </div>
 <div class="stat" markdown>
@@ -51,7 +51,7 @@ We prove this not with philosophy alone, but with **runnable Python simulations*
 
 ### :material-book-open-variant: The Book
 
-The 6-part narrative thesis. From local emergence to civilizational dynamics, every claim backed by runnable code.
+The 7-part narrative thesis. From local emergence to civilizational dynamics, every claim backed by runnable code.
 
 [Start reading →](book/00_introduction.md)
 
@@ -71,7 +71,7 @@ The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and 
 
 ### :material-code-braces: Simulations
 
-23+ Python simulations: Boids, Kuramoto, SOC, Lenia, TEO Civilization, Black Swan Resilience, and more.
+32 Python simulations: Boids, Kuramoto, SOC, Lenia, TEO Civilization, Identity Morphospace, and more.
 
 [Run the code →](simulation-models/utility-engineering/README.md)
 
