@@ -63,7 +63,7 @@ The 6-part narrative thesis. From local emergence to civilizational dynamics, ev
 
 The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and an honest self-assessment.
 
-[Explore theories →](theory/emergence-manifesto-v1.1.md)
+[Explore theories →](theory/emergence-manifesto-v1.2.md)
 
 </div>
 

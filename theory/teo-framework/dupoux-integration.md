@@ -61,5 +61,5 @@ This is **constrained learning**: the bottom-up dynamics provide the raw materia
 ## Related
 
 - [Thermodynamics of Emergent Orchestration](../thermodynamics-of-orchestration.md) — the full ODE system
-- [Emergence Manifesto v1.2](../emergence-manifesto-v1.1.md) — Claim 1 (Intelligence is Compression) connects directly to Dupoux's "constraints enable compression"
+- [Emergence Manifesto v1.2](../emergence-manifesto-v1.2.md) — Claim 1 (Intelligence is Compression) connects directly to Dupoux's "constraints enable compression"
 - [The Fractal Architecture of Emergence](../fractal-architecture-of-emergence.md) — the scale-invariance claim predicts that developmental constraints repeat at every level

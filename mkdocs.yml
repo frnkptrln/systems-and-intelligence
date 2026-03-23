@@ -20,12 +20,17 @@ nav:
       - "Part 6: The Thermodynamic Mirror": book/06_the_thermodynamic_mirror.md
       - Bibliography: book/07_bibliography.md
   - "🔬 Core Theories":
-      - The Emergence Manifesto: theory/emergence-manifesto-v1.1.md
+      - The Emergence Manifesto: theory/emergence-manifesto-v1.2.md
       - Conceptual Map: theory/conceptual-map.md
       - Simulation Map: theory/simulation-theory-map.md
       - Thermodynamics of Orchestration (TEO): theory/thermodynamics-of-orchestration.md
       - Limitations & Honest Assessment: theory/limitations-and-honest-assessment.md
       - Black Swans & Downward Causation: theory/black-swans-and-downward-causation.md
+      - Fractal Architecture of Emergence: theory/fractal-architecture-of-emergence.md
+      - Mathematical Axioms: theory/mathematical-axioms.md
+      - Chord vs. Arpeggio Identity: theory/chord-vs-arpeggio-identity.md
+      - TEO Framework: theory/teo-framework/README.md
+      - Machines of Loving Grace: theory/machines-of-loving-grace.md
   - "🕹️ Interactive Tools":
       - Web Emergence Explorer: interactive/web-explorer.md
       - Tensor Logic Visualizer: interactive/tensor-logic.md

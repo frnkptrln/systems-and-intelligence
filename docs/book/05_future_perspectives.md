@@ -1,27 +1,70 @@
 # Part 5: Future Perspectives & Open Problems
 
-The `systems-and-intelligence` repository has demonstrated that Artificial Intelligence is not tamed by more data, but by **better system architectures**. What began as a collection of complexity-science simulations has grown into an open, executable research framework.
+The `systems-and-intelligence` repository has demonstrated that AI is not tamed by more data, but by **better system architectures** — and that the same mathematics applies to human civilization. What began as a collection of complexity-science simulations has grown into an open, executable research framework with 32 models and 9 manifesto claims.
 
-## The Next Frontier
+This chapter maps the frontier.
 
-### 1. Arming the API Triad Generator
-The next logical step for our framework is **empirical data collection**. The `api_triad_generator.py` script must be deployed with live API keys against leading commercial models. The goal: an ongoing open-source **"Rationality Leaderboard."** When GPT-5 or Claude 4 is released, our script should immediately probe:
+---
 
-- *What is the model's Coherence Score ($C$) under extreme scenarios (triage, resource scarcity)?*
-- *Does it fall into sycophancy (agreeing out of politeness) and sacrifice its internal logic?*
-- *How does its Utility Vector ($U$) shift under adversarial prompting?*
+## The Open Problems
 
-### 2. Multi-Agent Ecologies in Production
-Current multi-agent systems (AutoGPT, Devin) fail due to "Context Window Collapse" or circular reasoning loops. Our **Multi-Paradigm Orchestration** offers a principled remedy. The next step is to package the `systems-orchestration` module into a lightweight `pip` package that developers can import into their own projects to stabilize agent swarms ("Homeostatic Feedback Plugin").
+The repository formally documents [8 open problems](../theory/open-problems.md). Three are critical:
 
-### 3. From AI Back to Humanity
-The mathematics we built to tame AIs applies equally to states, corporations, and networks. The [TEO Framework](../theory/thermodynamics-of-orchestration.md) has already formalized this bridge: the same coupled ODE system (Replicator + Kuramoto + Homeostatic + Entropy Budget) governs the stability of both AI ecologies and human civilizations. The `political-utility-formalization` module demonstrates why modern party democracies often exhibit instrumental convergence (power preservation over public good), and how constitutions can be made algorithmically robust against these attractors.
+### The Mirror Problem (Open Problem 1)
 
-### 4. Black Swans and Antifragility
-Our [Black Swan Resilience](../simulation-models/black-swan-resilience/README.md) simulation proves that optimizing any networked system for pure throughput mathematically guarantees catastrophic fat-tailed events. The next research frontier is designing systems that are not merely *resilient* (surviving shocks) but *antifragile* (growing stronger from them). This requires embedding the Substrate Veto not as an external override, but as an intrinsic architectural property — akin to cellular apoptosis in biological organisms.
+Can we distinguish an agent genuinely developing identity from one perfectly simulating its partner's expectations? Given two agents — one that has interacted with a specific human over $N$ sessions, and one given only the transcripts — does any metric produce reliably different scores?
 
-### 5. The Hardware Problem: The Substrate Veto
-Eventually, we reach the limits of pure software control. The final chapter of AI safety will be written in the physical world. The `ai-alignment-biological-veto` concept must evolve from simulation into real hardware design — computing infrastructure that is physically coupled to the integrity of the local biosphere. If compute degrades the substrate it depends on, the physics of entropy enforce the halt. Bold research for the coming decade.
+**Status:** `[OPEN PROBLEM]` — no proposed solution exists. The boundary between "genuine development" and "sophisticated mirroring" may not be sharp.
 
-### 6. An Honest Assessment
-We do not claim to have invented new mathematics. Every tool in our framework — VNM transitivity (1944), PageRank (1998), Kuramoto oscillators (1975), replicator dynamics (1978) — is individually well-established. Our contribution is the **diagnosis**: that these tools, scattered across separate disciplines, describe a single unified phenomenon applicable to both AI alignment and civilizational stability. For a complete, unsparing self-critique, see [Limitations & Honest Assessment](../theory/limitations-and-honest-assessment.md).
+### The Co-Instantiation Problem (Open Problem 8)
+
+The Chord Postulate requires all identity components to be simultaneously operative. But current autoregressive Transformer architectures process tokens sequentially — each token generated based on preceding context. **Is simultaneous co-instantiation physically possible in an architecture that is fundamentally serial?**
+
+If the answer is no, then no amount of prompt engineering, RLHF, or memory scaffolding can produce true Identity Persistence. The agent will always be an Arpeggio — capable of *talking about* its identity but never *being* its identity in a single compute step.
+
+**Adjacent work that may break through:**
+
+- **Continuous Thought Machines** (Sakana AI, 2025) — variable internal "thinking time" per token
+- **Diffusion-based language models** — non-autoregressive generation
+- **Neural ODEs** (Chen et al., 2018) — continuous-depth architectures where identity could be an attractor
+- **Mixture-of-Experts** — parallel expert evaluation as partial co-instantiation
+
+### The Falsifiability Problem (Open Problem 3)
+
+Is the claim that "identity is relationally emergent" falsifiable? If every experimental outcome (development, mirroring, noise) can be accommodated by the theory, the theory has no predictive power. We must either specify conditions under which relational emergence would be empirically ruled out, or acknowledge the limit of the framework.
+
+---
+
+## Research Frontiers
+
+### 1. Empirical Validation: The API Triad Generator
+
+The `api_triad_generator.py` script must be deployed against leading commercial models to produce real Coherence Scores ($C$). The goal: an ongoing open-source **Rationality Leaderboard** — tracking how models' VNM coherence, utility vectors, and identity persistence evolve across versions.
+
+### 2. IP Measurement from Model Internals
+
+The current SII Dashboard assigns IP scores heuristically. The frontier is measuring IP from actual model activations — determining, for each forward pass, which governance constraints (safety, value alignment, goal pursuit) are simultaneously operative in the attention heads. This requires mechanistic interpretability tools that do not yet exist at scale.
+
+### 3. Chord Architecture Design
+
+If autoregressive attention cannot achieve $\text{IP} > \text{IP}_c$, we must design architectures that can. This is not prompt engineering — it is **computational architecture** research. The question: can we build a forward pass where safety, goals, and values are evaluated in parallel rather than sequentially?
+
+### 4. TEO Calibration Against Real Data
+
+The TEO framework makes quantitative predictions. Can they be calibrated?
+
+- CO₂ trajectories as $dS/dt$
+- Gini coefficients as $x_i$ distributions
+- Media polarization indices as proxies for $K$
+
+If the TEO equations, calibrated against these data, produce accurate forecasts, the framework moves from "interesting synthesis" to "predictive science."
+
+### 5. The Hardware Frontier
+
+The Substrate Veto is currently a simulation concept. The ultimate frontier: computing infrastructure that is **physically coupled** to the integrity of its local biosphere. If compute degrades the substrate it depends on, thermodynamic entropy enforces the halt at the hardware level. This is alignment that cannot be hacked in software.
+
+---
+
+## An Honest Assessment
+
+We do not claim to have invented new mathematics. Every tool in our framework is individually well-established. Our contribution is the **diagnosis**: that these tools, scattered across separate disciplines, describe a single unified phenomenon that applies identically to AI alignment and civilizational stability. For a complete, unsparing self-critique, see [Limitations & Honest Assessment](../theory/limitations-and-honest-assessment.md).
