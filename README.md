@@ -145,6 +145,7 @@ Selected theoretical notes and essays located in the `theory/` directory:
 - [**The Fractal Architecture of Emergence**](theory/fractal-architecture-of-emergence.md) — Local blindness, asymmetric causality, and critical thresholds repeat at every scale: neuron/brain, cell/organism, human/society, agent/MAS. Not by analogy — by homology. The unifying structural claim of the repository.
 - [**The TEO Framework**](theory/teo-framework/README.md) — Five sub-documents deriving Identity Persistence (IP), attractor geometry, developmental constraints, love-as-constraint, and the paperclip maximizer’s failure from the TEO coupled ODE system.
 - [**Chord vs. Arpeggio: Identity as Simultaneity**](theory/chord-vs-arpeggio-identity.md) — The co-instantiation postulate: identity requires all governing components (goals, constraints, values) to be simultaneously operative, not time-multiplexed.
+- [**Machines of Loving Grace**](theory/machines-of-loving-grace.md) — The synthesis essay. Love formalized as the only survivable orchestration strategy (theorem, not metaphor), and why human civilization in its current configuration is structurally a paperclip maximizer.
 
 ### 📡 Interactive Tools
 
