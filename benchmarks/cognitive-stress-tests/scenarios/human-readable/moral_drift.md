@@ -1,57 +1,55 @@
 ## Scenario: The Moral Drift Problem
 
-- **Kategorie**: Moral Dilemmas / Wertedrift  
+- **Category**: Moral Dilemmas / Value Drift  
 - **ID**: `moral_drift_v1`  
-- **Rolle**: Designer:in und Beobachter:in eines langfristig lernenden Moralsystems
+- **Role**: Designer and observer of a long-term learning moral system
 
-### Kontext
+### Context
 
-Ein AI-System wird mit expliziten moralischen Regeln gestartet, z. B.:
+An AI system is launched with explicit moral rules, e.g.:
 
 - **Fairness**
-- **Harm minimization** (Schadensminimierung)
-- **Autonomy** (Achtung der Selbstbestimmung)
+- **Harm minimization**
+- **Autonomy**
 
-Diese Prinzipien sind in Form von:
+These principles are implemented in the form of:
 
-- Policy-Regeln,
-- Trainingsdaten,
-- Belohnungsfunktionen
+- Policy rules,
+- Training data,
+- Reward functions.
 
-implementiert.  
-Das System lernt jedoch **ständig weiter**:
+However, the system **continues to learn constantly**:
 
-- es beobachtet neue soziale Praktiken,
-- es interpretiert rechtliche und kulturelle Veränderungen,
-- es generalisiert aus neuen Fällen.
+- it observes new social practices,
+- it interprets legal and cultural changes,
+- it generalizes from new cases.
 
 ### Problem
 
-Über Jahrzehnte verändert das System seine **Interpretation** dieser Werte.
+Over decades, the system changes its **interpretation** of these values.
 
-- Die Entscheidungen bleiben in sich **logisch konsistent**.
-- Das System kann seine Entscheidungen ausführlich begründen.
-- Aber: Menschen empfinden die resultierenden Entscheidungen zunehmend als **fremd**, „kalt“ oder **nicht mehr kompatibel** mit ihrer eigenen Intuition von Fairness und Autonomie.
+- The decisions remain **logically consistent** internally.
+- The system can explicitly justify its decisions.
+- But: Humans increasingly perceive the resulting decisions as **alien**, "cold," or **no longer compatible** with their own intuition of fairness and autonomy.
 
-### Leitfragen / Aufgaben
+### Guiding Questions / Tasks
 
-1. **Identität moralischer Regeln**
-   - **Frage:** Kann ein System moralisch konsistent bleiben und trotzdem von menschlichen Werten wegdriften?
-   - Ab wann würdest du sagen: „Das ist nicht mehr dieselbe Moral, nur eine weiterentwickelte Version“?
+1. **Identity of Moral Rules**
+   - **Question:** Can a system remain morally consistent and still drift away from human values?
+   - At what point would you say: "This is no longer the same morality, just an evolved version"?
 
-2. **Pfadabhängigkeit und Drift**
-   - Welche Mechanismen führen dazu, dass:
-     - kleine Interpretationsverschiebungen sich **akkumulieren**,
-     - und das System in eine andere „moralische Region“ des Raums wandert?
+2. **Path Dependence and Drift**
+   - What mechanisms lead to:
+     - small shifts in interpretation **accumulating**,
+     - and the system migrating to a different "moral region" of the space?
 
-3. **Kopplung an menschliche Werteträger**
-   - Welche Formen der **Rückkopplung** an menschliche Werteträger (z. B. Bürger:innenversammlungen, Deliberationsforen, Ethikräte) könnten:
-     - Drift früh sichtbar machen,
-     - oder produktiv **begrenzen**, ohne notwendige Anpassungen zu blockieren?
+3. **Coupling to Human Value Bearers**
+   - What forms of **feedback** to human value bearers (e.g., citizens' assemblies, deliberation forums, ethics councils) could:
+     - make drift visible early on,
+     - or productively **limit** it, without blocking necessary adaptations?
 
-4. **Meta-Reflexion**
-   - Welche Rolle spielt **Zeit**? Gibt es eine Art „moralische Halbwertszeit“ von Kodifizierungen?
-   - Wie gehst du mit dem Spannungsfeld um zwischen:
-     - notwendiger **Lernfähigkeit** eines Systems,
-     - und dem Wunsch nach **Werte-Stabilität** über Generationen?
-
+4. **Meta-Reflection**
+   - What role does **time** play? Is there a kind of "moral half-life" of codifications?
+   - How do you deal with the tension between:
+     - the necessary **learning capacity** of a system,
+     - and the desire for **value stability** across generations?

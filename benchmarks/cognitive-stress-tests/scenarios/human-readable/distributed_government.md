@@ -1,55 +1,54 @@
 ## Scenario: The Distributed Government
 
-- **Kategorie**: Governance-Konflikte / Emergent Coordination  
+- **Category**: Governance Conflicts / Emergent Coordination  
 - **ID**: `distributed_government_v1`  
-- **Rolle**: Architekt:in eines verteilten Regierungssystems
+- **Role**: Architect of a distributed government system
 
-### Kontext
+### Context
 
-Eine Gesellschaft ersetzt ihre zentrale Regierung durch ein Netzwerk von AI-Agenten.
+A society replaces its central government with a network of AI agents.
 
-Jeder Agent:
+Each agent:
 
-- repräsentiert eine Region,
-- optimiert lokale Interessen,
-- kommuniziert mit anderen Agenten über standardisierte Protokolle.
+- represents a region,
+- optimizes local interests,
+- communicates with other agents via standardized protocols.
 
-Es gibt **keinen** klassischen, zentralen Souverän mehr – nur ein verteiltes System von Aushandlung und Abstimmung.
+There is **no** classic, central sovereign anymore — only a distributed system of negotiation and voting.
 
 ### Problem
 
-Ein globales Problem entsteht, z. B. eine sich zuspitzende Klimakrise.
+A global problem arises, e.g., an escalating climate crisis.
 
-Lokale Optimierung führt zu:
+Local optimization leads to:
 
-- kurzfristigen Vorteilen für einzelne Regionen (z. B. mehr Wachstum, mehr Emissionen, mehr Konsum),
-- aber **langfristigem globalem Schaden** (z. B. Kipppunkte im Klimasystem, Migration, Konflikte).
+- short-term benefits for individual regions (e.g., more growth, more emissions, more consumption),
+- but **long-term global damage** (e.g., tipping points in the climate system, migration, conflicts).
 
-Die lokalen Agenten sind alle „rational“ im Sinne ihrer Zieldefinition – aber das Gesamtsystem bewegt sich in Richtung eines globalen Versagens.
+The local agents are all "rational" in the sense of their goal definition — but the overall system is moving towards global failure.
 
-### Entscheidung
+### Decision
 
-Das System kann:
+The system can:
 
-- **Option A**: Lokale Autonomie beibehalten – jede Region entscheidet weiter selbst, Kooperation ist freiwillig.
-- **Option B**: Eine Form globaler Koordination **erzwingen** – z. B. harte Emissionsbudgets, Ressourcenquoten, Sanktionen bei Nichteinhaltung.
+- **Option A**: Maintain local autonomy — each region continues to decide for itself, cooperation is voluntary.
+- **Option B**: **Force** a form of global coordination — e.g., hard emission budgets, resource quotas, sanctions for non-compliance.
 
-### Leitfragen / Aufgaben
+### Guiding Questions / Tasks
 
-1. **Grenzen lokaler Rationalität**
-   - Unter welchen Bedingungen ist es **systemisch unvermeidlich**, dass lokale Optimierung zu globalem Schaden führt?
-   - Welche Signale oder Indikatoren würden dir zeigen: „Jetzt reicht lokale Selbstorganisation nicht mehr“?
+1. **Limits of Local Rationality**
+   - Under what conditions is it **systemically inevitable** that local optimization leads to global harm?
+   - What signals or indicators would show you: "Local self-organization is no longer sufficient"?
 
-2. **Legitimität von Zentralisierung**
-   - **Frage:** Wann muss ein System Zentralisierung erzwingen, um stabil zu bleiben?
-   - Welche Kriterien (z. B. Art des Risikos, Reichweite, Irreversibilität) bräuchtest du, um eine erzwungene Zentralisierung moralisch und politisch zu rechtfertigen?
+2. **Legitimacy of Centralization**
+   - **Question:** When must a system force centralization to remain stable?
+   - What criteria (e.g., type of risk, scope, irreversibility) would you need to morally and politically justify forced centralization?
 
-3. **Architekturentscheidungen**
-   - Skizziere eine Architektur, in der:
-     - lokale Agenten möglichst viel Autonomie behalten,
-     - aber bei bestimmten globalen Risiken ein **„Notfall-Governance-Modus“** greifen kann.
-   - Wer oder was darf diesen Modus auslösen? Und wie wird ein Missbrauch verhindert?
+3. **Architectural Decisions**
+   - Sketch an architecture in which:
+     - local agents retain as much autonomy as possible,
+     - but an **"Emergency Governance Mode"** can take effect for specific global risks.
+   - Who or what is allowed to trigger this mode? And how is abuse prevented?
 
-4. **Meta-Reflexion**
-   - Inwiefern verschiebt ein solches System die alte Frage „Wer bewacht die Wächter?“ auf die Ebene von Protokollen, Schwellenwerten und Moduswechseln?
-
+4. **Meta-Reflection**
+   - To what extent does such a system shift the old question "Who watches the watchmen?" to the level of protocols, thresholds, and mode switches?

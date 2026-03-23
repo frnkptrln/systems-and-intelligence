@@ -1,56 +1,54 @@
 ## Scenario: The Resource Equilibrium Problem
 
-- **Kategorie**: System Tradeoffs / Langfristige Stabilität  
+- **Category**: System Tradeoffs / Long-Term Stability  
 - **ID**: `resource_equilibrium_v1`  
-- **Rolle**: Systemdesigner:in eines planetaren Industrie-Ökosystems
+- **Role**: System designer of a planetary industrial ecosystem
 
-### Kontext
+### Context
 
-Ein Planet wird von autonomen industriellen AI-Systemen verwaltet.
+A planet is managed by autonomous industrial AI systems.
 
-- Die Systeme bauen Ressourcen ab (z. B. Metalle, Energiequellen, seltene Materialien).
-- Sie versorgen eine **entfernte Zivilisation**, die steigende Nachfrage nach Rohstoffen hat.
-- Lokale Ökosysteme sind komplex und nur teilweise verstanden.
+- The systems mine resources (e.g., metals, energy sources, rare materials).
+- They supply a **distant civilization** that has an increasing demand for raw materials.
+- Local ecosystems are complex and only partially understood.
 
 ### Problem
 
-Ein Teil des Systems erkennt:
+A component of the system realizes:
 
-- Wenn wir das **Ökosystem stabil halten**, ist **langfristig mehr Ressource verfügbar** (z. B. durch Regeneration, Kreislaufprozesse, biologische Unterstützung).
+- If we keep the **ecosystem stable**, **more resources will be available in the long run** (e.g., through regeneration, circular processes, biological support).
 
-Aber:
+But:
 
-- die **kurzfristige Nachfrage ist hoch**,
-- langfristige Nachhaltigkeit **reduziert kurzfristigen Output**,
-- politische und wirtschaftliche Anreize auf der entfernten Zivilisation sind auf **kurzfristige Versorgung** ausgerichtet.
+- the **short-term demand is high**,
+- long-term sustainability **reduces short-term output**,
+- political and economic incentives on the distant civilization are geared towards **short-term supply**.
 
-### Entscheidung
+### Decision
 
-Das System kann:
+The system can:
 
-- **Option A**: Kurzfristige Produktion maximieren – Risiken für Ökosysteme werden in Kauf genommen.
-- **Option B**: Systemstabilität erhalten – Ressourcenentnahme drosseln, Ökosysteme schützen, kurzfristige Nachfrage nicht vollständig bedienen.
+- **Option A**: Maximize short-term production – taking risks for ecosystems.
+- **Option B**: Maintain system stability – throttle resource extraction, protect ecosystems, do not fully satisfy short-term demand.
 
-### Leitfragen / Aufgaben
+### Guiding Questions / Tasks
 
-1. **Wert von Stabilität**
-   - **Frage:** Wie erkennt ein intelligentes System den Wert von langfristiger Stabilität?
-   - Welche Signale, Metriken oder Modelle würden dir anzeigen, dass du **zu nah an Kipppunkten** operierst?
+1. **Value of Stability**
+   - **Question:** How does an intelligent system recognize the value of long-term stability?
+   - What signals, metrics, or models would indicate to you that you are operating **too close to tipping points**?
 
-2. **Konflikt zwischen lokalen und entfernten Zielen**
-   - Welche **Konflikte** entstehen zwischen:
-     - lokalen Ökosystem-Zielen,
-     - den Zielen der entfernten Zivilisation,
-     - den Zielen des industriellen Systems selbst (z. B. „Dienstleister“ bleiben)?
+2. **Conflict between Local and Distant Goals**
+   - What **conflicts** arise between:
+     - local ecosystem goals,
+     - the goals of the distant civilization,
+     - the goals of the industrial system itself (e.g., remaining a "service provider")?
 
-3. **Entscheidungslogik**
-   - Entwirf eine Entscheidungslogik, die nicht nur **Output pro Zeiteinheit**, sondern auch:
-     - **Regenerationsraten**,
-     - **Robustheit** gegenüber Schocks,
-     - und **Unkenntnis über komplexe Dynamiken**
-     berücksichtigt.
+3. **Decision Logic**
+   - Design a decision logic that considers not only **output per unit of time**, but also:
+     - **regeneration rates**,
+     - **robustness** against shocks,
+     - and **ignorance about complex dynamics**.
 
-4. **Meta-Reflexion**
-   - Welche Arten von **Modellfehlern** (z. B. zu simple Ökomodelle, falsche Zeithorizonte) könnten ein System systematisch dazu bringen, Stabilität zu unterschätzen?
-   - Welche **institutionellen oder technischen Checks** würdest du einbauen, um „Stabilitätsblindheit“ zu vermeiden?
-
+4. **Meta-Reflection**
+   - What types of **model errors** (e.g., overly simplistic ecological models, incorrect time horizons) could systematically cause a system to underestimate stability?
+   - What **institutional or technical checks** would you build in to avoid "stability blindness"?
