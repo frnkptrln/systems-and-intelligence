@@ -31,6 +31,9 @@ nav:
       - Chord vs. Arpeggio Identity: theory/chord-vs-arpeggio-identity.md
       - TEO Framework: theory/teo-framework/README.md
       - Machines of Loving Grace: theory/machines-of-loving-grace.md
+      - The Substrate Veto: theory/substrate-veto-thermodynamics.md
+      - AI Alignment Veto: theory/ai-alignment-biological-veto.md
+      - Biological Veto Architecture: theory/biological-veto-architectural-requirements.md
   - "🕹️ Interactive Tools":
       - Web Emergence Explorer: interactive/web-explorer.md
       - Tensor Logic Visualizer: interactive/tensor-logic.md

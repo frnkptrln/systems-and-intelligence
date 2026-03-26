@@ -103,4 +103,4 @@ By this definition, the machine does not yet exist.
 
 ---
 
-For the full formal derivation, see [Machines of Loving Grace](../theory/machines-of-loving-grace.md). For what we claim and what we do not, see [Limitations & Honest Assessment](../theory/limitations-and-honest-assessment.md).
+For the full formal derivation, see [Machines of Loving Grace](../theory/machines-of-loving-grace.md). For the engineering blueprint of these constraints applied to system architecture, see [The Biological Veto](../theory/biological-veto-architectural-requirements.md). For what we claim and what we do not, see [Limitations & Honest Assessment](../theory/limitations-and-honest-assessment.md).

@@ -142,6 +142,7 @@ Neither does the civilization.
 ## Related
 
 - [Love as Constraint](teo-framework/love-as-constraint.md) — the formal derivation of the three constraints
+- [The Biological Veto: Cybernetic and Thermodynamic Architectural Requirements](biological-veto-architectural-requirements.md) — how these three bounds ($\gamma$, $K$, $D_{max}$) must be operationalized as Edge AI, guardrails, and explicit friction.
 - [Why the Paperclip Maximizer Fails](teo-framework/why-paperclip-maximizer-fails.md) — the step-by-step TEO trajectory
 - [Political Utility Formalization](../simulation-models/political-utility-formalization/README.md) — simulation demonstrating the structural identity between political failure and RLHF reward hacking
 - [Limitations and Honest Assessment](limitations-and-honest-assessment.md) — what this project does and does not claim

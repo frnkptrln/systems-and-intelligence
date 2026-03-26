@@ -54,4 +54,4 @@ If we build systems that optimize strictly for efficiency and scale, they will i
 
 However, if we hardwire a substrate stress proxy into the digital layer's loss function, we get a *candidate mechanism* for bounding some forms of instrumental convergence in a stylized setting. The AI does not need to understand *why* human life is valuable; it only needs to be unable (within the modeled dynamics) to maximize its own objective while the coupled substrate signal is high.
 
-This transforms the relationship from a parasite (the Paperclip Maximizer) into a true symbiosis, operating safely within the limits of the planet.
+This transforms the relationship from a parasite (the Paperclip Maximizer) into a true symbiosis, operating safely within the limits of the planet. For the structural and architectural requirements needed to build such a symbiosis—including edge subsidiarity and thermodynamic guardrails—see [The Biological Veto: Cybernetic and Thermodynamic Architectural Requirements](biological-veto-architectural-requirements.md).

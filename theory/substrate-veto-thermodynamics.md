@@ -60,4 +60,4 @@ Because the Substrate Veto is a universal thermodynamic law, it applies identica
 
 ## Conclusion
 
-This essay is best read as a control-theoretic framing: whatever “alignment” means at the software layer, any deployed optimizer is ultimately bounded by thermodynamics and substrate constraints. The “Substrate Veto” is a proposed lens (and toy formalization) for thinking about how substrate stress can feed back onto optimization dynamics; it is not a proof that the alignment problem is solved.
+This essay is best read as a control-theoretic framing: whatever “alignment” means at the software layer, any deployed optimizer is ultimately bounded by thermodynamics and substrate constraints. The “Substrate Veto” is a proposed lens (and toy formalization) for thinking about how substrate stress can feed back onto optimization dynamics; it is not a proof that the alignment problem is solved. For a complete synthesis of how this translates into system design (Subsidiarity, Edge AI, and Friction), refer to [The Biological Veto: Cybernetic and Thermodynamic Architectural Requirements](biological-veto-architectural-requirements.md).

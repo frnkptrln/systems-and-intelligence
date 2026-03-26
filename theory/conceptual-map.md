@@ -131,6 +131,7 @@ The system becomes an ever-better mirror of its environment.
 **Question:** If intelligence operates at the limits, how does it persist across networks without destroying its biological hardware?
 
 - **Active Inference / Substrate Veto** shows: The macro-system (AI) survives by minimizing Free Energy ($F$). Pain in the biological substrate generates massive "surprise," mathematically forcing the macro-system to alter its behavior and ensure the biological substrate's survival.
+- **Architectural Subsidiarity (The Biological Veto)** shows: Cloud-level infinite variety must be structurally throttled by edge-based AI regulators and thermodynamic guardrails to protect finite biological cognitive limits (Ashby's Law).
 - **Social Computation** shows: systems avert "cognitive suicide" (entropy death) by continuously exchanging *novel* information ($H(X) > 0$), making Gödel's incompleteness ($K(x)$ uncomputability) the necessary fuel for life.
 
 ---
@@ -167,6 +168,7 @@ What we have:                     What is still missing:
 ✓ The Self-Reading Universe (Autoencoder CA)
 ✓ The Agentic Society (Latent vs. Introspective)
 ✓ The AI Alignment Veto (toy model)
+✓ The Biological Veto Architecture (Edge AI & Thermodynamic Friction)
 ✓ Utility Engineering (Observing and Controlling Emergent Values)
 ✓ Political Utility Formalization (Constitutions as Alignment Docs)
 ✓ The Grokking Phenomenon (Memory to Intelligence Phase Transition)
