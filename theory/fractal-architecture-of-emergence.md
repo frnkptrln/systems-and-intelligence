@@ -2,7 +2,6 @@
 title: "The Fractal Architecture of Emergence"
 subtitle: "How the Same Constraints Repeat at Every Scale"
 date: "2026-03-07"
-status: "hypothesized"
 central_claim: >
   Local blindness, asymmetric causality, and critical thresholds are
   scale-invariant structural constraints in complex systems — not analogies

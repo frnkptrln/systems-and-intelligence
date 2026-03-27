@@ -1,8 +1,3 @@
----
-status: "Formalized / Demonstrated"
-note: "Maps the TEO framework variables to executable code and benchmarked environments."
----
-
 # Minimal Thermodynamic Agent Framework
 
 ## Conceptual Mapping to Code

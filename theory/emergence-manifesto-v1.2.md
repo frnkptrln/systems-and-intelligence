@@ -2,7 +2,6 @@
 title: "Emergence Manifesto v1.2 — Conditions for Developing Agent Identity"
 date: "2026-03-23"
 version: "1.2"
-status: "mixed — see claim status tags"
 note: >
   This manifesto articulates the theoretical framework behind the agentic-test-suite
   and the simulation models. v1.2 introduces Identity Persistence (IP) as the 4th SII

@@ -1,7 +1,6 @@
 ---
 title: "Local Causality and Invisible Consequences: The Shared Architecture of Emergence"
 date: "2026-03-06"
-status: "hypothesized"
 connects_to:
   - theory/mathematical-axioms.md
   - theory/emergence-downward-causation.md
