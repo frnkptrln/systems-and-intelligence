@@ -1,3 +1,8 @@
+---
+status: "Formalized"
+note: "Defines concrete architectural patterns for implementing thermodynamic constraints (Biological Veto) in agentic systems."
+---
+
 # Implementation Patterns: The Biological Veto in AI Agents
 
 ## Abstract
