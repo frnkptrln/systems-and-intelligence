@@ -2,7 +2,6 @@
 title: "Framework: Utility Engineering & Systemic Intelligence"
 subtitle: "Quantifying Emergent Intelligence via Internal Coherence"
 date: "2026-03-07"
-status: "formalized"
 connects_to:
   - simulation-models/utility-engineering/
 ---

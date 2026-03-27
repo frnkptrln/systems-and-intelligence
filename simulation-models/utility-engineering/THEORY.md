@@ -2,7 +2,6 @@
 title: "Utility Engineering as State-Space Control"
 subtitle: "Formalizing Emergent Values in Artificial Systems"
 date: "2026-03-07"
-status: "formalized"
 connects_to:
   - theory/ai-alignment-biological-veto.md
   - theory/mathematical-axioms.md
