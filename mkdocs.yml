@@ -23,13 +23,21 @@ nav:
       - The Emergence Manifesto: theory/emergence-manifesto-v1.2.md
       - Conceptual Map: theory/conceptual-map.md
       - Simulation Map: theory/simulation-theory-map.md
+      - System Intelligence Index: theory/system-intelligence-index.md
       - Thermodynamics of Orchestration (TEO): theory/thermodynamics-of-orchestration.md
+      - Grokking Phase Transition: theory/grokking-phase-transition.md
       - Limitations & Honest Assessment: theory/limitations-and-honest-assessment.md
       - Black Swans & Downward Causation: theory/black-swans-and-downward-causation.md
       - Fractal Architecture of Emergence: theory/fractal-architecture-of-emergence.md
       - Mathematical Axioms: theory/mathematical-axioms.md
       - Chord vs. Arpeggio Identity: theory/chord-vs-arpeggio-identity.md
-      - TEO Framework: theory/teo-framework/README.md
+      - "TEO Framework":
+          - Overview: theory/teo-framework/README.md
+          - Love as Constraint: theory/teo-framework/love-as-constraint.md
+          - Why the Paperclip Maximizer Fails: theory/teo-framework/why-paperclip-maximizer-fails.md
+          - Lerchner Boundary: theory/teo-framework/lerchner-boundary.md
+          - Dupoux Integration: theory/teo-framework/dupoux-integration.md
+          - Antikythera Topology: theory/teo-framework/antikythera-topology.md
       - Machines of Loving Grace: theory/machines-of-loving-grace.md
       - The Substrate Veto: theory/substrate-veto-thermodynamics.md
       - AI Alignment Veto: theory/ai-alignment-biological-veto.md
@@ -45,8 +53,22 @@ nav:
       - TEO Civilization: simulation-models/teo-civilization/README.md
       - Planetary Veto: simulation-models/planetary-veto/README.md
       - Black Swan Resilience: simulation-models/black-swan-resilience/README.md
+      - Boids Flocking: simulation-models/boids-flocking/README.md
+      - Coupled Oscillators: simulation-models/coupled-oscillators/README.md
+      - Stigmergy Swarm: simulation-models/stigmergy-swarm/README.md
+      - Reaction-Diffusion: simulation-models/reaction-diffusion/README.md
+      - Lenia: simulation-models/lenia/README.md
+      - Hebbian Memory: simulation-models/hebbian-memory/README.md
+      - Phase Transition Explorer: simulation-models/phase-transition-explorer/README.md
+      - Self-Organized Criticality: simulation-models/self-organized-criticality/README.md
       - Systems Orchestration: systems-orchestration/README.md
       - Agentic Identity Suite: agentic-test-suite/README.md
+  - "🔭 Meta & Speculations":
+      - Cosmological Bootloader: meta/cosmological-bootloader.md
+      - Limits of Formal Systems: meta/limits-of-formal-systems.md
+      - Impedance Mismatch: meta/impedance-mismatch-friction.md
+      - The Decoupled State: meta/decoupled-state-liquid-democracy.md
+      - Decentralized OS Architecture: meta/decentralized-os-architecture.md
   - "📚 Reference":
       - Quantifying Emergent Utility (Paper): papers/quantifying-emergent-utility-in-llms.md
       - Glossary: theory/glossary.md

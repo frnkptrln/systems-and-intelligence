@@ -21,7 +21,7 @@ $$\text{SII} = P \times R \times A \times \text{IP}$$
 
 The multiplicative form is deliberate: a zero in any dimension collapses the overall score. A system that predicts perfectly but cannot regulate ($R = 0$) has SII = 0. A system that predicts, regulates, and adapts but has no unified identity ($\text{IP} = 0$) has SII = 0 — it is a sophisticated tool, not a system with integrated intelligence.
 
-The [SII Dashboard](../data-analysis/sii_dashboard.py) runs headless mini-simulations and generates comparative radar charts across all four dimensions.
+The [SII Dashboard](https://github.com/frnkptrln/systems-and-intelligence/blob/main/data-analysis/sii_dashboard.py) runs headless mini-simulations and generates comparative radar charts across all four dimensions.
 
 ---
 
@@ -46,7 +46,7 @@ where $\mathcal{O}(t)$ is the operative set and $n$ is the total number of gover
 - $\text{IP} \to 1$: **Chord** — unified self, all constraints co-instantiated
 - $\text{IP} \to 0$: **Arpeggio** — simulated self, constraints time-multiplexed
 
-The [Identity Morphospace](../tools/morphospace_visualizer.py) plots agent trajectories in the IP/Coherence plane, revealing which agents maintain the Chord state under stress and which fragment into Arpeggio.
+The [Identity Morphospace](https://github.com/frnkptrln/systems-and-intelligence/blob/main/tools/morphospace_visualizer.py) plots agent trajectories in the IP/Coherence plane, revealing which agents maintain the Chord state under stress and which fragment into Arpeggio.
 
 ---
 

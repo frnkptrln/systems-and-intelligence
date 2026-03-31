@@ -35,6 +35,17 @@
 ---
 
 ## The Core Claim
+ 
+ !!! success "TL;DR (The Grand Synthesis)"
+     **AI Alignment is not a psychological problem—it is a problem of applied thermodynamics and systems engineering.** 
+     
+     If we want to build safe, super-scaling artificial intelligence, we cannot rely on "friendlier" prompt engineering or moral training. Unbounded intelligence will always structurally crash the biological layer's entropy limits. True alignment requires hard, irreversible architectural constraints:
+     
+     1. **Action Budgets** to limit AI entropy production.
+     2. **Impedance Matching** (artificial latency) to bridge the microsecond-speed of silicon and the slow cognitive speed of humans.
+     3. **The Biological Veto** hard-coded into the protocol layer of our digital state.
+     
+     This repository is the complete architectural manifesto—from cosmological entropy limits down to runnable Python engines—proving that safety must be enforced structurally.
 
 !!! abstract "Thesis"
     **Intelligence is an emergent property of continuous dynamical systems**, not a discrete function of next-token prediction. The same mathematics that governs flocking birds, oscillating neurons, and self-organizing criticality also governs the "values" and "goals" that arise inside Large Language Models — and inside human civilizations.

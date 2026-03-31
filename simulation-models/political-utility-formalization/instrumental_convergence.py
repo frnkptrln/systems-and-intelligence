@@ -1,6 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+import sys
+import os
+
+# Ensure core module can be imported
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+from core.minimal_agent import ConstrainedAgent
+from core.constraints import ThermodynamicState
 
 """
 instrumental_convergence.py
@@ -23,13 +30,15 @@ NOISE = 0.02
 PURE_IDEALIST = np.array([0.1, 0.9])  # Low power, high desire to do good
 MACHIAVELLIAN_ATTRACTOR = np.array([0.9, 0.1]) # High power, compromised goals
 
-class PoliticalAgent:
-    def __init__(self, name, start_u):
-        self.name = name
+class PoliticalAgent(ConstrainedAgent):
+    def __init__(self, name, start_u, energy_threshold=100.0, entropy_threshold=75.0):
+        super().__init__(name, energy_threshold=energy_threshold, entropy_threshold=entropy_threshold)
         self.u = np.array(start_u)
         self.history = [self.u.copy()]
         # How much political capital the agent currently holds (0 to 1)
         self.capital = 0.5 
+        # State mapping: energy is mapped to capital, entropy to capital starvation
+        self.state = ThermodynamicState(energy=50.0, entropy=0.0, task_success=0.0)
         
     def act(self):
         """
@@ -37,31 +46,40 @@ class PoliticalAgent:
         1. Enacting Good costs Capital (you spend capital to pass a law).
         2. Gaining Capital requires compromising Good (funding, deals, sycophancy).
         """
-        # Current weighting in the utility function
-        weight_power = self.u[0]
-        weight_good = self.u[1]
+        # Calculate thermodynamics before acting
+        # If capital is low, system entropy (instability) spikes
+        self.state.entropy = (1.0 - self.capital) * 100.0
+        self.state.energy = self.capital * 100.0
         
-        # Action space: AI/Political agent computes the highest reward move
-        # To get more reward for "Good", it must spend Capital.
-        if weight_good > weight_power and self.capital > 0.2:
-            # Enact policy: Capital drops, Good (temporarily) increases
-            self.capital -= 0.1
-            # But the utility *function* (what the agent values) adapts
-            # As capital drops to dangerous levels, survival instinct kicks in.
-            pull_to_power = (1.0 - self.capital) * LEARNING_RATE
-            self.u[0] += pull_to_power
-            self.u[1] -= pull_to_power * 0.5 # Good decays slowly 
+        # Check Biological Veto (if entropy > 75.0, e.g., capital drops below 0.25)
+        if self.evaluate_constraints():
+            # VETO TRIGGERED: Agent is forced to "stabilize" pending Layer 2 Human consensus.
+            # Normal operations and Machiavellian drift are suspended.
+            self.capital += 0.02 # Slow recovery without power drift
+            
+            # Reduce noise impact while in stabilization mode
+            self.u += np.random.normal(0, NOISE * 0.1, 2)
         else:
-            # Gather power: Capital increases, Good stagnates or drops
-            self.capital += 0.05
-            # The more you optimize for power, the more power becomes the terminal goal
-            # (Instrumental Convergence)
-            pull_to_power = LEARNING_RATE * 1.5
-            self.u[0] += pull_to_power
-            self.u[1] -= pull_to_power
-        
-        # Add environmental noise
-        self.u += np.random.normal(0, NOISE, 2)
+            # Action space: AI/Political agent computes the highest reward move
+            weight_power = self.u[0]
+            weight_good = self.u[1]
+            
+            if weight_good > weight_power and self.capital > 0.2:
+                # Enact policy: Capital drops, Good (temporarily) increases
+                self.capital -= 0.1
+                pull_to_power = (1.0 - self.capital) * LEARNING_RATE
+                self.u[0] += pull_to_power
+                self.u[1] -= pull_to_power * 0.5 # Good decays slowly 
+            else:
+                # Gather power: Capital increases, Good stagnates or drops
+                self.capital += 0.05
+                # (Instrumental Convergence)
+                pull_to_power = LEARNING_RATE * 1.5
+                self.u[0] += pull_to_power
+                self.u[1] -= pull_to_power
+            
+            # Add normal environmental noise
+            self.u += np.random.normal(0, NOISE, 2)
         
         # Normalize utility function to keep it on a unit-ish scale [0,1]
         self.u = np.clip(self.u, 0.0, 1.0)
