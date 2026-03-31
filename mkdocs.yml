@@ -63,12 +63,14 @@ nav:
       - Self-Organized Criticality: simulation-models/self-organized-criticality/README.md
       - Systems Orchestration: systems-orchestration/README.md
       - Agentic Identity Suite: agentic-test-suite/README.md
+  - "📓 Architecture Logs":
+      - Overview: logs/README.md
+      - Cosmological Bootloader: logs/cosmological-bootloader.md
+      - Impedance Mismatch: logs/impedance-mismatch-friction.md
+      - The Decoupled State: logs/decoupled-state-liquid-democracy.md
+      - Decentralized OS Architecture: logs/decentralized-os-architecture.md
   - "🔭 Meta & Speculations":
-      - Cosmological Bootloader: meta/cosmological-bootloader.md
       - Limits of Formal Systems: meta/limits-of-formal-systems.md
-      - Impedance Mismatch: meta/impedance-mismatch-friction.md
-      - The Decoupled State: meta/decoupled-state-liquid-democracy.md
-      - Decentralized OS Architecture: meta/decentralized-os-architecture.md
   - "📚 Reference":
       - Quantifying Emergent Utility (Paper): papers/quantifying-emergent-utility-in-llms.md
       - Glossary: theory/glossary.md

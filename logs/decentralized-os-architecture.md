@@ -1,4 +1,4 @@
-# Log 005: Decentralized OS Architecture (The Digital State)
+# Log 004: Decentralized OS Architecture (The Digital State)
 
 *High-Level System Architecture for a Liquid Democracy OS grounded in the TEO Framework.*
 
@@ -29,7 +29,7 @@ The "Drafting & Proposal" layer.
 
 ### Layer 2: The Biological Ledger (Low-Frequency)
 The "Consensus & State" layer.
-- **Substrate:** Distributed Ledger / Blockchain (State Machine).
+- **Substrate:** Distributed Ledger (State Machine).
 - **Actors:** Verified Human Nodes (Zero-Knowledge Proof of Personhood).
 - **Clock Speed:** Hours to weeks.
 - **Function:** Humans review compressed summaries of Layer 1 Pull Requests and commit them to the ledger.

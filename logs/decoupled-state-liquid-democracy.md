@@ -1,6 +1,6 @@
 # Log 003: The Decoupled State (Impedance Matching in Liquid Democracy)
 
-*Applying the TEO Framework to a decentralized, state-wide operating system (Reticulum, LoRa, Blockchain, Liquid Democracy).*
+*Applying the TEO Framework to a decentralized, state-wide operating system (Mesh Networks, Distributed State, Liquid Democracy).*
 
 **Status:** `[SPECULATIVE]`
 **Date:** March 2026
@@ -37,7 +37,7 @@ Here, the human operates. This layer is slow and low-entropy. Humans review only
 
 ## The Protocol Veto
 
-Only a node on Layer 2 (human) has the right to **commit** — the actual execution of a decision or delegation on the blockchain. Layer 1 can only generate **Pull Requests** (proposals).
+Only a node on Layer 2 (human) has the right to **commit** — the actual execution of a decision or delegation on the distributed ledger. Layer 1 can only generate **Pull Requests** (proposals).
 
 This maps directly onto the [Biological Veto](../theory/ai-alignment-biological-veto.md):
 
