@@ -22,6 +22,7 @@ jobs:
       - run: pip install mkdocs-material python-markdown-math
       - name: Copy project content into docs
         run: |
+          cp -r logs docs/
           cp -r theory docs/
           cp -r simulation-models docs/
           cp -r systems-orchestration docs/
