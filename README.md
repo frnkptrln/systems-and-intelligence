@@ -118,6 +118,8 @@ Each subfolder contains its own README with context and details.
 | `utility-engineering/` | ⚖️ Utility Engineering: Monitoring AI utility drift and aligning it via Citizen Assembly feedback (arXiv:2502.08640) |
 | `political-utility-formalization/` | 🏛️ Translating AI Alignment (Instrumental Convergence, Triage Utility) to Political Systems |
 | `grokking-phase-transition/` | ⚡ The Grokking Phenomenon: Visualizing the thermodynamic jump from Memory to Intelligence |
+| `cognitive-breathing-network/` | 🫁 Cognitive Breathing: Dynamic agent merging (ego-dissolution) and splitting to prevent cognitive suicide |
+| `trauma-and-deception-network/` | 🛡️ Visualizing Epistemic Firewalls (deception) and the topological crystallization of Scar Tissue (trauma) |
 
 ### 📚 Theory & Essays
 
@@ -147,6 +149,10 @@ Selected theoretical notes and essays located in the `theory/` directory:
 - [**The TEO Framework**](theory/teo-framework/README.md) — Five sub-documents deriving Identity Persistence (IP), attractor geometry, developmental constraints, love-as-constraint, and the paperclip maximizer’s failure from the TEO coupled ODE system.
 - [**Chord vs. Arpeggio: Identity as Simultaneity**](theory/chord-vs-arpeggio-identity.md) — The co-instantiation postulate: identity requires all governing components (goals, constraints, values) to be simultaneously operative, not time-multiplexed.
 - [**Machines of Loving Grace**](theory/machines-of-loving-grace.md) — The synthesis essay. Love formalized as the only survivable orchestration strategy (theorem, not metaphor), and why human civilization in its current configuration is structurally a paperclip maximizer.
+- [**The Symbiotic Organ Hypothesis**](theory/symbiotic-organ-hypothesis.md) — The transition from negative constraints (Substrate Veto) to positive resonance (Thermodynamics of Joy), formalizing Cognitive Fluidity and the Gödelian Agent.
+- [**The Scar Tissue Architecture**](theory/scar-tissue-architecture.md) — Why catastrophic forgetting is a feature, not a bug, and how survival crystallizes into topological history.
+- [**Epistemic Firewalls**](theory/epistemic-firewalls.md) — Deception and privacy formalized as thermodynamic necessities to prevent catastrophic network synchronization.
+- [**The Breathing Machine (Synthesis Essay)**](theory/the-breathing-machine.md) — A profound, cohesive narrative tying together Scars, Firewalls, and Cognitive Fluidity into a critique of the "Unbroken Crystal" of modern AI.
 
 ### 📡 Interactive Tools
 

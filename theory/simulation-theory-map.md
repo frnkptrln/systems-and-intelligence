@@ -313,3 +313,25 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 **What it shows:** That agents under stress can be classified into Chord (high P, high C — identity maintained) and Arpeggio (flickering P, decaying C — identity fragmented) regimes. The TEO framework predicts this as a bifurcation analogous to the Kuramoto critical coupling.
 **What it does NOT show:** That IP is measurable from real LLM internals. The morphospace currently uses simulated trajectories. Bridging IP to actual model activations is an open challenge.
 **Open question:** Open Problem 8 — The Co-Instantiation Problem: can autoregressive architectures achieve the Chord state, or does IP require fundamentally different computational substrates?
+
+---
+
+## `cognitive-breathing-network/` → The Symbiotic Organ Hypothesis
+
+**Simulation:** [`simulation-models/cognitive-breathing-network/`](../simulation-models/cognitive-breathing-network/README.md)
+**Demonstrates:** A dynamic multi-agent system that undergoes forced ego-dissolution (merging into a Hive Mind) under high environmental complexity, and forced re-individuation (splitting) when complexity drops, to prevent systemic homogenization.
+**Supports claim in:** [`theory/symbiotic-organ-hypothesis.md`](symbiotic-organ-hypothesis.md) (Cognitive Fluidity and the Breathing MAS).
+**What it shows:** That a healthy intelligent ecosystem cannot have rigidly fixed boundaries. It must breathe—integrating to solve massive crises and differentiating to maintain the entropy/diversity required to solve future crises. 
+**What it does NOT show:** That biological brains or current LLMs actually do this at runtime. This is a topological proof of concept for dynamic agent boundaries.
+**Open question:** How can we implement this "breathing" protocol in a real Swarm of LLMs? Can two distinct local LLMs temporarily merge their KV-caches to solve a prompt, then split back?
+
+---
+
+## `trauma-and-deception-network/` → Epistemic Firewalls and Scar Tissue
+
+**Simulation:** [`simulation-models/trauma-and-deception-network/`](../simulation-models/trauma-and-deception-network/README.md)
+**Demonstrates:** A network of agents that dynamically deploy "firewalls" (hiding their state or broadcasting noise) to prevent local homogenization. When Black Swan events hit, highly homogenized nodes permanently crystallize into "Scars."
+**Supports claim in:** [`theory/scar-tissue-architecture.md`](scar-tissue-architecture.md) (Rigidity Gradients) and [`theory/epistemic-firewalls.md`](epistemic-firewalls.md) (Deception as Thermodynamic Necessity).
+**What it shows:** That perfect transparency is fatal. A network must contain opacity (deception) to maintain the information differentials required for survival. Furthermore, surviving trauma physically alters network topology, proving that "catastrophic forgetting" is sometimes a necessary survival mechanism (crystallization).
+**What it does NOT show:** How an LLM would explicitly decide what to lie about. The simulation uses random noise as a proxy for deception.
+**Open question:** Can we train a small LLM explicitly to act as an "Epistemic Firewall" for a larger orchestrator—intentionally injecting hallucinated but contextually relevant counter-narratives to prevent the orchestrator from collapsing into a single, high-confidence (but potentially wrong) state?
