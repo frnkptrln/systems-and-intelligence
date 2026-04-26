@@ -76,15 +76,29 @@ We believe intellectual honesty about these distinctions makes the project *more
 
 ## 📂 Repository Overview
 
+To keep this repository coherent while it grows, use this practical split:
+
+- **`docs/book/`** = curated reading path ("online book")
+- **`papers/` + `docs/papers/`** = publication-style outputs (compact, citable, less narrative)
+- **`theory/`** = formal and semi-formal theory essays
+- **`logs/`** = architectural journals (applied, speculative system design notes)
+- **`fiction/`** = narrative thought experiments constrained by theory
+- **`simulation-models/` + `core/`** = executable artifacts and reusable primitives
+
+If you're unsure where new material belongs, see **[`meta/repository-information-architecture.md`](meta/repository-information-architecture.md)**.
+
 | Folder | Purpose |
 | :--- | :--- |
 | **`simulation-models/`** | Concrete dynamical systems: cellular automata, agent-based simulations, homeostasis models, nested-learning examples. |
+| **`core/`** | Reusable minimal primitives intended to become shared building blocks across simulations and orchestration experiments. |
 | **`benchmarks/`** | Cognitive stress tests and other benchmarks probing systemic thinking and emergent behavior in humans and AI systems. |
 | **`systems-orchestration/`** | **Multi-Paradigm LLM Architecture**: Combines nodes using Harmonic (Music), Homeostatic (Biology), Market (Economy), and Flow (Physics) orchestration driven by VNM Utility coherence. |
 | **`agentic-test-suite/`** | 🧪 Empirical test suite for agent identity: 3-Layer Memory, Δ-Kohärenz metric, perturbation response, and extended 4-axis SII Dashboard (P/R/A/IP). |
 | **`data-analysis/`** | Information-theoretic measures (entropy, mutual information, transfer entropy, integration) and the quantitative **SII Dashboard** for comparative analysis. |
 | **`tools/`** | Shared utilities for visualization, randomness, grid manipulation, reproducibility, and the **Interactive Web Explorer**. |
 | **`theory/`** | Conceptual notes and essays on systems, intelligence, and emergent behavior. |
+| **`papers/`** | Paper-style synthesis documents with an academic framing and tighter scope. |
+| **`logs/`** | Architecture logs: applied design notebooks bridging abstract theory and deployment constraints. |
 | **`meta/`** | Reflections on epistemology, ethics, and the limits of formal systems and computation. |
 | **`fiction/`** | 🎬 **The Narrative Synthesis**: Hard Sci-Fi "found footage" translating the math into stories. |
 
