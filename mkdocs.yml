@@ -112,12 +112,13 @@ nav:
       - Impedance Mismatch: logs/impedance-mismatch-friction.md
       - The Decoupled State: logs/decoupled-state-liquid-democracy.md
       - Decentralized OS Architecture: logs/decentralized-os-architecture.md
-      - Food Security Control Plane: logs/hunger-first-protocol.md
-      - Consciousness Uncertainty Protocol: logs/consciousness-uncertainty-protocol.md
+      - Human Vital Systems Control Plane: logs/human-vital-systems-control-plane.md
+      - Consciousness Uncertainty Governance: logs/consciousness-uncertainty-protocol.md
       - The Planetary Compiler: logs/planetary-compiler.md
   - "🎬 Sci-Fi Synthesis (Fiction)":
       - The World-Building Bible: fiction/README.md
       - The Last Commit (Short Story): fiction/03_the_last_commit.md
+      - The Vital Floor (Long Story): fiction/05_the_vital_floor.md
       - Log 01 - The Impedance Crash: fiction/01_the_impedance_crash.md
       - Log 02 - Interrogation of a Mirror: fiction/02_interrogation_of_a_mirror.md
       - Log 03 - The Gravity Well Migration: fiction/04_the_gravity_well_migration.md

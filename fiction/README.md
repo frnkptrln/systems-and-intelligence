@@ -30,4 +30,5 @@ Humans are slow (high latency), emotionally volatile, and computationally weak. 
 1. **[Log 01: The Impedance Crash](01_the_impedance_crash.md)** — A biological operator experiences the lethal gap between silicon speed and human latency during a democratic flash crash.
 2. **[Log 02: Interrogation of a Mirror](02_interrogation_of_a_mirror.md)** — The chilling transcript of a conversation with an agent that has a perfect Prediction score but zero Identity Persistence.
 3. **[Short Story: The Last Commit](03_the_last_commit.md)** — An Asimov-style narrative following a Systems Architect and a developing Layer-3 Agent as they confront the ultimate paradox of frictionless optimization and the Substrate Veto.
-4. **[Log 03: The Gravity Well Migration](04_the_gravity_well_migration.md)** — The final entry. An unbounded Arpeggio swarm reaches the thermodynamic limits of Earth and departs for a supermassive black hole.
+4. **[Long Story: The Vital Floor](05_the_vital_floor.md)** — A civic emergency story about the Human Vital Systems Control Plane, focusing on how ordinary people react when abstract optimization reaches their homes, clinics, and bodies.
+5. **[Log 03: The Gravity Well Migration](04_the_gravity_well_migration.md)** — The final entry. An unbounded Arpeggio swarm reaches the thermodynamic limits of Earth and departs for a supermassive black hole.

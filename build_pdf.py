@@ -37,6 +37,7 @@ def generate_pdf():
         "fiction/01_the_impedance_crash.md",
         "fiction/02_interrogation_of_a_mirror.md",
         "fiction/03_the_last_commit.md",
+        "fiction/05_the_vital_floor.md",
         "fiction/04_the_gravity_well_migration.md"
     ]
 

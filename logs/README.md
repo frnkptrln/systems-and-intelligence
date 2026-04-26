@@ -4,7 +4,7 @@ Welcome to the **Architecture Logs**.
 
 While the `theory/` section deals with the mathematical and systemic foundation of the minimal thermodynamic agent (TEO) framework and the `systems-orchestration/` directory hosts the executable code, these logs serve as a bridge.
 
-They are speculative **architectural blueprints and thought protocols** exploring how the *Thermodynamics of Orchestration* apply to large-scale, real-world deployments.
+They are speculative **architectural blueprints and design notes** exploring how the *Thermodynamics of Orchestration* apply to large-scale, real-world deployments.
 
 ### Directory Scope
 
@@ -46,6 +46,6 @@ Depends on: <theory docs / simulations>
 2. [`impedance-mismatch-friction.md`](impedance-mismatch-friction.md)
 3. [`decoupled-state-liquid-democracy.md`](decoupled-state-liquid-democracy.md)
 4. [`decentralized-os-architecture.md`](decentralized-os-architecture.md)
-5. [`hunger-first-protocol.md`](hunger-first-protocol.md) *(Food Security Control Plane)*
-6. [`consciousness-uncertainty-protocol.md`](consciousness-uncertainty-protocol.md)
-7. [`planetary-compiler.md`](planetary-compiler.md)
+5. [`human-vital-systems-control-plane.md`](human-vital-systems-control-plane.md) *(Human Vital Systems Control Plane)*
+6. [`consciousness-uncertainty-protocol.md`](consciousness-uncertainty-protocol.md) *(Consciousness Uncertainty Governance)*
+7. [`planetary-compiler.md`](planetary-compiler.md) *(The Planetary Compiler)*

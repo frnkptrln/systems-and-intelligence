@@ -11,7 +11,7 @@ This chapter maps the frontier.
 The repository formally documents [8 open problems](../theory/open-problems.md). Three are critical:
 
 ### Expanding the Narrative: Sci-Fi Synthesis
-To make these abstract thermodynamic boundaries more accessible, we are also actively developing the [Sci-Fi Synthesis](../fiction/README.md). By packaging the theoretical constraints (like the Substrate Veto and Impedance Mismatch) into a Hard Sci-Fi "found footage" format, we translate mathematical limits into visceral narrative consequences. 
+To make these abstract thermodynamic boundaries more accessible, we are also actively developing the [Sci-Fi Synthesis](../fiction/README.md). By packaging the theoretical constraints (like the Substrate Veto, Impedance Mismatch, and Human Vital Systems floor) into Hard Sci-Fi stories and dossier fragments, we translate mathematical limits into visceral narrative consequences.
 
 ### The Mirror Problem (Open Problem 1)
 
