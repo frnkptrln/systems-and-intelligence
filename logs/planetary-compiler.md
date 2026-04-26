@@ -109,6 +109,6 @@ No moonshot rhetoric needed. If this works in one city simulation, the paradigm 
 ## Related
 
 - [Log 004: Decentralized OS Architecture](decentralized-os-architecture.md)
-- [Log 005: Human Vital Systems Control Plane](hunger-first-protocol.md)
+- [Log 005: Food Security Control Plane](hunger-first-protocol.md)
 - [Log 006: Consciousness Uncertainty Protocol](consciousness-uncertainty-protocol.md)
 - [The Biological Veto: Architectural Requirements](../theory/biological-veto-architectural-requirements.md)

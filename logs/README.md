@@ -46,6 +46,6 @@ Depends on: <theory docs / simulations>
 2. [`impedance-mismatch-friction.md`](impedance-mismatch-friction.md)
 3. [`decoupled-state-liquid-democracy.md`](decoupled-state-liquid-democracy.md)
 4. [`decentralized-os-architecture.md`](decentralized-os-architecture.md)
-5. [`hunger-first-protocol.md`](hunger-first-protocol.md) *(Human Vital Systems Control Plane)*
+5. [`hunger-first-protocol.md`](hunger-first-protocol.md) *(Food Security Control Plane)*
 6. [`consciousness-uncertainty-protocol.md`](consciousness-uncertainty-protocol.md)
 7. [`planetary-compiler.md`](planetary-compiler.md)
