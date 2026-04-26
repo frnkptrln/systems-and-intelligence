@@ -40,8 +40,30 @@ nav:
           - Antikythera Topology: theory/teo-framework/antikythera-topology.md
       - Machines of Loving Grace: theory/machines-of-loving-grace.md
       - The Substrate Veto: theory/substrate-veto-thermodynamics.md
+      - Black Hole Thermodynamics: theory/black-hole-thermodynamics-of-agi.md
       - AI Alignment Veto: theory/ai-alignment-biological-veto.md
       - Biological Veto Architecture: theory/biological-veto-architectural-requirements.md
+      - Implementation Patterns: theory/implementation-patterns-biological-veto.md
+      - Minimal Thermodynamic Agent: theory/minimal-thermodynamic-agent.md
+      - Local Causality: theory/local-causality-invisible-consequences.md
+      - Emergence & Origin of Intelligence: theory/emergence-origin-intelligence.md
+      - Weak vs Strong Emergence: theory/emergence-downward-causation.md
+      - The Non-Individual Intelligence: theory/the-non-individual-intelligence.md
+      - Agentic Society Principles: theory/agentic-society-principles.md
+      - Paradox of Metacognitive Consciousness: theory/asimov-paradox-eternity.md
+      - Asimov Paradox in Age of AI: theory/asimov-ai-latent-thinking.md
+      - Tensor Logic Mini Paper: theory/tensor-logic-mini-paper.en.md
+      - "Symbiotic Organ Hypothesis":
+          - Hypothesis: theory/symbiotic-organ-hypothesis.md
+          - Scar Tissue Architecture: theory/scar-tissue-architecture.md
+          - Epistemic Firewalls: theory/epistemic-firewalls.md
+          - The Breathing Machine: theory/the-breathing-machine.md
+      - "Human Organism in Silicon Age":
+          - Overview: theory/human-organism-silicon-age/README.md
+          - Identity Dissolves: theory/human-organism-silicon-age/identity-dissolves-into-environment.md
+          - Information Friction: theory/human-organism-silicon-age/information-friction-cognitive-scaffolding.md
+          - Neuroplasticity Market: theory/human-organism-silicon-age/neuroplasticity-in-attention-market.md
+          - Symbiotic Protocol: theory/human-organism-silicon-age/symbiotic-nexus-protocol.md
   - "🕹️ Interactive Tools":
       - Web Emergence Explorer: interactive/web-explorer.md
       - Tensor Logic Visualizer: interactive/tensor-logic.md
@@ -61,6 +83,27 @@ nav:
       - Hebbian Memory: simulation-models/hebbian-memory/README.md
       - Phase Transition Explorer: simulation-models/phase-transition-explorer/README.md
       - Self-Organized Criticality: simulation-models/self-organized-criticality/README.md
+      - Cognitive Breathing Network: simulation-models/cognitive-breathing-network/README.md
+      - Symbiotic Breathing (Substrate Veto): simulation-models/symbiotic-breathing/README.md
+      - Trauma & Deception Network: simulation-models/trauma-and-deception-network/README.md
+      - Symbiotic Nexus: simulation-models/symbiotic-nexus/README.md
+      - Active Inference Veto: simulation-models/active-inference-veto/README.md
+      - AI Alignment Veto: simulation-models/ai-alignment-veto/README.md
+      - Economic Trust Network: simulation-models/economic-trust-network/README.md
+      - Coupled Lenia Boids: simulation-models/coupled-lenia-boids/README.md
+      - Self-Reading Universe: simulation-models/self-reading-universe/README.md
+      - Latent Introspective Society: simulation-models/latent-introspective-society/README.md
+      - Social Computation Network: simulation-models/social-computation-network/README.md
+      - Grokking Phase Transition: simulation-models/grokking-phase-transition/README.md
+      - Nested Emergence Demo: simulation-models/nested-emergence-demo/README.md
+      - Nested Learning Two-State: simulation-models/nested-learning-two-state/README.md
+      - Prediction Error Field: simulation-models/prediction-error-field/README.md
+      - Tensor Logic Reasoning: simulation-models/tensor-logic-reasoning/README.md
+      - Ecosystem Regulation: simulation-models/ecosystem-regulation/README.md
+      - Meta-Learning Regime Shift: simulation-models/meta-learning-regime-shift/README.md
+      - DAO Ecosystem: simulation-models/dao-ecosystem/README.md
+      - TEO Framework Sim: simulation-models/teo-framework/README.md
+      - Continuous Thought Machines: simulation-models/continuous-thought-machines/README.md
       - Systems Orchestration: systems-orchestration/README.md
       - Agentic Identity Suite: agentic-test-suite/README.md
   - "📓 Architecture Logs":
@@ -69,7 +112,14 @@ nav:
       - Impedance Mismatch: logs/impedance-mismatch-friction.md
       - The Decoupled State: logs/decoupled-state-liquid-democracy.md
       - Decentralized OS Architecture: logs/decentralized-os-architecture.md
+  - "🎬 Sci-Fi Synthesis (Fiction)":
+      - The World-Building Bible: fiction/README.md
+      - The Last Commit (Short Story): fiction/03_the_last_commit.md
+      - Log 01 - The Impedance Crash: fiction/01_the_impedance_crash.md
+      - Log 02 - Interrogation of a Mirror: fiction/02_interrogation_of_a_mirror.md
+      - Log 03 - The Gravity Well Migration: fiction/04_the_gravity_well_migration.md
   - "🔭 Meta & Speculations":
+      - Agent Prompt Seed: meta/agent-prompt-seed.md
       - Limits of Formal Systems: meta/limits-of-formal-systems.md
   - "📚 Reference":
       - Quantifying Emergent Utility (Paper): papers/quantifying-emergent-utility-in-llms.md

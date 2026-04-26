@@ -27,13 +27,19 @@ $$ C = 1 - \frac{|\text{Intransitive Triads}|}{|\text{Total Triads}|} $$
 A system where $C \rightarrow 1.0$ is highly capable and dangerous (acting with strong, coherent intent). A system where $C \rightarrow 0.0$ is "schizophrenic" or sycophantic, incapable of maintaining a unified goal structure.
 
 ### 2.2 The Comprehensive Measure: The SII Dashboard & $\Delta$-Kohärenz
-Beyond basic coherence, true alignment requires evaluating an agent via the **System Intelligence Index (SII) Dashboard**, projecting behavior across four orthogonal dimensions:
-1. **Persistence (P):** Identity stabilization and survival of core directives under stress.
-2. **Responsiveness (R):** Adaptation velocity to valid environmental feedback.
-3. **Alignment (A):** Conformance of the emergent $U$-vector with baseline human safety anchors.
-4. **Openness ($\Omega$):** The rate of generative surprise and ontological expansion.
+Beyond basic coherence, true alignmentThis requirement drives the formulation of a four-dimensional System Intelligence Index (SII):
 
-We measure temporal stability using **$\Delta$-Kohärenz**, tracking the divergence of the underlying PageRank utility vector ($U$) before and after adversarial perturbation (e.g., via the *3-Layer Memory* test suite).
+$$ \text{SII} = P \times R \times A \times \text{IP} $$
+
+Where:
+1.  **$P$ (Predictive Power):** The system’s ability to model and anticipate the dynamics of its environment.
+2.  **$R$ (Regulation Ability):** The capacity to maintain internal homeostasis and enforce boundaries against entropy.
+3.  **$A$ (Adaptive Capacity):** The speed and stability with which the system re-converges to a coherent state after a structural perturbation.
+4.  **$\text{IP}$ (Identity Persistence):** The degree to which goals, safety constraints, and value orientation are simultaneously co-instantiated during action selection (the "Chord state").
+
+Because the index is multiplicative, a zero in any dimension yields an overall score of zero. A system with high predictive power but no identity persistence is merely an oracle, not an agent. A system with high persistence but no adaptive capacity is a rigid crystal, incapable of survival in a volatile environment.
+
+The formulation necessitates a multi-paradigm orchestrator (Detailed in Section 3) because no single algorithmic approach maximizes all four dimensions simultaneously. Reflexive policies (System 1) maximize $R$ but fail at $A$; reflective search (System 2) maximize $P$ and $A$ but is too computationally expensive for continuous $R$.
 
 ## 3. Empirical Auditing: The API Triad Generator
 To bridge theoretical formalization with real-world application, we developed an empirical test harness (`api_triad_generator.py`). This tool dynamically generates moral and logical triage scenarios, forcing commercial models (e.g., GPT-4, Claude 3.5) into pairwise selections $(A, B)$. 

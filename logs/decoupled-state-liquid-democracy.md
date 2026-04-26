@@ -15,7 +15,7 @@ In a naive implementation, delegated AI votes could cascade through the delegati
 
 ## The Architectural Solution: Two Asynchronous Layers
 
-A functioning OS for a society must operate on **two protocol layers** that use the same mathematical and decentralized principles but are **asynchronously clocked**. The [TEO Framework (MTAF)](../theory/minimal-thermodynamic-agent.md) acts as the bridge between these layers.
+A functioning OS for a society must operate on **two protocol layers** that use the same mathematical and decentralized principles but are **asynchronously clocked**. The TEO Framework acts as the bridge between these layers.
 
 ### Layer 1: The Silicon Layer (High-Frequency)
 
@@ -39,7 +39,7 @@ Here, the human operates. This layer is slow and low-entropy. Humans review only
 
 Only a node on Layer 2 (human) has the right to **commit** — the actual execution of a decision or delegation on the distributed ledger. Layer 1 can only generate **Pull Requests** (proposals).
 
-This maps directly onto the [Biological Veto](../theory/ai-alignment-biological-veto.md):
+This maps directly onto the [Substrate Veto](../theory/ai-alignment-biological-veto.md):
 
 | Git Metaphor | Democracy Architecture | TEO Constraint |
 |:-------------|:----------------------|:---------------|
@@ -66,6 +66,6 @@ The decoupled state is not a state without AI. It is a state where the AI's cloc
 
 - [Log 002: Impedance Mismatch and Artificial Latency](impedance-mismatch-friction.md) — the general principle behind this architecture
 - [Log 001: The Cosmological Bootloader](cosmological-bootloader.md) — the thermodynamic ceiling this operates beneath
-- [The Biological Veto](../theory/ai-alignment-biological-veto.md) — the formal framework for human-in-the-loop veto power
+- [The Substrate Veto](../theory/ai-alignment-biological-veto.md) — the formal framework for human-in-the-loop veto power
 - [Biological Veto Architecture](../theory/biological-veto-architectural-requirements.md) — structural friction as engineering requirement
 - [Political Utility Formalization](../simulation-models/political-utility-formalization/README.md) — simulation of representation failure as reward hacking

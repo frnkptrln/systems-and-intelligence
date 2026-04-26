@@ -11,6 +11,12 @@
 This repository approaches this question from several directions.
 Each simulation illuminates one aspect; together they form a web of ideas.
 
+### 1. The Theory Files (`theory/`)
+The nodes of this conceptual graph are fully explicated in the Markdown files within the `/theory` directory.
+
+### 2. The 34 Simulation Models (`simulation-models/`)
+The mathematical claims linking the nodes are demonstrated computationally. For instance, the link between **Information Limits** and **Phase Transitions** is executable via the `phase-transition-explorer` simulation.
+
 ---
 
 ## The Landscape

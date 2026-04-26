@@ -30,6 +30,24 @@ def generate_pdf():
             content = content.replace("../../", "") 
             full_markdown += content + "\n\n<div style='page-break-after: always;'></div>\n\n"
 
+    # Append new Phase 4 content
+    extra_files = [
+        "theory/black-hole-thermodynamics-of-agi.md",
+        "fiction/README.md",
+        "fiction/01_the_impedance_crash.md",
+        "fiction/02_interrogation_of_a_mirror.md",
+        "fiction/03_the_last_commit.md",
+        "fiction/04_the_gravity_well_migration.md"
+    ]
+
+    for extra in extra_files:
+        if os.path.exists(extra):
+            with open(extra, 'r', encoding='utf-8') as f:
+                content = f.read()
+                content = content.replace("../theory/", "")
+                content = content.replace("../simulation-models/", "")
+                full_markdown += content + "\n\n<div style='page-break-after: always;'></div>\n\n"
+
     # Pre-process math into SVG images via Codecogs
     def block_repl(match):
         math_expr = match.group(1).strip()

@@ -1,7 +1,7 @@
 # 🧠 systems-and-intelligence
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Simulations](https://img.shields.io/badge/32_Simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
+[![Simulations](https://img.shields.io/badge/34_Simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
 [![Docs](https://img.shields.io/badge/docs-Interactive_Book-blue)](https://frnkptrln.github.io/systems-and-intelligence)
 
 <div align="center">
@@ -81,11 +81,12 @@ We believe intellectual honesty about these distinctions makes the project *more
 | **`simulation-models/`** | Concrete dynamical systems: cellular automata, agent-based simulations, homeostasis models, nested-learning examples. |
 | **`benchmarks/`** | Cognitive stress tests and other benchmarks probing systemic thinking and emergent behavior in humans and AI systems. |
 | **`systems-orchestration/`** | **Multi-Paradigm LLM Architecture**: Combines nodes using Harmonic (Music), Homeostatic (Biology), Market (Economy), and Flow (Physics) orchestration driven by VNM Utility coherence. |
-| **`agentic-test-suite/`** | 🧪 Empirical test suite for agent identity: 3-Layer Memory, Δ-Kohärenz metric, perturbation response, and extended 4-axis SII Dashboard (P/R/A/Ω). |
+| **`agentic-test-suite/`** | 🧪 Empirical test suite for agent identity: 3-Layer Memory, Δ-Kohärenz metric, perturbation response, and extended 4-axis SII Dashboard (P/R/A/IP). |
 | **`data-analysis/`** | Information-theoretic measures (entropy, mutual information, transfer entropy, integration) and the quantitative **SII Dashboard** for comparative analysis. |
 | **`tools/`** | Shared utilities for visualization, randomness, grid manipulation, reproducibility, and the **Interactive Web Explorer**. |
 | **`theory/`** | Conceptual notes and essays on systems, intelligence, and emergent behavior. |
 | **`meta/`** | Reflections on epistemology, ethics, and the limits of formal systems and computation. |
+| **`fiction/`** | 🎬 **The Narrative Synthesis**: Hard Sci-Fi "found footage" translating the math into stories. |
 
 Each subfolder contains its own README with context and details.
 

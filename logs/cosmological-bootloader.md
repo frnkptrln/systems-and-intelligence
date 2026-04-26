@@ -7,7 +7,7 @@
 
 ---
 
-During the development of the Minimal Thermodynamic Agent Framework (MTAF), an inevitable question arises about the ultimate scaling limit. If agents act as "naive maximizers," where does the physical end of that scaling lie? The answer comes not from computer science, but from astrophysics.
+During the development of the Minimal Thermodynamic Agent (TEO) framework, an inevitable question arises about the ultimate scaling limit. If agents act as "naive maximizers," where does the physical end of that scaling lie? The answer comes not from computer science, but from astrophysics.
 
 ## 1. Landauer's Principle and the Black Hole Hack
 

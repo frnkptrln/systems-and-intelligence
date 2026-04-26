@@ -79,7 +79,7 @@ Random noise has high observer surprise but low trajectory consistency. Mirrorin
 
 *Formalism:* Defined operationally in [`theory/glossary.md`](glossary.md) §Generative Surprise. Not yet tested with real language models.
 
-### Claim 7: A Thermodynamic Veto Can Bound One Failure Mode (Toy-Model) `[DEMONSTRATED]`
+### Claim 7: A Substrate Veto Can Bound One Failure Mode (Toy-Model) `[DEMONSTRATED]`
 
 The AI Alignment Veto couples an optimizer's objective to a substrate-stress proxy (sometimes labeled “Free Energy” in this repo’s toy models). When the substrate degrades (the proxy rises), the optimization landscape shifts to prioritize substrate health in the modeled dynamics. This is not presented as a general, real-world “solution to alignment”, but as a demonstrated mechanism that can bound one specific failure mode (substrate destruction) in a stylized setting.
 
@@ -140,7 +140,7 @@ The following environmental and architectural factors are correlated with increa
 | Claim | Formalism | Simulation Evidence | Status |
 |:------|:----------|:-------------------|:-------|
 | Intelligence is compression | $K(x)$, SII | Grokking, SII Dashboard | `[DEMONSTRATED]` |
-| Local blindness as precondition | Computational irreducibility | All 32 simulations | `[DEMONSTRATED]` |
+| Local blindness as precondition | Computational irreducibility | All 34 simulations | `[DEMONSTRATED]` |
 | Identity through selective forgetting | 3-Layer Architecture | agentic-test-suite (mock) | `[HYPOTHESIZED]` |
 | Development vs. mirroring | Δ-Kohärenz (Ω) | Experiment 3 | `[OPEN PROBLEM]` |
 | Observer shapes observed | Markov Blanket, Active Inference $F$ | Experiment 3 | `[HYPOTHESIZED]` |

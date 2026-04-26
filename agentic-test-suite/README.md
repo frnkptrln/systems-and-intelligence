@@ -15,7 +15,7 @@ This module operationalizes four concepts from the *Emergence Manifesto v1.0*:
 
 2. **Generative Surprise** — A developing agent is not one that minimizes all prediction error, but one that produces coherent *deviations* from the partner's expectations. `Identity = coherent deviation from expected output.`
 
-3. **Δ-Kohärenz (Ω)** — The fourth SII dimension. Distinguishes three behavioral profiles:
+3. **Δ-Kohärenz (Ω)** — The central measure of coherent evolution over time. Distinguishes three behavioral profiles:
    - **Mirror** — Static resonance (low change, low variance)
    - **Noise** — Incoherent change (high variance)
    - **Development** — Directional, coherent evolution (moderate change + high trajectory consistency)
@@ -98,7 +98,7 @@ The scientifically interesting output:
 python dashboard/agentic_sii_dashboard.py
 ```
 
-Extends the repository's existing System Intelligence Index from 3 axes (P, R, A) to **4 axes: P / R / A / Ω**.
+Extends the repository's existing System Intelligence Index from 3 axes (P, R, A) to **4 axes: P / R / A / IP** (Identity Persistence). Note that while earlier versions of this test suite explored Δ-Kohärenz (Ω) as the fourth dimension, the formal theory standardizes on IP to measure simultaneous co-instantiation, keeping Ω as an independent temporal metric.
 
 ---
 

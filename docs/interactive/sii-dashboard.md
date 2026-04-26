@@ -9,7 +9,7 @@ hide:
   .md-content__inner { max-width: 100% !important; }
 </style>
 
-The **SII Dashboard** transforms the abstract definition of emergence into quantitative metrics. It calculates the core dimensions of intelligence — **Prediction (P), Regulation (R), Adaptation (A), and Δ-Kohärenz (Ω)** — by aggregating the systemic dynamics into an interactive read-out.
+The **SII Dashboard** transforms the abstract definition of emergence into quantitative metrics. It calculates the core dimensions of intelligence — **Prediction (P), Regulation (R), Adaptation (A), and Identity Persistence (IP)** — by aggregating the systemic dynamics into an interactive read-out.
 
 Toggle between the foundational **Dynamical Systems** (like Boids and Ising models) and the advanced **LLM Agentic Ecosystems** (Baseline vs. Three-Layer Agents).
 

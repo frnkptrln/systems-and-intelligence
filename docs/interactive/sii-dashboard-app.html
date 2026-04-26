@@ -142,7 +142,7 @@
     <div class="container">
         <div class="header">
             <h1>Quantitative System Intelligence Index</h1>
-            <p>Interactive 4-Axis Formalization (P, R, A, Ω) of Emergent Agents</p>
+            <p>Interactive 4-Axis Formalization (P, R, A, IP) of Emergent Agents</p>
         </div>
 
         <div class="controls">
@@ -170,7 +170,7 @@
 
             <!-- Component Stacked Bar Chart -->
             <div class="panel full-width">
-                <div class="panel-title">Component Breakdown (P-R-A-Ω)</div>
+                <div class="panel-title">Component Breakdown (P-R-A-IP)</div>
                 <div class="chart-wrapper">
                     <canvas id="stackChart"></canvas>
                 </div>
@@ -186,14 +186,14 @@
                 data_P: [0.15, 0.88, 0.72, 0.85],
                 data_R: [0.91, 0.10, 0.84, 0.75],
                 data_A: [0.10, 0.82, 0.95, 0.65],
-                data_O: [0.08, 0.05, 0.02, 0.00] // Omega (Δ-Kohärenz) is practically zero for raw physical systems
+                data_IP: [0.08, 0.05, 0.02, 0.00] // IP is practically zero for raw physical systems
             },
             agents: {
                 labels: ["Baseline LLM Agent", "Three-Layer Architecture"],
                 data_P: [0.89, 0.94],
                 data_R: [0.25, 0.88],
                 data_A: [0.15, 0.82],
-                data_O: [0.03, 0.71] // Three-Layer possesses high Omega (Identity continuity)
+                data_IP: [0.03, 0.71] // Three-Layer possesses high IP (Identity continuity)
             }
         };
 
@@ -209,7 +209,7 @@
 
         function initCharts() {
             const d = datasets[currentMode];
-            const overall_sii = d.data_P.map((p, i) => p * d.data_R[i] * d.data_A[i] * (d.data_O[i] > 0.1 ? d.data_O[i] : 1)); // Math formatting
+            const overall_sii = d.data_P.map((p, i) => p * d.data_R[i] * d.data_A[i] * (d.data_IP[i] > 0.1 ? d.data_IP[i] : 1)); // Math formatting
 
             // Radar Chart
             const radarCtx = document.getElementById('radarChart').getContext('2d');
@@ -274,10 +274,10 @@
             ];
 
             return {
-                labels: ['Prediction (P)', 'Regulation (R)', 'Adaptation (A)', 'Δ-Kohärenz (Ω)'],
+                labels: ['Prediction (P)', 'Regulation (R)', 'Adaptation (A)', 'Identity Persistence (IP)'],
                 datasets: d.labels.map((label, i) => ({
                     label: label,
-                    data: [d.data_P[i], d.data_R[i], d.data_A[i], d.data_O[i]],
+                    data: [d.data_P[i], d.data_R[i], d.data_A[i], d.data_IP[i]],
                     borderColor: colors[i % colors.length].border,
                     backgroundColor: colors[i % colors.length].bg,
                     borderWidth: 2,
@@ -288,11 +288,11 @@
 
         function getBarData(d) {
             const colors = ['#60a0ff', '#ff6060', '#80ffb0', '#ffaa44'];
-            // For physical systems (Scale 1), Omega is physically irrelevant so we don't multiply by 0. 
-            // For agents, Omega matters.
+            // For physical systems (Scale 1), IP is physically irrelevant so we don't multiply by 0. 
+            // For agents, IP matters.
             const sii = d.data_P.map((p, i) => {
-                const omega_factor = d.data_O[i] < 0.1 && d.labels[i] !== "Three-Layer Architecture" ? 1 : Math.max(d.data_O[i], 0.1);
-                return p * d.data_R[i] * d.data_A[i] * omega_factor;
+                const ip_factor = d.data_IP[i] < 0.1 && d.labels[i] !== "Three-Layer Architecture" ? 1 : Math.max(d.data_IP[i], 0.1);
+                return p * d.data_R[i] * d.data_A[i] * ip_factor;
             });
 
             return {
@@ -315,7 +315,7 @@
                     { label: 'Prediction (P)', data: d.data_P, backgroundColor: '#60a0ff', borderRadius: 4 },
                     { label: 'Regulation (R)', data: d.data_R, backgroundColor: '#ff6060', borderRadius: 4 },
                     { label: 'Adaptation (A)', data: d.data_A, backgroundColor: '#80ffb0', borderRadius: 4 },
-                    { label: 'Δ-Kohärenz (Ω)', data: d.data_O, backgroundColor: '#ffaa44', borderRadius: 4 }
+                    { label: 'Identity Persistence (IP)', data: d.data_IP, backgroundColor: '#ffaa44', borderRadius: 4 }
                 ]
             };
         }

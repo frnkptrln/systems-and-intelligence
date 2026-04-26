@@ -1,6 +1,6 @@
 # Part 5: Future Perspectives & Open Problems
 
-The `systems-and-intelligence` repository has demonstrated that AI is not tamed by more data, but by **better system architectures** — and that the same mathematics applies to human civilization. What began as a collection of complexity-science simulations has grown into an open, executable research framework with 32 models and 9 manifesto claims.
+The `systems-and-intelligence` repository is an ongoing research program. It is currently in a phase of formal expansion, testing the mathematical limits of the TEO framework and the 3-Layer Memory Architecture. We have established the theoretical scaffolding and built the initial empirical bridges with **34 models** and 9 manifesto claims.
 
 This chapter maps the frontier.
 
@@ -9,6 +9,9 @@ This chapter maps the frontier.
 ## The Open Problems
 
 The repository formally documents [8 open problems](../theory/open-problems.md). Three are critical:
+
+### Expanding the Narrative: Sci-Fi Synthesis
+To make these abstract thermodynamic boundaries more accessible, we are also actively developing the [Sci-Fi Synthesis](../fiction/README.md). By packaging the theoretical constraints (like the Substrate Veto and Impedance Mismatch) into a Hard Sci-Fi "found footage" format, we translate mathematical limits into visceral narrative consequences. 
 
 ### The Mirror Problem (Open Problem 1)
 
