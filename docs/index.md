@@ -14,10 +14,10 @@
 </div>
 
 <div class="stats-bar" markdown>
-        <div class="stat-card">
-            <span class="stat-number">34</span>
-            <span class="stat-label">Simulation Models</span>
-        </div>
+<div class="stat" markdown>
+<span class="stat-number">34</span>
+<span class="stat-label">Simulation Models</span>
+</div>
 <div class="stat" markdown>
 <span class="stat-number">7</span>
 <span class="stat-label">Book Chapters</span>
@@ -36,16 +36,16 @@
 
 ## The Core Claim
  
- !!! success "TL;DR (The Grand Synthesis)"
-     **AI Alignment is not a psychological problem—it is a problem of applied thermodynamics and systems engineering.** 
-     
-     If we want to build safe, super-scaling artificial intelligence, we cannot rely on "friendlier" prompt engineering or moral training. Unbounded intelligence will always structurally crash the biological layer's entropy limits. True alignment requires hard, irreversible architectural constraints:
-     
-     1. **Action Budgets** to limit AI entropy production.
-     2. **Impedance Matching** (artificial latency) to bridge the microsecond-speed of silicon and the slow cognitive speed of humans.
-     3. **The Substrate Veto** hard-coded into the protocol layer of our digital state.
-     
-     This repository is the complete architectural manifesto—from cosmological entropy limits down to runnable Python engines—proving that safety must be enforced structurally.
+!!! success "TL;DR (The Grand Synthesis)"
+    **AI Alignment is not a psychological problem—it is a problem of applied thermodynamics and systems engineering.**
+
+    If we want to build safe, super-scaling artificial intelligence, we cannot rely on "friendlier" prompt engineering or moral training. Unbounded intelligence will always structurally crash the biological layer's entropy limits. True alignment requires hard, irreversible architectural constraints:
+
+    1. **Action Budgets** to limit AI entropy production.
+    2. **Impedance Matching** (artificial latency) to bridge the microsecond-speed of silicon and the slow cognitive speed of humans.
+    3. **The Substrate Veto** hard-coded into the protocol layer of our digital state.
+
+    This repository is the complete architectural manifesto—from cosmological entropy limits down to runnable Python engines—proving that safety must be enforced structurally.
 
 !!! abstract "Thesis"
     **Intelligence is an emergent property of continuous dynamical systems**, not a discrete function of next-token prediction. The same mathematics that governs flocking birds, oscillating neurons, and self-organizing criticality also governs the "values" and "goals" that arise inside Large Language Models — and inside human civilizations.
@@ -82,7 +82,7 @@ The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and 
 
 ### :material-code-braces: Simulations
 
-32 Python simulations: Boids, Kuramoto, SOC, Lenia, TEO Civilization, Identity Morphospace, and more.
+34 Python simulations: Boids, Kuramoto, SOC, Lenia, TEO Civilization, Identity Morphospace, and more.
 
 [Run the code →](simulation-models/utility-engineering/README.md)
 
@@ -99,6 +99,24 @@ The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and 
 </div>
 
 </div>
+
+---
+
+## What's Next (2026 Roadmap)
+
+!!! info "Where this project is going next"
+    This is an active research program. The current focus is not only to **add more models**, but to **tighten falsifiability**, increase reproducibility, and connect abstract theory to measurable interventions.
+
+1. **Reproducibility baseline:** standard run profiles, fixed seeds, and benchmark outputs for core simulations.
+2. **Cross-model comparability:** shared metrics (stability, entropy budget, identity persistence) across all simulation families.
+3. **Interactive diagnostics:** richer browser-based explorers for attractor landscapes and regime transitions.
+4. **Theory-to-policy bridge:** clearer translation from formal constraints (TEO, substrate veto) into institutional design patterns.
+
+If you want to contribute, start with:
+
+- adding tests for an existing simulation module,
+- improving one documentation chapter with explicit equations + runnable code,
+- or opening an issue that proposes a falsifiable counterexample to a core claim.
 
 ---
 
