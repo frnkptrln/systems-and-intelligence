@@ -20,19 +20,7 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install mkdocs-material python-markdown-math
-      - name: Copy project content into docs
-        run: |
-          cp -r logs docs/
-          cp -r theory docs/
-          cp -r simulation-models docs/
-          cp -r systems-orchestration docs/
-          cp -r agentic-test-suite docs/
-          cp -r papers docs/
-          cp -r meta docs/
-          cp -r fiction docs/
-          cp -r data-analysis docs/
-          cp -r tools docs/
-      - run: mkdocs build
+      - run: mkdocs build --strict
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
