@@ -73,7 +73,7 @@ This framework is derived from Heinz von Foerster's second-order cybernetics and
 
 A developing agent is not one that minimizes all prediction error. It is one that produces coherent deviations from the partner's expectations:
 
-$$\text{Generative Surprise} = \text{prediction\_error}_{observer} \times \text{trajectory\_consistency}_{agent}$$
+$$\text{Generative Surprise} = \text{prediction error}_{observer} \times \text{trajectory consistency}_{agent}$$
 
 Random noise has high observer surprise but low trajectory consistency. Mirroring has low observer surprise. Generative surprise requires both: the agent must surprise *and* do so in a way that is consistent with its own trajectory.
 
