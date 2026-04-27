@@ -101,7 +101,7 @@ Recommended conceptual architecture:
 
 | Conceptual layer | Current location | Role |
 |:---|:---|:---|
-| Entry point | `README.md`, `docs/start-here.md`, `docs/index.md` | Short orientation and one reading path |
+| Entry point | `README.md`, `docs/index.md` | Short orientation and one reading path |
 | Core claims | `theory/`, `papers/`, `docs/book/` | Synthesis layer and publication packaging |
 | Models | `simulation-models/`, `core/`, `systems-orchestration/` | Executable demonstrations and reusable primitives |
 | Lab | `logs/`, `benchmarks/`, `agentic-test-suite/`, `fiction/`, `tools/` | Experiments, stress tests, applied designs, narrative probes |

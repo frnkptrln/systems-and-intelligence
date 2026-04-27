@@ -12,7 +12,6 @@ exclude_docs: |
 
 nav:
   - Welcome: index.md
-  - Start Here: start-here.md
   - "Synthesis (Claims)":
       - Overview: synthesis.md
       - Core Claims: theory/core-claims.md

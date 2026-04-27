@@ -60,6 +60,18 @@ We prove this not with philosophy alone, but with **35 Python simulations** veri
 
 <div class="card" markdown>
 
+### :material-compass: Recommended Reading Path
+
+New to this project? Start here for the most direct path through the core theory and proofs.
+
+1. **[Emergence Manifesto](theory/emergence-manifesto-v1.2.md)** — The core claim set.
+2. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
+3. **[AI Alignment Veto](simulation-models/ai-alignment-veto/README.md)** — A runnable proof artifact.
+
+</div>
+
+<div class="card" markdown>
+
 ### :material-book-open-variant: The Book
 
 The 7-part narrative thesis. From local emergence to civilizational dynamics, every claim backed by runnable code.

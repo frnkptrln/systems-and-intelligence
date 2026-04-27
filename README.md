@@ -14,7 +14,10 @@
 ## ⚡ Try it live in your browser
 Don't want to install anything? You can experience the core concepts immediately directly in your browser:
 
-- 🧭 **[Start here](docs/start-here.md)** — The shortest orientation layer: core claim, synthesis path, and exploratory lab.
+- 🧭 **Recommended Reading Path**:
+  1. **[Emergence Manifesto](theory/emergence-manifesto-v1.2.md)** — The core claim set.
+  2. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
+  3. **[AI Alignment Veto](simulation-models/ai-alignment-veto/README.md)** — A runnable proof artifact.
 - 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
 - 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The complete "Grand Synthesis" of the theory.
 
