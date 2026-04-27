@@ -2,10 +2,12 @@
 
 *A proposal to treat civilization as a programmable, safety-critical system with hard human-survival invariants.*
 
+- **Mode:** Thinking Space
 - **Status:** `[SPECULATIVE]`
 - **Date:** April 2026
 - **Scope:** high-level control architecture for public institutions under AI acceleration
 - **Depends on:** Decentralized OS Architecture, Human Vital Systems Control Plane, Consciousness Uncertainty Governance
+- **Promotes to synthesis when:** executable constitutional constraints are demonstrated against simulated policy proposals.
 
 ---
 

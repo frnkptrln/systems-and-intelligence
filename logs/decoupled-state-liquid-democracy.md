@@ -2,8 +2,12 @@
 
 *Applying the TEO Framework to a decentralized, state-wide operating system (Mesh Networks, Distributed State, Liquid Democracy).*
 
-**Status:** `[SPECULATIVE]`
-**Date:** March 2026
+- **Mode:** Thinking Space
+- **Status:** `[SPECULATIVE]`
+- **Date:** March 2026
+- **Scope:** two-layer governance architecture for liquid democracy under AI acceleration
+- **Depends on:** Impedance Mismatch, Action Budgets, Biological Veto
+- **Promotes to synthesis when:** the L1/L2 split is modeled with explicit throughput, veto, and legitimacy metrics.
 
 ---
 

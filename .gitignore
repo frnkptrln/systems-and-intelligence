@@ -15,6 +15,7 @@ env/
 # IDE
 .idea/
 .vscode/
+.codex
 *.swp
 *.swo
 *~
@@ -28,4 +29,3 @@ Thumbs.db
 !theory/*.png
 
 site/
-

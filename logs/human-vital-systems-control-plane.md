@@ -2,10 +2,12 @@
 
 *A governance architecture where policy quality is measured against core human outcome systems, not only model behavior metrics.*
 
+- **Mode:** Thinking Space
 - **Status:** `[SPECULATIVE]`
 - **Date:** April 2026
 - **Scope:** applied governance design for AI-mediated public systems
 - **Depends on:** Decoupled State, Decentralized OS Architecture, Substrate Veto
+- **Promotes to synthesis when:** Vital Impact Cards reduce red-line violations in simulation or real pilot data.
 
 ---
 

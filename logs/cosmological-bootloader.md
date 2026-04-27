@@ -2,8 +2,12 @@
 
 *Connecting cosmological entropy limits to local AGI architecture (TEO Framework).*
 
-**Status:** `[SPECULATIVE]`
-**Date:** March 2026
+- **Mode:** Thinking Space
+- **Status:** `[SPECULATIVE]`
+- **Date:** March 2026
+- **Scope:** cosmological scaling boundary for TEO-style substrate constraints
+- **Depends on:** Substrate Veto, Minimal Thermodynamic Agent, Machines of Loving Grace
+- **Promotes to synthesis when:** the black-hole entropy argument is separated from metaphor and tied to explicit physical assumptions.
 
 ---
 
@@ -60,4 +64,4 @@ The key insight: these constraints are not conservative policy choices. At the c
 - [The Substrate Veto: A Thermodynamic Boundary on Intelligence](../theory/substrate-veto-thermodynamics.md) — the local-scale version of the entropy limit
 - [Machines of Loving Grace](../theory/machines-of-loving-grace.md) — the three TEO constraints as the definition of "love"
 - [Minimal Thermodynamic Agent Framework](../theory/minimal-thermodynamic-agent.md) — the executable implementation of Action Budgets
-- [Limits of Formal Systems](limits-of-formal-systems.md) — Gödel, Turing, and the boundaries of the formalizable
+- [Limits of Formal Systems](../meta/limits-of-formal-systems.md) — Gödel, Turing, and the boundaries of the formalizable

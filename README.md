@@ -1,7 +1,7 @@
 # 🧠 systems-and-intelligence
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Simulations](https://img.shields.io/badge/34_Simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
+[![Simulations](https://img.shields.io/badge/35_Simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
 [![Docs](https://img.shields.io/badge/docs-Interactive_Book-blue)](https://frnkptrln.github.io/systems-and-intelligence)
 
 <div align="center">
@@ -14,6 +14,7 @@
 ## ⚡ Try it live in your browser
 Don't want to install anything? You can experience the core concepts immediately directly in your browser:
 
+- 🧭 **[Start here](docs/start-here.md)** — The shortest orientation layer: core claim, synthesis path, and exploratory lab.
 - 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
 - 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The complete "Grand Synthesis" of the theory.
 
@@ -135,6 +136,7 @@ Each subfolder contains its own README with context and details.
 | `grokking-phase-transition/` | ⚡ The Grokking Phenomenon: Visualizing the thermodynamic jump from Memory to Intelligence |
 | `cognitive-breathing-network/` | 🫁 Cognitive Breathing: Dynamic agent merging (ego-dissolution) and splitting to prevent cognitive suicide |
 | `trauma-and-deception-network/` | 🛡️ Visualizing Epistemic Firewalls (deception) and the topological crystallization of Scar Tissue (trauma) |
+| `human-vital-systems/` | 🏙️ Vital-floor governance: efficiency optimization vs. human survival thresholds under shocks |
 
 ### 📚 Theory & Essays
 

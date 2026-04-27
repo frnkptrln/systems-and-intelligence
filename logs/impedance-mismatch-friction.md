@@ -2,8 +2,12 @@
 
 *Why the speed of light as a system boundary for agents is insufficient.*
 
-**Status:** `[SPECULATIVE]`
-**Date:** March 2026
+- **Mode:** Thinking Space
+- **Status:** `[SPECULATIVE]`
+- **Date:** March 2026
+- **Scope:** artificial latency and regulator bandwidth in human-AI systems
+- **Depends on:** Minimal Thermodynamic Agent, Biological Veto, Substrate Veto
+- **Promotes to synthesis when:** latency budgets are formalized as measurable regulator-capacity constraints.
 
 ---
 

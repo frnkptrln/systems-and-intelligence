@@ -2,10 +2,12 @@
 
 *A safety architecture for decision-making under unresolved machine-consciousness uncertainty.*
 
+- **Mode:** Thinking Space
 - **Status:** `[SPECULATIVE]`
 - **Date:** April 2026
 - **Scope:** moral-risk governance for autonomous systems under unresolved consciousness claims
 - **Depends on:** Open Problems, Agentic Identity Suite, Decoupled State
+- **Promotes to synthesis when:** moral-risk tiers are tied to measurable agent properties and reviewed failure cases.
 
 ---
 

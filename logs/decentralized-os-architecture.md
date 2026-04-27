@@ -2,8 +2,12 @@
 
 *High-Level System Architecture for a Liquid Democracy OS grounded in the TEO Framework.*
 
-**Status:** `[SPECULATIVE]`
-**Date:** March 2026
+- **Mode:** Thinking Space
+- **Status:** `[SPECULATIVE]`
+- **Date:** March 2026
+- **Scope:** protocol architecture for a digital state constrained by TEO variables
+- **Depends on:** Decoupled State, Impedance Mismatch, Substrate Veto
+- **Promotes to synthesis when:** protocol rules map to testable invariants and failure cases.
 
 ---
 
