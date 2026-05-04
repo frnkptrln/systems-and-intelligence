@@ -15,6 +15,7 @@ This folder has two lanes so we don't mix conceptual reflection with repository 
 | `agent-prompt-seed.md` | Conceptual Meta | Exploratory prompt artifact for autonomous identity seeding. |
 | `repository-information-architecture.md` | Repository Meta | Canonical placement rules and lane-splitting logic for the whole repo. |
 | `repository-governance/speculative-writing-guidelines.md` | Repository Meta | Speculative writing conventions (placement, labeling, continuity, style baseline). |
+| `repository-governance/cultural-optimization-red-team-manual.md` | Repository Meta | Guardrails against Goodhart pressure in cultural optimization systems. |
 
 If a future file does not clearly fit one lane, add a one-line "Lane:" declaration at the top of that file.
 
@@ -45,3 +46,7 @@ Lightweight conventions for placing and labeling speculative fiction/theory so n
 ---
 
 These notes are intentionally mixed in maturity level, but separated by function so conceptual essays and repository-governance documents don't blur together.
+
+### [Cultural Optimization Red Team Manual](repository-governance/cultural-optimization-red-team-manual.md)
+
+A practical anti-pattern and review ritual guide for authenticity/care optimization systems.
