@@ -24,6 +24,7 @@ nav:
           - "Part 5: Future Perspectives": book/05_future_perspectives.md
           - "Part 6: The Thermodynamic Mirror": book/06_the_thermodynamic_mirror.md
           - Bibliography: book/07_bibliography.md
+          - "Part 7: Cities as Metabolic Organisms": book/08_cities_as_metabolic_organisms.md
       - "Core Theory":
           - The Emergence Manifesto: theory/emergence-manifesto-v1.2.md
           - Thermodynamics of Orchestration (TEO): theory/thermodynamics-of-orchestration.md
@@ -49,6 +50,8 @@ nav:
           - The Non-Individual Intelligence: theory/the-non-individual-intelligence.md
           - Agentic Society Principles: theory/agentic-society-principles.md
           - Black Hole Thermodynamics: theory/black-hole-thermodynamics-of-agi.md
+          - The Last Unmeasured Room Protocol: theory/the-last-unmeasured-room-protocol.md
+          - Latency as Mercy: theory/latency-as-mercy.md
           - Tensor Logic Mini Paper: theory/tensor-logic-mini-paper.en.md
       - "TEO Framework Details":
           - Love as Constraint: theory/teo-framework/love-as-constraint.md
@@ -110,6 +113,8 @@ nav:
           - DAO Ecosystem: simulation-models/dao-ecosystem/README.md
           - TEO Framework Sim: simulation-models/teo-framework/README.md
           - Continuous Thought Machines: simulation-models/continuous-thought-machines/README.md
+          - Archive Forgets on Purpose: simulation-models/archive-forgetting-purpose/README.md
+          - Rhythm Locks: simulation-models/rhythm-locks/README.md
           - Systems Orchestration: systems-orchestration/README.md
           - Agentic Identity Suite: agentic-test-suite/README.md
       - "Architecture Logs":
@@ -121,6 +126,8 @@ nav:
           - Human Vital Systems Control Plane: logs/human-vital-systems-control-plane.md
           - Consciousness Uncertainty Governance: logs/consciousness-uncertainty-protocol.md
           - The Planetary Compiler: logs/planetary-compiler.md
+          - Household Gods: logs/household-gods-permission-layers-domestic-ai.md
+          - Dust, Heat, and Battery: logs/dust-heat-and-battery.md
       - "Narrative Stress Tests":
           - World-Building Bible: fiction/README.md
           - The Last Commit: fiction/03_the_last_commit.md
@@ -128,6 +135,8 @@ nav:
           - Log 01 - The Impedance Crash: fiction/01_the_impedance_crash.md
           - Log 02 - Interrogation of a Mirror: fiction/02_interrogation_of_a_mirror.md
           - Log 03 - The Gravity Well Migration: fiction/04_the_gravity_well_migration.md
+          - Log 08 - Kitchen Networks: fiction/08_kitchen_networks_and_civic_homeostasis.md
+          - Log 09 - The Refusal Registry: fiction/09_the_refusal_registry.md
       - "Interactive Tools":
           - Web Emergence Explorer: interactive/web-explorer.md
           - Tensor Logic Visualizer: interactive/tensor-logic.md
@@ -140,6 +149,7 @@ nav:
       - Repository Architecture: meta/repository-information-architecture.md
       - Agent Prompt Seed: meta/agent-prompt-seed.md
       - Limits of Formal Systems: meta/limits-of-formal-systems.md
+      - Cultural Optimization Red Team Manual: meta/repository-governance/cultural-optimization-red-team-manual.md
 
 theme:
   name: material

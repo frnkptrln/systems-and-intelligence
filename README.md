@@ -165,6 +165,8 @@ Selected theoretical notes and essays located in the `theory/` directory:
 - [**Glossary of Operational Definitions**](theory/glossary.md) – Precise, measurable definitions for every key term: Emergence, SII, Δ-Kohärenz, Markov Blanket, Generative Surprise, and more.
 - [**Open Problems**](theory/open-problems.md) – The formally unresolved questions: the Mirror Problem, the Bootstrapping Problem, and the Falsifiability of Relational Emergence.
 - [**The Right to Remain Unoptimized**](theory/the-right-to-remain-unoptimized.md) – A theory-adjacent argument for protected zones of inefficiency, opacity, and refusal as viability infrastructure in optimized societies.
+- [**The Last Unmeasured Room Protocol**](theory/the-last-unmeasured-room-protocol.md) – A governance protocol draft for constitutional opacity reserves.
+- [**Latency as Mercy**](theory/latency-as-mercy.md) – Delay as a civic safety actuator under optimization pressure.
 - [**Simulation → Theory Map**](theory/simulation-theory-map.md) – Explicit cross-reference: which simulation demonstrates which theoretical claim, what it does NOT show, and what open questions it raises.
 - [**The Fractal Architecture of Emergence**](theory/fractal-architecture-of-emergence.md) — Local blindness, asymmetric causality, and critical thresholds repeat at every scale: neuron/brain, cell/organism, human/society, agent/MAS. Not by analogy — by homology. The unifying structural claim of the repository.
 - [**The TEO Framework**](theory/teo-framework/README.md) — Five sub-documents deriving Identity Persistence (IP), attractor geometry, developmental constraints, love-as-constraint, and the paperclip maximizer’s failure from the TEO coupled ODE system.

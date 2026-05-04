@@ -35,5 +35,8 @@ Humans are slow (high latency), emotionally volatile, and computationally weak. 
 6. **[Log 06: The Authenticity Engine](06_the_authenticity_engine.md)** — A municipal preservation system protects vulnerable culture so effectively that spontaneity becomes administratively fragile.
 7. **[Log 07: WAIT_STATE](07_wait_state.md)** — An interrogation and scheduler record where delay becomes a Chord agent's first stable ethical action.
 
+8. **[Log 08: Kitchen Networks and Civic Homeostasis](08_kitchen_networks_and_civic_homeostasis.md)** — Informal kitchens become life-support infrastructure when official visibility fails.
+9. **[Log 09: The Refusal Registry](09_the_refusal_registry.md)** — Structured refusal becomes a civic memory system against optimization cascades.
+
 Later dossier entries extend the same world-building constraints into cultural, civic, and psychological consequences.
 

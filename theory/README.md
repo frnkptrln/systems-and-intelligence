@@ -15,3 +15,6 @@ These documents accompany the code and provide the conceptual backbone behind th
 - **[Thermodynamics of Orchestration (TEO)](thermodynamics-of-orchestration.md)** — The core mathematical framework.
 - **[The Substrate Veto](substrate-veto-thermodynamics.md)** — Why physics always wins.
 
+
+- **[The Last Unmeasured Room Protocol](the-last-unmeasured-room-protocol.md)** — A draft governance primitive for constitutional opacity reserves in optimized systems.
+- **[Latency as Mercy](latency-as-mercy.md)** — Delay formalized as a protective actuator under high-coupling conditions.

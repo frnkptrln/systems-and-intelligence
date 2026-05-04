@@ -49,3 +49,6 @@ Depends on: <theory docs / simulations>
 5. [`human-vital-systems-control-plane.md`](human-vital-systems-control-plane.md) *(Human Vital Systems Control Plane)*
 6. [`consciousness-uncertainty-protocol.md`](consciousness-uncertainty-protocol.md) *(Consciousness Uncertainty Governance)*
 7. [`planetary-compiler.md`](planetary-compiler.md) *(The Planetary Compiler)*
+
+8. [`household-gods-permission-layers-domestic-ai.md`](household-gods-permission-layers-domestic-ai.md)
+9. [`dust-heat-and-battery.md`](dust-heat-and-battery.md)
