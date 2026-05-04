@@ -1,7 +1,7 @@
 # 🧠 systems-and-intelligence
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Simulations](https://img.shields.io/badge/35_Simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
+[![Simulations](https://img.shields.io/badge/38_Simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
 [![Docs](https://img.shields.io/badge/docs-Interactive_Book-blue)](https://frnkptrln.github.io/systems-and-intelligence)
 
 <div align="center">

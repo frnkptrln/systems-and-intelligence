@@ -1,6 +1,6 @@
 # Part 5: Future Perspectives & Open Problems
 
-The `systems-and-intelligence` repository is an ongoing research program. It is currently in a phase of formal expansion, testing the mathematical limits of the TEO framework and the 3-Layer Memory Architecture. We have established the theoretical scaffolding and built the initial empirical bridges with **35 models** and 9 manifesto claims.
+The `systems-and-intelligence` repository is an ongoing research program. It is currently in a phase of formal expansion, testing the mathematical limits of the TEO framework and the 3-Layer Memory Architecture. We have established the theoretical scaffolding and built the initial empirical bridges with **38 models** and 9 manifesto claims.
 
 This chapter maps the frontier.
 
