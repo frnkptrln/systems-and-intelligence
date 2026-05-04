@@ -203,6 +203,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.prune
     - navigation.path
     - navigation.top
     - navigation.instant
