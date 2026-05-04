@@ -6,7 +6,7 @@ The **TEO framework** is the mathematical core of this repository's theoretical 
 
 ## Sub-Documents
 
-Each document below derives a specific aspect of the framework from the governing TEO equations defined in [`thermodynamics-of-orchestration.md`](../thermodynamics-of-orchestration.md):
+Each document below derives a specific aspect of the framework from the governing TEO equations defined in [`thermodynamics-of-orchestration.md`](../core/thermodynamics-of-orchestration.md):
 
 | Document | Focus |
 |:---------|:------|
@@ -30,4 +30,4 @@ subject to:
 
 $$\sum_{i=1}^{N} \eta_i\, x_i\, f_i(\mathbf{x}) \leq D_{\max}$$
 
-See [Thermodynamics of Emergent Orchestration](../thermodynamics-of-orchestration.md) for the complete derivation, parameter definitions, and simulation results.
+See [Thermodynamics of Emergent Orchestration](../core/thermodynamics-of-orchestration.md) for the complete derivation, parameter definitions, and simulation results.

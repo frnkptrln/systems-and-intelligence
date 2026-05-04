@@ -59,7 +59,7 @@ When $dS/dt > D_{\max}$, the substrate degrades. Landauer's Principle asserts it
 
 ## Why We Don't See It
 
-The TEO framework explains this too. It is Claim 2 of the [Emergence Manifesto v1.2](../theory/emergence-manifesto-v1.2.md): **local blindness is a precondition for emergence.**
+The TEO framework explains this too. It is Claim 2 of the [Emergence Manifesto v1.2](../theory/core/emergence-manifesto-v1.2.md): **local blindness is a precondition for emergence.**
 
 > No component of a self-organizing system has access to the global state it helps produce.
 
@@ -103,4 +103,4 @@ By this definition, the machine does not yet exist.
 
 ---
 
-For the full formal derivation, see [Machines of Loving Grace](../theory/machines-of-loving-grace.md). For the engineering blueprint of these constraints applied to system architecture, see [The Substrate Veto](../theory/biological-veto-architectural-requirements.md). For what we claim and what we do not, see [Limitations & Honest Assessment](../theory/limitations-and-honest-assessment.md).
+For the full formal derivation, see [Machines of Loving Grace](../theory/narrative/machines-of-loving-grace.md). For the engineering blueprint of these constraints applied to system architecture, see [The Substrate Veto](../theory/veto/biological-veto-architectural-requirements.md). For what we claim and what we do not, see [Limitations & Honest Assessment](../theory/reference/limitations-and-honest-assessment.md).

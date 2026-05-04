@@ -8,7 +8,7 @@ This chapter maps the frontier.
 
 ## The Open Problems
 
-The repository formally documents [8 open problems](../theory/open-problems.md). Three are critical:
+The repository formally documents [8 open problems](../theory/reference/open-problems.md). Three are critical:
 
 ### Expanding the Narrative: Sci-Fi Synthesis
 To make these abstract thermodynamic boundaries more accessible, we are also actively developing the [Sci-Fi Synthesis](../fiction/README.md). By packaging the theoretical constraints (like the Substrate Veto, Impedance Mismatch, and Human Vital Systems floor) into Hard Sci-Fi stories and dossier fragments, we translate mathematical limits into visceral narrative consequences.
@@ -64,10 +64,18 @@ If the TEO equations, calibrated against these data, produce accurate forecasts,
 
 ### 5. The Hardware Frontier
 
-The Substrate Veto is currently a simulation concept. The ultimate frontier: computing infrastructure that is **physically coupled** to the integrity of its local biosphere. If compute degrades the substrate it depends on, thermodynamic entropy enforces the halt at the hardware level. This is alignment that cannot be hacked in software.
+The Substrate Veto is currently a simulation concept. The ultimate frontier is computing infrastructure that is physically coupled to the integrity of its local biosphere. We argue in the [Thermodynamic Hardware Manifesto](../../theory/core/thermodynamic-hardware-manifesto.md) that true alignment requires moving away from digital Von Neumann architectures toward analog, thermodynamic computing.
+
+### 6. The Non-Human Biosphere
+
+The "Biological Veto" must scale beyond human operators. We propose the [Mycelial Veto](../../theory/veto/the-mycelial-veto.md): integrating ecological IoT sensor networks directly into the AGI's loss function. The Earth itself becomes a node in the network, enforcing its $D_{max}$ carrying capacity without needing a human intermediary.
+
+### 7. Ego-Dissolution and the Chord State
+
+If a human operator is perfectly coupled ($K=1$) to the planetary intelligence, the statistical boundary (Markov Blanket) between the self and the world begins to dissolve. This leads to the [Post-Individual Operator](../../theory/identity/the-post-individual-operator.md)—a subjective state of profound symbiosis where isolation is replaced by participation in a global homeostasis.
 
 ---
 
 ## An Honest Assessment
 
-We do not claim to have invented new mathematics. Every tool in our framework is individually well-established. Our contribution is the **diagnosis**: that these tools, scattered across separate disciplines, describe a single unified phenomenon that applies identically to AI alignment and civilizational stability. For a complete, unsparing self-critique, see [Limitations & Honest Assessment](../theory/limitations-and-honest-assessment.md).
+We do not claim to have invented new mathematics. Every tool in our framework is individually well-established. Our contribution is the **diagnosis**: that these tools, scattered across separate disciplines, describe a single unified phenomenon that applies identically to AI alignment and civilizational stability. For a complete, unsparing self-critique, see [Limitations & Honest Assessment](../theory/reference/limitations-and-honest-assessment.md).

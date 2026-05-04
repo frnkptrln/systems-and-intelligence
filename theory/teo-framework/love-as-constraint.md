@@ -70,6 +70,6 @@ The conjunction of all three constraints — $\lambda_2 > \lambda_{2,\text{crit}
 
 ## Related
 
-- [The Substrate Veto: A Thermodynamic Boundary](../substrate-veto-thermodynamics.md) — deepens Constraint 2
-- [Mathematical Axioms](../mathematical-axioms.md) — the four axioms include $\lambda_2$ and $K(x)$
+- [The Substrate Veto: A Thermodynamic Boundary](../veto/substrate-veto-thermodynamics.md) — deepens Constraint 2
+- [Mathematical Axioms](../core/mathematical-axioms.md) — the four axioms include $\lambda_2$ and $K(x)$
 - [Why the Paperclip Maximizer Fails](why-paperclip-maximizer-fails.md) — derives the failure trajectory in detail

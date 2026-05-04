@@ -76,6 +76,6 @@ The attractor type thus determines whether a system *can* achieve the Chord stat
 
 ## Related
 
-- [Thermodynamics of Emergent Orchestration](../thermodynamics-of-orchestration.md) — the ODE system whose attractors are analyzed here
+- [Thermodynamics of Emergent Orchestration](../core/thermodynamics-of-orchestration.md) — the ODE system whose attractors are analyzed here
 - [Lerchner Boundary](lerchner-boundary.md) — the IP score as diagnostic for attractor type
-- [The Fractal Architecture of Emergence](../fractal-architecture-of-emergence.md) — why the same attractor types appear at every scale
+- [The Fractal Architecture of Emergence](../emergence/fractal-architecture-of-emergence.md) — why the same attractor types appear at every scale

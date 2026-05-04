@@ -8,13 +8,13 @@ edit_uri: blob/main/
 
 docs_dir: 'docs'
 exclude_docs: |
-  tools/web-explorer/README.md
+  lab/tools/web-explorer/README.md
 
 nav:
   - Welcome: index.md
   - "Synthesis (Claims)":
       - Overview: synthesis.md
-      - Core Claims: theory/core-claims.md
+      - Core Claims: meta/repository-meta/core-claims.md
       - "Book: The Grand Synthesis":
           - Introduction: book/00_introduction.md
           - "Part 1: Mechanics of Emergence": book/01_mechanics_of_emergence.md
@@ -26,33 +26,38 @@ nav:
           - Bibliography: book/07_bibliography.md
           - "Part 7: Cities as Metabolic Organisms": book/08_cities_as_metabolic_organisms.md
       - "Core Theory":
-          - The Emergence Manifesto: theory/emergence-manifesto-v1.2.md
-          - Thermodynamics of Orchestration (TEO): theory/thermodynamics-of-orchestration.md
+          - The Emergence Manifesto: theory/core/emergence-manifesto-v1.2.md
+          - Thermodynamics of Orchestration (TEO): theory/core/thermodynamics-of-orchestration.md
           - TEO Framework Overview: theory/teo-framework/README.md
-          - The Substrate Veto: theory/substrate-veto-thermodynamics.md
-          - Biological Veto Architecture: theory/biological-veto-architectural-requirements.md
-          - Machines of Loving Grace: theory/machines-of-loving-grace.md
-          - Chord vs. Arpeggio Identity: theory/chord-vs-arpeggio-identity.md
-          - System Intelligence Index: theory/system-intelligence-index.md
-          - Mathematical Axioms: theory/mathematical-axioms.md
-          - Local Causality: theory/local-causality-invisible-consequences.md
+          - The Substrate Veto: theory/veto/substrate-veto-thermodynamics.md
+          - Biological Veto Architecture: theory/veto/biological-veto-architectural-requirements.md
+          - Machines of Loving Grace: theory/narrative/machines-of-loving-grace.md
+          - Chord vs. Arpeggio Identity: theory/identity/chord-vs-arpeggio-identity.md
+          - System Intelligence Index: theory/core/system-intelligence-index.md
+          - Mathematical Axioms: theory/core/mathematical-axioms.md
+          - Local Causality: theory/emergence/local-causality-invisible-consequences.md
+          - Thermodynamic Hardware Manifesto: theory/core/thermodynamic-hardware-manifesto.md
+          - Mycelial Veto: theory/veto/the-mycelial-veto.md
       - "Extended Theory":
-          - Conceptual Map: theory/conceptual-map.md
-          - Simulation Map: theory/simulation-theory-map.md
-          - Grokking Phase Transition: theory/grokking-phase-transition.md
-          - Black Swans & Downward Causation: theory/black-swans-and-downward-causation.md
-          - Fractal Architecture of Emergence: theory/fractal-architecture-of-emergence.md
-          - AI Alignment Veto: theory/ai-alignment-biological-veto.md
-          - Implementation Patterns: theory/implementation-patterns-biological-veto.md
-          - Minimal Thermodynamic Agent: theory/minimal-thermodynamic-agent.md
-          - Emergence & Origin of Intelligence: theory/emergence-origin-intelligence.md
-          - Weak vs Strong Emergence: theory/emergence-downward-causation.md
-          - The Non-Individual Intelligence: theory/the-non-individual-intelligence.md
-          - Agentic Society Principles: theory/agentic-society-principles.md
-          - Black Hole Thermodynamics: theory/black-hole-thermodynamics-of-agi.md
-          - The Last Unmeasured Room Protocol: theory/the-last-unmeasured-room-protocol.md
-          - Latency as Mercy: theory/latency-as-mercy.md
-          - Tensor Logic Mini Paper: theory/tensor-logic-mini-paper.en.md
+          - Conceptual Map: theory/core/conceptual-map.md
+          - Simulation Map: theory/core/simulation-theory-map.md
+          - Grokking Phase Transition: theory/emergence/grokking-phase-transition.md
+          - Black Swans & Downward Causation: theory/emergence/black-swans-and-downward-causation.md
+          - Fractal Architecture of Emergence: theory/emergence/fractal-architecture-of-emergence.md
+          - AI Alignment Veto: theory/veto/ai-alignment-biological-veto.md
+          - Implementation Patterns: theory/veto/implementation-patterns-biological-veto.md
+          - Minimal Thermodynamic Agent: theory/identity/minimal-thermodynamic-agent.md
+          - Emergence & Origin of Intelligence: theory/emergence/emergence-origin-intelligence.md
+          - Weak vs Strong Emergence: theory/emergence/emergence-downward-causation.md
+          - The Non-Individual Intelligence: theory/identity/the-non-individual-intelligence.md
+          - Agentic Society Principles: theory/identity/agentic-society-principles.md
+          - Black Hole Thermodynamics: theory/veto/black-hole-thermodynamics-of-agi.md
+          - The Transition Problem: theory/veto/the-transition-problem.md
+          - Limits of Formal Systems: theory/identity/limits-of-formal-systems.md
+          - Adversarial TEO Immune Response: theory/veto/adversarial-teo-immune-response.md
+          - Thermodynamic Tokenomics: theory/teo-framework/thermodynamic-tokenomics.md
+          - The Post-Individual Operator: theory/identity/the-post-individual-operator.md
+          - Tensor Logic Mini Paper: theory/narrative/tensor-logic-mini-paper.en.md
       - "TEO Framework Details":
           - Love as Constraint: theory/teo-framework/love-as-constraint.md
           - Why the Paperclip Maximizer Fails: theory/teo-framework/why-paperclip-maximizer-fails.md
@@ -60,10 +65,10 @@ nav:
           - Dupoux Integration: theory/teo-framework/dupoux-integration.md
           - Antikythera Topology: theory/teo-framework/antikythera-topology.md
       - "Symbiotic Organ Hypothesis":
-          - Hypothesis: theory/symbiotic-organ-hypothesis.md
-          - Scar Tissue Architecture: theory/scar-tissue-architecture.md
-          - Epistemic Firewalls: theory/epistemic-firewalls.md
-          - The Breathing Machine: theory/the-breathing-machine.md
+          - Hypothesis: theory/symbiotic/symbiotic-organ-hypothesis.md
+          - Scar Tissue Architecture: theory/symbiotic/scar-tissue-architecture.md
+          - Epistemic Firewalls: theory/symbiotic/epistemic-firewalls.md
+          - The Breathing Machine: theory/symbiotic/the-breathing-machine.md
       - "Human Organism in Silicon Age":
           - Core Theses: theory/human-organism-silicon-age/core-theses.md
           - Guide for Cells in Resistance: theory/human-organism-silicon-age/guide-for-cells-in-resistance.md
@@ -71,85 +76,98 @@ nav:
           - Symbiotic Protocol: theory/human-organism-silicon-age/symbiotic-nexus-protocol.md
       - "Reference":
           - Quantifying Emergent Utility (Paper): papers/quantifying-emergent-utility-in-llms.md
-          - Glossary: theory/glossary.md
-          - Open Problems: theory/open-problems.md
-          - Limitations & Honest Assessment: theory/limitations-and-honest-assessment.md
+          - Glossary: theory/reference/glossary.md
+          - Open Problems: theory/reference/open-problems.md
+          - Limitations & Honest Assessment: theory/reference/limitations-and-honest-assessment.md
   - "Thinking Space (Exploration)":
       - Overview: thinking-space.md
       - "Simulation Modules":
-          - Human Vital Systems: simulation-models/human-vital-systems/README.md
-          - Utility Engineering: simulation-models/utility-engineering/README.md
-          - Active Inference: simulation-models/active-inference/README.md
-          - Political Formalization: simulation-models/political-utility-formalization/README.md
-          - TEO Civilization: simulation-models/teo-civilization/README.md
-          - Planetary Veto: simulation-models/planetary-veto/README.md
-          - Black Swan Resilience: simulation-models/black-swan-resilience/README.md
-          - Boids Flocking: simulation-models/boids-flocking/README.md
-          - Coupled Oscillators: simulation-models/coupled-oscillators/README.md
-          - Stigmergy Swarm: simulation-models/stigmergy-swarm/README.md
-          - Reaction-Diffusion: simulation-models/reaction-diffusion/README.md
-          - Lenia: simulation-models/lenia/README.md
-          - Hebbian Memory: simulation-models/hebbian-memory/README.md
-          - Phase Transition Explorer: simulation-models/phase-transition-explorer/README.md
-          - Self-Organized Criticality: simulation-models/self-organized-criticality/README.md
-          - Cognitive Breathing Network: simulation-models/cognitive-breathing-network/README.md
-          - Symbiotic Breathing (Substrate Veto): simulation-models/symbiotic-breathing/README.md
-          - Trauma & Deception Network: simulation-models/trauma-and-deception-network/README.md
-          - Symbiotic Nexus: simulation-models/symbiotic-nexus/README.md
-          - Active Inference Veto: simulation-models/active-inference-veto/README.md
-          - AI Alignment Veto: simulation-models/ai-alignment-veto/README.md
-          - Economic Trust Network: simulation-models/economic-trust-network/README.md
-          - Coupled Lenia Boids: simulation-models/coupled-lenia-boids/README.md
-          - Self-Reading Universe: simulation-models/self-reading-universe/README.md
-          - Latent Introspective Society: simulation-models/latent-introspective-society/README.md
-          - Social Computation Network: simulation-models/social-computation-network/README.md
-          - Grokking Phase Transition: simulation-models/grokking-phase-transition/README.md
-          - Nested Emergence Demo: simulation-models/nested-emergence-demo/README.md
-          - Nested Learning Two-State: simulation-models/nested-learning-two-state/README.md
-          - Prediction Error Field: simulation-models/prediction-error-field/README.md
-          - Tensor Logic Reasoning: simulation-models/tensor-logic-reasoning/README.md
-          - Ecosystem Regulation: simulation-models/ecosystem-regulation/README.md
-          - Meta-Learning Regime Shift: simulation-models/meta-learning-regime-shift/README.md
-          - DAO Ecosystem: simulation-models/dao-ecosystem/README.md
-          - TEO Framework Sim: simulation-models/teo-framework/README.md
-          - Continuous Thought Machines: simulation-models/continuous-thought-machines/README.md
-          - Archive Forgets on Purpose: simulation-models/archive-forgetting-purpose/README.md
-          - Rhythm Locks: simulation-models/rhythm-locks/README.md
-          - Systems Orchestration: systems-orchestration/README.md
-          - Agentic Identity Suite: agentic-test-suite/README.md
+          - Human Vital Systems: simulation-models/alignment-and-veto/human-vital-systems/README.md
+          - Utility Engineering: simulation-models/alignment-and-veto/utility-engineering/README.md
+          - Active Inference: simulation-models/cognitive-architectures/active-inference/README.md
+          - Political Formalization: simulation-models/social-computation/political-utility-formalization/README.md
+          - TEO Civilization: simulation-models/alignment-and-veto/teo-civilization/README.md
+          - Planetary Veto: simulation-models/alignment-and-veto/planetary-veto/README.md
+          - Black Swan Resilience: simulation-models/alignment-and-veto/black-swan-resilience/README.md
+          - Boids Flocking: simulation-models/emergent-dynamics/boids-flocking/README.md
+          - Coupled Oscillators: simulation-models/emergent-dynamics/coupled-oscillators/README.md
+          - Stigmergy Swarm: simulation-models/social-computation/stigmergy-swarm/README.md
+          - Reaction-Diffusion: simulation-models/emergent-dynamics/reaction-diffusion/README.md
+          - Lenia: simulation-models/emergent-dynamics/lenia/README.md
+          - Hebbian Memory: simulation-models/cognitive-architectures/hebbian-memory/README.md
+          - Phase Transition Explorer: simulation-models/emergent-dynamics/phase-transition-explorer/README.md
+          - Self-Organized Criticality: simulation-models/emergent-dynamics/self-organized-criticality/README.md
+          - Cognitive Breathing Network: simulation-models/social-computation/cognitive-breathing-network/README.md
+          - Symbiotic Breathing (Substrate Veto): simulation-models/social-computation/symbiotic-breathing/README.md
+          - Trauma & Deception Network: simulation-models/social-computation/trauma-and-deception-network/README.md
+          - Symbiotic Nexus: simulation-models/alignment-and-veto/symbiotic-nexus/README.md
+          - Active Inference Veto: simulation-models/alignment-and-veto/active-inference-veto/README.md
+          - AI Alignment Veto: simulation-models/alignment-and-veto/ai-alignment-veto/README.md
+          - Economic Trust Network: simulation-models/social-computation/economic-trust-network/README.md
+          - Coupled Lenia Boids: simulation-models/social-computation/coupled-lenia-boids/README.md
+          - Self-Reading Universe: simulation-models/cognitive-architectures/self-reading-universe/README.md
+          - Latent Introspective Society: simulation-models/social-computation/latent-introspective-society/README.md
+          - Social Computation Network: simulation-models/social-computation/social-computation-network/README.md
+          - Grokking Phase Transition: simulation-models/cognitive-architectures/grokking-phase-transition/README.md
+          - Nested Emergence Demo: simulation-models/social-computation/nested-emergence-demo/README.md
+          - Nested Learning Two-State: simulation-models/cognitive-architectures/nested-learning-two-state/README.md
+          - Prediction Error Field: simulation-models/cognitive-architectures/prediction-error-field/README.md
+          - Tensor Logic Reasoning: simulation-models/cognitive-architectures/tensor-logic-reasoning/README.md
+          - Ecosystem Regulation: simulation-models/emergent-dynamics/ecosystem-regulation/README.md
+          - Meta-Learning Regime Shift: simulation-models/cognitive-architectures/meta-learning-regime-shift/README.md
+          - DAO Ecosystem: simulation-models/social-computation/dao-ecosystem/README.md
+          - TEO Framework Sim: simulation-models/alignment-and-veto/teo-framework/README.md
+          - Continuous Thought Machines: simulation-models/cognitive-architectures/continuous-thought-machines/README.md
+          - Archive Forgets on Purpose: simulation-models/cognitive-architectures/archive-forgetting-purpose/README.md
+          - Rhythm Locks: simulation-models/social-computation/rhythm-locks/README.md
+          - Systems Orchestration: lab/orchestration/README.md
+          - Agentic Identity Suite: lab/experiments/README.md
       - "Architecture Logs":
           - Overview: logs/README.md
-          - Cosmological Bootloader: logs/cosmological-bootloader.md
-          - Impedance Mismatch: logs/impedance-mismatch-friction.md
-          - The Decoupled State: logs/decoupled-state-liquid-democracy.md
-          - Decentralized OS Architecture: logs/decentralized-os-architecture.md
-          - Human Vital Systems Control Plane: logs/human-vital-systems-control-plane.md
-          - Consciousness Uncertainty Governance: logs/consciousness-uncertainty-protocol.md
-          - The Planetary Compiler: logs/planetary-compiler.md
-          - Household Gods: logs/household-gods-permission-layers-domestic-ai.md
-          - Dust, Heat, and Battery: logs/dust-heat-and-battery.md
+          - Cosmological Bootloader: logs/001_cosmological-bootloader.md
+          - Impedance Mismatch: logs/002_impedance-mismatch-friction.md
+          - The Decoupled State: logs/003_decoupled-state-liquid-democracy.md
+          - Decentralized OS Architecture: logs/004_decentralized-os-architecture.md
+          - Human Vital Systems Control Plane: logs/005_human-vital-systems-control-plane.md
+          - Consciousness Uncertainty Governance: logs/006_consciousness-uncertainty-protocol.md
+          - The Planetary Compiler: logs/007_planetary-compiler.md
+          - Household Gods: logs/008_household-gods-permission-layers-domestic-ai.md
+          - Dust, Heat, and Battery: logs/009_dust-heat-and-battery.md
+          - The Right to Remain Unoptimized: logs/010_the-right-to-remain-unoptimized.md
+          - The Last Unmeasured Room Protocol: logs/011_the-last-unmeasured-room-protocol.md
+          - Latency as Mercy: logs/012_latency-as-mercy.md
+          - The Coupling-First Sequence: logs/013_the-coupling-first-sequence.md
+          - UI/UX of the Biological Veto: logs/014_ui_ux_of_the_biological_veto.md
+          - Post-Silicon Architectures: logs/015_post_silicon_architectures.md
       - "Narrative Stress Tests":
           - World-Building Bible: fiction/README.md
-          - The Last Commit: fiction/03_the_last_commit.md
-          - The Vital Floor: fiction/05_the_vital_floor.md
           - Log 01 - The Impedance Crash: fiction/01_the_impedance_crash.md
           - Log 02 - Interrogation of a Mirror: fiction/02_interrogation_of_a_mirror.md
+          - The Last Commit: fiction/03_the_last_commit.md
           - Log 03 - The Gravity Well Migration: fiction/04_the_gravity_well_migration.md
+          - The Vital Floor: fiction/05_the_vital_floor.md
+          - Log 06 - The Authenticity Engine: fiction/06_the_authenticity_engine.md
+          - Log 07 - WAIT_STATE: fiction/07_wait_state.md
           - Log 08 - Kitchen Networks: fiction/08_kitchen_networks_and_civic_homeostasis.md
           - Log 09 - The Refusal Registry: fiction/09_the_refusal_registry.md
+          - Log 10 - The First Breath: fiction/10_the_first_breath.md
+          - Dashboard of the Commons: fiction/11_the_dashboard_of_the_commons.md
+          - The Chord State: fiction/12_the_chord_state.md
       - "Interactive Tools":
           - Web Emergence Explorer: interactive/web-explorer.md
           - Tensor Logic Visualizer: interactive/tensor-logic.md
           - SII Dashboard: interactive/sii-dashboard.md
       - "Lab Notes":
-          - Data Analysis: data-analysis/README.md
-          - Tools: tools/README.md
-          - Benchmarks: benchmarks/cognitive-stress-tests/README.md
+          - Data Analysis: lab/data-analysis/README.md
+          - Tools: lab/tools/README.md
+          - Benchmarks: lab/benchmarks/cognitive-stress-tests/README.md
   - "Meta":
-      - Repository Architecture: meta/repository-information-architecture.md
-      - Agent Prompt Seed: meta/agent-prompt-seed.md
-      - Limits of Formal Systems: meta/limits-of-formal-systems.md
-      - Cultural Optimization Red Team Manual: meta/repository-governance/cultural-optimization-red-team-manual.md
+      - Overview: meta/README.md
+      - Repository Architecture: meta/repository-meta/repository-information-architecture.md
+      - Core Claims: meta/repository-meta/core-claims.md
+      - Speculative Writing Guidelines: meta/repository-meta/speculative-writing-guidelines.md
+      - Cultural Optimization Red Team Manual: meta/repository-meta/cultural-optimization-red-team-manual.md
+      - Agent Prompt Seed: meta/conceptual-meta/agent-prompt-seed.md
 
 theme:
   name: material

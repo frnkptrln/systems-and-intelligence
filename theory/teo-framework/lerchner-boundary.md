@@ -55,6 +55,6 @@ This prediction distinguishes architectural identity (instantiation) from behavi
 
 ## Related
 
-- [Thermodynamics of Emergent Orchestration](../thermodynamics-of-orchestration.md) — the full TEO ODE system
-- [Chord vs. Arpeggio Identity](../chord-vs-arpeggio-identity.md) — the musical metaphor
-- [Open Problem 1: The Mirror Problem](../open-problems.md) — the related but distinct question of development vs. mirroring
+- [Thermodynamics of Emergent Orchestration](../core/thermodynamics-of-orchestration.md) — the full TEO ODE system
+- [Chord vs. Arpeggio Identity](../identity/chord-vs-arpeggio-identity.md) — the musical metaphor
+- [Open Problem 1: The Mirror Problem](../reference/open-problems.md) — the related but distinct question of development vs. mirroring

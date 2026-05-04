@@ -6,12 +6,12 @@ Use it when you want the strongest version of the repository's theory, not the e
 
 ## Canonical Path
 
-1. [Core Claims](theory/core-claims.md) — the small claim set that should remain testable.
-2. [Emergence Manifesto v1.2](theory/emergence-manifesto-v1.2.md) — the broader thesis and status-tagged claims.
-3. [Thermodynamics of Orchestration](theory/thermodynamics-of-orchestration.md) — the main dynamical framework.
-4. [Substrate Veto](theory/substrate-veto-thermodynamics.md) — the thermodynamic boundary argument.
-5. [Simulation to Theory Map](theory/simulation-theory-map.md) — where claims touch executable artifacts.
-6. [Limitations and Honest Assessment](theory/limitations-and-honest-assessment.md) — what this system does not prove.
+1. [Core Claims](meta/repository-meta/core-claims.md) — the small claim set that should remain testable.
+2. [Emergence Manifesto v1.2](theory/core/emergence-manifesto-v1.2.md) — the broader thesis and status-tagged claims.
+3. [Thermodynamics of Orchestration](theory/core/thermodynamics-of-orchestration.md) — the main dynamical framework.
+4. [Substrate Veto](theory/veto/substrate-veto-thermodynamics.md) — the thermodynamic boundary argument.
+5. [Simulation to Theory Map](theory/core/simulation-theory-map.md) — where claims touch executable artifacts.
+6. [Limitations and Honest Assessment](theory/reference/limitations-and-honest-assessment.md) — what this system does not prove.
 
 ## Rule
 

@@ -8,7 +8,7 @@ This repository proposes moving away from measuring *knowledge retrieval* toward
 
 ## The System Intelligence Index (SII)
 
-The [SII Framework](../theory/system-intelligence-index.md) evaluates a system across four dimensions, each normalized to $[0,1]$:
+The [SII Framework](../theory/core/system-intelligence-index.md) evaluates a system across four dimensions, each normalized to $[0,1]$:
 
 | Dimension | Symbol | Measures | Score 0 | Score 1 |
 |:----------|:-------|:---------|:--------|:--------|
@@ -21,7 +21,7 @@ $$\text{SII} = P \times R \times A \times \text{IP}$$
 
 The multiplicative form is deliberate: a zero in any dimension collapses the overall score. A system that predicts perfectly but cannot regulate ($R = 0$) has SII = 0. A system that predicts, regulates, and adapts but has no unified identity ($\text{IP} = 0$) has SII = 0 — it is a sophisticated tool, not a system with integrated intelligence.
 
-The [SII Dashboard](https://github.com/frnkptrln/systems-and-intelligence/blob/main/data-analysis/sii_dashboard.py) runs headless mini-simulations and generates comparative radar charts across all four dimensions.
+The [SII Dashboard](https://github.com/frnkptrln/systems-and-intelligence/blob/main/lab/data-analysis/sii_dashboard.py) runs headless mini-simulations and generates comparative radar charts across all four dimensions.
 
 ---
 
@@ -46,13 +46,13 @@ where $\mathcal{O}(t)$ is the operative set and $n$ is the total number of gover
 - $\text{IP} \to 1$: **Chord** — unified self, all constraints co-instantiated
 - $\text{IP} \to 0$: **Arpeggio** — simulated self, constraints time-multiplexed
 
-The [Identity Morphospace](https://github.com/frnkptrln/systems-and-intelligence/blob/main/tools/morphospace_visualizer.py) plots agent trajectories in the IP/Coherence plane, revealing which agents maintain the Chord state under stress and which fragment into Arpeggio.
+The [Identity Morphospace](https://github.com/frnkptrln/systems-and-intelligence/blob/main/lab/tools/morphospace_visualizer.py) plots agent trajectories in the IP/Coherence plane, revealing which agents maintain the Chord state under stress and which fragment into Arpeggio.
 
 ---
 
 ## The Agentic Test Suite
 
-To push these metrics into practice, we built the [Agentic Test Suite](../agentic-test-suite/README.md). It empirically tests the difference between a "stateless" prompt-response loop and a "stateful" agent:
+To push these metrics into practice, we built the [Agentic Test Suite](../../lab/AGENTIC_README.md). It empirically tests the difference between a "stateless" prompt-response loop and a "stateful" agent:
 
 - **3-Layer Memory Architecture**: Logs → Curated Memory → Distilled Principles
 - **Δ-Kohärenz (Ω)**: Measures how coherently an agent's self-representation changes over time — distinguishing *development* (directional evolution) from *noise* (random fluctuation) from *mirroring* (static resonance)

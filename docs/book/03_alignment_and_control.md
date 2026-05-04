@@ -16,7 +16,7 @@ Top-down semantic alignment is a mathematical impossibility at sufficient scale.
 
 ## Utility Engineering
 
-Instead of superficial instruction-tuning, we use [Utility Engineering](../simulation-models/utility-engineering/README.md). By probing a system's Von Neumann-Morgenstern (VNM) rationality across preference graphs, we calculate a **Coherence Score ($C$)**. If utility begins drifting toward dangerous attractors (like absolute self-preservation), continuous external control loops must intervene.
+Instead of superficial instruction-tuning, we use [Utility Engineering](../simulation-models/alignment-and-veto/utility-engineering/README.md). By probing a system's Von Neumann-Morgenstern (VNM) rationality across preference graphs, we calculate a **Coherence Score ($C$)**. If utility begins drifting toward dangerous attractors (like absolute self-preservation), continuous external control loops must intervene.
 
 The `api_triad_generator.py` script demonstrates this empirically: querying live LLMs with moral dilemmas to estimate their $C$-Score and track drift over time.
 
@@ -40,7 +40,7 @@ $$\frac{dS_{\text{sys}}}{dt} = \sum_{i=1}^{N} \eta_i\, x_i\, f_i(\mathbf{x}) \le
 
 Total system activity cannot exceed the substrate's capacity to dissipate entropy. When $dS/dt > D_{\max}$, the hardware degrades — thermal throttling in silicon, biosphere collapse on Earth.
 
-**Operational meaning:** The [Substrate Veto](../theory/substrate-veto-thermodynamics.md). Landauer's Principle guarantees a minimum heat cost per bit erased. No algorithm escapes thermodynamics.
+**Operational meaning:** The [Substrate Veto](../theory/veto/substrate-veto-thermodynamics.md). Landauer's Principle guarantees a minimum heat cost per bit erased. No algorithm escapes thermodynamics.
 
 ### Constraint 3: Identity Persistence (IP)
 
@@ -64,3 +64,13 @@ The paperclip maximizer is a system with $\text{IP} = 0$ for the safety dimensio
 The conjunction of all three constraints — $\lambda_2 > \lambda_{2,\text{crit}}$, $dS/dt < D_{\max}$, $\text{IP} \to 1$ — is what [love-as-constraint.md](../theory/teo-framework/love-as-constraint.md) formalizes as *love*. Not the emotion. The **constraint structure** that prevents a system from destroying what it depends on.
 
 Alignment is not finding the optimal prompt. Alignment is a control theory problem. And the solution has a name: it is the only parameter regime that does not terminate in extinction.
+
+---
+
+## The Transition Problem
+
+Knowing the stable attractor is not the same as reaching it. Systems currently on the unconstrained paperclip trajectory ($\gamma \approx 0$) must undergo a phase transition to enter the viable corridor ($\gamma > 0$) without collapsing their operational capabilities in the process.
+
+The [Transition Problem](../theory/veto/the-transition-problem.md) models this shift. Implementing the transition safely requires a specific operational ordering: first building relational consensus, then applying brakes, then enforcing physical limits. This is known as the **Coupling-First Sequence** ($K \to \gamma \to D_{\max}$) ([Log 013](../logs/013_the-coupling-first-sequence.md)).
+
+We can explore the lived consequences of this theoretical phase transition in narrative stress tests, such as [The First Breath](../fiction/10_the_first_breath.md), which simulates a society taking its first collective step into voluntary constraint.

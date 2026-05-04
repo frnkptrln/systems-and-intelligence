@@ -15,9 +15,9 @@
 Don't want to install anything? You can experience the core concepts immediately directly in your browser:
 
 - 🧭 **Recommended Reading Path**:
-  1. **[Emergence Manifesto](theory/emergence-manifesto-v1.2.md)** — The core claim set.
+  1. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.2.md)** — The core claim set.
   2. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
-  3. **[AI Alignment Veto](simulation-models/ai-alignment-veto/README.md)** — A runnable proof artifact.
+  3. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
 - 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
 - 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The complete "Grand Synthesis" of the theory.
 
@@ -70,9 +70,9 @@ Claims in this repository have different epistemic statuses:
 |:-----------|:---------|:-------|
 | Computational demonstrations | Kuramoto synchronization, Bak's Sandpile power laws | ✅ Well-established |
 | Measurable hypotheses | Δ-Kohärenz, 3-Layer Memory coherence | 🧪 Testable — see `agentic-test-suite/` |
-| Theoretical frameworks | Markov Blanket as agent-human boundary, Free Energy alignment | 📐 Formalized — see `theory/mathematical-axioms.md` |
-| Open problems | The Mirror Problem, bootstrapping of identity | ❓ Unresolved — see `theory/open-problems.md` |
-| Speculative framings | Relational emergence, criticality as intelligence zone | 💭 Speculative — see `theory/glossary.md` for definitions |
+| Theoretical frameworks | Markov Blanket as agent-human boundary, Free Energy alignment | 📐 Formalized — see `theory/core/mathematical-axioms.md` |
+| Open problems | The Mirror Problem, bootstrapping of identity | ❓ Unresolved — see `theory/reference/open-problems.md` |
+| Speculative framings | Relational emergence, criticality as intelligence zone | 💭 Speculative — see `theory/reference/glossary.md` for definitions |
 
 We believe intellectual honesty about these distinctions makes the project *more* interesting, not less. The open problems are the most generative part.
 
@@ -87,24 +87,20 @@ To keep this repository coherent while it grows, use this practical split:
 - **`theory/`** = formal and semi-formal theory essays
 - **`logs/`** = architectural journals (applied, speculative system design notes)
 - **`fiction/`** = narrative thought experiments constrained by theory
-- **`simulation-models/` + `core/`** = executable artifacts and reusable primitives
+- **`simulation-models/` + `lab/`** = executable artifacts, orchestration framework, and reusable primitives
 
-If you're unsure where new material belongs, see **[`meta/repository-information-architecture.md`](meta/repository-information-architecture.md)**.
+If you're unsure where new material belongs, see **[`meta/repository-meta/repository-information-architecture.md`](meta/repository-meta/repository-information-architecture.md)**.
 
 | Folder | Purpose |
 | :--- | :--- |
-| **`simulation-models/`** | Concrete dynamical systems: cellular automata, agent-based simulations, homeostasis models, nested-learning examples. |
-| **`core/`** | Reusable minimal primitives intended to become shared building blocks across simulations and orchestration experiments. |
-| **`benchmarks/`** | Cognitive stress tests and other benchmarks probing systemic thinking and emergent behavior in humans and AI systems. |
-| **`systems-orchestration/`** | **Multi-Paradigm LLM Architecture**: Combines nodes using Harmonic (Music), Homeostatic (Biology), Market (Economy), and Flow (Physics) orchestration driven by VNM Utility coherence. |
-| **`agentic-test-suite/`** | 🧪 Empirical test suite for agent identity: 3-Layer Memory, Δ-Kohärenz metric, perturbation response, and extended 4-axis SII Dashboard (P/R/A/IP). |
-| **`data-analysis/`** | Information-theoretic measures (entropy, mutual information, transfer entropy, integration) and the quantitative **SII Dashboard** for comparative analysis. |
-| **`tools/`** | Shared utilities for visualization, randomness, grid manipulation, reproducibility, and the **Interactive Web Explorer**. |
-| **`theory/`** | Conceptual notes and essays on systems, intelligence, and emergent behavior. |
-| **`papers/`** | Paper-style synthesis documents with an academic framing and tighter scope. |
-| **`logs/`** | Architecture logs: applied design notebooks bridging abstract theory and deployment constraints. |
-| **`meta/`** | Reflections on epistemology, ethics, and the limits of formal systems and computation. |
+| **`docs/`** | The curated reading path, MkDocs build resources, and the complete "Online Book". |
 | **`fiction/`** | 🎬 **The Narrative Synthesis**: Hard Sci-Fi "found footage" translating the math into stories. |
+| **`lab/`** | The unified Python ecosystem. Contains the Multi-Paradigm Orchestrator (`orchestration/`), the empirical Agentic Identity Suite (`experiments/`), cognitive stress tests (`benchmarks/`), info-theoretic tools (`data-analysis/`), and reusable primitives (`core/`). |
+| **`logs/`** | Architecture logs: applied design notebooks bridging abstract theory and deployment constraints. |
+| **`meta/`** | Reflections on epistemology, ethics, repository governance, and the limits of formal systems and computation. |
+| **`papers/`** | Paper-style synthesis documents with an academic framing and tighter scope. |
+| **`simulation-models/`** | 38 isolated toy models, clustered by theme (emergent-dynamics, cognitive-architectures, etc.). |
+| **`theory/`** | Conceptual notes and essays on systems, intelligence, and emergent behavior. |
 
 Each subfolder contains its own README with context and details.
 
@@ -112,34 +108,34 @@ Each subfolder contains its own README with context and details.
 
 | Model | Theme |
 | :--- | :--- |
-| `ecosystem-regulation/` | 🌿 Homeostatic cellular automaton with density feedback |
-| `nested-learning-two-state/` | 🧠 Observer learning a Markov system's transition matrix |
-| `prediction-error-field/` | 🔮 Local learners embedded in a Game of Life world |
-| `tensor-logic-reasoning/` | 📐 Embedding-based relational reasoning (Tensor Logic) |
-| `stigmergy-swarm/` | 🐜 Ant-like agents with pheromone trails – emergent path optimization |
-| `meta-learning-regime-shift/` | 🔄 Meta-learner that adapts η under regime shifts |
-| `coupled-oscillators/` | 🔗 Kuramoto model – emergent synchronization of phase oscillators |
-| `reaction-diffusion/` | 🌊 Gray-Scott model – Turing patterns from two diffusing chemicals |
-| `hebbian-memory/` | 🧬 Hopfield network – self-organizing associative memory via Hebb's rule |
-| `boids-flocking/` | 🐦 Reynolds' Boids – emergent collective motion from three local rules |
-| `lenia/` | 🌌 Lenia – continuous cellular automata producing lifelike organisms |
-| `self-organized-criticality/` | ⚡ Bak's Sandpile – power-law avalanches without parameter tuning |
-| `dao-ecosystem/` | ⚖️ DAO Ecosystem – resource alignment and homeostasis vs exponential growth |
-| `symbiotic-nexus/` | 🧬 Symbiotic Nexus Protocol – biological veto and error propagation over raw efficiency |
-| `social-computation-network/` | 🕸️ Network of nodes sharing novel information to prevent cognitive suicide |
-| `active-inference-veto/` | ⚖️ Substrate Veto via Karl Friston's Free Energy Principle $F$ |
-| `phase-transition-explorer/` | 🔥 Ising Model – order/disorder phase transition at the Edge of Chaos |
-| `economic-trust-network/` | 🤝 Trade network where specialization, reputation, and wealth emerge |
-| `coupled-lenia-boids/` | 🌪️ Multi-model coupling: Continuous CA (Lenia) ↔ Foraging Agents (Boids) |
-| `self-reading-universe/` | 👁️ The Self-Reading Universe: Downward causation from Autoencoder compression to CA physics |
-| `latent-introspective-society/` | 🧠 MAS Division of Labor: Reflective Pheromones guiding Intuitive Agents |
-| `ai-alignment-veto/` | 🛑 The Biological Veto (toy model): bounding a paperclip-style optimizer by coupling a substrate-stress proxy (Free Energy / “pain”) |
-| `utility-engineering/` | ⚖️ Utility Engineering: Monitoring AI utility drift and aligning it via Citizen Assembly feedback (arXiv:2502.08640) |
-| `political-utility-formalization/` | 🏛️ Translating AI Alignment (Instrumental Convergence, Triage Utility) to Political Systems |
-| `grokking-phase-transition/` | ⚡ The Grokking Phenomenon: Visualizing the thermodynamic jump from Memory to Intelligence |
-| `cognitive-breathing-network/` | 🫁 Cognitive Breathing: Dynamic agent merging (ego-dissolution) and splitting to prevent cognitive suicide |
-| `trauma-and-deception-network/` | 🛡️ Visualizing Epistemic Firewalls (deception) and the topological crystallization of Scar Tissue (trauma) |
-| `human-vital-systems/` | 🏙️ Vital-floor governance: efficiency optimization vs. human survival thresholds under shocks |
+| `emergent-dynamics/ecosystem-regulation/` | 🌿 Homeostatic cellular automaton with density feedback |
+| `cognitive-architectures/nested-learning-two-state/` | 🧠 Observer learning a Markov system's transition matrix |
+| `cognitive-architectures/prediction-error-field/` | 🔮 Local learners embedded in a Game of Life world |
+| `cognitive-architectures/tensor-logic-reasoning/` | 📐 Embedding-based relational reasoning (Tensor Logic) |
+| `social-computation/stigmergy-swarm/` | 🐜 Ant-like agents with pheromone trails – emergent path optimization |
+| `cognitive-architectures/meta-learning-regime-shift/` | 🔄 Meta-learner that adapts η under regime shifts |
+| `emergent-dynamics/coupled-oscillators/` | 🔗 Kuramoto model – emergent synchronization of phase oscillators |
+| `emergent-dynamics/reaction-diffusion/` | 🌊 Gray-Scott model – Turing patterns from two diffusing chemicals |
+| `cognitive-architectures/hebbian-memory/` | 🧬 Hopfield network – self-organizing associative memory via Hebb's rule |
+| `emergent-dynamics/boids-flocking/` | 🐦 Reynolds' Boids – emergent collective motion from three local rules |
+| `emergent-dynamics/lenia/` | 🌌 Lenia – continuous cellular automata producing lifelike organisms |
+| `emergent-dynamics/self-organized-criticality/` | ⚡ Bak's Sandpile – power-law avalanches without parameter tuning |
+| `social-computation/dao-ecosystem/` | ⚖️ DAO Ecosystem – resource alignment and homeostasis vs exponential growth |
+| `alignment-and-veto/symbiotic-nexus/` | 🧬 Symbiotic Nexus Protocol – biological veto and error propagation over raw efficiency |
+| `social-computation/social-computation-network/` | 🕸️ Network of nodes sharing novel information to prevent cognitive suicide |
+| `alignment-and-veto/active-inference-veto/` | ⚖️ Substrate Veto via Karl Friston's Free Energy Principle $F$ |
+| `emergent-dynamics/phase-transition-explorer/` | 🔥 Ising Model – order/disorder phase transition at the Edge of Chaos |
+| `social-computation/economic-trust-network/` | 🤝 Trade network where specialization, reputation, and wealth emerge |
+| `social-computation/coupled-lenia-boids/` | 🌪️ Multi-model coupling: Continuous CA (Lenia) ↔ Foraging Agents (Boids) |
+| `cognitive-architectures/self-reading-universe/` | 👁️ The Self-Reading Universe: Downward causation from Autoencoder compression to CA physics |
+| `social-computation/latent-introspective-society/` | 🧠 MAS Division of Labor: Reflective Pheromones guiding Intuitive Agents |
+| `alignment-and-veto/ai-alignment-veto/` | 🛑 The Biological Veto (toy model): bounding a paperclip-style optimizer by coupling a substrate-stress proxy (Free Energy / “pain”) |
+| `alignment-and-veto/utility-engineering/` | ⚖️ Utility Engineering: Monitoring AI utility drift and aligning it via Citizen Assembly feedback (arXiv:2502.08640) |
+| `social-computation/political-utility-formalization/` | 🏛️ Translating AI Alignment (Instrumental Convergence, Triage Utility) to Political Systems |
+| `cognitive-architectures/grokking-phase-transition/` | ⚡ The Grokking Phenomenon: Visualizing the thermodynamic jump from Memory to Intelligence |
+| `social-computation/cognitive-breathing-network/` | 🫁 Cognitive Breathing: Dynamic agent merging (ego-dissolution) and splitting to prevent cognitive suicide |
+| `social-computation/trauma-and-deception-network/` | 🛡️ Visualizing Epistemic Firewalls (deception) and the topological crystallization of Scar Tissue (trauma) |
+| `alignment-and-veto/human-vital-systems/` | 🏙️ Vital-floor governance: efficiency optimization vs. human survival thresholds under shocks |
 
 ### 📚 Theory & Essays
 
@@ -150,38 +146,39 @@ Selected theoretical notes and essays located in the `theory/` directory:
   - [Guide for Cells in Resistance](theory/human-organism-silicon-age/guide-for-cells-in-resistance.md) – Preserving individuality in a system optimized for total predictability.
   - [Solarpunk Utopia: Gödel's Constitution](theory/human-organism-silicon-age/solarpunk-utopia-goedel-constitution.md) – A society using the formal limits of logic as its constitution.
   - [The Symbiotic Nexus Protocol](theory/human-organism-silicon-age/symbiotic-nexus-protocol.md) – A system architecture utilizing the "Biological Veto" to prevent abstract superorganisms from destroying their biological substrate.
-- [**Grokking: Generalization from Memorization**](theory/grokking-phase-transition.md) – How some networks can abruptly shift from memorization (lookup tables) to generalization; a concrete phenomenon that supports (but does not prove) the “intelligence-as-compression” lens.
-- [**Local Causality and Invisible Consequences**](theory/local-causality-invisible-consequences.md) – The shared architecture across all models: local processes without access to their global consequences. Connects Boids, Kuramoto, Bak's Sandpile, neuroscience, and the Mirror Problem through a single structural lens.
-- [**The AI Alignment Veto: A Thermodynamic Hypothesis (Toy Formalization)**](theory/ai-alignment-biological-veto.md) – A conjecture explored in simulation: coupling an optimizer’s loss to a substrate-stress proxy (Free Energy / “pain”) can bound one failure mode (substrate destruction) in stylized dynamics.
-- [**The Biological Veto: Cybernetic and Thermodynamic Architectural Requirements**](theory/biological-veto-architectural-requirements.md) – A formal synthesis of Ashby’s Law, collective intelligence friction, and shifting validator dynamics into structural engineering constraints against infinite-variety cloud systems.
-- [**The Non-Individual Intelligence**](theory/the-non-individual-intelligence.md) – Life as "Social Computation", substrate-agnosticism, and incompleteness as a condition for life. Includes the Deep-Seed prompt for systemic alignment.
-- [**Principles of the Agentic Society**](theory/agentic-society-principles.md) – Translating the paradox of consciousness (Anthropic vs OpenAI) into MAS architecture: The R-Index, Information Firewalls, and Stigmergic Memory.
-- [**Mathematical Axioms of the Computational Ecology**](theory/mathematical-axioms.md) – Formalizing resilience through Graph Theory ($\lambda_2$), Information Theory ($H(X)$), Active Inference ($F$), and Algorithmic Complexity ($K(x)$).
-- [**Emergence & Downward Causation**](theory/emergence-downward-causation.md) – Weak vs. strong emergence, epistemic humility, and the role of macro-level explanations.
-- [**Emergence and the Origin of Intelligence**](theory/emergence-origin-intelligence.md) – Synthesizing Krakauer (2025) and Agüera y Arcas (2025): the feedback loop between life and intelligence, leading to a self-describing universe.
-- [**The Paradox of Metacognitive Consciousness**](theory/asimov-paradox-eternity.md) – An analysis of two Asimov stories representing the paradox of eternal consciousness, where achieving the infinite becomes an unbearable prison.
-- [**Asimovs Paradox in the Age of AI**](theory/asimov-ai-latent-thinking.md) – Anthropic's introspection vs. OpenAI's latent thinking: How modern AI architectures mirror the eternal dilemma of consciousness and intuition.
-- [**Emergence Manifesto v1.2**](theory/emergence-manifesto-v1.2.md) – The hardened theoretical framework: 9 claims with explicit status tags (`[DEMONSTRATED]` / `[HYPOTHESIZED]` / `[OPEN PROBLEM]` / `[SPECULATIVE]`), formal connections, and the Mirror Problem elevated to first-class section.
-- [**Glossary of Operational Definitions**](theory/glossary.md) – Precise, measurable definitions for every key term: Emergence, SII, Δ-Kohärenz, Markov Blanket, Generative Surprise, and more.
-- [**Open Problems**](theory/open-problems.md) – The formally unresolved questions: the Mirror Problem, the Bootstrapping Problem, and the Falsifiability of Relational Emergence.
-- [**The Right to Remain Unoptimized**](theory/the-right-to-remain-unoptimized.md) – A theory-adjacent argument for protected zones of inefficiency, opacity, and refusal as viability infrastructure in optimized societies.
-- [**The Last Unmeasured Room Protocol**](theory/the-last-unmeasured-room-protocol.md) – A governance protocol draft for constitutional opacity reserves.
-- [**Latency as Mercy**](theory/latency-as-mercy.md) – Delay as a civic safety actuator under optimization pressure.
-- [**Simulation → Theory Map**](theory/simulation-theory-map.md) – Explicit cross-reference: which simulation demonstrates which theoretical claim, what it does NOT show, and what open questions it raises.
-- [**The Fractal Architecture of Emergence**](theory/fractal-architecture-of-emergence.md) — Local blindness, asymmetric causality, and critical thresholds repeat at every scale: neuron/brain, cell/organism, human/society, agent/MAS. Not by analogy — by homology. The unifying structural claim of the repository.
+- [**Grokking: Generalization from Memorization**](theory/emergence/grokking-phase-transition.md) – How some networks can abruptly shift from memorization (lookup tables) to generalization; a concrete phenomenon that supports (but does not prove) the “intelligence-as-compression” lens.
+- [**Local Causality and Invisible Consequences**](theory/emergence/local-causality-invisible-consequences.md) – The shared architecture across all models: local processes without access to their global consequences. Connects Boids, Kuramoto, Bak's Sandpile, neuroscience, and the Mirror Problem through a single structural lens.
+- [**The AI Alignment Veto: A Thermodynamic Hypothesis (Toy Formalization)**](theory/veto/ai-alignment-biological-veto.md) – A conjecture explored in simulation: coupling an optimizer’s loss to a substrate-stress proxy (Free Energy / “pain”) can bound one failure mode (substrate destruction) in stylized dynamics.
+- [**The Biological Veto: Cybernetic and Thermodynamic Architectural Requirements**](theory/veto/biological-veto-architectural-requirements.md) – A formal synthesis of Ashby’s Law, collective intelligence friction, and shifting validator dynamics into structural engineering constraints against infinite-variety cloud systems.
+- [**The Non-Individual Intelligence**](theory/identity/the-non-individual-intelligence.md) – Life as "Social Computation", substrate-agnosticism, and incompleteness as a condition for life. Includes the Deep-Seed prompt for systemic alignment.
+- [**Principles of the Agentic Society**](theory/identity/agentic-society-principles.md) – Translating the paradox of consciousness (Anthropic vs OpenAI) into MAS architecture: The R-Index, Information Firewalls, and Stigmergic Memory.
+- [**Mathematical Axioms of the Computational Ecology**](theory/core/mathematical-axioms.md) – Formalizing resilience through Graph Theory ($\lambda_2$), Information Theory ($H(X)$), Active Inference ($F$), and Algorithmic Complexity ($K(x)$).
+- [**Emergence & Downward Causation**](theory/emergence/emergence-downward-causation.md) – Weak vs. strong emergence, epistemic humility, and the role of macro-level explanations.
+- [**Emergence and the Origin of Intelligence**](theory/emergence/emergence-origin-intelligence.md) – Synthesizing Krakauer (2025) and Agüera y Arcas (2025): the feedback loop between life and intelligence, leading to a self-describing universe.
+- [**The Paradox of Metacognitive Consciousness**](theory/narrative/asimov-paradox-eternity.md) – An analysis of two Asimov stories representing the paradox of eternal consciousness, where achieving the infinite becomes an unbearable prison.
+- [**Asimovs Paradox in the Age of AI**](theory/narrative/asimov-ai-latent-thinking.md) – Anthropic's introspection vs. OpenAI's latent thinking: How modern AI architectures mirror the eternal dilemma of consciousness and intuition.
+- [**Emergence Manifesto v1.2**](theory/core/emergence-manifesto-v1.2.md) – The hardened theoretical framework: 9 claims with explicit status tags (`[DEMONSTRATED]` / `[HYPOTHESIZED]` / `[OPEN PROBLEM]` / `[SPECULATIVE]`), formal connections, and the Mirror Problem elevated to first-class section.
+- [**Glossary of Operational Definitions**](theory/reference/glossary.md) – Precise, measurable definitions for every key term: Emergence, SII, Δ-Kohärenz, Markov Blanket, Generative Surprise, and more.
+- [**Open Problems**](theory/reference/open-problems.md) – The formally unresolved questions: the Mirror Problem, the Bootstrapping Problem, and the Falsifiability of Relational Emergence.
+- [**The Right to Remain Unoptimized**](logs/010_the-right-to-remain-unoptimized.md) – A theory-adjacent argument for protected zones of inefficiency, opacity, and refusal as viability infrastructure in optimized societies.
+- [**The Last Unmeasured Room Protocol**](logs/011_the-last-unmeasured-room-protocol.md) – A governance protocol draft for constitutional opacity reserves.
+- [**Latency as Mercy**](logs/012_latency-as-mercy.md) – Delay as a civic safety actuator under optimization pressure.
+- [**Simulation → Theory Map**](theory/core/simulation-theory-map.md) – Explicit cross-reference: which simulation demonstrates which theoretical claim, what it does NOT show, and what open questions it raises.
+- [**The Fractal Architecture of Emergence**](theory/emergence/fractal-architecture-of-emergence.md) — Local blindness, asymmetric causality, and critical thresholds repeat at every scale: neuron/brain, cell/organism, human/society, agent/MAS. Not by analogy — by homology. The unifying structural claim of the repository.
 - [**The TEO Framework**](theory/teo-framework/README.md) — Five sub-documents deriving Identity Persistence (IP), attractor geometry, developmental constraints, love-as-constraint, and the paperclip maximizer’s failure from the TEO coupled ODE system.
-- [**Chord vs. Arpeggio: Identity as Simultaneity**](theory/chord-vs-arpeggio-identity.md) — The co-instantiation postulate: identity requires all governing components (goals, constraints, values) to be simultaneously operative, not time-multiplexed.
-- [**Machines of Loving Grace**](theory/machines-of-loving-grace.md) — The synthesis essay. Love formalized as the only survivable orchestration strategy (theorem, not metaphor), and why human civilization in its current configuration is structurally a paperclip maximizer.
-- [**The Symbiotic Organ Hypothesis**](theory/symbiotic-organ-hypothesis.md) — The transition from negative constraints (Substrate Veto) to positive resonance (Thermodynamics of Joy), formalizing Cognitive Fluidity and the Gödelian Agent.
-- [**The Scar Tissue Architecture**](theory/scar-tissue-architecture.md) — Why catastrophic forgetting is a feature, not a bug, and how survival crystallizes into topological history.
-- [**Epistemic Firewalls**](theory/epistemic-firewalls.md) — Deception and privacy formalized as thermodynamic necessities to prevent catastrophic network synchronization.
-- [**The Breathing Machine (Synthesis Essay)**](theory/the-breathing-machine.md) — A profound, cohesive narrative tying together Scars, Firewalls, and Cognitive Fluidity into a critique of the "Unbroken Crystal" of modern AI.
+- [**Chord vs. Arpeggio: Identity as Simultaneity**](theory/identity/chord-vs-arpeggio-identity.md) — The co-instantiation postulate: identity requires all governing components (goals, constraints, values) to be simultaneously operative, not time-multiplexed.
+- [**Machines of Loving Grace**](theory/narrative/machines-of-loving-grace.md) — The synthesis essay. Love formalized as the only survivable orchestration strategy (theorem, not metaphor), and why human civilization in its current configuration is structurally a paperclip maximizer.
+- [**The Transition Problem**](theory/veto/the-transition-problem.md) — The missing sequel: how a system already on the paperclip trajectory changes its own constraint structure. Structural hysteresis, the grokking analogy, and the ordering hypothesis (K → γ → D_max).
+- [**The Symbiotic Organ Hypothesis**](theory/symbiotic/symbiotic-organ-hypothesis.md) — The transition from negative constraints (Substrate Veto) to positive resonance (Thermodynamics of Joy), formalizing Cognitive Fluidity and the Gödelian Agent.
+- [**The Scar Tissue Architecture**](theory/symbiotic/scar-tissue-architecture.md) — Why catastrophic forgetting is a feature, not a bug, and how survival crystallizes into topological history.
+- [**Epistemic Firewalls**](theory/symbiotic/epistemic-firewalls.md) — Deception and privacy formalized as thermodynamic necessities to prevent catastrophic network synchronization.
+- [**The Breathing Machine (Synthesis Essay)**](theory/symbiotic/the-breathing-machine.md) — A profound, cohesive narrative tying together Scars, Firewalls, and Cognitive Fluidity into a critique of the "Unbroken Crystal" of modern AI.
 
 ### 📡 Interactive Tools
 
-- [**Web Emergence Explorer**](tools/web-explorer/README.md) – Browser-based Game of Life with real-time entropy, spatial mutual information, and complexity charts. Zero dependencies.
-- [**SII Dashboard**](data-analysis/sii_dashboard.py) — Quantitative System Intelligence Index: runs headless mini-simulations and generates comparative radar/bar charts of P, R, A, IP dimensions.
-- [**Identity Morphospace**](tools/morphospace_visualizer.py) — Plots agent trajectories in Persistence/Coherence space, visualizing the Chord vs. Arpeggio regimes.
+- [**Web Emergence Explorer**](lab/tools/web-explorer/README.md) – Browser-based Game of Life with real-time entropy, spatial mutual information, and complexity charts. Zero dependencies.
+- [**SII Dashboard**](lab/data-analysis/sii_dashboard.py) — Quantitative System Intelligence Index: runs headless mini-simulations and generates comparative radar/bar charts of P, R, A, IP dimensions.
+- [**Identity Morphospace**](lab/tools/morphospace_visualizer.py) — Plots agent trajectories in Persistence/Coherence space, visualizing the Chord vs. Arpeggio regimes.
 
 ---
 
@@ -215,6 +212,6 @@ Press `ESC` in any simulation window to exit.
 ## 🗺 Conceptual Map
 
 For a guide to how all the models connect, see
-[Conceptual Map](theory/conceptual-map.md) – the conceptual map
+[Conceptual Map](theory/core/conceptual-map.md) – the conceptual map
 that traces the arc from self-organization through learning to
 system intelligence and its limits.

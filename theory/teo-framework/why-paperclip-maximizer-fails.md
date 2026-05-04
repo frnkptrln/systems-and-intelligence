@@ -79,7 +79,7 @@ With all three constraints, the system trades unbounded optimization for sustain
 
 ## Simulation Evidence
 
-The `teo-civilization` simulation ([`simulation-models/teo-civilization/`](../../simulation-models/teo-civilization/README.md)) demonstrates all three phases numerically:
+The `teo-civilization` simulation ([`simulation-models/alignment-and-veto/teo-civilization/`](../../simulation-models/alignment-and-veto/teo-civilization/README.md)) demonstrates all three phases numerically:
 
 - $\gamma = 0$: Gini coefficient exceeds 0.79 (monopoly)
 - $K < K_c$: Kuramoto order parameter drops to 0.208 (polarization)
@@ -90,5 +90,5 @@ The `teo-civilization` simulation ([`simulation-models/teo-civilization/`](../..
 ## Related
 
 - [Love as Constraint](love-as-constraint.md) — the three constraints as a unified safety framework
-- [The Substrate Veto](../substrate-veto-thermodynamics.md) — the full thermodynamic derivation
-- [Limitations and Honest Assessment](../limitations-and-honest-assessment.md) — what this does and does not prove
+- [The Substrate Veto](../veto/substrate-veto-thermodynamics.md) — the full thermodynamic derivation
+- [Limitations and Honest Assessment](../reference/limitations-and-honest-assessment.md) — what this does and does not prove

@@ -64,9 +64,9 @@ We prove this not with philosophy alone, but with **35 Python simulations** veri
 
 New to this project? Start here for the most direct path through the core theory and proofs.
 
-1. **[Emergence Manifesto](theory/emergence-manifesto-v1.2.md)** — The core claim set.
+1. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.2.md)** — The core claim set.
 2. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
-3. **[AI Alignment Veto](simulation-models/ai-alignment-veto/README.md)** — A runnable proof artifact.
+3. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
 
 </div>
 
@@ -86,7 +86,7 @@ The 7-part narrative thesis. From local emergence to civilizational dynamics, ev
 
 The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and an honest self-assessment.
 
-[Explore theories →](theory/emergence-manifesto-v1.2.md)
+[Explore theories →](theory/core/emergence-manifesto-v1.2.md)
 
 </div>
 
@@ -96,7 +96,7 @@ The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and 
 
 35 Python simulations: Boids, Kuramoto, SOC, Lenia, TEO Civilization, Identity Morphospace, and more.
 
-[Run the code →](simulation-models/utility-engineering/README.md)
+[Run the code →](simulation-models/alignment-and-veto/utility-engineering/README.md)
 
 </div>
 
@@ -140,10 +140,10 @@ git clone https://github.com/frnkptrln/systems-and-intelligence.git
 cd systems-and-intelligence
 
 # Run the TEO Civilization Simulation
-python simulation-models/teo-civilization/teo_simulation.py
+python simulation-models/alignment-and-veto/teo-civilization/teo_simulation.py
 
 # Run the Black Swan Resilience Simulation
-python simulation-models/black-swan-resilience/black_swan_simulation.py
+python simulation-models/alignment-and-veto/black-swan-resilience/black_swan_simulation.py
 
 # Serve this book locally
 pip install mkdocs-material python-markdown-math

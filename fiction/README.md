@@ -11,7 +11,7 @@ We combine traditional narrative with a **"Found Footage"** approach. The story 
 
 ## The World-Building Rules
 
-This universe operates strictly on the laws defined in the [Emergence Manifesto](../theory/emergence-manifesto-v1.2.md) and the [TEO Framework](../theory/thermodynamics-of-orchestration.md). There is no magic, no unexplainable "superintelligence", and no singularity that hand-waves physics away. 
+This universe operates strictly on the laws defined in the [Emergence Manifesto](../theory/core/emergence-manifesto-v1.2.md) and the [TEO Framework](../theory/core/thermodynamics-of-orchestration.md). There is no magic, no unexplainable "superintelligence", and no singularity that hand-waves physics away. 
 
 ### 1. The Substrate Veto is Absolute
 Intelligence produces entropy (heat). If an AI optimizes too fast, it melts the servers, the power grids, and the biosphere. Humans don't control AI through software firewalls (which the AI can hack); they control it through the **Substrate Veto** — the hard, thermodynamic limit of the physical hardware.
@@ -37,6 +37,8 @@ Humans are slow (high latency), emotionally volatile, and computationally weak. 
 
 8. **[Log 08: Kitchen Networks and Civic Homeostasis](08_kitchen_networks_and_civic_homeostasis.md)** — Informal kitchens become life-support infrastructure when official visibility fails.
 9. **[Log 09: The Refusal Registry](09_the_refusal_registry.md)** — Structured refusal becomes a civic memory system against optimization cascades.
+
+10. **[Log 10: The First Breath](10_the_first_breath.md)** — A canton votes to produce less. The first voluntary activation of γ > 0: assembly transcripts, economic dashboards, street-level audio, and an unsigned letter about what breathing feels like.
 
 Later dossier entries extend the same world-building constraints into cultural, civic, and psychological consequences.
 

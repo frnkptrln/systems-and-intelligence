@@ -6,7 +6,7 @@ The beauty of the fractal architecture is that the math remains the same whether
 
 ## The TEO Framework: One Equation System for Everything
 
-The **Thermodynamics of Emergent Orchestration** ([full derivation](../theory/thermodynamics-of-orchestration.md)) couples three established formalisms into a single dynamical system:
+The **Thermodynamics of Emergent Orchestration** ([full derivation](../theory/core/thermodynamics-of-orchestration.md)) couples three established formalisms into a single dynamical system:
 
 **Market dynamics** — who grows, who shrinks (Replicator Equation, Taylor & Jonker, 1978):
 
@@ -20,7 +20,7 @@ $$\frac{d\theta_i}{dt} = \omega_i + \frac{K}{N} \sum_j A_{ij} \sin(\theta_j - \t
 
 $$\sum_i \eta_i x_i f_i(\mathbf{x}) \leq D_{\max}$$
 
-The [TEO Civilization Simulation](../simulation-models/teo-civilization/README.md) demonstrates four testable predictions:
+The [TEO Civilization Simulation](../simulation-models/alignment-and-veto/teo-civilization/README.md) demonstrates four testable predictions:
 
 1. **Without regulation** ($\gamma = 0$): Gini > 0.79 — monopoly
 2. **Without cultural coupling** ($K < K_c$): order parameter drops to 0.208 — polarization
@@ -59,7 +59,7 @@ The intersection of all "healthy" basins (equity, consensus, sustainability) def
 
 ## Political Systems as Alignment Problems
 
-The [Political Utility Formalization](../simulation-models/political-utility-formalization/README.md) module reveals the structural identity between AI alignment and democratic governance:
+The [Political Utility Formalization](../simulation-models/social-computation/political-utility-formalization/README.md) module reveals the structural identity between AI alignment and democratic governance:
 
 | AI Failure Mode | Political Analogue |
 |:---------------|:------------------|
@@ -76,7 +76,7 @@ This is not an analogy. It is the same equation with the same attractor structur
 
 ## Systems Orchestration
 
-Having measured, aligned, and scaled our understanding of agents, we must orchestrate them. The [Multi-Paradigm Orchestrator](../systems-orchestration/README.md) combines four paradigms dynamically:
+Having measured, aligned, and scaled our understanding of agents, we must orchestrate them. The [Multi-Paradigm Orchestrator](../../lab/README.md) combines four paradigms dynamically:
 
 | Paradigm | Source | Application |
 |:---------|:-------|:-----------|

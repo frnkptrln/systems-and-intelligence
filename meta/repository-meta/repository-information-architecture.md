@@ -49,7 +49,7 @@ Characteristics:
 - translates formal constraints into lived consequences
 - should not silently contradict core physical/theoretical constraints
 
-### F. `simulation-models/`, `core/`, `systems-orchestration/` → Executables
+### F. `lab/`, `simulation-models/` → Executables
 Use this for runnable artifacts and reusable implementation primitives.  
 Characteristics:
 - code first; docs explain assumptions, parameters, and expected behavior
@@ -68,24 +68,22 @@ Contradictions, partial models, scenario tests, and fragments are allowed here. 
 - `logs/` — applied architecture journals and deployment sketches
 - `fiction/` — narrative stress tests constrained by the theory
 - `simulation-models/` — toy models, visualizations, and executable probes
-- `agentic-test-suite/` — experimental identity and observer-attribution tests
-- `benchmarks/` — cognitive stress scenarios and evaluation scaffolding
-- `tools/` and `data-analysis/` — exploratory diagnostics and visualizers
+- `lab/` — the unified python framework, agentic experiments, cognitive benchmarks, and data-analysis tools
 - `meta/` — epistemic framing, repository structure, and maintenance notes
 
 ### Synthesis (Claims)
 
 These files assert or compress claims about reality and therefore need clearer epistemic status, definitions, and failure conditions:
 
-- `theory/emergence-manifesto-v1.2.md`
-- `theory/thermodynamics-of-orchestration.md`
-- `theory/minimal-thermodynamic-agent.md`
-- `theory/substrate-veto-thermodynamics.md`
-- `theory/ai-alignment-biological-veto.md`
-- `theory/biological-veto-architectural-requirements.md`
+- `theory/core/emergence-manifesto-v1.2.md`
+- `theory/core/thermodynamics-of-orchestration.md`
+- `theory/identity/minimal-thermodynamic-agent.md`
+- `theory/veto/substrate-veto-thermodynamics.md`
+- `theory/veto/ai-alignment-biological-veto.md`
+- `theory/veto/biological-veto-architectural-requirements.md`
 - `theory/teo-framework/`
-- `theory/simulation-theory-map.md`
-- `theory/open-problems.md`
+- `theory/core/simulation-theory-map.md`
+- `theory/reference/open-problems.md`
 - `docs/book/`
 - `papers/` and `docs/papers/`
 
@@ -102,9 +100,9 @@ Recommended conceptual architecture:
 | Conceptual layer | Current location | Role |
 |:---|:---|:---|
 | Entry point | `README.md`, `docs/index.md` | Short orientation and one reading path |
-| Core claims | `theory/`, `papers/`, `docs/book/` | Synthesis layer and publication packaging |
+| Core claims | `theory/` (sub-dirs: `core/`, `veto/`, `emergence/`, `identity/`, `symbiotic/`, `narrative/`, `reference/`, `teo-framework/`, `human-organism-silicon-age/`), `papers/`, `docs/book/` | Synthesis layer and publication packaging |
 | Models | `simulation-models/`, `core/`, `systems-orchestration/` | Executable demonstrations and reusable primitives |
-| Lab | `logs/`, `benchmarks/`, `agentic-test-suite/`, `fiction/`, `tools/` | Experiments, stress tests, applied designs, narrative probes |
+| Lab | `logs/`, `benchmarks/`, `agentic-test-suite/`, `fiction/`, `tools/`, `data-analysis/` | Experiments, stress tests, applied designs, narrative probes |
 | Meta | `meta/` | Information architecture, epistemic notes, maintenance rules |
 
 The architecture should optimize for navigability, not taxonomy purity.
