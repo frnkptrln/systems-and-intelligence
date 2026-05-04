@@ -15,11 +15,11 @@
 
 <div class="stats-bar" markdown>
 <div class="stat" markdown>
-<span class="stat-number">35</span>
+<span class="stat-number">38</span>
 <span class="stat-label">Simulation Models</span>
 </div>
 <div class="stat" markdown>
-<span class="stat-number">7</span>
+<span class="stat-number">9</span>
 <span class="stat-label">Book Chapters</span>
 </div>
 <div class="stat" markdown>
@@ -50,7 +50,7 @@
 !!! abstract "Thesis"
     **Intelligence is an emergent property of continuous dynamical systems**, not a discrete function of next-token prediction. The same mathematics that governs flocking birds, oscillating neurons, and self-organizing criticality also governs the "values" and "goals" that arise inside Large Language Models — and inside human civilizations.
 
-We prove this not with philosophy alone, but with **35 Python simulations** verifying mathematical models from the theory. Evolutionary game theory, nonlinear dynamics, and thermodynamic control theory are all unified under a single mathematical framework: the **Thermodynamics of Emergent Orchestration (TEO)**.
+We prove this not with philosophy alone, but with **38 Python simulations** verifying mathematical models from the theory. Evolutionary game theory, nonlinear dynamics, and thermodynamic control theory are all unified under a single mathematical framework: the **Thermodynamics of Emergent Orchestration (TEO)**.
 
 ---
 
@@ -94,7 +94,7 @@ The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and 
 
 ### :material-code-braces: Simulations
 
-35 Python simulations: Boids, Kuramoto, SOC, Lenia, TEO Civilization, Identity Morphospace, and more.
+<p class="si-feature-description">38 Python simulations: Boids, Kuramoto, SOC, Lenia, TEO Civilization, Identity Morphospace, and more.</p>
 
 [Run the code →](simulation-models/alignment-and-veto/utility-engineering/README.md)
 

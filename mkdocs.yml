@@ -81,45 +81,49 @@ nav:
           - Limitations & Honest Assessment: theory/reference/limitations-and-honest-assessment.md
   - "Thinking Space (Exploration)":
       - Overview: thinking-space.md
-      - "Simulation Modules":
-          - Human Vital Systems: simulation-models/alignment-and-veto/human-vital-systems/README.md
-          - Utility Engineering: simulation-models/alignment-and-veto/utility-engineering/README.md
-          - Active Inference: simulation-models/cognitive-architectures/active-inference/README.md
-          - Political Formalization: simulation-models/social-computation/political-utility-formalization/README.md
-          - TEO Civilization: simulation-models/alignment-and-veto/teo-civilization/README.md
-          - Planetary Veto: simulation-models/alignment-and-veto/planetary-veto/README.md
-          - Black Swan Resilience: simulation-models/alignment-and-veto/black-swan-resilience/README.md
+      - "Emergent Dynamics":
           - Boids Flocking: simulation-models/emergent-dynamics/boids-flocking/README.md
           - Coupled Oscillators: simulation-models/emergent-dynamics/coupled-oscillators/README.md
-          - Stigmergy Swarm: simulation-models/social-computation/stigmergy-swarm/README.md
           - Reaction-Diffusion: simulation-models/emergent-dynamics/reaction-diffusion/README.md
           - Lenia: simulation-models/emergent-dynamics/lenia/README.md
-          - Hebbian Memory: simulation-models/cognitive-architectures/hebbian-memory/README.md
           - Phase Transition Explorer: simulation-models/emergent-dynamics/phase-transition-explorer/README.md
           - Self-Organized Criticality: simulation-models/emergent-dynamics/self-organized-criticality/README.md
-          - Cognitive Breathing Network: simulation-models/social-computation/cognitive-breathing-network/README.md
-          - Symbiotic Breathing (Substrate Veto): simulation-models/social-computation/symbiotic-breathing/README.md
-          - Trauma & Deception Network: simulation-models/social-computation/trauma-and-deception-network/README.md
-          - Symbiotic Nexus: simulation-models/alignment-and-veto/symbiotic-nexus/README.md
-          - Active Inference Veto: simulation-models/alignment-and-veto/active-inference-veto/README.md
-          - AI Alignment Veto: simulation-models/alignment-and-veto/ai-alignment-veto/README.md
-          - Economic Trust Network: simulation-models/social-computation/economic-trust-network/README.md
-          - Coupled Lenia Boids: simulation-models/social-computation/coupled-lenia-boids/README.md
+          - Ecosystem Regulation: simulation-models/emergent-dynamics/ecosystem-regulation/README.md
+      - "Cognitive Architectures":
+          - Active Inference: simulation-models/cognitive-architectures/active-inference/README.md
+          - Hebbian Memory: simulation-models/cognitive-architectures/hebbian-memory/README.md
           - Self-Reading Universe: simulation-models/cognitive-architectures/self-reading-universe/README.md
-          - Latent Introspective Society: simulation-models/social-computation/latent-introspective-society/README.md
-          - Social Computation Network: simulation-models/social-computation/social-computation-network/README.md
           - Grokking Phase Transition: simulation-models/cognitive-architectures/grokking-phase-transition/README.md
-          - Nested Emergence Demo: simulation-models/social-computation/nested-emergence-demo/README.md
           - Nested Learning Two-State: simulation-models/cognitive-architectures/nested-learning-two-state/README.md
           - Prediction Error Field: simulation-models/cognitive-architectures/prediction-error-field/README.md
           - Tensor Logic Reasoning: simulation-models/cognitive-architectures/tensor-logic-reasoning/README.md
-          - Ecosystem Regulation: simulation-models/emergent-dynamics/ecosystem-regulation/README.md
           - Meta-Learning Regime Shift: simulation-models/cognitive-architectures/meta-learning-regime-shift/README.md
-          - DAO Ecosystem: simulation-models/social-computation/dao-ecosystem/README.md
-          - TEO Framework Sim: simulation-models/alignment-and-veto/teo-framework/README.md
           - Continuous Thought Machines: simulation-models/cognitive-architectures/continuous-thought-machines/README.md
           - Archive Forgets on Purpose: simulation-models/cognitive-architectures/archive-forgetting-purpose/README.md
+      - "Social Computation":
+          - Political Formalization: simulation-models/social-computation/political-utility-formalization/README.md
+          - Stigmergy Swarm: simulation-models/social-computation/stigmergy-swarm/README.md
+          - Cognitive Breathing Network: simulation-models/social-computation/cognitive-breathing-network/README.md
+          - Symbiotic Breathing (Substrate Veto): simulation-models/social-computation/symbiotic-breathing/README.md
+          - Trauma & Deception Network: simulation-models/social-computation/trauma-and-deception-network/README.md
+          - Economic Trust Network: simulation-models/social-computation/economic-trust-network/README.md
+          - Coupled Lenia Boids: simulation-models/social-computation/coupled-lenia-boids/README.md
+          - Latent Introspective Society: simulation-models/social-computation/latent-introspective-society/README.md
+          - Social Computation Network: simulation-models/social-computation/social-computation-network/README.md
+          - Nested Emergence Demo: simulation-models/social-computation/nested-emergence-demo/README.md
+          - DAO Ecosystem: simulation-models/social-computation/dao-ecosystem/README.md
           - Rhythm Locks: simulation-models/social-computation/rhythm-locks/README.md
+      - "Alignment & Veto":
+          - Human Vital Systems: simulation-models/alignment-and-veto/human-vital-systems/README.md
+          - Utility Engineering: simulation-models/alignment-and-veto/utility-engineering/README.md
+          - TEO Civilization: simulation-models/alignment-and-veto/teo-civilization/README.md
+          - Planetary Veto: simulation-models/alignment-and-veto/planetary-veto/README.md
+          - Black Swan Resilience: simulation-models/alignment-and-veto/black-swan-resilience/README.md
+          - Symbiotic Nexus: simulation-models/alignment-and-veto/symbiotic-nexus/README.md
+          - Active Inference Veto: simulation-models/alignment-and-veto/active-inference-veto/README.md
+          - AI Alignment Veto: simulation-models/alignment-and-veto/ai-alignment-veto/README.md
+          - TEO Framework Sim: simulation-models/alignment-and-veto/teo-framework/README.md
+      - "Lab Frameworks":
           - Systems Orchestration: lab/README.md
           - Agentic Identity Suite: lab/AGENTIC_README.md
       - "Architecture Logs":
@@ -141,16 +145,16 @@ nav:
           - Post-Silicon Architectures: logs/015_post_silicon_architectures.md
       - "Narrative Stress Tests":
           - World-Building Bible: fiction/README.md
-          - Log 01 - The Impedance Crash: fiction/01_the_impedance_crash.md
-          - Log 02 - Interrogation of a Mirror: fiction/02_interrogation_of_a_mirror.md
+          - The Impedance Crash: fiction/01_the_impedance_crash.md
+          - Interrogation of a Mirror: fiction/02_interrogation_of_a_mirror.md
           - The Last Commit: fiction/03_the_last_commit.md
-          - Log 03 - The Gravity Well Migration: fiction/04_the_gravity_well_migration.md
+          - The Gravity Well Migration: fiction/04_the_gravity_well_migration.md
           - The Vital Floor: fiction/05_the_vital_floor.md
-          - Log 06 - The Authenticity Engine: fiction/06_the_authenticity_engine.md
-          - Log 07 - WAIT_STATE: fiction/07_wait_state.md
-          - Log 08 - Kitchen Networks: fiction/08_kitchen_networks_and_civic_homeostasis.md
-          - Log 09 - The Refusal Registry: fiction/09_the_refusal_registry.md
-          - Log 10 - The First Breath: fiction/10_the_first_breath.md
+          - The Authenticity Engine: fiction/06_the_authenticity_engine.md
+          - WAIT_STATE: fiction/07_wait_state.md
+          - Kitchen Networks: fiction/08_kitchen_networks_and_civic_homeostasis.md
+          - The Refusal Registry: fiction/09_the_refusal_registry.md
+          - The First Breath: fiction/10_the_first_breath.md
           - Dashboard of the Commons: fiction/11_the_dashboard_of_the_commons.md
           - The Chord State: fiction/12_the_chord_state.md
       - "Interactive Tools":
@@ -200,7 +204,6 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
     - navigation.path
     - navigation.top
     - navigation.instant

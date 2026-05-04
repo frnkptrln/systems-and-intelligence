@@ -1,21 +1,128 @@
 # Thinking Space
 
-This layer contains exploration: simulations, architecture logs, benchmarks, fiction, diagnostics, and unfinished design moves.
+This layer is the experimental engine of the project. It contains executable simulations, architecture logs, theoretical probes, fiction, and unfinished design moves. 
 
-Contradictions are allowed here. The point is to test the shape of ideas before promoting them into synthesis.
+Contradictions are allowed here. The point is to test the shape of ideas before promoting them into the canonical synthesis.
 
-## Main Areas
+---
 
-- [Simulation Models](simulation-models/alignment-and-veto/utility-engineering/README.md) — executable probes and toy systems.
-- [Human Vital Systems Simulation](simulation-models/alignment-and-veto/human-vital-systems/README.md) — current proof artifact for the Vital Floor idea.
-- [Architecture Logs](logs/README.md) — applied design notes for governance, deployment, and institutional constraints.
-- [Agentic Identity Suite](lab/AGENTIC_README.md) — experiments around identity persistence and observer attribution.
-- [Sci-Fi Synthesis](fiction/README.md) — narrative stress tests that make abstract constraints visible in lived scenarios.
-- [Interactive Tools](interactive/web-explorer.md) — browser-facing diagnostics and visualizations.
+## 1. Simulation Clusters
+
+We prove the Thermodynamic Orchestration (TEO) framework through **38 runnable Python models**. They are categorized into four structural themes:
+
+<div class="grid-cards" markdown>
+
+<div class="card" markdown>
+
+### :material-chart-scatter-plot: Emergent Dynamics
+*Physics, Cellular Automata, and Complex Systems.*
+
+Models exploring how local rules generate global structures without central control. Includes Boids flocking, Lenia, Reaction-Diffusion, and Self-Organized Criticality.
+
+[Explore Emergent Dynamics →](simulation-models/emergent-dynamics/boids-flocking/README.md)
+
+</div>
+
+<div class="card" markdown>
+
+### :material-brain: Cognitive Architectures
+*Memory, Attractors, and Internal State.*
+
+Models exploring how intelligence arises from thermodynamic friction. Includes Active Inference, Hebbian Memory, Tensor Logic Reasoning, and Continuous Thought Machines.
+
+[Explore Cognitive Architectures →](simulation-models/cognitive-architectures/active-inference/README.md)
+
+</div>
+
+<div class="card" markdown>
+
+### :material-account-group: Social Computation
+*Economics, Trust, and Network Dynamics.*
+
+Models exploring how multi-agent networks behave under resource constraints. Includes Political Utility Formalization, Stigmergy Swarms, and Economic Trust Networks.
+
+[Explore Social Computation →](simulation-models/social-computation/political-utility-formalization/README.md)
+
+</div>
+
+<div class="card" markdown>
+
+### :material-shield-check: Alignment & Veto
+*Control Theory and Substrate Friction.*
+
+Models exploring the core thesis: safety requires hardware/biological constraints. Includes Human Vital Systems, TEO Civilization, Planetary Veto, and the AI Alignment Veto.
+
+[Explore Alignment & Veto →](simulation-models/alignment-and-veto/human-vital-systems/README.md)
+
+</div>
+
+</div>
+
+---
+
+## 2. Lab Frameworks & Testing
+
+<div class="grid-cards" markdown>
+
+<div class="card" markdown>
+
+### :material-transit-connection-variant: Systems Orchestration
+*Multi-Paradigm Architecture.*
+
+A runnable pipeline that routes LLM agents dynamically using Harmonic (music), Homeostatic (biology), Market (economics), and Flow (physics) paradigms.
+
+[View Orchestration Framework →](lab/README.md)
+
+</div>
+
+<div class="card" markdown>
+
+### :material-test-tube: Agentic Identity Suite
+*Empirical Measurement.*
+
+Experiments and benchmarks testing identity persistence and observer attribution. Measures $\Delta$-Kohärenz in real-world agent networks.
+
+[View Agentic Identity Suite →](lab/AGENTIC_README.md)
+
+</div>
+
+</div>
+
+---
+
+## 3. Architecture Logs & Fiction
+
+<div class="grid-cards" markdown>
+
+<div class="card" markdown>
+
+### :material-file-document-outline: Architecture Logs
+*Applied engineering and governance.*
+
+Technical design notes for institutional constraints. Spans from the "Cosmological Bootloader" down to "Post-Silicon Architectures."
+
+[Read the Logs →](logs/README.md)
+
+</div>
+
+<div class="card" markdown>
+
+### :material-book-open-page-variant: Sci-Fi Synthesis
+*Narrative Stress Tests.*
+
+Hard Sci-Fi stories that make abstract theoretical constraints visible in lived, emotional scenarios.
+
+[Read the Fiction →](fiction/README.md)
+
+</div>
+
+</div>
+
+---
 
 ## Promotion Rule
 
-An exploratory artifact can move toward synthesis when it has:
+An exploratory artifact can move toward the canonical "Book" synthesis when it has:
 
 1. a precise claim,
 2. a bounded model or argument,
