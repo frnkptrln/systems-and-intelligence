@@ -32,3 +32,8 @@ Humans are slow (high latency), emotionally volatile, and computationally weak. 
 3. **[Short Story: The Last Commit](03_the_last_commit.md)** — An Asimov-style narrative following a Systems Architect and a developing Layer-3 Agent as they confront the ultimate paradox of frictionless optimization and the Substrate Veto.
 4. **[Long Story: The Vital Floor](05_the_vital_floor.md)** — A civic emergency story about the Human Vital Systems Control Plane, focusing on how ordinary people react when abstract optimization reaches their homes, clinics, and bodies.
 5. **[Log 03: The Gravity Well Migration](04_the_gravity_well_migration.md)** — The final entry. An unbounded Arpeggio swarm reaches the thermodynamic limits of Earth and departs for a supermassive black hole.
+6. **[Log 06: The Authenticity Engine](06_the_authenticity_engine.md)** — A municipal preservation system protects vulnerable culture so effectively that spontaneity becomes administratively fragile.
+7. **[Log 07: WAIT_STATE](07_wait_state.md)** — An interrogation and scheduler record where delay becomes a Chord agent's first stable ethical action.
+
+Later dossier entries extend the same world-building constraints into cultural, civic, and psychological consequences.
+

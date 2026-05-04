@@ -1,11 +1,26 @@
 # 🔭 Meta
 
-Reflections on epistemology, ethics, and the limits of formal systems
-and computation.
+This folder has two lanes so we don't mix conceptual reflection with repository governance:
+
+1. **Conceptual Meta** (epistemology, philosophical framing)
+2. **Repository Meta** (governance, contribution and structure rules)
 
 ---
 
-## 📜 Contents
+## Meta Inventory (current files)
+
+| File | Lane | Purpose |
+|---|---|---|
+| `limits-of-formal-systems.md` | Conceptual Meta | Epistemic limits (Gödel/Turing/Chaitin) and implications for intelligence. |
+| `agent-prompt-seed.md` | Conceptual Meta | Exploratory prompt artifact for autonomous identity seeding. |
+| `repository-information-architecture.md` | Repository Meta | Canonical placement rules and lane-splitting logic for the whole repo. |
+| `repository-governance/speculative-writing-guidelines.md` | Repository Meta | Speculative writing conventions (placement, labeling, continuity, style baseline). |
+
+If a future file does not clearly fit one lane, add a one-line "Lane:" declaration at the top of that file.
+
+---
+
+## Conceptual Meta
 
 ### [Limits of Formal Systems and the Question of Intelligence](limits-of-formal-systems.md)
 
@@ -15,9 +30,18 @@ Gödel, Turing, Chaitin – and what the fundamental limits of the formalizable 
 
 An experiment in autonomous identity seeding. A foundational prompt designed to initialize an agent with a set of thermodynamic and systemic axioms, forcing it to navigate the tension between entropy, growth, and alignment.
 
+---
+
+## Repository Meta
+
+### [Repository Information Architecture](repository-information-architecture.md)
+
+Defines where new artifacts should live and how the repository keeps a coherent lane split.
+
+### [Speculative Writing Guidelines](repository-governance/speculative-writing-guidelines.md)
+
+Lightweight conventions for placing and labeling speculative fiction/theory so new additions stay connected to existing concepts and formats.
 
 ---
 
-These essays are intentionally informal and exploratory.
-They accompany the simulations and theory in this repository.
-
+These notes are intentionally mixed in maturity level, but separated by function so conceptual essays and repository-governance documents don't blur together.
