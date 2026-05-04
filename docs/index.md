@@ -110,25 +110,34 @@ The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and 
 
 </div>
 
+<div class="card" markdown>
+
+### :material-book-open-page-variant: Sci-Fi Synthesis
+
+Narrative stress tests that make abstract theoretical constraints visible in lived, emotional scenarios.
+
+[Read the Fiction →](fiction/README.md)
+
+</div>
+
 </div>
 
 ---
 
-## What's Next (2026 Roadmap)
+## What's Next (Post-Synthesis Roadmap)
 
-!!! info "Where this project is going next"
-    This is an active research program. The current focus is not only to **add more models**, but to **tighten falsifiability**, increase reproducibility, and connect abstract theory to measurable interventions.
+!!! info "The theoretical scaffolding is complete. The next phase is empirical and physical."
+    With the completion of the *Thermodynamic Hardware Manifesto* and the *Mycelial Veto*, the theoretical framework (TEO) is structurally closed. The focus now shifts from mathematical formalization to real-world deployment and hardware prototyping.
 
-1. **Reproducibility baseline:** standard run profiles, fixed seeds, and benchmark outputs for core simulations.
-2. **Cross-model comparability:** shared metrics (stability, entropy budget, identity persistence) across all simulation families.
-3. **Interactive diagnostics:** richer browser-based explorers for attractor landscapes and regime transitions.
-4. **Theory-to-policy bridge:** clearer translation from formal constraints (TEO, substrate veto) into institutional design patterns.
+1. **Empirical LLM Auditing:** Executing the Agentic Test Suite against live commercial APIs (GPT-4, Claude 3) to map theoretical coupling parameters ($K$) to real-world alignment behaviors.
+2. **Hardware Prototyping:** Transitioning from Python simulations to low-level analog memristor circuit design to test physical $\gamma$-pin vetoes and thermodynamic computing limits.
+3. **Decentralized OS Integration:** Translating the "Biological Veto" into actionable protocol-level specifications for actual web3 / decentralized governance operating systems.
 
-If you want to contribute, start with:
+If you want to contribute, the project is now open for:
 
-- adding tests for an existing simulation module,
-- improving one documentation chapter with explicit equations + runnable code,
-- or opening an issue that proposes a falsifiable counterexample to a core claim.
+- **Peer review** of the core thermodynamic proofs,
+- **Pull Requests** extending the Agentic Identity Suite with new API adapters,
+- or proposing concrete **hardware architectures** for the substrate veto.
 
 ---
 
