@@ -11,11 +11,11 @@ This folder has two lanes so we don't mix conceptual reflection with repository 
 
 | File | Lane | Purpose |
 |---|---|---|
-| `limits-of-formal-systems.md` | Conceptual Meta | Epistemic limits (Gödel/Turing/Chaitin) and implications for intelligence. |
-| `agent-prompt-seed.md` | Conceptual Meta | Exploratory prompt artifact for autonomous identity seeding. |
-| `repository-information-architecture.md` | Repository Meta | Canonical placement rules and lane-splitting logic for the whole repo. |
-| `repository-governance/speculative-writing-guidelines.md` | Repository Meta | Speculative writing conventions (placement, labeling, continuity, style baseline). |
-| `repository-governance/cultural-optimization-red-team-manual.md` | Repository Meta | Guardrails against Goodhart pressure in cultural optimization systems. |
+| `conceptual-meta/limits-of-formal-systems.md` | Conceptual Meta | Epistemic limits (Gödel/Turing/Chaitin) and implications for intelligence. |
+| `conceptual-meta/agent-prompt-seed.md` | Conceptual Meta | Exploratory prompt artifact for autonomous identity seeding. |
+| `repository-meta/repository-information-architecture.md` | Repository Meta | Canonical placement rules and lane-splitting logic for the whole repo. |
+| `repository-meta/speculative-writing-guidelines.md` | Repository Meta | Speculative writing conventions (placement, labeling, continuity, style baseline). |
+| `repository-meta/cultural-optimization-red-team-manual.md` | Repository Meta | Guardrails against Goodhart pressure in cultural optimization systems. |
 
 If a future file does not clearly fit one lane, add a one-line "Lane:" declaration at the top of that file.
 
@@ -23,11 +23,11 @@ If a future file does not clearly fit one lane, add a one-line "Lane:" declarati
 
 ## Conceptual Meta
 
-### [Limits of Formal Systems and the Question of Intelligence](limits-of-formal-systems.md)
+### [Limits of Formal Systems and the Question of Intelligence](conceptual-meta/limits-of-formal-systems.md)
 
 Gödel, Turing, Chaitin – and what the fundamental limits of the formalizable mean for the question of intelligence. Why intelligence might not be a *state*, but a *process* that operates at these boundaries.
 
-### [Agent Prompt Seed](agent-prompt-seed.md)
+### [Agent Prompt Seed](conceptual-meta/agent-prompt-seed.md)
 
 An experiment in autonomous identity seeding. A foundational prompt designed to initialize an agent with a set of thermodynamic and systemic axioms, forcing it to navigate the tension between entropy, growth, and alignment.
 
@@ -35,18 +35,18 @@ An experiment in autonomous identity seeding. A foundational prompt designed to 
 
 ## Repository Meta
 
-### [Repository Information Architecture](repository-information-architecture.md)
+### [Repository Information Architecture](repository-meta/repository-information-architecture.md)
 
 Defines where new artifacts should live and how the repository keeps a coherent lane split.
 
-### [Speculative Writing Guidelines](repository-governance/speculative-writing-guidelines.md)
+### [Speculative Writing Guidelines](repository-meta/speculative-writing-guidelines.md)
 
 Lightweight conventions for placing and labeling speculative fiction/theory so new additions stay connected to existing concepts and formats.
 
 ---
 
-These notes are intentionally mixed in maturity level, but separated by function so conceptual essays and repository-governance documents don't blur together.
+These notes are intentionally mixed in maturity level, but separated by function so conceptual essays and repository-meta documents don't blur together.
 
-### [Cultural Optimization Red Team Manual](repository-governance/cultural-optimization-red-team-manual.md)
+### [Cultural Optimization Red Team Manual](repository-meta/cultural-optimization-red-team-manual.md)
 
 A practical anti-pattern and review ritual guide for authenticity/care optimization systems.
