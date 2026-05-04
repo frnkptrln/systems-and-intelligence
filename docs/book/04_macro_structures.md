@@ -76,7 +76,7 @@ This is not an analogy. It is the same equation with the same attractor structur
 
 ## Systems Orchestration
 
-Having measured, aligned, and scaled our understanding of agents, we must orchestrate them. The [Multi-Paradigm Orchestrator](../../lab/README.md) combines four paradigms dynamically:
+Having measured, aligned, and scaled our understanding of agents, we must orchestrate them. The [Multi-Paradigm Orchestrator](../lab/README.md) combines four paradigms dynamically:
 
 | Paradigm | Source | Application |
 |:---------|:-------|:-----------|

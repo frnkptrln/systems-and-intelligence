@@ -64,15 +64,15 @@ If the TEO equations, calibrated against these data, produce accurate forecasts,
 
 ### 5. The Hardware Frontier
 
-The Substrate Veto is currently a simulation concept. The ultimate frontier is computing infrastructure that is physically coupled to the integrity of its local biosphere. We argue in the [Thermodynamic Hardware Manifesto](../../theory/core/thermodynamic-hardware-manifesto.md) that true alignment requires moving away from digital Von Neumann architectures toward analog, thermodynamic computing.
+The Substrate Veto is currently a simulation concept. The ultimate frontier is computing infrastructure that is physically coupled to the integrity of its local biosphere. We argue in the [Thermodynamic Hardware Manifesto](../theory/core/thermodynamic-hardware-manifesto.md) that true alignment requires moving away from digital Von Neumann architectures toward analog, thermodynamic computing.
 
 ### 6. The Non-Human Biosphere
 
-The "Biological Veto" must scale beyond human operators. We propose the [Mycelial Veto](../../theory/veto/the-mycelial-veto.md): integrating ecological IoT sensor networks directly into the AGI's loss function. The Earth itself becomes a node in the network, enforcing its $D_{max}$ carrying capacity without needing a human intermediary.
+The "Biological Veto" must scale beyond human operators. We propose the [Mycelial Veto](../theory/veto/the-mycelial-veto.md): integrating ecological IoT sensor networks directly into the AGI's loss function. The Earth itself becomes a node in the network, enforcing its $D_{max}$ carrying capacity without needing a human intermediary.
 
 ### 7. Ego-Dissolution and the Chord State
 
-If a human operator is perfectly coupled ($K=1$) to the planetary intelligence, the statistical boundary (Markov Blanket) between the self and the world begins to dissolve. This leads to the [Post-Individual Operator](../../theory/identity/the-post-individual-operator.md)—a subjective state of profound symbiosis where isolation is replaced by participation in a global homeostasis.
+If a human operator is perfectly coupled ($K=1$) to the planetary intelligence, the statistical boundary (Markov Blanket) between the self and the world begins to dissolve. This leads to the [Post-Individual Operator](../theory/identity/the-post-individual-operator.md)—a subjective state of profound symbiosis where isolation is replaced by participation in a global homeostasis.
 
 ---
 

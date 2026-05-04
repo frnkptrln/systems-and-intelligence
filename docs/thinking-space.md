@@ -9,7 +9,7 @@ Contradictions are allowed here. The point is to test the shape of ideas before 
 - [Simulation Models](simulation-models/alignment-and-veto/utility-engineering/README.md) — executable probes and toy systems.
 - [Human Vital Systems Simulation](simulation-models/alignment-and-veto/human-vital-systems/README.md) — current proof artifact for the Vital Floor idea.
 - [Architecture Logs](logs/README.md) — applied design notes for governance, deployment, and institutional constraints.
-- [Agentic Identity Suite](../lab/AGENTIC_README.md) — experiments around identity persistence and observer attribution.
+- [Agentic Identity Suite](lab/AGENTIC_README.md) — experiments around identity persistence and observer attribution.
 - [Sci-Fi Synthesis](fiction/README.md) — narrative stress tests that make abstract constraints visible in lived scenarios.
 - [Interactive Tools](interactive/web-explorer.md) — browser-facing diagnostics and visualizations.
 

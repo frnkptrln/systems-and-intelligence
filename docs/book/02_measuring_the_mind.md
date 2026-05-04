@@ -52,7 +52,7 @@ The [Identity Morphospace](https://github.com/frnkptrln/systems-and-intelligence
 
 ## The Agentic Test Suite
 
-To push these metrics into practice, we built the [Agentic Test Suite](../../lab/AGENTIC_README.md). It empirically tests the difference between a "stateless" prompt-response loop and a "stateful" agent:
+To push these metrics into practice, we built the [Agentic Test Suite](../lab/AGENTIC_README.md). It empirically tests the difference between a "stateless" prompt-response loop and a "stateful" agent:
 
 - **3-Layer Memory Architecture**: Logs → Curated Memory → Distilled Principles
 - **Δ-Kohärenz (Ω)**: Measures how coherently an agent's self-representation changes over time — distinguishing *development* (directional evolution) from *noise* (random fluctuation) from *mirroring* (static resonance)

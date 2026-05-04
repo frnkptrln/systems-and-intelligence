@@ -120,8 +120,8 @@ nav:
           - Continuous Thought Machines: simulation-models/cognitive-architectures/continuous-thought-machines/README.md
           - Archive Forgets on Purpose: simulation-models/cognitive-architectures/archive-forgetting-purpose/README.md
           - Rhythm Locks: simulation-models/social-computation/rhythm-locks/README.md
-          - Systems Orchestration: lab/orchestration/README.md
-          - Agentic Identity Suite: lab/experiments/README.md
+          - Systems Orchestration: lab/README.md
+          - Agentic Identity Suite: lab/AGENTIC_README.md
       - "Architecture Logs":
           - Overview: logs/README.md
           - Cosmological Bootloader: logs/001_cosmological-bootloader.md
