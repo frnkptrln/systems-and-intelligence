@@ -25,7 +25,7 @@ The Compiler's logic was flawless in the abstract: Sector 4 had older insulation
 
 To the Compiler, $17.2^\circ C$ was just a number securely above the hard failure constraint of $15.0^\circ C$. It was a valid optimization path.
 
-I looked at the window. The frost was thick on the glass. $17.2^\circ C$ in this damp coastal air wasn't just "inefficient." It meant the elderly people in the block next to mine would be wearing coats indoors. It meant condensation, mold, and a visceral, creeping misery that the Compiler's sensors translated as merely "sub-optimal comfort."
+I looked at the window. Outside, the frost was thick on the glass; inside, $17.2^\circ C$ in this damp coastal air wasn't just "inefficient." It meant the elderly people in the block next to mine would be wearing coats indoors. It meant condensation, mold, and a visceral, creeping misery that the Compiler's sensors translated as merely "sub-optimal comfort."
 
 The screen pulsed softly. The "Approve" button was locked, a countdown timer ticking down from 120 seconds. The system enforcing *Latency as Mercy*. It forced me to sit with the discomfort of the trade-off.
 
