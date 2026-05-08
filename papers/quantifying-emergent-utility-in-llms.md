@@ -102,3 +102,6 @@ Secure alignment requires the integration of biological, finite constraints: the
 7. Domingos, P. (2025). *Tensor Logic.* Preprint.
 8. Bak, P., Tang, C. & Wiesenfeld, K. (1987). *Self-organized criticality: An explanation of 1/f noise.* Physical Review Letters.
 9. Mazeika, M. et al. (2025). *Utility Engineering.* Preprint.
+
+
+> Related work map: `meta/research-alignment/related-work-map.md`.

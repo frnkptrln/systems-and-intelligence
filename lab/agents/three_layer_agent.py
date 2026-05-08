@@ -256,3 +256,6 @@ class ThreeLayerAgent(AgentBase):
         if self.layer2:
             return "Layer 2 Themes: " + " | ".join(self.layer2[-3:])
         return "No identity formed yet."
+
+
+# Related work: see meta/research-alignment/related-work-map.md
