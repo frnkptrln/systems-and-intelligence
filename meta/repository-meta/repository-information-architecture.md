@@ -101,8 +101,8 @@ Recommended conceptual architecture:
 |:---|:---|:---|
 | Entry point | `README.md`, `docs/index.md` | Short orientation and one reading path |
 | Core claims | `theory/` (sub-dirs: `core/`, `veto/`, `emergence/`, `identity/`, `symbiotic/`, `narrative/`, `reference/`, `teo-framework/`, `human-organism-silicon-age/`), `papers/`, `docs/book/` | Synthesis layer and publication packaging |
-| Models | `simulation-models/`, `core/`, `systems-orchestration/` | Executable demonstrations and reusable primitives |
-| Lab | `logs/`, `benchmarks/`, `agentic-test-suite/`, `fiction/`, `tools/`, `data-analysis/` | Experiments, stress tests, applied designs, narrative probes |
+| Models | `simulation-models/`, `lab/core/`, `lab/orchestration/` | Executable demonstrations and reusable primitives |
+| Lab | `logs/`, `fiction/`, `lab/benchmarks/`, `lab/experiments/`, `lab/tools/`, `lab/data-analysis/` | Experiments, stress tests, applied designs, narrative probes |
 | Meta | `meta/` | Information architecture, epistemic notes, maintenance rules |
 
 The architecture should optimize for navigability, not taxonomy purity.
@@ -164,7 +164,7 @@ Custom terms should be kept, but anchored to known concepts.
 When adding a new artifact, ask:
 
 1. **Is this primarily runnable?**  
-   → put in `simulation-models/`, `core/`, or `systems-orchestration/`.
+   → put in `simulation-models/`, `lab/core/`, or `lab/orchestration/`.
 2. **Is this primarily a formal argument?**  
    → put in `theory/`.
 3. **Is this optimized for linear reading?**  

@@ -25,7 +25,12 @@ class TestCTMNLM(unittest.TestCase):
     def setUp(self):
         # Allow importing the CTM mini-package from the repo root.
         repo_root = os.path.join(os.path.dirname(__file__), "..")
-        ctm_root = os.path.join(repo_root, "simulation-models", "continuous-thought-machines")
+        ctm_root = os.path.join(
+            repo_root,
+            "simulation-models",
+            "cognitive-architectures",
+            "continuous-thought-machines",
+        )
         sys.path.append(ctm_root)
 
     def test_nlm_shapes(self):
@@ -56,4 +61,3 @@ class TestCTMNLM(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

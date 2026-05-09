@@ -49,7 +49,7 @@ The critical question — and the empirical test — is whether $\text{IP}_c$ ex
 
 > An agent architecture that enforces parallel evaluation of all identity components (goals, constraints, values) in a single forward pass will exhibit measurably different Δ-Kohärenz profiles than an architecture that evaluates them sequentially — even if both architectures produce identical outputs on static benchmarks.
 
-This prediction distinguishes architectural identity (instantiation) from behavioral identity (simulation) and can be tested using the `agentic-test-suite` perturbation experiments.
+This prediction distinguishes architectural identity (instantiation) from behavioral identity (simulation) and can be tested using the Agentic Identity Suite perturbation experiments.
 
 ---
 

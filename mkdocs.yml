@@ -25,6 +25,7 @@ nav:
           - "Part 6: The Thermodynamic Mirror": book/06_the_thermodynamic_mirror.md
           - Bibliography: book/07_bibliography.md
           - "Part 7: Cities as Metabolic Organisms": book/08_cities_as_metabolic_organisms.md
+          - "Course Spine: From Rule to Mind": book/09_from_rule_to_mind.md
       - "Core Theory":
           - The Emergence Manifesto: theory/core/emergence-manifesto-v1.2.md
           - Thermodynamics of Orchestration (TEO): theory/core/thermodynamics-of-orchestration.md
@@ -44,11 +45,14 @@ nav:
           - Grokking Phase Transition: theory/emergence/grokking-phase-transition.md
           - Black Swans & Downward Causation: theory/emergence/black-swans-and-downward-causation.md
           - Fractal Architecture of Emergence: theory/emergence/fractal-architecture-of-emergence.md
+          - Generative Form Systems: theory/emergence/generative-form-systems.md
+          - Across Scales: theory/emergence/scale-comparison-map.md
           - AI Alignment Veto: theory/veto/ai-alignment-biological-veto.md
           - Implementation Patterns: theory/veto/implementation-patterns-biological-veto.md
           - Minimal Thermodynamic Agent: theory/identity/minimal-thermodynamic-agent.md
           - Emergence & Origin of Intelligence: theory/emergence/emergence-origin-intelligence.md
           - Weak vs Strong Emergence: theory/emergence/emergence-downward-causation.md
+          - Consciousness as Global Availability: theory/identity/consciousness-as-global-availability.md
           - The Non-Individual Intelligence: theory/identity/the-non-individual-intelligence.md
           - Agentic Society Principles: theory/identity/agentic-society-principles.md
           - Black Hole Thermodynamics: theory/veto/black-hole-thermodynamics-of-agi.md
@@ -85,6 +89,8 @@ nav:
           - Boids Flocking: simulation-models/emergent-dynamics/boids-flocking/README.md
           - Coupled Oscillators: simulation-models/emergent-dynamics/coupled-oscillators/README.md
           - Reaction-Diffusion: simulation-models/emergent-dynamics/reaction-diffusion/README.md
+          - Iterated Function Systems: simulation-models/emergent-dynamics/iterated-function-systems/README.md
+          - L-Systems: simulation-models/emergent-dynamics/l-systems/README.md
           - Lenia: simulation-models/emergent-dynamics/lenia/README.md
           - Phase Transition Explorer: simulation-models/emergent-dynamics/phase-transition-explorer/README.md
           - Self-Organized Criticality: simulation-models/emergent-dynamics/self-organized-criticality/README.md
@@ -168,6 +174,7 @@ nav:
   - "Meta":
       - Overview: meta/README.md
       - Repository Architecture: meta/repository-meta/repository-information-architecture.md
+      - Repository as Thought System: meta/repository-meta/repository-as-thought-system.md
       - Core Claims: meta/repository-meta/core-claims.md
       - Speculative Writing Guidelines: meta/repository-meta/speculative-writing-guidelines.md
       - Cultural Optimization Red Team Manual: meta/repository-meta/cultural-optimization-red-team-manual.md

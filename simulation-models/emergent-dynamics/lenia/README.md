@@ -85,7 +85,7 @@ environment) – raising the question of where "life" begins.
 ## ▶ Run
 
 ```bash
-cd simulation-models/lenia
+cd simulation-models/emergent-dynamics/lenia
 python3 lenia.py
 ```
 

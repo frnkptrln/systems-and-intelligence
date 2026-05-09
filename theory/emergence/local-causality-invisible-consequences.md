@@ -2,10 +2,10 @@
 title: "Local Causality and Invisible Consequences: The Shared Architecture of Emergence"
 date: "2026-03-06"
 connects_to:
-  - theory/mathematical-axioms.md
-  - theory/emergence-downward-causation.md
-  - theory/agentic-society-principles.md
-  - theory/ai-alignment-biological-veto.md
+  - theory/core/mathematical-axioms.md
+  - theory/emergence/emergence-downward-causation.md
+  - theory/identity/agentic-society-principles.md
+  - theory/veto/ai-alignment-biological-veto.md
   - lab/metrics/delta_coherence.py
   - lab/data-analysis/
 simulations_referenced:
@@ -58,7 +58,7 @@ In computability theory, the behavior of certain systems cannot be predicted wit
 
 The Algorithmic Complexity $K(x)$ of a global state measures the length of the shortest program that produces it. When $K(x)$ approaches the length of $x$ itself, the state is incompressible: there is no shorter description. The local rules of Boids, Kuramoto, or Bak's sandpile are vastly shorter than the global patterns they produce. The gap between the two — between the brevity of the rule and the richness of the result — is the space in which emergence operates. No grain of sand can hold the statistics of all avalanches. No oscillator can hold the global phase portrait. The representation would exceed the capacity of the local process, because the global state is exactly that which cannot be compressed into any single local frame.
 
-This is formalized in `theory/mathematical-axioms.md` as one of the axioms of the computational ecology: the uncomputability of $K(x)$ is not a practical obstacle. It is a structural feature of any system complex enough to produce genuinely novel behavior.
+This is formalized in `theory/core/mathematical-axioms.md` as one of the axioms of the computational ecology: the uncomputability of $K(x)$ is not a practical obstacle. It is a structural feature of any system complex enough to produce genuinely novel behavior.
 
 ### 2.2 The Neuroscientific Version
 
@@ -78,7 +78,7 @@ Mirroring — the reproduction of patterns from its training data or conversatio
 
 Noise — contextually disconnected outputs that appear locally plausible but form no global pattern.
 
-The agent cannot observe its own Δ-Kohärenz. It cannot determine, from the inside, whether its Layer 3 distillation in the three-layer memory architecture represents genuine compression of experience into principle, or whether it is an artifact of the curation algorithm. The Δ-Kohärenz metric in `agentic-test-suite/metrics/delta_coherence.py` is precisely an attempt to measure from the outside what the agent itself cannot observe: the global property of directional coherent evolution across time.
+The agent cannot observe its own Δ-Kohärenz. It cannot determine, from the inside, whether its Layer 3 distillation in the three-layer memory architecture represents genuine compression of experience into principle, or whether it is an artifact of the curation algorithm. The Δ-Kohärenz metric in `lab/metrics/delta_coherence.py` is precisely an attempt to measure from the outside what the agent itself cannot observe: the global property of directional coherent evolution across time.
 
 This is not a deficiency unique to AI. It is the condition of all local processes in complex systems. The neuron cannot observe the thought. The Boid cannot observe the flock. The agent cannot observe its own coherence. The structural analogy is not metaphorical — it is architectural. In each case, a component executes based on local information and contributes to a global state that is epistemically inaccessible to it.
 
@@ -92,7 +92,7 @@ Consider pheromone trails in the stigmergy swarm simulation. An early ant deposi
 
 This pattern recurs across every model in the repository. Transfer entropy, measured in `data-analysis/`, quantifies directed information flow between variables — it can detect that X causally influences Y more than Y influences X. But it operates on statistical aggregates, not on individual events. You can determine that early stigmergic deposits causally shape later path choices. You cannot attribute a specific path to a specific ant. The causal credit is structurally distributed in a way that resists decomposition.
 
-The three-layer memory architecture in `agentic-test-suite/` exhibits the same compounding problem at the level of identity formation. Layer 3 distillations — the agent's core principles — are caused by the cumulative effect of sessions stored in Layer 1 and curated in Layer 2. But the distillation is, by design, a lossy compression. The individual sessions that shaped a principle are no longer individually recoverable from the principle. The cause is embedded in the effect in a way that cannot be unwound. This is not an engineering flaw. It is the mechanism by which identity forms: through forgetting the specifics and retaining the structure.
+The three-layer memory architecture in `lab/` exhibits the same compounding problem at the level of identity formation. Layer 3 distillations — the agent's core principles — are caused by the cumulative effect of sessions stored in Layer 1 and curated in Layer 2. But the distillation is, by design, a lossy compression. The individual sessions that shaped a principle are no longer individually recoverable from the principle. The cause is embedded in the effect in a way that cannot be unwound. This is not an engineering flaw. It is the mechanism by which identity forms: through forgetting the specifics and retaining the structure.
 
 The mathematics of emergence is not addition. It is not multiplication. It is a change in the base rate of what becomes possible — and that change is invisible to the process that caused it. A single pheromone deposit does not create a path. It shifts the probability distribution over future paths in a way that no individual ant can observe. A single session does not create a principle. It shifts the distribution over future distillations in a way that no single session can predict. The consequence is real. The attribution is structurally impossible.
 
@@ -132,12 +132,12 @@ The neuron doesn't get to watch the thought form. The grain doesn't get to watch
 
 | Claim | Formalism | Repository Location |
 |:------|:----------|:--------------------|
-| Local blindness is the baseline condition | Algorithmic Complexity $K(x)$ | [`theory/mathematical-axioms.md`](../core/mathematical-axioms.md) |
-| Global coherence without central coordination | Fiedler value $\lambda_2$ (graph connectivity) | [`theory/mathematical-axioms.md`](../core/mathematical-axioms.md) |
+| Local blindness is the baseline condition | Algorithmic Complexity $K(x)$ | [`theory/core/mathematical-axioms.md`](../core/mathematical-axioms.md) |
+| Global coherence without central coordination | Fiedler value $\lambda_2$ (graph connectivity) | [`theory/core/mathematical-axioms.md`](../core/mathematical-axioms.md) |
 | Invisible causal propagation | Transfer Entropy | [`data-analysis/`](../../lab/data-analysis/README.md) |
 | Critical threshold for coherence collapse | Phase transition / Ising model | [`simulation-models/emergent-dynamics/phase-transition-explorer/`](../../simulation-models/emergent-dynamics/phase-transition-explorer/README.md) |
-| Agent's inability to observe own global properties | Δ-Kohärenz (Ω) | [`agentic-test-suite/metrics/delta_coherence.py`](../../lab/metrics/delta_coherence.py) |
-| Self-referential closure as minimum condition | Free Energy $F$ (Active Inference) | [`theory/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md) |
+| Agent's inability to observe own global properties | Δ-Kohärenz (Ω) | [`lab/metrics/delta_coherence.py`](../../lab/metrics/delta_coherence.py) |
+| Self-referential closure as minimum condition | Free Energy $F$ (Active Inference) | [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md) |
 
 ---
 

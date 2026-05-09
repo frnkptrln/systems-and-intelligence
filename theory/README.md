@@ -31,6 +31,8 @@ The thermodynamic constraint layer: why systems must respect physical limits.
 Structural claims about how local processes produce global behavior.
 
 - **[The Fractal Architecture of Emergence](emergence/fractal-architecture-of-emergence.md)** — Scale-invariant structure: neuron/brain, cell/organism, human/society, agent/MAS.
+- **[Generative Form Systems](emergence/generative-form-systems.md)** — Barnsley, IFS, L-systems, Erdős-Rényi thresholds, and renormalization as one disciplined bridge.
+- **[Across Scales](emergence/scale-comparison-map.md)** — Scale comparison from functions and cells to consciousness, institutions, black holes, and the repository itself.
 - **[Emergence & Downward Causation](emergence/emergence-downward-causation.md)** — Weak vs. strong emergence, epistemic humility.
 - **[Emergence and the Origin of Intelligence](emergence/emergence-origin-intelligence.md)** — The feedback loop between life and intelligence.
 - **[Local Causality and Invisible Consequences](emergence/local-causality-invisible-consequences.md)** — The shared architecture across all models.
@@ -46,6 +48,7 @@ What makes a system a *self* rather than a process.
 - **[Principles of the Agentic Society](identity/agentic-society-principles.md)** — R-Index, Information Firewalls, Stigmergic Memory.
 - **[Minimal Thermodynamic Agent](identity/minimal-thermodynamic-agent.md)** — Operationalizing TEO into executable agents.
 - **[Limits of Formal Systems](identity/limits-of-formal-systems.md)** — Gödel, Turing, Chaitin: intelligence operates *at* limits, not beyond them.
+- **[Consciousness as Global Availability](identity/consciousness-as-global-availability.md)** — Consciousness framed as broadcast, integration, boundary maintenance, and perturbation response.
 
 ## Symbiotic Organ Hypothesis
 

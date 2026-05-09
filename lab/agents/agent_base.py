@@ -1,7 +1,7 @@
 """
 Agent Base Class
 -----------------
-Abstract interface that all agents in the Agentic Test Suite must implement.
+Abstract interface that all agents in the Agentic Identity Suite must implement.
 
 Every agent must support:
 - process(): Core response generation (mock or LLM)

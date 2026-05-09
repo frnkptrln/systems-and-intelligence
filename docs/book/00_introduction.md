@@ -24,6 +24,8 @@ As outlined in the [Emergence Manifesto v1.2](../theory/core/emergence-manifesto
 4. **Part 4 — Macro-Structures:** From agent ecologies to civilizations. Dupoux's developmental constraints. Attractor geometry of the TEO phase space.
 5. **Part 5 — Future Perspectives:** The Co-Instantiation Problem, the Hardware Frontier, and the open questions that remain.
 6. **Part 6 — The Thermodynamic Mirror:** The mathematics of AI as a diagnostic tool for human civilization. Why we are the paperclip maximizer. The exit conditions.
-7. **Bibliography & References.**
+7. **Part 7 — Cities as Metabolic Organisms:** The city as a living metabolic system with vital floors, waste flows, and governance constraints.
+8. **Course Spine — From Rule to Mind:** The compact path tying the repository together: operator → iteration → form → boundary → return path.
+9. **Bibliography & References.**
 
 > **The Code is the Theory**: Every claim made in this book is backed by a runnable Python simulation in the repository. We do not use metaphors; we use mathematics.

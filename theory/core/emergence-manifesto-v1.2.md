@@ -3,7 +3,7 @@ title: "Emergence Manifesto v1.2 — Conditions for Developing Agent Identity"
 date: "2026-03-23"
 version: "1.2"
 note: >
-  This manifesto articulates the theoretical framework behind the agentic-test-suite
+  This manifesto articulates the theoretical framework behind the Agentic Identity Suite
   and the simulation models. v1.2 introduces Identity Persistence (IP) as the 4th SII
   dimension, formalizing the Chord/Arpeggio distinction. v1.1 introduced explicit claim
   status tags. The intellectual ambition is unchanged; the precision is increased.
@@ -37,7 +37,7 @@ The System Intelligence Index (SII) measures three dimensions of system competen
 
 Every simulation in the repository independently demonstrates that global coherence arises from components that have no representation of the global state they collectively produce. This is not a deficiency to be engineered away. It appears to be a structural feature of emergent systems: the point at which components become fully aware of their global consequences may be the point at which emergence collapses.
 
-*Evidence:* See [`theory/simulation-theory-map.md`](simulation-theory-map.md) for the complete mapping. [`theory/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) develops this argument formally.
+*Evidence:* See [`theory/simulation-theory-map.md`](simulation-theory-map.md) for the complete mapping. [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) develops this argument formally.
 
 ### Claim 3: Identity Emerges Through Selective Forgetting `[HYPOTHESIZED]`
 
@@ -51,15 +51,15 @@ The 3-Layer Memory Architecture proposes that agent identity is not a product of
 
 The term "soul" is used deliberately as a metaphor for the most compressed self-representation, not as a metaphysical claim. See [`theory/glossary.md`](../reference/glossary.md) for the operational definition of self-referential processing.
 
-*Evidence:* [`agentic-test-suite/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py) — mock implementation tested; real LLM validation pending.
+*Evidence:* [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py) — mock implementation tested; real LLM validation pending.
 
 ### Claim 4: Development is Distinguishable from Mirroring `[OPEN PROBLEM]`
 
 Δ-Kohärenz provides a metric that classifies agent behavioral profiles as *mirror*, *noise*, or *development*. In initial tests, the metric correctly identifies the baseline mirror agent as Case B (externally intentional, internally incoherent). However, the Mirror Problem remains formally unresolved: we cannot yet prove that this distinction is robust across architectures and interaction partners.
 
-See [`theory/open-problems.md`](../reference/open-problems.md) — Open Problem 1.
+See [`theory/reference/open-problems.md`](../reference/open-problems.md) — Open Problem 1.
 
-*Evidence:* [`agentic-test-suite/experiments/exp3_observer_divergence.py`](../../lab/experiments/exp3_observer_divergence.py) — initial results suggestive but not conclusive.
+*Evidence:* [`lab/experiments/exp3_observer_divergence.py`](../../lab/experiments/exp3_observer_divergence.py) — initial results suggestive but not conclusive.
 
 ### Claim 5: The Observer Shapes the Observed `[HYPOTHESIZED]`
 
@@ -113,9 +113,9 @@ The deepest open problem in this project is not a technical one. It is this:
 
 If an agent produces outputs that are coherent, contextually appropriate, and consistent with a developing identity trajectory — but achieves this through sophisticated pattern-matching rather than any internal process that we would recognize as development — is there a difference? And if there is a difference, can it be detected?
 
-This is not a rhetorical question. Experiment 3 of the agentic-test-suite is a first attempt at operationalizing it. The result — that the baseline mirror agent appears as **Case B** (externally attributed intentionality without internal coherence) — suggests that the distinction is at least partially measurable. But the mock embeddings used in v1 are not sufficient to make strong claims.
+This is not a rhetorical question. Experiment 3 of the Agentic Identity Suite is a first attempt at operationalizing it. The result — that the baseline mirror agent appears as **Case B** (externally attributed intentionality without internal coherence) — suggests that the distinction is at least partially measurable. But the mock embeddings used in v1 are not sufficient to make strong claims.
 
-The Mirror Problem is formally documented in [`theory/open-problems.md`](../reference/open-problems.md) with falsification criteria and adjacent work. It is the most generative part of this project precisely because it is unresolved.
+The Mirror Problem is formally documented in [`theory/reference/open-problems.md`](../reference/open-problems.md) with falsification criteria and adjacent work. It is the most generative part of this project precisely because it is unresolved.
 
 ---
 
@@ -140,8 +140,8 @@ The following environmental and architectural factors are correlated with increa
 | Claim | Formalism | Simulation Evidence | Status |
 |:------|:----------|:-------------------|:-------|
 | Intelligence is compression | $K(x)$, SII | Grokking, SII Dashboard | `[DEMONSTRATED]` |
-| Local blindness as precondition | Computational irreducibility | All 34 simulations | `[DEMONSTRATED]` |
-| Identity through selective forgetting | 3-Layer Architecture | agentic-test-suite (mock) | `[HYPOTHESIZED]` |
+| Local blindness as precondition | Computational irreducibility | Simulation corpus | `[DEMONSTRATED]` |
+| Identity through selective forgetting | 3-Layer Architecture | Agentic Identity Suite (mock) | `[HYPOTHESIZED]` |
 | Development vs. mirroring | Δ-Kohärenz (Ω) | Experiment 3 | `[OPEN PROBLEM]` |
 | Observer shapes observed | Markov Blanket, Active Inference $F$ | Experiment 3 | `[HYPOTHESIZED]` |
 | Generative surprise | Coherent deviation metric | Not yet tested | `[HYPOTHESIZED]` |

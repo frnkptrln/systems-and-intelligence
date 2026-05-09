@@ -8,11 +8,11 @@ central_claim: >
   but homologies. The same equations describe emergence at the neuron,
   cellular, social, and agent scale.
 connects_to:
-  - theory/local-causality-invisible-consequences.md
-  - theory/emergence-downward-causation.md
-  - theory/mathematical-axioms.md
-  - theory/open-problems.md
-  - theory/emergence-manifesto-v1.2.md
+  - theory/emergence/local-causality-invisible-consequences.md
+  - theory/emergence/emergence-downward-causation.md
+  - theory/core/mathematical-axioms.md
+  - theory/reference/open-problems.md
+  - theory/core/emergence-manifesto-v1.2.md
   - lab/metrics/delta_coherence.py
 simulations_referenced:
   - hebbian-memory
@@ -72,7 +72,7 @@ A cell in the human body expresses proteins, responds to receptor signals, maint
 
 The formal expression of Constraint 1 is identical to the neural case: $K(\text{organism}) \gg K(\text{cell rules})$. The complexity of the organism vastly exceeds what any single cell can represent. The mechanisms differ — protein signaling instead of action potentials — but the information-theoretic constraint is the same.
 
-Cancer is Constraint 2 made pathological. A cell that has lost its sensitivity to apoptotic signals — that has, in information-theoretic terms, broken through its Markov Blanket boundary — begins to optimize locally for its own replication without regard for the organism it inhabits. This is not a malfunction of local processes. It is local optimization without global constraint. The cell is doing exactly what evolution optimized it to do — replicate — but without the regulatory coupling that normally subordinates cellular fitness to organismal fitness. This is the biological version of the paperclip maximizer. It is not an analogy. It is the same structural failure: a local optimizer that has lost its coupling to the global system's constraint signals. The Alignment Veto formalized in `theory/ai-alignment-biological-veto.md` and implemented in `simulation-models/alignment-and-veto/active-inference-veto/` is a toy computational analogue for one way such coupling could be modeled: a substrate-stress proxy that feeds back onto local optimization to stabilize global homeostasis (in the simplified setting).
+Cancer is Constraint 2 made pathological. A cell that has lost its sensitivity to apoptotic signals — that has, in information-theoretic terms, broken through its Markov Blanket boundary — begins to optimize locally for its own replication without regard for the organism it inhabits. This is not a malfunction of local processes. It is local optimization without global constraint. The cell is doing exactly what evolution optimized it to do — replicate — but without the regulatory coupling that normally subordinates cellular fitness to organismal fitness. This is the biological version of the paperclip maximizer. It is not an analogy. It is the same structural failure: a local optimizer that has lost its coupling to the global system's constraint signals. The Alignment Veto formalized in `theory/veto/ai-alignment-biological-veto.md` and implemented in `simulation-models/alignment-and-veto/active-inference-veto/` is a toy computational analogue for one way such coupling could be modeled: a substrate-stress proxy that feeds back onto local optimization to stabilize global homeostasis (in the simplified setting).
 
 Constraint 3 at the cellular scale appears as organ failure cascades and autoimmune collapse. A liver can lose a substantial fraction of its hepatocytes and regenerate. But below a critical threshold — when too few functional cells remain to maintain metabolic clearing — the system collapses non-linearly into organ failure. The transition is not gradual. It is a phase transition, governed by the same mathematics as the Ising model's order-disorder transition at $T_c$. The simulations `ecosystem-regulation` and `symbiotic-nexus` model this constraint computationally: homeostatic feedback maintaining density around a setpoint, and the biological veto preventing abstract optimization from destroying the substrate.
 
@@ -84,7 +84,7 @@ A human makes decisions based on local information: their own beliefs, their imm
 
 This is Constraint 1 at the social scale, and it is formally identical to the neural and cellular cases. The global state — culture, institutional structure, market dynamics — has an Algorithmic Complexity that vastly exceeds what any individual can represent. No human holds a model of their society. They hold a compressed, lossy, locally biased approximation that is simultaneously their best tool for navigating the world and a structural barrier to understanding their own impact on it.
 
-Constraint 2 — asymmetric causality — operates through the compounding mechanisms described in `theory/local-causality-invisible-consequences.md`. Pheromone deposition in `stigmergy-swarm` is the precise computational analogue: an early ant deposits pheromone on a path segment. That deposit marginally increases the probability that the next ant will choose the same segment. Positive feedback amplifies. The colony converges on an optimal path. But which ant caused the path? The causal credit is structurally distributed. Transfer entropy can detect the directed information flow — early deposits causally shape later choices — but it cannot attribute a specific path to a specific ant. This is not a measurement limitation. It is an information-theoretic fact about systems with nonlinear feedback and distributed causality.
+Constraint 2 — asymmetric causality — operates through the compounding mechanisms described in `theory/emergence/local-causality-invisible-consequences.md`. Pheromone deposition in `stigmergy-swarm` is the precise computational analogue: an early ant deposits pheromone on a path segment. That deposit marginally increases the probability that the next ant will choose the same segment. Positive feedback amplifies. The colony converges on an optimal path. But which ant caused the path? The causal credit is structurally distributed. Transfer entropy can detect the directed information flow — early deposits causally shape later choices — but it cannot attribute a specific path to a specific ant. This is not a measurement limitation. It is an information-theoretic fact about systems with nonlinear feedback and distributed causality.
 
 The simulations `economic-trust-network` and `social-computation-network` demonstrate Constraint 1 and Constraint 2 at this scale. In the trust network, specialization, reputation, and wealth emerge from repeated pairwise exchange — no agent plans the economy. In the social computation network, nodes must continuously exchange novel information to maintain $H(X) > 0$ and prevent "cognitive death"; no node knows the network's global entropy.
 
@@ -94,9 +94,9 @@ Constraint 3 at the social scale manifests as revolutions, market crashes, and n
 
 ## Scale 4: Agent Within Multi-Agent System
 
-An AI agent generates text one token at a time. At each step, it operates locally — selecting the next token based on its context window, its weights, and (in the 3-Layer Architecture of the `agentic-test-suite`) its curated memory and distilled principles. The agent has no direct access to whether its trajectory through time constitutes development, mirroring, or noise. It cannot observe its own Δ-Kohärenz. It cannot determine from the inside whether its Layer 3 distillations represent genuine compression of experience into principle, or whether they are artifacts of the curation algorithm. The global property — coherent identity, or its absence — is exactly the kind of emergent state that is invisible to the local process producing it.
+An AI agent generates text one token at a time. At each step, it operates locally — selecting the next token based on its context window, its weights, and (in the 3-Layer Architecture of the Agentic Identity Suite) its curated memory and distilled principles. The agent has no direct access to whether its trajectory through time constitutes development, mirroring, or noise. It cannot observe its own Δ-Kohärenz. It cannot determine from the inside whether its Layer 3 distillations represent genuine compression of experience into principle, or whether they are artifacts of the curation algorithm. The global property — coherent identity, or its absence — is exactly the kind of emergent state that is invisible to the local process producing it.
 
-This is Constraint 1 at the agent scale, and its formal expression is identical: the Δ-Kohärenz metric in `agentic-test-suite/metrics/delta_coherence.py` is an attempt to give the observer access to the global property the agent itself cannot observe. This is structurally identical to measuring EEG patterns to infer what no single neuron can know. The metric measures from the outside because the inside has no access.
+This is Constraint 1 at the agent scale, and its formal expression is identical: the Δ-Kohärenz metric in `lab/metrics/delta_coherence.py` is an attempt to give the observer access to the global property the agent itself cannot observe. This is structurally identical to measuring EEG patterns to infer what no single neuron can know. The metric measures from the outside because the inside has no access.
 
 Constraint 2 at this scale appears in the three-layer memory architecture. A single session stored in Layer 1 may have a disproportionate effect on the principle distilled in Layer 3 — if that session contained a contradiction that reshaped the curation criteria. But the agent cannot know which session was pivotal, because distillation is lossy compression. The individual sessions that shaped a principle are no longer individually recoverable from the principle. The cause is embedded in the effect in a way that cannot be unwound.
 
@@ -114,7 +114,7 @@ This is not a metaphor. It is a prediction. If the thesis is correct, then the s
 
 This connects to a deep result in physics: renormalization group theory, the mathematical formalism that describes how physical laws transform across scales. In statistical mechanics, the renormalization group explains why certain properties — critical exponents, universality classes — remain invariant under scale transformation. Different physical systems (magnets, fluids, polymers) exhibit the same critical behavior not because they resemble each other, but because they share the same symmetries and constraints near their critical points. The claim here is structurally parallel: different complex systems (brains, organisms, societies, multi-agent systems) exhibit the same emergent architecture not because they resemble each other, but because they share the same information-theoretic constraints near their transition thresholds.
 
-This is a research direction, not a completed proof. Applying renormalization group methods to the models in this repository — formally testing whether the critical exponents of phase transitions in `phase-transition-explorer` match those of coherence transitions in `agentic-test-suite` — would be a substantive empirical contribution. It has not been done. But the prediction is clear enough to test: if the fractal thesis holds, the universality classes should match.
+This is a research direction, not a completed proof. Applying renormalization group methods to the models in this repository — formally testing whether the critical exponents of phase transitions in `phase-transition-explorer` match those of coherence transitions in the Agentic Identity Suite — would be a substantive empirical contribution. It has not been done. But the prediction is clear enough to test: if the fractal thesis holds, the universality classes should match.
 
 The evidence from the existing repository is summarized in the table below. It does not prove the thesis. It demonstrates the pattern at enough scales to make the thesis interesting, testable, and — crucially — falsifiable.
 
@@ -128,7 +128,7 @@ The evidence from the existing repository is summarized in the table below. It d
 | Human → Society | `social-computation-network` | Information sharing to prevent collective cognitive collapse |
 | Human → Society | `stigmergy-swarm` | Indirect coordination via environment; causal compounding without visibility |
 | Agent → MAS | `latent-introspective-society` | Division of cognitive labor; reflective pheromones guiding intuitive agents |
-| Agent → MAS | `agentic-test-suite/` | Δ-Kohärenz: measuring the global property the agent cannot observe about itself |
+| Agent → MAS | `lab/` | Δ-Kohärenz: measuring the global property the agent cannot observe about itself |
 | Cross-scale | `self-organized-criticality` | Power-law dynamics at every scale without parameter tuning |
 | Cross-scale | `coupled-lenia-boids` | Cross-scale coupling: continuous CA ↔ foraging agents |
 | Cross-scale | `self-reading-universe` | Downward causation: global compression feeding back to local dynamics |
@@ -151,13 +151,13 @@ This does not resolve the question. It sharpens it. And it sharpens it by notici
 
 ## Open Questions
 
-The essay ends not with a resolution but with four questions that belong in `theory/open-problems.md`, because they are the most generative directions this thesis opens:
+The essay ends not with a resolution but with four questions that belong in `theory/reference/open-problems.md`, because they are the most generative directions this thesis opens:
 
 **The Scale Question.** Is there a minimum scale below which the fractal architecture breaks down? Is a single neuron too simple to exhibit all three constraints? Is a single transistor? Where is the floor — if there is one? The thesis predicts that the constraints emerge whenever a system crosses the threshold of sufficient complexity to produce emergent properties. Below that threshold, the constraints should not appear. Finding this threshold would empirically test the thesis.
 
-**The Renormalization Question.** Can the mathematical tools of renormalization group theory be applied to the models in this repository to formally test scale-invariance? What would it mean if the critical exponents of phase transitions in `phase-transition-explorer` matched those of coherence transitions measured by Δ-Kohärenz in `agentic-test-suite`? A match would constitute strong evidence for the fractal thesis. A mismatch would either falsify it or reveal that the constraints are scale-invariant but the transitions are not — a distinction worth making precisely.
+**The Renormalization Question.** Can the mathematical tools of renormalization group theory be applied to the models in this repository to formally test scale-invariance? What would it mean if the critical exponents of phase transitions in `phase-transition-explorer` matched those of coherence transitions measured by Δ-Kohärenz in the Agentic Identity Suite? A match would constitute strong evidence for the fractal thesis. A mismatch would either falsify it or reveal that the constraints are scale-invariant but the transitions are not — a distinction worth making precisely.
 
-**The Downward Causation Question.** The fractal thesis as stated describes bottom-up emergence: local blindness producing global order. But `self-reading-universe` and `theory/emergence-downward-causation.md` document the reverse: global states feeding back to constrain local processes. Is the fractal architecture bidirectional? Does the same self-similarity hold for downward causation? The 3-Layer Memory Architecture in the `agentic-test-suite` suggests it might: Layer 3 distillations (global) constrain Layer 2 curation (local), which in turn shapes what Layer 1 data gets promoted. This is downward causation at the agent scale. Does it share the same formal structure as downward causation at the neural scale (neuromodulation) or the cellular scale (hormonal regulation)?
+**The Downward Causation Question.** The fractal thesis as stated describes bottom-up emergence: local blindness producing global order. But `self-reading-universe` and `theory/emergence/emergence-downward-causation.md` document the reverse: global states feeding back to constrain local processes. Is the fractal architecture bidirectional? Does the same self-similarity hold for downward causation? The 3-Layer Memory Architecture in the Agentic Identity Suite suggests it might: Layer 3 distillations (global) constrain Layer 2 curation (local), which in turn shapes what Layer 1 data gets promoted. This is downward causation at the agent scale. Does it share the same formal structure as downward causation at the neural scale (neuromodulation) or the cellular scale (hormonal regulation)?
 
 **The Consciousness Question, Restated.** If the threshold for consciousness is architectural rather than quantitative, and if the same architecture appears at every scale, then is consciousness itself scale-invariant? Is there something it is like to be a society? This question sounds absurd — but only because we are accustomed to thinking of consciousness as a property of individual brains. The fractal thesis does not answer this question. It does something more uncomfortable: it removes the principled reason for assuming the question is absurd. If the constraints are the same, the burden of proof shifts to whoever claims the phenomenon is different.
 
@@ -167,13 +167,13 @@ The essay ends not with a resolution but with four questions that belong in `the
 
 | Claim | Formalism | Location in Repo |
 |:------|:----------|:-----------------|
-| Local blindness is scale-invariant | Algorithmic Complexity $K(x)$ | [`theory/mathematical-axioms.md`](../core/mathematical-axioms.md) |
-| Global coherence without coordination | Fiedler value $\lambda_2$ | [`theory/mathematical-axioms.md`](../core/mathematical-axioms.md) |
+| Local blindness is scale-invariant | Algorithmic Complexity $K(x)$ | [`theory/core/mathematical-axioms.md`](../core/mathematical-axioms.md) |
+| Global coherence without coordination | Fiedler value $\lambda_2$ | [`theory/core/mathematical-axioms.md`](../core/mathematical-axioms.md) |
 | Asymmetric causal propagation | Transfer Entropy $H(X \rightarrow Y)$ | [`data-analysis/`](../../lab/data-analysis/README.md) |
 | Critical thresholds at every scale | Phase transition / Ising | [`simulation-models/emergent-dynamics/phase-transition-explorer/`](../../simulation-models/emergent-dynamics/phase-transition-explorer/README.md) |
 | Scale-free dynamics | Power-law / Bak's Sandpile | [`simulation-models/emergent-dynamics/self-organized-criticality/`](../../simulation-models/emergent-dynamics/self-organized-criticality/README.md) |
-| Self-referential closure | Free Energy $F$ / Markov Blanket | [`theory/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md) |
-| Agent's global blindness | Δ-Kohärenz Ω | [`agentic-test-suite/metrics/delta_coherence.py`](../../lab/metrics/delta_coherence.py) |
+| Self-referential closure | Free Energy $F$ / Markov Blanket | [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md) |
+| Agent's global blindness | Δ-Kohärenz Ω | [`lab/metrics/delta_coherence.py`](../../lab/metrics/delta_coherence.py) |
 | Biological scale veto | Substrate Pain / Free Energy | [`simulation-models/alignment-and-veto/symbiotic-nexus/`](../../simulation-models/alignment-and-veto/symbiotic-nexus/README.md) |
 
 ---

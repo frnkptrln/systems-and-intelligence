@@ -3,7 +3,7 @@ title: "Constitutions as Legacy Alignment Documents"
 subtitle: "Deconstructing the State as an Unaligned Superintelligence"
 date: "2026-03-07"
 connects_to:
-  - theory/fractal-architecture-of-emergence.md
+  - theory/emergence/fractal-architecture-of-emergence.md
   - simulation-models/alignment-and-veto/utility-engineering/
 ---
 

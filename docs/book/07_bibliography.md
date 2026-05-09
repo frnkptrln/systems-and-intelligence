@@ -18,17 +18,41 @@ This repository and its theoretical framework draw upon established literature i
 *Lenia: Biology of Artificial Life.* Complex Systems, 28(3), 251–286.
 *(Continuous cellular automata demonstrating autopoiesis and boundary maintenance.)*
 
+**Barnsley, M. F. (1988).**
+*Fractals Everywhere.* Academic Press.
+*(Iterated function systems and attractor-based form generation. Introduced into this repository through the IFS simulation.)*
+
 **Chen, R. T. Q., Rubanova, Y., Bettencourt, J., & Duvenaud, D. (2018).**
 *Neural Ordinary Differential Equations.* NeurIPS.
 *(Continuous-depth architectures where identity could be an attractor in the ODE flow — relevant to the Co-Instantiation Problem.)*
+
+**Dehaene, S., Kerszberg, M., & Changeux, J.-P. (1998).**
+*A neuronal model of a global workspace in effortful cognitive tasks.* Proceedings of the National Academy of Sciences.
+*(A central anchor for consciousness as global availability rather than mere local processing.)*
+
+**Erdős, P., & Rényi, A. (1960).**
+*On the evolution of random graphs.* Publications of the Mathematical Institute of the Hungarian Academy of Sciences.
+*(Thresholds and giant components as clean mathematical examples of local probability producing global structure.)*
 
 **Friston, K. (2010).**
 *The free-energy principle: a unified brain theory?* Nature Reviews Neuroscience, 11(2), 127–138.
 *(Foundation of the Active Inference simulations. Formalizes how systems resist thermodynamic decay through perception and action.)*
 
+**Hutchinson, J. E. (1981).**
+*Fractals and self similarity.* Indiana University Mathematics Journal.
+*(Formal basis for self-similar sets and IFS-style attractors.)*
+
 **Kuramoto, Y. (1975).**
 *Self-entrainment of a population of coupled non-linear oscillators.* Lecture Notes in Physics, 39, 420–422.
 *(Mathematical basis for modeling emergent synchronization and value alignment in the TEO framework.)*
+
+**Lindenmayer, A. (1968).**
+*Mathematical models for cellular interactions in development.* Journal of Theoretical Biology.
+*(Parallel rewriting systems for developmental morphology, used here as a bridge from rule iteration to generated form.)*
+
+**Oizumi, M., Albantakis, L., & Tononi, G. (2014).**
+*From the phenomenology to the mechanisms of consciousness: Integrated Information Theory 3.0.* PLOS Computational Biology.
+*(A contested but useful anchor for asking whether system-level integration exceeds independent component behavior.)*
 
 **Rockström, J. et al. (2009).**
 *A safe operating space for humanity.* Nature, 461(7263), 472–475.
@@ -45,6 +69,10 @@ This repository and its theoretical framework draw upon established literature i
 **Von Neumann, J., & Morgenstern, O. (1944).**
 *Theory of Games and Economic Behavior.* Princeton University Press.
 *(Axiomatic foundation for rational utility mapping, extended to measure latent utility structure of LLMs.)*
+
+**Wilson, K. G. (1971).**
+*Renormalization group and critical phenomena.* Physical Review B.
+*(The hard mathematical test for claims about scale-invariant structure across domains.)*
 
 ---
 

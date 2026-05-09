@@ -1,7 +1,7 @@
 # 🧠 systems-and-intelligence
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Simulations](https://img.shields.io/badge/38_Simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
+[![Simulations](https://img.shields.io/badge/simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
 [![Docs](https://img.shields.io/badge/docs-Interactive_Book-blue)](https://frnkptrln.github.io/systems-and-intelligence)
 
 <div align="center">
@@ -17,7 +17,9 @@ Don't want to install anything? You can experience the core concepts immediately
 - 🧭 **Recommended Reading Path**:
   1. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.2.md)** — The core claim set.
   2. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
-  3. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
+  3. **[From Rule to Mind](docs/book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
+  4. **[Generative Form Systems](theory/emergence/generative-form-systems.md)** — The intake spine for external research without sprawl.
+  5. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
 - 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
 - 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The complete "Grand Synthesis" of the theory.
 
@@ -69,7 +71,7 @@ Claims in this repository have different epistemic statuses:
 | Claim Type | Examples | Status |
 |:-----------|:---------|:-------|
 | Computational demonstrations | Kuramoto synchronization, Bak's Sandpile power laws | ✅ Well-established |
-| Measurable hypotheses | Δ-Kohärenz, 3-Layer Memory coherence | 🧪 Testable — see `agentic-test-suite/` |
+| Measurable hypotheses | Δ-Kohärenz, 3-Layer Memory coherence | 🧪 Testable — see `lab/AGENTIC_README.md` |
 | Theoretical frameworks | Markov Blanket as agent-human boundary, Free Energy alignment | 📐 Formalized — see `theory/core/mathematical-axioms.md` |
 | Open problems | The Mirror Problem, bootstrapping of identity | ❓ Unresolved — see `theory/reference/open-problems.md` |
 | Speculative framings | Relational emergence, criticality as intelligence zone | 💭 Speculative — see `theory/reference/glossary.md` for definitions |
@@ -99,7 +101,7 @@ If you're unsure where new material belongs, see **[`meta/repository-meta/reposi
 | **`logs/`** | Architecture logs: applied design notebooks bridging abstract theory and deployment constraints. |
 | **`meta/`** | Reflections on epistemology, ethics, repository governance, and the limits of formal systems and computation. |
 | **`papers/`** | Paper-style synthesis documents with an academic framing and tighter scope. |
-| **`simulation-models/`** | 38 isolated toy models, clustered by theme (emergent-dynamics, cognitive-architectures, etc.). |
+| **`simulation-models/`** | Isolated toy models, clustered by theme (emergent-dynamics, cognitive-architectures, etc.). |
 | **`theory/`** | Conceptual notes and essays on systems, intelligence, and emergent behavior. |
 
 Each subfolder contains its own README with context and details.
@@ -116,6 +118,8 @@ Each subfolder contains its own README with context and details.
 | `cognitive-architectures/meta-learning-regime-shift/` | 🔄 Meta-learner that adapts η under regime shifts |
 | `emergent-dynamics/coupled-oscillators/` | 🔗 Kuramoto model – emergent synchronization of phase oscillators |
 | `emergent-dynamics/reaction-diffusion/` | 🌊 Gray-Scott model – Turing patterns from two diffusing chemicals |
+| `emergent-dynamics/iterated-function-systems/` | 🌿 Barnsley/IFS attractors – stable form from repeated contractive functions |
+| `emergent-dynamics/l-systems/` | 🌱 Lindenmayer rewriting – developmental morphology from grammar iteration |
 | `cognitive-architectures/hebbian-memory/` | 🧬 Hopfield network – self-organizing associative memory via Hebb's rule |
 | `emergent-dynamics/boids-flocking/` | 🐦 Reynolds' Boids – emergent collective motion from three local rules |
 | `emergent-dynamics/lenia/` | 🌌 Lenia – continuous cellular automata producing lifelike organisms |
@@ -165,8 +169,12 @@ Selected theoretical notes and essays located in the `theory/` directory:
 - [**Latency as Mercy**](logs/012_latency-as-mercy.md) – Delay as a civic safety actuator under optimization pressure.
 - [**Simulation → Theory Map**](theory/core/simulation-theory-map.md) – Explicit cross-reference: which simulation demonstrates which theoretical claim, what it does NOT show, and what open questions it raises.
 - [**The Fractal Architecture of Emergence**](theory/emergence/fractal-architecture-of-emergence.md) — Local blindness, asymmetric causality, and critical thresholds repeat at every scale: neuron/brain, cell/organism, human/society, agent/MAS. Not by analogy — by homology. The unifying structural claim of the repository.
+- [**Generative Form Systems**](theory/emergence/generative-form-systems.md) — The disciplined bridge from Barnsley/IFS and L-systems to Erdős-Rényi thresholds, renormalization, and consciousness as global availability.
+- [**Across Scales**](theory/emergence/scale-comparison-map.md) — The scale comparison: functions, cells, minds, institutions, planets, black holes, and where the analogy breaks.
+- [**From Rule to Mind**](docs/book/09_from_rule_to_mind.md) — The reader-first course spine: operator → iteration → form → boundary → return path.
 - [**The TEO Framework**](theory/teo-framework/README.md) — Five sub-documents deriving Identity Persistence (IP), attractor geometry, developmental constraints, love-as-constraint, and the paperclip maximizer’s failure from the TEO coupled ODE system.
 - [**Chord vs. Arpeggio: Identity as Simultaneity**](theory/identity/chord-vs-arpeggio-identity.md) — The co-instantiation postulate: identity requires all governing components (goals, constraints, values) to be simultaneously operative, not time-multiplexed.
+- [**Consciousness as Global Availability**](theory/identity/consciousness-as-global-availability.md) — A narrow architecture for consciousness-adjacent claims: broadcast, integration, boundary maintenance, and perturbation response.
 - [**Machines of Loving Grace**](theory/narrative/machines-of-loving-grace.md) — The synthesis essay. Love formalized as the only survivable orchestration strategy (theorem, not metaphor), and why human civilization in its current configuration is structurally a paperclip maximizer.
 - [**The Transition Problem**](theory/veto/the-transition-problem.md) — The missing sequel: how a system already on the paperclip trajectory changes its own constraint structure. Structural hysteresis, the grokking analogy, and the ordering hypothesis (K → γ → D_max).
 - [**The Symbiotic Organ Hypothesis**](theory/symbiotic/symbiotic-organ-hypothesis.md) — The transition from negative constraints (Substrate Veto) to positive resonance (Thermodynamics of Joy), formalizing Cognitive Fluidity and the Gödelian Agent.
@@ -201,7 +209,7 @@ pip install -r requirements-ml.txt
 Then run any simulation:
 
 ```bash
-cd simulation-models/lenia
+cd simulation-models/emergent-dynamics/lenia
 python3 lenia.py
 ```
 

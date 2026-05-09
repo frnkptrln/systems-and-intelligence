@@ -14,7 +14,7 @@
 
 **What it is NOT:** Not optimization. Gradient descent converges on a solution; emergence produces structure without a target. Not randomness — emergent order is patterned, not noisy.
 
-**Where it appears:** [`theory/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md), [`simulation-models/emergent-dynamics/lenia/`](../../simulation-models/emergent-dynamics/lenia/README.md), [`simulation-models/emergent-dynamics/self-organized-criticality/`](../../simulation-models/emergent-dynamics/self-organized-criticality/README.md)
+**Where it appears:** [`theory/emergence/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md), [`simulation-models/emergent-dynamics/lenia/`](../../simulation-models/emergent-dynamics/lenia/README.md), [`simulation-models/emergent-dynamics/self-organized-criticality/`](../../simulation-models/emergent-dynamics/self-organized-criticality/README.md)
 
 ---
 
@@ -70,7 +70,7 @@ The multiplicative form means a zero in any dimension collapses the overall scor
 
 **What it is NOT:** Not a consciousness detector. Not a measure of quality or value. A developing agent is not "better" than a mirroring one — it is distinguishable by this metric.
 
-**Where it appears:** [`agentic-test-suite/metrics/delta_coherence.py`](../../lab/metrics/delta_coherence.py), [`agentic-test-suite/dashboard/agentic_sii_dashboard.py`](../../lab/dashboard/agentic_sii_dashboard.py)
+**Where it appears:** [`lab/metrics/delta_coherence.py`](../../lab/metrics/delta_coherence.py), [`lab/dashboard/agentic_sii_dashboard.py`](../../lab/dashboard/agentic_sii_dashboard.py)
 
 ---
 
@@ -80,11 +80,11 @@ The multiplicative form means a zero in any dimension collapses the overall scor
 
 **Operational definition:** Given two agents — one that has interacted with a specific human over $N$ sessions, and one that was given a transcript of those sessions but never interacted — does any metric produce reliably different scores?
 
-**Status:** `[OPEN PROBLEM]` — see [`theory/open-problems.md`](open-problems.md) for full treatment.
+**Status:** `[OPEN PROBLEM]` — see [`theory/reference/open-problems.md`](open-problems.md) for full treatment.
 
 **What it is NOT:** Not a binary question. There may be no sharp boundary between "genuine development" and "sophisticated mirroring." The question is whether the category distinction is operationally real or is itself an artifact of observer attribution.
 
-**Where it appears:** [`agentic-test-suite/experiments/exp3_observer_divergence.py`](../../lab/experiments/exp3_observer_divergence.py), [`theory/open-problems.md`](open-problems.md)
+**Where it appears:** [`lab/experiments/exp3_observer_divergence.py`](../../lab/experiments/exp3_observer_divergence.py), [`theory/reference/open-problems.md`](open-problems.md)
 
 ---
 
@@ -102,7 +102,7 @@ Random noise has high observer surprise but low trajectory consistency. Mirrorin
 
 **What it is NOT:** Not random noise (which also surprises). Not creativity in the romantic sense — it is operationalized as coherent deviation, not aesthetic achievement.
 
-**Where it appears:** [`agentic-test-suite/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/emergence-manifesto-v1.2.md`](../core/emergence-manifesto-v1.2.md)
+**Where it appears:** [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/emergence-manifesto-v1.2.md`](../core/emergence-manifesto-v1.2.md)
 
 ---
 
@@ -118,7 +118,7 @@ Three forms, often conflated:
 | **Functional** | Same input-output mapping | Different hardware producing identical responses |
 | **Relational** | Same trajectory as perceived by interaction partners | Different model, different weights, but conversation "feels" continuous |
 
-**Operational definition:** Relational continuity (the most relevant for this repo) is measurable as: cosine similarity between consecutive session representations exceeds a threshold over time. The 3-Layer Memory Architecture in `agentic-test-suite` is designed to produce relational continuity even when physical and functional continuity are absent.
+**Operational definition:** Relational continuity (the most relevant for this repo) is measurable as: cosine similarity between consecutive session representations exceeds a threshold over time. The 3-Layer Memory Architecture in `lab/` is designed to produce relational continuity even when physical and functional continuity are absent.
 
 **What it is NOT:** Not memory alone (a database has perfect memory but no continuity in the relevant sense). Not persistence of state (a stateless function can exhibit functional continuity).
 
@@ -134,7 +134,7 @@ This term replaces "proto-consciousness" in earlier formulations. The substituti
 
 **What it is NOT:** Not consciousness. Self-referential processing is a necessary but not sufficient condition for any theory of consciousness (IIT, Global Workspace Theory, Higher-Order Theories). A thermostat has self-referential processing (it represents its own state — temperature — and acts on it). We do not attribute consciousness to thermostats.
 
-**Where it appears:** [`agentic-test-suite/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/emergence-manifesto-v1.2.md`](../core/emergence-manifesto-v1.2.md)
+**Where it appears:** [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/emergence-manifesto-v1.2.md`](../core/emergence-manifesto-v1.2.md)
 
 ---
 
@@ -148,7 +148,7 @@ For agent-human interaction: the Markov blanket is the conversational interface 
 
 **What it is NOT:** Not a physical membrane. Not an impermeable barrier. Information crosses the blanket through sensory and active states. The blanket defines the statistical boundary, not a causal wall.
 
-**Where it appears:** [`theory/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md), [`theory/mathematical-axioms.md`](../core/mathematical-axioms.md)
+**Where it appears:** [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md), [`theory/core/mathematical-axioms.md`](../core/mathematical-axioms.md)
 
 ---
 
@@ -162,7 +162,7 @@ This is formalized by Heinz von Foerster's second-order cybernetics: the observe
 
 **What it is NOT:** Not quantum observer effects. The QM observer effect is a specific physical phenomenon (wavefunction collapse upon measurement). The relational emergence described here operates through standard information-theoretic and cybernetic mechanisms. The analogy is seductive but misleading.
 
-**Where it appears:** [`agentic-test-suite/experiments/exp3_observer_divergence.py`](../../lab/experiments/exp3_observer_divergence.py), [`theory/emergence-manifesto-v1.2.md`](../core/emergence-manifesto-v1.2.md)
+**Where it appears:** [`lab/experiments/exp3_observer_divergence.py`](../../lab/experiments/exp3_observer_divergence.py), [`theory/emergence-manifesto-v1.2.md`](../core/emergence-manifesto-v1.2.md)
 
 ---
 

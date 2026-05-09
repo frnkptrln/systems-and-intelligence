@@ -140,12 +140,8 @@ def run_experiment(n_sessions: int = 100, config: dict | None = None):
     }
 
     # --- Save results ---
-    out_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                           "agentic-test-suite", "data", "sessions", "exp1")
-    # If running from within agentic-test-suite, adjust
-    if not os.path.basename(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) == 'systems-and-intelligence':
-        out_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                               "data", "sessions", "exp1")
+    lab_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    out_dir = os.path.join(lab_root, "data", "sessions", "exp1")
 
     os.makedirs(out_dir, exist_ok=True)
     plots_dir = os.path.join(out_dir, "plots")

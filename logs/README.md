@@ -2,7 +2,7 @@
 
 Welcome to the **Architecture Logs**.
 
-While the `theory/` section deals with the mathematical and systemic foundation of the minimal thermodynamic agent (TEO) framework and the `systems-orchestration/` directory hosts the executable code, these logs serve as a bridge.
+While the `theory/` section deals with the mathematical and systemic foundation of the minimal thermodynamic agent (TEO) framework and `lab/` plus `simulation-models/` host the executable work, these logs serve as a bridge.
 
 They are speculative **architectural blueprints and design notes** exploring how the *Thermodynamics of Orchestration* apply to large-scale, real-world deployments.
 

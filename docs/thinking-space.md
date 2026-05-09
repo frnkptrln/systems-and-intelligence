@@ -8,7 +8,7 @@ Contradictions are allowed here. The point is to test the shape of ideas before 
 
 ## 1. Simulation Clusters
 
-We prove the Thermodynamic Orchestration (TEO) framework through **38 runnable Python models**. They are categorized into four structural themes:
+We probe the Thermodynamic Orchestration (TEO) framework through runnable Python models. They are categorized into four structural themes:
 
 <div class="grid-cards" markdown>
 
@@ -17,7 +17,7 @@ We prove the Thermodynamic Orchestration (TEO) framework through **38 runnable P
 ### :material-chart-scatter-plot: Emergent Dynamics
 *Physics, Cellular Automata, and Complex Systems.*
 
-Models exploring how local rules generate global structures without central control. Includes Boids flocking, Lenia, Reaction-Diffusion, and Self-Organized Criticality.
+Models exploring how local rules generate global structures without central control. Includes Boids flocking, IFS attractors, L-systems, Lenia, Reaction-Diffusion, and Self-Organized Criticality.
 
 [Explore Emergent Dynamics →](simulation-models/emergent-dynamics/boids-flocking/README.md)
 

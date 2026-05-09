@@ -50,9 +50,23 @@ The [Identity Morphospace](https://github.com/frnkptrln/systems-and-intelligence
 
 ---
 
-## The Agentic Test Suite
+## Consciousness as Global Availability
 
-To push these metrics into practice, we built the [Agentic Test Suite](../lab/AGENTIC_README.md). It empirically tests the difference between a "stateless" prompt-response loop and a "stateful" agent:
+This book does not need to solve consciousness to use the concept responsibly. The narrow question is architectural: when does local processing become globally available, integrated, self-referential, and behaviorally binding?
+
+[Consciousness as Global Availability](../theory/identity/consciousness-as-global-availability.md) connects three external anchors to the repo's own metrics:
+
+- Global Workspace: local signals become globally broadcast.
+- Integrated Information: a system state is not reducible to independent parts.
+- Active Inference / Markov Blankets: the system maintains a boundary while acting to preserve viable states.
+
+This keeps consciousness from becoming a decorative claim. It becomes a testable design question: do private modules, broadcast modules, and chord-style integrated modules behave differently under perturbation?
+
+---
+
+## The Agentic Identity Suite
+
+To push these metrics into practice, we built the [Agentic Identity Suite](../lab/AGENTIC_README.md). It empirically tests the difference between a "stateless" prompt-response loop and a "stateful" agent:
 
 - **3-Layer Memory Architecture**: Logs → Curated Memory → Distilled Principles
 - **Δ-Kohärenz (Ω)**: Measures how coherently an agent's self-representation changes over time — distinguishing *development* (directional evolution) from *noise* (random fluctuation) from *mirroring* (static resonance)

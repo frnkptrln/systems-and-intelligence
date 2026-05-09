@@ -14,7 +14,7 @@ Each simulation illuminates one aspect; together they form a web of ideas.
 ### 1. The Theory Files (`theory/`)
 The nodes of this conceptual graph are fully explicated in the Markdown files within the `/theory` directory.
 
-### 2. The 34 Simulation Models (`simulation-models/`)
+### 2. The Simulation Models (`simulation-models/`)
 The mathematical claims linking the nodes are demonstrated computationally. For instance, the link between **Information Limits** and **Phase Transitions** is executable via the `phase-transition-explorer` simulation.
 
 ---
@@ -161,7 +161,7 @@ None alone is "the answer" – together they form a **landscape of thought** whe
 
 ```
 What we have:                     What is still missing:
-✓ 32 Simulation Models            ? Real data (biological systems?)
+✓ Simulation models               ? Real data (biological systems?)
 ✓ Information-theoretic measures  ? Formal proofs about SII properties
 ✓ System Intelligence Index       
 ✓ Theory Essays                   
@@ -178,7 +178,7 @@ What we have:                     What is still missing:
 ✓ Utility Engineering (Observing and Controlling Emergent Values)
 ✓ Political Utility Formalization (Constitutions as Alignment Docs)
 ✓ The Grokking Phenomenon (Memory to Intelligence Phase Transition)
-✓ Agentic Test Suite (3-Layer Memory, Δ-Kohärenz, Observer Divergence)
+✓ Agentic Identity Suite (3-Layer Memory, Δ-Kohärenz, Observer Divergence)
 ✓ TEO Framework (Replicator + Kuramoto + Entropy Budget)
 ✓ Identity Morphospace (Chord/Arpeggio, IP Score)
 ✓ Continuous Thought Machines integration

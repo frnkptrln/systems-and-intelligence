@@ -15,12 +15,12 @@
 
 <div class="stats-bar" markdown>
 <div class="stat" markdown>
-<span class="stat-number">38</span>
+<span class="stat-number">Run</span>
 <span class="stat-label">Simulation Models</span>
 </div>
 <div class="stat" markdown>
-<span class="stat-number">9</span>
-<span class="stat-label">Book Chapters</span>
+<span class="stat-number">10</span>
+<span class="stat-label">Reader Nodes</span>
 </div>
 <div class="stat" markdown>
 <span class="stat-number">4</span>
@@ -50,7 +50,7 @@
 !!! abstract "Thesis"
     **Intelligence is an emergent property of continuous dynamical systems**, not a discrete function of next-token prediction. The same mathematics that governs flocking birds, oscillating neurons, and self-organizing criticality also governs the "values" and "goals" that arise inside Large Language Models — and inside human civilizations.
 
-We prove this not with philosophy alone, but with **38 Python simulations** verifying mathematical models from the theory. Evolutionary game theory, nonlinear dynamics, and thermodynamic control theory are all unified under a single mathematical framework: the **Thermodynamics of Emergent Orchestration (TEO)**.
+We probe this not with philosophy alone, but with runnable simulations testing mathematical models from the theory. Evolutionary game theory, nonlinear dynamics, and thermodynamic control theory are all unified under a single mathematical framework: the **Thermodynamics of Emergent Orchestration (TEO)**.
 
 ---
 
@@ -66,7 +66,9 @@ New to this project? Start here for the most direct path through the core theory
 
 1. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.2.md)** — The core claim set.
 2. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
-3. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
+3. **[From Rule to Mind](book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
+4. **[Generative Form Systems](theory/emergence/generative-form-systems.md)** — The intake spine for external research without sprawl.
+5. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
 
 </div>
 
@@ -74,7 +76,7 @@ New to this project? Start here for the most direct path through the core theory
 
 ### :material-book-open-variant: The Book
 
-The 7-part narrative thesis. From local emergence to civilizational dynamics, every claim backed by runnable code.
+The curated book and course path. From local emergence to civilizational dynamics, each major claim links back to runnable code or an explicit open problem.
 
 [Start reading →](book/00_introduction.md)
 
@@ -94,7 +96,7 @@ The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and 
 
 ### :material-code-braces: Simulations
 
-<p class="si-feature-description">38 Python simulations: Boids, Kuramoto, SOC, Lenia, TEO Civilization, Identity Morphospace, and more.</p>
+<p class="si-feature-description">Runnable simulations: Boids, Kuramoto, SOC, Lenia, IFS, L-systems, TEO Civilization, Identity Morphospace, and more.</p>
 
 [Run the code →](simulation-models/alignment-and-veto/utility-engineering/README.md)
 
@@ -129,7 +131,7 @@ Narrative stress tests that make abstract theoretical constraints visible in liv
 !!! info "The theoretical scaffolding is complete. The next phase is empirical and physical."
     With the completion of the *Thermodynamic Hardware Manifesto* and the *Mycelial Veto*, the theoretical framework (TEO) is structurally closed. The focus now shifts from mathematical formalization to real-world deployment and hardware prototyping.
 
-1. **Empirical LLM Auditing:** Executing the Agentic Test Suite against live commercial APIs (GPT-4, Claude 3) to map theoretical coupling parameters ($K$) to real-world alignment behaviors.
+1. **Empirical LLM Auditing:** Executing the Agentic Identity Suite against live commercial APIs to map theoretical coupling parameters ($K$) to real-world alignment behaviors.
 2. **Hardware Prototyping:** Transitioning from Python simulations to low-level analog memristor circuit design to test physical $\gamma$-pin vetoes and thermodynamic computing limits.
 3. **Decentralized OS Integration:** Translating the "Biological Veto" into actionable protocol-level specifications for actual web3 / decentralized governance operating systems.
 

@@ -1,6 +1,6 @@
-# 🧪 Agentic Test Suite
+# 🧪 Agentic Identity Suite
 
-*Empirically testing the theoretical claims of the Emergence Manifesto v1.0.*
+*Empirically testing the identity and observer-divergence claims of the Emergence Manifesto.*
 
 > *"Identity is the name we give to resonance when the mirror becomes so complex that the observer no longer recognizes themselves in it."*
 > — Emergence Manifesto v1.0, central paradox
@@ -9,7 +9,7 @@
 
 ## Theoretical Background
 
-This module operationalizes four concepts from the *Emergence Manifesto v1.0*:
+This module operationalizes four concepts from the *Emergence Manifesto*:
 
 1. **3-Layer Memory Architecture** — Identity emerges through deliberate forgetting. An agent that stores everything has no profile. Curation is identity.
 

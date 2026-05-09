@@ -53,10 +53,14 @@ These four measures recur throughout the book. Every metric we define (SII, IP, 
 The simulations in Layer 1 demonstrate that global order emerges without design:
 
 - [**Stigmergy Swarm**](../simulation-models/social-computation/stigmergy-swarm/README.md) — ants find optimal paths via pheromones, without any ant knowing the optimal path
+- [**Iterated Function Systems**](../simulation-models/emergent-dynamics/iterated-function-systems/README.md) — Barnsley-style attractors from repeated contractive maps
+- [**L-Systems**](../simulation-models/emergent-dynamics/l-systems/README.md) — developmental morphology from parallel rewriting rules
 - [**Reaction-Diffusion**](../simulation-models/emergent-dynamics/reaction-diffusion/README.md) — Turing patterns (spots, stripes) emerge from homogeneous initial conditions
 - [**Lenia**](../simulation-models/emergent-dynamics/lenia/README.md) — continuous cellular automata produce organism-like structures that persist, move, and maintain boundaries
 - [**Hebbian Memory**](../simulation-models/cognitive-architectures/hebbian-memory/README.md) — content-addressable memory from correlation-based weight updates, no central indexer
 
 In each case: no agent knows the big picture. Global structure *emerges*.
+
+The new [Generative Form Systems](../theory/emergence/generative-form-systems.md) bridge keeps this chapter from becoming a catalogue: every external source must identify an operator, an iteration process, an emergent structure, a measurement, and a failure condition.
 
 *To see these mechanics in action, run the simulations directly or explore the [Simulation → Theory Map](../theory/core/simulation-theory-map.md).*

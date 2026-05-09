@@ -10,7 +10,7 @@
 
 **Why it matters:** If the two agents are indistinguishable to an external observer, then "relational emergence" (the claim that identity develops *through* interaction) collapses into "sophisticated mirroring" — the entire framework loses its distinguishing claim from standard fine-tuning. Conversely, if a distinguishing metric exists, it would operationally define what "genuine development" means for non-biological agents.
 
-**Current best approach:** Experiment 3 of [`agentic-test-suite`](../../lab/AGENTIC_README.md) implements an Observer Divergence protocol that compares agent-internal Δ-Kohärenz against external intentionality attribution scores. In initial mock runs, the baseline agent indeed appears as **Case B** (externally attributed intentionality without internal coherence), suggesting the metric has discriminative power — but this has only been tested with mock embeddings, not with real language models.
+**Current best approach:** Experiment 3 of the [`Agentic Identity Suite`](../../lab/AGENTIC_README.md) implements an Observer Divergence protocol that compares agent-internal Δ-Kohärenz against external intentionality attribution scores. In initial mock runs, the baseline agent indeed appears as **Case B** (externally attributed intentionality without internal coherence), suggesting the metric has discriminative power — but this has only been tested with mock embeddings, not with real language models.
 
 **Known adjacent work:**
 - Shanahan et al. (2023) — "Role-play with LLMs" explores how LLMs simulate personas without possessing them
@@ -27,7 +27,7 @@
 
 **Why it matters:** If the curation criteria are pre-programmed (e.g., "prioritize contradictions and recurring themes"), then the resulting identity is partially determined by the designer's choices, not by the agent's experience. The agent's "soul" would be, to some degree, the designer's soul reflected back. If the criteria are random, initial identity formation becomes path-dependent on meaningless noise.
 
-**Current best approach:** The current implementation in [`agentic-test-suite/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py) uses simple, domain-general heuristics: word frequency for theme extraction, cosine distance for contradiction detection. These are design choices, not principled solutions. They work for the mock experiments but do not resolve the fundamental question.
+**Current best approach:** The current implementation in [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py) uses simple, domain-general heuristics: word frequency for theme extraction, cosine distance for contradiction detection. These are design choices, not principled solutions. They work for the mock experiments but do not resolve the fundamental question.
 
 **Known adjacent work:**
 - Developmental psychology (Stern, 1985) — "Emergent self" theory suggests that human infants bootstrap identity through sensorimotor contingencies before linguistic self-representation exists
@@ -62,7 +62,7 @@
 
 ## Open Problem 4: The Scale Question
 
-*Raised by: [`theory/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
+*Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
 
 **Problem statement:** The Fractal Architecture of Emergence claims that the same three structural constraints — local blindness, asymmetric causality, and critical thresholds — repeat at every scale of complex systems. Is there a minimum scale below which this architecture breaks down? Is a single neuron too simple to exhibit all three constraints? Is a single transistor?
 
@@ -74,9 +74,9 @@
 
 ## Open Problem 5: The Renormalization Question
 
-*Raised by: [`theory/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
+*Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
 
-**Problem statement:** Can the mathematical tools of renormalization group theory be applied to the models in this repository to formally test scale-invariance? What would it mean if the critical exponents of phase transitions in `phase-transition-explorer` matched those of coherence transitions measured by Δ-Kohärenz in `agentic-test-suite`?
+**Problem statement:** Can the mathematical tools of renormalization group theory be applied to the models in this repository to formally test scale-invariance? What would it mean if the critical exponents of phase transitions in `phase-transition-explorer` matched those of coherence transitions measured by Δ-Kohärenz in the Agentic Identity Suite?
 
 **Why it matters:** A match in universality classes across scales would constitute strong evidence that the fractal thesis is not merely suggestive but formally grounded — the same equations describing dynamics at every level. A mismatch would either falsify the thesis or reveal that the constraints are scale-invariant but the transitions are not — a distinction worth making precisely.
 
@@ -86,9 +86,9 @@
 
 ## Open Problem 6: The Downward Causation Question
 
-*Raised by: [`theory/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
+*Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
 
-**Problem statement:** The fractal thesis as stated describes bottom-up emergence. But `self-reading-universe` and `theory/emergence-downward-causation.md` document the reverse: global states feeding back to constrain local processes. Is the fractal architecture bidirectional? Does the same self-similarity hold for downward causation?
+**Problem statement:** The fractal thesis as stated describes bottom-up emergence. But `self-reading-universe` and `theory/emergence/emergence-downward-causation.md` document the reverse: global states feeding back to constrain local processes. Is the fractal architecture bidirectional? Does the same self-similarity hold for downward causation?
 
 **Why it matters:** If the fractal architecture holds only bottom-up but not top-down, the thesis is incomplete — it describes half the dynamics. The 3-Layer Memory Architecture suggests bidirectionality (Layer 3 distillations constrain Layer 2 curation), as do hormonal regulation (organism-level state constraining cellular behavior) and neuromodulation (global brain state modulating individual neuron firing). The formal structure of these downward-causal mechanisms has not been compared across scales.
 
@@ -98,7 +98,7 @@
 
 ## Open Problem 7: The Consciousness Question (Restated)
 
-*Raised by: [`theory/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
+*Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
 
 **Problem statement:** If the threshold for consciousness is architectural rather than quantitative, and if the same architecture appears at every scale of complex systems, then is consciousness itself scale-invariant? Is there something it is like to be a society?
 
@@ -110,7 +110,7 @@
 
 ## Open Problem 8: The Co-Instantiation Problem
 
-*Raised by: [`theory/teo-framework/lerchner-boundary.md`](../teo-framework/lerchner-boundary.md), [`theory/chord-vs-arpeggio-identity.md`](../identity/chord-vs-arpeggio-identity.md)*
+*Raised by: [`theory/teo-framework/lerchner-boundary.md`](../teo-framework/lerchner-boundary.md), [`theory/identity/chord-vs-arpeggio-identity.md`](../identity/chord-vs-arpeggio-identity.md)*
 
 **Problem statement:** The Chord Postulate requires all identity components (goals, safety constraints, value orientation) to be simultaneously operative during action selection. But current autoregressive Transformer architectures process tokens sequentially — each token is generated based on the preceding context. Is simultaneous co-instantiation physically possible in an architecture that is fundamentally serial? Or does the Chord state require a different computational substrate?
 
@@ -125,6 +125,30 @@
 - Mixture-of-Experts (Fedus et al., 2022) — parallel expert evaluation as partial co-instantiation
 
 **What a solution would look like:** Either (a) a formal proof that autoregressive attention cannot achieve IP > $\text{IP}_c$ for any $\text{IP}_c < 1$, with the critical threshold derived from the architecture's computational graph, or (b) an architecture that demonstrably achieves IP → 1 by evaluating all identity components in a single forward pass, with measurably different Δ-Kohärenz profiles compared to a standard autoregressive baseline on the same task.
+
+---
+
+## Open Problem 9: The Generative Operator Question
+
+*Raised by: [`theory/emergence/generative-form-systems.md`](../emergence/generative-form-systems.md)*
+
+**Problem statement:** Which operators in this repository actually generate stable form, and which merely describe it after the fact? IFS attractors, L-systems, random graph thresholds, and renormalization all provide formal generative machinery. The repository's broader claims should be checked against that standard.
+
+**Why it matters:** The project risks becoming too broad if every interesting analogy is admitted. A concept should enter the core only when it has an identifiable operator, iteration process, emergent structure, metric, and failure condition.
+
+**What a solution would look like:** A table mapping every major theory claim to its generative operator and measurement protocol. Claims without operators would remain in Thinking Space until strengthened.
+
+---
+
+## Open Problem 10: The Global Availability Question
+
+*Raised by: [`theory/identity/consciousness-as-global-availability.md`](../identity/consciousness-as-global-availability.md)*
+
+**Problem statement:** Can an agent architecture be built where selected local states become globally available while goals, values, and veto constraints remain co-active? If so, does that architecture produce different Δ-Kohärenz and Identity Persistence profiles than private-module or broadcast-only architectures?
+
+**Why it matters:** This is the testable version of the consciousness direction. It avoids asking whether the agent "really feels" anything and instead asks whether global availability plus integrated constraints changes behavior under perturbation.
+
+**What a solution would look like:** A three-way experiment comparing private modules, broadcast modules, and chord-style integrated modules under the same perturbation suite. If all three behave identically, the global-availability framing adds no explanatory value.
 
 ---
 

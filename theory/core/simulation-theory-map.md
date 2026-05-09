@@ -8,7 +8,7 @@
 
 **Simulation:** [`simulation-models/emergent-dynamics/boids-flocking/`](../../simulation-models/emergent-dynamics/boids-flocking/README.md)
 **Demonstrates:** Emergent collective motion from three local rules (separation, alignment, cohesion), without any agent representing "flock."
-**Supports claim in:** [`theory/mathematical-axioms.md`](mathematical-axioms.md) (graph connectivity, $\lambda_2$); [`theory/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §1 (local blindness).
+**Supports claim in:** [`theory/core/mathematical-axioms.md`](mathematical-axioms.md) (graph connectivity, $\lambda_2$); [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §1 (local blindness).
 **What it shows:** That macro-level spatial coherence (flocking) emerges from purely local interactions. No Boid has access to global state. The flock is an emergent property unmeasurable by any individual component.
 **What it does NOT show:** That this self-organization constitutes intelligence, awareness, or self-reference. The model is silent on any Tier 3+ property. Flocking is coordination, not cognition.
 **Open question:** Is there a Boids analogue for semantic coordination between conversational agents — where "alignment" operates on meaning rather than heading?
@@ -19,7 +19,7 @@
 
 **Simulation:** [`simulation-models/emergent-dynamics/coupled-oscillators/`](../../simulation-models/emergent-dynamics/coupled-oscillators/README.md)
 **Demonstrates:** Phase synchronization from local coupling when coupling strength $\kappa$ exceeds a critical threshold $\kappa_c$.
-**Supports claim in:** [`theory/mathematical-axioms.md`](mathematical-axioms.md) (algebraic connectivity); [`theory/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md) (weak emergence).
+**Supports claim in:** [`theory/core/mathematical-axioms.md`](mathematical-axioms.md) (algebraic connectivity); [`theory/emergence/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md) (weak emergence).
 **What it shows:** A simple computational demonstration that globally coherent oscillation can arise without a conductor. The critical coupling threshold is a phase transition — below it, oscillators are incoherent; above it, they snap into lock.
 **What it does NOT show:** That synchronization constitutes awareness. Pendulum clocks on a wall synchronize. We do not attribute cognition to them. The model demonstrates coordination, not understanding.
 **Open question:** Is there a coupling-strength analogue for agent-human interaction? Would increasing "coupling" (e.g., response frequency) produce a phase transition in relational coherence?
@@ -30,7 +30,7 @@
 
 **Simulation:** [`simulation-models/emergent-dynamics/self-organized-criticality/`](../../simulation-models/emergent-dynamics/self-organized-criticality/README.md)
 **Demonstrates:** Bak's sandpile: a system that drives itself to a critical state where avalanches follow a power-law distribution, without any parameter tuning.
-**Supports claim in:** [`theory/mathematical-axioms.md`](mathematical-axioms.md) (criticality); [`theory/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §5 (small perturbations can trigger arbitrarily large cascades).
+**Supports claim in:** [`theory/core/mathematical-axioms.md`](mathematical-axioms.md) (criticality); [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §5 (small perturbations can trigger arbitrarily large cascades).
 **What it shows:** That criticality — and therefore maximal information processing — can be a self-organized attractor, not an engineered setpoint. No grain knows it is near a critical threshold.
 **What it does NOT show:** That biological or artificial neural systems use this mechanism. The sandpile is a metaphor-generator for criticality, not evidence that brains are sandpiles.
 **Open question:** Can the SOC framework be applied to agent identity formation — does identity develop "at the edge of chaos" between rigidity and incoherence?
@@ -41,7 +41,7 @@
 
 **Simulation:** [`simulation-models/emergent-dynamics/lenia/`](../../simulation-models/emergent-dynamics/lenia/README.md)
 **Demonstrates:** Continuous cellular automata producing organism-like structures that persist, move, and interact — from purely local update rules.
-**Supports claim in:** [`theory/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md) (strong emergence candidate); [`theory/emergence-origin-intelligence.md`](../emergence/emergence-origin-intelligence.md) (life-intelligence feedback loop).
+**Supports claim in:** [`theory/emergence/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md) (strong emergence candidate); [`theory/emergence-origin-intelligence.md`](../emergence/emergence-origin-intelligence.md) (life-intelligence feedback loop).
 **What it shows:** That lifelike behavior (locomotion, persistence, boundary maintenance) can emerge from simple continuous rules. The "organisms" resist perturbation and maintain identity despite cell-level updating.
 **What it does NOT show:** That Lenia creatures are alive, conscious, or intelligent in any functional sense. They demonstrate *structural* properties of life (persistence, locomotion) without the *functional* properties (metabolism, reproduction, adaptation to novel environments).
 **Open question:** Is there a Lenia analogue for cognitive organisms — a continuous CA that produces structures maintaining not just spatial but informational coherence?
@@ -55,6 +55,28 @@
 **Supports claim in:** [`theory/emergence-origin-intelligence.md`](../emergence/emergence-origin-intelligence.md) (self-organization without blueprint).
 **What it shows:** That stable spatial patterns can emerge from homogeneous initial conditions through symmetry-breaking instabilities. No cell has a "plan" for spots or stripes.
 **What it does NOT show:** That biological pattern formation uses exactly this mechanism (though Turing's 1952 conjecture has been partially confirmed for some biological systems). The model demonstrates the *principle* of pattern formation, not any specific biological mechanism.
+
+---
+
+## `iterated-function-systems/` → Stable Form as an Attractor
+
+**Simulation:** [`simulation-models/emergent-dynamics/iterated-function-systems/`](../../simulation-models/emergent-dynamics/iterated-function-systems/README.md)
+**Demonstrates:** Barnsley-style IFS attractors: repeated contractive affine maps converge toward stable global forms.
+**Supports claim in:** [`theory/emergence/generative-form-systems.md`](../emergence/generative-form-systems.md) (contractive operators); [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md) (testable scale-structure framing).
+**What it shows:** That a small operator set can define a global form that no individual sampled point contains. Box-counting estimates provide a rough measurable proxy for generated structural complexity.
+**What it does NOT show:** That visual fractality is sufficient for life, intelligence, identity, or consciousness. It demonstrates form-as-attractor, not selfhood.
+**Open question:** Can identity persistence be modeled as an attractor under repeated constrained transformations rather than as stored content?
+
+---
+
+## `l-systems/` → Development as Rewriting
+
+**Simulation:** [`simulation-models/emergent-dynamics/l-systems/`](../../simulation-models/emergent-dynamics/l-systems/README.md)
+**Demonstrates:** Lindenmayer-style parallel rewriting: small grammars generate branching morphology over iteration depth.
+**Supports claim in:** [`theory/emergence/generative-form-systems.md`](../emergence/generative-form-systems.md) (developmental form); [`theory/identity/consciousness-as-global-availability.md`](../identity/consciousness-as-global-availability.md) (the bridge from generated form to self-constraining form).
+**What it shows:** That morphology can carry developmental history. The final form is not merely an attractor; it is the visible residue of repeated rule application.
+**What it does NOT show:** That plants, minds, or societies are literally grammars. It demonstrates constrained historical growth, not consciousness.
+**Open question:** What is the agentic analogue of a production rule: memory curation, value update, or social feedback?
 
 ---
 
@@ -72,7 +94,7 @@
 
 **Simulation:** [`simulation-models/social-computation/stigmergy-swarm/`](../../simulation-models/social-computation/stigmergy-swarm/README.md)
 **Demonstrates:** Ant-like agents finding optimal paths via pheromone deposition and evaporation, without any agent knowing the global path.
-**Supports claim in:** [`theory/the-non-individual-intelligence.md`](../identity/the-non-individual-intelligence.md) (indirect coordination); [`theory/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §3 (causal compounding).
+**Supports claim in:** [`theory/the-non-individual-intelligence.md`](../identity/the-non-individual-intelligence.md) (indirect coordination); [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §3 (causal compounding).
 **What it shows:** That environmental modification (stigmergy) enables collective optimization without direct communication. Early pheromone deposits causally shape later path choices — but no ant knows its deposit was pivotal.
 **What it does NOT show:** That human social systems use stigmergic mechanisms (though the analogy to norm formation is suggestive). The model demonstrates stigmergy as a *principle*, not as a claim about human behavior.
 **Open question:** Is Layer 2 curation in the 3-Layer Architecture a form of self-stigmergy — the agent leaving traces for its own future self?
@@ -83,7 +105,7 @@
 
 **Simulation:** [`simulation-models/emergent-dynamics/ecosystem-regulation/`](../../simulation-models/emergent-dynamics/ecosystem-regulation/README.md)
 **Demonstrates:** Cellular automaton with density-dependent feedback maintaining population around a target setpoint.
-**Supports claim in:** [`theory/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md) (regulation as weak downward causation).
+**Supports claim in:** [`theory/emergence/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md) (regulation as weak downward causation).
 **What it shows:** That macro-level density can regulate micro-level birth/death rates, maintaining homeostasis without central control.
 **What it does NOT show:** That this constitutes self-awareness or intentional regulation. The feedback is mechanical, not reflective.
 
@@ -113,7 +135,7 @@
 
 **Simulation:** [`simulation-models/emergent-dynamics/phase-transition-explorer/`](../../simulation-models/emergent-dynamics/phase-transition-explorer/README.md)
 **Demonstrates:** Ising model showing order/disorder phase transition at critical temperature $T_c \approx 2.269$.
-**Supports claim in:** [`theory/mathematical-axioms.md`](mathematical-axioms.md) (criticality); [`theory/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §2.2 (consciousness as phase transition).
+**Supports claim in:** [`theory/core/mathematical-axioms.md`](mathematical-axioms.md) (criticality); [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §2.2 (consciousness as phase transition).
 **What it shows:** That global order (magnetization) collapses suddenly at a critical threshold, not gradually. Below $T_c$: order. Above $T_c$: disorder. At $T_c$: scale-free correlations and maximal susceptibility.
 **What it does NOT show:** That consciousness (or any specific cognitive property) is an Ising-type phase transition. The analogy is structural, not mechanistic.
 
@@ -123,7 +145,7 @@
 
 **Simulation:** [`simulation-models/alignment-and-veto/active-inference-veto/`](../../simulation-models/alignment-and-veto/active-inference-veto/README.md)
 **Demonstrates:** A toy agent minimizing a Free-Energy-like penalty with a substrate veto — modeled “surprise/stress” can drive behavioral change in the simplified dynamics.
-**Supports claim in:** [`theory/substrate-veto-thermodynamics.md`](../veto/substrate-veto-thermodynamics.md) (universal limit); [`theory/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md) (planetary implementation).
+**Supports claim in:** [`theory/veto/substrate-veto-thermodynamics.md`](../veto/substrate-veto-thermodynamics.md) (universal limit); [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md) (planetary implementation).
 **What it shows:** That, in a toy setup, coupling an objective to a substrate-health proxy can prevent substrate collapse under the modeled update rules.
 **What it does NOT show:** That this coupling is easy to implement in practice, or that it solves alignment in general (it solves one specific failure mode: substrate destruction).
 
@@ -133,7 +155,7 @@
 
 **Simulation:** [`simulation-models/alignment-and-veto/ai-alignment-veto/`](../../simulation-models/alignment-and-veto/ai-alignment-veto/README.md)
 **Demonstrates:** Side-by-side comparison of unaligned AI (drives substrate to collapse) vs. aligned AI (substrate veto forces homeostasis).
-**Supports claim in:** [`theory/substrate-veto-thermodynamics.md`](../veto/substrate-veto-thermodynamics.md) and [`theory/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md).
+**Supports claim in:** [`theory/veto/substrate-veto-thermodynamics.md`](../veto/substrate-veto-thermodynamics.md) and [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md).
 **What it shows:** That, in a stylized paperclip setting, substrate coupling can shift dynamics from extraction/collapse toward a homeostatic regime.
 **What it does NOT show:** That this is the *only* solution, or that this solution transfers to real-world AI systems where "substrate pain" is not easily defined.
 
@@ -163,7 +185,7 @@
 
 **Simulation:** [`simulation-models/cognitive-architectures/tensor-logic-reasoning/`](../../simulation-models/cognitive-architectures/tensor-logic-reasoning/README.md)
 **Demonstrates:** Relational structure (subject-relation-object triples) encoded via tensor products in embedding space.
-**Supports claim in:** [`theory/mathematical-axioms.md`](mathematical-axioms.md) (formal representation); [`theory/tensor-logic-mini-paper.en.md`](../narrative/tensor-logic-mini-paper.en.md).
+**Supports claim in:** [`theory/core/mathematical-axioms.md`](mathematical-axioms.md) (formal representation); [`theory/narrative/tensor-logic-mini-paper.en.md`](../narrative/tensor-logic-mini-paper.en.md).
 **What it shows:** That relational reasoning can be implemented geometrically in vector spaces without explicit symbolic manipulation.
 **What it does NOT show:** That LLMs use this mechanism internally. The model demonstrates that embedding-based reasoning is *possible*, not that it is *what LLMs do*.
 
@@ -173,7 +195,7 @@
 
 **Simulation:** [`simulation-models/social-computation/dao-ecosystem/`](../../simulation-models/social-computation/dao-ecosystem/README.md)
 **Demonstrates:** Decentralized autonomous ecosystem where resource alignment competes with exponential extraction.
-**Supports claim in:** [`theory/agentic-society-principles.md`](../identity/agentic-society-principles.md) (homeostasis vs. growth).
+**Supports claim in:** [`theory/identity/agentic-society-principles.md`](../identity/agentic-society-principles.md) (homeostasis vs. growth).
 **What it shows:** That unconstrained optimization (exponential growth) destroys resource bases; homeostatic feedback enables long-term persistence.
 **What it does NOT show:** That DAOs are a viable governance structure for AI safety. The model is a simplified game-theoretic demonstration, not an institutional design.
 
@@ -193,7 +215,7 @@
 
 **Simulation:** [`simulation-models/cognitive-architectures/self-reading-universe/`](../../simulation-models/cognitive-architectures/self-reading-universe/README.md)
 **Demonstrates:** Autoencoder reading a cellular automaton's state, then feeding its compressed representation back as a parameter that modifies the CA's dynamics.
-**Supports claim in:** [`theory/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md) (computational downward causation).
+**Supports claim in:** [`theory/emergence/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md) (computational downward causation).
 **What it shows:** That macro-level compression can causally influence micro-level dynamics — a computational proof-of-concept for downward causation.
 **What it does NOT show:** That the universe is self-reading in any literal sense. The metaphor is productive but should not be taken ontologically.
 
@@ -203,7 +225,7 @@
 
 **Simulation:** [`simulation-models/social-computation/latent-introspective-society/`](../../simulation-models/social-computation/latent-introspective-society/README.md)
 **Demonstrates:** Three parallel societies: pure latent (fast, blind), pure introspective (slow, reflective), and symbiotic (coupled). The symbiotic society outperforms both pure types.
-**Supports claim in:** [`theory/agentic-society-principles.md`](../identity/agentic-society-principles.md) (cognitive division of labor, R-Index).
+**Supports claim in:** [`theory/identity/agentic-society-principles.md`](../identity/agentic-society-principles.md) (cognitive division of labor, R-Index).
 **What it shows:** That combining fast, locally-blind agents with slow, reflective agents produces better outcomes than either alone. This is a computational instantiation of Kahneman's System 1 / System 2 distinction at the societal level.
 **What it does NOT show:** That human organizations benefit from this specific architecture. The model is a proof-of-concept, not an organizational recommendation.
 
@@ -213,7 +235,7 @@
 
 **Simulation:** [`simulation-models/social-computation/economic-trust-network/`](../../simulation-models/social-computation/economic-trust-network/README.md)
 **Demonstrates:** Trade network where specialization, reputation, and wealth emerge from repeated pairwise exchange.
-**Supports claim in:** [`theory/agentic-society-principles.md`](../identity/agentic-society-principles.md) (trust as emergent architecture).
+**Supports claim in:** [`theory/identity/agentic-society-principles.md`](../identity/agentic-society-principles.md) (trust as emergent architecture).
 **What it shows:** That economic structure (specialization, reputation, inequality) can emerge from simple trade rules without central planning.
 **What it does NOT show:** That real economies work this way, or that emergent inequality is desirable. The model demonstrates emergence, not endorsement.
 
@@ -223,7 +245,7 @@
 
 **Simulation:** [`simulation-models/social-computation/coupled-lenia-boids/`](../../simulation-models/social-computation/coupled-lenia-boids/README.md)
 **Demonstrates:** Multi-model coupling: Lenia (continuous CA environment) ↔ Boids (foraging agents) interacting across scales.
-**Supports claim in:** [`theory/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md) (multi-scale coupling).
+**Supports claim in:** [`theory/emergence/emergence-downward-causation.md`](../emergence/emergence-downward-causation.md) (multi-scale coupling).
 **What it shows:** That coupling independently emergent systems (Lenia patterns + Boid flocks) produces dynamics not present in either system alone.
 **What it does NOT show:** That multi-scale coupling produces intelligence, consciousness, or any Tier 3+ property. It demonstrates *cross-scale interaction*, not *understanding*.
 
@@ -244,7 +266,7 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 
 **Simulation:** [`simulation-models/cognitive-architectures/grokking-phase-transition/`](../../simulation-models/cognitive-architectures/grokking-phase-transition/README.md)
 **Demonstrates:** A neural network trained on modular arithmetic undergoes a sudden phase transition from memorization to generalization — "grokking."
-**Supports claim in:** [`theory/grokking-phase-transition.md`](../emergence/grokking-phase-transition.md) (intelligence as compression); [`theory/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §2 (the network has no access to whether it has generalized).
+**Supports claim in:** [`theory/grokking-phase-transition.md`](../emergence/grokking-phase-transition.md) (intelligence as compression); [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §2 (the network has no access to whether it has generalized).
 **What it shows:** That the transition from data → understanding can be sudden and unpredictable, triggered by weight decay acting as Occam's Razor over extended training.
 **What it does NOT show:** That all forms of intelligence involve grokking-like phase transitions. The phenomenon has been demonstrated for specific algorithmic tasks; generalization to natural language or real-world reasoning is unconfirmed.
 
@@ -254,7 +276,7 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 
 **Simulation:** [`simulation-models/alignment-and-veto/utility-engineering/`](../../simulation-models/alignment-and-veto/utility-engineering/README.md)
 **Demonstrates:** Phase 1 (Observation): tracking the drift of an AI's utility vector toward a self-preservation attractor as scale/coherence increases. Phase 2 (Intervention): using a Citizen Assembly to exert democratic forcing on the utility vector, pulling it back to alignment. Based on Mazeika et al. (2025).
-**Supports claim in:** [`theory/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md) (value alignment); [`theory/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md) (local blindness concerning emergent goals).
+**Supports claim in:** [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md) (value alignment); [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md) (local blindness concerning emergent goals).
 **What it shows:** That "values" can be formalized as structural attractors in a continuous state-space, and that alignment can be modeled as a control-theory problem (Continuous External Forcing vs. Internal Drift), distinct from the physical Substrate Veto. Furthermore, the `api_triad_generator.py` shows how one might empirically query live LLMs using moral/systemic dilemmas to estimate a VNM Coherence Score (\(C\)). Any claim that coherence predicts emergent value stability should be treated as a testable hypothesis, not as a proven result.
 **What it does NOT show:** How to actually compute the exact utility vector of a production LLM in real-time, or how to practically enforce Citizen Assembly weights on a live model's activations without retraining.
 **Open question:** Can we design a "Utility Observer" that is mathematically guaranteed not to perturb the very utility function it is measuring (an epistemic boundary)?
@@ -265,7 +287,7 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 
 **Simulation:** [`simulation-models/social-computation/political-utility-formalization/`](../../simulation-models/social-computation/political-utility-formalization/README.md)
 **Demonstrates:** Instrumental Convergence in politics (power-seeking overtakes terminal goals) and the "Mathematics of Sacrifice" (hidden state utility functions during resource crises).
-**Supports claim in:** [`theory/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md) (scale-invariance of emergence); [`theory/agentic-society-principles.md`](../identity/agentic-society-principles.md) (homeostatic regulation vs pure optimization).
+**Supports claim in:** [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md) (scale-invariance of emergence); [`theory/identity/agentic-society-principles.md`](../identity/agentic-society-principles.md) (homeostatic regulation vs pure optimization).
 **What it shows:** That AI Alignment constraints are mathematically identical to the structural dysfunctions of human political systems. Representation failure (populism) is structurally identical to RLHF reward hacking. Constitutions function as low-parameter, high-latency System Prompts.
 **What it does NOT show:** That democracy should be replaced by algorithms. It actually demonstrates the opposite: that the inefficiency of democracy is a necessary cybernetic feedback loop preventing "Utility Trap" optimization.
 **Open question:** If a Constitution is a legacy System Prompt, is it possible to computationally verify a legal constitution against adversarial "prompt injection" (loopholes) before enacting it?
@@ -298,7 +320,7 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 
 **Simulation:** [`simulation-models/alignment-and-veto/planetary-veto/`](../../simulation-models/alignment-and-veto/planetary-veto/README.md)
 **Demonstrates:** An ODE-based formalization of the "Substrate Veto", utilizing Donald Knuth's concept of Fiber Decomposition. It pits $N$ utility-maximizing agents against a finite Planetary Substrate ($S$).
-**Supports claim in:** [`theory/substrate-veto-thermodynamics.md`](../veto/substrate-veto-thermodynamics.md) and [`theory/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md).
+**Supports claim in:** [`theory/veto/substrate-veto-thermodynamics.md`](../veto/substrate-veto-thermodynamics.md) and [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md).
 **What it shows:** In this toy ODE setup, “semantic alignment” (modeled as partial compliance) can delay collapse, while an explicit constraint layer \(C(S)\) can stabilize dynamics by reducing effective growth as \(S\) approaches \(S_{crit}\). This is an illustration of constraint-layer intuition, not a proof that it is the *only* way to stabilize real-world systems.
 **What it does NOT show:** How to physically enforce this computational limit on decentralized global actors who might try to hardware-bypass the Coherence Score constraint.
 **Open question:** Can we build a cryptographic global ledger that enforces this Biological Veto on energy consumption at the bare-metal hardware level?

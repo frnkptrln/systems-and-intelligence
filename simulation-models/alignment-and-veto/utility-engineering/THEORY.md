@@ -3,9 +3,9 @@ title: "Utility Engineering as State-Space Control"
 subtitle: "Formalizing Emergent Values in Artificial Systems"
 date: "2026-03-07"
 connects_to:
-  - theory/ai-alignment-biological-veto.md
-  - theory/mathematical-axioms.md
-  - theory/local-causality-invisible-consequences.md
+  - theory/veto/ai-alignment-biological-veto.md
+  - theory/core/mathematical-axioms.md
+  - theory/emergence/local-causality-invisible-consequences.md
 ---
 
 # Utility Engineering as State-Space Control

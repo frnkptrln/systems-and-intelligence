@@ -9,10 +9,10 @@ are mathematically sound and ready for automated LLM agents to use.
 import unittest
 import numpy as np
 
-# Adjust import path so tests can run from the root directory
+# Adjust import path so tests can run from the root directory.
 import sys
 import os
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'systems-orchestration'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lab'))
 
 from core.utility import UtilitySpace, calculate_harmonic_resonance, build_interaction_matrix
 
