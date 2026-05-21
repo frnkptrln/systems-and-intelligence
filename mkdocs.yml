@@ -24,9 +24,9 @@ nav:
           - "Part 4: Macro-Structures": book/04_macro_structures.md
           - "Part 5: Future Perspectives": book/05_future_perspectives.md
           - "Part 6: The Thermodynamic Mirror": book/06_the_thermodynamic_mirror.md
-          - Bibliography: book/07_bibliography.md
           - "Part 7: Cities as Metabolic Organisms": book/08_cities_as_metabolic_organisms.md
           - "Course Spine: From Rule to Mind": book/09_from_rule_to_mind.md
+          - Bibliography: book/07_bibliography.md
       - "Core Theory":
           - The Generator Question: theory/core/the-generator-question.md
           - The Emergence Manifesto (v1.3): theory/core/emergence-manifesto-v1.3.md
@@ -69,6 +69,8 @@ nav:
           - Tensor Logic Mini Paper: theory/narrative/tensor-logic-mini-paper.en.md
           - LLMs as Probabilistic Automata: theory/ai/llms-as-probabilistic-automata.md
           - P vs NP as Generator Search: theory/computation/p-vs-np-as-generator-search.md
+          - Asimov AI and Latent Thinking: theory/narrative/asimov-ai-latent-thinking.md
+          - Asimov's Paradox of Eternity: theory/narrative/asimov-paradox-eternity.md
       - "TEO Framework Details":
           - Love as Constraint: theory/teo-framework/love-as-constraint.md
           - Why the Paperclip Maximizer Fails: theory/teo-framework/why-paperclip-maximizer-fails.md
@@ -139,6 +141,9 @@ nav:
       - "Lab Frameworks":
           - Systems Orchestration: lab/README.md
           - Agentic Identity Suite: lab/AGENTIC_README.md
+          - "LLM Provider Layer (Mock / Anthropic)": lab/providers/README.md
+          - "Trace → Generator Scaffold": lab/experiments/trace_to_generator/README.md
+          - "Inverse IFS Note": lab/experiments/trace_to_generator/ifs_inverse_note.md
       - "Architecture Logs":
           - Overview: logs/README.md
           - Cosmological Bootloader: logs/001_cosmological-bootloader.md
