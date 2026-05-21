@@ -16,6 +16,7 @@ nav:
       - Overview: synthesis.md
       - Core Claims: meta/repository-meta/core-claims.md
       - "Book: The Grand Synthesis":
+          - "Chapter 0: The Generator Question": theory/core/the-generator-question.md
           - Introduction: book/00_introduction.md
           - "Part 1: Mechanics of Emergence": book/01_mechanics_of_emergence.md
           - "Part 2: Measuring the Mind": book/02_measuring_the_mind.md
@@ -27,7 +28,9 @@ nav:
           - "Part 7: Cities as Metabolic Organisms": book/08_cities_as_metabolic_organisms.md
           - "Course Spine: From Rule to Mind": book/09_from_rule_to_mind.md
       - "Core Theory":
-          - The Emergence Manifesto: theory/core/emergence-manifesto-v1.2.md
+          - The Generator Question: theory/core/the-generator-question.md
+          - The Emergence Manifesto (v1.3): theory/core/emergence-manifesto-v1.3.md
+          - The Emergence Manifesto (v1.2): theory/core/emergence-manifesto-v1.2.md
           - Thermodynamics of Orchestration (TEO): theory/core/thermodynamics-of-orchestration.md
           - TEO Framework Overview: theory/teo-framework/README.md
           - The Substrate Veto: theory/veto/substrate-veto-thermodynamics.md

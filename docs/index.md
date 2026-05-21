@@ -64,11 +64,12 @@ We probe this not with philosophy alone, but with runnable simulations testing m
 
 New to this project? Start here for the most direct path through the core theory and proofs.
 
-1. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.2.md)** — The core claim set.
-2. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
-3. **[From Rule to Mind](book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
-4. **[Generative Form Systems](theory/emergence/generative-form-systems.md)** — The intake spine for external research without sprawl.
-5. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
+1. **[The Generator Question](theory/core/the-generator-question.md)** — The organizing question. Forward vs. inverse asymmetry. The three walls (P vs. NP, Kolmogorov, Gödel). The foundational assumption.
+2. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.2.md)** — The core claim set.
+3. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
+4. **[From Rule to Mind](book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
+5. **[Generative Form Systems](theory/emergence/generative-form-systems.md)** — The intake spine for external research without sprawl.
+6. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
 
 </div>
 

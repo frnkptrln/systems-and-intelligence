@@ -1,5 +1,26 @@
 USE_MOCK_LLM: true
 
+# Provider configuration for the Agentic Identity Suite.
+# Mock mode is the default. Real mode is scaffolded but not wired into the
+# existing experiments yet — it is infrastructure for the eventual empirical
+# step. See lab/providers/README.md for the architecture.
+llm:
+  # provider: 'mock' (default, deterministic, no API calls) | 'anthropic'
+  provider: mock
+  anthropic:
+    # Frank's intended model for empirical runs. Override via env if needed.
+    model: claude-sonnet-4-20250514
+    max_tokens: 1024
+    temperature: 1.0
+    # API key is read from this environment variable. Real mode fails fast
+    # if the variable is unset; mock mode does not read it.
+    api_key_env: ANTHROPIC_API_KEY
+    # API endpoint and version. Hardcoded defaults are fine; override only
+    # if testing against a proxy.
+    endpoint: https://api.anthropic.com/v1/messages
+    api_version: "2023-06-01"
+    timeout_seconds: 60
+
 memory:
   layer2_trigger_sessions: 10
   layer3_trigger_sessions: 50
@@ -16,3 +37,12 @@ experiments:
   n_sessions_exp2_perturbation: 10
   n_sessions_exp2_recovery: 30
   observer_window: 10
+
+# Persistence scoring (Algorithm 1 from Perrier & Bennett 2026).
+# One empirical instrument among several. Used to complement Δ-Kohärenz
+# on the same trajectory. See lab/metrics/persistence_scores.py.
+persistence:
+  # Threshold above which the trajectory is classified Chord rather than
+  # Arpeggio. The Chord Postulate predicts a phase transition at IP_c; this
+  # is the operational cutoff used by the regime classifier.
+  ip_c_threshold: 0.85

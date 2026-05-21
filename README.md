@@ -15,11 +15,12 @@
 Don't want to install anything? You can experience the core concepts immediately directly in your browser:
 
 - 🧭 **Recommended Reading Path**:
-  1. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.2.md)** — The core claim set.
-  2. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
-  3. **[From Rule to Mind](docs/book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
-  4. **[Generative Form Systems](theory/emergence/generative-form-systems.md)** — The intake spine for external research without sprawl.
-  5. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
+  1. **[The Generator Question](theory/core/the-generator-question.md)** — The organizing question. Forward vs. inverse asymmetry. The three walls (P vs. NP, Kolmogorov, Gödel). The foundational assumption.
+  2. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.2.md)** — The core claim set.
+  3. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
+  4. **[From Rule to Mind](docs/book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
+  5. **[Generative Form Systems](theory/emergence/generative-form-systems.md)** — The intake spine for external research without sprawl.
+  6. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
 - 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
 - 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The complete "Grand Synthesis" of the theory.
 

@@ -4,6 +4,63 @@
 
 ---
 
+## Spine context: direction and walls
+
+This map sits inside the project's organizing question. See [The Generator Question](the-generator-question.md) for the full statement; in summary: local rules produce global behavior, running a generator forward is cheap, finding the generator from the trace is structurally hard. Each entry below is therefore tagged with two additional fields beyond the existing ones:
+
+- **Direction.** Whether the simulation runs in the *forward* direction (generator → trace), the *inverse* direction (trace → generator), or *both*.
+- **Wall touched.** Which of the three fundamental limits the simulation engages with:
+    - *P vs. NP* — `[UNRESOLVED]`. The forward/inverse computational asymmetry. Touched by any simulation that demonstrates emergence from locally blind components (the forward side of the asymmetry) or that attempts inverse reconstruction (the hard side).
+    - *Kolmogorov* — `[PROVEN UNCOMPUTABLE]`. The minimal generator for an arbitrary output is uncomputable. Touched by simulations that approximate a generator from observations (learning systems, model-based inference) — they live in the gap between the unreachable minimum and what is practically achievable.
+    - *Gödel* — `[PROVEN]`. Self-description has formal limits. Touched by simulations involving self-reference, self-modeling, or the necessity of opacity.
+    - *None* — the simulation demonstrates a dynamical principle without directly engaging any of the three walls.
+
+The reading of this map is then: **almost every entry below is in the forward direction**. Inverse simulations are rare (currently five, including the explicit `trace_to_generator/` scaffold). This is not an oversight — it is the empirical fact behind the spine: the forward direction is where the cheap computation lives, and the inverse direction is where the open research frontier lives.
+
+### Summary table
+
+| Simulation | Direction | Wall touched |
+|:---|:---|:---|
+| `boids-flocking/` | Forward | P vs. NP |
+| `coupled-oscillators/` (Kuramoto) | Forward | P vs. NP |
+| `self-organized-criticality/` (Bak sandpile) | Forward | P vs. NP |
+| `lenia/` | Forward | P vs. NP |
+| `reaction-diffusion/` (Gray-Scott) | Forward | P vs. NP |
+| `iterated-function-systems/` (Barnsley) | Forward | P vs. NP |
+| `l-systems/` | Forward | P vs. NP |
+| `hebbian-memory/` (Hopfield) | Both | P vs. NP |
+| `stigmergy-swarm/` | Forward | P vs. NP |
+| `ecosystem-regulation/` | Forward | None |
+| `nested-learning-two-state/` | **Inverse** | Kolmogorov |
+| `prediction-error-field/` | **Inverse** | Kolmogorov |
+| `phase-transition-explorer/` (Ising) | Forward | P vs. NP |
+| `active-inference-veto/` | Forward | None |
+| `ai-alignment-veto/` | Forward | None |
+| `symbiotic-nexus/` | Forward | None |
+| `meta-learning-regime-shift/` | **Inverse** | Kolmogorov |
+| `tensor-logic-reasoning/` | Forward | None |
+| `dao-ecosystem/` | Forward | None |
+| `social-computation-network/` | Forward | Gödel |
+| `self-reading-universe/` | Both | Gödel |
+| `latent-introspective-society/` | Forward | None |
+| `economic-trust-network/` | Forward | None |
+| `coupled-lenia-boids/` | Forward | P vs. NP |
+| `active-inference/` (free energy) | Both | None |
+| `grokking-phase-transition/` | **Inverse** | P vs. NP |
+| `utility-engineering/` | Both | None |
+| `political-utility-formalization/` | Forward | None |
+| `teo-civilization/` | Forward | None |
+| `black-swan-resilience/` | Forward | None |
+| `planetary-veto/` | Forward | None |
+| Identity Morphospace & TEO Chord/Arpeggio | Forward | Kolmogorov |
+| `cognitive-breathing-network/` | Forward | None |
+| `trauma-and-deception-network/` | Forward | Gödel |
+| `lab/experiments/trace_to_generator/` | **Inverse** | P vs. NP |
+
+Distribution: 25 Forward, 5 Inverse, 5 Both. The asymmetry is visible. Closing it — even a little — is the research direction.
+
+---
+
 ## `boids-flocking/` → Local Rules Produce Global Behavior
 
 **Simulation:** [`simulation-models/emergent-dynamics/boids-flocking/`](../../simulation-models/emergent-dynamics/boids-flocking/README.md)
@@ -265,9 +322,11 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 ### 3. Grokking Phase Transition (Substrate Saturation) Intelligence Transition
 
 **Simulation:** [`simulation-models/cognitive-architectures/grokking-phase-transition/`](../../simulation-models/cognitive-architectures/grokking-phase-transition/README.md)
+**Direction:** **Inverse** — the network discovers a generator (the modular-arithmetic algorithm) from a set of training traces. Before grokking: stored lookup table. After grokking: approximated generator. This is the clearest empirical demonstration of the inverse direction in the repository.
+**Wall touched:** P vs. NP — the practical hardness of generator recovery is what the long pre-grokking plateau makes visible.
 **Demonstrates:** A neural network trained on modular arithmetic undergoes a sudden phase transition from memorization to generalization — "grokking."
-**Supports claim in:** [`theory/grokking-phase-transition.md`](../emergence/grokking-phase-transition.md) (intelligence as compression); [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §2 (the network has no access to whether it has generalized).
-**What it shows:** That the transition from data → understanding can be sudden and unpredictable, triggered by weight decay acting as Occam's Razor over extended training.
+**Supports claim in:** [`theory/grokking-phase-transition.md`](../emergence/grokking-phase-transition.md) (intelligence as compression); [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §2 (the network has no access to whether it has generalized); [`theory/core/the-generator-question.md`](the-generator-question.md) (inverse direction, foundational assumption).
+**What it shows:** That the transition from data → understanding can be sudden and unpredictable, triggered by weight decay acting as Occam's Razor over extended training. The shift is not gradual compression of stored data — it is replacement of stored data with mechanism.
 **What it does NOT show:** That all forms of intelligence involve grokking-like phase transitions. The phenomenon has been demonstrated for specific algorithmic tasks; generalization to natural language or real-world reasoning is unconfirmed.
 
 ---
@@ -362,7 +421,9 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 ## `lab/experiments/trace_to_generator/` → Inverse Generator Search Scaffold
 
 **Experiment scaffold:** [`lab/experiments/trace_to_generator/README.md`](../../lab/experiments/trace_to_generator/README.md)
+**Direction:** **Inverse** — this is the project's only fully-explicit inverse experiment as runnable code. Given target output constraints, search for prompt/control configurations that produce traces matching those constraints.
+**Wall touched:** P vs. NP — the scaffold is deliberately small precisely because the general problem is intractable; the value is in making the inverse direction visible as a workable problem in a constrained setting, not in claiming recovery.
 **Demonstrates:** A constrained inverse workflow: target trace constraints → candidate generator controls (prompts) → evaluation loop.
-**Supports claim in:** [`theory/emergence/trace-to-generator.md`](../emergence/trace-to-generator.md); [`theory/ai/llms-as-probabilistic-automata.md`](../ai/llms-as-probabilistic-automata.md).
+**Supports claim in:** [`theory/emergence/trace-to-generator.md`](../emergence/trace-to-generator.md); [`theory/ai/llms-as-probabilistic-automata.md`](../ai/llms-as-probabilistic-automata.md); [`theory/core/the-generator-question.md`](the-generator-question.md) (the inverse direction as the open research frontier).
 **What it shows:** Practical asymmetry between generation and reconstruction in a lightweight, backend-free setup.
 **What it does NOT show:** Unique recovery of true generators or mechanism identification from output traces alone.

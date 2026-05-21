@@ -106,6 +106,31 @@ Extends the repository's existing System Intelligence Index from 3 axes (P, R, A
 
 All parameters are centralized in `config.yaml`. The `USE_MOCK_LLM: true` flag ensures all experiments run without external API dependencies.
 
+### Provider abstraction (scaffolded, not yet wired)
+
+A separate provider layer at [`lab/providers/`](providers/README.md) prepares the suite for the eventual switch from mock embeddings to real model calls. Two providers are implemented:
+
+- **`MockProvider`** — the default. Deterministic, fast, no API key.
+- **`AnthropicProvider`** — real mode. Calls the Anthropic Messages API via the standard library (no new dependency). Default model: `claude-sonnet-4-20250514`. Requires `ANTHROPIC_API_KEY` in the environment.
+
+The existing experiments still use the agents' built-in mock embeddings. Wiring those agents through the provider layer is a separate, intentional step — to be taken when real-mode runs become the goal. The infrastructure is ready; the empirical work is deferred. See [`providers/README.md`](providers/README.md) and [`theory/core/the-generator-question.md`](../theory/core/the-generator-question.md) for the spine context.
+
+## Persistence Score (Pstrong)
+
+A standalone implementation of Algorithm 1 from Perrier & Bennett (2026) is available at [`lab/metrics/persistence_scores.py`](metrics/persistence_scores.py). It computes:
+
+- `Pstrong` — averaged simultaneous co-instantiation of identity components across a trajectory.
+- Per-step persistence variance.
+- Regime classification (Chord / Arpeggio) using the `ip_c_threshold` from `config.yaml`.
+
+A comparison function, `correlate_pstrong_with_delta_coherence`, returns the Pearson correlation between per-step Pstrong and per-step Δ-Kohärenz proxies on the same trajectory. This is **one possible empirical question** the suite might eventually answer, not the only one — whether simultaneous co-instantiation and temporal coherence are coupled is currently open.
+
+```bash
+python -m lab.metrics.persistence_scores  # minimal sanity demo
+```
+
+Pstrong is one instrument among several. The project's spine is the [Generator Question](../theory/core/the-generator-question.md), not the persistence score.
+
 ## Open Questions
 
 This module does **not** attempt to "solve" the Mirror Problem. It documents it as an open uncertainty:

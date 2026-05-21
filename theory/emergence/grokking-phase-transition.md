@@ -33,3 +33,47 @@ The lookup table is uncompressed data. The generalizing algorithm (the "grokking
 To grok is to compress successfully. The phase transition from high test loss to low test loss is the exact moment when mere *data points* condense into pure *intelligence*.
 
 If we want to build robust AI, we have to recognize that true understanding is often hiding just past the horizon of catastrophic local minima. The mind—both biological and artificial—sometimes needs a long, seemingly unproductive plateau of random noise to discard its memorized prejudices and finally collapse onto the truth.
+
+---
+
+## Generator reading
+
+Grokking is the cleanest empirical demonstration in this repository of the project's organizing question. The reading is direct.
+
+[The Generator Question](../core/the-generator-question.md) names a forward/inverse asymmetry: running a generator forward (rules → trace) is cheap, recovering a generator from a trace (trace → rules) is structurally hard. Almost every simulation in the repository is on the forward side. Grokking is on the inverse side, and it shows what the inverse direction *looks like* inside a learning system.
+
+Before the phase transition, the network has stored its training set. The weights encode a lookup table: each (input, output) pair memorized as a particular pattern of activations. There is no generator. There is only the trace. Test accuracy is at chance because the trace contains no compressible structure that extends beyond the examples.
+
+After the phase transition, the network has *replaced* the stored trace with an approximation of the generator that produced it. The modular-arithmetic algorithm — small, structured, and lighter in weight norm than any lookup table — has been found. Test accuracy is perfect because the recovered generator extends naturally to inputs the network has never seen.
+
+The transition is sharp and discontinuous. This is the structural point: generator approximation is not a smooth compression of stored data. It is a *qualitative* shift from one regime (storing the trace) to another (running an approximated generator). The lookup table is not gradually compressed into the algorithm. It is *displaced* by it.
+
+### Why this matters for the spine
+
+Most of the inverse direction is conceptual or scaffold-stage in the repository:
+
+- The [Trace to Generator](trace-to-generator.md) essay describes the problem.
+- [Open Problem 11](../reference/open-problems.md#open-problem-11-trace-to-generator-reconstruction) states it formally.
+- The [`lab/experiments/trace_to_generator/`](../../lab/experiments/trace_to_generator/README.md) scaffold provides a toy testbed.
+- The [Agentic Identity Suite](../../lab/AGENTIC_README.md) attempts to distinguish trace-memorizers from generator-approximators behaviorally, but on mock embeddings.
+
+Grokking is different. Grokking is a system, runnable inside the repository, in which the inverse direction *actually happens* — and is observable as a sharp transition in a measurable quantity (test loss). The plateau before grokking is what the practical hardness of generator search looks like from the inside. The transition itself is what successful generator approximation looks like.
+
+This does not generalize to all of intelligence. Grokking has been demonstrated for small algorithmic tasks. Whether the same kind of transition exists for natural language modelling, multi-agent identity formation, or any of the other settings the project cares about is an open empirical question — and would, if found, be one of the most consequential results in the project's frame.
+
+### What grokking does not show
+
+It is worth being explicit about the limits.
+
+- The grokking network does not *prove* it has found the correct generator. It exhibits behavior consistent with having approximated one. Gödel's incompleteness rules out internal certification of correctness for any system of sufficient power; the network is no exception.
+- The generator the network finds is not provably minimal. It is *lighter than the lookup table* (in weight norm under L2 regularization) but [Kolmogorov complexity](../identity/limits-of-formal-systems.md) is uncomputable; the network cannot verify that no even-simpler generator exists.
+- The transition is observed for specific algorithmic tasks with structured underlying rules. There is no result showing that grokking occurs for unstructured or genuinely random target functions.
+- The transition is sensitive to optimizer choice, weight decay strength, and architecture. It is not yet a controlled phenomenon, let alone a guarantee.
+
+### A second reading: phase transition under the foundational assumption
+
+Under the project's `[FOUNDATIONAL ASSUMPTION]` that generator reconstruction is, in general, not efficiently tractable, the pre-grokking plateau acquires a specific meaning. It is not a failure of training. It is the trace of a hard search problem being executed by gradient descent inside a constrained architecture. The search is slow because the search space is large; the search succeeds because the regularizer (weight decay) prefers simpler representations once they exist; the success is sudden because phase transitions in this kind of optimization landscape are not gradual.
+
+If P = NP turned out to be the case (in a practically useful sense), the plateau before grokking would be a curiosity of optimization, not a structural feature. As things stand — see [The Generator Question](../core/the-generator-question.md) for the foundational-assumption framing — the plateau is exactly what the spine predicts: the inverse direction is hard, and its hardness is visible as the long stretch of apparent non-progress before the system discovers a generator that extends.
+
+Whatever else grokking is, it is the project's single best empirical example of the inverse direction occurring.

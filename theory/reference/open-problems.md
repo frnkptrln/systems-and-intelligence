@@ -6,6 +6,8 @@
 
 ## Open Problem 1: The Mirror Problem
 
+> **Spine context:** This is the inverse direction of [The Generator Question](../core/the-generator-question.md) restated at the level of agent identity. A trace (behavior) is observed. The question is whether the generator behind it is a stored lookup or an internal model. The same forward/inverse asymmetry applies, and the same `[FOUNDATIONAL ASSUMPTION]` — that generator recovery from a trace is, in general, not efficiently tractable — is what makes the distinction nontrivial.
+
 **Problem statement:** Given two conversational agents — one that has interacted with a specific human partner over $N$ sessions and developed a trajectory through the 3-Layer Memory Architecture, and one that was initialized with a transcript of those sessions but never interacted — is there any metric that reliably distinguishes them on the basis of their outputs alone?
 
 **Why it matters:** If the two agents are indistinguishable to an external observer, then "relational emergence" (the claim that identity develops *through* interaction) collapses into "sophisticated mirroring" — the entire framework loses its distinguishing claim from standard fine-tuning. Conversely, if a distinguishing metric exists, it would operationally define what "genuine development" means for non-biological agents.
@@ -154,11 +156,11 @@
 
 ## Open Problem 11: Trace-to-Generator Reconstruction
 
-*Raised by: [`theory/emergence/trace-to-generator.md`](../emergence/trace-to-generator.md)*
+*Raised by: [`theory/emergence/trace-to-generator.md`](../emergence/trace-to-generator.md). The spine statement is in [`theory/core/the-generator-question.md`](../core/the-generator-question.md).*
 
 **Problem statement:** Under what constraints can an observer efficiently reconstruct a useful generator from an observed trace, given that many generators may produce indistinguishable or functionally equivalent traces?
 
-**Why it matters:** This inverse problem is the mathematical shadow of understanding. If generator search contains irreducible singularities, then certain systems can be verified locally but never fully understood or reconstructed globally.
+**Why it matters:** This inverse problem is the mathematical shadow of understanding. If generator search contains irreducible singularities, then certain systems can be verified locally but never fully understood or reconstructed globally. This is the canonical instance of [The Generator Question's](../core/the-generator-question.md) inverse direction; the `[FOUNDATIONAL ASSUMPTION]` of P ≠ NP (in its practical form) is exactly what makes this problem nontrivial.
 
 **What a solution would look like:** The definition of an "equivalence class of viable generators" for a specific testbed (e.g., IFS or Prompt Search), along with an algorithm that reliably recovers a generator from that class when given only the output trace.
 

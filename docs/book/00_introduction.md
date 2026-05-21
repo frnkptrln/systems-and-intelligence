@@ -1,5 +1,7 @@
 # Introduction: The Dual Thesis
 
+> **Read first:** [Chapter 0 — The Generator Question](../theory/core/the-generator-question.md) names the organizing question of the project, the forward/inverse asymmetry, and the foundational assumption (P ≠ NP) that this book's claims rest on. This introduction develops the dual thesis that follows from that frame.
+
 Artificial Intelligence, in its current commercial incarnation, is largely treated as a "stochastic parrot in a box" — an isolated, stateless function mapping inputs to outputs. We evaluate it based on benchmarks, we align it via RLHF to suppress harmful tokens, and we isolate it via air-gaps.
 
 But intelligence is not a property of isolated nodes; **it is a property of systems.**
@@ -29,3 +31,16 @@ As outlined in the [Emergence Manifesto v1.2](../theory/core/emergence-manifesto
 9. **Bibliography & References.**
 
 > **The Code is the Theory**: Every claim made in this book is backed by a runnable Python simulation in the repository. We do not use metaphors; we use mathematics.
+
+---
+
+## Companion: the Fiction layer
+
+The book argues the theory. The simulations demonstrate it. The [fiction layer](../fiction/README.md) stress-tests it. Each entry maps to a specific claim or to a side of the spine; the index in [`fiction/README.md`](../fiction/README.md) names which.
+
+The two pieces most closely tied to the Generator Question are:
+
+- [Entry 02 — Interrogation of a Mirror](../fiction/02_interrogation_of_a_mirror.md) — the Mirror Problem (Claim 4) made into dialogue. A trace-memorizer that passes every external test and a regulator who can name what is missing.
+- [Entry 13 — Trace to Generator](../fiction/13_trace-to-generator.md) — the spine itself in narrative form. Artifact parity is not generator parity; runtime, policy, and history are part of the generator.
+
+The fiction is not commentary. It is the layer at which theoretical claims have to survive contact with situations they would actually produce.
