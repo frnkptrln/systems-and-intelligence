@@ -46,6 +46,8 @@ nav:
           - Black Swans & Downward Causation: theory/emergence/black-swans-and-downward-causation.md
           - Fractal Architecture of Emergence: theory/emergence/fractal-architecture-of-emergence.md
           - Generative Form Systems: theory/emergence/generative-form-systems.md
+          - Trace to Generator: theory/emergence/trace-to-generator.md
+          - Generative Compression: theory/emergence/generative-compression.md
           - Across Scales: theory/emergence/scale-comparison-map.md
           - AI Alignment Veto: theory/veto/ai-alignment-biological-veto.md
           - Implementation Patterns: theory/veto/implementation-patterns-biological-veto.md
@@ -62,6 +64,8 @@ nav:
           - Thermodynamic Tokenomics: theory/teo-framework/thermodynamic-tokenomics.md
           - The Post-Individual Operator: theory/identity/the-post-individual-operator.md
           - Tensor Logic Mini Paper: theory/narrative/tensor-logic-mini-paper.en.md
+          - LLMs as Probabilistic Automata: theory/ai/llms-as-probabilistic-automata.md
+          - P vs NP as Generator Search: theory/computation/p-vs-np-as-generator-search.md
       - "TEO Framework Details":
           - Love as Constraint: theory/teo-framework/love-as-constraint.md
           - Why the Paperclip Maximizer Fails: theory/teo-framework/why-paperclip-maximizer-fails.md
@@ -149,6 +153,7 @@ nav:
           - The Coupling-First Sequence: logs/013_the-coupling-first-sequence.md
           - UI/UX of the Biological Veto: logs/014_ui_ux_of_the_biological_veto.md
           - Post-Silicon Architectures: logs/015_post_silicon_architectures.md
+          - The Runtime is Part of the Generator: logs/016_the-runtime-is-part-of-the-generator.md
       - "Narrative Stress Tests":
           - World-Building Bible: fiction/README.md
           - The Impedance Crash: fiction/01_the_impedance_crash.md
@@ -163,6 +168,7 @@ nav:
           - The First Breath: fiction/10_the_first_breath.md
           - Dashboard of the Commons: fiction/11_the_dashboard_of_the_commons.md
           - The Chord State: fiction/12_the_chord_state.md
+          - Trace to Generator: fiction/13_trace-to-generator.md
       - "Interactive Tools":
           - Web Emergence Explorer: interactive/web-explorer.md
           - Tensor Logic Visualizer: interactive/tensor-logic.md
@@ -179,6 +185,7 @@ nav:
       - Speculative Writing Guidelines: meta/repository-meta/speculative-writing-guidelines.md
       - Cultural Optimization Red Team Manual: meta/repository-meta/cultural-optimization-red-team-manual.md
       - Agent Prompt Seed: meta/conceptual-meta/agent-prompt-seed.md
+      - Related Work Map: meta/research-alignment/related-work-map.md
 
 theme:
   name: material

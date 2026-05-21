@@ -152,13 +152,21 @@
 
 ---
 
+## Open Problem 11: Trace-to-Generator Reconstruction
+
+*Raised by: [`theory/emergence/trace-to-generator.md`](../emergence/trace-to-generator.md)*
+
+**Problem statement:** Under what constraints can an observer efficiently reconstruct a useful generator from an observed trace, given that many generators may produce indistinguishable or functionally equivalent traces?
+
+**Why it matters:** This inverse problem is the mathematical shadow of understanding. If generator search contains irreducible singularities, then certain systems can be verified locally but never fully understood or reconstructed globally.
+
+**What a solution would look like:** The definition of an "equivalence class of viable generators" for a specific testbed (e.g., IFS or Prompt Search), along with an algorithm that reliably recovers a generator from that class when given only the output trace.
+
+---
+
 ## How to Contribute
 
 If you identify a new open problem, or have a proposed solution for an existing one, please:
 1. Open an issue on the [repository](https://github.com/frnkptrln/systems-and-intelligence)
 2. Reference the specific problem number
 3. Distinguish between theoretical arguments and empirical evidence
-
-
-## Trace-to-Generator Reconstruction
-Under what constraints can an observer efficiently reconstruct a useful generator from an observed trace, given that many generators may produce indistinguishable or functionally equivalent traces?
