@@ -1,34 +1,54 @@
-# The Runtime Is Part of the Generator
+# Log 016: The Runtime Is Part of the Generator
 
-Status: Applied Architecture Log
-Scope: Practical implications of treating runtime as part of behavior-generating systems.
-Epistemic status: Design guidance drawn from software/ML deployment patterns; not universal law.
-Related files:
-- logs/013_the-coupling-first-sequence.md
-- logs/010_the-right-to-remain-unoptimized.md
-- theory/emergence/trace-to-generator.md
-- theory/ai/llms-as-probabilistic-automata.md
-Failure conditions:
-- Reducing runtime to an afterthought in reproducibility claims.
-- Assuming artifact equivalence implies behavioral equivalence.
+**Mode:** Applied Architecture
+**Status:** WORKING NOTE
+**Date:** 2026-05-04
+**Scope:** Practical implications of treating runtime as part of behavior-generating systems.
+**Depends on:** `013_the-coupling-first-sequence.md`, `010_the-right-to-remain-unoptimized.md`, `theory/emergence/trace-to-generator.md`, `theory/ai/llms-as-probabilistic-automata.md`
 
-If runtime is part of the generator, engineering practice changes:
+---
 
-1. **Infrastructure as runtime**
-   - Build pipelines, container layers, drivers, and schedulers are generator components.
+## Problem Statement
+
+A recurring failure pattern in deployment and postmortem practice is artifact reductionism: teams treat code or model weights as the full generator of behavior.
+
+That assumption breaks traceability. If behavior emerges from coupled systems, then reproducibility claims that ignore runtime, policy, and institutional execution context are structurally incomplete.
+
+## Failure Conditions
+
+1. Runtime is treated as an implementation detail rather than a generator component.
+2. Artifact equivalence ("same model", "same commit") is mistaken for behavioral equivalence.
+3. Incident reviews rely on code diffs while omitting scheduler, tooling, retrieval, and policy deltas.
+
+## Applied Implications
+
+1. **Infrastructure is generator state**
+   - Build pipelines, container layers, drivers, and schedulers are part of behavior production.
    - “Same code, different stack” is often “different generator.”
 
-2. **Organizations as interpreters**
-   - Policy, incentives, and escalation paths shape execution trajectories.
-   - A specification run by two institutions can yield different system behavior.
+2. **Organizations execute semantics**
+   - Policy, incentives, escalation paths, and operator norms shape execution trajectories.
+   - A single specification run by two institutions can produce different outcomes.
 
-3. **LLM applications**
-   - Behavior depends on more than model weights: system prompt, tool access, retrieval corpus, memory policy, and sampling.
+3. **LLM systems are runtime-coupled**
+   - Observed behavior depends on more than weights: system prompt, tool access, retrieval corpus, memory policy, and sampling configuration.
 
-4. **Reproducibility failures**
-   - Most incident retrospectives should include runtime-diff audits, not just code diffs.
+4. **Reproducibility requires runtime-diff audits**
+   - Retrospectives should include runtime and governance diffs, not only artifact diffs.
 
-5. **Governance**
-   - Compliance and safety should target coupled systems, not isolated artifacts.
+5. **Compliance scope must be expanded**
+   - Safety/compliance controls should target the coupled generator bundle, not isolated artifacts.
 
-Applied rule: document generator bundles as **artifact + runtime + policy + history assumptions**.
+## Minimal Operational Rule
+
+Document every behavior-critical deployment as a **generator bundle**:
+
+- **artifact** (code, weights, config)
+- **runtime** (infra, tools, retrieval context, scheduling)
+- **policy** (approval rules, escalation logic, veto thresholds)
+- **history assumptions** (stateful memory, cached context, prior interventions)
+
+A deployment is only "the same system" if all four dimensions are materially equivalent.
+
+---
+*Operational takeaway: If you cannot diff runtime and policy, you cannot reliably trace behavior back to a generator.*
