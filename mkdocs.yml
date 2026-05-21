@@ -28,6 +28,7 @@ nav:
           - "Course Spine: From Rule to Mind": book/09_from_rule_to_mind.md
           - Bibliography: book/07_bibliography.md
       - "Core Theory":
+          - Theory Overview: theory/README.md
           - The Generator Question: theory/core/the-generator-question.md
           - The Emergence Manifesto (v1.3): theory/core/emergence-manifesto-v1.3.md
           - The Emergence Manifesto (v1.2): theory/core/emergence-manifesto-v1.2.md
@@ -43,40 +44,46 @@ nav:
           - Thermodynamic Hardware Manifesto: theory/core/thermodynamic-hardware-manifesto.md
           - Mycelial Veto: theory/veto/the-mycelial-veto.md
       - "Extended Theory":
-          - Conceptual Map: theory/core/conceptual-map.md
-          - Simulation Map: theory/core/simulation-theory-map.md
-          - Grokking Phase Transition: theory/emergence/grokking-phase-transition.md
-          - Black Swans & Downward Causation: theory/emergence/black-swans-and-downward-causation.md
-          - Fractal Architecture of Emergence: theory/emergence/fractal-architecture-of-emergence.md
-          - Generative Form Systems: theory/emergence/generative-form-systems.md
-          - Trace to Generator: theory/emergence/trace-to-generator.md
-          - Generative Compression: theory/emergence/generative-compression.md
-          - Across Scales: theory/emergence/scale-comparison-map.md
-          - AI Alignment Veto: theory/veto/ai-alignment-biological-veto.md
-          - Implementation Patterns: theory/veto/implementation-patterns-biological-veto.md
-          - Minimal Thermodynamic Agent: theory/identity/minimal-thermodynamic-agent.md
-          - Emergence & Origin of Intelligence: theory/emergence/emergence-origin-intelligence.md
-          - Weak vs Strong Emergence: theory/emergence/emergence-downward-causation.md
-          - Consciousness as Global Availability: theory/identity/consciousness-as-global-availability.md
-          - The Non-Individual Intelligence: theory/identity/the-non-individual-intelligence.md
-          - Agentic Society Principles: theory/identity/agentic-society-principles.md
-          - Black Hole Thermodynamics: theory/veto/black-hole-thermodynamics-of-agi.md
-          - The Transition Problem: theory/veto/the-transition-problem.md
-          - Limits of Formal Systems: theory/identity/limits-of-formal-systems.md
-          - Adversarial TEO Immune Response: theory/veto/adversarial-teo-immune-response.md
-          - Thermodynamic Tokenomics: theory/teo-framework/thermodynamic-tokenomics.md
-          - The Post-Individual Operator: theory/identity/the-post-individual-operator.md
-          - Tensor Logic Mini Paper: theory/narrative/tensor-logic-mini-paper.en.md
-          - LLMs as Probabilistic Automata: theory/ai/llms-as-probabilistic-automata.md
-          - P vs NP as Generator Search: theory/computation/p-vs-np-as-generator-search.md
-          - Asimov AI and Latent Thinking: theory/narrative/asimov-ai-latent-thinking.md
-          - Asimov's Paradox of Eternity: theory/narrative/asimov-paradox-eternity.md
+          - "Maps & Overviews":
+              - Conceptual Map: theory/core/conceptual-map.md
+              - Simulation → Theory Map: theory/core/simulation-theory-map.md
+          - "Emergence Essays":
+              - Grokking Phase Transition: theory/emergence/grokking-phase-transition.md
+              - Trace to Generator: theory/emergence/trace-to-generator.md
+              - Generative Compression: theory/emergence/generative-compression.md
+              - Generative Form Systems: theory/emergence/generative-form-systems.md
+              - Fractal Architecture of Emergence: theory/emergence/fractal-architecture-of-emergence.md
+              - Across Scales: theory/emergence/scale-comparison-map.md
+              - Emergence & Origin of Intelligence: theory/emergence/emergence-origin-intelligence.md
+              - Weak vs Strong Emergence: theory/emergence/emergence-downward-causation.md
+              - Black Swans & Downward Causation: theory/emergence/black-swans-and-downward-causation.md
+          - "Identity & Consciousness":
+              - Minimal Thermodynamic Agent: theory/identity/minimal-thermodynamic-agent.md
+              - Consciousness as Global Availability: theory/identity/consciousness-as-global-availability.md
+              - The Non-Individual Intelligence: theory/identity/the-non-individual-intelligence.md
+              - Agentic Society Principles: theory/identity/agentic-society-principles.md
+              - Limits of Formal Systems: theory/identity/limits-of-formal-systems.md
+              - The Post-Individual Operator: theory/identity/the-post-individual-operator.md
+          - "Veto & Alignment Essays":
+              - AI Alignment Veto: theory/veto/ai-alignment-biological-veto.md
+              - Implementation Patterns: theory/veto/implementation-patterns-biological-veto.md
+              - The Transition Problem: theory/veto/the-transition-problem.md
+              - Adversarial TEO Immune Response: theory/veto/adversarial-teo-immune-response.md
+              - Black Hole Thermodynamics: theory/veto/black-hole-thermodynamics-of-agi.md
+          - "Computation & AI":
+              - P vs NP as Generator Search: theory/computation/p-vs-np-as-generator-search.md
+              - LLMs as Probabilistic Automata: theory/ai/llms-as-probabilistic-automata.md
+          - "Narrative Theory":
+              - Tensor Logic Mini Paper: theory/narrative/tensor-logic-mini-paper.en.md
+              - Asimov AI and Latent Thinking: theory/narrative/asimov-ai-latent-thinking.md
+              - Asimov's Paradox of Eternity: theory/narrative/asimov-paradox-eternity.md
       - "TEO Framework Details":
           - Love as Constraint: theory/teo-framework/love-as-constraint.md
           - Why the Paperclip Maximizer Fails: theory/teo-framework/why-paperclip-maximizer-fails.md
           - Lerchner Boundary: theory/teo-framework/lerchner-boundary.md
           - Dupoux Integration: theory/teo-framework/dupoux-integration.md
           - Antikythera Topology: theory/teo-framework/antikythera-topology.md
+          - Thermodynamic Tokenomics: theory/teo-framework/thermodynamic-tokenomics.md
       - "Symbiotic Organ Hypothesis":
           - Hypothesis: theory/symbiotic/symbiotic-organ-hypothesis.md
           - Scar Tissue Architecture: theory/symbiotic/scar-tissue-architecture.md
@@ -116,7 +123,9 @@ nav:
           - Continuous Thought Machines: simulation-models/cognitive-architectures/continuous-thought-machines/README.md
           - Archive Forgets on Purpose: simulation-models/cognitive-architectures/archive-forgetting-purpose/README.md
       - "Social Computation":
-          - Political Formalization: simulation-models/social-computation/political-utility-formalization/README.md
+          - "Political Formalization":
+              - Overview: simulation-models/social-computation/political-utility-formalization/README.md
+              - Theory: simulation-models/social-computation/political-utility-formalization/THEORY.md
           - Stigmergy Swarm: simulation-models/social-computation/stigmergy-swarm/README.md
           - Cognitive Breathing Network: simulation-models/social-computation/cognitive-breathing-network/README.md
           - Symbiotic Breathing (Substrate Veto): simulation-models/social-computation/symbiotic-breathing/README.md
@@ -130,7 +139,11 @@ nav:
           - Rhythm Locks: simulation-models/social-computation/rhythm-locks/README.md
       - "Alignment & Veto":
           - Human Vital Systems: simulation-models/alignment-and-veto/human-vital-systems/README.md
-          - Utility Engineering: simulation-models/alignment-and-veto/utility-engineering/README.md
+          - "Utility Engineering":
+              - Overview: simulation-models/alignment-and-veto/utility-engineering/README.md
+              - Theory: simulation-models/alignment-and-veto/utility-engineering/THEORY.md
+              - Framework: simulation-models/alignment-and-veto/utility-engineering/utility_engineering_framework.md
+              - "Empirical Audit (ChatGPT vs. Claude)": simulation-models/alignment-and-veto/utility-engineering/empirical-results/chatgpt-vs-claude-audit.md
           - TEO Civilization: simulation-models/alignment-and-veto/teo-civilization/README.md
           - Planetary Veto: simulation-models/alignment-and-veto/planetary-veto/README.md
           - Black Swan Resilience: simulation-models/alignment-and-veto/black-swan-resilience/README.md
@@ -184,7 +197,9 @@ nav:
       - "Lab Notes":
           - Data Analysis: lab/data-analysis/README.md
           - Tools: lab/tools/README.md
-          - Benchmarks: lab/benchmarks/cognitive-stress-tests/README.md
+          - "Benchmarks":
+              - Cognitive Stress Tests: lab/benchmarks/cognitive-stress-tests/README.md
+              - TEO Framework Benchmark: lab/benchmarks/teo-framework/README.md
   - "Meta":
       - Overview: meta/README.md
       - Repository Architecture: meta/repository-meta/repository-information-architecture.md
