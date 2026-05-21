@@ -218,3 +218,25 @@ The system makes four testable predictions about when stability, monopoly, polar
 **What it is NOT:** Not novel mathematics. Each component is individually well-established. The contribution is their coupling into a unified diagnostic for multi-agent dynamics. See [`theory/limitations-and-honest-assessment.md`](limitations-and-honest-assessment.md) for an honest accounting.
 
 **Where it appears:** [`theory/thermodynamics-of-orchestration.md`](../core/thermodynamics-of-orchestration.md), [`theory/teo-framework/`](../teo-framework/README.md), [`simulation-models/alignment-and-veto/teo-civilization/`](../../simulation-models/alignment-and-veto/teo-civilization/README.md)
+
+
+## Trace
+An observed output, pattern, behavior, signal, artifact, or measurement that may have been produced by one or more generative processes.
+
+## Generator
+A process, rule, program, model, mechanism, or coupled runtime that can produce a trace or a class of traces.
+
+## Generative Compression
+A compressed description that can expand into new traces, predictions, or variants rather than merely storing the original data.
+
+## Runtime
+The interpreter, substrate, environment, context, tools, feedback, and execution conditions required for a generator to produce behavior.
+
+## Reconstruction
+The constrained search process of inferring one or more plausible generators from an observed trace.
+
+## Witness
+A candidate solution/certificate/generator that can be checked by a verifier under specified constraints.
+
+## Inverse Prompting
+The task of finding prompts, context, examples, or control conditions that steer a language model toward a desired output class.

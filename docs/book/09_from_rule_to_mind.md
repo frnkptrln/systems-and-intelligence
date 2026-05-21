@@ -143,3 +143,9 @@ For the explicit scale-by-scale comparison, see [Across Scales](../theory/emerge
 This is not a closed doctrine. It is a disciplined way to keep opening the same question from different angles:
 
 > How does constrained repetition become form, and when does form become capable of shaping its own future?
+
+
+## Inverse Direction (Trace → Generator)
+The primary spine here follows operator → iteration → form → boundary → return path (generator → trace).
+A complementary research thread asks the inverse question: given a trace, which constrained generators could have produced it?
+See [`theory/emergence/trace-to-generator.md`](../../theory/emergence/trace-to-generator.md) for the companion axis and limits.

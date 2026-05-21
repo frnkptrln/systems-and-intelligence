@@ -158,3 +158,7 @@ If you identify a new open problem, or have a proposed solution for an existing 
 1. Open an issue on the [repository](https://github.com/frnkptrln/systems-and-intelligence)
 2. Reference the specific problem number
 3. Distinguish between theoretical arguments and empirical evidence
+
+
+## Trace-to-Generator Reconstruction
+Under what constraints can an observer efficiently reconstruct a useful generator from an observed trace, given that many generators may produce indistinguishable or functionally equivalent traces?

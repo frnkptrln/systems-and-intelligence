@@ -357,3 +357,12 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 **What it shows:** That perfect transparency is fatal. A network must contain opacity (deception) to maintain the information differentials required for survival. Furthermore, surviving trauma physically alters network topology, proving that "catastrophic forgetting" is sometimes a necessary survival mechanism (crystallization).
 **What it does NOT show:** How an LLM would explicitly decide what to lie about. The simulation uses random noise as a proxy for deception.
 **Open question:** Can we train a small LLM explicitly to act as an "Epistemic Firewall" for a larger orchestrator—intentionally injecting hallucinated but contextually relevant counter-narratives to prevent the orchestrator from collapsing into a single, high-confidence (but potentially wrong) state?
+
+
+## `lab/experiments/trace_to_generator/` → Inverse Generator Search Scaffold
+
+**Experiment scaffold:** [`lab/experiments/trace_to_generator/README.md`](../../lab/experiments/trace_to_generator/README.md)
+**Demonstrates:** A constrained inverse workflow: target trace constraints → candidate generator controls (prompts) → evaluation loop.
+**Supports claim in:** [`theory/emergence/trace-to-generator.md`](../emergence/trace-to-generator.md); [`theory/ai/llms-as-probabilistic-automata.md`](../ai/llms-as-probabilistic-automata.md).
+**What it shows:** Practical asymmetry between generation and reconstruction in a lightweight, backend-free setup.
+**What it does NOT show:** Unique recovery of true generators or mechanism identification from output traces alone.
