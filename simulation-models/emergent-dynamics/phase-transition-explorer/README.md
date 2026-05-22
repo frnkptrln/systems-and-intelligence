@@ -60,7 +60,7 @@ The display shows four panels:
 ## ▶ Run
 
 ```bash
-cd simulation-models/phase-transition-explorer
+cd simulation-models/emergent-dynamics/phase-transition-explorer
 python3 phase-transition-explorer.py
 ```
 

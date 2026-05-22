@@ -47,7 +47,7 @@ Press `ESC` to exit.
 ## ▶ Run
 
 ```bash
-cd simulation-models/coupled-oscillators
+cd simulation-models/emergent-dynamics/coupled-oscillators
 python3 coupled_oscillators.py
 ```
 

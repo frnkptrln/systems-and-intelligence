@@ -19,7 +19,7 @@ The two scales **couple bidirectionally**:
 ### Run
 
 ```bash
-cd simulation-models/nested-emergence-demo
+cd simulation-models/social-computation/nested-emergence-demo
 python3 nested_emergence_demo.py
 ```
 

@@ -64,7 +64,7 @@ Press `ESC` to exit.
 ## ▶ Run
 
 ```bash
-cd simulation-models/boids-flocking
+cd simulation-models/emergent-dynamics/boids-flocking
 python3 boids.py
 ```
 

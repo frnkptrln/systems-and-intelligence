@@ -43,6 +43,6 @@ Press `ESC` in the window at any time to stop the simulation.
 From the repository root:
 
 ```bash
-cd simulation-models/prediction-error-field
+cd simulation-models/cognitive-architectures/prediction-error-field
 python3 prediction_error_field.py
 

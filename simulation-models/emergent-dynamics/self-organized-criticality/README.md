@@ -82,7 +82,7 @@ Press `ESC` to exit.
 ## ▶ Run
 
 ```bash
-cd simulation-models/self-organized-criticality
+cd simulation-models/emergent-dynamics/self-organized-criticality
 python3 sandpile.py
 ```
 

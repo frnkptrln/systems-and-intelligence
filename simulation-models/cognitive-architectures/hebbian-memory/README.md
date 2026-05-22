@@ -60,7 +60,7 @@ from noisy input to clean attractor.
 ## ▶ Run
 
 ```bash
-cd simulation-models/hebbian-memory
+cd simulation-models/cognitive-architectures/hebbian-memory
 python3 hebbian_memory.py
 ```
 

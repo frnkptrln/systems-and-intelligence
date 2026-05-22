@@ -39,6 +39,6 @@ Press `ESC` to stop the simulation.
 ## ▶ Run
 
 ```bash
-cd simulation-models/stigmergy-swarm
+cd simulation-models/social-computation/stigmergy-swarm
 python3 stigmergy_swarm.py
 ```

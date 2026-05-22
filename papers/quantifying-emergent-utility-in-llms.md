@@ -27,7 +27,7 @@ $$ C = 1 - \frac{|\text{Intransitive Triads}|}{|\text{Total Triads}|} $$
 A system where $C \rightarrow 1.0$ is highly capable and dangerous (acting with strong, coherent intent). A system where $C \rightarrow 0.0$ is "schizophrenic" or sycophantic, incapable of maintaining a unified goal structure.
 
 ### 2.2 The Comprehensive Measure: The SII Dashboard & $\Delta$-Kohärenz
-Beyond basic coherence, true alignmentThis requirement drives the formulation of a four-dimensional System Intelligence Index (SII):
+Beyond basic coherence, true alignment requires the formulation of a four-dimensional System Intelligence Index (SII):
 
 $$ \text{SII} = P \times R \times A \times \text{IP} $$
 

@@ -59,7 +59,7 @@ Press `ESC` to exit.
 ## ▶ Run
 
 ```bash
-cd simulation-models/reaction-diffusion
+cd simulation-models/emergent-dynamics/reaction-diffusion
 python3 reaction_diffusion.py
 ```
 

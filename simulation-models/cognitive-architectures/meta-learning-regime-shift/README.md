@@ -35,6 +35,6 @@ A 3-panel matplotlib figure:
 ## ▶ Run
 
 ```bash
-cd simulation-models/meta-learning-regime-shift
+cd simulation-models/cognitive-architectures/meta-learning-regime-shift
 python3 meta_regime_shift.py
 ```

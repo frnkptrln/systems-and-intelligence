@@ -61,3 +61,9 @@ Depends on: <theory docs / simulations>
 11. [`011_the-last-unmeasured-room-protocol.md`](011_the-last-unmeasured-room-protocol.md) — Constitutional zones of partial illegibility
 12. [`012_latency-as-mercy.md`](012_latency-as-mercy.md) — Delay as a protective civic actuator
 13. [`013_the-coupling-first-sequence.md`](013_the-coupling-first-sequence.md) — Operational ordering of TEO constraint activation (K → γ → D_max)
+
+### Interface & Hardware
+
+14. [`014_ui_ux_of_the_biological_veto.md`](014_ui_ux_of_the_biological_veto.md) — Vital Impact Cards and the cognitive-bandwidth bottleneck in human oversight
+15. [`015_post_silicon_architectures.md`](015_post_silicon_architectures.md) — TEO-native chip topologies: analog cores, γ-pin, Coupling Phase-Lock Loop
+16. [`016_the-runtime-is-part-of-the-generator.md`](016_the-runtime-is-part-of-the-generator.md) — Reproducibility requires diffing the full generator bundle (artifact + runtime + policy + history)

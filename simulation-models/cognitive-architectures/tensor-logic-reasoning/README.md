@@ -43,6 +43,6 @@ The script `tensor_logic_demo.py`:
 ## Usage
 
 ```bash
-cd simulation-models/tensor-logic-reasoning
+cd simulation-models/cognitive-architectures/tensor-logic-reasoning
 python3 tensor_logic_demo.py
 
