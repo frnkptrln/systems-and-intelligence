@@ -4,6 +4,8 @@
 **Type:** Conceptual essay (secondary: Proto-theory)  
 **Dependencies:** [Machines of Loving Grace](../narrative/machines-of-loving-grace.md), [TEO Framework](../core/thermodynamics-of-orchestration.md), [Grokking Phase Transition](../emergence/grokking-phase-transition.md), [Fractal Architecture](../emergence/fractal-architecture-of-emergence.md)
 
+> **Spine context.** The transition problem is itself an *inverse-direction* question in the sense of [The Generator Question](../core/the-generator-question.md): given the current civilizational trace and a target attractor (the viable corridor), what generator change brings the system across the separatrix? The grokking analogy in §2 is not decorative — it is the cleanest empirical instance the project has of inverse-direction phase transitions inside a learning system.
+
 ---
 
 ## 0. The Missing Question

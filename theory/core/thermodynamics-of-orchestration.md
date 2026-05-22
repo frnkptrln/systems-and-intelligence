@@ -2,6 +2,8 @@
 
 *A formal mathematical framework coupling evolutionary game theory, nonlinear dynamics, control theory, and thermodynamics to model intelligent collectives — whether silicon or civilizational.*
 
+> **Spine context.** TEO is the project's main *forward-direction* system in the sense of [The Generator Question](the-generator-question.md): running these coupled ODEs forward predicts the dynamics of agent ecologies and civilizations. The inverse direction — recovering a TEO parameter set from observed civilizational data — is the open empirical problem named in [Future Perspectives §4](../../book/05_future_perspectives.md).
+
 ---
 
 ## Motivation

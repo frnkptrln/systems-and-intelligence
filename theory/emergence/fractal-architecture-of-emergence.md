@@ -38,6 +38,8 @@ open_questions_raised:
 
 *How the Same Constraints Repeat at Every Scale*
 
+> **Spine context.** This essay is where [The Generator Question](../core/the-generator-question.md) becomes scale-invariant. The same forward/inverse asymmetry — local rules producing global structure that is structurally hard to invert — recurs at every scale examined here: neuron, cell, human, agent. The "fractal" in the title is dynamical, not visual: the same constraints, the same asymmetry, at every level.
+
 ---
 
 ## The Distinction That Matters

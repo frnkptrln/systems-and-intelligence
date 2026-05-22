@@ -15,6 +15,7 @@ Each document below derives a specific aspect of the framework from the governin
 | [**Dupoux Integration**](dupoux-integration.md) | Maps developmental learning theory (Dupoux) onto TEO: System A (unconstrained competition), System B (top-down regulation), System M (the full coupled system). Shows why constraints are prerequisites for learning, not obstacles. |
 | [**Love as Constraint**](love-as-constraint.md) | Formalizes "care" as three mathematical boundaries: structural resilience ($\lambda_2$), thermodynamic ceiling ($D_{\max}$), and identity persistence (IP). Their conjunction defines the **viable corridor**. |
 | [**Why the Paperclip Maximizer Fails**](why-paperclip-maximizer-fails.md) | Step-by-step derivation of the trajectory from unconstrained optimization ($\gamma = 0$, $K = 0$) through monopoly to substrate collapse. Shows why intelligence alone cannot escape the entropy budget. |
+| [**Thermodynamic Tokenomics**](thermodynamic-tokenomics.md) | Applies the TEO entropy budget ($D_{\max}$) to political economy: compute as the base currency, Ecological Dissipation Rights (EDR) as the unit, Proof-of-Dissipation as the protocol. The framework's application to economic substrate-coupling. |
 
 ---
 

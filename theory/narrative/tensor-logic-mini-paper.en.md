@@ -261,9 +261,9 @@ This mini-paper is part of the systems-and-intelligence project.
 
 Files of interest:
 
-• theory/tensor-logic-mini-paper.en.md — this document
+• theory/narrative/tensor-logic-mini-paper.en.md — this document
 
-• theory/tensor-logic-visual.html — interactive visualization of core concepts
+• docs/interactive/tensor-logic-visual.html — interactive visualization of core concepts
 
 • simulation-models/cognitive-architectures/tensor-logic-reasoning/ — Python implementation of the toy example
 

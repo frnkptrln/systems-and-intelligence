@@ -2,7 +2,7 @@
 
 ## Abstract
 
-This Request for Comments (RFC) defines standard architectural patterns within the Thermodynamic Equilibrium Operations (TEO) framework for implementing safety constraints on autonomous AI systems. The objective is to prevent frictionless, unconstrained scaling of agentic execution loops by enforcing structural boundaries, collectively referred to as the Biological Veto. The patterns outlined below establish concrete, code-level constraints to ensure deterministic control over non-deterministic systems.
+This Request for Comments (RFC) defines standard architectural patterns within the Thermodynamics of Emergent Orchestration (TEO) framework for implementing safety constraints on autonomous AI systems. The objective is to prevent frictionless, unconstrained scaling of agentic execution loops by enforcing structural boundaries, collectively referred to as the Biological Veto. The patterns outlined below establish concrete, code-level constraints to ensure deterministic control over non-deterministic systems.
 
 ## Architectural Constraints
 
