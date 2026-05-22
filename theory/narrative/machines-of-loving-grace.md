@@ -80,7 +80,7 @@ The `political-utility-formalization` simulation ([evidence](../../simulation-mo
 
 ### Why We Don't See It
 
-The TEO framework explains this too. It is Claim 2 of the [Emergence Manifesto](../core/emergence-manifesto-v1.2.md): **local blindness is a precondition for emergence.**
+The TEO framework explains this too. It is Claim 2 of the [Emergence Manifesto](../core/emergence-manifesto-v1.3.md): **local blindness is a precondition for emergence.**
 
 > No component of a self-organizing system has access to the global state it helps produce.
 

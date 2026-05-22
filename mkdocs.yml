@@ -30,8 +30,8 @@ nav:
       - "Core Theory":
           - Theory Overview: theory/README.md
           - The Generator Question: theory/core/the-generator-question.md
-          - The Emergence Manifesto (v1.3): theory/core/emergence-manifesto-v1.3.md
-          - The Emergence Manifesto (v1.2): theory/core/emergence-manifesto-v1.2.md
+          - Trace to Generator (essay): theory/emergence/trace-to-generator.md
+          - The Emergence Manifesto: theory/core/emergence-manifesto-v1.3.md
           - Thermodynamics of Orchestration (TEO): theory/core/thermodynamics-of-orchestration.md
           - TEO Framework Overview: theory/teo-framework/README.md
           - The Substrate Veto: theory/veto/substrate-veto-thermodynamics.md
@@ -49,7 +49,6 @@ nav:
               - Simulation → Theory Map: theory/core/simulation-theory-map.md
           - "Emergence Essays":
               - Grokking Phase Transition: theory/emergence/grokking-phase-transition.md
-              - Trace to Generator: theory/emergence/trace-to-generator.md
               - Generative Compression: theory/emergence/generative-compression.md
               - Generative Form Systems: theory/emergence/generative-form-systems.md
               - Fractal Architecture of Emergence: theory/emergence/fractal-architecture-of-emergence.md

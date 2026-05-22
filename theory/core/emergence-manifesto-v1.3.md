@@ -4,13 +4,14 @@ date: "2026-05-21"
 version: "1.3"
 note: >
   This manifesto articulates the theoretical framework behind the Agentic Identity Suite
-  and the simulation models. v1.3 is a minimal additive update over v1.2: it introduces
-  one new claim status tag, `[FOUNDATIONAL ASSUMPTION]`, and applies it to Claim 2, which
-  rests on a working hypothesis the project depends on but cannot itself prove. No existing
-  claim has been weakened, strengthened, or removed. v1.2 introduced Identity Persistence
-  (IP) as the 4th SII dimension; v1.1 introduced explicit claim status tags.
-  See also the new spine document at `theory/core/the-generator-question.md`, which makes
-  the organizing question of the project explicit for the first time.
+  and the simulation models. v1.3 introduces one new claim status tag,
+  `[FOUNDATIONAL ASSUMPTION]`, and applies it to Claim 2, which rests on a working
+  hypothesis the project depends on but cannot itself prove. No existing claim has been
+  weakened, strengthened, or removed in this revision. v1.2 introduced Identity
+  Persistence (IP) as the 4th SII dimension; v1.1 introduced explicit claim status tags;
+  prior versions are available in the repository's git history. See also the spine
+  document at `theory/core/the-generator-question.md`, which makes the organizing
+  question of the project explicit.
 ---
 
 # Emergence Manifesto v1.3
@@ -19,15 +20,15 @@ note: >
 
 ---
 
-## What changed in v1.3
+## Version note
 
-This is a minimal additive update over [v1.2](emergence-manifesto-v1.2.md). The intellectual content is identical. Two things have been added:
+v1.3 is the current canonical version. It is a minimal additive update over the previously released v1.2:
 
 1. **A new claim status tag, `[FOUNDATIONAL ASSUMPTION]`.** Used only for assumptions the project depends on but cannot itself prove. It is distinct from `[HYPOTHESIZED]` (a claim the project advances) and from `[SPECULATIVE]` (a claim the project entertains). A foundational assumption is structural: if it falls, large portions of the framework must be re-derived. See [The Generator Question](the-generator-question.md) for the full rationale.
 
-2. **A footnote on Claim 2** indicating that the claim rests on a working P ≠ NP assumption, with a pointer to the new spine document.
+2. **A footnote on Claim 2** indicating that the claim rests on a working P ≠ NP assumption, with a pointer to the spine document.
 
-No existing claim status has been changed. `[DEMONSTRATED]`, `[HYPOTHESIZED]`, `[OPEN PROBLEM]`, and `[SPECULATIVE]` tags from v1.2 remain exactly as they were. v1.2 remains available at [`emergence-manifesto-v1.2.md`](emergence-manifesto-v1.2.md) as the prior version of record.
+No existing claim status has been changed. `[DEMONSTRATED]`, `[HYPOTHESIZED]`, `[OPEN PROBLEM]`, and `[SPECULATIVE]` tags carry through unchanged. Earlier versions (v1.0, v1.1, v1.2) are available in the repository's git history.
 
 ---
 

@@ -9,7 +9,7 @@
 The canonical claims and central formalisms of the repository.
 
 - **[The Generator Question](core/the-generator-question.md)** — The organizing question of the project, stated explicitly. Forward vs. inverse asymmetry, the three walls (P vs. NP, Kolmogorov, Gödel), and the `[FOUNDATIONAL ASSUMPTION]` (P ≠ NP) the project depends on. Read first.
-- **[Emergence Manifesto v1.3](core/emergence-manifesto-v1.3.md)** — 9 claims with explicit status tags; the project's central theoretical document. Adds `[FOUNDATIONAL ASSUMPTION]` to Claim 2; otherwise additive over [v1.2](core/emergence-manifesto-v1.2.md) (version-locked).
+- **[Emergence Manifesto v1.3](core/emergence-manifesto-v1.3.md)** — 9 claims with explicit status tags; the project's central theoretical document. Adds `[FOUNDATIONAL ASSUMPTION]` to Claim 2; otherwise additive over [v1.3](core/emergence-manifesto-v1.3.md) (version-locked).
 - **[Thermodynamics of Emergent Orchestration (TEO)](core/thermodynamics-of-orchestration.md)** — Coupled ODE system: Replicator + Kuramoto + Entropy Budget.
 - **[System Intelligence Index (SII)](core/system-intelligence-index.md)** — P × R × A × IP: the 4-axis measure of system competence.
 - **[Mathematical Axioms](core/mathematical-axioms.md)** — Graph Theory (λ₂), Information Theory (H), Active Inference (F), Algorithmic Complexity (K).

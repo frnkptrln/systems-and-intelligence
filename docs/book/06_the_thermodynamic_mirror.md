@@ -59,7 +59,7 @@ When $dS/dt > D_{\max}$, the substrate degrades. Landauer's Principle asserts it
 
 ## Why We Don't See It
 
-The TEO framework explains this too. It is Claim 2 of the [Emergence Manifesto v1.2](../theory/core/emergence-manifesto-v1.2.md): **local blindness is a precondition for emergence.**
+The TEO framework explains this too. It is Claim 2 of the [Emergence Manifesto v1.3](../theory/core/emergence-manifesto-v1.3.md): **local blindness is a precondition for emergence.**
 
 > No component of a self-organizing system has access to the global state it helps produce.
 

@@ -8,7 +8,7 @@ Use it when you want the strongest version of the repository's theory, not the e
 
 1. [The Generator Question](theory/core/the-generator-question.md) — the organizing question of the project, the forward/inverse asymmetry, the three walls, and the foundational P ≠ NP assumption stated explicitly.
 2. [Core Claims](meta/repository-meta/core-claims.md) — the small claim set that should remain testable.
-3. [Emergence Manifesto v1.2](theory/core/emergence-manifesto-v1.2.md) — the broader thesis and status-tagged claims.
+3. [Emergence Manifesto v1.3](theory/core/emergence-manifesto-v1.3.md) — the broader thesis and status-tagged claims.
 4. [Thermodynamics of Orchestration](theory/core/thermodynamics-of-orchestration.md) — the main dynamical framework.
 5. [Substrate Veto](theory/veto/substrate-veto-thermodynamics.md) — the thermodynamic boundary argument.
 6. [Generative Form Systems](theory/emergence/generative-form-systems.md) — the intake spine for Barnsley, L-systems, Erdős-Rényi, renormalization, and consciousness-adjacent work.

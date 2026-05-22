@@ -10,6 +10,8 @@ Intelligence is modeled here as constrained dynamical viability, not raw predict
 
 This claim is challengeable: if unbounded optimization can remain stable without substrate stress, regulator overload, or loss of corrective feedback, the central architecture is wrong.
 
+> **Relation to the Spine.** The information architecture described below sits inside a broader organizing question stated in [The Generator Question](../../theory/core/the-generator-question.md). The spine names *why* the asymmetry between forward (generator → trace) and inverse (trace → generator) is the project's deepest concern; this document handles *how* contributions are organized in light of that.
+
 ---
 
 ## 1) Content Lanes (What goes where)
@@ -75,7 +77,7 @@ Contradictions, partial models, scenario tests, and fragments are allowed here. 
 
 These files assert or compress claims about reality and therefore need clearer epistemic status, definitions, and failure conditions:
 
-- `theory/core/emergence-manifesto-v1.2.md`
+- `theory/core/emergence-manifesto-v1.3.md`
 - `theory/core/thermodynamics-of-orchestration.md`
 - `theory/identity/minimal-thermodynamic-agent.md`
 - `theory/veto/substrate-veto-thermodynamics.md`

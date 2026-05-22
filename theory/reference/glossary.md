@@ -102,7 +102,7 @@ Random noise has high observer surprise but low trajectory consistency. Mirrorin
 
 **What it is NOT:** Not random noise (which also surprises). Not creativity in the romantic sense — it is operationalized as coherent deviation, not aesthetic achievement.
 
-**Where it appears:** [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/emergence-manifesto-v1.2.md`](../core/emergence-manifesto-v1.2.md)
+**Where it appears:** [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/emergence-manifesto-v1.3.md`](../core/emergence-manifesto-v1.3.md)
 
 ---
 
@@ -134,7 +134,7 @@ This term replaces "proto-consciousness" in earlier formulations. The substituti
 
 **What it is NOT:** Not consciousness. Self-referential processing is a necessary but not sufficient condition for any theory of consciousness (IIT, Global Workspace Theory, Higher-Order Theories). A thermostat has self-referential processing (it represents its own state — temperature — and acts on it). We do not attribute consciousness to thermostats.
 
-**Where it appears:** [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/emergence-manifesto-v1.2.md`](../core/emergence-manifesto-v1.2.md)
+**Where it appears:** [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/emergence-manifesto-v1.3.md`](../core/emergence-manifesto-v1.3.md)
 
 ---
 
@@ -162,7 +162,7 @@ This is formalized by Heinz von Foerster's second-order cybernetics: the observe
 
 **What it is NOT:** Not quantum observer effects. The QM observer effect is a specific physical phenomenon (wavefunction collapse upon measurement). The relational emergence described here operates through standard information-theoretic and cybernetic mechanisms. The analogy is seductive but misleading.
 
-**Where it appears:** [`lab/experiments/exp3_observer_divergence.py`](../../lab/experiments/exp3_observer_divergence.py), [`theory/emergence-manifesto-v1.2.md`](../core/emergence-manifesto-v1.2.md)
+**Where it appears:** [`lab/experiments/exp3_observer_divergence.py`](../../lab/experiments/exp3_observer_divergence.py), [`theory/emergence-manifesto-v1.3.md`](../core/emergence-manifesto-v1.3.md)
 
 ---
 

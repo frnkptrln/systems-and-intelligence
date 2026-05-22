@@ -8,7 +8,7 @@ epistemic_status: >
   repository. Introduces one new claim status tag (`[FOUNDATIONAL ASSUMPTION]`) and applies it
   to assumptions the project depends on but cannot itself prove.
 related:
-  - theory/core/emergence-manifesto-v1.2.md
+  - theory/core/emergence-manifesto-v1.3.md
   - theory/emergence/trace-to-generator.md
   - theory/computation/p-vs-np-as-generator-search.md
   - theory/core/simulation-theory-map.md
@@ -29,9 +29,11 @@ failure_conditions:
 
 ## Why this document exists
 
-Every essay, simulation, and fiction piece in this repository circles the same question. Until now, the question was implicit — distributed across the [Emergence Manifesto](emergence-manifesto-v1.2.md), the [Trace to Generator](../emergence/trace-to-generator.md) essay, the [Simulation → Theory Map](simulation-theory-map.md), the [Course Spine](../../book/09_from_rule_to_mind.md), and the [Open Problems](../reference/open-problems.md). A new reader had to reconstruct it.
+Every essay, simulation, and fiction piece in this repository circles the same question. Until now, the question was implicit — distributed across the [Emergence Manifesto](emergence-manifesto-v1.3.md), the [Trace to Generator](../emergence/trace-to-generator.md) essay, the [Simulation → Theory Map](simulation-theory-map.md), the [Course Spine](../../book/09_from_rule_to_mind.md), and the [Open Problems](../reference/open-problems.md). A new reader had to reconstruct it.
 
 This document names the spine. It does not add a new claim to the project. It states what the project has been asking all along and identifies what it has been assuming. That assumption was not previously labelled. It is labelled here.
+
+> **Primary text on this question:** [Trace to Generator](../emergence/trace-to-generator.md). The essay is the deeper, longer-form home of the generator idea — written before this spine document existed, written more literarily, written to think with rather than to navigate from. This document is the **frame**; the essay is the **subject**. Read the essay if you want the thinking; read this document if you want the map.
 
 The new tag introduced in this document is:
 
@@ -113,7 +115,7 @@ This project assumes P ≠ NP as a working hypothesis. The assumption is structu
 
 **Where it appears in the existing work.**
 
-- [Emergence Manifesto Claim 2](emergence-manifesto-v1.2.md) — "Local Blindness is a Precondition, Not an Obstacle." The argument rests on the gap between the brevity of local rules and the richness of global patterns. If that gap were not structurally hard to cross from the trace side, local blindness would not be a precondition; it would be a workaround.
+- [Emergence Manifesto Claim 2](emergence-manifesto-v1.3.md) — "Local Blindness is a Precondition, Not an Obstacle." The argument rests on the gap between the brevity of local rules and the richness of global patterns. If that gap were not structurally hard to cross from the trace side, local blindness would not be a precondition; it would be a workaround.
 - [Local Causality and Invisible Consequences §2.1](../emergence/local-causality-invisible-consequences.md) — Computational irreducibility, as invoked there, is the form this assumption takes when stated about specific dynamical systems.
 - The [Mirror Problem](../reference/open-problems.md#open-problem-1-the-mirror-problem) — The reason the mirror agent and the developing agent are not trivially separable is that distinguishing them is a generator-recovery problem on behavioral traces. If P = NP, the difficulty looks different.
 - The [Simulation → Theory Map](simulation-theory-map.md) — Almost every "What it does NOT show" entry depends on this asymmetry. A simulation demonstrates a forward generator; it does not back out a unique inverse.
@@ -176,7 +178,7 @@ Concrete next questions, each of which is currently a scaffold or an open proble
 
 1. **Bounded inverse reconstruction.** Define an "equivalence class of viable generators" for a specific testbed (IFS or prompt search), and find an algorithm that reliably recovers a generator from that class given only the output trace. This is [Open Problem 11](../reference/open-problems.md#open-problem-11-trace-to-generator-reconstruction).
 
-2. **Mirror Problem with real models.** The Agentic Identity Suite currently runs on mock embeddings. Whether Δ-Kohärenz separates trace-memorizers from generator-approximators when the agents are real language models — and whether the separation persists under the [Chord Postulate](emergence-manifesto-v1.2.md) — is empirically open. The architecture for this transition is being prepared in the suite, not yet executed.
+2. **Mirror Problem with real models.** The Agentic Identity Suite currently runs on mock embeddings. Whether Δ-Kohärenz separates trace-memorizers from generator-approximators when the agents are real language models — and whether the separation persists under the [Chord Postulate](emergence-manifesto-v1.3.md) — is empirically open. The architecture for this transition is being prepared in the suite, not yet executed.
 
 3. **Phase transitions on the inverse side.** Grokking shows that the inverse direction can have a sharp phase transition inside a learning system. Whether the same kind of transition appears in other inverse-search settings (e.g., in agents' self-models over long interaction) is unknown. [Open Problem 5](../reference/open-problems.md#open-problem-5-the-renormalization-question) is one way to phrase the formal version.
 
@@ -188,7 +190,7 @@ The repository's empirical work is heavily weighted toward the forward direction
 
 ## A note on external machinery
 
-The Identity Persistence score IP from Perrier & Bennett (2026), arXiv:2603.09043, provides formal machinery for [Claim 9 of the Manifesto](emergence-manifesto-v1.2.md) (the Chord Postulate). Their Algorithm 1 yields a measurable persistence score that may complement the project's behavioral metrics (Δ-Kohärenz, the Observer Divergence protocol).
+The Identity Persistence score IP from Perrier & Bennett (2026), arXiv:2603.09043, provides formal machinery for [Claim 9 of the Manifesto](emergence-manifesto-v1.3.md) (the Chord Postulate). Their Algorithm 1 yields a measurable persistence score that may complement the project's behavioral metrics (Δ-Kohärenz, the Observer Divergence protocol).
 
 It is one external reference among several. It is not the core of this project. The core is the generator question above. The repository existed before that paper and would continue to exist if that paper had never been written. When IP appears in the project, it appears where it actually applies — Claim 9 of the Manifesto, the empirical roadmap of the [Agentic Identity Suite](../../lab/AGENTIC_README.md), and (forthcoming) a comparison module that correlates Pstrong with Δ-Kohärenz on the same trajectory.
 
@@ -220,7 +222,7 @@ The fiction layer is not decoration. It is the project's instrument for noticing
 A reading path that uses this document as the entry point:
 
 1. **This document** — the question, the asymmetry, the three walls, the foundational assumption.
-2. [Emergence Manifesto v1.2](emergence-manifesto-v1.2.md) — the status-tagged claim set. Claims 1, 2, 4, 5, 6, and 9 are instances of the generator question. Status tags are intact.
+2. [Emergence Manifesto v1.3](emergence-manifesto-v1.3.md) — the status-tagged claim set. Claims 1, 2, 4, 5, 6, and 9 are instances of the generator question. Status tags are intact.
 3. [Trace to Generator](../emergence/trace-to-generator.md) — the long-form essay on the inverse direction. More expansive in tone; less programmatic than this document.
 4. [Simulation → Theory Map](simulation-theory-map.md) — the forward/inverse direction of each simulation, made visible (this map has been updated to surface that distinction).
 5. [Grokking: Phase Transition](../emergence/grokking-phase-transition.md) — the clearest empirical demonstration of the inverse direction occurring in a learning system.

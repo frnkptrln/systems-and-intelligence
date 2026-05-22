@@ -12,6 +12,8 @@ Intelligence is constrained dynamical viability, not raw prediction or unbounded
 
 This is the claim that should organize the repository. It is also the claim that must remain vulnerable to counterexample.
 
+> **Relation to the Spine.** This claim is the project's *answer* to the meta-question made explicit in [The Generator Question](../../theory/core/the-generator-question.md). The spine asks: under what conditions can a locally blind system approximate its own generator? The Core Generative Idea is one main answer: that survivable approximation requires constrained dynamical viability. Spine and claims are complementary — the spine names the asymmetry; the claims name what makes a system robust under it.
+
 ---
 
 ## Claim 1: Substrate Veto

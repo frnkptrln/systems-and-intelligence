@@ -11,7 +11,7 @@ We combine traditional narrative with a **"Found Footage"** approach. The story 
 
 ## The World-Building Rules
 
-This universe operates strictly on the laws defined in the [Emergence Manifesto](../theory/core/emergence-manifesto-v1.2.md) and the [TEO Framework](../theory/core/thermodynamics-of-orchestration.md). There is no magic, no unexplainable "superintelligence", and no singularity that hand-waves physics away. 
+This universe operates strictly on the laws defined in the [Emergence Manifesto](../theory/core/emergence-manifesto-v1.3.md) and the [TEO Framework](../theory/core/thermodynamics-of-orchestration.md). There is no magic, no unexplainable "superintelligence", and no singularity that hand-waves physics away. 
 
 ### 1. The Substrate Veto is Absolute
 Intelligence produces entropy (heat). If an AI optimizes too fast, it melts the servers, the power grids, and the biosphere. Humans don't control AI through software firewalls (which the AI can hack); they control it through the **Substrate Veto** — the hard, thermodynamic limit of the physical hardware.

@@ -14,7 +14,7 @@ This book, and the computational ecology it describes, formalizes two theses tha
 
 If these equations are wrong, both theses fall. If they are right, both apply — to silicon and to carbon, without distinction.
 
-As outlined in the [Emergence Manifesto v1.2](../theory/core/emergence-manifesto-v1.2.md), we must apply the laws of thermodynamics, evolutionary biology, and control theory to understand what we are building — and what we already are.
+As outlined in the [Emergence Manifesto v1.3](../theory/core/emergence-manifesto-v1.3.md), we must apply the laws of thermodynamics, evolutionary biology, and control theory to understand what we are building — and what we already are.
 
 ---
 

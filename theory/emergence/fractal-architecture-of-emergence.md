@@ -12,7 +12,7 @@ connects_to:
   - theory/emergence/emergence-downward-causation.md
   - theory/core/mathematical-axioms.md
   - theory/reference/open-problems.md
-  - theory/core/emergence-manifesto-v1.2.md
+  - theory/core/emergence-manifesto-v1.3.md
   - lab/metrics/delta_coherence.py
 simulations_referenced:
   - hebbian-memory
@@ -184,7 +184,7 @@ The essay ends not with a resolution but with four questions that belong in `the
 - [**Emergence & Downward Causation**](emergence-downward-causation.md) — The reverse direction: how global states constrain local processes. The Downward Causation Question asks whether the fractal architecture holds in both directions.
 - [**Mathematical Axioms of the Computational Ecology**](../core/mathematical-axioms.md) — The formal substrate for every claim in this essay: $K(x)$, $\lambda_2$, $H(X)$, $F$.
 - [**Open Problems**](../reference/open-problems.md) — The four open questions raised here are documented formally there.
-- [**Emergence Manifesto v1.2**](../core/emergence-manifesto-v1.2.md) — The 3-Layer Memory Architecture as a micro-scale instance of the fractal pattern: raw logs → curated memory → distilled principles mirrors cell → organism → ecosystem in its compression structure.
+- [**Emergence Manifesto v1.3**](../core/emergence-manifesto-v1.3.md) — The 3-Layer Memory Architecture as a micro-scale instance of the fractal pattern: raw logs → curated memory → distilled principles mirrors cell → organism → ecosystem in its compression structure.
 - [**The AI Alignment Veto: A Thermodynamic Hypothesis (Toy Formalization)**](../veto/ai-alignment-biological-veto.md) — Cancer and the paperclip maximizer as the same structural failure at different scales: local optimization that has lost coupling to global constraint signals; plus a toy coupling mechanism.
 
 

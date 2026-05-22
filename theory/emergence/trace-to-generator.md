@@ -5,14 +5,15 @@ Status: Working Note
 Scope: Conceptual synthesis introducing the inverse counterpart to the emergence axis: trace → generator.  
 Epistemic status: Framing hypothesis. Uses examples across computation, ML, generative systems, and biology without claiming domain equivalence.  
 Related files:
-- [Emergence Manifesto](file:///Users/user/git/systems-and-intelligence/theory/core/emergence-manifesto-v1.2.md)
-- [Generative Form Systems](file:///Users/user/git/systems-and-intelligence/theory/emergence/generative-form-systems.md)
-- [Grokking: Generalization from Memorization](file:///Users/user/git/systems-and-intelligence/theory/emergence/grokking-phase-transition.md)
-- [Fractal Architecture of Emergence](file:///Users/user/git/systems-and-intelligence/theory/emergence/fractal-architecture-of-emergence.md)
-- [Simulation → Theory Map](file:///Users/user/git/systems-and-intelligence/theory/core/simulation-theory-map.md)
-- [Open Problems](file:///Users/user/git/systems-and-intelligence/theory/reference/open-problems.md)
-- [From Rule to Mind](file:///Users/user/git/systems-and-intelligence/docs/book/09_from_rule_to_mind.md)
-- [Related Work Map](file:///Users/user/git/systems-and-intelligence/meta/research-alignment/related-work-map.md)
+- [The Generator Question](../core/the-generator-question.md) — the spine document that frames this essay
+- [Emergence Manifesto](../core/emergence-manifesto-v1.3.md)
+- [Generative Form Systems](generative-form-systems.md)
+- [Grokking: Generalization from Memorization](grokking-phase-transition.md)
+- [Fractal Architecture of Emergence](fractal-architecture-of-emergence.md)
+- [Simulation → Theory Map](../core/simulation-theory-map.md)
+- [Open Problems](../reference/open-problems.md)
+- [From Rule to Mind](../../book/09_from_rule_to_mind.md)
+- [Related Work Map](../../meta/research-alignment/related-work-map.md)
 
 Failure conditions:
 - The frame collapses into vague analogy.

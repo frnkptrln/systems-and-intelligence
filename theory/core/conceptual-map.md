@@ -2,6 +2,8 @@
 
 *An overview of the themes, models, and connections in this repository.*
 
+> **Spine context.** The map below is one way to enter the repository — clustered by theme and layer. The project's organizing question is stated explicitly in [The Generator Question](the-generator-question.md): how local rules produce global behavior, why running a generator forward is cheap, and why finding the generator from the trace is structurally hard. Each cluster in this map sits on one side of that forward/inverse asymmetry.
+
 ---
 
 ## The Central Question

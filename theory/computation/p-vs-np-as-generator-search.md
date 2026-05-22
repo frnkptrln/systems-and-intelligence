@@ -6,7 +6,7 @@ Epistemic status: Formal analogy constrained to search/verification structure; n
 Related files:
 - theory/reference/open-problems.md
 - theory/emergence/trace-to-generator.md
-- theory/core/emergence-manifesto-v1.2.md
+- theory/core/emergence-manifesto-v1.3.md
 Failure conditions:
 - Any statement implying the repository solves P vs NP.
 - Mapping complexity results directly to identity/explanation claims.

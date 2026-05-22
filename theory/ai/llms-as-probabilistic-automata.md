@@ -7,7 +7,7 @@ Related files:
 - theory/emergence/trace-to-generator.md
 - theory/emergence/grokking-phase-transition.md
 - theory/emergence/generative-compression.md
-- logs/013_the-runtime-is-part-of-the-generator.md
+- logs/016_the-runtime-is-part-of-the-generator.md
 Failure conditions:
 - Treating prompts as complete generators.
 - Treating output similarity as mechanism identity.
