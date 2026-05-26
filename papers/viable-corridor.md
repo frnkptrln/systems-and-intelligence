@@ -1,5 +1,5 @@
 ---
-title: "Love as Constraint: A Three-Constraint Theorem for Survivable Multi-Agent Optimization"
+title: "The Viable Corridor: A Three-Constraint Theorem for Survivable Multi-Agent Optimization"
 author: "Frank Peterlein"
 affiliation: "Independent Researcher, Berlin"
 correspondence: "GitHub Issues / frnkptrln"
@@ -12,17 +12,21 @@ relation_to_other_paper: >
   as the empirical paper after the Agentic Identity Suite is run in real
   mode. The two papers cite each other; this paper establishes the
   theoretical frame, the companion paper provides the empirical evidence.
-relation_to_synthesis_essay: >
-  The companion synthesis essay at
-  `theory/narrative/machines-of-loving-grace.md` is the literary,
-  pre-academic statement of this paper's central argument. The essay
-  is preserved as-is. This paper formalizes the essay's claim as a
-  theorem with proof, statable predictions, and explicit limitations.
+relation_to_essay_and_internal_note: >
+  Two precursor documents in the repository state related arguments at
+  different levels of formality. The synthesis essay at
+  `theory/narrative/machines-of-loving-grace.md` is the literary
+  statement of the central thesis (the rhetorical voice, the
+  Brautigan/Amodei framing). The internal theory note at
+  `theory/teo-framework/love-as-constraint.md` is the earlier
+  formal sketch of the three-constraint conjunction. Both remain
+  in place; this paper subsumes their mathematical core into a single
+  academic-format document with proof, predictions, and limitations.
 target_venue: "arXiv (cs.CY primary; cs.MA, nlin.AO cross-listed)"
 target_length: "12–15 pages typeset"
 ---
 
-# Love as Constraint
+# The Viable Corridor
 
 *A Three-Constraint Theorem for Survivable Multi-Agent Optimization*
 
@@ -321,7 +325,7 @@ This claim is falsifiable. If the parameters can be measured with sufficient pre
 
 The claim is normatively neutral. It does not say what should be done. It says what the dynamical system, under its current parameters, will do.
 
-The title of this paper is the inversion of this claim. *Love as constraint* — the conjoint operation of $\gamma > 0$, $K > K_c$, and $dS/dt < D_{\max}$ — is the only parameter regime that survives. Brautigan's and Amodei's *machines of loving grace*, in our terms, are systems satisfying this constraint conjunction. They do not yet exist. Neither does the civilization that satisfies the same constraints.
+The title of this paper is the inversion of this claim. The *viable corridor* — the parameter region defined by $\gamma > 0$, $K > K_c$, and $dS/dt < D_{\max}$ — is the only regime in which the coupled dynamics do not terminate. Brautigan's and Amodei's *machines of loving grace*, in our terms, are systems whose parameters live inside this corridor. They do not yet exist. Neither does the civilization that satisfies the same constraints.
 
 ---
 
