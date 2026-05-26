@@ -27,6 +27,7 @@ Thumbs.db
 # Output
 *.png
 !theory/*.png
+!lab/tools/*.png
 
 site/
 
