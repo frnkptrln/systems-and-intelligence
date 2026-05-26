@@ -1,5 +1,5 @@
 ---
-title: "Machines of Loving Grace: The Three-Constraint Regime for Survivable Multi-Agent Optimization"
+title: "Love as Constraint: A Three-Constraint Theorem for Survivable Multi-Agent Optimization"
 author: "Frank Peterlein"
 affiliation: "Independent Researcher, Berlin"
 correspondence: "GitHub Issues / frnkptrln"
@@ -10,15 +10,21 @@ relation_to_other_paper: >
   This is the conceptual companion paper to
   `papers/quantifying-emergent-utility-in-llms.md`, which will be revised
   as the empirical paper after the Agentic Identity Suite is run in real
-  mode. The two papers cite each other; Loving Grace establishes the
-  theoretical frame, Quantifying provides the empirical evidence.
+  mode. The two papers cite each other; this paper establishes the
+  theoretical frame, the companion paper provides the empirical evidence.
+relation_to_synthesis_essay: >
+  The companion synthesis essay at
+  `theory/narrative/machines-of-loving-grace.md` is the literary,
+  pre-academic statement of this paper's central argument. The essay
+  is preserved as-is. This paper formalizes the essay's claim as a
+  theorem with proof, statable predictions, and explicit limitations.
 target_venue: "arXiv (cs.CY primary; cs.MA, nlin.AO cross-listed)"
 target_length: "12–15 pages typeset"
 ---
 
-# Machines of Loving Grace
+# Love as Constraint
 
-*The Three-Constraint Regime for Survivable Multi-Agent Optimization*
+*A Three-Constraint Theorem for Survivable Multi-Agent Optimization*
 
 **Frank Peterlein** · Independent Researcher, Berlin
 *Correspondence: [GitHub Issues / frnkptrln](https://github.com/frnkptrln/systems-and-intelligence/issues)*
@@ -315,7 +321,7 @@ This claim is falsifiable. If the parameters can be measured with sufficient pre
 
 The claim is normatively neutral. It does not say what should be done. It says what the dynamical system, under its current parameters, will do.
 
-The title of this paper is the inversion of this claim. *Machines of Loving Grace* are systems satisfying $\gamma > 0$, $K > K_c$, $dS/dt < D_{\max}$ — the only parameter regime that survives. They do not yet exist. Neither does the civilization that satisfies the same constraints.
+The title of this paper is the inversion of this claim. *Love as constraint* — the conjoint operation of $\gamma > 0$, $K > K_c$, and $dS/dt < D_{\max}$ — is the only parameter regime that survives. Brautigan's and Amodei's *machines of loving grace*, in our terms, are systems satisfying this constraint conjunction. They do not yet exist. Neither does the civilization that satisfies the same constraints.
 
 ---
 
