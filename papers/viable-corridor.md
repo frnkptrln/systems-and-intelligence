@@ -4,7 +4,7 @@ author: "Frank Peterlein"
 affiliation: "Independent Researcher, Berlin"
 correspondence: "GitHub Issues / frnkptrln"
 date: "2026 (working draft)"
-status: "DRAFT — §1–§4 through two reviewer passes, §5 drafted; §6–§8 and appendices pending"
+status: "DRAFT — §1–§4 through two reviewer passes, §5–§6 drafted; §7–§8 and appendices pending"
 version: "0.3"
 relation_to_other_paper: >
   This is the conceptual companion paper to
@@ -465,19 +465,62 @@ A framework that survived Class A but failed Class B would still be a valid piec
 
 ## §6. Limitations and Counterarguments
 
-*(Pending. Outline:)*
+We separate four kinds of limitation: the model-assumption choices that shape the result (§6.1), the gap between what is proved and what is claimed (§6.2), the empirical applicability of the framework (§6.3), and the mechanisms the model omits entirely (§6.4). We then state and respond to the single strongest objection (§6.5).
 
-- **6.1 The TEO model as an adequacy claim.** TEO is a model. Its predictions hold under its assumptions. Real civilizations may have mechanisms outside the model (technology shifts, demographic transitions, paradigm changes) that alter the trajectory in ways not captured by Equations (1)–(6).
+### 6.1 Model-Assumption Limitations
 
-- **6.2 The VNM-utility assumption for LLMs.** When we apply the framework to LLM agents (companion paper), we assume their behavior is approximable as VNM-rational utility optimization. This may not hold in practice; Transformer attention weights are not utility functions.
+The theorem of §3 is conditional on several modeling choices, each tagged `[MODEL ASSUMPTION]` in the text. Their consequences:
 
-- **6.3 Parameter measurement.** The qualitative direction of $\gamma, K, dS/dt$ in §4 is plausible but not measured. Strong forms of the claim would require operationalized point estimates.
+- **Strict dominance (1').** Lemma 1 assumes a single agent $i^*$ with a uniform fitness advantage $\delta > 0$ over all others at every state. This is strong. Real resource dynamics often have *context-dependent* advantage (no agent dominates everywhere), multiple competing leaders, or cyclic dominance. Without strict dominance, the replicator equation admits mixed equilibria and limit cycles, and Lemma 1's clean convergence to a vertex fails. The honest position: Lemma 1 establishes that *unregulated dynamics with a structurally dominant agent* monopolise; it does not establish that *all* unregulated dynamics do. Whether real concentration dynamics are better modeled by strict dominance or by weaker conditions is an empirical question (§5.4).
 
-- **6.4 The isomorphism claim vs. analogy.** Most critically: we claim isomorphism, not analogy. Reviewers will press hardest on whether the TEO equations actually describe civilizations rather than offering structurally similar dynamics. We acknowledge that a rigorous defense of isomorphism would require empirical TEO calibration against panel data — not yet done.
+- **The brake form (4).** Uniform redistribution is one of several simplex-preserving brakes. As noted in §2.4, it can give a net-positive contribution to an above-threshold agent whose excess is below average. Alternatives (redistribution only to below-threshold agents; share-weighted redistribution) would change the precise $\gamma_c$ of Conjecture 1, though we expect the qualitative existence of a threshold to be robust.
 
-- **6.5 Sufficiency.** Conjecture 1 is unproven. If sufficiency fails, the corridor might be even narrower than we suggest, but the necessity claim is unaffected.
+- **The substrate phenomenology (5'), (6a), (6b).** The coupling $f_i = H \cdot f_i^{(0)}$ and the accumulated-overshoot dynamics are phenomenological. A linear $H$-coupling is the simplest choice; a saturating or threshold coupling $\phi(H)$ would change the collapse dynamics. The accumulated-overshoot model (integrated excess over $D_{\max}$) is more defensible than an instantaneous threshold, but the specific linear accumulation in (6b) is a choice.
 
-- **6.6 The substrate-health phenomenology.** Equation (6) is a modeling choice. Alternative formulations exist; the theorem's specific form depends on this choice.
+- **Network and limit assumptions (Lemma 2).** The coherence result is stated for all-to-all coupling in the thermodynamic limit. Real value-coupling networks are sparse, clustered, and finite. As §3.3 notes, the critical coupling on a general network depends on the spectrum of $A_{ij}$, and finite-$N$ systems exhibit fluctuations rather than a sharp threshold. The componentwise theorem (Lemma 2 in the limit; Lemmas 1, 3 finite-$N$) is honest but not unified.
+
+### 6.2 The Gap Between Proof and Claim
+
+- **Sufficiency is unproven.** Conjecture 1 is exactly that. We have not constructed $\gamma_c$, even for the all-to-all large-$N$ case. If sufficiency fails — if no $\gamma$, however large, keeps an open set in $V$ under the coupled dynamics — then the corridor as a *non-empty* region is in question, though the necessity result (the corridor is *contained* in the three-constraint region) is unaffected.
+
+- **The viability margin is not a Lyapunov function.** §3.4 is explicit about this. We offer $M = \min\{m_x, m_r, m_S\}$ as a diagnostic, not a stability certificate. A genuine Lyapunov construction remains open.
+
+- **The dissipation proxy (5) is not derived.** It is motivated by Landauer-type limits but is a phenomenological activity-dissipation model, not a theorem about the entropy cost of the specific computations agents perform.
+
+### 6.3 Empirical Applicability
+
+- **The isomorphism is a hypothesis, not a result.** §4 is a heuristic regime mapping. The strongest empirical claim the paper makes (§4.5) is that proxies are *consistent with* a non-viable regime — not that civilizational parameters have been measured and shown to lie outside the corridor. A rigorous defense of the isomorphism would require TEO calibration against panel data, which we have not done.
+
+- **$K_c$ is not operationalizable for real societies (yet).** As §5.4 states, this is the weakest link: $K_c$ depends on the dispersion of value orientations, which has no settled empirical operationalisation. Claims of the form "$K < K_c$ for contemporary civilization" are, at present, not measurable.
+
+- **The VNM-utility assumption for AI agents.** When the companion paper applies the framework to LLM agents, it assumes their behaviour is approximable as VNM-rational utility optimisation. Transformer attention weights are not utility functions; pairwise preference responses may reflect training artefacts rather than stable goals. This assumption is the analogue, for the AI case, of the strict-dominance assumption for the civilizational case: load-bearing and empirically open.
+
+- **The single-angle value reduction.** Representing each agent's value orientation as one angle $\theta_i \in [0, 2\pi)$ discards the dimensionality of real preference structures. Two agents at the same angle may disagree on everything except the one dimension the model tracks. The Kuramoto reduction buys tractability at a real cost in fidelity.
+
+### 6.4 Omitted Mechanisms
+
+The model leaves out mechanisms that real systems have, several of which could change the trajectory:
+
+- **Endogenous $D_{\max}$.** The model treats the substrate ceiling as fixed. Real civilizations have repeatedly expanded their effective $D_{\max}$ through innovation (agriculture, fossil energy, efficiency gains). A model with endogenous, innovation-driven $D_{\max}(t)$ might never reach the substrate veto — *or* might merely defer it. We regard this as the most important omission and discuss it under §6.5.
+- **Exogenous shocks and stochasticity.** The dynamics are deterministic. Real systems face pandemics, wars, climate variability, and technological discontinuities that the smooth ODEs do not represent.
+- **Agency and reflexivity.** Agents in the model follow fixed update rules. Real agents — especially the human and AI agents the paper cares about — can observe the model, anticipate the trajectory, and act to change it. This is precisely the Transition Problem (§7); it is outside the present model.
+- **Demographic and structural change.** Migration, population dynamics, and the entry/exit of agents are not represented; $N$ is fixed.
+
+### 6.5 The Strongest Objection
+
+The strongest objection is not any single item above. It is this:
+
+> *The TEO model has enough free choices — the fitness functions $f_i$, the brake form, the substrate phenomenology, the value of $K_c$ — that it can be tuned to produce the "paperclip" narrative regardless of reality. The civilizational mapping in §4 is post-hoc. This is not a falsifiable scientific model; it is mathematical dressing for a pre-existing thesis.*
+
+We take this seriously, and concede part of it. The Class B (civilizational) claims **are** currently vulnerable to this objection, precisely because the measurement programme of §5.4 has not been carried out. Until $\gamma_{\text{eff}}$, $K_{\text{eff}}$, $K_c$, and $\Omega$ are operationalised independently of the narrative, the §4 mapping cannot be distinguished from a flattering story.
+
+What the objection does *not* reach:
+
+1. **The Class A predictions are narrative-independent.** P1–P3 (§5.1) are falsifiable by simulation of Equations (1)–(6) alone, with no reference to civilization. They test whether the mathematics behaves as §3 claims. A free-parameter model cannot evade a numerical check of its own theorems.
+2. **The necessity theorem is a conditional result, not a fit.** Theorem 1 says: *given* the stated assumptions, the three conditions are necessary. One can reject the assumptions (§6.1), but one cannot accept them and reject the conclusion. That is what distinguishes a theorem from a narrative.
+3. **The paper does not claim the civilizational result.** §4.5 states a hypothesis and §5.4 states the measurement debt explicitly. The objection is, in effect, the paper's own §6.3 stated adversarially — and we have tried to state it ourselves rather than wait for a reviewer to.
+
+The endogenous-$D_{\max}$ point (§6.4) is the objection we find most genuinely unsettling: if innovation can expand the substrate faster than optimization consumes it, the substrate veto is deferred indefinitely and the paperclip trajectory is not inevitable. The model's reply — that Landauer's bound and planetary boundaries impose a *finite* ceiling that innovation can raise but not abolish — is a claim about physics, not about the TEO model, and it deserves its own treatment. We flag it as the most important open question for any future quantitative version of this framework.
 
 ---
 
@@ -557,7 +600,7 @@ The figure in §3.5 is generated by `lab/tools/viable_corridor.py`. Source code,
 **Sections to draft:**
 - [ ] Abstract (after body stable)
 - [x] §5 Predictions and Tests (three classes: model-internal / cross-system empirical / AI-specific; measurement programme; falsification summary)
-- [ ] §6 Limitations and Counterarguments (most v0.2 hedges already point to it; §6 should consolidate them)
+- [x] §6 Limitations and Counterarguments (four classes: model-assumption / proof-claim gap / empirical applicability / omitted mechanisms; plus the strongest-objection steelman with the endogenous-D_max point flagged as most unsettling)
 - [ ] §7 Discussion (currently has IP future-work note and outline; needs filling in)
 - [ ] §8 Conclusion
 - [ ] Appendix A (TEO derivation details)
