@@ -4,7 +4,7 @@ author: "Frank Peterlein"
 affiliation: "Independent Researcher, Berlin"
 correspondence: "GitHub Issues / frnkptrln"
 date: "2026 (working draft)"
-status: "DRAFT — sections §1–§4 through two reviewer passes; §5–§8 and appendices pending"
+status: "DRAFT — §1–§4 through two reviewer passes, §5 drafted; §6–§8 and appendices pending"
 version: "0.3"
 relation_to_other_paper: >
   This is the conceptual companion paper to
@@ -409,17 +409,57 @@ The title of this paper inverts the hypothesis. The **viable corridor** — the 
 
 ## §5. Predictions and Tests
 
-*(Pending. Outline:)*
+A model is worth taking seriously only to the degree that it can be wrong. This section states what the framework predicts and how each prediction could fail. We organise predictions by *testability class*, because they are not equally accessible:
 
-1. *Falsifiable prediction 1.* Numbered, with measurable indicators (e.g., longitudinal correlation between regulatory strength γ-proxies and stability indicators on a panel of OECD countries).
+- **Class A — model-internal** (testable now, by simulation of Equations 1–6). These check whether the formal claims of §3 actually hold in the coupled system, and whether Conjecture 1 survives numerical scrutiny. Failure here would mean the theorem or conjecture is wrong *as mathematics*.
+- **Class B — cross-system empirical** (require operationalisation of $\gamma$, $K$, $S_{\max}$ against real data). These test the structural-isomorphism hypothesis of §4. Failure here would mean the model does not describe real systems, even if the mathematics is sound.
+- **Class C — AI-specific** (testable in agent simulations using the framework's own instruments). These test the alignment-relevant corollary that constraint architecture, not capability, governs viability.
 
-2. *Falsifiable prediction 2.* Phase-transition behavior near $K_c$ in measurable polarization data — what would constitute a sharp threshold vs. continuous degradation.
+We state predictions as `[EMPIRICAL CONJECTURE]` unless noted.
 
-3. *Falsifiable prediction 3.* TEO-Civilization simulation should produce phase-3 trajectories under sub-critical parameter calibrations matched to real-world data; if it does not, the model is wrong.
+### 5.1 Class A — Model-Internal Predictions
 
-4. *Falsifiable prediction 4.* For AI systems specifically: agents with hardware-enforced entropy budgets should exhibit fewer paperclip-typical trajectories in adversarial simulations than agents with software-only limits.
+**P1 (Necessity verification).** Numerical integration of Equations (1)–(6) should reproduce the three failure modes of Lemmas 1–3 when the corresponding condition is negated: setting $\gamma = 0$ should drive $\max_i x_i \to 1$; setting $K < K_c$ from a coherent initial condition should drive $r(t) \to 0$; forcing accumulated overshoot $\Omega(t) \geq S_{\max}$ should drive $H \to 0$ and freeze the system. *Confirmation:* observed trajectories exit $V$ through the predicted boundary. *Falsification:* a parameter setting violating one condition that nonetheless keeps an open set of trajectories in $V$ would refute the corresponding lemma. This is the most immediate test and is the content of the (forthcoming) Appendix C.
 
-5. *Measurement program.* What it would take to estimate $\gamma$, $K$, $D_{\max}$ point-quantitatively for human civilization, and what the natural proxies are.
+**P2 ($\gamma_c$ existence and scaling).** Conjecture 1 predicts that, with $x_{\text{reg}} < x_{\text{crit}}$ fixed, there is a critical brake strength $\gamma_c > 0$ below which even regulated systems exit $V$ and above which an open set of trajectories remains. *Confirmation:* a sharp (or at least monotone) dependence of the in-corridor fraction on $\gamma$, with a knee near a $\gamma_c$ that scales with the regulatory gap $x_{\text{crit}} - x_{\text{reg}}$ and the dominance margin $\delta$ as the structure of (1') and (4) predicts. *Falsification:* no positive $\gamma$ keeps trajectories in $V$ for $x_{\text{reg}} < x_{\text{crit}}$ (which would mean the brake formulation is still wrong), or, conversely, arbitrarily small $\gamma$ suffices (which would mean $\gamma_c = 0$ and the sufficiency framing is too weak).
+
+**P3 (Corridor geometry).** The model predicts that the viable corridor $\mathcal{C}$ is a connected region with finite measure in $(\gamma, K, S_{\max})$ space, bounded below in each coordinate. *Confirmation:* Monte-Carlo sampling of parameter space recovers a connected in-corridor region matching the necessity boundaries. *Falsification:* if the in-corridor region is empty (no parameter triple gives robust viability — the model is vacuous) or unbounded (some coordinate is irrelevant — the constraint is spurious), the three-constraint framing is wrong.
+
+### 5.2 Class B — Cross-System Empirical Predictions
+
+These tests presuppose operationalisations of the TEO parameters (§5.4). They are stated conditionally: *if* the proxies in §5.4 are accepted, *then* the following should hold.
+
+**P4 (Regulation and concentration stability).** On a panel of countries or sectors, a higher effective homeostatic strength $\gamma_{\text{eff}}$ (proxied by, e.g., fiscal redistribution intensity, antitrust enforcement rates, or progressivity of effective taxation) should predict slower growth — or stabilisation — of concentration measures (wealth Gini, market-share HHI) over time, controlling for confounders. *Falsification:* no association, or a positive association (more regulation → faster concentration), under a reasonable proxy and specification.
+
+**P5 (Coherence-collapse signature).** If value coupling $K_{\text{eff}}$ can be proxied by cross-group contact, shared-information measures, or institutional-integration indices, the Kuramoto interpretation predicts a specific dynamical signature near the transition: *critical slowing down* — rising autocorrelation and variance in coherence indicators as $K_{\text{eff}}$ approaches a threshold from above — rather than smooth linear decline. *Falsification:* polarization time series show purely gradual, threshold-free degradation with no early-warning signatures, which would favour a non-critical mechanism over the Kuramoto one.
+
+**P6 (Cumulative, not instantaneous, substrate failure).** The v0.3 substrate model predicts that what matters for collapse is *accumulated* overshoot $\Omega(t)$, not instantaneous $\dot{S}_{\text{sys}}$. Empirically: systems that briefly exceed a substrate ceiling but then recover should persist, whereas systems with sustained moderate overshoot should fail even without dramatic peak stress. *Falsification:* substrate collapses tracking instantaneous peak stress rather than integrated overshoot would favour an instantaneous-threshold model and refute (6b).
+
+### 5.3 Class C — AI-Specific Predictions
+
+**P7 (Hard vs. soft budgets).** Among multi-agent AI ecologies, those with *hardware-* or *protocol-enforced* entropy/compute budgets (a structural $D_{\max}$) should exhibit fewer runaway "paperclip-type" trajectories in adversarial simulations than those with only *software* limits that an optimiser can route around. *Test:* the Agentic Identity Suite (companion paper; `lab/`) can compare agent populations under enforced vs. advisory budgets. *Falsification:* no difference in runaway frequency between hard- and soft-budget populations under matched adversarial pressure.
+
+**P8 (Constraint architecture dominates capability).** The framework predicts that, holding constraint architecture fixed, increasing per-agent capability (model scale) does *not* move a system into the corridor — and may move it out, by increasing $f_i^{(0)}$ and hence entropy production. *Test:* vary agent capability and constraint strength independently in simulation; measure in-corridor fraction. *Falsification:* capability alone (with fixed $\gamma$, $K$) reliably produces viability — which would refute the central alignment corollary that "alignment is not a per-model property."
+
+### 5.4 The Measurement Programme
+
+Class B predictions are only as good as the operationalisations they rest on. We do not claim to have these; we state what they would require.
+
+- **$\gamma_{\text{eff}}$ (homeostatic strength).** Candidate proxies: redistribution as a fraction of pre-tax concentration; antitrust action frequency normalised by concentration; the rate at which above-threshold shares are reduced relative to their excess. The hard part is calibrating the *threshold* $x_{\text{reg}}$ at which real regulation engages, distinct from the failure threshold $x_{\text{crit}}$.
+- **$K_{\text{eff}}$ and $K_c$ (value coupling and its critical value).** Candidate proxies for $K_{\text{eff}}$: cross-partisan contact rates, shared-media saturation, inter-group trust. The deeper difficulty is that **$K_c$ is not directly observable**: it depends on the dispersion of "natural frequencies" (value orientations), which has no settled empirical operationalisation. Estimating $K_c$ for a real society is, at present, the weakest link in the empirical chain.
+- **$D_{\max}$, $S_{\max}$, $\Omega(t)$ (substrate capacity and overshoot).** The planetary-boundaries framework (Richardson et al., 2023) is the closest existing proxy, but it is multi-dimensional and does not reduce to a single thermodynamic budget. A defensible mapping would need to justify aggregating multiple boundary overshoots into one $\Omega(t)$.
+
+Until these operationalisations exist, the Class B predictions remain *conditional*: the model tells us what to measure, not what the measurements are.
+
+### 5.5 What Would Falsify the Framework
+
+We distinguish falsification at three levels, matching the epistemic tags:
+
+1. **The mathematics** (`[FORMAL]`/`[CONJECTURE]`). If P1 fails, a lemma is wrong. If P2 fails, Conjecture 1 is wrong (or the brake formulation still is). These are the cleanest tests and require only simulation.
+2. **The model's applicability** (`[HEURISTIC]`/`[EMPIRICAL CONJECTURE]`). If P4–P6 fail under reasonable operationalisations, the TEO equations do not describe real social systems, regardless of their mathematical validity. The structural-isomorphism hypothesis of §4 would be refuted.
+3. **The alignment corollary** (Class C). If P7–P8 fail, the claim that constraint architecture rather than capability governs viability is wrong, and the paper's relevance to AI alignment collapses even if everything else holds.
+
+A framework that survived Class A but failed Class B would still be a valid piece of dynamical-systems mathematics with no demonstrated bearing on civilization or AI. A framework that survived Class A and C but failed Class B would bear on engineered multi-agent systems but not on civilizational dynamics. We regard Class A as the near-term priority, because it is the only class testable without resolving the measurement debt of §5.4.
 
 ---
 
@@ -516,12 +556,12 @@ The figure in §3.5 is generated by `lab/tools/viable_corridor.py`. Source code,
 
 **Sections to draft:**
 - [ ] Abstract (after body stable)
-- [ ] §5 Predictions and Tests
+- [x] §5 Predictions and Tests (three classes: model-internal / cross-system empirical / AI-specific; measurement programme; falsification summary)
 - [ ] §6 Limitations and Counterarguments (most v0.2 hedges already point to it; §6 should consolidate them)
 - [ ] §7 Discussion (currently has IP future-work note and outline; needs filling in)
 - [ ] §8 Conclusion
 - [ ] Appendix A (TEO derivation details)
-- [ ] Appendix C (Numerical evidence for Conjecture 1)
+- [ ] Appendix C (Numerical evidence for Conjecture 1) — note: §5 P1–P3 now specify exactly what this appendix must show
 
 **Completed in v0.2 (internal reviewer pass):**
 - [x] §1 tone calibrated to match what §3 actually proves
