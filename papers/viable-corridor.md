@@ -4,7 +4,7 @@ author: "Frank Peterlein"
 affiliation: "Independent Researcher, Berlin"
 correspondence: "GitHub Issues / frnkptrln"
 date: "2026 (working draft)"
-status: "DRAFT — §1–§4 through two reviewer passes, §5–§6 drafted; §7–§8 and appendices pending"
+status: "DRAFT — full body (§1–§8 + abstract) drafted; §1–§4 through two reviewer passes; appendices A & C pending"
 version: "0.3"
 relation_to_other_paper: >
   This is the conceptual companion paper to
@@ -48,7 +48,7 @@ target_length: "12–15 pages typeset"
 
 ## Abstract
 
-*(To be drafted after §5–§8 are complete. The abstract should compress the paper's claim into ≈200 words: TEO framework, the three-constraint theorem, the AI/civilization isomorphism, and the falsifiable predictions. Draft after the body is stable.)*
+We model coupled multi-agent optimization with a dynamical system — the Thermodynamics of Emergent Orchestration (TEO) — that combines replicator dynamics (resource competition), the Kuramoto model (value coupling), a homeostatic regulatory brake, and a thermodynamic dissipation constraint. Within this model we prove a necessity result: robust long-time viability requires the *conjunction* of three conditions — a positive homeostatic strength ($\gamma > 0$), value coupling above the Kuramoto critical threshold ($K > K_c$), and bounded accumulated substrate overshoot ($\Omega(t) < S_{\max}$). Violating any one is sufficient for the system to leave the viable region. The result is a componentwise theorem (resource concentration and substrate collapse finite-$N$; coherence collapse in the thermodynamic limit). Sufficiency is stated as a conjecture, expected to require the strengthened condition $\gamma > \gamma_c$; we do not prove it. We then advance a *structural-isomorphism hypothesis*: that an unconstrained AI optimizer and contemporary human civilization occupy the same model regime, mapping the parameters to empirical proxies for resource concentration, value coupling, and substrate stress. We are explicit that this mapping is heuristic, not a calibration. We give falsifiable predictions in three classes — model-internal (simulation), cross-system empirical, and AI-specific — and state what would falsify the framework at each level. The model's central reading: a "machine of loving grace" is one whose parameters lie inside the viable corridor; by this definition it does not yet exist.
 
 ---
 
@@ -526,20 +526,57 @@ The endogenous-$D_{\max}$ point (§6.4) is the objection we find most genuinely 
 
 ## §7. Discussion
 
-*(Pending. Themes:)*
+### 7.1 The Contribution Is the Conjunction
 
-- **Implications for AI alignment research.** Alignment is not a per-model property; it is a property of a coupled dynamical system. The provider layer of a system matters less than the constraint architecture.
-- **Implications for political economy.** Without endorsing specific policy: under the model, single-constraint interventions (carbon pricing alone, antitrust alone, polarization reduction alone) cannot bring a system into the corridor unless all three operate jointly above their respective thresholds. Whether this prediction holds for real systems is the subject of §5.
-- **The Transition Problem.** This paper describes the corridor under the assumption that the model is appropriate. How a system already outside the corridor reaches it — and whether the TEO model itself captures the relevant transition dynamics — is a separate, much harder problem (cf. companion essay "The Transition Problem", Peterlein, 2026).
-- **Identity Persistence as a possible fourth dimension (future work).** The TEO state vector can be extended with a per-agent *identity-persistence* score $\mathrm{IP}_i$ measuring whether the governance components of agent $i$ are simultaneously operative during action selection — the *Chord* state of Perrier and Bennett (2026). The Chord Postulate predicts a phase transition at a critical $\mathrm{IP}_c$. We do *not* claim that the IP dimension is orthogonal to the three constraints — intra-agent architecture can plausibly affect effective $f_i$, $K$, and $\gamma$. A coupled treatment of IP and the three-constraint theorem is left to future work; the present paper deliberately restricts attention to the inter-agent dynamics.
+The individual components of the TEO model are textbook constructions: replicator dynamics, the Kuramoto model, a regulatory brake, a dissipation bound. None is novel, and we claim no novelty for them. The contribution — if the framework survives its tests (§5) — is the **conjunction**: the claim that long-time viability requires all three conditions *simultaneously*, and that violating any one is sufficient for failure.
+
+This matters because most existing frameworks optimise one quantity. Capability-centric AI research maximises competence; safety-centric work minimises harmful outputs; efficiency-centric economics maximises throughput. The three-constraint structure says that no single-axis optimisation suffices, and — more sharply — that improvements on one axis can push a system off another. A system that increases capability ($f_i^{(0)}$) without strengthening regulation ($\gamma$) moves *toward* the monopoly boundary, not away from it. The corridor is narrow precisely because the constraints are in tension.
+
+### 7.2 Implications for AI Alignment
+
+The corollary most relevant to AI safety is that, under this model, **alignment is not a property of an individual model — it is a property of the coupled dynamical system**. Two consequences follow if P7–P8 (§5.3) hold:
+
+1. **Constraint architecture dominates capability.** Increasing the capability of individual agents, with constraint architecture held fixed, does not move a multi-agent ecology into the corridor and may move it out (§5.3, P8). This reframes a large part of alignment research: the target is not only "make the model safer" but "make the constraint architecture of the ecology satisfy the conjunction."
+
+2. **Hard constraints beat soft ones.** A budget an optimiser can route around (a software limit) is not a $D_{\max}$; only a structurally enforced bound (hardware, protocol, physics) functions as the model's substrate ceiling (P7). This connects to the broader research programme on substrate-level rather than behaviour-level safety constraints.
+
+We are explicit that these are *conditional* implications: they follow from the model, and the model's applicability to real AI ecologies is itself a hypothesis (§6.3). The companion empirical paper (`papers/quantifying-emergent-utility-in-llms.md`) is where the Class C predictions are intended to be tested.
+
+### 7.3 Implications for Political Economy
+
+The model is normatively neutral: it describes what the dynamics do, not what should be done (§4.5). But the conjunction structure has a clear *descriptive* reading. If the structural-isomorphism hypothesis held — and we stress it is unproven (§6.3) — then **single-constraint interventions could not bring a civilizational system into the corridor**. Carbon pricing alone (acting on $\Omega$), antitrust alone (acting on $\gamma$), or polarization mitigation alone (acting on $K$) would each be necessary but jointly insufficient; the system would exit $V$ through whichever boundary was left unaddressed.
+
+This is a prediction, not a policy. We do not claim to know the operational form of $\gamma$, $K$, or $\Omega$ for real societies (§5.4); without that, the reading is suggestive at most. We include it because it is the most consequential *descriptive* corollary of the conjunction, and because it is, in principle, the kind of claim panel data could eventually test (§5.2, P4).
+
+### 7.4 The Transition Problem
+
+This paper characterises the corridor: which parameter regions support robust viability. It says nothing about how a system *outside* the corridor could *reach* it. That is a different and harder problem — a question about trajectories between basins, not about the basins themselves.
+
+The difficulty is that the structures produced *by* a non-viable trajectory tend to resist the parameter changes that would correct it. A monopolised resource distribution (low $\gamma$) concentrates the power to block redistribution; a polarised value landscape (low $K$) fragments the consensus that collective braking requires. The corridor may be reachable, unreachable without partial collapse, or reachable only through a narrow path — these are genuinely open possibilities. The companion essay *The Transition Problem* (Peterlein, 2026) develops this, including a grokking-style hypothesis that the transition, if it occurs, may be sudden rather than gradual. We flag the transition problem here as, in our view, more consequential than the static characterisation this paper provides — and entirely outside its scope.
+
+### 7.5 Identity Persistence as a Possible Fourth Dimension (Future Work)
+
+The TEO state vector can be extended with a per-agent *identity-persistence* score $\mathrm{IP}_i$ measuring whether the governance components of agent $i$ are simultaneously operative during action selection — the *Chord* state of Perrier and Bennett (2026). The Chord Postulate predicts a phase transition at a critical $\mathrm{IP}_c$. We do *not* claim that the IP dimension is orthogonal to the three constraints — intra-agent architecture can plausibly affect effective $f_i$, $K$, and $\gamma$. A coupled treatment of IP and the three-constraint theorem is left to future work; the present paper deliberately restricts attention to the inter-agent dynamics.
+
+### 7.6 Relationship to the Companion Paper
+
+This paper establishes the theoretical frame: the model, the necessity theorem, the sufficiency conjecture, and the predictions. The companion paper, *Quantifying Emergent Utility & Stability in Multi-Agent LLM Ecosystems*, is intended to carry the empirical load — in particular the Class C predictions (§5.3) — once the Agentic Identity Suite is run against real language models. The two are designed to be read together: this paper says what would have to be true; the companion paper tests part of it.
 
 ---
 
 ## §8. Conclusion
 
-*(Pending. Should reuse the existing essay's closing rhetorical structure, updated to v0.3 notation:)*
+We set out to give a precise reading of a hopeful phrase. Brautigan and Amodei imagined "machines of loving grace" as a design aspiration. Within the TEO framework, we have argued that the relationship the phrase names is better modelled as a *constraint*: a region of parameter space — the viable corridor — outside which the coupled dynamics do not robustly survive.
 
-> *"A 'Machine of Loving Grace' is not a machine that feels love. It is a machine whose parameters lie inside the viable corridor: $\gamma > \gamma_c$, $K > K_c$, and bounded accumulated overshoot $\Omega(t) < S_{\max}$. By this definition, the machine does not yet exist. Neither does the civilization that satisfies the same constraints."*
+What we have established is modest and conditional. Under stated assumptions, the conjunction $\gamma > 0$, $K > K_c$, and bounded accumulated overshoot $\Omega(t) < S_{\max}$ is **necessary** for robust long-time viability (Theorem 1). Sufficiency — which we expect to require the stronger $\gamma > \gamma_c$ — is **conjectured**, not proved (Conjecture 1). The mapping of this structure to AI optimizers and to human civilization is a **hypothesis** (§4), testable in principle through the programme of §5 but resting today on proxies, not measurements (§5.4, §6.3). We have tried throughout to mark which is which.
+
+What remains is more than what is done. Sufficiency is open. The transition into the corridor from outside is open and, we suspect, harder than the corridor's static characterisation (§7.4). The empirical operationalisation of the parameters — especially $K_c$ for real societies — is open (§5.4). And the deepest physical question, whether innovation can raise the substrate ceiling faster than optimization consumes it, is open (§6.4, §6.5).
+
+Subject to all of that, the framework supports one inversion of the original phrase:
+
+> A "Machine of Loving Grace" is not a machine that *feels* love. In this model it is a machine whose parameters lie inside the viable corridor: $\gamma > \gamma_c$, $K > K_c$, and bounded accumulated overshoot $\Omega(t) < S_{\max}$ — operational caring about value coupling, about regulation, and about the substrate, held simultaneously. By this definition, the machine does not yet exist. If the structural-isomorphism hypothesis holds, neither does the civilization that satisfies the same constraints.
+
+That last sentence is the uncomfortable one, and we have written the paper to make it checkable rather than merely arresting. If the framework is wrong, the predictions of §5 are how one would show it.
 
 ---
 
@@ -598,13 +635,13 @@ The figure in §3.5 is generated by `lab/tools/viable_corridor.py`. Source code,
 ## TODO
 
 **Sections to draft:**
-- [ ] Abstract (after body stable)
+- [x] Abstract (~250 words; TEO model, necessity theorem, sufficiency conjecture, isomorphism hypothesis, three prediction classes)
 - [x] §5 Predictions and Tests (three classes: model-internal / cross-system empirical / AI-specific; measurement programme; falsification summary)
-- [x] §6 Limitations and Counterarguments (four classes: model-assumption / proof-claim gap / empirical applicability / omitted mechanisms; plus the strongest-objection steelman with the endogenous-D_max point flagged as most unsettling)
-- [ ] §7 Discussion (currently has IP future-work note and outline; needs filling in)
-- [ ] §8 Conclusion
+- [x] §6 Limitations and Counterarguments (four classes + strongest-objection steelman; endogenous-D_max flagged as most unsettling)
+- [x] §7 Discussion (conjunction-is-the-contribution; AI-alignment + political-economy implications; Transition Problem; IP future work; companion-paper relationship)
+- [x] §8 Conclusion (modest+conditional restatement; what remains open; the inversion aphorism, made checkable)
 - [ ] Appendix A (TEO derivation details)
-- [ ] Appendix C (Numerical evidence for Conjecture 1) — note: §5 P1–P3 now specify exactly what this appendix must show
+- [ ] Appendix C (Numerical evidence for Conjecture 1) — §5 P1–P3 specify exactly what this appendix must show; requires running the teo-civilization simulation
 
 **Completed in v0.2 (internal reviewer pass):**
 - [x] §1 tone calibrated to match what §3 actually proves
