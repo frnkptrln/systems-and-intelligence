@@ -1,17 +1,24 @@
 """
 viable_corridor.py — Visualization of the Viable Corridor in TEO parameter space.
 
-Generates the central figure for the paper "Machines of Loving Grace: The
-Three-Constraint Regime for Survivable Multi-Agent Optimization".
+Generates Figure 1 for the paper "The Viable Corridor: A Three-Constraint
+Theorem for Survivable Multi-Agent Optimization" (papers/viable-corridor.md).
 
-The figure shows the three TEO constraints — gamma > 0 (homeostatic
+The figure shows the three TEO necessity conditions — gamma > 0 (homeostatic
 regulation), K > K_c (value coupling above the Kuramoto critical threshold),
-and dS/dt < D_max (entropy production below the substrate ceiling) — as
-half-spaces in parameter space. Their intersection is the Viable Corridor.
+and bounded accumulated substrate overshoot Omega(t) < S_max — as
+half-spaces in parameter space. Their intersection is the *necessity region*
+that contains the viable corridor C. (Sufficiency is conjectured to require
+the stronger gamma > gamma_c; see §3.4 of the paper, so C is a proper subset
+of the region drawn here.)
+
+The third axis is drawn as instantaneous dS/dt for visual clarity, but the
+operative substrate constraint in the paper (v0.3) is the cumulative
+Omega(t) < S_max. See the figure caption in the paper.
 
 An illustrative trajectory shows the "paperclip" path: a system whose
-parameters drift toward gamma = 0, K < K_c, and dS/dt approaching D_max,
-exiting the corridor through all three boundaries.
+parameters drift toward gamma = 0, K < K_c, and rising substrate stress,
+exiting the region through its boundaries.
 
 The figure is schematic. The numerical values for K_c, D_max, etc. are
 illustrative only; calibrating them to specific systems is an open empirical
@@ -205,21 +212,22 @@ def plot_viable_corridor(save_path: Path | None = None) -> None:
     # --- Title ---
     ax.set_title(
         "The Viable Corridor in TEO Parameter Space\n"
-        r"$\mathcal{C} = \{\gamma > 0\} \cap \{K > K_c\} \cap \{dS/dt < D_{\max}\}$",
-        fontsize=12,
+        r"Necessity region: $\{\gamma > 0\} \cap \{K > K_c\} \cap \{\Omega(t) < S_{\max}\}$"
+        "\n(sufficiency conjectured to require $\\gamma > \\gamma_c$)",
+        fontsize=11,
         pad=18,
     )
 
     # --- Custom legend (3D legends are awkward; use proxy artists). ---
     legend_elements = [
         Patch(facecolor=COLOR_CORRIDOR, edgecolor=COLOR_CORRIDOR, alpha=0.30,
-              label="Viable corridor $\\mathcal{C}$"),
+              label="Necessity region (contains corridor $\\mathcal{C}$)"),
         Patch(facecolor=COLOR_GAMMA, edgecolor=COLOR_GAMMA, alpha=0.30,
               label=r"$\gamma = 0$: monopoly boundary (Lemma 1)"),
         Patch(facecolor=COLOR_K, edgecolor=COLOR_K, alpha=0.30,
-              label=r"$K = K_c$: polarization boundary (Lemma 2)"),
+              label=r"$K = K_c$: coherence-collapse boundary (Lemma 2)"),
         Patch(facecolor=COLOR_D, edgecolor=COLOR_D, alpha=0.30,
-              label=r"$dS/dt = D_{\max}$: substrate veto (Lemma 3)"),
+              label=r"substrate veto: $\Omega(t) = S_{\max}$ (Lemma 3)"),
         Line2D([0], [0], color=COLOR_TRAJ, linewidth=2.5,
                label="Unconstrained (paperclip) trajectory"),
     ]

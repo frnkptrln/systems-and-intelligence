@@ -4,8 +4,8 @@ author: "Frank Peterlein"
 affiliation: "Independent Researcher, Berlin"
 correspondence: "GitHub Issues / frnkptrln"
 date: "2026 (working draft)"
-status: "DRAFT — sections §1–§4 reviewed and revised; §5–§8 and appendices pending"
-version: "0.2"
+status: "DRAFT — sections §1–§4 through two reviewer passes; §5–§8 and appendices pending"
+version: "0.3"
 relation_to_other_paper: >
   This is the conceptual companion paper to
   `papers/quantifying-emergent-utility-in-llms.md`, which will be revised
@@ -35,13 +35,14 @@ target_length: "12–15 pages typeset"
 
 ---
 
-> **Status:** working draft, version 0.2.
-> Sections §1–§4 are drafted and have completed one reviewer pass; §5 (Predictions), §6 (Limitations), §7 (Discussion), and §8 (Conclusion) are pending. The central figure (Viable Corridor) is implemented at `lab/tools/viable_corridor.py`. References are consolidated at the end; full bibliographic entries are pending. **This document is not yet submission-ready.**
+> **Status:** working draft, version 0.3.
+> Sections §1–§4 have completed two reviewer passes; §5 (Predictions), §6 (Limitations), §7 (Discussion), and §8 (Conclusion) are pending. The central figure (Viable Corridor) is implemented at `lab/tools/viable_corridor.py`. References are consolidated at the end; full bibliographic entries are pending. **This document is not yet submission-ready.**
 
 ### Revision history
 
 - **v0.1** — Initial draft of §1–§4 and Figure 1.
 - **v0.2** — Twelve-point structural revision following an internal reviewer pass. Tone in §1 calibrated down to match what §3 actually proves. Homeostatic brake in §2.4 reformulated to preserve the simplex. Substrate-health variable $H$ coupled back into Equation (1) so that substrate collapse halts the dynamics. Viability redefined as **robust viability** (open-set invariance) in §3.1. Theorem 1 scope clarified to the thermodynamic limit. Lemma 1 strengthened to require strict dominance. Lemma 2 explicit about all-to-all coupling and frequency-distribution assumptions. Lemma 3 corrected from `ess sup` to **accumulated overshoot**. §3.4 "Lyapunov candidate" renamed to **viability margin** (no monotonicity claim). §4.1 table reframed as a **heuristic regime mapping**, not a calibrated estimation. §4.4 citation fixed (Wolfram for computational irreducibility, not Chaitin). §4.5 final claim softened from "estimated trajectory" to "proxies consistent with". §2.7 IP note moved to §7 as future work.
+- **v0.3** — Second reviewer pass; fixed two blockers and ten further issues. **Blocker 1:** the homeostatic brake activated at the same threshold that defines V1 violation, making robust viability impossible even for $\gamma > 0$; resolved by separating a regulatory threshold $x_{\text{reg}} < x_{\text{crit}}$ and making Conjecture 1's sufficiency condition $\gamma > \gamma_c$ rather than $\gamma > 0$. **Blocker 2:** Lemma 2 assumed incoherent initial conditions, which lie outside $V$; reframed as a coherent-initial-condition dephasing result with the $K = K_c$ equality case handled. Further fixes: frequency assumption made Lorentzian-compatible (dropped "finite second moment"); Theorem 1 restated as a componentwise conjunction (Lemmas 1, 3 finite-$N$; Lemma 2 thermodynamic limit); value dynamics (2) coupled to $H$ so they also freeze at substrate collapse; V3 split into instantaneous (V3a) and cumulative (V3b) conditions with the theorem proving V3b; accumulated overshoot $\Omega(t)$ introduced explicitly (6a, 6b); viability margin redefined from a weighted sum to $\min$ of margin-to-boundary terms; uniform-redistribution caveat added to §2.4; §4.1 GDP wording softened; §4.4 tagged as heuristic explanatory; Figure 1 and §8 notation updated to $\gamma > \gamma_c$, $\Omega(t) < S_{\max}$.
 
 ---
 
@@ -67,7 +68,7 @@ We advance a **structural-isomorphism hypothesis**: that both systems can be rep
 
 **Thesis.** Within the TEO framework, the long-time behavior of any coupled optimizing system the model describes depends on three parameters: a homeostatic regulation strength $\gamma$, a value-coupling strength $K$ between agents, and an entropy production rate $dS/dt$ bounded by the substrate's dissipation capacity $D_{\max}$. We claim:
 
-1. The conjunction of three constraints — $\gamma > 0$, $K > K_c$, and $dS/dt < D_{\max}$ — is **necessary** for robust long-time viability (Theorem 1, §3). Sufficiency is stated as a conjecture (Conjecture 1, §3.4) supported by partial numerical evidence; we do not prove it.
+1. The conjunction of three conditions — $\gamma > 0$, $K > K_c$, and bounded accumulated substrate overshoot $\Omega(t) < S_{\max}$ — is **necessary** for robust long-time viability (Theorem 1, §3). Sufficiency is stated as a conjecture (Conjecture 1, §3.4) and is expected to require the stronger $\gamma > \gamma_c$; we do not prove it.
 2. The same parameter mapping is *hypothesized* to apply, at the level of qualitative regime, to both a stylized paperclip-style AI optimizer and to twenty-first-century human civilization. This is a structural-isomorphism *hypothesis*, not an established equivalence.
 3. Under the model, the trajectory of unconstrained optimization in both cases passes through three identifiable phases: monopolistic concentration, substrate approach, and substrate-driven termination. The mapping of contemporary civilizational data to these phases is interpretive, not measured.
 
@@ -77,7 +78,7 @@ We refer to the three-constraint parameter regime as the **viable corridor**. Th
 
 The reframing is therefore not only about AI. It is about what counts as a control problem.
 
-**Paper structure.** Section 2 introduces the TEO framework formally — the coupled replicator-Kuramoto-entropy dynamics that generate the three parameters. Section 3 states and argues for the Three-Constraint Theorem: that the conjunction $\gamma > 0$, $K > K_c$, $dS/dt < D_{\max}$ is necessary for survival in the long-time limit. Section 4 develops the isomorphism between AI optimization and civilizational dynamics through explicit parameter mapping and empirical anchors. Section 5 derives falsifiable predictions and identifies the empirical commitments the framework makes. Section 6 presents limitations and the strongest counterarguments. Section 7 discusses implications, with explicit attention to what the framework does and does not justify.
+**Paper structure.** Section 2 introduces the TEO framework formally — the coupled replicator-Kuramoto-entropy dynamics that generate the three parameters. Section 3 states and argues for the Three-Constraint Theorem: that the conjunction $\gamma > 0$, $K > K_c$, $\Omega(t) < S_{\max}$ is necessary for robust long-time viability. Section 4 develops the structural-isomorphism hypothesis between AI optimization and civilizational dynamics through a heuristic parameter mapping and empirical proxies. Section 5 derives falsifiable predictions and identifies the empirical commitments the framework makes. Section 6 presents limitations and the strongest counterarguments. Section 7 discusses implications, with explicit attention to what the framework does and does not justify.
 
 Throughout, we tag claims with their epistemic status:
 
@@ -124,30 +125,37 @@ $$
 
 ### 2.3 The Kuramoto Model (Value Coupling)
 
-Value orientations evolve under coupled-oscillator dynamics:
+Value orientations evolve under substrate-modulated coupled-oscillator dynamics:
 $$
-\frac{d\theta_i}{dt} = \omega_i + \frac{K}{N} \sum_{j=1}^N A_{ij} \sin(\theta_j - \theta_i),
+\frac{d\theta_i}{dt} = H \left[ \omega_i + \frac{K}{N} \sum_{j=1}^N A_{ij} \sin(\theta_j - \theta_i) \right],
 \tag{2}
 $$
-where $\omega_i$ is agent $i$'s intrinsic frequency (its bias toward a particular value orientation), $K \geq 0$ is the global coupling strength (interpretable as discursive bandwidth, shared media saturation, or institutional integration), and $A_{ij}$ is the topology of §2.1. Equation (2) is the standard Kuramoto (1975) model on a network.
+where $\omega_i$ is agent $i$'s intrinsic frequency (its bias toward a particular value orientation), $K \geq 0$ is the global coupling strength (interpretable as discursive bandwidth, shared media saturation, or institutional integration), $A_{ij}$ is the topology of §2.1, and $H \in [0,1]$ is the substrate-health variable of §2.5. The prefactor $H$ ensures that value dynamics, like resource dynamics, halt when the substrate collapses ($H \to 0$). At full substrate health ($H = 1$), Equation (2) is the standard Kuramoto (1975) model on a network, so the critical-coupling analysis below is unaffected.
 
 The collective coherence of value orientations is measured by the order parameter:
 $$
 r(t) \, e^{i \psi(t)} = \frac{1}{N} \sum_{j=1}^N e^{i \theta_j(t)},
 \tag{3}
 $$
-with $r(t) \in [0, 1]$: $r \to 1$ indicates full synchronization (consensus), $r \to 0$ indicates phase-uniform incoherence (polarization). For frequency distributions with finite second moment, Equation (2) exhibits a critical coupling threshold $K_c$ below which $r$ vanishes asymptotically (Kuramoto, 1975; Strogatz, 2000). For Lorentzian-distributed frequencies with half-width $\Delta$, $K_c = 2\Delta$.
+with $r(t) \in [0, 1]$: $r \to 1$ indicates full synchronization (consensus), $r \to 0$ indicates phase-uniform incoherence (loss of any global phase). For natural frequencies drawn i.i.d.\ from a symmetric unimodal density $g(\omega)$ with $g(0) > 0$ and sufficient regularity, the all-to-all model at $H=1$ exhibits a critical coupling threshold $K_c$ below which no macroscopic coherent branch is stable (Kuramoto, 1975; Strogatz, 2000; Acebrón et al., 2005). For the Lorentzian density $g(\omega) = (\Delta/\pi)/(\omega^2 + \Delta^2)$ (which is heavy-tailed and has no finite variance, but is the standard analytically tractable case), $K_c = 2\Delta$.
 
 ### 2.4 The Homeostatic Brake
 
-The brake $\mathcal{H}_i$ in Equation (1) must preserve the simplex constraint $\sum_i x_i = 1$. A pure penalty term $-\gamma \max(0, x_i - x_{\text{crit}})$ removes mass from above-threshold agents but does not return it elsewhere, breaking simplex invariance. We therefore define the brake as a redistribution:
+The brake $\mathcal{H}_i$ in Equation (1) must satisfy two requirements: it must preserve the simplex constraint $\sum_i x_i = 1$, and it must be able to act **before** the system reaches the failure boundary. We therefore distinguish two thresholds:
+
+- a **regulatory threshold** $x_{\text{reg}}$, above which the brake activates;
+- a **failure threshold** $x_{\text{crit}}$, above which pluralism (V1, §3.1) is violated,
+
+with $1/N < x_{\text{reg}} < x_{\text{crit}} < 1$. The separation $x_{\text{reg}} < x_{\text{crit}}$ is essential: if the brake activated only at $x_{\text{crit}}$, it would engage exactly at the failure boundary — too late to keep an above-threshold trajectory inside $V$. The brake is:
 $$
-\mathcal{H}_i(\mathbf{x}) = -\gamma \cdot \max\bigl(0, \, x_i - x_{\text{crit}}\bigr) + \frac{\gamma}{N} \sum_{j=1}^N \max\bigl(0, \, x_j - x_{\text{crit}}\bigr),
+\mathcal{H}_i(\mathbf{x}) = -\gamma \cdot \max\bigl(0, \, x_i - x_{\text{reg}}\bigr) + \frac{\gamma}{N} \sum_{j=1}^N \max\bigl(0, \, x_j - x_{\text{reg}}\bigr),
 \tag{4}
 $$
-where $\gamma \geq 0$ is the regulatory strength and $x_{\text{crit}} \in (1/N, 1)$ is a critical share threshold. The first term penalises any agent whose share exceeds $x_{\text{crit}}$; the second term distributes the aggregate penalty uniformly across all agents. By construction $\sum_i \mathcal{H}_i(\mathbf{x}) = 0$, so the simplex is preserved.
+where $\gamma \geq 0$ is the regulatory strength. The first term penalises any agent whose share exceeds $x_{\text{reg}}$; the second term redistributes the aggregate penalty uniformly across all agents. By construction $\sum_i \mathcal{H}_i(\mathbf{x}) = 0$, so the simplex is preserved.
 
-Interpretation: $\gamma$ encodes the operational strength of *any* homeostatic mechanism that resists unbounded concentration — antitrust law, progressive taxation, redistribution, capability throttling, kill switches, refusal channels. The parameter $\gamma = 0$ corresponds to fully unregulated optimization. The form (4) is one of several simplex-preserving redistributions; alternatives (e.g. redistribution only to below-threshold agents, or weighted by inverse share) yield qualitatively similar dynamics and are discussed in §6 [`[MODEL ASSUMPTION]`].
+Interpretation: $\gamma$ encodes the operational strength of *any* homeostatic mechanism that resists unbounded concentration — antitrust law, progressive taxation, redistribution, capability throttling, kill switches, refusal channels. The parameter $\gamma = 0$ corresponds to fully unregulated optimization.
+
+Two caveats [`[MODEL ASSUMPTION]`]. First, uniform redistribution means that an above-threshold agent whose excess is below the *average* excess can receive a positive net brake contribution; the first term penalises above-threshold shares, but the net effect on a given agent depends on the distribution of excess shares. Alternatives (redistribution only to below-threshold agents, or weighted by $(x_{\text{reg}} - x_i)_+$) avoid this and are discussed in §6. Second, the form (4) is one of several simplex-preserving redistributions; we use it for analytic convenience.
 
 ### 2.5 The Entropy Budget and Substrate Coupling
 
@@ -158,79 +166,90 @@ $$
 $$
 where $\eta_i > 0$ is agent $i$'s entropy coefficient. We write $f_i(\mathbf{x}, H)$ to make the substrate-dependence explicit (see below).
 
-The substrate hosting the dynamics has a finite dissipation capacity $D_{\max} > 0$. The substrate-health variable $H(t) \in [0, 1]$ evolves according to:
+The substrate hosting the dynamics has a finite *instantaneous* dissipation capacity $D_{\max} > 0$ and a finite *cumulative* reservoir $S_{\max} > 0$. We track the **accumulated overshoot**
 $$
-\frac{dH}{dt} = -\frac{1}{S_{\max}} \, \max\!\left( 0, \, \frac{dS_{\text{sys}}}{dt} - D_{\max} \right),
-\tag{6}
+\Omega(t) := \int_0^t \bigl( \dot{S}_{\text{sys}}(s) - D_{\max} \bigr)_+ \, ds,
+\tag{6a}
 $$
-with $H(0) = 1$ and $S_{\max} > 0$ the substrate's total dissipative reservoir. Equation (6) is phenomenological [`[MODEL ASSUMPTION]`]: sustained over-dissipation degrades the substrate, with degradation accumulating in proportion to the excess.
+the integrated excess of entropy production over the instantaneous ceiling. The substrate-health variable $H(t) \in [0, 1]$ then evolves as
+$$
+H(t) = \max\!\left( 0, \, 1 - \frac{\Omega(t)}{S_{\max}} \right),
+\qquad\text{equivalently}\qquad
+\frac{dH}{dt} = -\frac{1}{S_{\max}} \, \bigl( \dot{S}_{\text{sys}} - D_{\max} \bigr)_+ \ \text{while } H > 0,
+\tag{6b}
+$$
+with $H(0) = 1$. Equation (6b) is phenomenological [`[MODEL ASSUMPTION]`]: a *momentary* overshoot of $D_{\max}$ degrades the substrate only by a finite increment; *sustained or repeated* overshoot accumulating to $\Omega = S_{\max}$ drives $H$ to zero. This distinction — instantaneous ceiling $D_{\max}$ versus cumulative reservoir $S_{\max}$ — matters for the viability conditions in §3.1.
 
-**Substrate coupling.** We close the loop by making fitness depend on substrate health:
+**Substrate coupling.** We close the loop by making both fitness and value-coupling depend on substrate health. Fitness:
 $$
 f_i(\mathbf{x}, H) = H \cdot f_i^{(0)}(\mathbf{x}),
 \tag{5'}
 $$
-where $f_i^{(0)}$ is the substrate-unmodified fitness. Equation (5') ensures that as $H \to 0$, all fitness vanishes and Equations (1)–(2) freeze: the resource-replicator drift goes to zero and the value-coupling dynamics continue only on previously assigned shares. Without this coupling, the dynamics would remain formally defined even at $H = 0$, contradicting the physical interpretation of substrate collapse.
+where $f_i^{(0)}$ is the substrate-unmodified fitness; and the prefactor $H$ already appears in the value dynamics (2). As $H \to 0$, all fitness vanishes (so the resource-replicator drift and entropy production go to zero) *and* the value-coupling term vanishes: the entire coupled system (1)–(3) freezes at the state reached at substrate collapse. Without this coupling, the dynamics would remain formally defined even at $H = 0$, contradicting the physical interpretation of substrate collapse.
 
-In the planetary-substrate interpretation, $H$ corresponds to an integrated overshoot of the safe operating space defined by Rockström et al. (2009).
+In the planetary-substrate interpretation, $\Omega(t)$ corresponds to an integrated overshoot of the safe operating space defined by Rockström et al. (2009).
 
 ### 2.6 The Coupled System and Three Failure Modes
 
-Together, Equations (1)–(6) define the TEO dynamics. Three parameters dominate the long-time behavior: the homeostatic strength $\gamma$, the value-coupling strength $K$, and the substrate dissipation capacity $D_{\max}$.
+Together, Equations (1)–(6) define the TEO dynamics. Three quantities dominate the long-time behavior: the homeostatic strength $\gamma$, the value-coupling strength $K$, and the accumulated substrate overshoot $\Omega(t)$ relative to the reservoir $S_{\max}$.
 
-Each parameter admits one independent failure mode, made formal in §3:
+Each admits one independent failure mode, made formal in §3:
 
-1. **Monopolistic concentration** ($\gamma = 0$). Without the homeostatic brake, Equation (1) reduces to the unregulated replicator equation. Under the strict-dominance assumption (1'), the system converges from any interior initial condition to the vertex of agent $i^*$: $x_{i^*}(t) \to 1$.
+1. **Monopolistic concentration** ($\gamma = 0$). Without the homeostatic brake, Equation (1) reduces to the unregulated replicator equation. Under the strict-dominance assumption (1'), the system converges from any interior initial condition to the vertex of agent $i^*$: $x_{i^*}(t) \to 1$ (finite-$N$ result, Lemma 1).
 
-2. **Coherence collapse** ($K < K_c$). Below the Kuramoto critical coupling $K_c$ — defined for the thermodynamic limit ($N \to \infty$) of all-to-all coupling with Lorentzian-distributed natural frequencies — the order parameter (3) satisfies $\limsup_{t \to \infty} r(t) = 0$. Agents' value orientations remain phase-uniformly incoherent. (We use "coherence collapse" rather than "polarization" because $r \to 0$ describes loss of any global phase, not specifically two-cluster antagonism.)
+2. **Coherence collapse** ($K < K_c$). Below the Kuramoto critical coupling $K_c$ — defined for the thermodynamic limit ($N \to \infty$) of all-to-all coupling with the frequency-density assumptions of §2.3 — no stable macroscopic coherent branch exists, so coherent states generically dephase and (V2) cannot be robustly maintained (thermodynamic-limit result, Lemma 2). (We use "coherence collapse" rather than "polarization" because $r \to 0$ describes loss of any global phase, not specifically two-cluster antagonism.)
 
-3. **Substrate veto** (accumulated overshoot $\int_0^t (\dot{S}_{\text{sys}} - D_{\max})_+ \, ds \geq S_{\max}$ for some finite $t$). When the integrated overshoot of $D_{\max}$ exceeds the substrate's total reservoir, Equation (6) drives $H$ to zero in finite time. Through Equation (5'), $f_i \to 0$ and the dynamics freeze.
+3. **Substrate veto** (accumulated overshoot $\Omega(t) \geq S_{\max}$ for some finite $t$). When the integrated overshoot of $D_{\max}$ reaches the substrate's reservoir, Equation (6b) drives $H$ to zero in finite time. Through the substrate coupling (2) and (5'), the entire coupled system freezes (finite-$N$ result, Lemma 3).
 
-The central observation of this paper, made precise in §3, is that **the conjoint avoidance of all three failure modes is necessary for robust long-time viability**. The parameter regime $\gamma > 0 \,\wedge\, K > K_c \,\wedge\, dS_{\text{sys}}/dt < D_{\max}$ (with the third interpreted as an accumulated-overshoot condition, see §3.3) defines the **viable corridor** analyzed in the remainder of the paper.
+The central observation of this paper, made precise in §3, is that **the conjoint avoidance of all three failure modes is necessary for robust long-time viability**. The regime $\gamma > 0 \,\wedge\, K > K_c \,\wedge\, \Omega(t) < S_{\max}\ \forall t$ defines the **viable corridor** analyzed in the remainder of the paper. (Sufficiency, conjectured in §3.4, requires the stronger $\gamma > \gamma_c$; see there.)
 
 ---
 
 ## §3. The Three-Constraint Theorem
 
-This section formalises the central claim of the paper: the conjunction of $\gamma > 0$, $K > K_c$, and $\frac{dS_{\text{sys}}}{dt} < D_{\max}$ is necessary for the TEO dynamics to admit *robust* long-time viability. We prove necessity under stated assumptions (Theorem 1) and state sufficiency as a conjecture (Conjecture 1) supported by partial numerical evidence.
+This section formalises the central claim: the conjunction $\gamma > 0$, $K > K_c$, and $\Omega(t) < S_{\max}$ (for all $t$) is *necessary* for the TEO dynamics to admit *robust* long-time viability. We prove necessity under stated assumptions (Theorem 1) and state sufficiency, which requires the stronger $\gamma > \gamma_c$, as a conjecture (Conjecture 1).
 
 ### 3.1 The Viable Region and Robust Viability
 
-Let $\Sigma$ denote the state space of the TEO system: the simplex $\{\mathbf{x} \in \mathbb{R}^N_{\geq 0} : \sum_i x_i = 1\}$ combined with the $N$-torus $[0, 2\pi)^N$ for value orientations, augmented by the substrate-health variable $H \in [0, 1]$ from §2.5.
+Let $\Sigma$ denote the state space of the TEO system: the simplex $\{\mathbf{x} \in \mathbb{R}^N_{\geq 0} : \sum_i x_i = 1\}$ combined with the $N$-torus $[0, 2\pi)^N$ for value orientations, augmented by the substrate-health variable $H \in [0, 1]$ (equivalently the accumulated overshoot $\Omega$ via Equation 6b).
 
-We define the **viable region** $V \subset \Sigma$ as the set of states satisfying three conditions simultaneously:
+We define the **viable region** $V \subset \Sigma$ by the conditions:
 
-- **(V1) Pluralism**: $\max_i x_i \leq x_{\text{crit}}$ — no agent's share exceeds the critical threshold $x_{\text{crit}} \in (1/N, 1)$.
-- **(V2) Coherence**: $r(t) \geq r_{\min} > 0$ — the Kuramoto order parameter from Equation (3) is bounded away from zero.
-- **(V3) Capacity**: $\frac{dS_{\text{sys}}}{dt} \leq D_{\max} - \epsilon$ for some $\epsilon > 0$ — entropy production is bounded strictly below the substrate's dissipation ceiling.
+- **(V1) Pluralism**: $\max_i x_i \leq x_{\text{crit}}$ — no agent's share exceeds the failure threshold $x_{\text{crit}} \in (x_{\text{reg}}, 1)$.
+- **(V2) Coherence**: $r(t) \geq r_{\min} > 0$ — the Kuramoto order parameter (3) is bounded away from zero.
+- **(V3) Substrate.** We distinguish two capacity conditions, because the model has both an instantaneous ceiling and a cumulative reservoir:
+    - **(V3a) Instantaneous safe operation**: $\dot{S}_{\text{sys}} \leq D_{\max} - \epsilon$ for some $\epsilon > 0$. This is a stricter day-to-day condition; momentary violations are survivable.
+    - **(V3b) Cumulative survival**: $\Omega(t) < S_{\max}$. This is the condition whose violation collapses the substrate (Lemma 3).
 
-We use the term **robust viability** rather than "viability of some trajectory". An existential definition — "there exists at least one trajectory starting in $V$ that remains in $V$" — is too weak for the necessity claims that follow, because measure-zero symmetric equilibria can satisfy it even under failed constraints. We therefore define [`[FORMAL]`]:
+The necessity theorem (§3.3) proves the necessity of **(V3b)**. Condition (V3a) is a stronger, optional refinement used in the sufficiency discussion (§3.4); a system may transiently violate (V3a) without leaving the viable region as long as (V3b) holds.
 
-> A parameter triple $(\gamma, K, D_{\max})$ admits **robust viability** if there exists a non-empty open subset $U \subseteq V$ such that for every initial condition $(\mathbf{x}_0, \boldsymbol{\theta}_0, H_0 = 1) \in U$, the resulting trajectory $(\mathbf{x}(t), \boldsymbol{\theta}(t), H(t))$ remains in $V$ for all $t \geq 0$.
+We use **robust viability** rather than "viability of some trajectory". An existential definition — "there exists at least one trajectory starting in $V$ that remains in $V$" — is too weak, because measure-zero symmetric equilibria can satisfy it even under failed constraints. We therefore define [`[FORMAL]`]:
 
-This is the standard open-set / positive-invariance notion of viability used in dynamical systems and viability theory (Aubin, 1991).
+> A parameter triple $(\gamma, K, S_{\max})$ admits **robust viability** if there exists a non-empty open subset $U \subseteq V$ such that for every initial condition $(\mathbf{x}_0, \boldsymbol{\theta}_0, H_0 = 1) \in U$, the resulting trajectory remains in $V$ (with V3 read as V3b) for all $t \geq 0$.
+
+This is the standard open-set / positive-invariance notion of viability (Aubin, 1991).
 
 ### 3.2 The Viable Corridor in Parameter Space
 
-In the parameter space $(\gamma, K, D_{\max}) \in \mathbb{R}^3_{\geq 0}$, define the **viable corridor** $\mathcal{C}$ as the set of parameter triples admitting robust viability:
+In the parameter space $(\gamma, K, S_{\max}) \in \mathbb{R}^3_{\geq 0}$, define the **viable corridor** $\mathcal{C}$ as the set of parameter triples admitting robust viability:
 $$
-\mathcal{C} = \left\{(\gamma, K, D_{\max}) : (\gamma, K, D_{\max}) \text{ admits robust viability per §3.1}\right\}.
+\mathcal{C} = \left\{(\gamma, K, S_{\max}) : (\gamma, K, S_{\max}) \text{ admits robust viability per §3.1}\right\}.
 \tag{7}
 $$
 
-The central necessity claim of this paper is that the three inequalities $\gamma > 0$, $K > K_c$, $dS_{\text{sys}}/dt < D_{\max}$ are **necessary boundary conditions** on $\mathcal{C}$ — that is, $\mathcal{C}$ is contained in the open region they define. Whether they are also sufficient is the content of Conjecture 1.
+The central necessity claim is that $\gamma > 0$, $K > K_c$, and $\Omega(t) < S_{\max}\ \forall t$ are **necessary boundary conditions** on $\mathcal{C}$: $\mathcal{C}$ is contained in the region they define. Necessity is proved in Theorem 1. Sufficiency — which, as Conjecture 1 argues, requires the *strengthened* resource condition $\gamma > \gamma_c$ rather than merely $\gamma > 0$ — is open.
 
 ### 3.3 Theorem 1 (Necessity)
 
-We state Theorem 1 in the thermodynamic limit ($N \to \infty$) under explicit assumptions matching each lemma's scope. Finite-$N$ versions hold in a probabilistic, fluctuation-bounded sense; we comment on these after the proof.
+Theorem 1 is a **conjunction of three componentwise obstruction results**, each with its own natural scope. Lemma 1 (resource concentration) and Lemma 3 (substrate veto) are finite-$N$ results. Lemma 2 (coherence collapse) is a thermodynamic-limit ($N \to \infty$) result and is used as the large-$N$ coherence obstruction. We do not claim a single unified finite-$N$ theorem; a fully finite-$N$ treatment of the coherence obstruction is left to future work (§6). This componentwise framing is less elegant than a single theorem but more honest about what each piece establishes.
 
-**Theorem 1 (Necessity of the three constraints).** *Let the TEO system (Equations 1, 1', 2, 3, 4, 5, 5', 6) be defined for an $N \to \infty$ population of agents with all-to-all coupling ($A_{ij} = 1$ for all $i \neq j$), with natural frequencies $\omega_i$ drawn i.i.d. from a unimodal symmetric density of finite second moment (e.g.\ Lorentzian with half-width $\Delta$), with the strict-dominance fitness assumption (1') applied to $f_i^{(0)}$, and with the substrate coupling (5'). Then a parameter triple $(\gamma, K, D_{\max})$ admits robust viability (in the sense of §3.1) only if all three of the following hold:*
+**Theorem 1 (Necessity of the three constraints).** *Consider the TEO system (Equations 1, 1', 2, 3, 4, 5, 5', 6) with the strict-dominance fitness assumption (1') applied to $f_i^{(0)}$, frequencies drawn i.i.d.\ from a symmetric unimodal density $g(\omega)$ with $g(0) > 0$, and the substrate coupling (5') and (2). A parameter triple $(\gamma, K, S_{\max})$ admits robust viability (§3.1) only if all three of the following hold:*
 $$
-\gamma > 0, \quad K > K_c(\{\omega_i\}), \quad \int_0^t \!\bigl(\dot{S}_{\text{sys}}(s) - D_{\max}\bigr)_+ \, ds < S_{\max} \ \text{ for all } t \geq 0.
+\gamma > 0 \ \text{(finite-$N$, Lemma 1)}, \quad K > K_c \ \text{($N \to \infty$, Lemma 2)}, \quad \Omega(t) < S_{\max} \ \forall t \ \text{(finite-$N$, Lemma 3)}.
 \tag{8}
 $$
 
-The proof proceeds via three independent lemmas, each demonstrating one failure mode under the negation of one constraint.
+The proof is the conjunction of three lemmas, each establishing one failure mode under the negation of one condition. Because robust viability requires (V1), (V2), and (V3b) to hold simultaneously, the violation of any single condition suffices to rule it out.
 
 ---
 
@@ -242,38 +261,42 @@ The proof proceeds via three independent lemmas, each demonstrating one failure 
 
 ---
 
-**Lemma 2 (Coherence Collapse).** *Under all-to-all coupling ($A_{ij} = 1$), i.i.d.\ natural frequencies $\omega_i$ drawn from a unimodal symmetric density $g(\omega)$ with finite second moment, and incoherent initial phase distribution, in the thermodynamic limit $N \to \infty$ the Kuramoto order parameter satisfies*
-$$
-\lim_{t \to \infty} r(t) = 0 \quad \text{whenever} \quad K < K_c, \quad \text{where } K_c = \frac{2}{\pi g(0)}.
-$$
+**Lemma 2 (Coherence Collapse).** *Consider the all-to-all Kuramoto model (Equation 2 at $H = 1$, $A_{ij} = 1$) in the thermodynamic limit $N \to \infty$, with frequencies i.i.d.\ from a symmetric unimodal density $g(\omega)$, $g(0) > 0$. Let $K_c = 2/(\pi g(0))$. For $K \leq K_c$, no stable macroscopic coherent branch ($r > 0$) exists: for generic absolutely continuous initial phase distributions, the order parameter relaxes to $r = 0$. Consequently, no open set of initial conditions can be guaranteed to keep $r(t) \geq r_{\min} > 0$, so (V2) cannot be robustly maintained and robust viability fails.*
 
-*Proof sketch.* This is the classical Kuramoto (1975) onset result, made rigorous in the thermodynamic limit by Mirollo and Strogatz (1991) and reviewed in Strogatz (2000) and Acebrón et al. (2005). Below $K_c$, the self-consistency equation $r = K \int \cos(\theta_\omega(\infty)) \, g(\omega) \, d\omega$ admits only the trivial solution $r = 0$ on the incoherent manifold; small perturbations decay rather than grow. For the Lorentzian density $g(\omega) = (\Delta / \pi)/(\omega^2 + \Delta^2)$ this reduces to $K_c = 2\Delta$. The result (V2 violated asymptotically) rules out robust viability when $K < K_c$. $\square$
+*Proof sketch.* The point requiring care is that the viable region $V$ requires $r \geq r_{\min} > 0$, so the relevant initial conditions are *coherent*, not incoherent. The argument is therefore not "incoherent states stay incoherent" but "coherent states cannot be sustained below threshold." In the thermodynamic limit, the Kuramoto self-consistency equation $r = K r \int_{-\pi/2}^{\pi/2} \cos^2\theta \, g(Kr\sin\theta) \, d\theta$ admits a positive solution $r > 0$ only for $K > K_c$ (Kuramoto, 1975; Mirollo & Strogatz, 1991; Acebrón et al., 2005). For $K < K_c$ the only solution is $r = 0$, and the partially synchronised branch does not exist; a coherent initial condition with $r(0) > 0$ therefore has no attracting coherent state to remain near, and $r(t) \to 0$ for generic initial data. At exactly $K = K_c$, the coherent branch emerges with $r = 0^+$: there is no positive margin away from the coherence boundary, so (V2) with $r_{\min} > 0$ cannot be robustly held there either. Hence the necessary condition is the strict inequality $K > K_c$. $\square$
 
-*Remark.* For finite $N$ and general connected adjacency matrices $A_{ij}$, there is no sharp threshold of this exact form: the critical coupling depends on the spectrum of $A_{ij}$ and on finite-size fluctuations of order $N^{-1/2}$ (Strogatz, 2000, §3; Restrepo, Ott & Hunt, 2005). The thermodynamic-limit statement is the cleanest available; the finite-$N$ extension is discussed in §6 as a model-assumption.
+*Remark (finite $N$ and networks).* For finite $N$ and general connected adjacency matrices $A_{ij}$, there is no sharp threshold of this exact form: the critical coupling depends on the spectrum of $A_{ij}$ and on finite-size fluctuations of order $N^{-1/2}$ (Strogatz, 2000, §3; Restrepo, Ott & Hunt, 2005). The thermodynamic-limit statement is the cleanest available; the finite-$N$ extension is flagged in §6 as model-dependent and is part of the future-work programme noted under Theorem 1.
 
 ---
 
-**Lemma 3 (Substrate Veto via Accumulated Overshoot).** *If there exists a finite time $t^* > 0$ such that the accumulated overshoot satisfies*
+**Lemma 3 (Substrate Veto via Accumulated Overshoot).** *If there exists a finite time $t^* > 0$ such that the accumulated overshoot reaches the reservoir,*
 $$
-\int_0^{t^*} \bigl(\dot{S}_{\text{sys}}(s) - D_{\max}\bigr)_+ \, ds \geq S_{\max},
+\Omega(t^*) = \int_0^{t^*} \bigl(\dot{S}_{\text{sys}}(s) - D_{\max}\bigr)_+ \, ds \geq S_{\max},
 $$
-*then $H(t^*) \leq 0$, and through the substrate coupling (5') we have $f_i(\mathbf{x}(t^*), H(t^*)) = 0$ for all $i$, halting both the replicator dynamics (1) and the entropy production (5).*
+*then $H(t^*) = 0$, and through the substrate coupling (2) and (5') the entire coupled system freezes: $f_i \equiv 0$ and $\dot{\theta}_i \equiv 0$ for all $i$. Condition (V3b) is violated and cannot be recovered.*
 
-*Proof sketch.* From Equation (6),
-$$
-H(t) = 1 - \frac{1}{S_{\max}} \int_0^t \bigl(\dot{S}_{\text{sys}}(s) - D_{\max}\bigr)_+ \, ds.
-$$
-The accumulated-overshoot hypothesis implies $H(t^*) \leq 0$. We extend the definition of $H$ to be clipped at zero: $H \geq 0$ throughout. By (5'), $f_i(\mathbf{x}, H) = H \cdot f_i^{(0)}(\mathbf{x})$, so $H = 0$ forces $f_i \equiv 0$. The replicator drift $x_i(f_i - \bar{\phi})$ then vanishes, the entropy production (5) vanishes, and the coupled trajectory remains frozen at the state reached at $t^*$. (V3 was already violated for some $\tau < t^*$ by hypothesis; once $H = 0$, the trajectory cannot recover.) Robust viability is therefore impossible. $\square$
+*Proof sketch.* By Equation (6b), $H(t) = \max(0, 1 - \Omega(t)/S_{\max})$. The hypothesis $\Omega(t^*) \geq S_{\max}$ gives $H(t^*) = 0$. Substrate coupling (5') makes $f_i(\mathbf{x}, H) = H \cdot f_i^{(0)}(\mathbf{x})$, so $H = 0$ forces $f_i \equiv 0$; the value dynamics (2) carry the same prefactor $H$, so $\dot{\theta}_i \equiv 0$ as well. The replicator drift $x_i(f_i - \bar{\phi})$ and the entropy production (5) both vanish, and once $\Omega = S_{\max}$ no further dynamics can reduce it. The coupled trajectory is frozen at the state reached at $t^*$, with (V3b) violated permanently. Robust viability is therefore impossible. $\square$
 
-*Remark.* This is the **crucial correction** from a naive $\mathrm{ess\,sup}_t \, \dot{S}_{\text{sys}} \geq D_{\max}$ condition. A momentary overshoot does not collapse the substrate; only sustained or repeated overshoot accumulating to at least $S_{\max}$ does. This matches the physical intuition that ecosystems and hardware can tolerate transient stress but not integrated, unrelieved overload.
+*Remark.* This is the **crucial correction** from a naive $\mathrm{ess\,sup}_t \, \dot{S}_{\text{sys}} \geq D_{\max}$ condition. A momentary overshoot does not collapse the substrate — it only increments $\Omega$ by a finite amount, and may decrement $H$ negligibly. Only sustained or repeated overshoot accumulating to $S_{\max}$ collapses the substrate. This matches the physical intuition that ecosystems and hardware tolerate transient stress but not integrated, unrelieved overload. Note that this lemma proves necessity of (V3b), the cumulative condition; the instantaneous condition (V3a) is strictly stronger and is not what the substrate-collapse argument requires.
 
 ---
 
-The three lemmas establish that each of the three constraints is **individually necessary** for robust viability under the stated assumptions. Since V1, V2, V3 must hold simultaneously for membership in $V$, the joint necessity of $\gamma > 0$, $K > K_c$, and the accumulated-overshoot bound follows. $\blacksquare$
+The three lemmas establish that each of the three conditions is **individually necessary** for robust viability under the stated assumptions. Since (V1), (V2), and (V3b) must hold simultaneously for membership in $V$, the joint necessity of $\gamma > 0$, $K > K_c$, and $\Omega(t) < S_{\max}\ \forall t$ follows. $\blacksquare$
 
 ### 3.4 Conjecture 1 (Sufficiency)
 
-**Conjecture 1 (Sufficiency).** *Under the assumptions of Theorem 1, the conjunction $\gamma > 0$, $K > K_c$, and the accumulated-overshoot bound is also sufficient for robust viability: there exists a non-empty open set $U \subseteq V$ such that every trajectory starting in $U$ remains in $V$ for all $t \geq 0$.* [`[CONJECTURE]`]
+Necessity (Theorem 1) shows that $\gamma > 0$ cannot be dropped: with no brake, Lemma 1 forces monopolisation. But $\gamma > 0$ is **not expected to be sufficient**. Because the brake activates at $x_{\text{reg}} < x_{\text{crit}}$ (§2.4), the relevant question for sufficiency is whether the regulatory vector field points *inward* before the trajectory reaches the failure boundary $x_{\text{crit}}$. This requires the brake to be strong enough — a threshold $\gamma_c$ depending on the regulatory gap, the dominance margin, and the population:
+$$
+\gamma_c = \gamma_c\bigl(x_{\text{reg}}, \, x_{\text{crit}}, \, \delta, \, N, \, H_{\min}\bigr).
+$$
+
+**Conjecture 1 (Sufficiency).** *Under the assumptions of Theorem 1, with the regulatory threshold strictly below the failure threshold ($x_{\text{reg}} < x_{\text{crit}}$), the strengthened conjunction*
+$$
+\gamma > \gamma_c, \quad K > K_c, \quad \Omega(t) < S_{\max} \ \forall t
+$$
+*is sufficient for robust viability: there exists a non-empty open set $U \subseteq V$ such that every trajectory starting in $U$ remains in $V$ for all $t \geq 0$.* [`[CONJECTURE]`]
+
+Note the asymmetry: necessity requires only $\gamma > 0$ (Theorem 1); sufficiency is conjectured to require the stronger $\gamma > \gamma_c$. Establishing $\gamma_c$ explicitly — even for the all-to-all, large-$N$ case — would be the central technical step in proving Conjecture 1.
 
 We do not prove this conjecture. The obstacle is structural: the three mechanisms are coupled through shared state (resource shares $x_i$ appear in both the replicator and the entropy equations; substrate health $H$ feeds back through (5') into the resource dynamics). We cannot rule out *a priori* coupling-induced failure modes that arise even when all three individual constraints hold — for example, transient excursions of $r(t)$ below $r_{\min}$ during regime shifts in $x_i$, or oscillations in $\dot{S}_{\text{sys}}$ that produce accumulated overshoot episodically.
 
@@ -281,12 +304,16 @@ What we offer in lieu of proof:
 
 1. **Numerical evidence** (Appendix C, *forthcoming*): for representative parameter triples satisfying the three inequalities, the TEO system is expected to exhibit stable long-time behaviour, and the failure modes observed at the corridor boundaries should match those predicted by Lemmas 1–3. *This appendix is pending; until the simulations are run, the numerical-evidence claim is itself a conjecture.*
 
-2. **A candidate viability margin**: define
+2. **A viability margin** built from margin-to-boundary terms, one per constraint:
 $$
-M(\mathbf{x}, \boldsymbol{\theta}, H) := \alpha_1 \bigl(1 - \tfrac{\max_i x_i}{x_{\text{crit}}}\bigr) + \alpha_2 \, r(t) + \alpha_3 \, H(t),
-\quad \alpha_1, \alpha_2, \alpha_3 > 0.
+m_x = x_{\text{crit}} - \max_i x_i, \qquad
+m_r = r(t) - r_{\min}, \qquad
+m_S = S_{\max} - \Omega(t),
 $$
-$M$ is **not** a Lyapunov function for the coupled system — $r(t)$ is not generally monotone, and $H(t)$ only decreases under accumulated stress. We call $M$ a **viability margin**: it is positive on $V$, vanishes on the boundary $\partial V$, and tracks how close the trajectory is to violating one or more conditions (V1)–(V3). Whether $M$ admits a true Lyapunov-style construction (e.g.\ a modified $\tilde{M}$ that is monotone along trajectories) is open.
+$$
+M(\mathbf{x}, \boldsymbol{\theta}, H) := \min\{ m_x, \, m_r, \, m_S \}.
+$$
+Each $m_\bullet$ measures the signed distance to one boundary of $V$; $M$ is positive on the interior of $V$, vanishes on the boundary $\partial V$, and is negative outside. $M$ is **not** a Lyapunov function — $r(t)$ is not generally monotone, and $m_S$ only decreases under accumulated stress — so we make no monotonicity claim. $M$ is a *viability margin*: it tracks how close the trajectory is to violating the nearest constraint. Whether a monotone modification (a true Lyapunov function on the coupled system) exists is open; a smooth approximation $M_\beta = -\tfrac{1}{\beta}\log\sum_\bullet e^{-\beta m_\bullet}$ to the minimum may be more tractable for such an analysis.
 
 A formal proof of sufficiency, likely via Lyapunov or invariant-manifold methods adapted from coupled-oscillator stability theory (Strogatz, 1994; Aubin, 1991), is left as future work.
 
@@ -296,13 +323,13 @@ The asymmetry between necessity (Theorem 1) and sufficiency (Conjecture 1) is me
 
 Three observations follow:
 
-1. By Theorem 1, **the viable corridor $\mathcal{C}$ is contained in the open region $\{\gamma > 0, K > K_c, \text{accumulated overshoot} < S_{\max}\}$**. Under the model's assumptions, parameter values outside this region cannot support robust viability. The constraints are **necessary model conditions** — not topological invariants of physical reality, but conditions that the dynamical system requires under (1'), all-to-all coupling, and the substrate phenomenology of (6) [`[FORMAL]`, conditional on assumptions].
+1. By Theorem 1, **the viable corridor $\mathcal{C}$ is contained in the region $\{\gamma > 0,\ K > K_c,\ \Omega(t) < S_{\max}\ \forall t\}$** (necessity). Sufficiency is conjectured to require the strictly stronger $\gamma > \gamma_c$ (Conjecture 1), so $\mathcal{C}$ is in general a *proper* subset of this region. Under the model's assumptions, parameter values outside the necessity region cannot support robust viability. These are **necessary model conditions** — not topological invariants of physical reality, but conditions the dynamical system requires under (1'), all-to-all coupling, and the substrate phenomenology of (6) [`[FORMAL]`, conditional on assumptions].
 
 2. The corridor is, in our schematic visualisation (Figure 1), narrow in the three-dimensional parameter space. Whether the corridor's measure (under any reasonable parameterisation) is actually small for systems of interest is an empirical question discussed in §5.
 
 3. The mapping of the three constraints to civilizational parameters in §4 is the *structural-isomorphism hypothesis* introduced in §1, not an established equivalence. §4 develops it as a heuristic regime assignment.
 
-![**Figure 1: The Viable Corridor in TEO Parameter Space.** The three constraint half-spaces ($\gamma > 0$, $K > K_c$, $dS/dt < D_{\max}$) and their intersection (green box) define the viable corridor $\mathcal{C}$. An illustrative paperclip trajectory begins inside $\mathcal{C}$ and exits via the $K = K_c$ boundary as the value coupling drops below the critical threshold. Generated by `lab/tools/viable_corridor.py`. Schematic only; numerical thresholds are not calibrated.](../lab/tools/viable_corridor.png)
+![**Figure 1: The Viable Corridor in TEO Parameter Space.** The three constraint half-spaces and their intersection (green box) define the necessity region containing the viable corridor $\mathcal{C}$. Necessity requires $\gamma > 0$, $K > K_c$, and bounded accumulated overshoot $\Omega(t) < S_{\max}$; sufficiency is conjectured to require the stronger $\gamma > \gamma_c$ (Conjecture 1), so $\mathcal{C}$ is a proper subset of the region shown. The third axis is drawn as instantaneous $dS/dt$ for visual clarity, but the operative substrate constraint is the cumulative $\Omega(t) < S_{\max}$ (§2.5). An illustrative paperclip trajectory begins inside the region and exits via the $K = K_c$ boundary. Generated by `lab/tools/viable_corridor.py`. Schematic only; numerical thresholds are not calibrated.](../lab/tools/viable_corridor.png)
 
 ---
 
@@ -318,7 +345,7 @@ Table 1 is a **heuristic regime assignment** [`[HEURISTIC]`] — a mapping at th
 
 | Parameter | Paperclip Maximizer | Human Civilization (2024) | Civilization regime indicator |
 |:---|:---|:---|:---|
-| Objective $f_i^{(0)}$ | $\beta_i$ paperclips per unit time | GDP growth as dominant societal optimization target ($\sim$3–4% global, with substantial heterogeneity) | World Bank WDI; Penn World Table |
+| Objective $f_i^{(0)}$ | $\beta_i$ paperclips per unit time | GDP growth / capital accumulation as a macro-level proxy for throughput-oriented optimization (not a claim that society literally optimizes GDP) | World Bank WDI; Penn World Table |
 | $\gamma$ (homeostatic brake) | $0$ (by construction) | $\gamma_{\text{eff}}$ **insufficient or subcritical** relative to concentration dynamics: existing brakes (taxation, antitrust, environmental law) have not prevented rising concentration | Piketty (2014); Philippon (2019); cf. §6 on what "subcritical" means here |
 | $K$ (value coupling) | undefined (single agent) or $0$ (population of indifferent copies) | $K_{\text{eff}}$ **declining**, possibly approaching a hypothesised critical regime: cross-partisan trust falling, polarization rising in major democracies | Iyengar et al. (2019); Boxell et al. (2024) |
 | Substrate stress vs.\ $D_{\max}$ | trajectory approaching the limit (model output, not stipulated) | Substrate-stress proxies indicate **multiple safe-operating-space boundaries transgressed**; not a direct measurement of $dS/dt$ or $D_{\max}$ | Richardson et al. (2023); Rockström et al. (2009); NOAA (2024) |
@@ -351,9 +378,9 @@ Under the structural-isomorphism hypothesis, the model with $\gamma \to 0$, $K <
 - *Paperclip case (model output):* hardware degrades; production collapses.
 - *Civilization case (heuristic interpretation):* possible manifestations include crop failure, water scarcity, ecosystem collapse, civilizational contraction. These are *contingent, multi-causal, and uneven* — the model does not predict their specific form or timing, only that, under the hypothesised mapping, substrate-driven dynamics dominate.
 
-### 4.4 Why the Failure Is Not Visible Locally
+### 4.4 Why the Failure Is Not Visible Locally [`[HEURISTIC EXPLANATORY CLAIM]`]
 
-Theorem 1's necessity proof rules out robust viability under the failure of any constraint. It does not predict *when* an external observer would detect the trajectory toward failure. We appeal here to a separate property of the dynamics: in coupled dynamical systems with emergent macro-behaviour, the global state is typically not computable from local information without executing the full dynamics.
+This subsection is an interpretive aside, not a formal result; it explains *why*, under the model, participants might not perceive the trajectory they are on. Theorem 1's necessity proof rules out robust viability under the failure of any constraint. It does not predict *when* an external observer would detect the trajectory toward failure. We appeal here to a separate property of the dynamics: in coupled dynamical systems with emergent macro-behaviour, the global state is typically not computable from local information without executing the full dynamics.
 
 One reason this matters is **computational irreducibility** (Wolfram, 1985, 2002): for many systems of interest, there is no shortcut between the local rules and the global trajectory; the trajectory must be simulated. A second reason is **bounded local observability**: each agent sees only its own state and a finite neighbourhood. Together these mean that no local agent computes its system's global trajectory.
 
@@ -427,9 +454,9 @@ The title of this paper inverts the hypothesis. The **viable corridor** — the 
 
 ## §8. Conclusion
 
-*(Pending. Should reuse the existing essay's closing rhetorical structure:)*
+*(Pending. Should reuse the existing essay's closing rhetorical structure, updated to v0.3 notation:)*
 
-> *"A 'Machine of Loving Grace' is not a machine that feels love. It is a machine that satisfies the three constraints: $\gamma > 0$, $K > K_c$, $dS/dt < D_{\max}$. By this definition, the machine does not yet exist. Neither does the civilization that satisfies the same constraints."*
+> *"A 'Machine of Loving Grace' is not a machine that feels love. It is a machine whose parameters lie inside the viable corridor: $\gamma > \gamma_c$, $K > K_c$, and bounded accumulated overshoot $\Omega(t) < S_{\max}$. By this definition, the machine does not yet exist. Neither does the civilization that satisfies the same constraints."*
 
 ---
 
