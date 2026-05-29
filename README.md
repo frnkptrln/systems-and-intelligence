@@ -14,13 +14,14 @@
 ## ⚡ Try it live in your browser
 Don't want to install anything? You can experience the core concepts immediately directly in your browser:
 
-- 🧭 **Recommended Reading Path**:
+- 🧭 **Recommended Reading Path** — the research arc *emergence → optimization → constraint architecture → survivability* (full map: **[Canonical Path v2](meta/repository-meta/canonical-path-v2.md)**):
   1. **[The Generator Question](theory/core/the-generator-question.md)** — The organizing question. Forward vs. inverse asymmetry. The three walls (P vs. NP, Kolmogorov, Gödel). The foundational assumption.
-  2. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md)** — The core claim set.
-  3. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
-  4. **[From Rule to Mind](docs/book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
-  5. **[Generative Form Systems](theory/emergence/generative-form-systems.md)** — The intake spine for external research without sprawl.
-  6. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
+  2. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md)** — The core claim set (emergence).
+  3. **[Why the Paperclip Maximizer Fails](theory/teo-framework/why-paperclip-maximizer-fails.md)** — Optimization, and why unconstrained it is non-viable (the hinge).
+  4. **[TEO Framework](theory/teo-framework/README.md)** — The constraint-architecture model.
+  5. **[The Viable Corridor](papers/viable-corridor.md)** — The formal synthesis: constraint architecture + capability loading (a stabilized *node*, not the whole repo).
+  6. **[From Rule to Mind](docs/book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
+  7. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
 - 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
 - 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The complete "Grand Synthesis" of the theory.
 

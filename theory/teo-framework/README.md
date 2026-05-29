@@ -2,6 +2,8 @@
 
 The **TEO framework** is the mathematical core of this repository's theoretical architecture. It translates the qualitative principles — self-organization, homeostasis, criticality, identity — into a single coupled system of ordinary differential equations (ODEs) that can be simulated, calibrated, and falsified.
 
+> **Formalized in the paper.** The constraint conjunction developed here is given a citation-ready treatment — necessity theorem, sufficiency conjecture, and the capability-loading result — in [*The Viable Corridor*](../../papers/viable-corridor.md), which carries the current refined formalism (substrate-coupled value dynamics, cumulative overshoot). For where this node sits in the wider project, see [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md).
+
 ---
 
 ## Sub-Documents

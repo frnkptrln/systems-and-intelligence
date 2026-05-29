@@ -22,6 +22,13 @@ relation_to_essay_and_internal_note: >
   formal sketch of the three-constraint conjunction. Both remain
   in place; this paper subsumes their mathematical core into a single
   academic-format document with proof, predictions, and limitations.
+repository_context: >
+  This paper is one stabilized node in the wider systems-and-intelligence
+  project, at the sharp end of the arc emergence → optimization → constraint
+  architecture → survivability. For how it connects to the theory, simulation,
+  fiction, and log layers — and for the project's other spine, the Generator
+  Question — see `meta/repository-meta/canonical-path-v2.md`. The paper is a
+  citable artifact produced by the repository, not the whole project.
 target_venue: "arXiv (cs.CY primary; cs.MA, nlin.AO cross-listed)"
 target_length: "12–15 pages typeset"
 ---
