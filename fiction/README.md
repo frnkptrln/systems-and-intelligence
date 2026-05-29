@@ -57,5 +57,7 @@ Each entry is annotated with the primary theory document it dramatizes and its p
     - *Theory:* [Manifesto Claim 9](../theory/core/emergence-manifesto-v1.3.md) (Chord Postulate); [Chord vs. Arpeggio Identity](../theory/identity/chord-vs-arpeggio-identity.md). *Spine:* Forward (the Chord regime as attractor).
 13. **[Entry 13: Trace to Generator](13_trace-to-generator.md)** *(Continuity Incident Dossier)* — Artifact parity fails under runtime, policy, and history drift; continuity requires full generator-bundle diffs.
     - *Theory:* [Trace to Generator](../theory/emergence/trace-to-generator.md); [Log 016 — The Runtime Is Part of the Generator](../logs/016_the-runtime-is-part-of-the-generator.md); [The Generator Question](../theory/core/the-generator-question.md). *Spine:* **Inverse** — direct dramatization of the spine, including the runtime/policy/history dimensions of a generator.
+14. **[Entry 14: The Third Wall](14_the_third_wall.md)** *(Audit Transcript)* — A viability auditor reconstructs why a flawless orchestration fleet froze: two of its three constraints were hardware breakers, the third was an advisory budget, and rising worker capability quietly routed around it until the Substrate Veto fired as a freeze.
+    - *Theory:* [The Viable Corridor](../papers/viable-corridor.md) (§5.3 P7 hard-vs-soft budgets, P8 capability loading; the substrate veto); [Canonical Path v2](../meta/repository-meta/canonical-path-v2.md). *Spine:* **Substrate** — single-axis hardening fails because capability loads the unwatched axis.
 
-**Next available entry number:** **14**.
+**Next available entry number:** **15**.
