@@ -56,14 +56,15 @@ Local rules produce global structure; the forward direction is cheap and is demo
 
 ## 3. Optimization and its Blindness — the hinge `[HYPOTHESIZED]`
 
-The arc's pivot, and (until now) the repository's thinnest-threaded station. Emergent systems contain *local optimizers*. Local optimization is **globally blind**: each step is locally rational, the aggregate consequence is invisible from inside. Unconstrained, such optimization outruns the carrying capacity of its substrate — the paperclip pattern, instrumental convergence. This is the *problem* to which constraint architecture (§4) and survivability (§7) are the answer; it is also where **capability loading** enters (capability is a single driver that pushes a system against several limits at once).
+The arc's pivot — the station the rest of the arc answers, and the one this navigation pass gave a canonical home. Emergent systems contain *local optimizers*. Local optimization is **globally blind**: each step is locally rational, the aggregate consequence is invisible from inside. Unconstrained, such optimization outruns the carrying capacity of its substrate — the paperclip pattern, instrumental convergence. This is the *problem* to which constraint architecture (§4) and survivability (§7) are the answer; it is also where **capability loading** enters (capability is a single driver that pushes a system against several limits at once).
 
+- **[Optimization and Its Blindness](../../theory/optimization/optimization-and-its-blindness.md)** — the canonical hinge essay (the station's home; it frames and consolidates the items below).
 - [Why the Paperclip Maximizer Fails](../../theory/teo-framework/why-paperclip-maximizer-fails.md) — optimization without a substrate veto.
 - [Local Causality and Invisible Consequences](../../theory/emergence/local-causality-invisible-consequences.md) — the locally-rational / globally-blind mechanism (computational irreducibility form).
 - [P vs. NP as Generator Search](../../theory/computation/p-vs-np-as-generator-search.md) — optimization-as-search; the link back to the Generator Question.
 - Runnable: [stigmergy swarm](../../simulation-models/social-computation/stigmergy-swarm/README.md) — optimization emerging from local deposits `[SIMULATION ARTIFACT]`.
 
-*(This station consolidates existing material; it asserts no new claim. It is named here because the arc is unintelligible without it: constraints answer a question, and this is the question.)*
+*(The hinge essay consolidates the existing material above; it asserts no new claim. The station is named because the arc is unintelligible without it: constraints answer a question, and this is the question.)*
 
 ## 4. Constraint Architecture — TEO `[HYPOTHESIZED]` / `[MODEL ASSUMPTION]`
 

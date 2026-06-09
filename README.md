@@ -17,7 +17,7 @@ Don't want to install anything? You can experience the core concepts immediately
 - 🧭 **Recommended Reading Path** — the research arc *emergence → optimization → constraint architecture → survivability* (full map: **[Canonical Path v2](meta/repository-meta/canonical-path-v2.md)**):
   1. **[The Generator Question](theory/core/the-generator-question.md)** — The organizing question. Forward vs. inverse asymmetry. The three walls (P vs. NP, Kolmogorov, Gödel). The foundational assumption.
   2. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md)** — The core claim set (emergence).
-  3. **[Why the Paperclip Maximizer Fails](theory/teo-framework/why-paperclip-maximizer-fails.md)** — Optimization, and why unconstrained it is non-viable (the hinge).
+  3. **[Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md)** — The hinge: why unconstrained optimization of an emergent system is non-viable, and why capability loads multiple constraints at once.
   4. **[TEO Framework](theory/teo-framework/README.md)** — The constraint-architecture model.
   5. **[The Viable Corridor](papers/viable-corridor.md)** — The formal synthesis: constraint architecture + capability loading (a stabilized *node*, not the whole repo).
   6. **[From Rule to Mind](docs/book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
