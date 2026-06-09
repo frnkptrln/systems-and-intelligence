@@ -29,11 +29,11 @@ where $f_i(\mathbf{x})$ is the fitness (profitability, task-completion rate) of 
 
 ## 3. The Harmonic Paradigm — Kuramoto Synchronization
 
-Value alignment across agents is modeled by the **Kuramoto model** for coupled oscillators (Kuramoto, 1975):
+Value alignment across agents is modeled by the **Kuramoto model** for coupled oscillators (Kuramoto, 1975), gated by the substrate-health variable $H \in [0,1]$ (§5) so that value dynamics also freeze at substrate collapse:
 
-$$\frac{d\theta_i}{dt} = \omega_i + \frac{K}{N} \sum_{j=1}^{N} A_{ij} \sin(\theta_j - \theta_i)$$
+$$\frac{d\theta_i}{dt} = H\left[\omega_i + \frac{K}{N} \sum_{j=1}^{N} A_{ij} \sin(\theta_j - \theta_i)\right]$$
 
-where:
+(At full substrate health $H = 1$ this is the standard Kuramoto model, so the critical-coupling analysis below is unaffected.) Where:
 - $\omega_i$: The intrinsic "natural frequency" of agent $i$ (its inherent bias or personality).
 - $K > 0$: The global coupling strength (culture, discourse, shared media).
 - $A_{ij} \in \{0, 1\}$: The adjacency matrix of the communication network.
@@ -50,33 +50,39 @@ When $r \to 1$, the system is synchronized. When $r \to 0$, it is incoherent. Th
 
 To prevent the replicator equation from producing monopolies, we introduce a control term $\mathcal{H}_i$ that acts as the system's "immune response" (the equivalent of antitrust law or agent kill-switches):
 
-$$\mathcal{H}_i(\mathbf{x}) = -\gamma \cdot \max\left(0,\ x_i - x_{\text{crit}}\right)$$
+$$\mathcal{H}_i(\mathbf{x}) = -\gamma \cdot \max\left(0,\ x_i - x_{\text{reg}}\right) + \frac{\gamma}{N}\sum_{j=1}^{N}\max\left(0,\ x_j - x_{\text{reg}}\right)$$
 
-where $x_{\text{crit}}$ is the maximum permissible resource share and $\gamma > 0$ is the regulatory strength.
+where $\gamma > 0$ is the regulatory strength and $x_{\text{reg}}$ is a **regulatory** threshold set strictly below the failure threshold $x_{\text{crit}}$ — the brake must engage *before* the boundary, not at it. The second, uniform-redistribution term makes the brake **simplex-preserving** ($\sum_i \mathcal{H}_i = 0$), so $\sum_i x_i = 1$ is conserved exactly.
 
-**Interpretation:** Any agent exceeding the critical power threshold experiences a proportional corrective force pushing it back into the permissible phase space.
+**Interpretation:** Any agent exceeding the regulatory threshold $x_{\text{reg}}$ experiences a proportional corrective force, and the aggregate penalty is redistributed across the population — antitrust law or agent kill-switches that act early, without leaking probability mass off the simplex.
 
 ## 5. The Biological Veto — Entropy Budget
 
-Every action in the system produces entropy $S_{\text{sys}}$. The physical substrate (Earth, server farm) has a finite maximum dissipation capacity $D_{\max}$:
+Every action produces entropy. The substrate has a finite *instantaneous* dissipation ceiling $D_{\max}$ **and** a finite *cumulative* reservoir $S_{\max}$. Entropy production tracks **raw throughput** $f_i^{(0)}$ — a non-self-throttling optimiser dumps entropy at a rate set by its activity, not by how degraded the substrate already is:
 
-$$\frac{dS_{\text{sys}}}{dt} = \sum_{i=1}^{N} \eta_i\, x_i\, f_i(\mathbf{x}) \leq D_{\max}$$
+$$\frac{dS_{\text{sys}}}{dt} = \sum_{i=1}^{N} \eta_i\, x_i\, f_i^{(0)}(\mathbf{x})$$
 
-where $\eta_i$ is agent $i$'s entropy-per-unit-output coefficient.
+where $\eta_i$ is agent $i$'s entropy-per-unit-output coefficient. The **accumulated overshoot** and the **substrate-health** variable are
 
-**Interpretation:** When total entropy production exceeds the substrate's capacity to dissipate it, the system undergoes a **forced phase transition** — collapse. This is the mathematical expression of planetary boundaries (Rockström et al., 2009), server thermal limits, and Peterlein's "Biological Veto."
+$$\Omega(t) = \int_0^t \big(\dot{S}_{\text{sys}} - D_{\max}\big)_+\, ds, \qquad H(t) = \max\!\Big(0,\ 1 - \frac{\Omega(t)}{S_{\max}}\Big),$$
+
+and $H$ multiplies the replicator drift and the value dynamics (§3), so the system freezes as $H \to 0$. The operative constraint is **cumulative**, $\Omega(t) < S_{\max}$ for all $t$: a brief overshoot is survivable; only *sustained* overshoot that fills the reservoir collapses the substrate.
+
+**Interpretation:** When integrated overshoot fills the reservoir, the system undergoes a **forced phase transition** — collapse. This is the mathematical expression of planetary boundaries (Rockström et al., 2009), server thermal limits, and Peterlein's "Biological Veto."
 
 ## 6. The Full Coupled System
 
 Combining all terms, the complete TEO dynamics are:
 
-$$\frac{dx_i}{dt} = x_i \left( f_i(\mathbf{x}) - \bar{\phi}(\mathbf{x}) \right) + \mathcal{H}_i(\mathbf{x})$$
+$$\frac{dx_i}{dt} = H\,x_i \left( f_i^{(0)}(\mathbf{x}) - \bar{\phi}^{(0)}(\mathbf{x}) \right) + \mathcal{H}_i(\mathbf{x})$$
 
-$$\frac{d\theta_i}{dt} = \omega_i + \frac{K}{N} \sum_{j=1}^{N} A_{ij} \sin(\theta_j - \theta_i)$$
+$$\frac{d\theta_i}{dt} = H\left[\omega_i + \frac{K}{N} \sum_{j=1}^{N} A_{ij} \sin(\theta_j - \theta_i)\right]$$
 
-subject to the hard constraint:
+subject to the cumulative substrate constraint $\Omega(t) < S_{\max}$ for all $t$, where (§5)
 
-$$\sum_{i=1}^{N} \eta_i\, x_i\, f_i(\mathbf{x}) \leq D_{\max}$$
+$$\Omega(t) = \int_0^t \Big(\sum_i \eta_i x_i f_i^{(0)} - D_{\max}\Big)_+ ds, \qquad H = \max\!\Big(0, 1 - \tfrac{\Omega}{S_{\max}}\Big)$$
+
+feeds back into both equations above. The brake $\mathcal{H}_i$ carries no $H$ prefactor (it acts even as the drift freezes).
 
 ## 7. Predictions
 
@@ -84,8 +90,10 @@ This system makes testable predictions:
 
 1. **Without homeostasis** ($\gamma = 0$): Resource distribution converges to a single dominant agent (monopoly / superintelligence takeover).
 2. **Without cultural coupling** ($K < K_c$): Value orientations diverge chaotically (polarization / agent misalignment).
-3. **At the entropy boundary** ($\frac{dS}{dt} \to D_{\max}$): The system undergoes a catastrophic phase transition regardless of internal regulation.
-4. **Stable regime**: Requires $K > K_c$, $\gamma > 0$, and $\frac{dS}{dt} < D_{\max}$ simultaneously.
+3. **At the substrate boundary** ($\Omega(t) \to S_{\max}$): The system undergoes a catastrophic phase transition (freeze) regardless of internal regulation.
+4. **Stable regime**: Requires $K > K_c$, $\gamma > 0$ (sufficiency is conjectured to need the stronger $\gamma > \gamma_c$), and bounded cumulative overshoot $\Omega(t) < S_{\max}$, simultaneously.
+
+> **Canonical derivation.** This page is the conceptual derivation; the citation-ready, source-of-truth version of these equations — including the strict-dominance assumption, the $K_c = 2/(\pi g(0))$ result, and the capability-loading result — is [The Viable Corridor](../../papers/viable-corridor.md) (§2–§3, Appendix A).
 
 ## 8. Identity Persistence: The Chord vs. Arpeggio
 

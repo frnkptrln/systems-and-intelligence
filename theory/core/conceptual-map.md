@@ -184,7 +184,11 @@ What we have:                     What is still missing:
 ✓ TEO Framework (Replicator + Kuramoto + Entropy Budget)
 ✓ Identity Morphospace (Chord/Arpeggio, IP Score)
 ✓ Continuous Thought Machines integration
-✓ Machines of Loving Grace (Love as Theorem, Civilization as Paperclip Maximizer)
+✓ The Viable Corridor (constraint-architecture framework; capability-loading; substrate veto) — `papers/`
+✓ Agent-Ecology ABM (hard-vs-soft budgets; P7/P8 reproduced in an independent model)
+✓ Optimization hinge essay + Canonical Path v2 (the viability arc)
 ```
+
+**The second spine.** Beyond the emergence → intelligence → limits thread above, the repository now has an explicit *dynamical* arc — **emergence → optimization → constraint architecture → survivability** — mapped in [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md), with [The Viable Corridor](../../papers/viable-corridor.md) at its sharp end. Its honest open frontier: rigorous sufficiency / $\gamma_c$; real-agent (LLM) Class C validation; operationalising $\gamma_{\text{eff}}, K_{\text{eff}}, K_c$ for real systems.
 
 This repository is not a finished product. It is a **living experiment** – an invitation to think, code, and marvel about systems, intelligence, and emergence.

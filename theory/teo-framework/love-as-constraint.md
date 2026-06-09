@@ -4,6 +4,16 @@
 
 ---
 
+> **Status & relation to the paper (read first).** This is the **v1 conceptual sketch** of the three-constraint idea — the "love" reading, kept for its framing. The *formal* treatment evolved the triple in [The Viable Corridor](../../papers/viable-corridor.md), and the two are not identical. The paper's current canonical triple is **$\gamma > 0$** (homeostatic regulation), **$K > K_c$** (value coupling), **$\Omega(t) < S_{\max}$** (cumulative substrate overshoot). The mapping to this document:
+> - **Coherence axis.** The $\lambda_2$ (Fiedler-value / topology) constraint below and the paper's $K > K_c$ (coupling-strength) constraint are two operationalisations of the *same* axis — value synchronisation. $\lambda_2$ asks whether the network *can* couple; $K_c$ asks whether the coupling is *strong enough*.
+> - **Substrate axis.** $D_{\max}$ below ↔ the paper's $\Omega(t) < S_{\max}$. The paper refines the *instantaneous* ceiling into an *accumulated-overshoot* reservoir (a transient spike is survivable; sustained overshoot is not).
+> - **Identity Persistence (IP).** A core constraint here; the paper relegates IP to a candidate **fourth** dimension (§7.5), because it concerns *intra-agent* architecture, while the paper restricts itself to the *inter-agent* dynamics.
+> - **Homeostatic regulation ($\gamma$).** The paper *elevates* $\gamma > 0$ (the redistribution brake) to a core constraint; here $\gamma$ appears only in passing.
+>
+> Net: this note is the intuition and the "love" framing; the paper is the formal source of truth for the triple, the equations, and the [capability-loading result](../../papers/viable-corridor.md). Where the two differ, the paper governs. See also [Canonical Path v2 §4](../../meta/repository-meta/canonical-path-v2.md).
+
+---
+
 ## The Intuition
 
 Unconstrained optimization destroys what it depends on. A paperclip maximizer consumes its substrate. A market without regulation produces monopolies. A society without care produces alienation. The informal word for "the set of constraints that prevent a system from destroying what it values" is *love*.
