@@ -36,16 +36,19 @@
 
 ## The Core Claim
  
-!!! success "TL;DR (The Grand Synthesis)"
-    **AI Alignment is not a psychological problem—it is a problem of applied thermodynamics and systems engineering.**
+!!! success "TL;DR"
+    **The thesis: AI alignment is better modeled as a problem of applied thermodynamics and systems engineering than as one of psychology or moral training.**
 
-    If we want to build safe, super-scaling artificial intelligence, we cannot rely on "friendlier" prompt engineering or moral training. Unbounded intelligence will always structurally crash the biological layer's entropy limits. True alignment requires hard, irreversible architectural constraints:
+    The argument is that "friendlier" prompt engineering or moral training may not be enough, because unbounded optimization *tends to* outrun the entropy limits of the layer it runs on. The framework proposes that durable alignment needs *structural* constraints, not only behavioral ones:
 
-    1. **Action Budgets** to limit AI entropy production.
-    2. **Impedance Matching** (artificial latency) to bridge the microsecond-speed of silicon and the slow cognitive speed of humans.
-    3. **The Substrate Veto** hard-coded into the protocol layer of our digital state.
+    1. **Action Budgets** to bound entropy production.
+    2. **Impedance Matching** (artificial latency) to bridge silicon speed and human cognitive speed.
+    3. **The Substrate Veto** enforced at the protocol layer.
 
-    This repository is the complete architectural manifesto—from cosmological entropy limits down to runnable Python engines—proving that safety must be enforced structurally.
+    This repository develops that case end-to-end — from entropy limits to runnable Python engines — as an **open thesis**, not a finished proof.
+
+!!! note "Epistemic status — read this first"
+    This is an **open thesis**: working drafts and *falsifiable hypotheses*, not established results. The central necessity result is a modest theorem (the conjunction of three constraints); **sufficiency is conjectured, not proved**; the civilizational mapping is **heuristic**, not measured; and the AI-specific predictions have **not** yet been tested on real LLM agents. Claims throughout are tagged — *demonstrated / formal / conjecture / hypothesized / heuristic / open problem*. The flagship paper, *The Viable Corridor*, is a **working draft (not submission-ready)**.
 
 !!! abstract "Thesis"
     **Intelligence is an emergent property of continuous dynamical systems**, not a discrete function of next-token prediction. The same mathematics that governs flocking birds, oscillating neurons, and self-organizing criticality also governs the "values" and "goals" that arise inside Large Language Models — and inside human civilizations.
@@ -64,12 +67,12 @@ We probe this not with philosophy alone, but with runnable simulations testing m
 
 New to this project? Start here for the most direct path through the core theory and proofs.
 
-1. **[The Generator Question](theory/core/the-generator-question.md)** — The organizing question. Forward vs. inverse asymmetry. The three walls (P vs. NP, Kolmogorov, Gödel). The foundational assumption.
-2. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md)** — The core claim set.
-3. **[TEO Framework](theory/teo-framework/README.md)** — The constraint model.
-4. **[From Rule to Mind](book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
-5. **[Generative Form Systems](theory/emergence/generative-form-systems.md)** — The intake spine for external research without sprawl.
-6. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
+1. **[The Generator Question](theory/core/the-generator-question.md)** — The organizing question; forward vs. inverse asymmetry; the three walls.
+2. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md)** — The core claim set (emergence).
+3. **[Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md)** — The hinge: why unconstrained optimization is non-viable, and how capability loads multiple constraints at once.
+4. **[TEO Framework](theory/teo-framework/README.md)** — The constraint-architecture model.
+5. **[The Viable Corridor](papers/viable-corridor.md)** — The formal synthesis (a stabilized *node*, not the whole project).
+6. **[Canonical Path v2](meta/repository-meta/canonical-path-v2.md)** — The full map of the arc.
 
 </div>
 
@@ -105,11 +108,11 @@ The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and 
 
 <div class="card" markdown>
 
-### :material-file-document: The Paper
+### :material-file-document: The Papers
 
-*Quantifying Emergent Utility & Stability in Multi-Agent LLM Ecosystems.* The formal academic summary.
+*The Viable Corridor* — the flagship formal synthesis (constraint architecture + capability loading; a **working draft**). Its empirical companion is *Quantifying Emergent Utility & Stability in Multi-Agent LLM Ecosystems*.
 
-[Read the paper →](papers/quantifying-emergent-utility-in-llms.md)
+[Read the Viable Corridor →](papers/viable-corridor.md)
 
 </div>
 
@@ -127,20 +130,23 @@ Narrative stress tests that make abstract theoretical constraints visible in liv
 
 ---
 
-## What's Next (Post-Synthesis Roadmap)
+## What's Next
 
-!!! info "The theoretical scaffolding is complete. The next phase is empirical and physical."
-    With the completion of the *Thermodynamic Hardware Manifesto* and the *Mycelial Veto*, the theoretical framework (TEO) is structurally closed. The focus now shifts from mathematical formalization to real-world deployment and hardware prototyping.
+!!! info "The framework is drafted, not closed. The next step is external contact, not deployment."
+    The TEO framework and the Viable Corridor paper are at **working-draft** stage: the necessity result holds, but **sufficiency is unproven**, and the model's claims have been demonstrated only *in-model*, not against real systems. The honest next step is **external review and empirical contact** — not hardware or deployment.
 
-1. **Empirical LLM Auditing:** Executing the Agentic Identity Suite against live commercial APIs to map theoretical coupling parameters ($K$) to real-world alignment behaviors.
-2. **Hardware Prototyping:** Transitioning from Python simulations to low-level analog memristor circuit design to test physical $\gamma$-pin vetoes and thermodynamic computing limits.
-3. **Decentralized OS Integration:** Translating the "Biological Veto" into actionable protocol-level specifications for actual web3 / decentralized governance operating systems.
+**Near-term — the real frontier:**
 
-If you want to contribute, the project is now open for:
+1. **External review** of the Viable Corridor paper (§5–§8 have not yet had a critical dynamical-systems read).
+2. **Empirical LLM auditing** `[OPEN PROBLEM]` — running the Agentic Identity Suite against live APIs to test the AI-specific predictions (P7/P8) on *real* agents, not synthetic ones.
+3. **Rigorous sufficiency** `[OPEN PROBLEM]` — constructing $\gamma_c$ and a proper open-set test, rather than single-trajectory evidence.
 
-- **Peer review** of the core thermodynamic proofs,
-- **Pull Requests** extending the Agentic Identity Suite with new API adapters,
-- or proposing concrete **hardware architectures** for the substrate veto.
+**Speculative / long-horizon** `[SPECULATIVE]` — directions the framework *suggests* but does not yet support:
+
+- Hardware prototyping (analog / memristor circuits for physical $\gamma$-pin vetoes).
+- Protocol-level "Substrate Veto" specifications for decentralized governance systems.
+
+If you want to contribute, the project is open for: critical **review** of the framework and the necessity result; **pull requests** extending the simulations or the Agentic Identity Suite; or sharpening any **open problem**.
 
 ---
 
