@@ -23,14 +23,14 @@ Each document below derives a specific aspect of the framework from the governin
 
 ## The Governing Equations
 
-The full TEO system is:
+The full TEO system (v0.8 form — value dynamics gated by substrate health $H$; cumulative substrate budget) is:
 
-$$\frac{dx_i}{dt} = x_i \left( f_i(\mathbf{x}) - \bar{\phi}(\mathbf{x}) \right) + \mathcal{H}_i(\mathbf{x})$$
+$$\frac{dx_i}{dt} = H\,x_i \left( f_i^{(0)}(\mathbf{x}) - \bar{\phi}^{(0)}(\mathbf{x}) \right) + \mathcal{H}_i(\mathbf{x})$$
 
-$$\frac{d\theta_i}{dt} = \omega_i + \frac{K}{N} \sum_{j=1}^{N} A_{ij} \sin(\theta_j - \theta_i)$$
+$$\frac{d\theta_i}{dt} = H\left[\omega_i + \frac{K}{N} \sum_{j=1}^{N} A_{ij} \sin(\theta_j - \theta_i)\right]$$
 
-subject to:
+subject to the cumulative substrate constraint $\Omega(t) < S_{\max}$, where
 
-$$\sum_{i=1}^{N} \eta_i\, x_i\, f_i(\mathbf{x}) \leq D_{\max}$$
+$$\Omega(t) = \int_0^t \Big(\sum_i \eta_i\, x_i\, f_i^{(0)} - D_{\max}\Big)_+\, ds, \qquad H = \max\!\Big(0,\ 1 - \tfrac{\Omega}{S_{\max}}\Big)$$
 
 See [Thermodynamics of Emergent Orchestration](../core/thermodynamics-of-orchestration.md) for the complete derivation, parameter definitions, and simulation results.
