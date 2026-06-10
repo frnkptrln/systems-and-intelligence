@@ -124,6 +124,14 @@ This project assumes P ≠ NP as a working hypothesis. The assumption is structu
 
 This is what `[FOUNDATIONAL ASSUMPTION]` is for: a load-bearing premise that is honest about its load-bearing status.
 
+### A second assumption: the identity reduction `[FOUNDATIONAL ASSUMPTION]`
+
+There is a second load-bearing premise in this document that has, until now, traveled untagged. When the spine claims that the Mirror Problem, the Chord Postulate, and the Identity Persistence framework are "instances of asking: given a trace, what generator produced it," it assumes that **the trace/generator formalization captures what matters about identity** — that the question "is this agent the same agent?" reduces, without remainder that matters, to a question about generator recovery from behavioral traces.
+
+This is an assumption, not a result. It could fail in either direction: identity might require *less* than generator recovery (stable behavioral signatures could suffice for every practical purpose, even where the underlying generators differ), or *more* (two systems with provably equivalent generators might still differ in ways the formalization cannot express — embodiment, history, substrate; cf. the runtime/policy/history dimensions in [Trace to Generator](../emergence/trace-to-generator.md)). The Agentic Identity Suite's metrics (Δ-Kohärenz, Observer Divergence) inherit this assumption: they measure what the formalization can see.
+
+If the reduction fails, the complexity-theoretic walls of this document still stand — but their *application to identity* (the Mirror Problem as a generator-recovery problem) would need a new bridge. That is exactly the kind of dependency the `[FOUNDATIONAL ASSUMPTION]` tag exists to mark.
+
 ---
 
 ## How existing work maps to the spine
