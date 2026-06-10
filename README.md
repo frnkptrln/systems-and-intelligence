@@ -23,7 +23,7 @@ Don't want to install anything? You can experience the core concepts immediately
   6. **[From Rule to Mind](docs/book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
   7. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
 - 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
-- 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The curated online book: the reader-first path through the theory.
+- 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The curated online book: the reader-first path through the theory. (A PDF snapshot of the book is published via [GitHub Releases](https://github.com/frnkptrln/systems-and-intelligence/releases) rather than tracked in the repository.)
 
 ---
 
