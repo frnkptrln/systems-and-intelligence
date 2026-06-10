@@ -2,6 +2,8 @@
 
 *Precise definitions for key terms used across this repository. Each entry distinguishes what the term means here, how you would measure it, and what it does not mean.*
 
+> **External anchors.** The repo keeps its internal vocabulary, but no term is meant to float free of established research. Two companion documents carry the mapping: the **Internal Language Anchors** table in [Repository Information Architecture §6](../../meta/repository-meta/repository-information-architecture.md) (repo term → systems theory / physics / computer science) and, concept by concept with literature, the [Related Work Map](../../meta/research-alignment/related-work-map.md). If a term in this glossary has no entry in either, that is a defect worth filing.
+
 ---
 
 ## Emergence

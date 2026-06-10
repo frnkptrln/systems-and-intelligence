@@ -206,6 +206,8 @@ It is one external reference among several. It is not the core of this project. 
 
 This footnote is here to keep the framing honest. The generator question is the spine. Perrier & Bennett is one of the tools.
 
+The same honesty applies in the other direction: the inverse problem this document names is **not the project's invention**. Established fields work it directly — **system identification** (Ljung, 1999) recovers dynamical generators from traces when the model family is known; **sparse and symbolic regression** (SINDy — Brunton, Proctor & Kutz, 2016; Schmidt & Lipson, 2009; Cranmer's PySR) extend this toward unknown functional forms; **program induction** (Lake et al., 2015; Ellis et al., 2021) searches generator spaces under strong priors; **mechanistic interpretability** (Nanda et al., 2023) executes trace→generator on neural networks themselves. What this project adds is not the inverse problem but its use as a *spine* — one question asked across the simulation, identity, and alignment layers, with the equivalence-class and viability framings attached. The concept-by-concept mapping to these fields is maintained in the [Related Work Map](../../meta/research-alignment/related-work-map.md); the [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) deliberately starts in the system-identification regime so its dials measure where the established methods stop.
+
 ---
 
 ## Fiction illustrations

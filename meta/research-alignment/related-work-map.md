@@ -72,6 +72,12 @@ Additional adjacent references to consider in future updates:
 
 Short “Related work” pointers were added to selected canonical files so major theory text remains intact.
 
+A second round (2026-06) anchored the inverse-direction files in place:
+- `theory/core/the-generator-question.md` — the "external machinery" note now names the fields that work the inverse problem (system identification, SINDy/symbolic regression, program induction, mechanistic interpretability) and states what the project adds beyond them.
+- `theory/emergence/grokking-phase-transition.md` — Power / Nanda / Omnigrok block; the essay's "generator reading" is positioned as a framing on top of that literature, not a competing account.
+- `theory/computation/p-vs-np-as-generator-search.md` — Levin search, program induction (BPL, DreamCoder), symbolic regression, Chollet.
+- `theory/reference/glossary.md` — header pointer to the Internal Language Anchors table and this map ("no term floats free").
+
 ## 5) Claim-status legend
 
 Use this legend when revising repository claims:

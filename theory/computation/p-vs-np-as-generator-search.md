@@ -31,3 +31,5 @@ Why this does not settle replicator/transporter debates:
 - Even if efficient witness search existed, that would not by itself resolve continuity-of-identity constraints in transporter scenarios.
 
 Caution: this note does not prove or disprove P vs NP and does not reduce intelligence to that question.
+
+> **Related work.** The cost of generator search is formalized in Levin's universal search (1973). Practical generator recovery in *constrained* spaces is the working subject of program induction — Lake, Salakhutdinov & Tenenbaum (2015, Bayesian Program Learning), Ellis et al. (2021, DreamCoder) — and of open-ended symbolic regression (Schmidt & Lipson, 2009; Cranmer's PySR, 2023); Chollet (2019) frames intelligence measurement around exactly this search efficiency. The repo-internal counterpart is the [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md); the concept-by-concept mapping lives in the [Related Work Map](../../meta/research-alignment/related-work-map.md).
