@@ -43,16 +43,30 @@ BOIDS     — rel. error on (w_c, w_a, w_s) from positions only
 
 This sharpens the spine rather than weakening it: the P≠NP framing of [The Generator Question](../../../theory/core/the-generator-question.md) is about the *search over candidate generators*, not about fitting parameters inside a family someone already handed you.
 
+## v1, part 1 — the intervention experiment (run)
+
+[`intervention_experiment.py`](intervention_experiment.py) answers the open thread raised in [Construction vs. Deduction](../../../theory/computation/construction-vs-deduction.md): **does the consistent-generator equivalence class collapse when observation is replaced by intervention?** Experiments are *queries*, not traces — the observer chooses states and makes the generator answer. Results:
+
+- **CA (rule 90, single-seed start, class 8):** *passive* observation plateaus at class 8 **forever** — the orbit's neighborhood distribution is exhausted, more watching buys nothing. *One-bit flips* collapse the class within ~10 queries. A single *prepared state* (a de Bruijn row containing every neighborhood) collapses it to 1 **in one step**. The hierarchy is strict: watching < perturbing < preparing.
+- **The frozen exception (rule 0, class 16):** on a dead background, a one-bit flip only produces the four neighborhoods already known — *single-bit interventions never collapse the class*. Only the prepared state does. **The deader the dynamics, the more structure the query itself must supply** — if the system's own dynamics carry no information, the experimenter's design must. (In TEO terms: a frozen system, $H \to 0$, is also epistemically opaque.)
+- **Kuramoto on its locked attractor:** observing a *synchronized* system, $K$ is unidentifiable **in principle**, not for lack of data — in the locked state $\Omega = \omega_i + K r \sin(\psi - \theta_i)$ with all right-hand quantities constant, so every $K'$ has an $\omega_i'$ reproducing the trace exactly: a one-parameter generator family. Measured: passive error on $K$ ≈ 83% (noise-fitting); **one phase kick: 3%**; eight kicks: 0.3%.
+
+**Reading.** Attractors hide generators: a relaxed system — synchronized, frozen, converged — is generator-degenerate, and no amount of passive observation resolves it. Facts about the generator can be *created* by intervention that observation alone cannot reach (the constructivist half) — though what the query exposes was the rule's content all along (the Platonist half). This is also the first-principles justification for an existing repo methodology: the identity instruments (Δ-Kohärenz, Observer Divergence) are **perturbation protocols** precisely because you cannot read a generator off an attractor — a system at rest, like a mirror at rest, reveals nothing but the room.
+
 ## Running
 
 ```bash
-python inverse_benchmark.py            # console summary, all three testbeds (~10 s)
-python inverse_benchmark.py --save     # also write the figure (to lab/tools/)
+python inverse_benchmark.py              # v0: console summary, three testbeds (~10 s)
+python inverse_benchmark.py --save       # also write the v0 figure (to lab/tools/)
+python intervention_experiment.py        # v1.1: interventions vs. observation (~5 s)
+python intervention_experiment.py --save # also write the intervention figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 ## v1 roadmap (open)
+
+*(Part 1 — interventions vs. observation — is done; see above. The items below remain open.)*
 
 - **Family-search testbed**: a small DSL of update rules; reconstructor must find the family *and* the parameters (program induction; success vs. DSL size = the measurable wall).
 - **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.
