@@ -164,6 +164,8 @@
 
 **What a solution would look like:** The definition of an "equivalence class of viable generators" for a specific testbed (e.g., IFS or Prompt Search), along with an algorithm that reliably recovers a generator from that class when given only the output trace.
 
+**Status (v0, partial):** The [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) is a first instance: it recovers generators within *known* families (Kuramoto, elementary CA, Boids) under noise/observability/coverage dials, and **measures** an equivalence class explicitly — rule 90 from a single-seed trace exposes only 5/8 neighborhoods, leaving a consistent-generator class of size 8 that no algorithm can resolve. Open remainder: the *family-search* version (model class unknown — program induction) and the IFS testbed.
+
 ---
 
 ## How to Contribute

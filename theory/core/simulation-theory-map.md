@@ -57,8 +57,9 @@ The reading of this map is then: **almost every entry below is in the forward di
 | `cognitive-breathing-network/` | Forward | None |
 | `trauma-and-deception-network/` | Forward | Gödel |
 | `lab/experiments/trace_to_generator/` | **Inverse** | P vs. NP |
+| `lab/benchmarks/inverse-reconstruction/` | **Inverse** | P vs. NP |
 
-Distribution: 26 Forward, 5 Inverse, 5 Both. The asymmetry is visible. Closing it — even a little — is the research direction.
+Distribution: 26 Forward, 6 Inverse, 5 Both. The asymmetry is visible. Closing it — even a little — is the research direction.
 
 ---
 
@@ -439,3 +440,15 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 **Supports claim in:** [`theory/emergence/trace-to-generator.md`](../emergence/trace-to-generator.md); [`theory/ai/llms-as-probabilistic-automata.md`](../ai/llms-as-probabilistic-automata.md); [`theory/core/the-generator-question.md`](the-generator-question.md) (the inverse direction as the open research frontier).
 **What it shows:** Practical asymmetry between generation and reconstruction in a lightweight, backend-free setup.
 **What it does NOT show:** Unique recovery of true generators or mechanism identification from output traces alone.
+
+---
+
+## `lab/benchmarks/inverse-reconstruction/` → The Inverse Direction, Measured
+
+**Simulation:** [`lab/benchmarks/inverse-reconstruction/`](../../lab/benchmarks/inverse-reconstruction/README.md)
+**Wall touched:** P vs. NP — but *relocated*: the benchmark shows the wall does not stand at parameter fitting (cheap, given a known family), it stands at family search, observability, and coverage.
+**Demonstrates:** Three of the repo's own forward generators (Kuramoto, elementary CA, Boids) turned into reconstruction tasks: given the trace, recover the rule — with observation noise, observed fraction, and trace coverage as dials.
+**Supports claim in:** [`theory/core/the-generator-question.md`](the-generator-question.md) (the spine — its first quantitative inverse artifact); [Open Problem 11](../reference/open-problems.md) (the consistent-generator equivalence class, measured: rule 90 from a single-seed trace exposes 5/8 neighborhoods → class size 8); [`meta/research-alignment/related-work-map.md`](../../meta/research-alignment/related-work-map.md) (system identification / SINDy anchors).
+**What it shows:** Recovery within a *known* model family is near-exact on clean, fully observed traces (the system-identification regime) and degrades measurably under noise (Kuramoto: 0→27% error), partial observability (0.5→41%), and noise-amplifying differentiation (Boids: 3→789%). Identifiability can fail *in principle*: a low-entropy trace leaves rule bits unexercised, and no method can beat the resulting equivalence class.
+**What it does NOT show:** The genuinely hard regime — recovering a generator when the *model class itself* is unknown (program induction / open-ended symbolic regression). That is the v1 frontier, deliberately out of scope for v0.
+**Open question:** How fast does recovery degrade as the family hypothesis space grows — the measurable form of the spine's P≠NP framing?

@@ -69,7 +69,7 @@ $$\text{Generator} \longrightarrow \text{Trace} \qquad \text{(cheap, observable)
 
 $$\text{Trace} \longrightarrow \text{Generator} \qquad \text{(structurally hard, often non-unique)}$$
 
-The asymmetry between these two directions is the project. The simulations in this repository demonstrate the forward direction over and over again. The inverse direction is almost entirely missing as runnable code. That gap is not an oversight. It is the research frontier.
+The asymmetry between these two directions is the project. The simulations in this repository demonstrate the forward direction over and over again. The inverse direction was, for most of the project's life, almost entirely missing as runnable code; it now has a first measurable artifact — the [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md), which recovers generators from traces under noise, partial-observability, and coverage dials. Its v0 finding sharpens this section's claim: with a *known model family*, recovery is cheap (the system-identification regime); the hardness lives in the search over families, in observability, and in coverage — a trace that never exercises part of the rule leaves an equivalence class of generators that no method can distinguish. The gap between forward and inverse remains the research frontier; it is now a measured one.
 
 ---
 
@@ -168,6 +168,8 @@ This is the sparse side. Three places in the repository touch it explicitly.
 
 - **[Trace → Generator experiment scaffold](../../lab/experiments/trace_to_generator/README.md).** A minimal inverse-prompting toy: given target output constraints, search for a prompt that produces outputs scoring well under an explicit evaluator. The scaffold is deliberately small. It exists to make the inverse direction visible as a workable problem, not to claim recovery.
 
+- **[Inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md)** (v0). The first *quantitative* inverse artifact: three of the repo's own forward generators (Kuramoto, elementary CA, Boids) become reconstruction tasks — given the trace, recover the rule — with noise, observed fraction, and trace coverage as dials. Headline numbers: parameter recovery is near-exact with a known family and clean, fully observed data; it degrades to ~27% error under angle noise, ~41% under partial observability, ~800% when weights must be inferred from doubly-differenced noisy positions; and a single-seed CA trace leaves rule 90 with a measured consistent-generator equivalence class of size 8. The benchmark relocates the spine's hardness claim precisely: not in parameter fitting, but in family search, observability, and coverage.
+
 ### What the asymmetry implies
 
 Two readings of the same repository are now possible.
@@ -184,7 +186,7 @@ The forward direction is well-populated. The inverse direction is sparsely popul
 
 Concrete next questions, each of which is currently a scaffold or an open problem rather than a finished result:
 
-1. **Bounded inverse reconstruction.** Define an "equivalence class of viable generators" for a specific testbed (IFS or prompt search), and find an algorithm that reliably recovers a generator from that class given only the output trace. This is [Open Problem 11](../reference/open-problems.md#open-problem-11-trace-to-generator-reconstruction).
+1. **Bounded inverse reconstruction.** Define an "equivalence class of viable generators" for a specific testbed (IFS or prompt search), and find an algorithm that reliably recovers a generator from that class given only the output trace. This is [Open Problem 11](../reference/open-problems.md#open-problem-11-trace-to-generator-reconstruction). *Status:* the [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) is the v0 instance — it measures the equivalence class explicitly for the CA testbed (rule 90, single-seed trace: class size 8) and recovers generators within known families; the open part is now the *family-search* version (v1) and the IFS case.
 
 2. **Mirror Problem with real models.** The Agentic Identity Suite currently runs on mock embeddings. Whether Δ-Kohärenz separates trace-memorizers from generator-approximators when the agents are real language models — and whether the separation persists under the [Chord Postulate](emergence-manifesto-v1.3.md) — is empirically open. The architecture for this transition is being prepared in the suite, not yet executed.
 
