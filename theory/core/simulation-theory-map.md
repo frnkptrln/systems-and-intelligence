@@ -9,53 +9,53 @@
 This map sits inside the project's organizing question. See [The Generator Question](the-generator-question.md) for the full statement; in summary: local rules produce global behavior, running a generator forward is cheap, finding the generator from the trace is structurally hard. Each entry below is therefore tagged with two additional fields beyond the existing ones:
 
 - **Direction.** Whether the simulation runs in the *forward* direction (generator → trace), the *inverse* direction (trace → generator), or *both*.
-- **Wall touched.** Which of the three fundamental limits the simulation engages with:
-    - *P vs. NP* — `[UNRESOLVED]`. The forward/inverse computational asymmetry. Touched by any simulation that demonstrates emergence from locally blind components (the forward side of the asymmetry) or that attempts inverse reconstruction (the hard side).
-    - *Kolmogorov* — `[PROVEN UNCOMPUTABLE]`. The minimal generator for an arbitrary output is uncomputable. Touched by simulations that approximate a generator from observations (learning systems, model-based inference) — they live in the gap between the unreachable minimum and what is practically achievable.
-    - *Gödel* — `[PROVEN]`. Self-description has formal limits. Touched by simulations involving self-reference, self-modeling, or the necessity of opacity.
-    - *None* — the simulation demonstrates a dynamical principle without directly engaging any of the three walls.
+- **Wall touched.** Which of the three fundamental limits the simulation engages with. The label is deliberately **strict**: a wall is marked only where the simulation *operationalizes* an inversion, minimality, search, or self-reference question — not where it merely illustrates the cheap forward direction that the wall makes interesting. A Boids flock demonstrates Generator → Trace; it does not thereby evidence P vs. NP, and this map does not borrow the walls' authority for it.
+    - *P vs. NP* — `[UNRESOLVED]`. Marked only where a search/verification asymmetry or inverse reconstruction is actually executed (the grokking transition; the `trace_to_generator/` scaffold; the inverse-reconstruction benchmark).
+    - *Kolmogorov* — `[PROVEN UNCOMPUTABLE]`. Marked only where a system approximates a generator from observations and the gap to the unreachable minimum is part of what the simulation shows (observer-learning and prediction-error models).
+    - *Gödel* — `[PROVEN]`. Marked only where self-description is operationalized (a system reading or modeling *itself*, e.g. the self-reading universe).
+    - *—* — the simulation demonstrates a dynamical principle (typically forward emergence or a control/viability mechanism) without directly engaging a wall. Most entries carry this, by design.
 
-The reading of this map is then: **almost every entry below is in the forward direction**. Inverse simulations are rare (currently five, including the explicit `trace_to_generator/` scaffold). This is not an oversight — it is the empirical fact behind the spine: the forward direction is where the cheap computation lives, and the inverse direction is where the open research frontier lives.
+The reading of this map is then: **almost every entry below is in the forward direction**, and — after restricting wall labels to operationalized cases — **every wall-engaged entry lies on the inverse side**. That is not a bookkeeping artifact; it is the spine's claim made visible: the forward direction is where the cheap computation lives, and the walls stand exactly where reconstruction begins. Inverse simulations remain rare (currently six, including the `trace_to_generator/` scaffold and the inverse-reconstruction benchmark); closing that gap is the research frontier.
 
 ### Summary table
 
 | Simulation | Direction | Wall touched |
 |:---|:---|:---|
-| `boids-flocking/` | Forward | P vs. NP |
-| `coupled-oscillators/` (Kuramoto) | Forward | P vs. NP |
-| `self-organized-criticality/` (Bak sandpile) | Forward | P vs. NP |
-| `lenia/` | Forward | P vs. NP |
-| `reaction-diffusion/` (Gray-Scott) | Forward | P vs. NP |
-| `iterated-function-systems/` (Barnsley) | Forward | P vs. NP |
-| `l-systems/` | Forward | P vs. NP |
-| `hebbian-memory/` (Hopfield) | Both | P vs. NP |
-| `stigmergy-swarm/` | Forward | P vs. NP |
-| `ecosystem-regulation/` | Forward | None |
+| `boids-flocking/` | Forward | — |
+| `coupled-oscillators/` (Kuramoto) | Forward | — |
+| `self-organized-criticality/` (Bak sandpile) | Forward | — |
+| `lenia/` | Forward | — |
+| `reaction-diffusion/` (Gray-Scott) | Forward | — |
+| `iterated-function-systems/` (Barnsley) | Forward | — |
+| `l-systems/` | Forward | — |
+| `hebbian-memory/` (Hopfield) | Both | — |
+| `stigmergy-swarm/` | Forward | — |
+| `ecosystem-regulation/` | Forward | — |
 | `nested-learning-two-state/` | **Inverse** | Kolmogorov |
 | `prediction-error-field/` | **Inverse** | Kolmogorov |
-| `phase-transition-explorer/` (Ising) | Forward | P vs. NP |
-| `active-inference-veto/` | Forward | None |
-| `ai-alignment-veto/` | Forward | None |
-| `symbiotic-nexus/` | Forward | None |
+| `phase-transition-explorer/` (Ising) | Forward | — |
+| `active-inference-veto/` | Forward | — |
+| `ai-alignment-veto/` | Forward | — |
+| `symbiotic-nexus/` | Forward | — |
 | `meta-learning-regime-shift/` | **Inverse** | Kolmogorov |
-| `tensor-logic-reasoning/` | Forward | None |
-| `dao-ecosystem/` | Forward | None |
-| `social-computation-network/` | Forward | Gödel |
+| `tensor-logic-reasoning/` | Forward | — |
+| `dao-ecosystem/` | Forward | — |
+| `social-computation-network/` | Forward | — |
 | `self-reading-universe/` | Both | Gödel |
-| `latent-introspective-society/` | Forward | None |
-| `economic-trust-network/` | Forward | None |
-| `coupled-lenia-boids/` | Forward | P vs. NP |
-| `active-inference/` (free energy) | Both | None |
+| `latent-introspective-society/` | Forward | — |
+| `economic-trust-network/` | Forward | — |
+| `coupled-lenia-boids/` | Forward | — |
+| `active-inference/` (free energy) | Both | — |
 | `grokking-phase-transition/` | **Inverse** | P vs. NP |
-| `utility-engineering/` | Both | None |
-| `political-utility-formalization/` | Forward | None |
-| `teo-civilization/` | Forward | None |
-| `agent-ecology/` (P7/P8) | Forward | None |
-| `black-swan-resilience/` | Forward | None |
-| `planetary-veto/` | Forward | None |
-| Identity Morphospace & TEO Chord/Arpeggio | Forward | Kolmogorov |
-| `cognitive-breathing-network/` | Forward | None |
-| `trauma-and-deception-network/` | Forward | Gödel |
+| `utility-engineering/` | Both | — |
+| `political-utility-formalization/` | Forward | — |
+| `teo-civilization/` | Forward | — |
+| `agent-ecology/` (P7/P8) | Forward | — |
+| `black-swan-resilience/` | Forward | — |
+| `planetary-veto/` | Forward | — |
+| Identity Morphospace & TEO Chord/Arpeggio | Forward | — |
+| `cognitive-breathing-network/` | Forward | — |
+| `trauma-and-deception-network/` | Forward | — |
 | `lab/experiments/trace_to_generator/` | **Inverse** | P vs. NP |
 | `lab/benchmarks/inverse-reconstruction/` | **Inverse** | P vs. NP |
 
