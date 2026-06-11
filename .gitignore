@@ -32,6 +32,5 @@ Thumbs.db
 site/
 
 # Generated artifacts
-systems-and-intelligence-book.pdf
 migrate.py
 .pytest_cache/
