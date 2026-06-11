@@ -2,8 +2,9 @@
 
 *A constrained way to bring consciousness into the repository without letting it swallow the project.*
 
-Status: Working Hypothesis  
-Scope: This document does not claim to solve consciousness. It defines the architectural question that fits this repository.
+**Status:** Working Hypothesis
+
+**Scope:** This document does not claim to solve consciousness. It defines the architectural question that fits this repository — and, in §"The Generator-Question Reading", the single bridge from the project's spine to the subject. It is the repository's **one** consciousness node; per the anti-entropy rules, consciousness-adjacent material elsewhere should link here rather than duplicate.
 
 ---
 
@@ -128,4 +129,26 @@ rule -> form -> global availability -> self-constraining form
 ```
 
 This is the point where fractal architecture, limits of formal systems, and identity persistence meet.
+
+---
+
+## The Generator-Question Reading: Recursive Self-Reconstruction
+
+*Added after the spine consolidation; this section restates the bridge above in the project's current vocabulary and marks exactly where the claims stop.*
+
+The repository's spine asks when a system can reconstruct a generator from its traces. Consciousness, in this frame, names a **boundary case of that question turned inward** `[HYPOTHESIZED]`:
+
+> A system whose trace of the world includes *itself*, which reconstructs a generator-model of itself from its own traces, and which feeds that reconstruction back into the generator producing its next traces — a self-reconstruction loop.
+
+Three things make this more than wordplay, and one thing keeps it honest:
+
+1. **The loop is architectural and already operationalized in-repo — in toy form.** The [self-reading universe](../../simulation-models/cognitive-architectures/self-reading-universe/README.md) is a cellular automaton whose compressed self-description feeds back into its own dynamics (downward causation via compression); the [Three-Layer agent's](../../lab/agents/three_layer_agent.py) Layer-3 distillation is a behavioral self-model that becomes part of the acting policy. Neither is consciousness; both demonstrate that the *loop* is a buildable, measurable architecture rather than a metaphor.
+
+2. **The loop inherits the spine's limits, provably.** By Wall 3 ([Gödel](../core/the-generator-question.md)), the self-model can never be certified complete or minimal from inside; by the equivalence-class results ([benchmark](../../lab/benchmarks/inverse-reconstruction/README.md)), a self-reconstruction from one's own traces is generically *one consistent generator among many* — and a system at behavioral rest is, by the intervention result, maximally opaque *to itself*. Whatever a self-reconstruction loop runs on, it runs on an uncertifiable approximation. This is a feature of the framing: it predicts that self-models are necessarily partial, revisable, and perturbation-dependent — which is at least phenomenologically familiar.
+
+3. **It closes the construction/deduction circle.** In the vocabulary of [Construction vs. Deduction](../computation/construction-vs-deduction.md): the system *deduces* a model of itself from its traces, and that model becomes part of the *construction* of its next states. Consciousness, in this reading, is the loop in which deduction becomes construction of the self.
+
+**And the honest stop `[SPECULATIVE]`:** nothing above touches *experience*. That the self-reconstruction loop is accompanied by, identical to, or sufficient for subjectivity is not claimed, not tested, and — within this repository's instruments — not testable. The loop is the part we can build and measure; the "what it is like" is the part this project leaves, explicitly, outside its corridor. External anchors for the loop itself: Hofstadter's strange loop (*Gödel, Escher, Bach*, 1979; *I Am a Strange Loop*, 2007) and Metzinger's self-model theory (*Being No One*, 2003) — both pre-formal relatives of exactly this construction, both also stopping short of deriving experience from it.
+
+Where this sits in the [layer hierarchy](../../meta/repository-meta/canonical-path-v2.md): inside the **identity layer**, as its boundary case toward viability — not a new spine, not a new layer, and never a result.
 
