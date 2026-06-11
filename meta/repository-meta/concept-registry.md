@@ -61,6 +61,12 @@
 | Thermodynamic Hardware Manifesto | [thermodynamic-hardware-manifesto.md](../../theory/core/thermodynamic-hardware-manifesto.md) | `[SPECULATIVE]` | frontdoor lists hardware prototyping as speculative/long-horizon |
 | "Grand Synthesis" | — | **retired** | removed from all frontdoor surfaces (2026-06); kept here so its retirement is on record |
 
+## Meta / governance
+
+| Concept | Home | Status | Operationalization / anchor |
+|:---|:---|:---|:---|
+| Feynman Mode | [feynman-mode.md](feynman-mode.md) | governance check | seven questions, each with a documented catch from this repo's own history; run before committing concepts/essays |
+
 ---
 
 *Maintenance rule: new load-bearing terms enter this registry in the same change that introduces them, or they don't enter the repository. Terms whose row cannot be filled honestly (no home, no status, no anchor) are either marked narrative or removed. The registry is the audit the governance rule always implied — kept short enough to actually read.*

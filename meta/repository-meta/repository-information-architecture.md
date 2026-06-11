@@ -180,6 +180,8 @@ When adding a new artifact, ask:
 
 If two answers are true, choose one **home location** and cross-link instead of duplicating.
 
+Whatever it is — before committing, run it through [Feynman Mode](feynman-mode.md) (toy model? counterexample? load-bearing assumption? beautiful word in place of a mechanism?), and if it introduces a load-bearing term, add its [Concept Registry](concept-registry.md) row in the same change.
+
 ---
 
 ## 8) Minimal Maturity Tags (recommended)
