@@ -6,13 +6,13 @@ Artificial Intelligence, in its current commercial incarnation, is largely treat
 
 But intelligence is not a property of isolated nodes; **it is a property of systems.**
 
-This book, and the computational ecology it describes, formalizes two theses that are logically independent but mathematically identical:
+This book, and the computational ecology it describes, develops two theses that share one mathematical frame:
 
-1. **Love is a theorem, not a metaphor.** The TEO framework derives, from coupled differential equations, that there is exactly one parameter regime in which a complex system survives: one where structural resilience ($\lambda_2 > 0$), thermodynamic sustainability ($dS/dt < D_{\max}$), and identity persistence ($\text{IP} \to 1$) are simultaneously maintained. This regime is what we informally call "love." Every other configuration terminates in monopoly, polarization, or substrate collapse.
+1. **Love is a constraint architecture, not a metaphor.** The TEO framework makes the intuition formal: a coupled multi-agent system remains viable only inside a corridor where regulation ($\gamma > 0$), value coupling above the critical threshold ($K > K_c$), and bounded *cumulative* substrate overshoot ($\Omega(t) < S_{\max}$) hold **simultaneously**. Necessity is proven (a componentwise theorem); sufficiency is conjectured; and the sharpest demonstrated result is that **capability growth loads several constraints at once**, so no single-axis fix keeps a high-capability system inside ([The Viable Corridor](../papers/viable-corridor.md)). This conjunction is what we informally call "love." (An earlier sketch phrased the triple as $\lambda_2$, $D_{\max}$, IP — [Love as Constraint](../theory/teo-framework/love-as-constraint.md) records how that maps onto the canonical form.)
 
-2. **We are the paperclip maximizer.** The same equations that predict the trajectory of a hypothetical unconstrained AI optimizer predict, with identical parameter values, the trajectory of human civilization: GDP as the unbounded fitness function ($\gamma \approx 0$), cultural fragmentation below the Kuramoto critical coupling ($K < K_c$), and planetary entropy production approaching the biospheric ceiling ($dS/dt \to D_{\max}$).
+2. **"We are the paperclip maximizer" — as a hypothesis, not a result.** The same equations that describe a hypothetical unconstrained AI optimizer can be *heuristically mapped* onto contemporary civilization: GDP as unbounded fitness ($\gamma_{\text{eff}}$ small), cultural fragmentation as subcritical coupling ($K < K_c$), planetary entropy production as accumulating substrate overshoot. This is a structural-isomorphism **hypothesis** with stated falsification conditions — not a calibration; the measurement debt is documented openly (paper, §5.4).
 
-If these equations are wrong, both theses fall. If they are right, both apply — to silicon and to carbon, without distinction.
+If the mathematics is wrong, both theses fall. If it is right, the first holds *within the model* — and the second stops being a slogan and becomes a measurable question.
 
 As outlined in the [Emergence Manifesto v1.3](../theory/core/emergence-manifesto-v1.3.md), we must apply the laws of thermodynamics, evolutionary biology, and control theory to understand what we are building — and what we already are.
 
