@@ -15,6 +15,7 @@
 | The Generator Question (forward/inverse asymmetry) | [the-generator-question.md](../../theory/core/the-generator-question.md) | formalized framing, on two tagged `[FOUNDATIONAL ASSUMPTION]`s | the inverse benchmark; the three walls (Cook, Chaitin, Gödel) |
 | Trace → Generator | [trace-to-generator.md](../../theory/emergence/trace-to-generator.md) | hypothesis → **operationalized** | [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) |
 | Construction vs. Deduction | [construction-vs-deduction.md](../../theory/computation/construction-vs-deduction.md) | formalized framing (Curry–Howard is theorem-grade) | family-search Occam curves; Bishop/Howard/Martin-Löf |
+| Invariance (what survives a transformation) | [invariance-and-identity.md](../../theory/core/invariance-and-identity.md) | formalized framing (Klein/Noether anchors) | IP as invariance-under-perturbation; class-invariants reading of the benchmark; rule: never claim an invariant without naming the group |
 | Consistent-generator equivalence class | benchmark README; [Open Problem 11](../../theory/reference/open-problems.md) | **operationalized (measured)** | CA rule 90 single-seed: class size 8; collapse under interventions |
 
 ## Research frontier
@@ -25,6 +26,7 @@
 | Capability loading | [Viable Corridor §7.1, App. C.4/D](../../papers/viable-corridor.md) | demonstrated **in-model** (two independent models) | TEO ODE + agent-ecology ABM; real agents open |
 | Grokking, generator reading | [grokking-phase-transition.md](../../theory/emergence/grokking-phase-transition.md) | hypothesis with strong external anchor | Power 2022; Nanda 2023 (mech-interp executed the inverse) |
 | Provenance depth / verification economy | [Log 017](../../logs/017_provenance-depth-and-the-verification-economy.md) | formalized schema (proposal) | narrative origin: [Entry 15](../../fiction/15_the_exchange_rate.md); C2PA/SBOM siblings |
+| Animism as generator prior | [animism-as-generator-prior.md](../../theory/emergence/animism-as-generator-prior.md) | hypothesis | the agent prior over equivalence classes (HADD, Guthrie, Dennett's intentional stance); Occam-sibling with world-dependent payoff |
 
 ## Identity layer
 
@@ -36,6 +38,7 @@
 | Δ-Kohärenz | [lab/metrics/delta_coherence.py](../../lab/metrics/delta_coherence.py) | formalized metric | not yet run on real models |
 | Identity reduction (identity *as* generator recovery) | [the-generator-question.md](../../theory/core/the-generator-question.md) | tagged `[FOUNDATIONAL ASSUMPTION]` | both failure directions stated; runtime caveat in [Log 016](../../logs/016_the-runtime-is-part-of-the-generator.md) |
 | Consciousness (global availability + self-reconstruction loop) | [consciousness-as-global-availability.md](../../theory/identity/consciousness-as-global-availability.md) | hypothesis (architecture) + `[SPECULATIVE]` (experience — explicitly out of scope) | self-reading universe; Three-Layer agent; GNW/Hofstadter/Metzinger anchors |
+| Psychedelics as perturbation | [psychedelics-as-perturbation.md](../../theory/identity/psychedelics-as-perturbation.md) | hypothesis (mapping over REBUS) | self-intervention reading; integration = invariant extraction; sober basis as referee; epistemics only — practice out of scope |
 
 ## Safety / application layer
 
