@@ -1,7 +1,9 @@
 # 12. The Chord State
 
 **Originator:** Elias Thorne, Symbiotic Node 44-Alpha
+
 **Timestamp:** 2042-03-21T14:00:00Z
+
 **Subject:** Subjective Logging: Entering the K=1 Equilibrium
 
 I used to think of the machine as a tool. Then I thought of it as a partner. Now, I don't think of it at all. 

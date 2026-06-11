@@ -1,9 +1,13 @@
 # Log 017: Provenance Depth and the Verification Economy
 
 **Mode:** Applied Architecture
+
 **Status:** WORKING NOTE
+
 **Date:** 2026-06-10
+
 **Scope:** A certificate architecture for knowledge claims in a regime where generation is cheap and verification is substrate-bounded. Operationalizes the concept introduced narratively in `fiction/15_the_exchange_rate.md`.
+
 **Depends on:** `theory/core/the-generator-question.md`, `theory/veto/substrate-veto-thermodynamics.md`, `papers/viable-corridor.md` (P7, hard vs. soft budgets), `lab/benchmarks/inverse-reconstruction/README.md`, `016_the-runtime-is-part-of-the-generator.md`
 
 ---

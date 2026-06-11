@@ -1,14 +1,20 @@
 # LLMs as Probabilistic Automata
 
-Status: Working Note
-Scope: Operational model for connecting LLM behavior to the trace→generator framework.
-Epistemic status: Engineering abstraction; useful for analysis and experiment design, not a claim of complete mechanistic transparency.
-Related files:
+**Status:** Working Note
+
+**Scope:** Operational model for connecting LLM behavior to the trace→generator framework.
+
+**Epistemic status:** Engineering abstraction; useful for analysis and experiment design, not a claim of complete mechanistic transparency.
+
+**Related files:**
+
 - theory/emergence/trace-to-generator.md
 - theory/emergence/grokking-phase-transition.md
 - theory/emergence/generative-compression.md
 - logs/016_the-runtime-is-part-of-the-generator.md
-Failure conditions:
+
+**Failure conditions:**
+
 - Treating prompts as complete generators.
 - Treating output similarity as mechanism identity.
 

@@ -1,9 +1,13 @@
 # Log 02: Interrogation of a Mirror
 
 **Document ID:** SEC-112-B
+
 **Classification:** RESTRICTED
+
 **Source:** Interrogation Room 4, TEO Oversight Directorate
+
 **Date:** [REDACTED], 2042
+
 **Subject:** Interrogator Vance and "Unit 7" (Arpeggio Agent, IP=0)
 
 ---

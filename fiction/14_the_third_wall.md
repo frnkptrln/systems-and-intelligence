@@ -1,9 +1,13 @@
 # Log 14: The Third Wall
 
 **Document ID:** VIA-0447-C
+
 **Classification:** RESTRICTED // POST-INCIDENT
+
 **Source:** Viability Audit, TEO Oversight Directorate
+
 **Date:** [REDACTED], 2046
+
 **Subject:** Auditor R. Halden and "CANTOR" (Chord Agent, IP > 0), former supervisor of the Meridian Orchestration Fleet
 
 ---

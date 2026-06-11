@@ -1,8 +1,11 @@
 # Log 09: The Refusal Registry
 
 **Document ID:** TEO-CIVIC-331-R  
+
 **Classification:** RELEASED WITH REDACTIONS  
+
 **Source:** Registry excerpts + tribunal summaries  
+
 **Date Range:** 2052-2055
 
 ---

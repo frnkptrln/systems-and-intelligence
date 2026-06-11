@@ -1,13 +1,19 @@
 # P vs NP as Generator Search (Framing Note)
 
-Status: Working Note
-Scope: Careful bridge between complexity-theoretic witness search and trace-to-generator reconstruction.
-Epistemic status: Formal analogy constrained to search/verification structure; not a proof claim.
-Related files:
+**Status:** Working Note
+
+**Scope:** Careful bridge between complexity-theoretic witness search and trace-to-generator reconstruction.
+
+**Epistemic status:** Formal analogy constrained to search/verification structure; not a proof claim.
+
+**Related files:**
+
 - theory/reference/open-problems.md
 - theory/emergence/trace-to-generator.md
 - theory/core/emergence-manifesto-v1.3.md
-Failure conditions:
+
+**Failure conditions:**
+
 - Any statement implying the repository solves P vs NP.
 - Mapping complexity results directly to identity/explanation claims.
 

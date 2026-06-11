@@ -1,9 +1,13 @@
 # Log 08: Kitchen Networks and Civic Homeostasis
 
 **Document ID:** CIV-HVS-248-K  
+
 **Classification:** PUBLIC AFTER REVIEW  
+
 **Source:** Mixed packet (dispatch audio, witness notes, commit-room transcript)  
+
 **Date:** 2048-01-17  
+
 **Subject:** Informal heat/food rooms during district load shedding
 
 ---

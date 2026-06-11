@@ -1,10 +1,14 @@
 # From Trace to Generator
 *On generative compression, reconstruction, and the limits of understanding*
 
-Status: Working Note  
-Scope: Conceptual synthesis introducing the inverse counterpart to the emergence axis: trace → generator.  
-Epistemic status: Framing hypothesis. Uses examples across computation, ML, generative systems, and biology without claiming domain equivalence.  
-Related files:
+**Status:** Working Note
+
+**Scope:** Conceptual synthesis introducing the inverse counterpart to the emergence axis: trace → generator.
+
+**Epistemic status:** Framing hypothesis. Uses examples across computation, ML, generative systems, and biology without claiming domain equivalence.
+
+**Related files:**
+
 - [The Generator Question](../core/the-generator-question.md) — the spine document that frames this essay
 - [Emergence Manifesto](../core/emergence-manifesto-v1.3.md)
 - [Generative Form Systems](generative-form-systems.md)
@@ -15,7 +19,8 @@ Related files:
 - [From Rule to Mind](../../book/09_from_rule_to_mind.md)
 - [Related Work Map](../../meta/research-alignment/related-work-map.md)
 
-Failure conditions:
+**Failure conditions:**
+
 - The frame collapses into vague analogy.
 - It fails to generate measurable reconstruction tasks.
 - It treats verification analogies as proofs.

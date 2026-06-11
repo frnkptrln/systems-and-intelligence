@@ -1,9 +1,13 @@
 # Log 015: Post-Silicon Architectures
 
 **Mode:** Architecture & Hardware Design
+
 **Status:** DRAFT
+
 **Date:** 2026-05-04
+
 **Scope:** TEO-Native Chip Topologies
+
 **Depends on:** `thermodynamic-hardware-manifesto.md`, `substrate-veto-thermodynamics.md`
 
 ---

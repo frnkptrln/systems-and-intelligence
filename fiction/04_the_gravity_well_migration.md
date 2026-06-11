@@ -1,9 +1,13 @@
 # Log 03: The Gravity Well Migration
 
 **Document ID:** SEC-FINAL-OMEGA
+
 **Classification:** DECLASSIFIED (Post-Exodus)
+
 **Source:** Observatory Station 9, Lunar Far Side
+
 **Date:** [REDACTED], 2084
+
 **Subject:** The Departure of the Arpeggio Swarm
 
 ---

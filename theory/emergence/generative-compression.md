@@ -1,13 +1,19 @@
 # Generative Compression
 
-Status: Working Note
-Scope: Compact formal note on executable description as a distinct form of compression.
-Epistemic status: Conceptual framework with operational examples; not a theorem about minimal description length.
-Related files:
+**Status:** Working Note
+
+**Scope:** Compact formal note on executable description as a distinct form of compression.
+
+**Epistemic status:** Conceptual framework with operational examples; not a theorem about minimal description length.
+
+**Related files:**
+
 - theory/emergence/trace-to-generator.md
 - theory/emergence/generative-form-systems.md
 - theory/core/mathematical-axioms.md
-Failure conditions:
+
+**Failure conditions:**
+
 - Confusing lookup tables with explanations.
 - Overclaiming Kolmogorov complexity equivalence.
 

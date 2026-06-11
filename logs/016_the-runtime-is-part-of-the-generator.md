@@ -1,9 +1,13 @@
 # Log 016: The Runtime Is Part of the Generator
 
 **Mode:** Applied Architecture
+
 **Status:** WORKING NOTE
+
 **Date:** 2026-05-04
+
 **Scope:** Practical implications of treating runtime as part of behavior-generating systems.
+
 **Depends on:** `013_the-coupling-first-sequence.md`, `010_the-right-to-remain-unoptimized.md`, `theory/emergence/trace-to-generator.md`, `theory/ai/llms-as-probabilistic-automata.md`
 
 ---

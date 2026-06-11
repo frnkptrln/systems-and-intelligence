@@ -1,9 +1,13 @@
 # Log 014: UI/UX of the Biological Veto
 
 **Mode:** Architecture & Interface Design
+
 **Status:** DRAFT (Promotes to synthesis when cognitive load testing is verified)
+
 **Date:** 2026-05-04
+
 **Scope:** Dimensionality Reduction for Human Oversight
+
 **Depends on:** `005_human-vital-systems-control-plane.md`, `012_latency-as-mercy.md`
 
 ---

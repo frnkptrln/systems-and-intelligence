@@ -1,14 +1,20 @@
 # Construction vs. Deduction (Framing Note)
 
-Status: Working Note
-Scope: The mathematical ancestor of the project's central asymmetry — what a proof *gives you* versus what it *shows you* — and its mapping onto verification/search, trace/generator, and prediction/performance.
-Epistemic status: Framing note over well-established mathematics (intuitionism, proof theory, Curry–Howard); the *mapping* onto the repo's spine is this project's contribution and is tagged where it is a claim. Personal origin: a question that has occupied the author since his computer science studies — where it arrived through the mathematics lectures of that degree. This note is where that thread lives and grows.
-Related files:
+**Status:** Working Note
+
+**Scope:** The mathematical ancestor of the project's central asymmetry — what a proof *gives you* versus what it *shows you* — and its mapping onto verification/search, trace/generator, and prediction/performance.
+
+**Epistemic status:** Framing note over well-established mathematics (intuitionism, proof theory, Curry–Howard); the *mapping* onto the repo's spine is this project's contribution and is tagged where it is a claim. Personal origin: a question that has occupied the author since his computer science studies — where it arrived through the mathematics lectures of that degree. This note is where that thread lives and grows.
+
+**Related files:**
+
 - theory/computation/p-vs-np-as-generator-search.md
 - theory/core/the-generator-question.md
 - logs/017_provenance-depth-and-the-verification-economy.md
 - fiction/15_the_exchange_rate.md
-Failure conditions:
+
+**Failure conditions:**
+
 - Treating "constructive good, classical bad" as the claim. It is not; the claim is about what you possess after the proof.
 - Claiming the repo's asymmetry follows formally from intuitionism. It rhymes; it does not reduce.
 

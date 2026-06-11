@@ -1,15 +1,21 @@
 # Narrative as Cognitive Technology (Framing Note)
 
-Status: Working Note
-Scope: Why stories belong in a research repository — narratives install thinking primitives, and what can be named can be thought. With a contemporary case study.
-Epistemic status: Framing note, tagged `[HYPOTHESIZED]` where it makes a claim. Personal origin: the author's observation, on the release of a new season of *Rick and Morty*, that serial fiction had measurably shaped how he thinks about systems — and the question whether that observation itself belongs in the repository. It does; this is where.
-Related files:
+**Status:** Working Note
+
+**Scope:** Why stories belong in a research repository — narratives install thinking primitives, and what can be named can be thought. With a contemporary case study.
+
+**Epistemic status:** Framing note, tagged `[HYPOTHESIZED]` where it makes a claim. Personal origin: the author's observation, on the release of a new season of *Rick and Morty*, that serial fiction had measurably shaped how he thinks about systems — and the question whether that observation itself belongs in the repository. It does; this is where.
+
+**Related files:**
+
 - ../../fiction/README.md
 - ../../fiction/15_the_exchange_rate.md
 - ../../logs/017_provenance-depth-and-the-verification-economy.md
 - ../core/the-generator-question.md
 - asimov-ai-latent-thinking.md
-Failure conditions:
+
+**Failure conditions:**
+
 - Mistaking resonance for evidence: a story that makes a structure vivid does not make the structure true.
 - Letting theory silently inherit authority from fiction (the inverse of the repo's rule that fiction must not silently contradict theory).
 
