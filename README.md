@@ -5,9 +5,10 @@
 [![Docs](https://img.shields.io/badge/docs-Interactive_Book-blue)](https://frnkptrln.github.io/systems-and-intelligence)
 
 <div align="center">
-  <h3><i>The Fractal Architecture of Emergence</i></h3>
-  <p>Exploring how intelligence, adaptation, and structure emerge from the interaction of simple, local rules.</p>
+  <h3><i>A research notebook on emergence, inverse reconstruction, and viability constraints in intelligent systems</i></h3>
 </div>
+
+> **What this is — and is not.** This repository does not claim a theory of everything. It studies one recurring asymmetry: simple generators produce rich traces cheaply, but reconstructing the generator from its trace — especially under noise, partial observability, and an unknown model class — is hard; and optimizing systems become dangerous when their constraint architecture cannot scale with their capability. Every major claim carries an epistemic status tag, every major concept an external anchor in the [Related Work Map](meta/research-alignment/related-work-map.md), and the boundaries are stated explicitly in **[What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md)**.
 
 ---
 
