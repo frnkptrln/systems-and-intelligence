@@ -53,6 +53,15 @@ This sharpens the spine rather than weakening it: the P≠NP framing of [The Gen
 
 **Reading.** Attractors hide generators: a relaxed system — synchronized, frozen, converged — is generator-degenerate, and no amount of passive observation resolves it. Facts about the generator can be *created* by intervention that observation alone cannot reach (the constructivist half) — though what the query exposes was the rule's content all along (the Platonist half). This is also the first-principles justification for an existing repo methodology: the identity instruments (Δ-Kohärenz, Observer Divergence) are **perturbation protocols** precisely because you cannot read a generator off an attractor — a system at rest, like a mirror at rest, reveals nothing but the room.
 
+## v1, part 2 — family search: the wall, measured (run)
+
+[`family_search.py`](family_search.py) measures the regime v0 deliberately excluded: recovering a generator when the **model family is unknown**. Hypothesis space: a complete DSL of boolean formulas over the CA neighborhood (NOT/AND/OR/XOR over $l, c, r$); every one of the 256 rules has an exactly computable **minimal description size** in it — the DSL-relative Kolmogorov complexity, computable here precisely because the toy is small (in general it is not computable at all).
+
+- **(A) The search wall.** Verifying a candidate costs 8 bit-comparisons, flat. *Generating* candidates in size order costs exponentially in the target's minimal size: rule 90 (XOR, size 3) is found within ≤36 candidates; rule 30 (size 5) within ≤771; rule 110 (size 8) within ≤116,232; size-10 targets within ≤4.2M. **Finding grows exponentially with the target's description complexity while checking stays flat** — the P-vs-NP shape of the spine, drawn from a real enumeration (Levin search is the formalized version of this enumerator; Rissanen's MDL the formalized version of the selection below).
+- **(B) Elegance as a prior — and whom it serves.** Under partial coverage the searcher returns the *minimal consistent* formula (Occam). Measured: over **simple** targets (size ≤ 4) Occam hits 22%→100% as coverage grows; over a **uniform** world (all 256 rules) it equals 1/class-size — *exactly chance*; over **complex** targets (size ≥ 7) it sits at **0%** until coverage is nearly total, because it deterministically picks the simple impostor. Elegance finds elegant worlds, is chance on uniform ones, and systematically misses complex ones. (The single-seed orbit anecdotes land on the friendly side: for rules 90 and 0, the most elegant consistent generator *is* the true one.)
+
+This refines the claim in [Construction vs. Deduction](../../../theory/computation/construction-vs-deduction.md) that elegance "does real work" as the selection principle inside the equivalence class: it does — *conditional on the world being biased toward simplicity*. The measurement says precisely when the condition holds. **Honest scope:** this is the exhaustive-search *floor*. Whether learned searchers (LLMs, program synthesizers) beat the enumeration floor — and whether they are construction machines or deduction machines — is the open real-model question; this testbed is the baseline they must beat.
+
 ## Running
 
 ```bash
@@ -60,15 +69,17 @@ python inverse_benchmark.py              # v0: console summary, three testbeds (
 python inverse_benchmark.py --save       # also write the v0 figure (to lab/tools/)
 python intervention_experiment.py        # v1.1: interventions vs. observation (~5 s)
 python intervention_experiment.py --save # also write the intervention figure
+python family_search.py                  # v1.2: the family-search wall (~1 s)
+python family_search.py --save           # also write the family-search figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 ## v1 roadmap (open)
 
-*(Part 1 — interventions vs. observation — is done; see above. The items below remain open.)*
+*(Parts 1 and 2 — interventions, and the family-search floor — are done; see above. The items below remain open.)*
 
-- **Family-search testbed**: a small DSL of update rules; reconstructor must find the family *and* the parameters (program induction; success vs. DSL size = the measurable wall).
+- **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget).
 - **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.
 - **IFS testbed**: recover contractive affine maps from an attractor point cloud (hard even with known family — no time ordering).
 - Cross-method comparison: hand-rolled least squares (v0) vs. SINDy/PySR as external baselines (would add dependencies; deliberately out of v0).
