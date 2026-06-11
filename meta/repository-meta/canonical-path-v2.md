@@ -37,11 +37,11 @@ Both begin at emergence. One asks whether a system can *recover its generator*; 
 
 1. **Spine** — [The Generator Question](../../theory/core/the-generator-question.md): the asymmetry itself.
 2. **Research frontier** — [inverse reconstruction](../../lab/benchmarks/inverse-reconstruction/README.md): where the spine becomes measurable (noise, observability, coverage, family search, interventions).
-3. **Identity layer** — Mirror Problem, Chord/Arpeggio, IP, Δ-Kohärenz: identity *as* a generator-recovery question, resting on a tagged `[FOUNDATIONAL ASSUMPTION]`.
+3. **Identity layer** — Mirror Problem, Chord/Arpeggio, IP, Δ-Kohärenz: identity *as* a generator-recovery question, resting on a tagged `[FOUNDATIONAL ASSUMPTION]`. Consciousness is handled strictly as this layer's boundary case — a self-reconstruction loop, architecture only, experience explicitly out of scope ([home](../../theory/identity/consciousness-as-global-availability.md)).
 4. **Safety / application layer** — TEO, [the Viable Corridor](../../papers/viable-corridor.md), the veto cluster: what the asymmetry costs when optimizers outrun their constraints.
 5. **Narrative layer** — fiction, manifestos, logs: stress tests and concept generators, never evidence.
 
-A concept that fits none of these layers, and has no home file, experiment, or open problem, is decoration — see [What This Project Does NOT Claim](../../theory/reference/what-this-project-does-not-claim.md) for the enforced boundary.
+A concept that fits none of these layers, and has no home file, experiment, or open problem, is decoration — see [What This Project Does NOT Claim](../../theory/reference/what-this-project-does-not-claim.md) for the enforced boundary, and the [Concept Registry](concept-registry.md) for the term-by-term audit (layer, home, status, operationalization — the project's "zone file").
 
 A note on tags. Each station below carries the status of its strongest content, using the project's vocabulary: `[FOUNDATIONAL ASSUMPTION]`, `[DEMONSTRATED]`, `[HYPOTHESIZED]`, `[FORMAL]`, `[CONJECTURE]`, `[HEURISTIC]`, `[EMPIRICAL CONJECTURE]`, `[MODEL ASSUMPTION]`, `[SIMULATION ARTIFACT]`, `[NARRATIVE STRESS TEST]`, `[OPEN PROBLEM]`. Mixed nodes are tagged per-claim, not globally.
 
