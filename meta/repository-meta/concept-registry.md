@@ -55,6 +55,7 @@
 |:---|:---|:---|:---|
 | Machines of Loving Grace | [machines-of-loving-grace.md](../../theory/narrative/machines-of-loving-grace.md) | narrative | formal counterpart: the Viable Corridor paper |
 | Narrative as Cognitive Technology | [narrative-as-cognitive-technology.md](../../theory/narrative/narrative-as-cognitive-technology.md) | hypothesis (about narratives) | internal datum: Entry 15 → Log 017 |
+| Art–Science: one practice, two referees | [art-science-one-practice-two-referees.md](../../theory/narrative/art-science-one-practice-two-referees.md) | hypothesis | receipts: elegance curves (family search), Entry 15 → Log 017, Morelli/Ginzburg (evidential paradigm) |
 | The Inversion / Exchange Rate / Assay vocabulary | [Entry 15](../../fiction/15_the_exchange_rate.md) | narrative | formal counterpart: Log 017 |
 | Fractal Architecture of Emergence | [fractal-architecture-of-emergence.md](../../theory/emergence/fractal-architecture-of-emergence.md) | hypothesis, **under-evidenced** | related-work map demands scale-invariance diagnostics before "fractal" is more than a figure |
 | Mycelial Veto | [the-mycelial-veto.md](../../theory/veto/the-mycelial-veto.md) | narrative/speculative | **no operationalization — flagged by this registry**: needs an experiment, an open problem, or an explicit narrative marking |
