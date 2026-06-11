@@ -89,6 +89,8 @@ A subtlety that matters here: even if P = NP is eventually proven, the practical
 
 This project's claims depend on the practical asymmetry, not on the formal status. That is a distinction worth keeping.
 
+Two further notes on this wall, for honesty in both directions. *Quantum computation is not believed to move it:* Grover's speedup for unstructured search is provably only quadratic ($2^n \to 2^{n/2}$ — exponential stays exponential), and NP is not believed to be contained in BQP; Shor's algorithm breaks factoring, which is not known to be NP-complete. On current knowledge, the quantum computer leaves this wall standing. *And parts of the project's inverse-direction walls would survive even P = NP:* the consistent-generator equivalence class ([benchmark v0](../../lab/benchmarks/inverse-reconstruction/README.md)) and attractor degeneracy (the intervention experiment) are **information-theoretic, not complexity-theoretic** — when the trace does not contain the distinguishing bits, no algorithm, however fast, can extract them. P = NP would collapse the *cost* of search; it would not put missing information into the trace. The most interesting reading of "what if P = NP?" is therefore not that the inverse direction becomes easy, but that the project's hardness claim would cleanly decompose into the part that falls (search cost) and the part that provably cannot (identifiability).
+
 ### Wall 2: Kolmogorov complexity `[PROVEN UNCOMPUTABLE]`
 
 For any finite output $x$, the Kolmogorov complexity $K(x)$ is the length of the shortest program that produces $x$. The minimal generator is, in this sense, well-defined.
