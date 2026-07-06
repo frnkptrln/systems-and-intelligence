@@ -27,6 +27,7 @@
 | Grokking, generator reading | [grokking-phase-transition.md](../../theory/emergence/grokking-phase-transition.md) | hypothesis with strong external anchor | Power 2022; Nanda 2023 (mech-interp executed the inverse) |
 | Provenance depth / verification economy | [Log 017](../../logs/017_provenance-depth-and-the-verification-economy.md) | formalized schema (proposal) | narrative origin: [Entry 15](../../fiction/15_the_exchange_rate.md); C2PA/SBOM siblings |
 | Animism as generator prior | [animism-as-generator-prior.md](../../theory/emergence/animism-as-generator-prior.md) | hypothesis | the agent prior over equivalence classes (HADD, Guthrie, Dennett's intentional stance); Occam-sibling with world-dependent payoff |
+| World models & VLA (the spine, industrialized) | [world-models-and-vla.md](../../theory/ai/world-models-and-vla.md) | hypothesis (mapping) | world models = trace→generator at scale (model exploitation = adversarial divergence queries against one's own model); VLA = the generator coupled to matter, d=0 at every timestep |
 
 ## Identity layer
 
@@ -51,6 +52,7 @@
 | Action Budgets (hard vs. soft) | IA-doc anchors; [paper P7](../../papers/viable-corridor.md) | **operationalized in-model** | [agent-ecology ABM](../../simulation-models/alignment-and-veto/agent-ecology/README.md) |
 | Impedance Matching / Latency as Mercy | [Log 002](../../logs/002_impedance-mismatch-friction.md), [Log 012](../../logs/012_latency-as-mercy.md) | design hypothesis | no simulation yet; dramatized in [Entry 01](../../fiction/01_the_impedance_crash.md) |
 | Transition Problem | [the-transition-problem.md](../../theory/veto/the-transition-problem.md) | open problem | flagged in paper §7.4 as harder than the static result |
+| The city as deployed intelligence | [the-city-as-deployed-intelligence.md](../../theory/human-organism-silicon-age/the-city-as-deployed-intelligence.md) | hypothesis, strong external anchors | West's scaling laws (capability loading, measured); Jacobs vs. Moses (the documented single-axis catastrophe); flagged as the tractable Class B field site (N=thousands vs N=1) |
 
 ## Narrative layer (poetic hostnames — marked, never evidence)
 

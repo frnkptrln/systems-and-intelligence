@@ -18,3 +18,7 @@ A city metabolizes energy, food, trust, and attention. It scars. It forgets. It 
 
 ## Design implication
 Vital systems are not only pipes and watts. Informal rooms, kitchens, and rituals are metabolic organs. Remove them from the model and the model becomes dangerous precisely where survival is social.
+
+---
+
+*The theory-side development of this chapter — the city as the viable corridor's field site, with the scaling-law and Jacobs/Alexander anchors — lives at [The City as Deployed Intelligence](../theory/human-organism-silicon-age/the-city-as-deployed-intelligence.md).*
