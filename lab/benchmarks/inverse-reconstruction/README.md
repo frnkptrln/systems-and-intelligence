@@ -64,6 +64,15 @@ This sharpens the spine rather than weakening it: the P≠NP framing of [The Gen
 
 This refines the claim in [Construction vs. Deduction](../../../theory/computation/construction-vs-deduction.md) that elegance "does real work" as the selection principle inside the equivalence class: it does — *conditional on the world being biased toward simplicity*. The measurement says precisely when the condition holds. **Honest scope:** this is the exhaustive-search *floor*. Whether learned searchers (LLMs, program synthesizers) beat the enumeration floor — and whether they are construction machines or deduction machines — is the open real-model question; this testbed is the baseline they must beat.
 
+## v1.3 — model exploitation: the world-models bridge (run)
+
+[`model_exploitation.py`](model_exploitation.py) answers the question flagged in [World Models and VLA](../../../theory/ai/world-models-and-vla.md): **does model exploitation track equivalence-class size?** Setup: the agent's world model is a CA rule table with $u$ neighborhoods never observed (class size exactly $2^u$), filled with a fixed guess — *one class member, treated as fact*. The agent plans (argmax over 150 candidate interventions, imagined under its model) and executes in reality.
+
+- **The selection decomposition.** Across *all* candidates, the gap (imagined − real) averages ≈ 0 at every $u$ — the guesses are wrong but **unbiased**. The **chosen** plan's gap is positive, and the wedge between the two curves — the **optimizer's curse** (Smith & Winkler, 2006), isolated — grows **monotonically** with class size: $0 \to 0.042 \to 0.049 \to 0.066 \to 0.078 \to 0.085$. Model exploitation is the equivalence class, priced by an argmax. At $u = 0$ both gaps vanish by construction: the model *is* the world.
+- **The honest null (a prediction revised mid-experiment).** Run 1 predicted "divergence-seeking" — that the chosen plan would *visit* unseen neighborhoods more than the average candidate. **It does not**: usage is statistically identical at every $u$. The refinement matters: the optimizer does not steer *into* the model's fantasy regions; at equal exposure it *selects the fantasies that pay*. Exploitation is selection over guess-outcomes, not navigation toward guess-territory — in this open-loop setting; whether closed-loop agents learn to navigate toward exploitable regions is open.
+
+**Bridge to the industrial case:** this is the null model for model-based RL's exploitation problem, and it predicts that uncertainty-blind planning inherits a positive imagined-vs-real gap scaling with model underdetermination *even when the model is unbiased*. The field's known cures — ensembles, pessimism penalties on uncertain regions — are, in this vocabulary, ways of letting the planner see which bits are guesses.
+
 ## Running
 
 ```bash
@@ -73,13 +82,15 @@ python intervention_experiment.py        # v1.1: interventions vs. observation (
 python intervention_experiment.py --save # also write the intervention figure
 python family_search.py                  # v1.2: the family-search wall (~1 s)
 python family_search.py --save           # also write the family-search figure
+python model_exploitation.py             # v1.3: exploitation vs class size (~2 min)
+python model_exploitation.py --save      # also write the exploitation figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 ## v1 roadmap (open)
 
-*(Parts 1 and 2 — interventions, and the family-search floor — are done; see above. The items below remain open.)*
+*(Parts 1–3 — interventions, the family-search floor, and the model-exploitation bridge — are done; see above. The items below remain open.)*
 
 - **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget).
 - **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.
