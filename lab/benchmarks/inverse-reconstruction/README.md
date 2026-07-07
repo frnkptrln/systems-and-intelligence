@@ -100,6 +100,7 @@ Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 ## Related
 
 - [The Generator Question](../../../theory/core/the-generator-question.md) — the spine; this benchmark is its first inverse-direction artifact.
+- [Measurement as Weak Intervention](../../../theory/core/measurement-as-weak-intervention.md) — the conceptual hinge on v1.1's hierarchy: coupling is not identification; plus the fourth (reflexive) regime the toys cannot exhibit.
 - [Open Problems](../../../theory/reference/open-problems.md) — Open Problem 11 (bounded inverse reconstruction).
 - [Related Work Map](../../../meta/research-alignment/related-work-map.md) — SINDy / system identification / program induction anchors.
 - [`lab/experiments/trace_to_generator/`](../../experiments/trace_to_generator/) — the earlier inverse-prompting scaffold.

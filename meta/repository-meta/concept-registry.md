@@ -17,6 +17,7 @@
 | Construction vs. Deduction | [construction-vs-deduction.md](../../theory/computation/construction-vs-deduction.md) | formalized framing (Curry–Howard is theorem-grade) | family-search Occam curves; Bishop/Howard/Martin-Löf |
 | Invariance (what survives a transformation) | [invariance-and-identity.md](../../theory/core/invariance-and-identity.md) | formalized framing (Klein/Noether anchors) | IP as invariance-under-perturbation; class-invariants reading of the benchmark; rule: never claim an invariant without naming the group |
 | Consistent-generator equivalence class | benchmark README; [Open Problem 11](../../theory/reference/open-problems.md) | **operationalized (measured)** | CA rule 90 single-seed: class size 8; collapse under interventions |
+| Measurement vs. intervention (coupling is not identification) | [measurement-as-weak-intervention.md](../../theory/core/measurement-as-weak-intervention.md) | formalized framing — three of four regimes measured | two axes: dynamical footprint × identifying power; regimes 1–3 = benchmark v1.1 (watching < perturbing < preparing), unmarked-guess mirror = v1.3; regime 4 (the metric enters the generator) = Goodhart/Campbell/Lucas + Log 018 H3 (pre-registered, untested) |
 
 ## Research frontier
 
