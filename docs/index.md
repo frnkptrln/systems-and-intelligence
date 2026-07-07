@@ -110,7 +110,7 @@ The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and 
 
 ### :material-chart-line: The Measured Core
 
-The inverse-reconstruction benchmark (v0–v1.5): the spine's asymmetry as curves. Equivalence classes counted and collapsed, the search wall, Occam's world-dependent payoff, the optimizer's curse — and its cure. Every claim runs in seconds.
+The inverse-reconstruction benchmark: the spine's asymmetry as curves. Equivalence classes counted and collapsed, the search wall, Occam's world-dependent payoff, the optimizer's curse, its cure — and the closed loop. Every claim runs in seconds.
 
 [Run the benchmark →](lab/benchmarks/inverse-reconstruction/README.md)
 

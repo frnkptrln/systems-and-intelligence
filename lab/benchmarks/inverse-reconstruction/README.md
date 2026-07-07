@@ -94,6 +94,26 @@ This refines the claim in [Construction vs. Deduction](../../../theory/computati
 
 ![Marking the guesses](../../tools/inverse_benchmark_wmax_planner.png)
 
+## v1.6 — acting is measuring: the closed loop (run)
+
+[`closed_loop.py`](closed_loop.py) closes the loop the open-loop pair left open: agents that replan over $H$ rounds on a persistent world, where **every executed plan is an intervention whether intended or not** — execution drives the world through neighborhoods, and reality answers with their true bits. The measurement note's regime hierarchy, running by itself. Agents: oracle, frozen-committed (v1.3 forever), updating-committed, updating-wmean, and a random-policy baseline; updating agents harvest what execution reveals.
+
+- **In dense worlds, acting measures everything at once.** At the original settings one executed plan exercises all 8 neighborhoods almost surely: $u\!:\ 5 \to 0$ in a single round for every updating agent. The frozen agent's gap persists at v1.3 levels round after round; the updating agents' gap is zero from round 2 on. Cumulative regret orders exactly as predicted: wmean (.11) < committed (.20) < frozen (.84) < random (1.12).
+- **The risky prediction died, honestly.** P3 predicted the curse funds its own cure — that the argmax, preferring plans that lean on flattering guesses, would collapse the class *faster* than a random policy. **Falsified** (in the sparse regime built to resolve it): the argmax collapses the class marginally *slower* than random flailing (residual $u$ after 16 rounds: 0.26 vs 0.18). Optimization is not curiosity — the argmax settles into reward-good orbits that re-use known neighborhoods. v1.3's null (selection, not navigation) extends to the closed loop and gains an anti-exploration corollary.
+- **Two endogenous echoes:** a residual $u \approx 0.2$ persists for every agent — neighborhoods the dynamics never produce, v1.1's frozen exception appearing on its own (only a prepared state would reveal them). And the random agent finishes with the *best model and the worst reward* (regret 1.12): free measurement without optimization is not a strategy either.
+
+![Acting is measuring](../../tools/inverse_benchmark_closed_loop.png)
+
+## v1.7 — how much class does the cure need? (run)
+
+[`ensemble_size.py`](ensemble_size.py) measures the honest toy version of the industrial gap: the class is not enumerable in practice — an ensemble holds $K$ sampled hypotheses, not $2^u$. At $u = 5$ (class $N = 32$), the planner scores by the mean of $K$ distinct sampled members; $K{=}1$ is a committed planner, $K{=}32$ recovers v1.5's exact wmean. Same episodes for every $K$, perfectly paired.
+
+- **Honesty is cheap:** the curse wedge dies early and monotonically — $.082 \to .059 \to .040 \to .031 \to .011 \to .006$; **52% of the wedge is gone by $K{=}4$**, 87% by $K{=}16$. A handful of hypotheses buys most of the self-deception away.
+- **Knowledge is not:** real-reward regret falls only modestly ($.073 \to .057$, endpoints matching v1.5's committed/wmean values — another cross-check). The floor is genuine ignorance, and no ensemble size removes it: **ensembles cure delusion, not ignorance; only queries (v1.1, v1.6) cure ignorance.**
+- **Honest scope:** uniform sampling from an exact class is the ensemble's *best case* — real ensembles are correlated (shared architecture, shared data) and buy less variance reduction. These curves are the upper bound on $K$-member honesty.
+
+![Ensemble size](../../tools/inverse_benchmark_ensemble_size.png)
+
 ## Running
 
 ```bash
@@ -109,13 +129,17 @@ python weakness_selector.py              # v1.4: weakness vs simplicity (~3 s)
 python weakness_selector.py --save       # also write the weakness figure
 python wmax_planner.py                   # v1.5: marking the guesses (~40 s)
 python wmax_planner.py --save            # also write the wmax-planner figure
+python closed_loop.py                    # v1.6: the closed loop (~30 s)
+python closed_loop.py --save             # also write the closed-loop figure
+python ensemble_size.py                  # v1.7: ensemble size vs the curse (~9 s)
+python ensemble_size.py --save           # also write the ensemble figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 ## v1 roadmap (open)
 
-*(Parts 1–5 — interventions, the family-search floor, the model-exploitation bridge, the weakness-selector bridge, and the marked-guess planners — are done; see above. The items below remain open.)*
+*(Parts 1–7 — interventions, the family-search floor, the model-exploitation bridge, the weakness-selector bridge, the marked-guess planners, the closed loop, and the ensemble-size sweep — are done; see above. The items below remain open.)*
 
 - **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget). The industrial arena for exactly this is **ARC-AGI**: few-shot trace→generator with unknown family (v1/v2), and since ARC-AGI-3 *interactive* — the field's own watching→perturbing move; winning systems pair a corpus prior proposing candidates with cheap verification, i.e. the wall's shape, exploited.
 - **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.
