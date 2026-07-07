@@ -73,6 +73,16 @@ This refines the claim in [Construction vs. Deduction](../../../theory/computati
 
 **Bridge to the industrial case:** this is the null model for model-based RL's exploitation problem, and it predicts that uncertainty-blind planning inherits a positive imagined-vs-real gap scaling with model underdetermination *even when the model is unbiased*. The field's known cures — ensembles, pessimism penalties on uncertain regions — are, in this vocabulary, ways of letting the planner see which bits are guesses.
 
+## v1.4 — weakness vs simplicity: the Bennett bridge (run)
+
+[`weakness_selector.py`](weakness_selector.py) tests the selector principle of Bennett's Stack Theory (*The Optimal Choice of Hypothesis Is the Weakest, Not the Shortest*, 2023; *No Selves, No Consciousness*, AAAI SSS 2026) on this testbed's own generator. Under partial coverage the **weakest consistent hypothesis** turns out to be an old acquaintance: the partial rule asserting exactly the observed neighborhoods — **the uncollapsed consistent-generator equivalence class itself** (v1.1's object). The shortest is v1.2's Occam pick. The experiment prices the choice in two currencies — uncertainty *held open* (wmax: $u$ bits, always) versus survival odds *paid* (simpmax: $-\log_2 P(\text{pick}=\text{truth})$) — and reports **commitment efficiency**: bits closed minus odds paid.
+
+- **The exchange rate between the currencies is the world bias, measured.** Efficiency: **+2.7 → +1.0** on the simple world (committing is profitable compression); **0.00 ± 0.03** on the uniform world — the analytic prediction (hit = $2^{-u}$, so committing buys *exactly nothing*) confirmed to two decimals; **strongly negative** on the complex world (Laplace-floored below −7 with zero measured hits at $k \le 5$; −3.7 / −1.2 at $k = 6/7$).
+- **Worse than a coin, systematically.** On the complex world the elegant guess loses to admitted ignorance at every coverage (1.28 vs 1.00 wrong unseen bits at $k=6$; 0.78 vs 0.49 at $k=7$) — anti-correlated with complex truths, not merely uninformed. And at $k \le 5$ the pick lies **outside the world's support 100% of the time**: elegance there does not miss, it asserts generators the world cannot even contain.
+- **Reading.** Bennett's Exp. 1, reproduced on our generator from the cost side: holding the class is 0-regret by construction (partly definitional — stated honestly), and the measured content is the *size and sign* of the commitment gaps plus the support-violation rate. This closes a loop with v1.3: the exploiting planner's disease is consuming committed-but-unmarked guesses; wmax is the accounting discipline that refuses the commitment at selection time — "mark what the traces actually determine" ([Measurement as Weak Intervention](../../../theory/core/measurement-as-weak-intervention.md)), now with a price tag.
+
+![Weakness vs simplicity](../../tools/inverse_benchmark_weakness.png)
+
 ## Running
 
 ```bash
@@ -84,13 +94,15 @@ python family_search.py                  # v1.2: the family-search wall (~1 s)
 python family_search.py --save           # also write the family-search figure
 python model_exploitation.py             # v1.3: exploitation vs class size (~2 min)
 python model_exploitation.py --save      # also write the exploitation figure
+python weakness_selector.py              # v1.4: weakness vs simplicity (~3 s)
+python weakness_selector.py --save       # also write the weakness figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 ## v1 roadmap (open)
 
-*(Parts 1–3 — interventions, the family-search floor, and the model-exploitation bridge — are done; see above. The items below remain open.)*
+*(Parts 1–4 — interventions, the family-search floor, the model-exploitation bridge, and the weakness-selector bridge — are done; see above. The items below remain open.)*
 
 - **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget). The industrial arena for exactly this is **ARC-AGI**: few-shot trace→generator with unknown family (v1/v2), and since ARC-AGI-3 *interactive* — the field's own watching→perturbing move; winning systems pair a corpus prior proposing candidates with cheap verification, i.e. the wall's shape, exploited.
 - **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.
