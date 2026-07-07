@@ -83,6 +83,17 @@ This refines the claim in [Construction vs. Deduction](../../../theory/computati
 
 ![Weakness vs simplicity](../../tools/inverse_benchmark_weakness.png)
 
+## v1.5 — marking the guesses: the cure, measured (run)
+
+[`wmax_planner.py`](wmax_planner.py) closes the v1.3/v1.4 pair: what happens when **the planner itself holds the class** — when the guessed bits are marked as guesses at planning time? Four planners on the *same* episodes (paired): **committed** (v1.3's baseline, guess as fact), **wmean** (score = class-average imagined reward — the ensemble cure, exact), **wmin** (score = class-minimum — the pessimism cure, exact; corridor-flavored: viability, not optimality), **oracle** (true rule, reference). One vectorized rollout per candidate over all $2^u$ members yields every score *and* the real outcome, since the truth is a class member.
+
+- **The wedge is the unmarked commitment, nothing else.** Committed replicates v1.3 exactly (wedge $0 \to .042 \to .049 \to .066 \to .078 \to .085$ — same numbers, independent implementation path). **wmean's wedge is statistically zero at every $u$** (.002–.005 ± .003): the curse was never about having an imperfect model — it is eliminated, not mitigated, the moment the argmax sees which bits are guesses. (Theorem-grade given the uniform class, stated as P2 before the run; the run validates the mechanism.)
+- **And it pays:** wmean's real-reward regret vs the oracle is **35–60% below** committed's at every $u > 0$ (.014 vs .035 at $u{=}1$; .055 vs .073 at $u{=}5$). Marking guesses is not just epistemically honest — it wins in achieved reward, as Bayes-optimality says it must; the measurement is the size.
+- **The surprise is the pessimist.** wmin is never disappointed (chosen gap $\le 0$ pointwise, down to $-0.30$ at $u{=}5$ — by construction, the truth is in the class) but pays for it in reality: **more regret than the committed gambler** from $u \ge 3$ (.070 vs .057; .080 vs .073 at $u{=}5$). In this setting, guaranteed-never-overpromising costs more real reward than delusional optimism. For the corridor vocabulary that is a sharp note-to-self: worst-case discipline is a *safety* instrument, and it is not free — matching model-based RL's folklore that overdone pessimism underperforms.
+- **Honest scope:** open-loop toy, exact enumerable class. Industrially the class is *not* enumerable — ensembles approximate wmean, pessimism penalties approximate wmin — which is why "mark what the traces actually determine" ([Measurement as Weak Intervention](../../../theory/core/measurement-as-weak-intervention.md)) is an architecture requirement, not a free lunch.
+
+![Marking the guesses](../../tools/inverse_benchmark_wmax_planner.png)
+
 ## Running
 
 ```bash
@@ -96,13 +107,15 @@ python model_exploitation.py             # v1.3: exploitation vs class size (~2 
 python model_exploitation.py --save      # also write the exploitation figure
 python weakness_selector.py              # v1.4: weakness vs simplicity (~3 s)
 python weakness_selector.py --save       # also write the weakness figure
+python wmax_planner.py                   # v1.5: marking the guesses (~40 s)
+python wmax_planner.py --save            # also write the wmax-planner figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 ## v1 roadmap (open)
 
-*(Parts 1–4 — interventions, the family-search floor, the model-exploitation bridge, and the weakness-selector bridge — are done; see above. The items below remain open.)*
+*(Parts 1–5 — interventions, the family-search floor, the model-exploitation bridge, the weakness-selector bridge, and the marked-guess planners — are done; see above. The items below remain open.)*
 
 - **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget). The industrial arena for exactly this is **ARC-AGI**: few-shot trace→generator with unknown family (v1/v2), and since ARC-AGI-3 *interactive* — the field's own watching→perturbing move; winning systems pair a corpus prior proposing candidates with cheap verification, i.e. the wall's shape, exploited.
 - **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.

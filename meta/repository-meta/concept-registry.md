@@ -23,7 +23,7 @@
 
 | Concept | Home | Status | Operationalization / anchor |
 |:---|:---|:---|:---|
-| Inverse-reconstruction benchmark (v0–v1.4) | [lab/benchmarks/inverse-reconstruction/](../../lab/benchmarks/inverse-reconstruction/README.md) | **operationalized** | noise / observability / coverage / interventions / family-search floor / model-exploitation bridge (curse wedge monotone in class size) / weakness-selector bridge (commitment efficiency +2.7 / 0.00 / < −7 by world bias; Bennett's Exp. 1 on our generator) |
+| Inverse-reconstruction benchmark (v0–v1.5) | [lab/benchmarks/inverse-reconstruction/](../../lab/benchmarks/inverse-reconstruction/README.md) | **operationalized** | noise / observability / coverage / interventions / family-search floor / model-exploitation bridge (curse wedge monotone in class size) / weakness-selector bridge (commitment efficiency +2.7 / 0.00 / < −7 by world bias; Bennett's Exp. 1 on our generator) / marked-guess planners (wmean eliminates the wedge and cuts regret 35–60%; the exact pessimist pays *more* real reward than the committed baseline) |
 | Capability loading | [Viable Corridor §7.1, App. C.4/D](../../papers/viable-corridor.md) | demonstrated **in-model** (two independent models) | TEO ODE + agent-ecology ABM; real agents open |
 | Grokking, generator reading | [grokking-phase-transition.md](../../theory/emergence/grokking-phase-transition.md) | hypothesis with strong external anchor | Power 2022; Nanda 2023 (mech-interp executed the inverse) |
 | Provenance depth / verification economy | [Log 017](../../logs/017_provenance-depth-and-the-verification-economy.md) | formalized schema (proposal) | narrative origin: [Entry 15](../../fiction/15_the_exchange_rate.md); C2PA/SBOM siblings |
