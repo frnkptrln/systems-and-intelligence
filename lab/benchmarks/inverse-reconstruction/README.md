@@ -92,7 +92,7 @@ Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 *(Parts 1–3 — interventions, the family-search floor, and the model-exploitation bridge — are done; see above. The items below remain open.)*
 
-- **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget).
+- **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget). The industrial arena for exactly this is **ARC-AGI**: few-shot trace→generator with unknown family (v1/v2), and since ARC-AGI-3 *interactive* — the field's own watching→perturbing move; winning systems pair a corpus prior proposing candidates with cheap verification, i.e. the wall's shape, exploited.
 - **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.
 - **IFS testbed**: recover contractive affine maps from an attractor point cloud (hard even with known family — no time ordering).
 - Cross-method comparison: hand-rolled least squares (v0) vs. SINDy/PySR as external baselines (would add dependencies; deliberately out of v0).
