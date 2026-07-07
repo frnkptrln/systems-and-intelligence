@@ -108,6 +108,16 @@ The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and 
 
 <div class="card" markdown>
 
+### :material-chart-line: The Measured Core
+
+The inverse-reconstruction benchmark (v0–v1.5): the spine's asymmetry as curves. Equivalence classes counted and collapsed, the search wall, Occam's world-dependent payoff, the optimizer's curse — and its cure. Every claim runs in seconds.
+
+[Run the benchmark →](lab/benchmarks/inverse-reconstruction/README.md)
+
+</div>
+
+<div class="card" markdown>
+
 ### :material-file-document: The Papers
 
 *The Viable Corridor* — the flagship formal synthesis (constraint architecture + capability loading; a **working draft**). Its empirical companion is *Quantifying Emergent Utility & Stability in Multi-Agent LLM Ecosystems*.

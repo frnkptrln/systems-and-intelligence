@@ -55,7 +55,7 @@ This repository and its mathematical frameworks (including the $C$-Score, The Pl
 - **Open Science & Open Source:** Academics, researchers, and open-source developers are free to use, modify, and distribute this work. Startups and individuals are encouraged to build upon these simulations.
 - **Permissive Use:** You are free to use this code for both open-source and commercial applications without being required to open-source your own code, as long as the original copyright notice is included.
 
-This ensures that the *Fractal Architecture of Emergence* remains a true open-source public good, fostering an open ecosystem for everyone.
+This ensures that the project remains a true open-source public good, fostering an open ecosystem for everyone.
 
 ---
 
@@ -100,7 +100,7 @@ If you're unsure where new material belongs, see **[`meta/repository-meta/reposi
 | :--- | :--- |
 | **`docs/`** | The curated reading path, MkDocs build resources, and the complete "Online Book". |
 | **`fiction/`** | 🎬 **The Narrative Synthesis**: Hard Sci-Fi "found footage" translating the math into stories. |
-| **`lab/`** | The unified Python ecosystem. Contains the Multi-Paradigm Orchestrator (`orchestration/`), the empirical Agentic Identity Suite (`experiments/`), cognitive stress tests (`benchmarks/`), info-theoretic tools (`data-analysis/`), and reusable primitives (`core/`). |
+| **`lab/`** | The unified Python ecosystem. Contains the Multi-Paradigm Orchestrator (`orchestration/`), the empirical Agentic Identity Suite (`experiments/`), the inverse-reconstruction benchmark and cognitive stress tests (`benchmarks/`), info-theoretic tools (`data-analysis/`), and reusable primitives (`core/`). |
 | **`logs/`** | Architecture logs: applied design notebooks bridging abstract theory and deployment constraints. |
 | **`meta/`** | Reflections on epistemology, ethics, repository governance, and the limits of formal systems and computation. |
 | **`papers/`** | Paper-style synthesis documents with an academic framing and tighter scope. |
@@ -116,6 +116,7 @@ The complete index of simulations, theory essays, fiction stress tests, lab fram
 Entry points by interest:
 
 - **Theory:** [The Generator Question](theory/core/the-generator-question.md) (start here) → [Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md) → [Trace to Generator](theory/emergence/trace-to-generator.md).
+- **Measured core:** [Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md) (v0–v1.5) — the spine's asymmetry as curves: where inversion is cheap and where it walls; equivalence classes counted and collapsed; the search wall; Occam's world-dependent payoff; the optimizer's curse and its cure. Runs in seconds, `numpy` only.
 - **Runnable code:** [Simulation → Theory Map](theory/core/simulation-theory-map.md) lists all 35 simulations with their direction (Forward / Inverse / Both) and the wall they touch.
 - **Lab:** [Agentic Identity Suite](lab/AGENTIC_README.md), [LLM provider layer](lab/providers/README.md), [Identity Persistence (Pstrong)](lab/metrics/persistence_scores.py).
 - **Fiction:** [Narrative dossiers](fiction/README.md) — each entry annotated with the theory claim it stress-tests.
