@@ -242,6 +242,7 @@ A reading path that uses this document as the entry point:
 5. [Grokking: Phase Transition](../emergence/grokking-phase-transition.md) — the clearest empirical demonstration of the inverse direction occurring in a learning system.
 6. [Open Problems](../reference/open-problems.md) — what is not solved. Problems 1, 8, and 11 are most directly the inverse-direction frontier.
 7. [Course Spine: From Rule to Mind](../../book/09_from_rule_to_mind.md) — the operator → iteration → form → boundary → return-path movement that the forward direction instantiates.
+8. [From Trace to World-Binding](from-trace-to-world-binding.md) — this document's consequences folded into one recurring loop (trace → generator → construction → world-coupling → intervention → revision → self-binding); a one-page reader bridge across the notes the question has since generated.
 
 The Emergence Manifesto remains the strongest single statement of the project's claims. This document does not replace it. It sits before it, naming the question those claims are answers to.
 

@@ -9,6 +9,7 @@
 **Related files:**
 
 - ../core/the-generator-question.md
+- ../core/from-trace-to-world-binding.md
 - ../computation/construction-vs-deduction.md
 - ../core/measurement-as-weak-intervention.md
 - ../ai/world-models-and-vla.md

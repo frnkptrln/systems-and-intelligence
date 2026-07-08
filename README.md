@@ -15,7 +15,7 @@
 ## ⚡ Try it live in your browser
 Don't want to install anything? You can experience the core concepts immediately directly in your browser:
 
-- 🧭 **Recommended Reading Path** — the research arc *emergence → optimization → constraint architecture → survivability* (full map: **[Canonical Path v2](meta/repository-meta/canonical-path-v2.md)**):
+- 🧭 **Recommended Reading Path** — the research arc *emergence → optimization → constraint architecture → survivability* (full map: **[Canonical Path v2](meta/repository-meta/canonical-path-v2.md)**; the epistemic spine folded into one page: **[From Trace to World-Binding](theory/core/from-trace-to-world-binding.md)**):
   1. **[The Generator Question](theory/core/the-generator-question.md)** — The organizing question. Forward vs. inverse asymmetry. The three walls (P vs. NP, Kolmogorov, Gödel). The foundational assumption.
   2. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md)** — The core claim set (emergence).
   3. **[Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md)** — The hinge: why unconstrained optimization of an emergent system is non-viable, and why capability loads multiple constraints at once.

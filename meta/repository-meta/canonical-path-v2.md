@@ -26,7 +26,7 @@ This document describes the **present canonical path** through the repository. I
 
 Two spines run through this project, sharing one root:
 
-- **The Generator Question** (the *epistemic* spine): emergence is cheap to run forward (generator → trace) and structurally hard to invert (trace → generator). This organizes the project's work on recoverability, identity, and the three walls (P vs. NP, Kolmogorov, Gödel).
+- **The Generator Question** (the *epistemic* spine): emergence is cheap to run forward (generator → trace) and structurally hard to invert (trace → generator). This organizes the project's work on recoverability, identity, and the three walls (P vs. NP, Kolmogorov, Gödel). Its phases are folded into one recurring loop in [From Trace to World-Binding](../../theory/core/from-trace-to-world-binding.md) — the reader bridge this document is for the arc below.
 - **The Viability Arc** (the *dynamical* spine, this document): *what happens to an emergent optimizing system over time, and what does it take to keep it alive?* This runs **emergence → optimization → constraint architecture → survivability** and terminates in the Viable Corridor paper.
 
 Both begin at emergence. One asks whether a system can *recover its generator*; the other asks whether a system can *survive its own optimization*. This document maps the second.

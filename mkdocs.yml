@@ -30,6 +30,7 @@ nav:
       - "Core Theory":
           - Theory Overview: theory/README.md
           - The Generator Question: theory/core/the-generator-question.md
+          - From Trace to World-Binding (the loop): theory/core/from-trace-to-world-binding.md
           - Trace to Generator (essay): theory/emergence/trace-to-generator.md
           - The Emergence Manifesto: theory/core/emergence-manifesto-v1.3.md
           - Thermodynamics of Orchestration (TEO): theory/core/thermodynamics-of-orchestration.md
