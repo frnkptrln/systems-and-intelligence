@@ -75,6 +75,8 @@ Benchmark [v1.3](../../lab/benchmarks/inverse-reconstruction/README.md) supplies
 - **Not** a general theory of observation, and no claims about quantum measurement — the contrast in regime 2 is an exclusion, not a use.
 - **Not** novelty over Goodhart, Campbell, Lucas, or the performativity literature. The contribution is the wiring into the equivalence-class vocabulary, nothing more.
 - **Not** that regime-4 damage is established by this project's own evidence. The fiction dramatizes it; the history is read through a frame; the field test is pre-registered and pending (Log 018, H3).
+
+A reflexive instance worth flagging: [Machine Consciousness as Generator Coherence](../identity/machine-consciousness-as-generator-coherence.md) reads consciousness-as-coherence-work as regime 3 *turned inward* — attention as a system running divergence queries against its own partial models — and treats "no behavioral test for consciousness" as coupling-is-not-identification applied to the one system doing the asking.
 - **Not** that passive measurement is worthless. It determines the class invariants — everything trace-consistent generators *share* ([invariance note](invariance-and-identity.md)). It just cannot buy what only a divergence query sells.
 
 ## The rule
