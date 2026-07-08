@@ -4,7 +4,7 @@
 
 **Status:** Working Hypothesis
 
-**Scope:** This document does not claim to solve consciousness. It defines the architectural question that fits this repository — and, in §"The Generator-Question Reading", the single bridge from the project's spine to the subject. It is the repository's **one** consciousness node; per the anti-entropy rules, consciousness-adjacent material elsewhere should link here rather than duplicate. Its companion is [Machine Consciousness as Generator Coherence](machine-consciousness-as-generator-coherence.md) — this note is the *architecture* (global availability, the four layers); the companion is the *spine reading* (consciousness as a mode of the generator, and why no behavioral test can reach it).
+**Scope:** This document does not claim to solve consciousness. It defines the architectural question that fits this repository — and, in §"The Generator-Question Reading", the single bridge from the project's spine to the subject. It is the repository's **architectural** consciousness node; per the anti-entropy rules, consciousness-adjacent material elsewhere should link here (or to the companion below) rather than duplicate. Its companion is [Machine Consciousness as Generator Coherence](machine-consciousness-as-generator-coherence.md) — this note is the *architecture* (global availability, the four layers); the companion is the *spine reading* (consciousness as a mode of the generator, and why no behavioral test can reach it).
 
 ---
 
