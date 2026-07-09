@@ -114,6 +114,18 @@ This refines the claim in [Construction vs. Deduction](../../../theory/computati
 
 ![Ensemble size](../../tools/inverse_benchmark_ensemble_size.png)
 
+## v1.8 — composition: the empty class as a certificate (run)
+
+[`composition.py`](composition.py) moves the information-ladder note's [SPECULATIVE] composition bridge toward the lab. Two elementary CAs, XOR-coupled at a fixed random site mask of density $g$; the observer sees **one stream only** and asks which single elementary rule produced it. "Higher-order generator" gets a benchmark-native meaning: a generator whose trace **empties the equivalence class** of the component family — the same 3-cell pattern mapping to two successors means no elementary rule is consistent, and an empty class is the trace's certificate that the generator lives above the family being searched.
+
+- **The certificate is cheap where composition is transmitted:** for observers whose rule reads its center bit (110, 30), one live coupled site empties the class within a **median 1 step** at every $g \ge 0.02$ (100% of seeds). Detection is coverage-limited, not possibility-limited.
+- **Two ways composition stays invisible — and only one was predicted.** *Structural:* rule 90 is $L \oplus R$, **center-blind**, so XOR-coupling the center bit is invisible to it at **every** density (empty-rate 0/20 throughout) — the composite is real and active, the phenotype is still exactly a lone rule 90. Visibility is a property of whether the observed generator *reads the coupled channel*, not of coupling strength. *Transient:* the "dying symbiont" (ruleB = 0) does **not** stay hidden — its random initial condition fires the coupling once before it dies, so the empty-rate *rises* with $g$ (0.30 → 1.00). A prepared zero-IC symbiont would be permanently invisible; a merely dying one is not.
+- **The wall is the level jump, not the fit:** with the coupled-pair family and mask known, level-2 tabulation recovers every exercised rule bit **exactly** (accuracy 1.0, coverage 8/8, all $g$). The cost of composition is the description-size jump the observer must accept once level 1 certifies empty — the [family-search floor](family_search.py) (v1.2), one level up.
+
+This is a pair with a fixed mask, not an ecology: nothing here composes spontaneously, persists differentially, or is selected. The population version — where composition and dissolution are continuous, and the question becomes *when a web of functions starts maintaining itself as a whole* ("life is an ecology of functions", Agüera y Arcas) — is the open v1 item below.
+
+![Composition](../../tools/inverse_benchmark_composition.png)
+
 ## Running
 
 ```bash
@@ -133,6 +145,8 @@ python closed_loop.py                    # v1.6: the closed loop (~30 s)
 python closed_loop.py --save             # also write the closed-loop figure
 python ensemble_size.py                  # v1.7: ensemble size vs the curse (~9 s)
 python ensemble_size.py --save           # also write the ensemble figure
+python composition.py                    # v1.8: composition, the empty class (~15 s)
+python composition.py --save             # also write the composition figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
@@ -141,6 +155,7 @@ Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 *(Parts 1–7 — interventions, the family-search floor, the model-exploitation bridge, the weakness-selector bridge, the marked-guess planners, the closed loop, and the ensemble-size sweep — are done; see above. The items below remain open.)*
 
+- **From pair to ecology (v1.8 → v1.9)**: composition.py is a fixed-mask pair. The population version — a soup of coupled generators where composition and dissolution are continuous, and the measured question is *when a web of functions begins to maintain itself as a whole* (the symbiogenesis / "life is an ecology of functions" reading) — is open. The natural instrument is the empty-class certificate applied across a self-organizing population rather than a designed pair; the BFF/computational-life family is the external anchor.
 - **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget). The industrial arena for exactly this is **ARC-AGI**: few-shot trace→generator with unknown family (v1/v2), and since ARC-AGI-3 *interactive* — the field's own watching→perturbing move; winning systems pair a corpus prior proposing candidates with cheap verification, i.e. the wall's shape, exploited.
 - **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.
 - **IFS testbed**: recover contractive affine maps from an attractor point cloud (hard even with known family — no time ordering).
