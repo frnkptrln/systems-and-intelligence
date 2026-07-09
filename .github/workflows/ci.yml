@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: pip install numpy pytest
+      - run: pip install numpy networkx pytest
       - name: Unit tests + benchmark headline regression
         run: pytest tests/ -q
       - name: Internal link validation
