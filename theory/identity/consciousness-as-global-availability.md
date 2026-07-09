@@ -116,6 +116,8 @@ Failure condition:
 
 If broadcast and chord architectures produce identical Δ-Kohärenz and Identity Persistence under perturbation, then the Chord vs. Arpeggio distinction needs to be weakened.
 
+**Status: built and run** — [`lab/experiments/exp5_availability_dissociation.py`](../../lab/experiments/exp5_availability_dissociation.py) (toy scale, 10 seeds). The failure condition was *not* triggered in conjunction: broadcast and chord separate clearly on behavior under identical perturbation (veto violations 0.59 vs 0.03; role stability 0.30 vs 0.69) and on IP. But its Δ-Kohärenz half *did* come out equal — the metric classified all three architectures 'noise' on every seed and carried no binding signal. Two further measured facts worth keeping: a chord implemented as a fast *sequential* pass within one step still leaked 12% of temptations (co-instantiation must mean joint satisfaction, not ordering), and the module-reset probe dissolved under its own twin control (the apparent recovery gap was a world-drift confound). The prediction-vs-outcome accounting is in the module docstring; the open follow-up is a Δ-K operationalization that can see binding structure at all, and a harsher perturbation protocol.
+
 ---
 
 ## Relation to Generative Form

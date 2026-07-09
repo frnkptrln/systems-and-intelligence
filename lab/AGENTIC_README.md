@@ -92,6 +92,19 @@ The scientifically interesting output:
 
 ---
 
+### Experiment 5: Availability/Binding Dissociation
+*"Do the suite's instruments tell organizational bindings apart — private modules vs. broadcast workspace vs. co-instantiated chord?"*
+
+```bash
+python experiments/exp5_availability_dissociation.py
+```
+
+The three-architecture probe pre-registered in [Consciousness as Global Availability §Testable Direction](../theory/identity/consciousness-as-global-availability.md): identical world, identical perturbation schedule (temptations, role injections, module reset), only the binding differs. Measures organizational dissociation only — no consciousness claims.
+
+First result (10 seeds): the dissociation is carried by behavior (veto violations 0.74 / 0.59 / 0.03; role stability 0.00 / 0.30 / 0.69) and by IP (its ordering is designed, not discovered) — while **Δ-Kohärenz carries no binding signal at all** (all three architectures classify 'noise' on every seed). The full prediction-vs-outcome accounting, including the two design defects the first run exposed, lives in the module docstring.
+
+---
+
 ## Extended SII Dashboard (4-Axis Radar)
 
 ```bash
