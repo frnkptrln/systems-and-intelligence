@@ -13,7 +13,7 @@ into a single, beautifully formatted PDF document.
 """
 
 def generate_pdf():
-    book_dir = "docs/book"
+    book_dir = "book"
     output_filename = "systems-and-intelligence-book.pdf"
     
     # Ensure chapters are read in order

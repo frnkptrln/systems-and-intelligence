@@ -21,7 +21,7 @@ Don't want to install anything? You can experience the core concepts immediately
   3. **[Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md)** — The hinge: why unconstrained optimization of an emergent system is non-viable, and why capability loads multiple constraints at once.
   4. **[TEO Framework](theory/teo-framework/README.md)** — The constraint-architecture model.
   5. **[The Viable Corridor](papers/viable-corridor.md)** — The formal synthesis: constraint architecture + capability loading (a stabilized *node*, not the whole repo).
-  6. **[From Rule to Mind](docs/book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
+  6. **[From Rule to Mind](book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
   7. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
 - 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
 - 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The curated online book: the reader-first path through the theory. (A PDF snapshot lives at [`systems-and-intelligence-book.pdf`](systems-and-intelligence-book.pdf).)
@@ -87,7 +87,7 @@ We believe intellectual honesty about these distinctions makes the project *more
 
 To keep this repository coherent while it grows, use this practical split:
 
-- **`docs/book/`** = curated reading path ("online book")
+- **`book/`** = curated reading path ("online book")
 - **`papers/` + `docs/papers/`** = publication-style outputs (compact, citable, less narrative)
 - **`theory/`** = formal and semi-formal theory essays
 - **`logs/`** = architectural journals (applied, speculative system design notes)

@@ -27,7 +27,7 @@ Use this folder when a text is:
 
 Use other folders when:
 - it is a formal argument/derivation → `theory/`
-- it is a linear narrative chapter → `docs/book/`
+- it is a linear narrative chapter → `book/`
 - it is publication packaging → `papers/`
 - it is narrative scenario simulation-through-story → `fiction/`
 

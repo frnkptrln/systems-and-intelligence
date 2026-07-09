@@ -16,7 +16,7 @@ This claim is challengeable: if unbounded optimization can remain stable without
 
 ## 1) Content Lanes (What goes where)
 
-### A. `docs/book/` → Curated narrative
+### A. `book/` → Curated narrative
 Use this for the **reader-first canonical path**.  
 Characteristics:
 - pedagogical ordering
@@ -86,7 +86,7 @@ These files assert or compress claims about reality and therefore need clearer e
 - `theory/teo-framework/`
 - `theory/core/simulation-theory-map.md`
 - `theory/reference/open-problems.md`
-- `docs/book/`
+- `book/`
 - `papers/` and `docs/papers/`
 
 When a document moves from Thinking Space to Synthesis, it should gain explicit claims, definitions, links to proof artifacts, and a statement of what would count against it.
@@ -102,7 +102,7 @@ Recommended conceptual architecture:
 | Conceptual layer | Current location | Role |
 |:---|:---|:---|
 | Entry point | `README.md`, `docs/index.md` | Short orientation and one reading path |
-| Core claims | `theory/` (sub-dirs: `core/`, `veto/`, `emergence/`, `identity/`, `symbiotic/`, `narrative/`, `reference/`, `teo-framework/`, `human-organism-silicon-age/`), `papers/`, `docs/book/` | Synthesis layer and publication packaging |
+| Core claims | `theory/` (sub-dirs: `core/`, `veto/`, `emergence/`, `identity/`, `symbiotic/`, `narrative/`, `reference/`, `teo-framework/`, `human-organism-silicon-age/`), `papers/`, `book/` | Synthesis layer and publication packaging |
 | Models | `simulation-models/`, `lab/core/`, `lab/orchestration/` | Executable demonstrations and reusable primitives |
 | Lab | `logs/`, `fiction/`, `lab/benchmarks/`, `lab/experiments/`, `lab/tools/`, `lab/data-analysis/` | Experiments, stress tests, applied designs, narrative probes |
 | Meta | `meta/` | Information architecture, epistemic notes, maintenance rules |
@@ -170,7 +170,7 @@ When adding a new artifact, ask:
 2. **Is this primarily a formal argument?**  
    → put in `theory/`.
 3. **Is this optimized for linear reading?**  
-   → put in `docs/book/`.
+   → put in `book/`.
 4. **Is this publication-facing and compact?**  
    → put in `papers/`.
 5. **Is this an applied design notebook with open decisions?**  
