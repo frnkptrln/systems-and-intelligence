@@ -1,8 +1,8 @@
 # 🧠 systems-and-intelligence
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Simulations](https://img.shields.io/badge/simulations-running-green)](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
-[![Docs](https://img.shields.io/badge/docs-Interactive_Book-blue)](https://frnkptrln.github.io/systems-and-intelligence)
+[![CI](https://github.com/frnkptrln/systems-and-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/frnkptrln/systems-and-intelligence/actions/workflows/ci.yml)
+[![Docs](https://github.com/frnkptrln/systems-and-intelligence/actions/workflows/deploy-docs.yml/badge.svg)](https://frnkptrln.github.io/systems-and-intelligence)
 
 <div align="center">
   <h3><i>A research notebook on emergence, inverse reconstruction, and viability constraints in intelligent systems</i></h3>
@@ -42,9 +42,10 @@ Each folder represents a different perspective on these themes.
 
 ---
 
-## 📜 Scientific Publications
-To read the formal, academic synthesis of multiple frameworks within this repository (including the mathematical deduction of emergent utility and Multi-Paradigm Orchestration), refer to the draft whitepaper:
-- **[Quantifying Emergent Utility & Stability in Multi-Agent LLM Ecosystems](papers/quantifying-emergent-utility-in-llms.md)**
+## 📜 Papers (working drafts)
+Two paper-style syntheses live in `papers/`. Neither is published or externally reviewed; both carry explicit status blocks:
+- **[The Viable Corridor](papers/viable-corridor.md)** — the current synthesis (v0.8): constraint architecture + capability loading, with proofs, predictions, and stated limitations.
+- **[Quantifying Emergent Utility & Stability in Multi-Agent LLM Ecosystems](papers/quantifying-emergent-utility-in-llms.md)** — the project's early statement (SII, C-Score, orchestration). Predates the current epistemic line and awaits revision as the empirical companion once the Agentic Identity Suite runs on real models; see the status note in the file.
 
 ---
 
