@@ -73,6 +73,7 @@ nav:
               - Black Hole Thermodynamics: theory/veto/black-hole-thermodynamics-of-agi.md
           - "Computation & AI":
               - P vs NP as Generator Search: theory/computation/p-vs-np-as-generator-search.md
+              - Static Information, Living Process: theory/computation/static-information-and-living-process.md
               - LLMs as Probabilistic Automata: theory/ai/llms-as-probabilistic-automata.md
           - "Narrative Theory":
               - Tensor Logic Mini Paper: theory/narrative/tensor-logic-mini-paper.en.md

@@ -11,6 +11,7 @@
 - theory/emergence/trace-to-generator.md
 - theory/emergence/generative-form-systems.md
 - theory/core/mathematical-axioms.md
+- theory/computation/static-information-and-living-process.md (the information ladder this note is one rung of)
 
 **Failure conditions:**
 
