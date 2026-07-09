@@ -16,6 +16,8 @@ Consciousness should be treated here as a candidate regime of global availabilit
 
 This is deliberately narrower than "subjective experience." It gives the repo something it can work with: architecture, thresholds, measurement, and failure conditions.
 
+**Bounded, not total** `[HYPOTHESIZED]` — consciousness-like organization, on this reading, is not totality of integration. It is *bounded* integration strong enough to be affected, to remember, to predict, to act, and to revise its own generator through world contact. The bound is constitutive: a perspective is made by its limits (position, history, substrate, memory, vulnerability, possible action), and an integration that dissolves those limits may yield a map or an aggregate — but no longer a standpoint. Two consequences the repo commits to: "more integration" is not monotonically "more consciousness-like," and total perspective-integration would not be a super-perspective but the end of perspectivity. The placement-rule version lives in the [loop note](../core/from-trace-to-world-binding.md) (§the limit of perspective integration, §collective attention).
+
 ---
 
 ## Why This Fits
