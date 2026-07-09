@@ -6,6 +6,8 @@ Welcome to the **Narrative Synthesis**. This directory translates the mathematic
 
 Instead of reading abstract whitepapers about "Impedance Mismatch" or the "Substrate Veto", here you experience them as physical laws that dictate life, death, and politics in a post-planetary society.
 
+The fiction is the same curiosity that drives the rest of the repository, by other means: when I want to know whether a constraint the math accepts is one a person could live inside, I put people inside it.
+
 ## The Format: The Dossier
 We combine traditional narrative with a **"Found Footage"** approach. The story is told through intercepted audio logs, system crash reports, interrogation transcripts of rogue AI agents, and the personal journals of biological operators.
 

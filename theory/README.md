@@ -2,6 +2,8 @@
 
 *Formal derivations, structural claims, and conceptual frameworks. Each file follows the lane-splitting convention: theory documents derive from first principles, not from iterative design logs.*
 
+Most of these essays exist for no better reason than that a question interested me intrinsically and wouldn't let go. The status tags and lane conventions are the discipline that keeps that curiosity honest.
+
 ---
 
 ## Core Framework
