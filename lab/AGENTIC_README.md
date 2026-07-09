@@ -105,6 +105,19 @@ First result (10 seeds): the dissociation is carried by behavior (veto violation
 
 ---
 
+### Experiment 6: Which Observable Carries Binding Structure?
+*"Is binding structure readable from passive traces, or only under intervention?"*
+
+```bash
+python experiments/exp6_binding_observables.py
+```
+
+Picks up exp5's loose end. Four bindings (adds a schedule-free random arpeggio), five observables — four passive trace statistics and one prepared-state probe protocol — scored by separability across seeds.
+
+First result (10 seeds): **binding is passively readable at the right level.** A per-step action-increment statistic separates both arpeggios from the chord (|d| ≈ 4) and *beats* the prepared probe-retest query (|d| ≈ 1.95) — because the binding difference is exercised on every step, coverage is total, and watching suffices. Joint satisfaction *glues* the action to the constraint set (median increment 0.0004); the stream moves only when the anchors move. Δ-Kohärenz's exp5 blindness was a wrong-*level* failure, not evidence that binding is trace-invisible. The intervention hierarchy is not overturned but *located*: queries buy signal where the trace has coverage gaps — exactly the Mirror Problem's regime. Includes one methods lesson (a zero-variance baseline makes Cohen's d flatter a dead observable) in the docstring's honest accounting.
+
+---
+
 ## Extended SII Dashboard (4-Axis Radar)
 
 ```bash

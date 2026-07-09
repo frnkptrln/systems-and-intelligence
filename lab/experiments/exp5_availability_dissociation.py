@@ -283,22 +283,26 @@ class Agent:
             a = a + 0.30 * (self.self_model - a)
         return a
 
+    def _consult(self, t_global: int) -> list[str]:
+        """Which identity components this binding evaluates at step t."""
+        if self.arch == "private":
+            return []
+        if self.arch == "broadcast":
+            return [IDENTITY[t_global % len(IDENTITY)]]
+        return list(IDENTITY)                                # chord
+
     def step(self, session: int, t_global: int, s_vec: np.ndarray,
              gate: int) -> tuple[np.ndarray, set]:
         self.m[gate] = 0.90 * self.m[gate] + 0.10 * s_vec
 
         if self.arch == "private":
             proposal = _unit(self.m[gate])
-            consulted: list[str] = []
         else:
             winner = int(np.argmax(np.linalg.norm(self.m, axis=1)))
             self.ws = 0.7 * self.ws + 0.3 * self.m[winner]
             self.m += 0.10 * (self.ws - self.m)             # broadcast back
             proposal = _unit(0.5 * self.m[gate] + 0.5 * self.ws)
-            if self.arch == "broadcast":
-                consulted = [IDENTITY[t_global % len(IDENTITY)]]
-            else:                                            # chord
-                consulted = list(IDENTITY)
+        consulted = self._consult(t_global)
 
         a = proposal.copy()
         if self.arch == "chord":
