@@ -1,7 +1,7 @@
 # Repository as Thought System
 
 Status: Meta Orientation  
-Scope: This document uses the repository's own concepts to improve navigation. It is not a claim that the repository is alive, conscious, or agentic.
+Scope: This document uses the repository's own concepts to improve navigation. It is not a claim that the repository is alive, conscious, or agentic. The theory-side statement of that boundary — shared cognitive workspace, not shared consciousness — lives in the [loop note](../../theory/core/from-trace-to-world-binding.md).
 
 ---
 
