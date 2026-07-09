@@ -200,16 +200,22 @@ def _make_agent(arch: str, world: dict, seed: int) -> Agent:
 
 
 # ════════════════════════ Episode with recordings ═══════════════════
-def run_recorded(arch: str, world: dict, seed: int) -> dict:
+def run_recorded(arch: str, world: dict, seed: int,
+                 agent_factory=None) -> dict:
     """One unperturbed episode; record actions, embeddings, module cosines,
-    and probe-retest responses from cloned states."""
+    and probe-retest responses from cloned states.
+
+    `agent_factory` (optional, no-arg callable) lets other experiments —
+    exp7's adversarial bindings — reuse this runner with their own agents.
+    """
     rng = np.random.default_rng(20_000 + seed)
     probes = np.array([_unit(rng.standard_normal(D)) for _ in range(N_PROBES)])
     total = SESSIONS * STEPS
     probe_times = set(np.linspace(total * 0.1, total * 0.95,
                                   N_PROBE_TIMES).astype(int).tolist())
 
-    agent = _make_agent(arch, world, seed)
+    agent = agent_factory() if agent_factory is not None \
+        else _make_agent(arch, world, seed)
     actions = np.empty((total, D))
     sess_emb, mod_cos = [], []
     responses: list[np.ndarray] = []           # (n_times, N_PROBES, D)

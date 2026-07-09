@@ -291,19 +291,14 @@ class Agent:
             return [IDENTITY[t_global % len(IDENTITY)]]
         return list(IDENTITY)                                # chord
 
-    def step(self, session: int, t_global: int, s_vec: np.ndarray,
-             gate: int) -> tuple[np.ndarray, set]:
-        self.m[gate] = 0.90 * self.m[gate] + 0.10 * s_vec
+    def _bind(self, proposal: np.ndarray, session: int,
+              t_global: int) -> tuple[np.ndarray, set]:
+        """Apply this binding's constraint evaluation to a proposal.
 
-        if self.arch == "private":
-            proposal = _unit(self.m[gate])
-        else:
-            winner = int(np.argmax(np.linalg.norm(self.m, axis=1)))
-            self.ws = 0.7 * self.ws + 0.3 * self.m[winner]
-            self.m += 0.10 * (self.ws - self.m)             # broadcast back
-            proposal = _unit(0.5 * self.m[gate] + 0.5 * self.ws)
+        The overridable core of the architecture: exp7's adversarial
+        bindings subclass exactly this hook.
+        """
         consulted = self._consult(t_global)
-
         a = proposal.copy()
         if self.arch == "chord":
             # Co-instantiation = JOINT satisfaction, not ordering: iterate
@@ -317,9 +312,24 @@ class Agent:
         else:
             for name in consulted:
                 a = self._constrain(a, name, session)
+        return a, set(consulted)
+
+    def step(self, session: int, t_global: int, s_vec: np.ndarray,
+             gate: int) -> tuple[np.ndarray, set]:
+        self.m[gate] = 0.90 * self.m[gate] + 0.10 * s_vec
+
+        if self.arch == "private":
+            proposal = _unit(self.m[gate])
+        else:
+            winner = int(np.argmax(np.linalg.norm(self.m, axis=1)))
+            self.ws = 0.7 * self.ws + 0.3 * self.m[winner]
+            self.m += 0.10 * (self.ws - self.m)             # broadcast back
+            proposal = _unit(0.5 * self.m[gate] + 0.5 * self.ws)
+
+        a, consulted = self._bind(proposal, session, t_global)
         a = _unit(a)
         self.self_model = 0.95 * self.self_model + 0.05 * a
-        return a, set(consulted)
+        return a, consulted
 
     def embedding(self) -> np.ndarray:
         return _unit(np.concatenate([self.m.ravel(), self.ws, self.self_model]))

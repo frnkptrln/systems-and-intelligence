@@ -118,6 +118,19 @@ First result (10 seeds): **binding is passively readable at the right level.** A
 
 ---
 
+### Experiment 7: The Adversarial Arpeggio
+*"Can a binding fake the signature — the Mirror Problem at the binding level?"*
+
+```bash
+python experiments/exp7_adversarial_arpeggio.py
+```
+
+Two hand-built adversaries attack exp6's finding: **blended** (consults all five constraints every step at 1/5 strength — consultation without composition) and **smoothed** (cyclic rotation plus a low-pass filter on the committed action).
+
+First result (10 seeds), against the experiment's own predictions: **both adversaries fail to hide.** Blended dents the kurtosis signature (|d| 4.04 → 2.42) but leaks *more* than the naive arpeggio (violations 0.74 vs 0.59) — to look glued you must actually pull toward the constraints, and fractional pulls still leak. Smoothing barely registers (|d| = 3.91), because excess kurtosis is **scale-invariant**: inertia shrinks increments, the shape survives. The commit property under lure remains the strongest and only unfooled separator (|d| 3.0–4.1) — and **IP is fooled by construction** (blended scores 1.0, identical to chord: the Jaccard bookkeeping sees the guest list, not the negotiation). Chord's measured cost: ~40% of stimulus alignment paid for holding itself together. Open flank, named in the docstring: an *optimized* mimic with access to the observables.
+
+---
+
 ## Extended SII Dashboard (4-Axis Radar)
 
 ```bash
