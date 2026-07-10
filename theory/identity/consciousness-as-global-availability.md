@@ -158,3 +158,22 @@ Three things make this more than wordplay, and one thing keeps it honest:
 
 Where this sits in the [layer hierarchy](../../meta/repository-meta/canonical-path-v2.md): inside the **identity layer**, as its boundary case toward viability — not a new spine, not a new layer, and never a result. What happens, epistemically, when the loop's binding is *perturbed* — relaxed priors, untagged thoughts, the forced change of basis — has its own note: [Psychedelics as Perturbation](psychedelics-as-perturbation.md).
 
+---
+
+## On Levels: Reflexive Depth, Not Degrees of Experience
+
+*Added 2026-07; builds on point 4 above.*
+
+"Levels of consciousness" usually conflates four axes: **arousal** (the clinical scale, coma to wakefulness), **access** (what is globally available), **self-modeling** (what the system can take as object), and **phenomenal fullness** (how much it is like something). This node can speak to the middle two; the fourth stays under the honest stop above. And even on the middle two, a naive monotone ladder fails twice over: boundedness is constitutive (there is no summit where total integration would be maximal — §Bounded, not total), and a completed self-state is no achievement (point 4: convergence is not a success signal).
+
+What survives is a ladder of a different shape — not *amounts* of anything, but **iterations of one operator**. Kegan's subject-object theory (*The Evolving Self*, 1982) describes human development as repeated applications of a single move: what was *subject* (the lens looked through — embedded, invisible) becomes *object* (something looked at, revisable, owned). In this node's vocabulary that move is exactly one turn of the self-reconstruction loop — trace→generator run on one's own previous organizing principle, whose reconstruction is then bound into a wider generator. "Perception of the perception" is the [loop note's](../core/from-trace-to-world-binding.md) nesting sentence, applied to development. Stages, on this reading, are **reflexive depth** — how many times the move has executed — not degrees of experience. `[HYPOTHESIZED]` as a mapping; Kegan's own empirics are interview-grade (the subject-object interview), an anchor, not a measurement.
+
+Four consequences fall out of the repository's machinery, and each matches what Kegan could only observe:
+
+- **No top.** By Wall 3 the objectifying system is never object to itself: every stage installs a new invisible subject. The ladder's open end is structural, not empirical.
+- **Transitions are perturbation-driven.** At rest a system is maximally opaque to itself (the intervention result, reflexive), so a stage cannot be left by introspection alone. Kegan's "optimal conflict" is the storm rather than the yard test — and his "holding environment" is [Entry 18's](../../fiction/18_the_village_in_the_snow.md) village: the surround that acts well while the transition's riddle stays open.
+- **Each level costs more.** Every iteration must hold the whole previous system as object — the description-size jump of the [composition benchmark](../../lab/benchmarks/inverse-reconstruction/composition.py), applied reflexively. This predicts stages become rarer with height; that is Kegan's observed gradient (most adults between his stages 3 and 4).
+- **Transitions are losses.** The old subject is not deleted; it is demoted from generator to object — and under the identity reduction it *was* the self. What must survive is the invariant across the re-basing; [Psychedelics as Perturbation](psychedelics-as-perturbation.md) treats the forced version.
+
+The near-term toy is one sentence: the Three-Layer agent executes the move once (Layer 3 is a self-model inside the policy); a model *of that modeling* would be depth two, and the measurable question — does depth 2 change perturbation response beyond depth 1? — carries an honest falsification edge. Unbuilt.
+
