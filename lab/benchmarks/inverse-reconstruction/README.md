@@ -1,4 +1,4 @@
-# Inverse-Reconstruction Benchmark (v0–v1.9) — Trace → Generator, Measured
+# Inverse-Reconstruction Benchmark (v0–v1.10) — Trace → Generator, Measured
 
 *The first runnable artifact on the inverse side of the project's spine: given N steps of trace, reconstruct the generator — with noise, observability, and coverage as dials.*
 
@@ -139,6 +139,25 @@ The useful result is negative and narrowing: **substitutive interdependence is n
 
 *The committed v1.9 figure predates this interpretive calibration. Re-run `co_stabilization.py --save` to regenerate it with the corrected labels; the numerical data are unchanged.*
 
+## v1.10 — redundant mutual support under a matched budget (run)
+
+[`co_stabilization_redundancy.py`](co_stabilization_redundancy.py) follows the v1.9 boundary result with the discriminating counterfactual it demanded. Every active node has the same repair budget (B). **Coexistence** spends it locally; **substitution** reserves a fixed share for neighbors and thereby reduces local capacity; **redundancy** preserves local priority and routes only otherwise-unused capacity. Transfer is lossy, total draw is audited against (N B), and every architecture sees the same shock traces. The preregistered candidate criterion asks whether redundancy beats matched coexistence under sparse shocks across size, topology, viability threshold, transfer efficiency, and repair-budget sweeps; knockout dependency and common-mode shocks are reported separately.
+
+Headline case: (N=32), small-world graph, threshold (0.70), 20 seeds.
+
+| Architecture | Independent viability | Correlated viability | KO-1 cost | KO-2 cost | Local recovery |
+|---|---:|---:|---:|---:|---:|
+| coexistence | 0.933 | 0.992 | 0.000 | 0.000 | 7.0 steps |
+| substitution | 0.993 | 0.981 | 0.003 | 0.005 | 5.5 steps |
+| redundancy | **0.999** | 0.992 | 0.000 | 0.001 | **4.6 steps** |
+
+- **The candidate criterion is supported, narrowly.** Redundancy beats coexistence in **100% of 18** (N)/topology/threshold cells; median independent-shock gain is (+0.0543), with maximum budget ratio exactly (1.000000). Setting transfer efficiency to zero makes redundancy identical to coexistence, so the gain is causally attributable to the routed spare capacity.
+- **The common-mode limit is sharp.** Median gain under correlated shocks is (+0.0000): when all nodes are damaged together, there are no healthy donors with spare capacity.
+- **One preregistered prediction is falsified.** Substitution also beats coexistence under independent shocks in every cell. Pooling alone helps when damage is sparse. Its cost appears under common-mode damage and knockout; the post-run diagnostic still has redundancy beating substitution in every cell, median (+0.0129).
+- **The result is not a parameter-point artifact.** Redundancy gain stays positive for transfer efficiency (0.40\ldots1.00) ((+0.0602\ldots+0.0657)) and (B\in\{0.08,0.12,0.16\}) ((+0.1343,+0.0652,+0.0377)).
+
+This operationalizes one **designed, budget-matched mechanism of functional mutual support**: healthy nodes' spare capacity improves collective viability under sparse shocks without requiring keystone fragility. It does **not** establish spontaneous ecology, metabolism, life, or a general self-maintenance threshold. The next level is endogenous: populations must build, retain, and dissolve the coupling structure rather than receive it from the experimenter.
+
 ## Running
 
 ```bash
@@ -162,15 +181,17 @@ python composition.py                    # v1.8: composition, the empty class (~
 python composition.py --save             # also write the composition figure
 python co_stabilization.py               # v1.9: co-stabilization, the knockout (~5 s)
 python co_stabilization.py --save        # also write the co-stabilization figure
+python co_stabilization_redundancy.py      # v1.10: matched-budget redundancy (~25 s)
+python co_stabilization_redundancy.py --save # also write the redundancy figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 ## Current roadmap (open)
 
-*(Parts 1–8 — interventions, the family-search floor, model exploitation, weakness vs. simplicity, marked-guess planning, the closed loop, the ensemble sweep, and composition — are done; see above. The items below remain open.)*
+*(The benchmark sequence through v1.10 is run and documented above. The items below remain open.)*
 
-- **Co-stabilization after the v1.9 boundary result**: v1.9 measured super-additive dependency but falsified the resilience prediction, ruling out substitution coupling as a sufficient model of ecological self-maintenance. Next: the **redundancy model** (coupling adds a compensating pathway while self-sufficiency is retained), with sensitivity across topology, $N$, viability cutoff, and coupling resolution; then the **population version**, where coupling is built and broken by the processes themselves.
+- **From designed redundancy to endogenous ecology**: v1.10 establishes a budget-matched mutual-support mechanism under sparse shocks and maps its common-mode boundary. Next: a **population model** in which nodes construct, retain, rewire, and dissolve support links under selection and resource costs; test whether the supportive topology emerges rather than being supplied. Common-mode vulnerability, topology formation, and metabolic resource generation remain open.
 - **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget). The industrial arena for exactly this is **ARC-AGI**: few-shot trace→generator with unknown family (v1/v2), and since ARC-AGI-3 *interactive* — the field's own watching→perturbing move; winning systems pair a corpus prior proposing candidates with cheap verification, i.e. the wall's shape, exploited.
 - **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.
 - **IFS testbed**: recover contractive affine maps from an attractor point cloud (hard even with known family — no time ordering).
