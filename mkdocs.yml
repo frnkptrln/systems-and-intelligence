@@ -1,5 +1,5 @@
 site_name: "Systems & Intelligence"
-site_description: "An Open Thesis — Formalizing the boundary between emergent dynamical systems and artificial intelligence."
+site_description: "A research notebook on emergence, inverse reconstruction, and viability constraints in intelligent systems."
 site_author: "Frank Peterlein"
 site_url: "https://frnkptrln.github.io/systems-and-intelligence"
 repo_url: https://github.com/frnkptrln/systems-and-intelligence
@@ -16,7 +16,7 @@ nav:
   - "Synthesis (Claims)":
       - Overview: synthesis.md
       - Core Claims: meta/repository-meta/core-claims.md
-      - "Book: The Grand Synthesis":
+      - "Book: From Rule to Mind":
           - "Chapter 0: The Generator Question": theory/core/the-generator-question.md
           - Introduction: book/00_introduction.md
           - "Part 1: Mechanics of Emergence": book/01_mechanics_of_emergence.md
