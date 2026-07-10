@@ -158,8 +158,9 @@
 - **v1.2:** family search grows rapidly with description complexity; Occam's payoff is world-dependent.
 - **v1.3–v1.7:** unmarked uncertainty creates an optimizer's-curse wedge; class-aware planners and small ensembles reduce delusion, while only new evidence removes ignorance.
 - **v1.8:** a coupled generator can empty the equivalence class of its component family, certifying a level jump where the coupling is transmitted.
+- **v1.9:** a fixed substitution-coupled ring produces super-additive knockout cascades but becomes less viable under noise. This rules out that first dependency model as sufficient ecological co-stabilization; it does not close the self-maintenance problem.
 
-**Open remainder:** learned searchers and program synthesizers under matched budgets; the time-order-free IFS testbed; external SINDy/PySR baselines; re-simulation divergence; and the v1.9 knockout test for co-stabilization.
+**Open remainder:** learned searchers and program synthesizers under matched budgets; the time-order-free IFS testbed; external SINDy/PySR baselines; re-simulation divergence; a redundancy-based co-stabilization model with parameter/topology sensitivity; and the population version where coupling is endogenous.
 
 **What a solution would look like:** Not one universal reconstructor, but a set of bounded results stating the family, evidence, query access, cost, recoverable equivalence class, and failure region. Learned systems must be compared against the exact toy floor rather than judged by persuasive outputs.
 

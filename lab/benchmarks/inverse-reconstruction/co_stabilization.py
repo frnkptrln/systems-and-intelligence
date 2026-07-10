@@ -1,17 +1,19 @@
 """
 co_stabilization.py
 
-Co-stabilization: when a composite becomes an ecology. (Benchmark v1.9)
+Mutual-dependence knockout toy: a first co-stabilization candidate. (Benchmark v1.9)
 
 THE QUESTION.  v1.8 measured composition — two coupled generators whose
 joint trace empties the single-generator equivalence class. But composition
 is not yet life. The ladder note's synthesis names the missing threshold:
 "a self-maintaining composition of processes whose functions make
 differences for one another" — CO-STABILIZATION, each function holding the
-others in a viable regime. This file measures it, with the operational
-definition the note committed to: co-stabilization is what distinguishes an
-ecology from mere coexistence, and it is measurable only by KNOCKOUT — you
-cannot see it by watching the healthy system.
+others in a viable regime. This file tests a first candidate operationalization: designed mutual
+dependence on a fixed ring. The pre-run proposal treated a super-additive
+knockout cascade as the signature of co-stabilization. The run measured that
+cascade, but its failed noise prediction shows that the model establishes
+dependency fragility, not yet ecological self-maintenance. The original
+predictions remain below; the post-run calibration states what survived.
 
 THE SETUP.  N nodes ("functions"), each carrying a health h_i in [0, 1];
 viable if h_i >= v_thresh. A ring topology (each node coupled to two
@@ -44,7 +46,8 @@ The pair of probes asks whether the same coupling that cascades under
 targeted knockout also buffers distributed noise — a robustness/fragility
 trade. (It does not, in this model, and that is the finding; see RESULT.)
 
-PREDICTIONS (stated before the first run, per the repo's habit):
+PREDICTIONS (stated before the first run; original language retained,
+with interpretation recalibrated in RESULT and POST-RUN CALIBRATION):
   P1  REST is blind: viability = 1.0 for every c. Watching a healthy
       ecology cannot distinguish coexistence from co-stabilization — the
       coverage/Bateson principle's fourth appearance (exp6 bindings, exp7
@@ -65,18 +68,14 @@ PREDICTIONS (stated before the first run, per the repo's habit):
       say which.
 
 RESULT (run 1, N=16 ring, 200 noise trials — console numbers):
-  P1  CONFIRMED: rest viability = 1.00 at EVERY c. Watching a healthy
-      ecology is blind — coexistence (c=0) and near-total mutual
-      dependence (c=0.95) are pixel-identical at rest. Co-stabilization
-      has no passive signature. The coverage principle's fourth
-      appearance (exp6 bindings, exp7 lures, v1.8 symbionts, here
-      dependencies): a dependency that never fires makes no difference.
-  P2  CONFIRMED: the knockout cascade is 0 (purely additive — a knockout
-      costs exactly the one node) for c <= 0.7, then goes super-additive:
-      +2 extra nodes at c=0.8-0.9, +4 at c=0.95, and +15 at c=1.0 — one
-      knockout kills the ENTIRE ring. Knockout is the instrument that
-      rest could not be; the cascade IS the ecology, made visible only by
-      removal.
+  P1  CONFIRMED WITHIN THE CONSTRUCTION: rest viability = 1.00 at every
+      c because s = 1-c makes h=1 a fixed point by design. The homogeneous
+      rest state cannot identify c; this does not establish that ecological
+      co-stabilization generally lacks passive signatures.
+  P2  CONFIRMED AS DEPENDENCY: the knockout cascade is 0 for c <= 0.7,
+      then +2 extra nodes at c=0.8-0.9, +4 at c=0.95, and +15 at c=1.0.
+      Knockout exposes the dependency designed into the rule. A super-
+      additive cascade does not by itself demonstrate self-maintenance.
   P3  FALSIFIED — and the miss is the real finding. The noise viability
       does NOT rise with coupling; it FALLS monotonically (0.977 -> 0.521).
       Mechanism: in this model mutual dependence SUBSTITUTES for self-
@@ -89,30 +88,38 @@ RESULT (run 1, N=16 ring, 200 noise trials — console numbers):
       monoculture, not resilience. Genuine ecological robustness would
       require coupling that ADDS a redundant pathway to self-sufficiency
       rather than replacing it — the redundancy model, named as the
-      follow-up below. What this run establishes cleanly is the invariant
-      that does NOT depend on which coupling: rest-invisibility, and the
-      knockout as the only instrument that reaches it.
-  P4  PARTIALLY CONFIRMED: there is a clear critical ONSET near c ~ 0.75
-      (strictly local knockouts below it, super-additive above), not a
-      gradual rise from c=0 — but above the onset the cascade climbs in
-      steps (2 -> 4 -> 15) rather than one clean jump, with true system-
-      wide collapse only at c=1.0. Sharper than gradual, but a stepped
-      transition, not a single critical point.
+      follow-up below. What survives is narrower: the homogeneous fixed
+      point does not identify c, while knockout separates dependencies
+      among the three probes run here.
+  P4  NOT ESTABLISHED AS A PHASE TRANSITION: the first threshold crossing
+      lies between sampled c=0.7 and c=0.8, then the finite cascade climbs
+      in steps. Its location depends on viability cutoff, ring size,
+      topology, and the coarse c grid. Total collapse at c=1.0 is the
+      boundary where self-sufficiency is exactly zero. Scaling is required
+      before "critical coupling" would be justified.
 
-WHAT THIS DOES NOT SHOW.  A fixed ring with a linear averaging rule is not
-an ecology that composes and dissolves on its own — nothing here is
-selected, nothing reproduces, and the knockout is imposed by the
-experimenter, not by the dynamics. It measures the SIGNATURE of co-
-stabilization (rest-invisibility, the knockout cascade), not its emergence.
-Two named follow-ups: (a) the REDUNDANCY model — coupling that adds a
-compensating pathway to retained self-sufficiency, rather than substituting
-for it (s = 1 - c) — which should show the robust-to-noise / fragile-to-
-knockout trade this run's substitution model did NOT; and (b) the
-population version, where the coupling structure itself is built and broken
-by the processes (the BFF/computational-life reading), one level up again.
-"Viability" here is a threshold on a scalar, not a metabolism. No
-consciousness claims: co-stabilization is the substrate of the self-
-maintenance question, not the self-binding (phase-6) question.
+POST-RUN CALIBRATION. The experiment operationalizes mutual dependence,
+not co-stabilization itself. Super-additive loss shows that other nodes
+depend on the knocked-out node under the chosen update rule. Self-maintenance
+would require the coupled organization to contribute robustness or continued
+viability that the parts lack alone; this substitution model does the
+opposite under noise. The failed P3 therefore rejects this first candidate
+as an ecology in the stronger sense.
+
+WHAT THIS DOES NOT SHOW. A fixed ring with a linear averaging rule is not an
+ecology that composes and dissolves on its own. Nothing is selected or
+reproduces; health is a scalar threshold, not metabolism; and the all-healthy
+rest state is identical by construction. Knockout is the separating probe
+among the three probes run here, not the only conceivable identifying
+intervention. The apparent onset is a threshold crossing in a finite,
+thresholded graph, not an established phase transition.
+
+Two follow-ups remain: (a) a REDUNDANCY model in which coupling adds a
+compensating pathway while self-sufficiency is retained, tested across
+topology, N, viability cutoff, and coupling resolution; and (b) a population
+model where coupling is built and broken by the processes. Until one of
+those shows mutual maintenance rather than designed dependency,
+co-stabilization remains [HYPOTHESIZED]. No consciousness claim follows.
 
 Usage::
 
@@ -120,7 +127,7 @@ Usage::
     python co_stabilization.py --save      # + figure to lab/tools/
 
 Related:
-- theory/computation/static-information-and-living-process.md  (the co-stabilization threshold this measures)
+- theory/computation/static-information-and-living-process.md  (the open threshold this candidate failed to establish)
 - composition.py                                               (v1.8: composition, the pair this generalizes)
 - theory/core/measurement-as-weak-intervention.md              (watching < perturbing, here rest < knockout)
 - papers/viable-corridor.md                                    (capability loading: robustness bought on one axis, paid on another)
@@ -209,7 +216,7 @@ def run_suite() -> dict:
 
 def print_summary(res: dict) -> None:
     print("=" * 72)
-    print("  BENCHMARK v1.9 — co-stabilization: when a composite becomes an ecology")
+    print("  BENCHMARK v1.9 — mutual dependence under knockout (candidate model)")
     print(f"  (N={N} ring, knockout cascade + noise robustness vs coupling c)")
     print("=" * 72)
     print(f"\n  {'c':>6s} {'rest viability':>15s} {'knockout cascade':>18s} "
@@ -218,14 +225,12 @@ def print_summary(res: dict) -> None:
         print(f"  {c:6.2f} {res['rest'][i]:15.2f} {res['cascade'][i]:18.2f} "
               f"{res['noise'][i]:16.3f}")
     print("\n  cascade = mean extra nodes lost per knockout, beyond the 1 removed")
-    print("  (0 = additive / coexistence; large = super-additive / ecology)")
-    print("\n  Reading: rest is blind (all viability 1.0 — watching cannot tell")
-    print("  coexistence from co-stabilization); the knockout cascade rises with")
-    print("  coupling (super-additive above c~0.75). The predicted noise-robustness")
-    print("  trade is FALSIFIED: noise viability FALLS with coupling too — pure")
-    print("  mutual dependence (substitution) is fragile BOTH ways, a monoculture.")
-    print("  The invariant that survives: rest-invisibility; knockout is the only")
-    print("  instrument that reaches co-stabilization. See the RESULT block.")
+    print("  (0 = additive; large = super-additive dependency under this rule)")
+    print("\n  Reading: the homogeneous rest state is blind to c by design;")
+    print("  knockout exposes super-additive dependency. The predicted noise")
+    print("  robustness is FALSIFIED: substitution coupling is fragile both")
+    print("  ways. This rejects the candidate as ecological co-stabilization;")
+    print("  it does not close the self-maintenance question. See CALIBRATION.")
 
 
 def figure(res: dict, outdir: Path) -> Path:
@@ -240,7 +245,7 @@ def figure(res: dict, outdir: Path) -> Path:
     ax.plot(cs, res["cascade"], "o-", color="#d62728")
     ax.set_xlabel("coupling c (mutual dependence)")
     ax.set_ylabel("extra nodes lost per knockout")
-    ax.set_title("(a) Knockout cascade\n(rest viability = 1.0 everywhere — watching is blind)")
+    ax.set_title("(a) Knockout cascade\n(homogeneous rest is blind by construction)")
     ax.grid(alpha=0.3)
 
     ax2 = ax.twinx()
@@ -255,12 +260,12 @@ def figure(res: dict, outdir: Path) -> Path:
             alpha=0.6, label="knockout cascade (norm.)")
     ax.set_xlabel("coupling c (mutual dependence)")
     ax.set_ylabel("fraction / normalized")
-    ax.set_title("(b) No trade — fragile both ways\n(noise viability FALLS as knockout cascade rises)")
+    ax.set_title("(b) Candidate fails resilience\n(substitution coupling is fragile both ways)")
     ax.legend(fontsize=8)
     ax.grid(alpha=0.3)
 
-    fig.suptitle("Benchmark v1.9 — co-stabilization: invisible at rest, "
-                 "reached only by knockout", fontsize=11)
+    fig.suptitle("Benchmark v1.9 — mutual dependence: knockout reveals fragility",
+                  fontsize=11)
     fig.tight_layout()
     out = outdir / "inverse_benchmark_co_stabilization.png"
     fig.savefig(out, dpi=110)

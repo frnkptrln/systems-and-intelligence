@@ -131,18 +131,16 @@ First result (10 seeds), against the experiment's own predictions: **both advers
 
 ---
 
-### Experiment 8: Reflexive Depth
-*"Does modeling your modeling buy anything — Kegan's subject-object move, one turn versus two?"*
+### Experiment 8: Adaptive Self-Estimation
+*Interpretive question: can this narrow second-order estimator serve as a toy for reflexive depth?*
 
 ```bash
 python experiments/exp8_reflexive_depth.py
 ```
 
-The depth-2 toy named in [Consciousness as Global Availability §On Levels](../theory/identity/consciousness-as-global-availability.md): a self-estimate tracked at three reflexive depths — depth 0 (no self-model), depth 1 (fixed update rule — the Three-Layer agent's Layer 3, *subject* to its rule), depth 2 (models its own error statistics — the rule taken as *object*). Measures reflexive depth, not experience.
+The direct comparison is engineering-level: raw observation, a Kalman filter with fixed process noise, and an adaptive Kalman filter that estimates process noise from its innovations. After a volatility regime shift, the adaptive estimator beats the fixed estimator by **36%**; the now-misspecified fixed estimator is slightly worse than raw observation. Against a constant bias on the only observation channel, neither filtered estimator removes the bias.
 
-First result (200 seeds), two-sided and matching the theory: where the meta level has structure to observe — a **volatility regime change** in the system's own error process — depth 2 beats depth 1 by **36%**, and depth 1's *fixed* self-model is then **worse than no model at all** (a self-model you cannot revise becomes a liability when the world shifts). Where it has nothing to observe — a **constant bias on the sole self-observation channel** — depth 2 equals depth 1 and removes nothing: **Wall 3 in a toy**. Reflexive depth pays exactly where the meta level has something to see, and is provably powerless where it does not.
-
----
+**Calibrated reading:** Exp8 measures adaptive self-estimation in one Gaussian tracking task. It does not isolate "reflexive depth" from the extra adaptive capability, measure Kegan stages, or establish a general Wall-3 result. The subject-object interpretation remains `[HYPOTHESIZED]`. Required controls include oracle and fixed-$Q$ baselines, a change-point baseline, an uninformative meta-signal, paired uncertainty intervals, and an external-reference intervention.
 
 ## Extended SII Dashboard (4-Axis Radar)
 

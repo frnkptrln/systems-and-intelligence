@@ -49,7 +49,8 @@ The [Epistemic Loop](from-trace-to-world-binding.md) and [Canonical Path v2](../
 - **Optimization is not curiosity.** In the closed loop, argmax planning does not collapse uncertainty faster than random exploration.
 - **Binding has a functional signature in the current toys.** Exp5–7 separate joint satisfaction at the commitment boundary from rotating or blended constraint use; IP and Δ-Kohärenz each have measured blind spots.
 - **Capability loading and single-axis insufficiency occur in-model.** They have been reproduced in the TEO ODE and a structurally different agent-ecology ABM, not yet in real agent ecologies.
-- **Composition can force a level jump.** In v1.8 a coupled generator can empty the equivalence class of its component family; self-maintenance remains unmeasured.
+- **Composition can force a level jump.** In v1.8 a coupled generator can empty the equivalence class of its component family.
+- **The first self-maintenance candidate failed its resilience test.** v1.9 measured dependency cascades on a substitution-coupled ring; stronger coupling also reduced noise viability. This narrows the search but leaves co-stabilization unmeasured.
 
 These results are receipts, not universal laws. Their scope is maintained in [What This Project Does NOT Claim](../reference/what-this-project-does-not-claim.md).
 
@@ -58,7 +59,7 @@ These results are receipts, not universal laws. Their scope is maintained in [Wh
 ## The Current Frontier
 
 1. **Learned searchers vs. exact family search** — can LLMs or program synthesizers beat the enumeration floor under matched evidence and query budgets?
-2. **Co-stabilization** — does knockout produce super-additive collapse in a self-maintaining generator ecology?
+2. **Co-stabilization after the v1.9 boundary result** — can redundant or endogenous coupling produce mutual maintenance rather than substitution-driven fragility?
 3. **Real-model identity probes** — do the Exp5–7 distinctions survive outside handcrafted toy agents?
 4. **Real-agent constraint architectures** — do P7/P8 survive when budgets and capability are varied in actual agent ecologies?
 5. **External review and calibration** — does the Viable Corridor survive scrutiny beyond its own equations and synthetic models?

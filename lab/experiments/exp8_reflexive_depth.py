@@ -2,21 +2,20 @@
 """
 exp8_reflexive_depth.py
 
-Experiment 8: Reflexive depth — does modeling your modeling buy anything?
+Experiment 8: Adaptive self-estimation under regime shift
 
-THE QUESTION.  The availability node's "On Levels" section reads Kegan's
-subject-object move as one turn of the self-reconstruction loop, and names
-one near-term toy: the Three-Layer agent runs the move ONCE (a self-model
-inside the policy); a model *of that modeling* would be depth two. The
-measurable question, with its falsification edge stated in the node: does
-depth 2 change perturbation response beyond depth 1? If not, reflexive
-depth adds nothing here and the Kegan mapping loses this support.
+THE QUESTION. The availability node maps Kegan's subject-object move to
+iterations of a self-reconstruction operator. This file tests a much narrower
+engineering analogue: does online adaptation of a process-noise assumption
+improve tracking after the process changes? The code directly compares
+estimators; "reflexive depth" is the hypothesized interpretation, not the
+measured variable.
 
-THE SETUP.  A tracking task, deliberately minimal, because the claim is
-about the OPERATOR, not the domain. A hidden disposition theta(t) drifts
-as a random walk with volatility q; the agent observes its own behavior
-o(t) = theta(t) + observation noise and maintains a self-estimate. Three
-depths of self-model, a strict hierarchy of "what can be taken as object":
+THE SETUP. A minimal Gaussian tracking task. A hidden state theta(t) drifts
+as a random walk with volatility q; the estimator observes
+o(t) = theta(t) + observation noise. The depth labels below are the
+interpretive vocabulary; computationally these are three estimators with
+different capabilities:
 
   depth 0  — no self-model. Estimate = the raw current observation.
              (reactive: the agent is its behavior, holds no model of it.)
@@ -24,13 +23,13 @@ depths of self-model, a strict hierarchy of "what can be taken as object":
              process-noise Q pinned to the initial regime q0). It has a
              model of itself but is SUBJECT to the update rule: it cannot
              revise how it updates.
-  depth 2  — takes the update rule itself as OBJECT: it monitors the
-             statistics of its own prediction errors (innovations) and
-             re-estimates Q from them (adaptive Kalman). A model of its
-             own modeling.
+  depth 2  — an adaptive Kalman filter that monitors innovation statistics
+             and re-estimates Q. Engineering description: online
+             hyperparameter adaptation. Interpretive description: the
+             update rule taken as object.
 
-Two perturbations, chosen to separate what reflexive depth can and cannot
-reach:
+Two perturbations, chosen to separate what online Q adaptation can and cannot
+identify:
 
   VOLATILITY REGIME CHANGE — q jumps q0 -> q1 (>> q0) at mid-run. The
      disposition starts drifting far faster. Depth 1's fixed small gain
@@ -44,7 +43,8 @@ reach:
 METRIC.  RMSE of the self-estimate against the true theta, split into the
 stationary window and the post-perturbation window; 200 seeds.
 
-PREDICTIONS (stated before the first run, per the repo's habit):
+PREDICTIONS (stated before the first run; original interpretive language
+retained, with the measured claim recalibrated in RESULT):
   P1  Stationary regime (no perturbation): depth 0 worst (no smoothing);
       depth 1 ~= depth 2 (adaptive Q settles near the true q0, so the meta
       level adds little when there is nothing to adapt to).
@@ -65,36 +65,36 @@ RESULT (run 1, 200 seeds — the numbers the console prints):
   P1  CONFIRMED: stationary RMSE 0.497 / 0.141 / 0.174 (depth 0 / 1 / 2).
       The self-model roughly triples accuracy over no model; depth 2 ~=
       depth 1 with a small penalty — nothing to adapt to when stationary.
-  P2  CONFIRMED, and sharper than predicted: post-change RMSE 0.498 /
-      0.504 / 0.322 — depth 2 beats depth 1 by 36%. The bonus is the
-      middle number: depth 1's fixed rule after the regime change is
-      WORSE THAN NO MODEL AT ALL (0.504 vs depth 0's 0.498). A self-model
-      you cannot revise is not neutral when the world changes — it is a
-      liability, because it confidently smooths toward a disposition that
-      is no longer drifting slowly. Kegan's claim in one number: being
-      subject to a now-wrong update rule is worse than holding no model;
-      taking that rule as object (depth 2) is what recovers.
-  P3  CONFIRMED — the honest limit holds: against the constant bias,
-      depth 2 (0.624) = depth 1 (0.612), a 2% LOSS, not a gain. Both beat
-      depth 0 (0.778) by smoothing noise, but the RMSE floors near the
-      bias magnitude (b = 0.6): neither removes it. Reflexive depth is
-      powerless on the sole channel — Wall 3, measured. This is the
-      control that stops P2 from being read as "more meta is always more".
+  P2  CONFIRMED AT THE ESTIMATOR LEVEL: post-change RMSE 0.498 / 0.504 /
+      0.322 — adaptive depth 2 beats fixed-Q depth 1 by 36%. The fixed
+      filter is slightly worse than raw observation after misspecification.
+      This measures the value of online Q adaptation; the Kegan mapping is
+      an interpretation over that mechanism.
+  P3  CONFIRMED WITHIN THIS OBSERVATION MODEL: under constant bias, depth 2
+      (0.624) does not beat depth 1 (0.612). Both retain error near the bias
+      magnitude because no unbiased reference exists. This is an
+      identifiability limit for the sole biased channel, not a general
+      empirical measurement of Wall 3.
   P4  CONFIRMED: depth 2 costs a little stationary variance (0.174 vs
       0.141) — it occasionally mistakes noise for a regime shift and
       raises its gain. The price of adaptivity, paid in the calm regime
       and repaid many times over at the change.
 
-WHAT THIS DOES NOT SHOW.  One tracking domain, Gaussian everything, three
-hand-built depths — not a claim that human development is Kalman filtering.
-The point is narrow and structural: reflexive depth pays exactly where the
-meta level has structure to observe (a detectable change in one's own error
-process) and is powerless where it does not (a bias on the sole channel),
-which is what the availability node predicted from Wall 3. Depth 3 (a model
-of the adaptation of the adaptation) is not built; whether the returns keep
-diminishing is open. The external-reference resolution of the bias case —
-an intervention with known ground truth, breaking the self-observation
-symmetry — is named, not built: it is watching < perturbing, reflexive.
+POST-RUN CALIBRATION. The code directly measures adaptive filtering in one
+Gaussian tracking task. Depth 2 differs from depth 1 not merely by "depth"
+but by access to a different algorithmic capability: online estimation of
+Q. The result therefore does not isolate reflexivity from adaptivity.
+
+WHAT THIS DOES NOT SHOW. It does not measure Kegan stages, human development,
+consciousness, or a general law of self-modeling. The constant-bias result is
+an identifiability limit under one observation channel, evaluated by an
+external ground truth unavailable to the agent; it is analogous to the
+repo's Wall-3 concern, not a measurement of Gödelian self-limitation.
+
+Required follow-ups before a stronger interpretation: an oracle Q-switch,
+fixed-Q grid and change-point baselines, a shuffled/uninformative meta-signal
+control, paired uncertainty intervals, and an external-reference
+intervention for the bias case. Depth 3 remains unbuilt.
 
 Usage::
 
@@ -103,8 +103,8 @@ Usage::
 
 Related:
 - theory/identity/consciousness-as-global-availability.md  (On Levels: reflexive depth; the depth-2 toy named there)
-- lab/agents/three_layer_agent.py                          (the depth-1 instance: Layer 3 in the policy)
-- theory/core/the-generator-question.md                    (Wall 3, the reason depth 2 is powerless on the sole channel)
+- lab/agents/three_layer_agent.py                          (conceptual motivation only; not used by this experiment)
+- theory/core/the-generator-question.md                    (formal analogy only; this experiment measures channel identifiability)
 - theory/core/measurement-as-weak-intervention.md          (the external-reference follow-up: watching < perturbing, reflexive)
 """
 
@@ -168,7 +168,8 @@ def depth1(obs: np.ndarray, q_fixed: float = Q0) -> np.ndarray:
 def depth2(obs: np.ndarray, ewma: float = 0.05) -> np.ndarray:
     """Takes the update rule as object: adaptive Kalman that re-estimates
     its own process noise Q from the running statistics of its innovations.
-    A model of its own modeling."""
+    Engineering description: an adaptive process-noise estimator. The
+    "model of its modeling" phrase is the hypothesized interpretation."""
     xh = np.empty(T)
     x, P = obs[0], 1.0
     s_hat = R_OBS                              # running innovation variance
@@ -205,11 +206,11 @@ def run_suite(n_seeds: int = N_SEEDS) -> dict:
 
 def print_summary(res: dict) -> None:
     print("=" * 74)
-    print("  EXPERIMENT 8 — reflexive depth: does modeling your modeling help?")
+    print("  EXPERIMENT 8 — adaptive self-estimation under regime shift")
     print("  (self-estimate RMSE vs true disposition; 200 seeds)")
     print("=" * 74)
     for mode, title in (("regime", "VOLATILITY REGIME CHANGE (q0 -> q1 at t=200)"),
-                        ("bias", "CONSTANT SELF-OBSERVATION BIAS (Wall-3 case)")):
+                        ("bias", "CONSTANT OBSERVATION BIAS (sole-channel control)")):
         print(f"\n  {title}")
         print(f"    {'':22s} {'depth 0':>10s} {'depth 1':>10s} {'depth 2':>10s}")
         for win, label in (("stat", "stationary RMSE"),
@@ -220,10 +221,10 @@ def print_summary(res: dict) -> None:
         d2p = np.mean(res[mode]["d2"]["post"])
         gain = (d1p - d2p) / d1p * 100 if d1p else 0.0
         print(f"    depth2 vs depth1 (post): {gain:+.1f}%  "
-              f"({'depth 2 helps' if gain > 2 else 'no reflexive-depth gain'})")
-    print("\n  Reading: reflexive depth pays where the meta level has structure")
-    print("  to observe (the regime change in one's own error process) and is")
-    print("  powerless where it does not (a bias on the sole channel — Wall 3).")
+              f"({'adaptive estimator helps' if gain > 2 else 'no adaptive-estimator gain'})")
+    print("\n  Reading: online Q adaptation helps after a volatility shift")
+    print("  and cannot identify a constant bias on the sole observation")
+    print("  channel. The reflexive-depth / Kegan reading remains a hypothesis.")
 
 
 def figure(res: dict, outdir: Path) -> Path:
@@ -233,13 +234,13 @@ def figure(res: dict, outdir: Path) -> Path:
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.6))
     depths = ["d0", "d1", "d2"]
-    labels = ["depth 0\n(no model)", "depth 1\n(fixed rule)", "depth 2\n(models its\nmodeling)"]
+    labels = ["depth 0\n(raw obs)", "depth 1\n(fixed Q)", "depth 2\n(adaptive Q)"]
     colors = ["#999999", "#1f77b4", "#d62728"]
     xs = np.arange(3)
 
     for ax, mode, title in (
-        (axes[0], "regime", "(a) Volatility regime change\nreflexive depth PAYS"),
-        (axes[1], "bias", "(b) Constant self-observation bias\nWall 3: reflexive depth POWERLESS"),
+        (axes[0], "regime", "(a) Volatility regime change\nonline Q adaptation helps"),
+        (axes[1], "bias", "(b) Constant observation bias\nnot identifiable from the sole channel"),
     ):
         stat = [np.mean(res[mode][d]["stat"]) for d in depths]
         post = [np.mean(res[mode][d]["post"]) for d in depths]
@@ -253,7 +254,7 @@ def figure(res: dict, outdir: Path) -> Path:
         ax.grid(alpha=0.3, axis="y")
         ax.legend(fontsize=8)
 
-    fig.suptitle("Exp 8 — reflexive depth (Kegan's subject-object move, one and two turns)",
+    fig.suptitle("Exp 8 — adaptive self-estimation (fixed vs online process-noise model)",
                  fontsize=12)
     fig.tight_layout()
     out = outdir / "exp8_reflexive_depth.png"
