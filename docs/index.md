@@ -145,7 +145,7 @@ Narrative stress tests that make abstract theoretical constraints visible in liv
 2. **External review of the Viable Corridor** — freeze the paper's conceptual scope while its dynamical assumptions, sufficiency gap, and empirical mapping receive a critical read.
 3. **Rigorous sufficiency** — replace single-trajectory evidence with open-set tests and, if possible, construct or bound \(\gamma_c\).
 4. **Separate the real-model questions correctly** — live Agentic Identity Suite runs test Mirror/Chord/binding claims; P7/P8 require a distinct real-agent ecology with hard/soft budgets and independently varied constraint architecture.
-5. **Co-stabilization v1.9** — test the narrow knockout prediction (additive degradation = coexistence; super-additive collapse = mutual maintenance) without treating it as a theory of life or consciousness.
+5. **Co-stabilization after v1.9** — the substitution-coupled ring produced dependency cascades but failed the resilience prediction. Test a redundancy model across topology, size, viability threshold, and coupling resolution before treating mutual maintenance as measured.
 
 **Speculative / long-horizon** `[SPECULATIVE]`:
 
