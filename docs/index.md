@@ -2,9 +2,9 @@
 
 <div class="hero-banner" markdown>
 
-## An Open Thesis on Emergent Intelligence
+## A Research Notebook on Generators, Intelligence, and Viability
 
-*How local rules create global minds — and how we can steer them.*
+*How systems produce traces, how observers reconstruct them, and how optimization remains survivable.*
 
 **Frank Peterlein** · Independent Research · 2024–2026
 
@@ -34,26 +34,20 @@
 
 ---
 
-## The Core Claim
+## The Core Questions
  
 !!! success "TL;DR"
-    **The thesis: AI alignment is better modeled as a problem of applied thermodynamics and systems engineering than as one of psychology or moral training.**
+    This repository studies two connected questions:
 
-    The argument is that "friendlier" prompt engineering or moral training may not be enough, because unbounded optimization *tends to* outrun the entropy limits of the layer it runs on. The framework proposes that durable alignment needs *structural* constraints, not only behavioral ones:
+    1. **Epistemic spine:** How can an observer move from a trace to a useful generator — through construction, world-coupling, intervention, and revision?
+    2. **Viability arc:** How can an optimizing system remain viable when growing capability loads several constraints at once?
 
-    1. **Action Budgets** to bound entropy production.
-    2. **Impedance Matching** (artificial latency) to bridge silicon speed and human cognitive speed.
-    3. **The Substrate Veto** enforced at the protocol layer.
-
-    This repository develops that case end-to-end — from entropy limits to runnable Python engines — as an **open thesis**, not a finished proof.
+    The first is folded into [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md). The second is mapped in [Canonical Path v2](meta/repository-meta/canonical-path-v2.md). They share a root in emergence, but neither replaces the other.
 
 !!! note "Epistemic status — read this first"
-    This is an **open thesis**: working drafts and *falsifiable hypotheses*, not established results. The central necessity result is a modest theorem (the conjunction of three constraints); **sufficiency is conjectured, not proved**; the civilizational mapping is **heuristic**, not measured; and the AI-specific predictions have **not** yet been tested on real LLM agents. Claims throughout are tagged — *demonstrated / formal / conjecture / hypothesized / heuristic / open problem*. The flagship paper, *The Viable Corridor*, is a **working draft (not submission-ready)**. The explicit negative space is maintained at [What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md).
+    This is a **research notebook**, not a theory of everything. The inverse-reconstruction results are measured in small, controlled systems. The Viable Corridor necessity result is conditional on its model assumptions; **sufficiency is conjectured, not proved**; the civilizational mapping is **heuristic**, not measured; and the AI-specific predictions have not been tested on real agent ecologies. Claims throughout are tagged — *demonstrated / formal / conjecture / hypothesized / heuristic / open problem*. The flagship paper, *The Viable Corridor*, remains a **working draft (not submission-ready)**. The explicit negative space is maintained at [What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md).
 
-!!! abstract "Thesis"
-    **Intelligence is an emergent property of continuous dynamical systems**, not a discrete function of next-token prediction. The same mathematics that governs flocking birds, oscillating neurons, and self-organizing criticality also governs the "values" and "goals" that arise inside Large Language Models — and inside human civilizations.
-
-We probe this not with philosophy alone, but with runnable simulations testing mathematical models from the theory. Evolutionary game theory, nonlinear dynamics, and thermodynamic control theory are all unified under a single mathematical framework: the **Thermodynamics of Emergent Orchestration (TEO)**.
+The measured core is the [inverse-reconstruction benchmark](lab/benchmarks/inverse-reconstruction/README.md): known-family inversion, equivalence classes, intervention, family search, model exploitation, marked uncertainty, closed-loop revision, ensembles, and generator composition. The Viability Arc is currently supported by formal results and two synthetic models; external calibration and real-agent tests remain open.
 
 ---
 
@@ -143,20 +137,22 @@ Narrative stress tests that make abstract theoretical constraints visible in liv
 ## What's Next
 
 !!! info "The framework is drafted, not closed. The next step is external contact, not deployment."
-    The TEO framework and the Viable Corridor paper are at **working-draft** stage: the necessity result holds, but **sufficiency is unproven**, and the model's claims have been demonstrated only *in-model*, not against real systems. The honest next step is **external review and empirical contact** — not hardware or deployment.
+    The strongest current artifacts are controlled toy experiments and synthetic models. The next phase should test their boundaries against learned systems, external baselines, and critical review.
 
 **Near-term — the real frontier:**
 
-1. **External review** of the Viable Corridor paper (§5–§8 have not yet had a critical dynamical-systems read).
-2. **Empirical LLM auditing** `[OPEN PROBLEM]` — running the Agentic Identity Suite against live APIs to test the AI-specific predictions (P7/P8) on *real* agents, not synthetic ones.
-3. **Rigorous sufficiency** `[OPEN PROBLEM]` — constructing $\gamma_c$ and a proper open-set test, rather than single-trajectory evidence.
+1. **Learned searchers vs. the family-search floor** — give LLMs or program synthesizers the same partial traces and query budgets as the exact CA baseline; pre-register consistency, truth recovery, description size, support violations, and cost.
+2. **External review of the Viable Corridor** — freeze the paper's conceptual scope while its dynamical assumptions, sufficiency gap, and empirical mapping receive a critical read.
+3. **Rigorous sufficiency** — replace single-trajectory evidence with open-set tests and, if possible, construct or bound \(\gamma_c\).
+4. **Separate the real-model questions correctly** — live Agentic Identity Suite runs test Mirror/Chord/binding claims; P7/P8 require a distinct real-agent ecology with hard/soft budgets and independently varied constraint architecture.
+5. **Co-stabilization v1.9** — test the narrow knockout prediction (additive degradation = coexistence; super-additive collapse = mutual maintenance) without treating it as a theory of life or consciousness.
 
-**Speculative / long-horizon** `[SPECULATIVE]` — directions the framework *suggests* but does not yet support:
+**Speculative / long-horizon** `[SPECULATIVE]`:
 
-- Hardware prototyping (analog / memristor circuits for physical $\gamma$-pin vetoes).
+- Hardware prototyping (analog / memristor circuits for physical \(\gamma\)-pin vetoes).
 - Protocol-level "Substrate Veto" specifications for decentralized governance systems.
 
-If you want to contribute, the project is open for: critical **review** of the framework and the necessity result; **pull requests** extending the simulations or the Agentic Identity Suite; or sharpening any **open problem**.
+If you want to contribute, the project is open for critical **review**, preregistered **experiments**, external **baselines**, and corrections to any claim that exceeds its evidence.
 
 ---
 
