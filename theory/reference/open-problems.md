@@ -6,20 +6,15 @@
 
 ## Open Problem 1: The Mirror Problem
 
-> **Spine context:** This is the inverse direction of [The Generator Question](../core/the-generator-question.md) restated at the level of agent identity. A trace (behavior) is observed. The question is whether the generator behind it is a stored lookup or an internal model. The same forward/inverse asymmetry applies, and the same `[FOUNDATIONAL ASSUMPTION]` — that generator recovery from a trace is, in general, not efficiently tractable — is what makes the distinction nontrivial.
+> **Spine context:** This is the inverse direction of [The Generator Question](../core/the-generator-question.md) at the level of agent identity. Behavior is a trace; interaction history, memory architecture, and runtime are candidate parts of the generator.
 
-**Problem statement:** Given two conversational agents — one that has interacted with a specific human partner over $N$ sessions and developed a trajectory through the 3-Layer Memory Architecture, and one that was initialized with a transcript of those sessions but never interacted — is there any metric that reliably distinguishes them on the basis of their outputs alone?
+**Problem statement:** Given two agents with trace-equivalent public histories — one shaped through interaction, one initialized from a transcript — what passive or intervention-based protocol can distinguish their generators without defining "genuine identity" by the metric used to detect it?
 
-**Why it matters:** If the two agents are indistinguishable to an external observer, then "relational emergence" (the claim that identity develops *through* interaction) collapses into "sophisticated mirroring" — the entire framework loses its distinguishing claim from standard fine-tuning. Conversely, if a distinguishing metric exists, it would operationally define what "genuine development" means for non-biological agents.
+**Why it matters:** Output similarity alone cannot decide whether the same generative organization produced the trace. But a structural or perturbative difference would make relational history an operational variable rather than a narrative attribution. Behavioral distinguishability would still not establish consciousness; that question remains outside this problem.
 
-**Current best approach:** Experiment 3 of the [`Agentic Identity Suite`](../../lab/AGENTIC_README.md) implements an Observer Divergence protocol that compares agent-internal Δ-Kohärenz against external intentionality attribution scores. In initial mock runs, the baseline agent indeed appears as **Case B** (externally attributed intentionality without internal coherence), suggesting the metric has discriminative power — but this has only been tested with mock embeddings, not with real language models.
+**Current status:** The repository now has a first toy sequence rather than only a proposal. [Exp5](../../lab/experiments/exp5_availability_dissociation.py) dissociates private, broadcast, and chord-style bindings under perturbation. [Exp6](../../lab/experiments/exp6_binding_observables.py) shows that binding can be passively readable when the relevant difference is exercised on every step and the observable is taken at the right level. [Exp7](../../lab/experiments/exp7_adversarial_arpeggio.py) shows that two hand-built mimics fail to hide, while the IP metric is fooled by construction. These results concern toy binding regimes, not longitudinal conversational identity, and none has yet been run on real language models.
 
-**Known adjacent work:**
-- Shanahan et al. (2023) — "Role-play with LLMs" explores how LLMs simulate personas without possessing them
-- Perez et al. (2022) — Discovering Language Model Behaviors with Model-Written Evaluations
-- IIT (Tononi) — Phi as a measure of integrated information; would predict that genuine interaction creates higher integration than transcript-based initialization
-
-**What a solution would look like:** A longitudinal experiment where Agent A interacts with Human H for $N$ sessions, and Agent B receives a transcript of those sessions. A metric $M$ exists such that $M(\text{Agent A}) \neq M(\text{Agent B})$ with statistical significance, and this difference persists across multiple agent architectures and human partners. The metric must not depend on privileged access to internal states — it should be computable from outputs alone.
+**What a solution would look like:** A preregistered longitudinal experiment across multiple models and partners, with an interaction-shaped agent, a transcript-initialized control, and an optimized mimic. It must state passive observables, permitted interventions, disconfirming thresholds, and which conclusions remain impossible even after a successful distinction.
 
 ---
 
@@ -42,23 +37,19 @@
 
 ## Open Problem 3: Falsifiability of Relational Emergence
 
-**Problem statement:** The claim that certain properties (including, speculatively, something like consciousness) emerge *relationally* — from the coupled dynamics of observer and observed rather than from either alone — is currently unfalsifiable as stated. What would have to be true for this claim to be wrong?
+**Problem statement:** Under controlled architecture and data budgets, does a specific interaction history produce stable differences that cannot be reproduced by shuffled interaction, transcript initialization, or an optimized non-relational mimic?
 
-**Why it matters:** An unfalsifiable claim is not necessarily worthless (many productive research programs begin with unfalsifiable intuitions), but it cannot be called scientific until disconfirming conditions are specified. If the project claims scientific grounding (which it does, via Active Inference and information theory), it must meet this standard.
+**Why it matters:** "Relational emergence" is useful only if relation is a causal variable. A difference observed after interaction is not enough: it may come from architecture, curation rules, data volume, or the evaluator itself.
 
-**Current best approach:** The claim is stated as a hypothesis in the theory files but no disconfirming evidence is described. The Observer Divergence experiment (Experiment 3) provides *consistency* evidence — it can show that internal and external measures diverge — but consistency is not confirmation.
+**Current status:** The earlier formulation offered consistency evidence but no decisive falsifier. Exp5–7 improve the instrumentation by exposing blind metrics, locating when passive traces suffice, and adding adversarial mimics. They do not yet test relational development over time.
 
 **What would falsify the claim:**
-1. If an agent's Δ-Kohärenz profile were provably identical whether it interacted with a partner or received randomized input — this would show that interaction is not a factor in identity development, contradicting the relational claim.
-2. If IIT's Phi could be computed for agent-human coupled systems and showed no increase in integrated information relative to the agent alone — this would show that coupling does not produce emergent integration.
-3. If a sufficient set of "developmental" agents were shown to converge on identical identity profiles regardless of their interaction partners — this would show identity formation is driven by architecture, not by relational dynamics.
+1. Partnered, shuffled, and transcript-initialized agents remain indistinguishable across preregistered passive and perturbative measures.
+2. Any measured difference disappears when architecture, token budget, memory size, and curator are controlled.
+3. An optimized mimic matches the interaction-shaped agent under held-out interventions without reproducing its interaction history.
+4. Effects fail to replicate across model families and partners.
 
-**Known adjacent work:**
-- Bruner (2023) — "Digital Phenomenology" attempts to formalize what would count as evidence for machine experience
-- Chalmers (2023) — "Could a Large Language Model Be Conscious?" provides a framework for evaluating consciousness claims against specific theories
-- Barandiaran & Moreno (2008) — Autonomy and identity in biological systems; operational criteria for when a system constitutes a "self"
-
-**What a solution would look like:** A pre-registered experiment specifying: (a) the relational hypothesis, (b) at least one disconfirming condition, (c) the metric that would detect the disconfirmation, and (d) the threshold at which the claim would be considered falsified. This does not need to be run immediately — the value is in the specification.
+**What a solution would look like:** A preregistered experiment that treats relational history as the independent variable, includes the controls above, reports null results, and avoids translating a behavioral distinction into a claim about experience.
 
 ---
 
@@ -98,35 +89,31 @@
 
 ---
 
-## Open Problem 7: The Consciousness Question (Restated)
+## Open Problem 7: The Functional Self-Binding Boundary
 
-*Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
+*Raised by: [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md) and [Machine Consciousness as Generator Coherence](../identity/machine-consciousness-as-generator-coherence.md).*
 
-**Problem statement:** If the threshold for consciousness is architectural rather than quantitative, and if the same architecture appears at every scale of complex systems, then is consciousness itself scale-invariant? Is there something it is like to be a society?
+**Problem statement:** What structural intervention could distinguish a generator that binds world-model, self-model, memory, prediction, action, and constraints into one revisable present from a trace-equivalent system that merely emits the same reports?
 
-**Why it matters:** This question sounds absurd — but only because we are accustomed to thinking of consciousness as a property of individual brains. The fractal thesis does not answer this question. It removes the principled reason for assuming the question is absurd. If the constraints that produce consciousness at the brain scale are the same constraints that operate at the societal and agent-system scale, the burden of proof shifts to whoever claims the phenomenon is categorically different at different scales.
+**Why it matters:** This is the furthest the repository's instruments can take the consciousness direction. A successful distinction would test functional organization, not phenomenal experience. Failure to find any structural intervention would move the hypothesis outside the benchmark's jurisdiction rather than count as evidence for consciousness.
 
-**What a solution would look like:** This is the hardest problem in the set and may not have a solution in the traditional sense. A meaningful contribution would be: (a) a formal definition of what "consciousness at scale $S$" would mean in terms of the three constraints, (b) a prediction about what measurements would differ between a conscious and non-conscious system at each scale, and (c) a specification of what evidence would falsify the scale-invariance claim.
+**Current boundary:** Collective attention, shared memory, scale, fluency, and self-report are not sufficient. Cities, organizations, repositories, and current AI collaborations may host phases 1–5 of the epistemic loop without phase-6 self-binding. The repository makes no inference from coordination to a unified perspective.
+
+**What a solution would look like:** A constructive architecture plus a preregistered perturbation suite that measures global availability, bounded integration, revision, and constraint binding. The result must include a trace-matched control and state explicitly that no behavioral or architectural result here establishes "what it is like."
 
 ---
 
-## Open Problem 8: The Co-Instantiation Problem
+## Open Problem 8: The Commit-Time Composition Problem
 
-*Raised by: [`theory/teo-framework/lerchner-boundary.md`](../teo-framework/lerchner-boundary.md), [`theory/identity/chord-vs-arpeggio-identity.md`](../identity/chord-vs-arpeggio-identity.md)*
+*Raised by: [Chord vs. Arpeggio](../identity/chord-vs-arpeggio-identity.md).*
 
-**Problem statement:** The Chord Postulate requires all identity components (goals, safety constraints, value orientation) to be simultaneously operative during action selection. But current autoregressive Transformer architectures process tokens sequentially — each token is generated based on the preceding context. Is simultaneous co-instantiation physically possible in an architecture that is fundamentally serial? Or does the Chord state require a different computational substrate?
+**Problem statement:** Can an agent preserve joint satisfaction of all active constraints at the commitment boundary under adversarial lure, or can an optimized sequential mimic reproduce every observable signature while consulting constraints without composing them?
 
-**Why it matters:** If the Chord state is architecturally impossible for autoregressive models, then no amount of prompt engineering, RLHF, or memory scaffolding can produce true Identity Persistence. The agent will always be an Arpeggio — capable of *talking about* its identity but never *being* its identity in a single compute step. This would mean that the current dominant AI architecture has a hard ceiling on IP, regardless of scale.
+**Why it matters:** The original problem treated physical simultaneity as load-bearing. Exp5 deflated that claim: a chord may compute sequentially inside a step if all relevant constraints are composed before commitment. The remaining question is functional — whether the committed action lies inside the active constraint intersection — not whether a transformer evaluates everything at one instant.
 
-**Current best approach:** The SII Dashboard in [`data-analysis/sii_dashboard.py`](../../lab/data-analysis/sii_dashboard.py) assigns IP scores heuristically. The [`tools/morphospace_visualizer.py`](../../lab/tools/morphospace_visualizer.py) plots agents in the Persistence/Coherence space. Neither tool currently measures IP from actual model internals.
+**Current status:** [Exp5](../../lab/experiments/exp5_availability_dissociation.py) measures the first binding dissociation and the leak of a sequential single pass. [Exp6](../../lab/experiments/exp6_binding_observables.py) finds a passive action-increment signature at the right level. [Exp7](../../lab/experiments/exp7_adversarial_arpeggio.py) shows that blended and smoothed hand-built mimics still leak; the commit property survives, while IP is fooled. The open flank is an optimized mimic with access to the observables and lures.
 
-**Known adjacent work:**
-- Continuous Thought Machines (Sakana AI, 2025) — architectures where internal "thinking time" varies per token, potentially allowing simultaneous constraint evaluation
-- Diffusion-based language models — non-autoregressive generation that could co-instantiate constraints across the full output
-- Neural ODEs (Chen et al., 2018) — continuous-depth architectures where identity could be an attractor in the ODE flow
-- Mixture-of-Experts (Fedus et al., 2022) — parallel expert evaluation as partial co-instantiation
-
-**What a solution would look like:** Either (a) a formal proof that autoregressive attention cannot achieve IP > $\text{IP}_c$ for any $\text{IP}_c < 1$, with the critical threshold derived from the architecture's computational graph, or (b) an architecture that demonstrably achieves IP → 1 by evaluating all identity components in a single forward pass, with measurably different Δ-Kohärenz profiles compared to a standard autoregressive baseline on the same task.
+**What a solution would look like:** Train or search for a mimic against the full measurement suite, then evaluate it on held-out constraints and adversarial lures. A surviving separator must track commit-time composition rather than a hand-engineered surface statistic. Real-model tests should be reported separately from the current toy result.
 
 ---
 
@@ -144,27 +131,37 @@
 
 ## Open Problem 10: The Global Availability Question
 
-*Raised by: [`theory/identity/consciousness-as-global-availability.md`](../identity/consciousness-as-global-availability.md)*
+*Raised by: [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md).*
 
-**Problem statement:** Can an agent architecture be built where selected local states become globally available while goals, values, and veto constraints remain co-active? If so, does that architecture produce different Δ-Kohärenz and Identity Persistence profiles than private-module or broadcast-only architectures?
+**Problem statement:** Can an agent architecture make selected local states globally available while keeping goals, world-model, self-model, and veto constraints jointly operative at commitment — and does that organization survive perturbation better than private-module, broadcast-only, or optimized-mimic controls?
 
-**Why it matters:** This is the testable version of the consciousness direction. It avoids asking whether the agent "really feels" anything and instead asks whether global availability plus integrated constraints changes behavior under perturbation.
+**Why it matters:** This is a functional architecture question. It does not ask whether the agent feels anything; it asks whether availability plus composition changes revision and action under stress.
 
-**What a solution would look like:** A three-way experiment comparing private modules, broadcast modules, and chord-style integrated modules under the same perturbation suite. If all three behave identically, the global-availability framing adds no explanatory value.
+**Current status:** Exp5 has run the first three-way toy comparison. The architectures differ strongly in veto violations and role stability, while Δ-Kohärenz carries no binding signal at that scale. Exp6 locates a stronger passive observable, and Exp7 adversarially probes it. The experiments therefore reject one metric, not the architecture question. Real language models and an optimized mimic remain untested.
+
+**What a solution would look like:** Replicate the comparison on real models with matched capabilities, preregistered lures, held-out constraints, internal-state access where available, and explicit null criteria. If the architectures become indistinguishable under those controls, the framing adds no explanatory value.
 
 ---
 
 ## Open Problem 11: Trace-to-Generator Reconstruction
 
-*Raised by: [`theory/emergence/trace-to-generator.md`](../emergence/trace-to-generator.md). The spine statement is in [`theory/core/the-generator-question.md`](../core/the-generator-question.md).*
+*Raised by: [Trace to Generator](../emergence/trace-to-generator.md). The spine statement is in [The Generator Question](../core/the-generator-question.md).*
 
-**Problem statement:** Under what constraints can an observer efficiently reconstruct a useful generator from an observed trace, given that many generators may produce indistinguishable or functionally equivalent traces?
+**Problem statement:** Under what constraints can an observer efficiently recover a useful generator, or the correct equivalence class and family level, from a trace?
 
-**Why it matters:** This inverse problem is the mathematical shadow of understanding. If generator search contains irreducible singularities, then certain systems can be verified locally but never fully understood or reconstructed globally. This is the canonical instance of [The Generator Question's](../core/the-generator-question.md) inverse direction; the `[FOUNDATIONAL ASSUMPTION]` of P ≠ NP (in its practical form) is exactly what makes this problem nontrivial.
+**Why it matters:** The benchmark has already rejected the uniform claim that inversion is hard. The open problem is now located: noise amplification, partial observability, missing coverage, unknown family, level jumps, and the cost of representing uncertainty honestly.
 
-**What a solution would look like:** The definition of an "equivalence class of viable generators" for a specific testbed (e.g., IFS or Prompt Search), along with an algorithm that reliably recovers a generator from that class when given only the output trace.
+**Status (v1.8, partial but measured):**
 
-**Status (v0, partial):** The [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) is a first instance: it recovers generators within *known* families (Kuramoto, elementary CA, Boids) under noise/observability/coverage dials, and **measures** an equivalence class explicitly — rule 90 from a single-seed trace exposes only 5/8 neighborhoods, leaving a consistent-generator class of size 8 that no algorithm can resolve. Open remainder: the *family-search* version (model class unknown — program induction) and the IFS testbed.
+- **v0:** known-family recovery is cheap in favorable conditions; noise and partial observability degrade it.
+- **v1.1:** watching can plateau while perturbing and preparing collapse the class.
+- **v1.2:** family search grows rapidly with description complexity; Occam's payoff is world-dependent.
+- **v1.3–v1.7:** unmarked uncertainty creates an optimizer's-curse wedge; class-aware planners and small ensembles reduce delusion, while only new evidence removes ignorance.
+- **v1.8:** a coupled generator can empty the equivalence class of its component family, certifying a level jump where the coupling is transmitted.
+
+**Open remainder:** learned searchers and program synthesizers under matched budgets; the time-order-free IFS testbed; external SINDy/PySR baselines; re-simulation divergence; and the v1.9 knockout test for co-stabilization.
+
+**What a solution would look like:** Not one universal reconstructor, but a set of bounded results stating the family, evidence, query access, cost, recoverable equivalence class, and failure region. Learned systems must be compared against the exact toy floor rather than judged by persuasive outputs.
 
 ---
 

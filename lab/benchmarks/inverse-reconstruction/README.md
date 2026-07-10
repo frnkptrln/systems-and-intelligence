@@ -1,4 +1,4 @@
-# Inverse-Reconstruction Benchmark (v0) — Trace → Generator, Measured
+# Inverse-Reconstruction Benchmark (v0–v1.8) — Trace → Generator, Measured
 
 *The first runnable artifact on the inverse side of the project's spine: given N steps of trace, reconstruct the generator — with noise, observability, and coverage as dials.*
 
@@ -151,9 +151,9 @@ python composition.py --save             # also write the composition figure
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
-## v1 roadmap (open)
+## Current roadmap (open)
 
-*(Parts 1–7 — interventions, the family-search floor, the model-exploitation bridge, the weakness-selector bridge, the marked-guess planners, the closed loop, and the ensemble-size sweep — are done; see above. The items below remain open.)*
+*(Parts 1–8 — interventions, the family-search floor, model exploitation, weakness vs. simplicity, marked-guess planning, the closed loop, the ensemble sweep, and composition — are done; see above. The items below remain open.)*
 
 - **From pair to ecology (v1.8 → v1.9)**: composition.py is a fixed-mask pair. The population version — a soup of coupled generators where composition and dissolution are continuous, and the measured question is *when a web of functions begins to maintain itself as a whole* (the symbiogenesis / "life is an ecology of functions" reading) — is open. The natural instrument is the empty-class certificate applied across a self-organizing population rather than a designed pair; the BFF/computational-life family is the external anchor.
 - **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget). The industrial arena for exactly this is **ARC-AGI**: few-shot trace→generator with unknown family (v1/v2), and since ARC-AGI-3 *interactive* — the field's own watching→perturbing move; winning systems pair a corpus prior proposing candidates with cheap verification, i.e. the wall's shape, exploited.
