@@ -1,18 +1,16 @@
-# Core Claims
+# Core Claims — Viability and Identity Branches
 
 **Status:** Synthesis index  
-**Scope:** minimal claim set for the repository  
-**Purpose:** keep the strongest ideas precise, challengeable, and linked to artifacts
+**Scope:** A minimal claim set for the Viability Arc and identity branch — not the organizing theory of the whole repository.  
+**Purpose:** Keep these hypotheses precise, challengeable, and linked to artifacts.
 
 ---
 
-## Core Generative Idea
+## Relation to the Project
 
-Intelligence is constrained dynamical viability, not raw prediction or unbounded optimization. A system becomes unsafe when local optimization outruns the carrying capacity of its substrate, regulators, or feedback channels.
+[The Generator Question](../../theory/core/the-generator-question.md) is the shared root: traces underdetermine generators, and reconstruction has measurable limits. The repository then separates an epistemic loop from a viability arc. The claims below belong to the latter and to its identity boundary; they do not answer every question raised by the spine.
 
-This is the claim that should organize the repository. It is also the claim that must remain vulnerable to counterexample.
-
-> **Relation to the Spine.** This claim is the project's *answer* to the meta-question made explicit in [The Generator Question](../../theory/core/the-generator-question.md). The spine asks: under what conditions can a locally blind system approximate its own generator? The Core Generative Idea is one main answer: that survivable approximation requires constrained dynamical viability. Spine and claims are complementary — the spine names the asymmetry; the claims name what makes a system robust under it.
+Their status is mixed. The Viable Corridor has a conditional necessity result and two synthetic demonstrations of capability loading; the wider applicability of the claims below remains hypothesized. Each claim therefore carries an artifact and a failure condition.
 
 ---
 
@@ -50,7 +48,7 @@ This is the claim that should organize the repository. It is also the claim that
 
 ## Claim 3: Identity Persistence
 
-**Claim:** A system can score high on prediction and adaptation while lacking stable identity if its goals, constraints, and values are only time-multiplexed. Persistent identity requires co-active constraint structure under perturbation.
+**Claim:** A system can score high on prediction and adaptation while lacking stable identity if its goals, constraints, and values are consulted without being jointly satisfied at commitment. The current hypothesis is functional: persistent identity requires commit-time composition under perturbation, not physical simultaneity.
 
 **Not obvious because:** Fluent self-description can be mistaken for stable identity. This claim separates rhetorical continuity from dynamical persistence.
 
@@ -60,7 +58,9 @@ This is the claim that should organize the repository. It is also the claim that
 - [Agentic Identity Suite](../../lab/AGENTIC_README.md)
 - [Open Problems](../../theory/reference/open-problems.md)
 
-**Failure condition:** If a purely stateless or strictly time-multiplexed system shows robust identity persistence under perturbation, without memory scaffolding or co-active constraints, this claim is weakened.
+**Current status:** Exp5–7 measure a first toy dissociation, locate a passive binding signature, and show that two hand-built mimics still leak. They also expose blind metrics: Δ-Kohärenz misses the binding at one level, and IP can be fooled by consultation without composition.
+
+**Failure condition:** If an optimized mimic preserves the same held-out constraints under adversarial perturbation without commit-time composition, or if the distinction disappears on real models under matched controls, this claim is weakened.
 
 ---
 
