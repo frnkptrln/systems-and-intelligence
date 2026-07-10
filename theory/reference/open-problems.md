@@ -151,16 +151,17 @@
 
 **Why it matters:** The benchmark has already rejected the uniform claim that inversion is hard. The open problem is now located: noise amplification, partial observability, missing coverage, unknown family, level jumps, and the cost of representing uncertainty honestly.
 
-**Status (v1.8, partial but measured):**
+**Status (v1.10, partial but measured):**
 
 - **v0:** known-family recovery is cheap in favorable conditions; noise and partial observability degrade it.
 - **v1.1:** watching can plateau while perturbing and preparing collapse the class.
 - **v1.2:** family search grows rapidly with description complexity; Occam's payoff is world-dependent.
 - **v1.3–v1.7:** unmarked uncertainty creates an optimizer's-curse wedge; class-aware planners and small ensembles reduce delusion, while only new evidence removes ignorance.
 - **v1.8:** a coupled generator can empty the equivalence class of its component family, certifying a level jump where the coupling is transmitted.
-- **v1.9:** a fixed substitution-coupled ring produces super-additive knockout cascades but becomes less viable under noise. This rules out that first dependency model as sufficient ecological co-stabilization; it does not close the self-maintenance problem.
+- **v1.9:** a fixed substitution-coupled ring produces super-additive knockout cascades but becomes less viable under noise. This rules out that first dependency model as sufficient ecological co-stabilization.
+- **v1.10:** with the same per-node repair budget, routing only otherwise-unused capacity improves viability under sparse shocks across 18 size/topology/threshold cells. The gain vanishes under correlated shocks; the result establishes a designed mutual-support mechanism, not endogenous ecology or metabolism.
 
-**Open remainder:** learned searchers and program synthesizers under matched budgets; the time-order-free IFS testbed; external SINDy/PySR baselines; re-simulation divergence; a redundancy-based co-stabilization model with parameter/topology sensitivity; and the population version where coupling is endogenous.
+**Open remainder:** learned searchers and program synthesizers under matched budgets; the time-order-free IFS testbed; external SINDy/PySR baselines; re-simulation divergence; and the population version where support topology, coupling costs, and resource production are endogenous.
 
 **What a solution would look like:** Not one universal reconstructor, but a set of bounded results stating the family, evidence, query access, cost, recoverable equivalence class, and failure region. Learned systems must be compared against the exact toy floor rather than judged by persuasive outputs.
 
