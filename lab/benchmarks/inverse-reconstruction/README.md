@@ -141,9 +141,9 @@ The useful result is negative and narrowing: **substitutive interdependence is n
 
 ## v1.10 — redundant mutual support under a matched budget (run)
 
-[`co_stabilization_redundancy.py`](co_stabilization_redundancy.py) follows the v1.9 boundary result with the discriminating counterfactual it demanded. Every active node has the same repair budget (B). **Coexistence** spends it locally; **substitution** reserves a fixed share for neighbors and thereby reduces local capacity; **redundancy** preserves local priority and routes only otherwise-unused capacity. Transfer is lossy, total draw is audited against (N B), and every architecture sees the same shock traces. The preregistered candidate criterion asks whether redundancy beats matched coexistence under sparse shocks across size, topology, viability threshold, transfer efficiency, and repair-budget sweeps; knockout dependency and common-mode shocks are reported separately.
+[`co_stabilization_redundancy.py`](co_stabilization_redundancy.py) follows the v1.9 boundary result with the discriminating counterfactual it demanded. Every active node has the same repair budget `B`. **Coexistence** spends it locally; **substitution** reserves a fixed share for neighbors and thereby reduces local capacity; **redundancy** preserves local priority and routes only otherwise-unused capacity. Transfer is lossy, total draw is audited against `N × B`, and every architecture sees the same shock traces. The preregistered candidate criterion asks whether redundancy beats matched coexistence under sparse shocks across size, topology, viability threshold, transfer efficiency, and repair-budget sweeps; knockout dependency and common-mode shocks are reported separately.
 
-Headline case: (N=32), small-world graph, threshold (0.70), 20 seeds.
+Headline case: `N = 32`, small-world graph, threshold `0.70`, 20 seeds.
 
 | Architecture | Independent viability | Correlated viability | KO-1 cost | KO-2 cost | Local recovery |
 |---|---:|---:|---:|---:|---:|
@@ -151,10 +151,10 @@ Headline case: (N=32), small-world graph, threshold (0.70), 20 seeds.
 | substitution | 0.993 | 0.981 | 0.003 | 0.005 | 5.5 steps |
 | redundancy | **0.999** | 0.992 | 0.000 | 0.001 | **4.6 steps** |
 
-- **The candidate criterion is supported, narrowly.** Redundancy beats coexistence in **100% of 18** (N)/topology/threshold cells; median independent-shock gain is (+0.0543), with maximum budget ratio exactly (1.000000). Setting transfer efficiency to zero makes redundancy identical to coexistence, so the gain is causally attributable to the routed spare capacity.
-- **The common-mode limit is sharp.** Median gain under correlated shocks is (+0.0000): when all nodes are damaged together, there are no healthy donors with spare capacity.
-- **One preregistered prediction is falsified.** Substitution also beats coexistence under independent shocks in every cell. Pooling alone helps when damage is sparse. Its cost appears under common-mode damage and knockout; the post-run diagnostic still has redundancy beating substitution in every cell, median (+0.0129).
-- **The result is not a parameter-point artifact.** Redundancy gain stays positive for transfer efficiency (0.40\ldots1.00) ((+0.0602\ldots+0.0657)) and (B\in\{0.08,0.12,0.16\}) ((+0.1343,+0.0652,+0.0377)).
+- **The candidate criterion is supported, narrowly.** Redundancy beats coexistence in **100% of 18** size/topology/threshold cells; median independent-shock gain is `+0.0543`, with maximum budget ratio exactly `1.000000`. Setting transfer efficiency to zero makes redundancy identical to coexistence, so the gain is causally attributable to the routed spare capacity.
+- **The common-mode limit is sharp.** Median gain under correlated shocks is `+0.0000`: when all nodes are damaged together, there are no healthy donors with spare capacity.
+- **One preregistered prediction is falsified.** Substitution also beats coexistence under independent shocks in every cell. Pooling alone helps when damage is sparse. Its cost appears under common-mode damage and knockout; the post-run diagnostic still has redundancy beating substitution in every cell, median `+0.0129`.
+- **The result is not a parameter-point artifact.** Redundancy gain stays positive for transfer efficiency `0.40–1.00` (`+0.0602` to `+0.0657`) and `B ∈ {0.08, 0.12, 0.16}` (`+0.1343`, `+0.0652`, `+0.0377`).
 
 This operationalizes one **designed, budget-matched mechanism of functional mutual support**: healthy nodes' spare capacity improves collective viability under sparse shocks without requiring keystone fragility. It does **not** establish spontaneous ecology, metabolism, life, or a general self-maintenance threshold. The next level is endogenous: populations must build, retain, and dissolve the coupling structure rather than receive it from the experimenter.
 
