@@ -12,6 +12,7 @@ exclude_docs: |
 
 nav:
   - Welcome: index.md
+  - "The Snow Story (any age)": meta/repository-meta/the-snow-story.md
   - "Synthesis (Claims)":
       - Overview: synthesis.md
       - Core Claims: meta/repository-meta/core-claims.md

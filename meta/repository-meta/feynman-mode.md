@@ -20,7 +20,7 @@ Each question has already earned its place in this repository's own history. Tha
 
 | # | Question | What it catches | Receipt from this repo |
 |:--|:---|:---|:---|
-| 1 | Can I explain it to a smart outsider in five minutes? | private vocabulary | An external reviewer couldn't — which is why the [Related Work Map](../research-alignment/related-work-map.md) and the "no term floats free" rule exist. |
+| 1 | Can I explain it to a smart outsider in five minutes? | private vocabulary | An external reviewer couldn't — which is why the [Related Work Map](../research-alignment/related-work-map.md) and the "no term floats free" rule exist. The whole-project answer is now written down: [The Snow Story](the-snow-story.md). |
 | 2 | Is there a toy model? | unfalsifiable grandeur | The [inverse benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) demoted "inversion is hard" to "hard *exactly here*" — known-family inversion turned out to be cheap. The grand claim survived only by shrinking. |
 | 3 | Is there a counterexample? | claims polished instead of tested | Rule 0: one-bit interventions *never* collapse the frozen system. Found by running, not by thinking. Same for Occam being exactly chance on a uniform world. |
 | 4 | Which assumption is actually load-bearing? | hidden forks | One flag (`entropy_couples_to_H`) flipped the substrate veto from unreachable to binding — and forced a real modeling decision (paper v0.5). |

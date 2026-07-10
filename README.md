@@ -118,6 +118,7 @@ The complete index of simulations, theory essays, fiction stress tests, lab fram
 
 Entry points by interest:
 
+- **Plain language:** [The Snow Story](meta/repository-meta/the-snow-story.md) — the whole project told so that a child can follow it, with every paragraph pointing back to its instruments.
 - **Theory:** [The Generator Question](theory/core/the-generator-question.md) (start here) → [Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md) → [Trace to Generator](theory/emergence/trace-to-generator.md).
 - **Measured core:** [Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md) — the spine's asymmetry as curves: where inversion is cheap and where it walls; equivalence classes counted and collapsed; the search wall; Occam's world-dependent payoff; the optimizer's curse, its cure, and the closed loop. Runs in seconds, `numpy` only.
 - **Runnable code:** [Simulation → Theory Map](theory/core/simulation-theory-map.md) lists all 35 simulations with their direction (Forward / Inverse / Both) and the wall they touch.
