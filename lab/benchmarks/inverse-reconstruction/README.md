@@ -1,4 +1,4 @@
-# Inverse-Reconstruction Benchmark (v0–v1.8) — Trace → Generator, Measured
+# Inverse-Reconstruction Benchmark (v0–v1.9) — Trace → Generator, Measured
 
 *The first runnable artifact on the inverse side of the project's spine: given N steps of trace, reconstruct the generator — with noise, observability, and coverage as dials.*
 
@@ -122,9 +122,19 @@ This refines the claim in [Construction vs. Deduction](../../../theory/computati
 - **Two ways composition stays invisible — and only one was predicted.** *Structural:* rule 90 is $L \oplus R$, **center-blind**, so XOR-coupling the center bit is invisible to it at **every** density (empty-rate 0/20 throughout) — the composite is real and active, the phenotype is still exactly a lone rule 90. Visibility is a property of whether the observed generator *reads the coupled channel*, not of coupling strength. *Transient:* the "dying symbiont" (ruleB = 0) does **not** stay hidden — its random initial condition fires the coupling once before it dies, so the empty-rate *rises* with $g$ (0.30 → 1.00). A prepared zero-IC symbiont would be permanently invisible; a merely dying one is not.
 - **The wall is the level jump, not the fit:** with the coupled-pair family and mask known, level-2 tabulation recovers every exercised rule bit **exactly** (accuracy 1.0, coverage 8/8, all $g$). The cost of composition is the description-size jump the observer must accept once level 1 certifies empty — the [family-search floor](family_search.py) (v1.2), one level up.
 
-This is a pair with a fixed mask, not an ecology: nothing here composes spontaneously, persists differentially, or is selected. The population version — where composition and dissolution are continuous, and the question becomes *when a web of functions starts maintaining itself as a whole* ("life is an ecology of functions", Agüera y Arcas) — is the open v1 item below.
+This is a pair with a fixed mask, not an ecology: nothing here composes spontaneously, persists differentially, or is selected. The population version is v1.9 below.
 
 ![Composition](../../tools/inverse_benchmark_composition.png)
+
+## v1.9 — co-stabilization: when a composite becomes an ecology (run)
+
+[`co_stabilization.py`](co_stabilization.py) measures the threshold the ladder note's synthesis names: composition is not yet life; *self-maintenance* is, and its mechanism is **co-stabilization** — each function holding the others in a viable regime. $N=16$ nodes on a ring, health $h_i \in [0,1]$, viable if $h_i \ge 0.5$, dynamics $h_i \leftarrow \mathrm{clip}(s + c\cdot\overline{h}_{\text{neighbors}})$ with $s = 1-c$ so that **all-healthy is a fixed point at every coupling** $c$ — the rest state is identical for every regime by construction. Three probes: rest, single-node knockout, i.i.d. noise.
+
+- **Rest is blind** (P1): viability $= 1.00$ at every $c$. Coexistence ($c=0$) and near-total mutual dependence ($c=0.95$) are pixel-identical at rest — co-stabilization has **no passive signature**. The coverage/Bateson principle's fourth appearance (exp6 bindings, exp7 lures, v1.8 symbionts, here dependencies): a dependency that never fires makes no difference.
+- **Knockout is the instrument** (P2): the cascade is $0$ (purely additive — a knockout costs exactly one node) for $c \le 0.7$, then super-additive — $+2$ extra nodes at $c=0.8$–$0.9$, $+4$ at $c=0.95$, and $+15$ (the **entire ring**) at $c=1.0$. The cascade *is* the ecology, and only removal makes it visible; a critical onset near $c\approx 0.75$, stepped above it.
+- **The predicted trade was falsified — and that is the finding** (P3): noise viability does *not* rise with coupling, it **falls** ($0.977 \to 0.521$). Because mutual dependence here *substitutes* for self-sufficiency ($s = 1-c$), high $c$ removes the restoring force to the viable setpoint and distributed noise accumulates. Pure mutual dependence is fragile **both** ways — to targeted knockout *and* to distributed noise — while looking perfectly healthy at rest: a **monoculture**, not resilience. Genuine ecological robustness would need coupling that *adds a redundant pathway* to self-sufficiency rather than replacing it (the redundancy model, a named follow-up). What survives regardless of coupling type is the invariant: **rest-invisibility, and the knockout as the only instrument that reaches co-stabilization.**
+
+![Co-stabilization](../../tools/inverse_benchmark_co_stabilization.png)
 
 ## Running
 
@@ -147,6 +157,8 @@ python ensemble_size.py                  # v1.7: ensemble size vs the curse (~9 
 python ensemble_size.py --save           # also write the ensemble figure
 python composition.py                    # v1.8: composition, the empty class (~15 s)
 python composition.py --save             # also write the composition figure
+python co_stabilization.py               # v1.9: co-stabilization, the knockout (~5 s)
+python co_stabilization.py --save        # also write the co-stabilization figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
@@ -155,7 +167,7 @@ Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 *(Parts 1–8 — interventions, the family-search floor, model exploitation, weakness vs. simplicity, marked-guess planning, the closed loop, the ensemble sweep, and composition — are done; see above. The items below remain open.)*
 
-- **From pair to ecology (v1.8 → v1.9)**: composition.py is a fixed-mask pair. The population version — a soup of coupled generators where composition and dissolution are continuous, and the measured question is *when a web of functions begins to maintain itself as a whole* (the symbiogenesis / "life is an ecology of functions" reading) — is open. The natural instrument is the empty-class certificate applied across a self-organizing population rather than a designed pair; the BFF/computational-life family is the external anchor.
+- **Ecology, continued (v1.9 → open)**: co_stabilization.py measures the knockout signature on a fixed ring. Two named follow-ups remain: the **redundancy model** (coupling that adds a compensating pathway to retained self-sufficiency, rather than substituting for it — predicted to show the robust-to-noise / fragile-to-knockout trade that v1.9's substitution model did not), and the **population version** — a soup where the coupling structure itself is built and broken by the processes (the BFF / "life is an ecology of functions" reading), with the empty-class certificate applied across a self-organizing population rather than a designed pair.
 - **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget). The industrial arena for exactly this is **ARC-AGI**: few-shot trace→generator with unknown family (v1/v2), and since ARC-AGI-3 *interactive* — the field's own watching→perturbing move; winning systems pair a corpus prior proposing candidates with cheap verification, i.e. the wall's shape, exploited.
 - **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.
 - **IFS testbed**: recover contractive affine maps from an attractor point cloud (hard even with known family — no time ordering).
