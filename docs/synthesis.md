@@ -1,22 +1,36 @@
 # Synthesis
 
-This layer contains claims: structured arguments, definitions, proof links, and publication-facing summaries.
+**Status:** Reader index — navigation, not an additional theory.
 
-Use it when you want the strongest version of the repository's theory, not the exploratory trail that produced it.
+**Scope:** The shortest claim-bearing route through the repository. The project has one shared root and two spines; no single framework is presented as the answer to every question.
 
-## Canonical Path
+## Shared Root
 
-1. [The Generator Question](theory/core/the-generator-question.md) — the organizing question of the project, the forward/inverse asymmetry, the three walls, and the foundational P ≠ NP assumption stated explicitly.
-2. [Core Claims](meta/repository-meta/core-claims.md) — the small claim set that should remain testable.
-3. [Emergence Manifesto v1.3](theory/core/emergence-manifesto-v1.3.md) — the broader thesis and status-tagged claims.
-4. [Thermodynamics of Orchestration](theory/core/thermodynamics-of-orchestration.md) — the main dynamical framework.
-5. [Substrate Veto](theory/veto/substrate-veto-thermodynamics.md) — the thermodynamic boundary argument.
-6. [Generative Form Systems](theory/emergence/generative-form-systems.md) — the intake spine for Barnsley, L-systems, Erdős-Rényi, renormalization, and consciousness-adjacent work.
-7. [Across Scales](theory/emergence/scale-comparison-map.md) — where the same structure holds, where it breaks, and why the search matters.
-8. [From Rule to Mind](book/09_from_rule_to_mind.md) — the compact course spine: operator → iteration → form → boundary → return path.
-9. [Simulation to Theory Map](theory/core/simulation-theory-map.md) — where claims touch executable artifacts.
-10. [Limitations and Honest Assessment](theory/reference/limitations-and-honest-assessment.md) — what this system does not prove.
+1. [The Generator Question](theory/core/the-generator-question.md) — forward/inverse asymmetry, equivalence classes, and the three walls.
+2. [What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md) — the boundary that overrides any stronger wording elsewhere.
+3. [Concept Registry](meta/repository-meta/concept-registry.md) — home, status, and operationalization for every load-bearing term.
+
+## Epistemic Spine
+
+1. [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md) — Trace → Generator → Construction → World-Coupling → Intervention → Revision → Self-Binding.
+2. [Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md) — the measured core, including failed predictions and scope limits.
+3. [Construction vs. Deduction](theory/computation/construction-vs-deduction.md) — candidate generation, witnesses, and cheap verification.
+4. [Measurement as Weak Intervention](theory/core/measurement-as-weak-intervention.md) — coupling is not identification.
+
+## Viability Arc
+
+1. [Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md) — the hinge from emergence to constraint architecture.
+2. [Canonical Path v2](meta/repository-meta/canonical-path-v2.md) — Emergence → Optimization → Constraint Architecture → Survivability.
+3. [The Viable Corridor](papers/viable-corridor.md) — necessity result, sufficiency conjecture, synthetic evidence, and limitations.
+4. [Core Claims](meta/repository-meta/core-claims.md) — the small claim set belonging to the viability and identity branches, not a replacement for the project spine.
+
+## Reader Maps
+
+- [Conceptual Map](theory/core/conceptual-map.md) — current layers, measured results, and frontier.
+- [From Rule to Mind](book/09_from_rule_to_mind.md) — compact course spine.
+- [Simulation to Theory Map](theory/core/simulation-theory-map.md) — where claims touch executable artifacts.
+- [Open Problems](theory/reference/open-problems.md) — maintained unresolved questions.
 
 ## Rule
 
-A synthesis document should state what it claims, what would count against it, and which artifact or open problem it connects to.
+A synthesis document must state what it claims, what would count against it, and which artifact or open problem carries the load. Navigation pages may connect claims; they may not silently strengthen them.
