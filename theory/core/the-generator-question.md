@@ -249,17 +249,3 @@ The Emergence Manifesto remains the strongest single statement of the project's 
 ---
 
 *The forward direction is cheap. The inverse direction is hard. The asymmetry is the project. Whether it has irreducible singularities — places where verification works but reconstruction cannot — is the working assumption that this document, finally, makes explicit.*
-
----
-
-## Author's coda — why this question
-
-*First person, added 2026-07: the voice register of the [author's thread](../computation/construction-vs-deduction.md), applied to the spine itself. This section is motivation, not theory; nothing below carries claim status.*
-
-Maybe what I am looking for in this repository is, in the end, not only a generator — not only the process behind patterns, behavior, intelligence, emergent systems. Maybe I am also looking for the limits of what can be modeled at all: the point where observation, construction, world-model, and self-model can no longer be cleanly separated.
-
-That sounds large. Maybe too large. But at its core it is a practical question: what produces the traces we see — and what happens to us when we try to reconstruct that generator? The first question, this repository answers in every layer. The second, it can only enact: reading a generator is [intervening on it](measurement-as-weak-intervention.md), and when the generator is one's own, the reconstruction enters what it reconstructs. Wall 3 above already said that this search cannot terminate from inside — which is why it is a searching movement rather than a finished theory, and why the open-thesis format is the honest form of that sentence, not a deficiency.
-
-In this sense the repository has also become a workshop of self-observation — in the weak, disciplined sense of the [workspace boundary](from-trace-to-world-binding.md), and deliberately no more.
-
-*Vielleicht ist die Suche nach dem Generator immer auch ein Stück weit die Suche nach sich selbst.* — Maybe the search for the generator is always, in part, the search for oneself. The second foundational assumption above tagged that bridge before I said it out loud.

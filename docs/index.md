@@ -181,4 +181,4 @@ mkdocs serve
 ---
 
 !!! tip "Living Document"
-    This repository is a *thought experiment* developed by Frank Peterlein in collaboration with AI. It is a space to capture, explore, and formalize ideas about emergent intelligence — kept going by nothing grander than curiosity: the wish to understand, maybe, *was die Welt im Innersten zusammenhält*. Feedback, corrections, and discussions are always welcome.
+    This repository is a *thought experiment* developed by Frank Peterlein in collaboration with AI. It is a space to capture, explore, and formalize ideas about emergent intelligence — kept going by nothing grander than curiosity. Feedback, corrections, and discussions are always welcome.
