@@ -131,6 +131,19 @@ First result (10 seeds), against the experiment's own predictions: **both advers
 
 ---
 
+### Experiment 8: Reflexive Depth
+*"Does modeling your modeling buy anything — Kegan's subject-object move, one turn versus two?"*
+
+```bash
+python experiments/exp8_reflexive_depth.py
+```
+
+The depth-2 toy named in [Consciousness as Global Availability §On Levels](../theory/identity/consciousness-as-global-availability.md): a self-estimate tracked at three reflexive depths — depth 0 (no self-model), depth 1 (fixed update rule — the Three-Layer agent's Layer 3, *subject* to its rule), depth 2 (models its own error statistics — the rule taken as *object*). Measures reflexive depth, not experience.
+
+First result (200 seeds), two-sided and matching the theory: where the meta level has structure to observe — a **volatility regime change** in the system's own error process — depth 2 beats depth 1 by **36%**, and depth 1's *fixed* self-model is then **worse than no model at all** (a self-model you cannot revise becomes a liability when the world shifts). Where it has nothing to observe — a **constant bias on the sole self-observation channel** — depth 2 equals depth 1 and removes nothing: **Wall 3 in a toy**. Reflexive depth pays exactly where the meta level has something to see, and is provably powerless where it does not.
+
+---
+
 ## Extended SII Dashboard (4-Axis Radar)
 
 ```bash
