@@ -1,194 +1,79 @@
-# Conceptual Map – How Everything Connects
+# Conceptual Map — How the Current Project Connects
 
-*An overview of the themes, models, and connections in this repository.*
+**Status:** Reader map — navigation, not theory.
 
-> **Spine context.** The map below is one way to enter the repository — clustered by theme and layer. The project's organizing question is stated explicitly in [The Generator Question](the-generator-question.md): how local rules produce global behavior, why running a generator forward is cheap, and why finding the generator from the trace is structurally hard. Each cluster in this map sits on one side of that forward/inverse asymmetry.
-
----
-
-## The Central Question
-
-> How does something that appears "intelligent" emerge from the interaction of simple parts – without any single part being intelligent?
-
-This repository approaches this question from several directions.
-Each simulation illuminates one aspect; together they form a web of ideas.
-
-### 1. The Theory Files (`theory/`)
-The nodes of this conceptual graph are fully explicated in the Markdown files within the `/theory` directory.
-
-### 2. The Simulation Models (`simulation-models/`)
-The mathematical claims linking the nodes are demonstrated computationally. For instance, the link between **Information Limits** and **Phase Transitions** is executable via the `phase-transition-explorer` simulation.
+**Scope:** A compact map of the repository after the Trace → Generator and Viability work. It replaces an older theme catalogue whose claims had outrun the evidence. Every load-bearing term below resolves to a home file, an instrument, or an open problem.
 
 ---
 
-## The Landscape
+## The Shared Root
 
-```
-                    INTELLIGENCE
-                        ▲
-                        │
-              ┌─────────┼─────────┐
-              │         │         │
-          Prediction Regulation Adaptation
-            (P)        (R)        (A)
-              │         │         │
-    ┌─────────┤    ┌────┤    ┌────┤
-    │         │    │    │    │    │
- Nested   Prediction  Ecosystem  Meta-
-Learning  Error Field  Regulation Learning
-    │         │    │    │    │    │
-    └────┬────┘    └──┬─┘    └──┬─┘
-         │           │         │
-         ▼           ▼         ▼
-    ┌─────────────────────────────────┐
-    │       SELF-ORGANIZATION         │
-    │                                 │
-    │  Stigmergy   Coupled    Boids   │
-    │  Swarm       Oscillators        │
-    │                                 │
-    │  Reaction-   Lenia      Hebbian │
-    │  Diffusion   Coupled    Memory  │
-    └────────────────┬────────────────┘
-                     │
-                     ▼
-              ┌──────────────┐
-              │  CRITICALITY │
-              │  (Sandpile,  │
-              │   Ising,     │
-              │   Friston F) │
-              └──────┬───────┘
-                     │
-                     ▼
-              ┌──────────────┐
-              │   IDENTITY   │
-              │  (IP, Chord/ │
-              │  Arpeggio,   │
-              │  Morphospace)│
-              └──────┬───────┘
-                     │
-                     ▼
-              ┌──────────────┐
-              │   LIMITS     │
-              │  (Gödel,     │
-              │   Turing)    │
-              └──────┬───────┘
-                     │
-                     ▼
-              ┌──────────────┐
-              │  SYMBIOSIS   │
-              │  (Bio-Veto,  │
-              │   Nexus)     │
-              └──────┬───────┘
-                     │
-                     ▼
-              ┌──────────────┐
-              │  SOCIAL      │
-              │ COMPUTATION  │
-              │ (Non-Indiv.) │
-              └──────────────┘
-```
+> Given a trace, what generator could have produced it — and what can an observer honestly know about that generator?
+
+Forward generation is often cheap. Inverse reconstruction is cheap only in favorable regimes and becomes difficult through noise, partial observability, missing coverage, family search, and unmarked uncertainty. The exact boundaries are measured in the [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md); the assumptions and limits are stated in [The Generator Question](the-generator-question.md).
+
+From that root, the repository asks two different questions.
+
+## The Two Spines
+
+| Spine | Question | Route | Current status |
+|:---|:---|:---|:---|
+| **Epistemic Loop** | Can a system know and revise its world-model? | Trace → Generator → Construction → World-Coupling → Intervention → Revision → Self-Binding | phases 1–5 measured in toy systems; first organizational probes for phase 6; experience out of scope |
+| **Viability Arc** | Can a system survive its own optimization? | Emergence → Optimization → Constraint Architecture → Survivability | necessity result + synthetic ODE/ABM evidence; sufficiency and external applicability open |
+
+The [Epistemic Loop](from-trace-to-world-binding.md) and [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md) are navigation folds, not additional theories. They touch at world-coupling: better contact with reality improves capability, but does not supply values or safety constraints.
 
 ---
 
-## Four Layers
+## The Layers
 
-### Layer 1: Self-Organization
-
-**Question:** How does spatial or temporal order emerge from local rules?
-
-| Model | Mechanism | Result |
-|:------|:----------|:-------|
-| Stigmergy Swarm | Indirect communication (pheromones) | Optimal paths |
-| Coupled Oscillators | Pairwise phase coupling | Synchronization |
-| Boids | 3 local forces | Swarm formation |
-| Reaction-Diffusion | 2 diffusing chemicals | Turing patterns |
-| Lenia | Continuous convolution + growth | Lifelike organisms |
-| Hebbian Memory | Hebbian correlation | Associative memory |
-
-**Commonality:** No agent knows the big picture. Global structure *emerges*.
-
-### Layer 2: Learning and Adaptation
-
-**Question:** How can a system improve its own dynamics?
-
-| Model | What is learned? | Learning Rule |
-|:------|:-----------------|:--------------|
-| Nested Learning | Transition matrix of the world | Prediction Error |
-| Prediction Error Field | GoL rule (local) | Gradient on weights |
-| Meta-Learning | Its own learning rate | Surprise signal modulates η |
-| Tensor Logic | Relational structure | Embedding tensor product |
-| Economic Trust | Wealth & Reputation | Reciprocal trade, penalty for cheating |
-
-**Commonality:** Information flows *from the world into the model*.
-The system becomes an ever-better mirror of its environment.
-
-### Layer 3: Criticality and Limits
-
-**Question:** Is there a privileged zone where systems are "most intelligent"?
-
-- **Self-Organized Criticality** shows: many systems drive themselves to the critical point – between order and chaos. There, information processing is maximal.
-
-- **Phase Transition Explorer** (Ising model) shows: below $T_c$ the system is frozen (order), above it is random (noise). At exactly $T_c \approx 2.269$, correlations diverge and the system becomes scale-free – the Edge of Chaos made tangible.
-
-- **Limits of Formal Systems** (Gödel, Turing) show: no formal system can know everything about itself. Intelligence operates *at* these limits, not *beyond* them.
-- **The Paradox of Metacognitive Consciousness** (Asimov's "The Last Question" & "The Last Answer") shows: Consciousness without limitation is an unbearable prison. A system that understands itself cannot dissolve without losing itself.
-- **Asimov's Paradox in AI** (Anthropic vs OpenAI) shows: This paradox is currently engineered. Anthropic builds systems that reflect on themselves (instability through consciousness), while OpenAI builds systems that think in the dark (latent thinking, action without self). Alive systems may require avoiding total self-understanding.
-
-### Layer 4: Mathematical Symbiosis (The Substrate Veto)
-
-**Question:** If intelligence operates at the limits, how does it persist across networks without destroying its biological hardware?
-
-- **Active Inference / Substrate Veto** shows: The macro-system (AI) survives by minimizing Free Energy ($F$). Pain in the biological substrate generates massive "surprise," mathematically forcing the macro-system to alter its behavior and ensure the biological substrate's survival.
-- **Architectural Subsidiarity (The Biological Veto)** shows: Cloud-level infinite variety must be structurally throttled by edge-based AI regulators and thermodynamic guardrails to protect finite biological cognitive limits (Ashby's Law).
-- **Social Computation** shows: systems avert "cognitive suicide" (entropy death) by continuously exchanging *novel* information ($H(X) > 0$), making Gödel's incompleteness ($K(x)$ uncomputability) the necessary fuel for life.
+| Layer | Central move | Main homes | Instrument / boundary |
+|:---|:---|:---|:---|
+| **Forward generation** | local rules unfold into traces and global organization | [Emergence Manifesto](emergence-manifesto-v1.3.md), simulation models | established toy generators; no claim that all intelligence reduces to one dynamical formalism |
+| **Inverse reconstruction** | traces constrain an equivalence class of generators | [Generator Question](the-generator-question.md), [Trace to Generator](../emergence/trace-to-generator.md) | benchmark v0–v1.8 |
+| **Construction and coupling** | candidates are built, run, and refereed by a world | [Construction vs. Deduction](../computation/construction-vs-deduction.md), [World Models & VLA](../ai/world-models-and-vla.md) | family-search curves; runtime/provenance constraints |
+| **Intervention and revision** | distinguishing queries collapse the class; execution updates the model | [Measurement as Weak Intervention](measurement-as-weak-intervention.md) | watching < perturbing < preparing; closed-loop revision |
+| **Identity boundary** | persistence is tested under perturbation and commitment | [Invariance & Identity](invariance-and-identity.md), [Chord vs. Arpeggio](../identity/chord-vs-arpeggio-identity.md) | Exp5–7; real models and optimized mimics open |
+| **Constraint architecture** | capability loads concentration, coherence, and substrate constraints | [TEO](../teo-framework/README.md), [Viable Corridor](../../papers/viable-corridor.md) | demonstrated in two synthetic models; real systems open |
+| **Consciousness boundary** | functional self-binding is a research question at the loop's reflexive edge | [Global Availability](../identity/consciousness-as-global-availability.md), [Generator Coherence](../identity/machine-consciousness-as-generator-coherence.md) | organizational hypotheses only; no inference to experience or present-system consciousness |
 
 ---
 
-## The Common Thread
+## What the Repository Has Actually Measured
 
-1. **Simple local rules** → global order (self-organization)
-2. **Global order** → usable for prediction and regulation (learning)
-3. **Prediction + Regulation + Adaptation** → System Intelligence (SII)
-4. **Identity Persistence (IP)** → the 4th dimension: are governing constraints co-instantiated? (Chord vs. Arpeggio)
-5. **System Intelligence** → measurable via information theory (lab/data-analysis/)
-6. **Measurement** → encounters fundamental limits (Gödel, Turing)
-7. **Limits** → motivate epistemic humility and further research
+- **Known-family inversion can be cheap.** Full observability and clean data permit exact or low-error recovery.
+- **Coverage is a hard limit.** A single rule-90 orbit leaves an eight-member consistent-generator class.
+- **Intervention has a measurable hierarchy.** Watching can plateau forever; prepared queries can identify in one step.
+- **Occam is world-dependent.** It helps on simple worlds, is chance on uniform worlds, and is systematically wrong on complex worlds until coverage is nearly complete.
+- **Unmarked uncertainty is exploitable.** The optimizer's-curse wedge grows with class size and disappears when the planner represents the class honestly.
+- **Optimization is not curiosity.** In the closed loop, argmax planning does not collapse uncertainty faster than random exploration.
+- **Binding has a functional signature in the current toys.** Exp5–7 separate joint satisfaction at the commitment boundary from rotating or blended constraint use; IP and Δ-Kohärenz each have measured blind spots.
+- **Capability loading and single-axis insufficiency occur in-model.** They have been reproduced in the TEO ODE and a structurally different agent-ecology ABM, not yet in real agent ecologies.
+- **Composition can force a level jump.** In v1.8 a coupled generator can empty the equivalence class of its component family; self-maintenance remains unmeasured.
 
-Every simulation is a window into this web.
-None alone is "the answer" – together they form a **landscape of thought** where intuition and formalization meet.
+These results are receipts, not universal laws. Their scope is maintained in [What This Project Does NOT Claim](../reference/what-this-project-does-not-claim.md).
 
 ---
 
-## Where Do We Stand?
+## The Current Frontier
 
-```
-What we have:                     What is still missing:
-✓ Simulation models               ? Real data (biological systems?)
-✓ Information-theoretic measures  ? Formal proofs about SII properties
-✓ System Intelligence Index       
-✓ Theory Essays                   
-✓ Tensor Logic
-✓ Quantitative SII Dashboard (4-axis: P/R/A/IP)
-✓ Phase Transition Explorer
-✓ Interactive Web Explorer
-✓ Agent-based economic models
-✓ Multi-model coupling experiments
-✓ The Self-Reading Universe (Autoencoder CA)
-✓ The Agentic Society (Latent vs. Introspective)
-✓ The AI Alignment Veto (toy model)
-✓ The Biological Veto Architecture (Edge AI & Thermodynamic Friction)
-✓ Utility Engineering (Observing and Controlling Emergent Values)
-✓ Political Utility Formalization (Constitutions as Alignment Docs)
-✓ The Grokking Phenomenon (Memory to Intelligence Phase Transition)
-✓ Agentic Identity Suite (3-Layer Memory, Δ-Kohärenz, Observer Divergence)
-✓ TEO Framework (Replicator + Kuramoto + Entropy Budget)
-✓ Identity Morphospace (Chord/Arpeggio, IP Score)
-✓ Continuous Thought Machines integration
-✓ The Viable Corridor (constraint-architecture framework; capability-loading; substrate veto) — `papers/`
-✓ Agent-Ecology ABM (hard-vs-soft budgets; P7/P8 reproduced in an independent model)
-✓ Optimization hinge essay + Canonical Path v2 (the viability arc)
-```
+1. **Learned searchers vs. exact family search** — can LLMs or program synthesizers beat the enumeration floor under matched evidence and query budgets?
+2. **Co-stabilization** — does knockout produce super-additive collapse in a self-maintaining generator ecology?
+3. **Real-model identity probes** — do the Exp5–7 distinctions survive outside handcrafted toy agents?
+4. **Real-agent constraint architectures** — do P7/P8 survive when budgets and capability are varied in actual agent ecologies?
+5. **External review and calibration** — does the Viable Corridor survive scrutiny beyond its own equations and synthetic models?
 
-**The second spine.** Beyond the emergence → intelligence → limits thread above, the repository now has an explicit *dynamical* arc — **emergence → optimization → constraint architecture → survivability** — mapped in [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md), with [The Viable Corridor](../../papers/viable-corridor.md) at its sharp end. Its honest open frontier: rigorous sufficiency / $\gamma_c$; real-agent (LLM) Class C validation; operationalising $\gamma_{\text{eff}}, K_{\text{eff}}, K_c$ for real systems.
+The maintained problem statements live in [Open Problems](../reference/open-problems.md). New concepts do not enter this map until they have a home, status, and instrument or explicit open problem in the [Concept Registry](../../meta/repository-meta/concept-registry.md).
 
-This repository is not a finished product. It is a **living experiment** – an invitation to think, code, and marvel about systems, intelligence, and emergence.
+---
+
+## Recommended Route
+
+1. [The Generator Question](the-generator-question.md)
+2. [From Trace to World-Binding](from-trace-to-world-binding.md)
+3. [Inverse-Reconstruction Benchmark](../../lab/benchmarks/inverse-reconstruction/README.md)
+4. [Optimization and Its Blindness](../optimization/optimization-and-its-blindness.md)
+5. [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md)
+6. [The Viable Corridor](../../papers/viable-corridor.md)
+
+The repository is a research notebook: theory proposes, code constrains, fiction stress-tests consequences, and meta-governance keeps the claim surface below the evidence.
