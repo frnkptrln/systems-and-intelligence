@@ -50,7 +50,7 @@ The [Epistemic Loop](from-trace-to-world-binding.md) and [Canonical Path v2](../
 - **Binding has a functional signature in the current toys.** Exp5–7 separate joint satisfaction at the commitment boundary from rotating or blended constraint use; IP and Δ-Kohärenz each have measured blind spots.
 - **Capability loading and single-axis insufficiency occur in-model.** They have been reproduced in the TEO ODE and a structurally different agent-ecology ABM, not yet in real agent ecologies.
 - **Composition can force a level jump.** In v1.8 a coupled generator can empty the equivalence class of its component family.
-- **Designed redundant support has a bounded functional signature.** v1.9 rejected substitution-driven dependency; v1.10 keeps self-sufficiency and routes spare repair capacity, improving viability across the sparse-shock sensitivity grid without exceeding the matched budget. The gain vanishes under common-mode shocks and does not yet establish endogenous ecology.
+- **Useful support is not automatically retained.** v1.10 establishes a bounded, budget-matched redundancy benefit. v1.11 lets the population and realized links turn over: the evolved network helps in paired acute ablation, but paid contribution is selected downward in all 16 seeds and abundance is lower. Functional collective benefit and evolutionary stability separate.
 
 These results are receipts, not universal laws. Their scope is maintained in [What This Project Does NOT Claim](../reference/what-this-project-does-not-claim.md).
 
@@ -59,7 +59,7 @@ These results are receipts, not universal laws. Their scope is maintained in [Wh
 ## The Current Frontier
 
 1. **Learned searchers vs. exact family search** — can LLMs or program synthesizers beat the enumeration floor under matched evidence and query budgets?
-2. **From designed redundancy to endogenous ecology** — can a population build and maintain the support topology and resource flows that v1.10 currently supplies by design?
+2. **From useful support to evolutionarily stable support** — can partner choice, conditional reciprocity, or spatial/kin assortment preserve contribution against low-contributing recipients under matched costs?
 3. **Real-model identity probes** — do the Exp5–7 distinctions survive outside handcrafted toy agents?
 4. **Real-agent constraint architectures** — do P7/P8 survive when budgets and capability are varied in actual agent ecologies?
 5. **External review and calibration** — does the Viable Corridor survive scrutiny beyond its own equations and synthetic models?

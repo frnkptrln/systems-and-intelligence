@@ -1,4 +1,4 @@
-# Inverse-Reconstruction Benchmark (v0–v1.10) — Trace → Generator, Measured
+# Inverse-Reconstruction Benchmark (v0–v1.11) — Trace → Generator, Measured
 
 *The first runnable artifact on the inverse side of the project's spine: given N steps of trace, reconstruct the generator — with noise, observability, and coverage as dials.*
 
@@ -158,6 +158,26 @@ Headline case: `N = 32`, small-world graph, threshold `0.70`, 20 seeds.
 
 This operationalizes one **designed, budget-matched mechanism of functional mutual support**: healthy nodes' spare capacity improves collective viability under sparse shocks without requiring keystone fragility. It does **not** establish spontaneous ecology, metabolism, life, or a general self-maintenance threshold. The next level is endogenous: populations must build, retain, and dissolve the coupling structure rather than receive it from the experimenter.
 
+## v1.11 — useful support is not yet evolutionarily stable (run)
+
+[`co_stabilization_population.py`](co_stabilization_population.py) removes v1.10's supplied support graph. Individuals occupy a 12 × 12 toroidal lattice, receive environmental resources, suffer shocks, die, reproduce locally, and mutate. Support propensity and link propensity are inherited. Realized links form and break during the run; every link, transfer, self-repair, and birth is paid from stored energy. Low-contributing recipients are allowed, and there is no explicit fitness or group reward. The potential neighborhood remains spatially constrained, but the occupied population and realized support graph are endogenous.
+
+The preregistered candidate criterion required three things: valid accounting, more linked support retained under transfer-enabled evolution than in a matched transfer-disabled control in a majority of seeds, and a positive paired sparse-shock assay after evolution. The first and third hold. The selection condition fails decisively.
+
+| Median over 16 seeds | Transfers enabled | Transfers disabled |
+|---|---:|---:|
+| late population abundance | 104.1 | **125.6** |
+| linked support propensity | 0.378 | **0.486** |
+| realized link density | 0.485 | 0.489 |
+
+- **The network is dynamically produced.** Median turnover is 1,236 links formed and 1,168 broken, with 96 births and 96 deaths. Maximum transfer draw / unused repair capacity is `1.000000`; stored energy never becomes negative.
+- **The network is functionally useful.** In paired post-evolution sparse-pulse assays, enabling the exact evolved transfers adds `+0.0089` survivors, `+0.0176` integrated viability, and a 2-step recovery advantage over ablating transfer.
+- **But contribution is selected downward.** Transfer-enabled populations retain less linked support in **all 16 seeds**: median difference `−0.1061`, with a `−0.1221` change from the initial level. They also sustain fewer individuals. The support mechanism helps the present collective but costs its contributors enough that local survival and reproduction do not preserve it.
+- **The common-mode boundary is partial.** Common damage yields no median survivor gain and only `+0.0097` integrated viability, below the sparse result; its recovery-time summary nevertheless improves by 3 rather than 2 steps. The limit is not universal across metrics.
+- **Low contributors persist.** `40.4%` of linked agents finish below support `0.20`; `17.6%` combine that low contribution with link propensity above `0.50`.
+
+The preregistered endogenous co-stabilization criterion is therefore **not supported**. v1.11 exposes the missing bridge between a mechanism that benefits a collective and one that evolution actually retains. The next discriminating models are not “more support” but mechanisms that can alter that selection problem: partner choice, conditional reciprocity, and spatial/kin assortment. Resource production and open-ended topology remain external beyond that.
+
 ## Running
 
 ```bash
@@ -183,15 +203,17 @@ python co_stabilization.py               # v1.9: co-stabilization, the knockout 
 python co_stabilization.py --save        # also write the co-stabilization figure
 python co_stabilization_redundancy.py      # v1.10: matched-budget redundancy (~25 s)
 python co_stabilization_redundancy.py --save # also write the redundancy figure
+python co_stabilization_population.py      # v1.11: endogenous population (~7 s)
+python co_stabilization_population.py --save # also write the population figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 ## Current roadmap (open)
 
-*(The benchmark sequence through v1.10 is run and documented above. The items below remain open.)*
+*(The benchmark sequence through v1.11 is run and documented above. The items below remain open.)*
 
-- **From designed redundancy to endogenous ecology**: v1.10 establishes a budget-matched mutual-support mechanism under sparse shocks and maps its common-mode boundary. Next: a **population model** in which nodes construct, retain, rewire, and dissolve support links under selection and resource costs; test whether the supportive topology emerges rather than being supplied. Common-mode vulnerability, topology formation, and metabolic resource generation remain open.
+- **From useful support to stable support**: v1.11 lets links turn over, traits mutate, and individuals reproduce, but paid contribution is selected downward despite a positive acute ablation test. Next: compare **partner choice**, **conditional reciprocity**, and **spatial/kin assortment** under the same accounting and cheater controls. Only after one survives invasion and ablation should resource production and less constrained topology be added.
 - **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget). The industrial arena for exactly this is **ARC-AGI**: few-shot trace→generator with unknown family (v1/v2), and since ARC-AGI-3 *interactive* — the field's own watching→perturbing move; winning systems pair a corpus prior proposing candidates with cheap verification, i.e. the wall's shape, exploited.
 - **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.
 - **IFS testbed**: recover contractive affine maps from an attractor point cloud (hard even with known family — no time ordering).
