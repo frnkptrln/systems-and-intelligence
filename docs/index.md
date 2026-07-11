@@ -145,7 +145,7 @@ Narrative stress tests that make abstract theoretical constraints visible in liv
 2. **External review of the Viable Corridor** — freeze the paper's conceptual scope while its dynamical assumptions, sufficiency gap, and empirical mapping receive a critical read.
 3. **Rigorous sufficiency** — replace single-trajectory evidence with open-set tests and, if possible, construct or bound \(\gamma_c\).
 4. **Separate the real-model questions correctly** — live Agentic Identity Suite runs test Mirror/Chord/binding claims; P7/P8 require a distinct real-agent ecology with hard/soft budgets and independently varied constraint architecture.
-5. **From redundant support to ecology** — v1.10 establishes budget-matched mutual support under sparse shocks and its common-mode boundary. Next, test a population that must build, retain, rewire, and pay for its own support topology and resource flows.
+5. **From useful support to stable support** — v1.11's dynamic population builds links that help acutely, but contribution is selected downward in every seed and abundance falls. Test partner choice, conditional reciprocity, and spatial/kin assortment under the same costs before adding endogenous resource production.
 
 **Speculative / long-horizon** `[SPECULATIVE]`:
 
