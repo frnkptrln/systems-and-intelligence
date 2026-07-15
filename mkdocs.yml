@@ -88,6 +88,7 @@ nav:
           - Antikythera Topology: theory/teo-framework/antikythera-topology.md
           - Thermodynamic Tokenomics: theory/teo-framework/thermodynamic-tokenomics.md
       - "Symbiotic Organ Hypothesis":
+          - Cooperative Intelligence at the Separatrix: theory/symbiotic/cooperative-intelligence-at-the-separatrix.md
           - Hypothesis: theory/symbiotic/symbiotic-organ-hypothesis.md
           - Scar Tissue Architecture: theory/symbiotic/scar-tissue-architecture.md
           - Epistemic Firewalls: theory/symbiotic/epistemic-firewalls.md
@@ -310,3 +311,4 @@ extra:
       link: https://github.com/frnkptrln
       name: Frank Peterlein on GitHub
   generator: false
+
