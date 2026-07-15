@@ -363,11 +363,13 @@
 .md-typeset .md-button:not(.md-button--primary) {
   border: 1px solid var(--si-border);
   background: var(--si-surface);
+  color: var(--md-typeset-a-color);
 }
 
 .md-typeset .md-button:not(.md-button--primary):hover {
   border-color: var(--md-accent-fg-color);
   background: var(--si-glow);
+  color: var(--md-accent-fg-color);
 }
 
 /* --- Smooth transitions --- */
