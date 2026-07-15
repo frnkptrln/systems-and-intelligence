@@ -57,6 +57,7 @@ What makes a system a *self* rather than a process.
 
 The synthesis: scars, firewalls, cognitive breathing, and the Gödelian Agent.
 
+- **[Cooperative Intelligence at the Separatrix](symbiotic/cooperative-intelligence-at-the-separatrix.md)** — A grounded account of heterogeneous contributors sharing construction and revision without becoming a group mind.
 - **[Symbiotic Organ Hypothesis](symbiotic/symbiotic-organ-hypothesis.md)** — From negative constraints to positive resonance.
 - **[Scar Tissue Architecture](symbiotic/scar-tissue-architecture.md)** — Catastrophic forgetting as a feature, not a bug.
 - **[Epistemic Firewalls](symbiotic/epistemic-firewalls.md)** — Deception and privacy as thermodynamic necessities.
@@ -83,3 +84,4 @@ Stable reference material, glossaries, and honest assessment.
 
 - **[TEO Framework](teo-framework/README.md)** — Five sub-documents deriving IP, attractor geometry, love-as-constraint, and the paperclip failure.
 - **[Human Organism in Silicon Age](human-organism-silicon-age/core-theses.md)** — Alignment, resistance, Gödel's Constitution, and the Symbiotic Nexus.
+
