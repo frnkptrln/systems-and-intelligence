@@ -1,5 +1,8 @@
 # Part 2: Measuring the Mind
 
+> **Status:** Earlier synthesis — under revision.  
+> This chapter preserves an earlier formulation of the project. For the current linear route, start with [*From Rule to Mind*](09_from_rule_to_mind.md). Current status tags and scope boundaries elsewhere in the repository override stronger wording here.
+
 If intelligence is a property of continuous dynamical systems, how do we measure it without relying on discrete benchmarks like MMLU or HumanEval?
 
 This repository proposes moving away from measuring *knowledge retrieval* toward measuring **structural integrity**.
