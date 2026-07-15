@@ -1,5 +1,8 @@
 # Part 5: Future Perspectives & Open Problems
 
+> **Status:** Earlier synthesis — under revision.  
+> This chapter preserves an earlier formulation of the project. For the current linear route, start with [*From Rule to Mind*](09_from_rule_to_mind.md). Current status tags and scope boundaries elsewhere in the repository override stronger wording here.
+
 The `systems-and-intelligence` repository is an ongoing research program. It is currently in a phase of formal expansion, testing the mathematical limits of the TEO framework and the 3-Layer Memory Architecture. We have established the theoretical scaffolding and built the initial empirical bridges through simulations, metrics, and manifesto claims.
 
 This chapter maps the frontier.

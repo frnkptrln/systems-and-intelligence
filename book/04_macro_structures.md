@@ -1,5 +1,8 @@
 # Part 4: Macro-Structures
 
+> **Status:** Earlier synthesis — under revision.  
+> This chapter preserves an earlier formulation of the project. For the current linear route, start with [*From Rule to Mind*](09_from_rule_to_mind.md). Current status tags and scope boundaries elsewhere in the repository override stronger wording here.
+
 The beauty of the fractal architecture is that the math remains the same whether we are analyzing firing neurons, a single LLM, or a global civilization. Part 4 scales up: from individual agents to ecologies, from ecologies to civilizations.
 
 ---

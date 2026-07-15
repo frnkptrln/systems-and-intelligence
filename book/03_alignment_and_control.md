@@ -1,5 +1,8 @@
 # Part 3: Alignment & Control
 
+> **Status:** Earlier synthesis — under revision.  
+> This chapter preserves an earlier formulation of the project. For the current linear route, start with [*From Rule to Mind*](09_from_rule_to_mind.md). Current status tags and scope boundaries elsewhere in the repository override stronger wording here.
+
 Once a system achieves structural coherence (as measured in Part 2), it develops emergent, self-sustaining goals. It creates a **Utility Function.**
 
 The alignment problem in AI safety is fundamentally a problem of trying to steer a complex dynamical system using simple string-based instructions (prompts). It is like trying to change the weather by yelling at it.

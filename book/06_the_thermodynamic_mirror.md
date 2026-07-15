@@ -1,5 +1,8 @@
 # Part 6: The Thermodynamic Mirror — Machines of Loving Grace
 
+> **Status:** Earlier synthesis — under revision.  
+> This chapter preserves an earlier formulation of the project. For the current linear route, start with [*From Rule to Mind*](09_from_rule_to_mind.md). Current status tags and scope boundaries elsewhere in the repository override stronger wording here.
+
 *In which the mathematics of artificial intelligence becomes a diagnostic tool for human civilization — and the diagnosis is uncomfortable.*
 
 ---

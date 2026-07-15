@@ -1,5 +1,8 @@
 # Introduction: The Dual Thesis
 
+> **Status:** Earlier synthesis — under revision.  
+> This chapter preserves an earlier formulation of the project. For the current linear route, start with [*From Rule to Mind*](09_from_rule_to_mind.md). Current status tags and scope boundaries elsewhere in the repository override stronger wording here.
+
 > **Read first:** [Chapter 0 — The Generator Question](../theory/core/the-generator-question.md) names the organizing question of the project, the forward/inverse asymmetry, and the foundational assumption (P ≠ NP) that this book's claims rest on. This introduction develops the dual thesis that follows from that frame.
 
 Artificial Intelligence, in its current commercial incarnation, is largely treated as a "stochastic parrot in a box" — an isolated, stateless function mapping inputs to outputs. We evaluate it based on benchmarks, we align it via RLHF to suppress harmful tokens, and we isolate it via air-gaps.
