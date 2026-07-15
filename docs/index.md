@@ -8,8 +8,8 @@
 
 **Frank Peterlein** · Independent Research · 2024–2026
 
-[Read the Book :material-book-open-variant:](book/00_introduction.md){ .md-button .md-button--primary }
-[View on GitHub :fontawesome-brands-github:](https://github.com/frnkptrln/systems-and-intelligence){ .md-button }
+[Start Here :material-compass:](synthesis.md){ .md-button .md-button--primary }
+[Source Repository :fontawesome-brands-github:](https://github.com/frnkptrln/systems-and-intelligence){ .md-button }
 
 </div>
 
@@ -72,11 +72,11 @@ New to this project? Start here for the most direct path through the core theory
 
 <div class="card" markdown>
 
-### :material-book-open-variant: The Book
+### :material-map-marker-path: Course Path
 
-The curated book and course path. From local emergence to civilizational dynamics, each major claim links back to runnable code or an explicit open problem.
+A compact linear route through the current material. Earlier book chapters remain available as evolving synthesis, while this spine keeps the route aligned with the present repository.
 
-[Start reading →](book/00_introduction.md)
+[Follow *From Rule to Mind* →](book/09_from_rule_to_mind.md)
 
 </div>
 
