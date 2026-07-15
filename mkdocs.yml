@@ -16,9 +16,10 @@ nav:
   - "Synthesis (Claims)":
       - Overview: synthesis.md
       - Core Claims: meta/repository-meta/core-claims.md
-      - "Book: From Rule to Mind":
+      - "Course Path & Earlier Book":
+          - "Start: From Rule to Mind": book/09_from_rule_to_mind.md
           - "Chapter 0: The Generator Question": theory/core/the-generator-question.md
-          - Introduction: book/00_introduction.md
+          - "Earlier Introduction": book/00_introduction.md
           - "Part 1: Mechanics of Emergence": book/01_mechanics_of_emergence.md
           - "Part 2: Measuring the Mind": book/02_measuring_the_mind.md
           - "Part 3: Alignment & Control": book/03_alignment_and_control.md
@@ -26,7 +27,6 @@ nav:
           - "Part 5: Future Perspectives": book/05_future_perspectives.md
           - "Part 6: The Thermodynamic Mirror": book/06_the_thermodynamic_mirror.md
           - "Part 7: Cities as Metabolic Organisms": book/08_cities_as_metabolic_organisms.md
-          - "Course Spine: From Rule to Mind": book/09_from_rule_to_mind.md
           - Bibliography: book/07_bibliography.md
       - "Core Theory":
           - Theory Overview: theory/README.md
