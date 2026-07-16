@@ -48,6 +48,8 @@ Humans, AI systems, organizations, and cultures should not be treated as interch
 
 Culture is especially easy to romanticize. Here, a **cultural skill** means a learned practice for coordinating plurality across time: turn-taking, apprenticeship, translation, public justification, ways of recording disagreement, rituals of consent, methods of repair, and legitimate forms of refusal. These practices can store solutions before anyone can state their mechanism formally. They are a kind of social memory, but not an automatically wise one.
 
+Such practices do not persist as descriptions alone. [From Action to Culture](../emergence/from-action-to-culture.md) distinguishes a recorded rule from the recurrent enactment, material scaffold, competence, transmission, and feedback needed to keep it active. Ritual is one normatively marked form of practice, not a synonym for every repetition. This matters here because cooperation remains episodic unless its coordination and refusal practices can survive changed participants and conditions.
+
 A tradition is not valid because it is old, and a dataset is not representative because it is large. Cultural intelligence requires both transmission and revision. AI can help compare patterns, recover neglected alternatives, and expose contradictions across archives. It cannot, by that fact alone, decide which inheritance should continue. People exposed to the consequences retain a form of standing that pattern coverage does not confer.
 
 ## Cooperation as a distributed epistemic loop
@@ -110,6 +112,7 @@ What is built can exceed each contributor's initial repertoire without making re
 ## Related
 
 - [From Trace to World-Binding](../core/from-trace-to-world-binding.md) — the epistemic loop and the shared-workspace boundary
+- [From Action to Culture](../emergence/from-action-to-culture.md) — how enacted coordination becomes recurrent, transmissible, and revisable practice
 - [The Transition Problem](../veto/the-transition-problem.md) — the separatrix and the open transition question
 - [The Non-Individual Intelligence](../identity/the-non-individual-intelligence.md) — intelligence as a network property
 - [Principles of the Agentic Society](../identity/agentic-society-principles.md) — differentiated roles and externalized memory

@@ -53,6 +53,7 @@ nav:
               - Grokking Phase Transition: theory/emergence/grokking-phase-transition.md
               - Generative Compression: theory/emergence/generative-compression.md
               - Generative Form Systems: theory/emergence/generative-form-systems.md
+              - From Action to Culture: theory/emergence/from-action-to-culture.md
               - Fractal Architecture of Emergence: theory/emergence/fractal-architecture-of-emergence.md
               - Across Scales: theory/emergence/scale-comparison-map.md
               - Emergence & Origin of Intelligence: theory/emergence/emergence-origin-intelligence.md
@@ -311,4 +312,3 @@ extra:
       link: https://github.com/frnkptrln
       name: Frank Peterlein on GitHub
   generator: false
-

@@ -109,6 +109,8 @@ A repository, protocol, workshop, or house can serve as a shared object through 
 
 Cooperative intelligence is a conceptual bridge, not a third spine. Its current claim is a testable design hypothesis: structured difference may add reachable solutions faster than coordination consumes them. If the same results appear without cross-participant revision, real refusal, and independent verification, the stronger claim fails.
 
+One episode of successful cooperation is not yet a durable capacity. [From Action to Culture](theory/emergence/from-action-to-culture.md) adds the missing persistence question: how a represented rule becomes situated action, how recurrent enactment becomes a transmissible practice, and how that practice changes the conditions of the next action. It treats culture as an active generator bundle—traces, participants, competence, materials, norms, transmission, feedback, and history—rather than as knowledge that somehow executes itself. The proposal is an unmeasured bridge, not a general theory of culture.
+
 ## 6. What is established — and what remains open
 
 The repository deliberately mixes simulations, formal arguments, working hypotheses, essays, fiction, and architecture notes. They do not carry the same evidential weight.
@@ -129,6 +131,7 @@ The repository deliberately mixes simulations, formal arguments, working hypothe
 2. [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md) — the epistemic loop and its measured homes.
 3. [Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md) — the hinge from capability to constraint architecture.
 4. [Cooperative Intelligence at the Separatrix](theory/symbiotic/cooperative-intelligence-at-the-separatrix.md) — how the loop can be distributed without dissolving difference or responsibility.
+5. [From Action to Culture](theory/emergence/from-action-to-culture.md) — how revised action can become recurrent, transmissible practice without reducing culture to repetition.
 
 ### Inspect the claims and evidence
 
