@@ -168,6 +168,20 @@
 
 ---
 
+## Open Problem 12: The Practice-Reproduction Problem
+
+*Raised by: [From Action to Culture](../emergence/from-action-to-culture.md), with the cooperative consequence in [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md).*
+
+**Problem statement:** Given a represented rule or intention and the situations it is meant to govern, which combination of enactment, recurrence, variation, competence, material scaffold, normative force, transmission, feedback, and history lets a recognizable practice persist across context and actor turnover? Under what conditions does performance reproduce the pattern, revise it, or merely repeat it under coercion?
+
+**Why it matters:** The epistemic loop explains how a construction can be tested and revised, but not yet how a revised way of acting becomes a durable collective capacity. A policy, manual, story, model output, or archive can preserve a trace while no active runtime continues the practice. Without a measurable reproduction account, “culture” risks becoming either stored information that acts by magic or a decorative name for repetition.
+
+**Current boundary:** Intention–behavior research, habit research, practice theory, routine dynamics, structuration, cultural sociology, and ritual theory already establish much of the neighboring terrain. The open problem is the repository's proposed integration and operationalization. Individual habits, AI workflows, organizational routines, and social practices must not be treated as one mechanism merely because they share a schematic loop. Ritualization is a particular normatively differentiated mode of practice, not the umbrella category.
+
+**What a solution would look like:** A preregistered, event-level study of a bounded practice that separately measures the represented rule, concrete performances, variation, material and normative scaffolds, newcomer transmission, consequences, and survival under personnel or tool turnover. A useful intervention would compare information alone with cue-linked plans, workflow scaffolds, and recurrent performance with feedback and repair. The hypothesis weakens if knowledge alone predicts persistence equally well, if the proposed components cannot be measured independently of the outcome, or if stable performance is actually explained by unmodeled coercion.
+
+---
+
 ## How to Contribute
 
 If you identify a new open problem, or have a proposed solution for an existing one, please:
