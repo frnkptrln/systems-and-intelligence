@@ -51,7 +51,15 @@ For this essay, **recurrent practice** is the broad term. Ritual is a narrower a
 
 The correction changes the working hypothesis:
 
-> Repeated action is not sufficient for ritual, and networks of rituals are not sufficient for culture. Recurrent practices are one part of the generator bundle through which culture is reproduced and revised.
+> Repeated action is not sufficient for ritual, and rituals do not generate culture in isolation. Recurrent practices are one part of the generator bundle through which culture is reproduced and revised.
+
+With those boundaries in place, the stronger working hypothesis can be stated plainly:
+
+> **Rituals are generators of stable behavior. Culture is a recursive network of such generators.**
+
+Here, *generator* does not mean a deterministic command. A ritual organizes roles, sequence, attention, material settings, expectations, and feedback so that a recognizable way of acting can be produced again. *Stable* means reproducible under some range of variation, not frozen or universally accepted. The network is recursive because one performance produces records, roles, permissions, expectations, and altered environments that become inputs or constraints for later performances. Rituals can enable, suppress, authorize, repair, or transform other rituals.
+
+This is a model of one load-bearing cultural mechanism, not an exhaustive definition of culture. The network also depends on non-ritual practices, artifacts, infrastructures, competences, sanctions, and histories. Without that larger generator bundle, the sentence would merely move the unexplained cause from “culture” to “ritual.”
 
 ## 3. A practice–culture feedback loop
 
