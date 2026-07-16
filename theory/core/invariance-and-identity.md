@@ -9,6 +9,7 @@
 **Related files:**
 
 - ../computation/construction-vs-deduction.md
+- ../emergence/from-action-to-culture.md
 - ../identity/psychedelics-as-perturbation.md
 - ../../lab/benchmarks/inverse-reconstruction/README.md
 - ../identity/consciousness-as-global-availability.md
@@ -42,6 +43,7 @@ The word for all four is **invariance**, and it has a formal home older than any
 The instruments this repository already runs are invariance tests that never said the word:
 
 - **Identity Persistence is invariance under perturbation.** The Chord/Arpeggio question — does the system return as *itself* after a kick? — asks which properties of an agent are conserved quantities and which are coordinates of the moment. The transformation group is the perturbation protocol; IP measures its invariants. (The star, applied to agents: you may leave the path — play, basis change, intervention — and remain the star, *if* what returns is governed by the same conserved quantities.)
+- **Identity across recurrent practice is an invariance claim** `[HYPOTHESIZED]`. [From Action to Culture](../emergence/from-action-to-culture.md) proposes that identity is not one repeated act but the higher-order pattern across practices a system reproduces, revises, and refuses. The admissible transformations must be declared by the test—changes of context, time, role demand, tool, or bounded disruption. The candidate invariant is the organization among practices: selection, ordering, composition, conflict resolution, and repair. Repetition without such a protocol does not establish identity.
 - **The equivalence class is a statement about invariants.** What a trace determines is exactly what all trace-consistent generators *share* — the invariant content of the class. Rule 90's five observed neighborhoods are the invariants; the three unseen bits are coordinate freedom. The [benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) has been measuring class-invariants all along; interventions collapse the class by destroying coordinate freedom, not by adding invariants.
 - **The insight criterion** ([psychedelics note](../identity/psychedelics-as-perturbation.md)): of what a perturbed basis shows, only what survives the transformation back is a candidate for knowledge. Integration as invariant extraction.
 - **The mirror, restated:** an impostor matches coordinates (the visible trace); identity lives in the invariants (what would be conserved under queries the impostor never faced). Morelli's earlobes were invariants of the master's hand.

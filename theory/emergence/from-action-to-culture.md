@@ -5,7 +5,7 @@
 **Mode:** Synthesis (`[HYPOTHESIZED]`)  
 **Scope:** How represented possibilities become enacted, recurrent, socially transmitted practices that alter the conditions of future action. This is not a general theory of culture, a management method, or a claim that repetition alone produces culture.  
 **Epistemic note:** The action gap, habit formation, social practice, organizational routines, ritualization, and recursive structure all have substantial prior literatures. The repository-specific contribution is a proposed integration with its generator, runtime, emergence, and return-path vocabulary. No new empirical result is reported here.  
-**Repository anchors:** [From Trace to World-Binding](../core/from-trace-to-world-binding.md), [Construction vs. Deduction](../computation/construction-vs-deduction.md), [Static Information, Living Process](../computation/static-information-and-living-process.md), [The Runtime Is Part of the Generator](../../logs/016_the-runtime-is-part-of-the-generator.md), and [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md).
+**Repository anchors:** [From Trace to World-Binding](../core/from-trace-to-world-binding.md), [Construction vs. Deduction](../computation/construction-vs-deduction.md), [Static Information, Living Process](../computation/static-information-and-living-process.md), [Invariance and Identity](../core/invariance-and-identity.md), [The Runtime Is Part of the Generator](../../logs/016_the-runtime-is-part-of-the-generator.md), and [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md).
 
 ---
 
@@ -81,6 +81,18 @@ This is a bookkeeping schema, not a universal law. Each arrow can fail, and the 
 The return path is the important part. A practice does not mechanically determine the next action. It changes which actions are available, easy, legible, legitimate, rewarded, punishable, or even noticeable. Culture, on this account, acts less like a stored command than a structured distribution over future possibilities.
 
 The loop is also not purely stabilizing. Every performance is situated and therefore differs from the abstract pattern. Feldman and Pentland describe organizational routines through an **ostensive** aspect—the recognizable pattern—and a **performative** aspect—the concrete actions of particular people at particular times. Their relation explains why routines can be sources of change as well as inertia. Reproduction always includes the possibility of drift, refusal, improvisation, and repair.
+
+### Identity as a higher-order pattern `[HYPOTHESIZED]`
+
+If rituals generate recurrent behavior, identity is not any single ritual and not a list of habits. The candidate is the higher-order organization that persists across their different performances:
+
+> **Identity is the invariant pattern across the rituals a system reproduces, revises, and refuses.**
+
+The verbs matter. A coerced routine can recur without exhausting the identity of the person or group performing it. Refusal, repair, and deliberate revision may be more identity-revealing than compliance. The relevant pattern includes which practices return, how they are ordered and composed, which conflicts are resolved in whose favor, and what is restored after interruption.
+
+This uses *invariant* in the repository's restricted sense. It does not claim one universal transformation group. A concrete test must predeclare an admissible transformation set—for example changes of context, time, role demand, available tool, or bounded disruption—and ask which relations among practices survive. If no transformation protocol is named, “identity pattern” remains a description rather than a measurement.
+
+The feedback is recursive: repeated practices help produce an identity pattern; once stabilized, that pattern changes which future practices are selected, recognized as belonging, revised, or rejected. This extends [Invariance and Identity](../core/invariance-and-identity.md) into the action–culture loop without making ritual a complete theory of the self.
 
 One way to state the proposal more precisely is to distinguish cultural traces from an active cultural generator:
 
@@ -192,6 +204,7 @@ The most important counterexample is simple: repeated action can be empty, coerc
 - [From Trace to World-Binding](../core/from-trace-to-world-binding.md) — construction, intervention, revision, and the return path
 - [Construction vs. Deduction](../computation/construction-vs-deduction.md) — stating a rule versus being able to construct it
 - [Static Information, Living Process](../computation/static-information-and-living-process.md) — information, execution, recurrence, and composition
+- [Invariance and Identity](../core/invariance-and-identity.md) — identity as what survives a specified transformation
 - [The Runtime Is Part of the Generator](../../logs/016_the-runtime-is-part-of-the-generator.md) — why an artifact does not contain its own execution
 - [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md) — cultural skills as load-bearing coordination practices
 - [Open Problem 12: The Practice-Reproduction Problem](../reference/open-problems.md#open-problem-12-the-practice-reproduction-problem) — the empirical boundary
