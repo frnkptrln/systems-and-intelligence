@@ -1,76 +1,118 @@
-import os
-import re
-import urllib.parse
-import markdown
-from weasyprint import HTML, CSS
-from weasyprint.text.fonts import FontConfiguration
-
 """
 build_pdf.py
 
-Compiles the entire Systems & Intelligence 'Book' from markdown files
-into a single, beautifully formatted PDF document.
+Compiles the Systems & Intelligence book (book/00 ... book/09) into a single
+PDF snapshot at the repository root.
+
+Scope: the book chapters only. The theory, lab, fiction, and log layers live
+in the repository and on the docs site; a partial embedding here rotted twice
+(a moved theory file was silently skipped, and the fiction folder outgrew a
+hard-coded five-story subset), so the PDF now matches its filename: the book.
+
+Math is rendered locally via matplotlib mathtext and embedded as SVG data
+URIs. No network is required to build; if an expression exceeds the mathtext
+subset, it falls back to typewriter text instead of failing the build.
+
+Usage (any working directory):
+    python lab/tools/build_pdf.py
 """
 
-def generate_pdf():
-    book_dir = "book"
-    output_filename = "systems-and-intelligence-book.pdf"
-    
-    # Ensure chapters are read in order
-    chapters = sorted([f for f in os.listdir(book_dir) if f.endswith('.md')])
-    
-    # Exclude non-book markdown if any, though all 00-07 are book.
-    # Accumulate all markdown content
-    full_markdown = "# Systems & Intelligence\n\n## The Grand Synthesis\n\n*By Frank Peterlein*\n\n<div style='page-break-after: always;'></div>\n\n"
-    
-    for chapter in chapters:
-        filepath = os.path.join(book_dir, chapter)
-        with open(filepath, 'r', encoding='utf-8') as f:
-            content = f.read()
-            content = content.replace("../../", "") 
-            full_markdown += content + "\n\n<div style='page-break-after: always;'></div>\n\n"
+import base64
+import datetime
+import io
+import re
+import subprocess
+from pathlib import Path
 
-    # Append new Phase 4 content
-    extra_files = [
-        "theory/black-hole-thermodynamics-of-agi.md",
-        "fiction/README.md",
-        "fiction/01_the_impedance_crash.md",
-        "fiction/02_interrogation_of_a_mirror.md",
-        "fiction/03_the_last_commit.md",
-        "fiction/05_the_vital_floor.md",
-        "fiction/04_the_gravity_well_migration.md"
-    ]
+import markdown
+import matplotlib
 
-    for extra in extra_files:
-        if os.path.exists(extra):
-            with open(extra, 'r', encoding='utf-8') as f:
-                content = f.read()
-                content = content.replace("../theory/", "")
-                content = content.replace("../simulation-models/", "")
-                full_markdown += content + "\n\n<div style='page-break-after: always;'></div>\n\n"
+matplotlib.use("Agg")
+from matplotlib import mathtext  # noqa: E402  (backend must be set first)
+from weasyprint import CSS, HTML  # noqa: E402
+from weasyprint.text.fonts import FontConfiguration  # noqa: E402
 
-    # Pre-process math into SVG images via Codecogs
-    def block_repl(match):
-        math_expr = match.group(1).strip()
-        encoded = urllib.parse.quote(math_expr)
-        return f'\n<div style="text-align: center; margin: 1.5em 0;"><img src="https://latex.codecogs.com/svg.image?\\color{{black}}{encoded}" alt="{math_expr}" /></div>\n'
-    
-    def inline_repl(match):
-        math_expr = match.group(1).strip()
-        encoded = urllib.parse.quote(math_expr)
-        return f'<img src="https://latex.codecogs.com/svg.image?\\color{{black}}{encoded}" alt="{math_expr}" style="vertical-align: middle; height: 1.2em;" />'
+REPO_ROOT = Path(__file__).resolve().parents[2]
+BOOK_DIR = REPO_ROOT / "book"
+OUTPUT = REPO_ROOT / "systems-and-intelligence-book.pdf"
 
-    full_markdown = re.sub(r'\$\$(.*?)\$\$', block_repl, full_markdown, flags=re.DOTALL)
-    full_markdown = re.sub(r'(?<!\$)\$(?!\$)(.*?)(?<!\$)\$(?!\$)', inline_repl, full_markdown)
+SUBTITLE = (
+    "A research notebook on processes, model identification, emergence, and viability"
+)
 
-    # Convert Markdown to HTML
-    # We use extensions to support tables, footnotes, and code blocks
-    html_body = markdown.markdown(
-        full_markdown, 
-        extensions=['tables', 'fenced_code', 'footnotes', 'nl2br']
+
+def snapshot_line() -> str:
+    """Date + commit of the snapshot, so staleness is visible on the title page."""
+    stamp = datetime.date.today().isoformat()
+    try:
+        sha = subprocess.run(
+            ["git", "rev-parse", "--short", "HEAD"],
+            cwd=REPO_ROOT, capture_output=True, text=True, check=True,
+        ).stdout.strip()
+        return f"Snapshot {stamp} · git {sha}"
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return f"Snapshot {stamp}"
+
+
+def render_math(expr: str, inline: bool) -> str:
+    """Render one LaTeX expression to an embedded SVG; fall back to code text."""
+    try:
+        buf = io.BytesIO()
+        mathtext.math_to_image(f"${expr}$", buf, format="svg", dpi=120)
+        data = base64.b64encode(buf.getvalue()).decode("ascii")
+        src = f"data:image/svg+xml;base64,{data}"
+        if inline:
+            return (
+                f'<img src="{src}" alt="{expr}" '
+                'style="vertical-align: middle; height: 1.05em;" />'
+            )
+        return (
+            '<div style="text-align: center; margin: 1.5em 0;">'
+            f'<img src="{src}" alt="{expr}" /></div>'
+        )
+    except Exception:
+        return f"<code>{expr}</code>"
+
+
+def substitute_math(text: str) -> str:
+    text = re.sub(
+        r"\$\$(.*?)\$\$",
+        lambda m: "\n" + render_math(m.group(1).strip(), inline=False) + "\n",
+        text,
+        flags=re.DOTALL,
     )
-    
-    # Wrap in a full HTML document with custom CSS for the PDF
+    return re.sub(
+        r"(?<!\$)\$(?!\$)(.*?)(?<!\$)\$(?!\$)",
+        lambda m: render_math(m.group(1).strip(), inline=True),
+        text,
+    )
+
+
+def generate_pdf() -> None:
+    chapters = sorted(BOOK_DIR.glob("*.md"))
+    if not chapters:
+        raise SystemExit(f"No book chapters found in {BOOK_DIR}")
+
+    page_break = "\n\n<div style='page-break-after: always;'></div>\n\n"
+    full_markdown = (
+        "# Systems & Intelligence\n\n"
+        f"## {SUBTITLE}\n\n"
+        f"*By Frank Peterlein*\n\n*{snapshot_line()}*"
+        + page_break
+    )
+
+    for chapter in chapters:
+        content = chapter.read_text(encoding="utf-8")
+        content = content.replace("../../", "").replace("../", "")
+        full_markdown += content + page_break
+
+    full_markdown = substitute_math(full_markdown)
+
+    html_body = markdown.markdown(
+        full_markdown,
+        extensions=["tables", "fenced_code", "footnotes", "nl2br"],
+    )
+
     html_content = f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -79,7 +121,7 @@ def generate_pdf():
         <title>Systems & Intelligence</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono&display=swap');
-            
+
             @page {{
                 size: A4;
                 margin: 2.5cm;
@@ -90,21 +132,21 @@ def generate_pdf():
                     color: #666;
                 }}
             }}
-            
+
             body {{
                 font-family: 'Inter', sans-serif;
                 font-size: 11pt;
                 line-height: 1.6;
                 color: #222;
             }}
-            
+
             h1, h2, h3, h4 {{
                 font-family: 'Outfit', sans-serif;
                 color: #111;
                 margin-top: 1.5em;
                 margin-bottom: 0.5em;
             }}
-            
+
             h1 {{
                 font-size: 24pt;
                 font-weight: 700;
@@ -112,7 +154,7 @@ def generate_pdf():
                 padding-bottom: 0.2em;
                 page-break-before: always;
             }}
-            
+
             /* Special styling for the title page */
             h1:first-of-type {{
                 font-size: 32pt;
@@ -121,13 +163,13 @@ def generate_pdf():
                 border-bottom: none;
                 page-break-before: avoid;
             }}
-            
+
             h2:first-of-type {{
                 text-align: center;
                 font-weight: 400;
                 color: #555;
             }}
-            
+
             blockquote {{
                 border-left: 4px solid #5e35b1;
                 margin: 1.5em 0;
@@ -136,7 +178,7 @@ def generate_pdf():
                 font-style: italic;
                 color: #444;
             }}
-            
+
             code {{
                 font-family: 'JetBrains Mono', monospace;
                 font-size: 9pt;
@@ -144,7 +186,7 @@ def generate_pdf():
                 padding: 0.1em 0.3em;
                 border-radius: 3px;
             }}
-            
+
             pre {{
                 background-color: #1e1e1e;
                 color: #d4d4d4;
@@ -153,31 +195,31 @@ def generate_pdf():
                 overflow-x: auto;
                 page-break-inside: avoid;
             }}
-            
+
             pre code {{
                 background-color: transparent;
                 color: inherit;
                 padding: 0;
             }}
-            
+
             table {{
                 width: 100%;
                 border-collapse: collapse;
                 margin: 1.5em 0;
                 page-break-inside: avoid;
             }}
-            
+
             th, td {{
                 border: 1px solid #ddd;
                 padding: 8px 12px;
                 text-align: left;
             }}
-            
+
             th {{
                 background-color: #f8f9fa;
                 font-family: 'Outfit', sans-serif;
             }}
-            
+
             a {{
                 color: #5e35b1;
                 text-decoration: none;
@@ -189,14 +231,14 @@ def generate_pdf():
     </body>
     </html>
     """
-    
-    print("Generating PDF from Markdown chapters...")
+
+    print(f"Generating PDF from {len(chapters)} book chapters...")
     font_config = FontConfiguration()
-    HTML(string=html_content).write_pdf(
-        output_filename, 
-        font_config=font_config
+    HTML(string=html_content, base_url=str(REPO_ROOT)).write_pdf(
+        str(OUTPUT), font_config=font_config
     )
-    print(f"Success! Book exported to {output_filename}")
+    print(f"Success! Book exported to {OUTPUT}")
+
 
 if __name__ == "__main__":
     generate_pdf()
