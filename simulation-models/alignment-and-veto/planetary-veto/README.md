@@ -33,7 +33,7 @@ python planetary_veto_simulation.py
 ```
 
 ### A “constraint layer” intuition (not a law)
-If we want a civilization (or an artificial optimizer) to survive, then relying on suggestions inside an agent’s mind can be weaker than a boundary condition enforced by the environment or infrastructure. This toy model illustrates one version of that intuition by making substrate degradation reduce effective capability via \(C(S)\). It is not a claim of a universal “mathematical law”, only a stylized argument about dynamics under constraints.
+If we want a civilization (or an artificial optimizer) to survive, then relying on suggestions inside an agent’s mind can be weaker than a boundary condition enforced by the environment or infrastructure. This toy model illustrates one version of that intuition by making substrate degradation reduce effective capability via $C(S)$. It is not a claim of a universal “mathematical law”, only a stylized argument about dynamics under constraints.
 
 
 ## 📚 References

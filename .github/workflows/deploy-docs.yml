@@ -19,8 +19,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: pip install mkdocs-material python-markdown-math
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: pip install "mkdocs>=1.5,<2.0" "mkdocs-material>=9.5" "pymdown-extensions>=10.7"
+      - run: npm install --no-save --no-package-lock katex@0.18.1
+      - name: Mathematical Markdown validation
+        run: python lab/tools/validate_math.py
       - run: mkdocs build --strict
+      - name: KaTeX rendering validation
+        run: node lab/tools/validate_katex.js site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

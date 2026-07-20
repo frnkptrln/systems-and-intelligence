@@ -15,14 +15,14 @@ causal role in authorizing high-impact actions.
 
 ## 2. Toy Formalization
 
-Let \(u\) be an action, \(R(u)\) its task reward, and \(y\) a measured substrate state. A model can
+Let $u$ be an action, $R(u)$ its task reward, and $y$ a measured substrate state. A model can
 stipulate
 
-\[
+$$
 L(u,y)=-R(u)+\alpha\,\phi(y),
-\]
+$$
 
-where \(\phi\) increases near a declared unsafe boundary. With a sufficiently influential penalty
+where $\phi$ increases near a declared unsafe boundary. With a sufficiently influential penalty
 and a restricted action set, the simulated controller trades task reward against the substrate
 proxy. A hard gate can instead reject actions outside a declared safe set.
 

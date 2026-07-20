@@ -9,8 +9,8 @@ Every implemented computation is a physical process. It uses hardware, energy, t
 infrastructure, and it ultimately exchanges heat and other waste with an environment. A deployed
 optimizer therefore cannot have literally unbounded throughput on a finite substrate.
 
-Landauer's principle gives a lower bound of \(k_B T\ln 2\) for erasing one bit in a logically
-irreversible operation at temperature \(T\). It does not say that every logical operation dissipates
+Landauer's principle gives a lower bound of $k_B T\ln 2$ for erasing one bit in a logically
+irreversible operation at temperature $T$. It does not say that every logical operation dissipates
 exactly that amount, that present computers operate near the bound, or that ecological harm can be
 derived from bit erasure alone. Actual power and cooling loads depend on the hardware, algorithm,
 error correction, utilization, energy system, and surrounding infrastructure.
@@ -27,25 +27,25 @@ running.
 
 In a TEO toy model, resource use is summarized as
 
-\[
+$$
 D(\mathbf{x})=\sum_{i=1}^{N}\eta_i x_i f_i(\mathbf{x}),
-\]
+$$
 
-with a stipulated capacity \(D_{\max}\). Here \(x_i\), \(f_i\), and \(\eta_i\) are model variables;
+with a stipulated capacity $D_{\max}$. Here $x_i$, $f_i$, and $\eta_i$ are model variables;
 they are not automatically resource share, fitness, and entropy in every application.
 
 The inequality
 
-\[
+$$
 D(\mathbf{x})\leq D_{\max}
-\]
+$$
 
 is a design constraint when a controller enforces it. If the equations merely cause performance to
 collapse above the boundary, the result is substrate failure, not a veto. Calling the capacity
 thermodynamic is justified only when its units, measurement process, and physical balance are
 specified.
 
-There is no single established scalar \(D_{\max}\) for the biosphere. Climate, biodiversity, water,
+There is no single established scalar $D_{\max}$ for the biosphere. Climate, biodiversity, water,
 land, toxic load, and social viability have different dynamics and cannot be collapsed without a
 normative aggregation rule.
 
@@ -62,11 +62,11 @@ A functioning substrate veto needs an engineered causal path:
 
 A stylized controller may use
 
-\[
+$$
 L(u,y)=-R(u)+\alpha\,\phi(y),
-\]
+$$
 
-where \(u\) is an action, \(R\) a selected reward, \(y\) measured substrate state, and \(\phi\) a
+where $u$ is an action, $R$ a selected reward, $y$ measured substrate state, and $\phi$ a
 penalty near a boundary. This changes behaviour only if the measurement is relevant, the penalty is
 large enough, and the controller cannot bypass or redefine it. Free-energy or surprise vocabulary
 does not supply those properties automatically.

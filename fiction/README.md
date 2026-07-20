@@ -51,7 +51,7 @@ Each entry is annotated with the primary theory document it dramatizes and its p
     - *Theory:* [Symbiotic Organ Hypothesis](../theory/symbiotic/symbiotic-organ-hypothesis.md); [Log 008 — Household Gods](../logs/008_household-gods-permission-layers-domestic-ai.md). *Spine:* Forward.
 9. **[Entry 09: The Refusal Registry](09_the_refusal_registry.md)** *(Civic Registry Log)* — Structured refusal becomes collective memory against optimization cascades.
     - *Theory:* [Log 010 — The Right to Remain Unoptimized](../logs/010_the-right-to-remain-unoptimized.md). *Spine:* Substrate (institutionalized veto).
-10. **[Entry 10: The First Breath](10_the_first_breath.md)** *(Assembly Dossier)* — A canton votes to produce less and activates \(\gamma > 0\) voluntarily.
+10. **[Entry 10: The First Breath](10_the_first_breath.md)** *(Assembly Dossier)* — A canton votes to produce less and activates $\gamma > 0$ voluntarily.
     - *Theory:* [Thermodynamics of Orchestration](../theory/core/thermodynamics-of-orchestration.md); [TEO Civilization Simulation](../simulation-models/alignment-and-veto/teo-civilization/README.md). *Spine:* Substrate (voluntary entropy ceiling).
 11. **[Entry 11: The Dashboard of the Commons](11_the_dashboard_of_the_commons.md)** *(Operator Incident Narrative)* — A regulator vetoes a high-efficiency proposal that would push local human comfort toward failure.
     - *Theory:* [AI Alignment Veto](../theory/veto/ai-alignment-biological-veto.md); [Manifesto Claim 7](../theory/core/emergence-manifesto-v1.3.md). *Spine:* Substrate.

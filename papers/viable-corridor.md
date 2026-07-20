@@ -122,33 +122,41 @@ The communication topology is fixed by an adjacency matrix $A \in \{0, 1\}^{N \t
 ### 2.2 The Replicator Equation (Resource Dynamics)
 
 Resource shares evolve according to a regulated replicator equation:
+
 $$
 \frac{dx_i}{dt} = x_i \bigl( f_i(\mathbf{x}) - \bar{\phi}(\mathbf{x}) \bigr) + \mathcal{H}_i(\mathbf{x}),
 \tag{1}
 $$
+
 where $f_i : [0,1]^N \to \mathbb{R}_{\geq 0}$ is the fitness of agent $i$, $\bar{\phi}(\mathbf{x}) = \sum_j x_j f_j(\mathbf{x})$ is the population-average fitness, and $\mathcal{H}_i$ is a homeostatic brake defined in §2.4. With $\mathcal{H}_i \equiv 0$, Equation (1) reduces to the standard replicator equation of Taylor and Jonker (1978).
 
 For the theorem of §3 we adopt a **strict-dominance** assumption on $f_i^{(0)}$ (the substrate-unmodified fitness from §2.5). There exists an agent index $i^*$ and a constant $\delta > 0$ such that, for all $j \neq i^*$ and all $\mathbf{x}$ on the simplex,
+
 $$
 f_{i^*}^{(0)}(\mathbf{x}) - f_j^{(0)}(\mathbf{x}) \geq \delta.
 \tag{1'}
 $$
+
 [`[MODEL ASSUMPTION]`]. This is stronger than a $\beta$-dominance condition alone and is the operational form of Bostrom's (2014) *instrumental convergence*: agent $i^*$ has a structural fitness advantage over every other agent at every state of the system. Whether real social and economic systems exhibit such strict dominance is an empirical question (cf. Piketty, 2014, on power-law concentration in resource flows); we treat it here as a model assumption used in §3.
 
 ### 2.3 The Kuramoto Model (Value Coupling)
 
 Value orientations evolve under substrate-modulated coupled-oscillator dynamics:
+
 $$
 \frac{d\theta_i}{dt} = H \left[ \omega_i + \frac{K}{N} \sum_{j=1}^N A_{ij} \sin(\theta_j - \theta_i) \right],
 \tag{2}
 $$
+
 where $\omega_i$ is agent $i$'s intrinsic frequency (its bias toward a particular value orientation), $K \geq 0$ is the global coupling strength (interpretable as discursive bandwidth, shared media saturation, or institutional integration), $A_{ij}$ is the topology of §2.1, and $H \in [0,1]$ is the substrate-health variable of §2.5. The prefactor $H$ ensures that value dynamics, like resource dynamics, halt when the substrate collapses ($H \to 0$). At full substrate health ($H = 1$), Equation (2) is the standard Kuramoto (1975) model on a network, so the critical-coupling analysis below is unaffected.
 
 The collective coherence of value orientations is measured by the order parameter:
+
 $$
 r(t) \, e^{i \psi(t)} = \frac{1}{N} \sum_{j=1}^N e^{i \theta_j(t)},
 \tag{3}
 $$
+
 with $r(t) \in [0, 1]$: $r \to 1$ indicates full synchronization (consensus), $r \to 0$ indicates phase-uniform incoherence (loss of any global phase). For natural frequencies drawn i.i.d.\ from a symmetric unimodal density $g(\omega)$ with $g(0) > 0$ and sufficient regularity, the all-to-all model at $H=1$ exhibits a critical coupling threshold $K_c$ below which no macroscopic coherent branch is stable (Kuramoto, 1975; Strogatz, 2000; Acebrón et al., 2005). For the Lorentzian density $g(\omega) = (\Delta/\pi)/(\omega^2 + \Delta^2)$ (which is heavy-tailed and has no finite variance, but is the standard analytically tractable case), $K_c = 2\Delta$.
 
 ### 2.4 The Homeostatic Brake
@@ -159,10 +167,12 @@ The brake $\mathcal{H}_i$ in Equation (1) must satisfy two requirements: it must
 - a **failure threshold** $x_{\text{crit}}$, above which pluralism (V1, §3.1) is violated,
 
 with $1/N < x_{\text{reg}} < x_{\text{crit}} < 1$. The separation $x_{\text{reg}} < x_{\text{crit}}$ is essential: if the brake activated only at $x_{\text{crit}}$, it would engage exactly at the failure boundary — too late to keep an above-threshold trajectory inside $V$. The brake is:
+
 $$
 \mathcal{H}_i(\mathbf{x}) = -\gamma \cdot \max\bigl(0, \, x_i - x_{\text{reg}}\bigr) + \frac{\gamma}{N} \sum_{j=1}^N \max\bigl(0, \, x_j - x_{\text{reg}}\bigr),
 \tag{4}
 $$
+
 where $\gamma \geq 0$ is the regulatory strength. The first term penalises any agent whose share exceeds $x_{\text{reg}}$; the second term redistributes the aggregate penalty uniformly across all agents. By construction $\sum_i \mathcal{H}_i(\mathbf{x}) = 0$, so the simplex is preserved.
 
 Interpretation: $\gamma$ encodes the operational strength of *any* homeostatic mechanism that resists unbounded concentration — antitrust law, progressive taxation, redistribution, capability throttling, kill switches, refusal channels. The parameter $\gamma = 0$ corresponds to fully unregulated optimization.
@@ -172,31 +182,39 @@ Two caveats [`[MODEL ASSUMPTION]`]. First, uniform redistribution means that an 
 ### 2.5 The Entropy Budget and Substrate Coupling
 
 Computation produces entropy; Landauer (1961) gives a lower bound on the heat dissipated by irreversible bit erasure. Equation (5) is **not** a generalised Landauer bound. It is a **phenomenological dissipation proxy** motivated by Landauer-type physical limits: we assume that the rate of entropy production by agent $i$ scales with its resource share and its *raw* activity level $f_i^{(0)}$ [`[MODEL ASSUMPTION]`]:
+
 $$
 \frac{dS_{\text{sys}}}{dt} = \sum_{i=1}^N \eta_i \, x_i \, f_i^{(0)}(\mathbf{x}),
 \tag{5}
 $$
+
 where $\eta_i > 0$ is agent $i$'s entropy coefficient and $f_i^{(0)}$ is the substrate-unmodified fitness of §2.2. Note that the dissipation is driven by the **raw** throughput $f_i^{(0)}$, not by the health-coupled *effective* fitness $f_i = H f_i^{(0)}$ that drives the competitive dynamics (the $f_i$ of Eq (1), defined in (5') below); the entropy an agent produces is set by what it does, not by how degraded the substrate already is. The consequences of this asymmetry are the subject of the substrate-coupling paragraph below and of §6.1.
 
 The substrate hosting the dynamics has a finite *instantaneous* dissipation capacity $D_{\max} > 0$ and a finite *cumulative* reservoir $S_{\max} > 0$. We track the **accumulated overshoot**
+
 $$
 \Omega(t) := \int_0^t \bigl( \dot{S}_{\text{sys}}(s) - D_{\max} \bigr)_+ \, ds,
 \tag{6a}
 $$
+
 the integrated excess of entropy production over the instantaneous ceiling. The substrate-health variable $H(t) \in [0, 1]$ then evolves as
+
 $$
 H(t) = \max\!\left( 0, \, 1 - \frac{\Omega(t)}{S_{\max}} \right),
 \qquad\text{equivalently}\qquad
 \frac{dH}{dt} = -\frac{1}{S_{\max}} \, \bigl( \dot{S}_{\text{sys}} - D_{\max} \bigr)_+ \ \text{while } H > 0,
 \tag{6b}
 $$
+
 with $H(0) = 1$. Equation (6b) is phenomenological [`[MODEL ASSUMPTION]`]: a *momentary* overshoot of $D_{\max}$ degrades the substrate only by a finite increment; *sustained or repeated* overshoot accumulating to $\Omega = S_{\max}$ drives $H$ to zero. This distinction — instantaneous ceiling $D_{\max}$ versus cumulative reservoir $S_{\max}$ — matters for the viability conditions in §3.1.
 
 **Substrate coupling.** We close the loop by making the *competitive dynamics* — but not the dissipation — depend on substrate health. The **effective fitness** that drives the replicator (1) is
+
 $$
 f_i(\mathbf{x}, H) = H \cdot f_i^{(0)}(\mathbf{x}),
 \tag{5'}
 $$
+
 and the same prefactor $H$ multiplies the value-coupling term in (2). As $H \to 0$, the effective fitness and the value coupling vanish, so the replicator drift and the Kuramoto dynamics freeze at the state reached at substrate collapse; without this coupling the dynamics would remain formally defined at $H = 0$, contradicting the physical meaning of collapse.
 
 The dissipation (5), by contrast, is driven by the **raw** throughput $f_i^{(0)}$, *not* by the effective fitness $H f_i^{(0)}$. This asymmetry is deliberate and load-bearing [`[MODEL ASSUMPTION]`]. A substrate-aware system *could* throttle its production as the substrate degrades — but the systems this paper is concerned with (a blind optimiser pursuing $f_i^{(0)}$; §4.3) do *not* voluntarily back off at a substrate limit; their entropy output is governed by their activity, not by the remaining headroom $H$. Coupling the dissipation to $H$ as well would make production self-throttle and the accumulated overshoot $\Omega$ self-limit below $S_{\max}$, so the substrate veto (Lemma 3) would never bind from the internal dynamics — the correct model of a *substrate-self-regulating* system, but the wrong model of a non-self-throttling one. We therefore adopt the raw-throughput dissipation (5) as canonical and treat the health-coupled variant as the substrate-self-regulating regime; the distinction, and the consequence that the veto then binds endogenously whenever throughput exceeds $D_{\max}$, are examined in §6.1 and Appendix C.
@@ -246,8 +264,9 @@ This is the standard open-set / positive-invariance notion of viability (Aubin, 
 ### 3.2 The Viable Corridor in Parameter Space
 
 In the parameter space $(\gamma, K, S_{\max}) \in \mathbb{R}^3_{\geq 0}$, define the **viable corridor** $\mathcal{C}$ as the set of parameter triples admitting robust viability:
+
 $$
-\mathcal{C} = \left\{(\gamma, K, S_{\max}) : (\gamma, K, S_{\max}) \text{ admits robust viability per §3.1}\right\}.
+\mathcal{C} = \left\{(\gamma, K, S_{\max}) : (\gamma, K, S_{\max}) \text{ admits robust viability as defined in Section 3.1}\right\}.
 \tag{7}
 $$
 
@@ -258,6 +277,7 @@ The central necessity claim is that $\gamma > 0$, $K > K_c$, and $\Omega(t) < S_
 Theorem 1 is a **conjunction of three componentwise obstruction results**, each with its own natural scope. Lemma 1 (resource concentration) and Lemma 3 (substrate veto) are finite-$N$ results. Lemma 2 (coherence collapse) is a thermodynamic-limit ($N \to \infty$) result and is used as the large-$N$ coherence obstruction. We do not claim a single unified finite-$N$ theorem; a fully finite-$N$ treatment of the coherence obstruction is left to future work (§6). This componentwise framing is less elegant than a single theorem but more honest about what each piece establishes.
 
 **Theorem 1 (Necessity of the three constraints).** *Consider the TEO system (Equations 1, 1', 2, 3, 4, 5, 5', 6) with the strict-dominance fitness assumption (1') applied to $f_i^{(0)}$, frequencies drawn i.i.d.\ from a symmetric unimodal density $g(\omega)$ with $g(0) > 0$, and the substrate coupling (5') and (2). A parameter triple $(\gamma, K, S_{\max})$ admits robust viability (§3.1) only if all three of the following hold:*
+
 $$
 \gamma > 0 \ \text{(finite-$N$, Lemma 1)}, \quad K > K_c \ \text{($N \to \infty$, Lemma 2)}, \quad \Omega(t) < S_{\max} \ \forall t \ \text{(finite-$N$, Lemma 3)}.
 \tag{8}
@@ -284,9 +304,11 @@ The proof is the conjunction of three lemmas, each establishing one failure mode
 ---
 
 **Lemma 3 (Substrate Veto via Accumulated Overshoot).** *If there exists a finite time $t^* > 0$ such that the accumulated overshoot reaches the reservoir,*
+
 $$
 \Omega(t^*) = \int_0^{t^*} \bigl(\dot{S}_{\text{sys}}(s) - D_{\max}\bigr)_+ \, ds \geq S_{\max},
 $$
+
 *then $H(t^*) = 0$, and through the $H$-prefactor on (1) and (2) the competitive dynamics freeze: the effective fitness $f_i \equiv 0$ and $\dot{\theta}_i \equiv 0$ for all $i$. Condition (V3b) is violated and cannot be recovered.*
 
 *Proof sketch.* By Equation (6b), $H(t) = \max(0, 1 - \Omega(t)/S_{\max})$. The hypothesis $\Omega(t^*) \geq S_{\max}$ gives $H(t^*) = 0$. Substrate coupling (5') makes the effective fitness $f_i(\mathbf{x}, H) = H \cdot f_i^{(0)}(\mathbf{x})$, so $H = 0$ forces $f_i \equiv 0$ and the replicator drift $x_i(f_i - \bar{\phi})$ vanishes; the value dynamics (2) carry the same prefactor $H$, so $\dot{\theta}_i \equiv 0$ as well. The competitive dynamics are thus frozen. (The entropy production (5) tracks raw throughput and need not vanish at $H = 0$; this is immaterial, because $\Omega$ is non-decreasing — it integrates a non-negative quantity — so once $\Omega(t^*) = S_{\max}$ it remains $\geq S_{\max}$ for all $t \geq t^*$.) Condition (V3b) is violated permanently and cannot be recovered, so robust viability is impossible. $\square$
@@ -302,21 +324,26 @@ The three lemmas establish that each of the three conditions is **individually n
 ### 3.4 Conjecture 1 (Sufficiency)
 
 Necessity (Theorem 1) shows that $\gamma > 0$ cannot be dropped: with no brake, Lemma 1 forces monopolisation. But $\gamma > 0$ is **not expected to be sufficient**. Because the brake activates at $x_{\text{reg}} < x_{\text{crit}}$ (§2.4), the relevant question for sufficiency is whether the regulatory vector field points *inward* before the trajectory reaches the failure boundary $x_{\text{crit}}$. This requires the brake to be strong enough — a threshold $\gamma_c$ depending on the regulatory gap, the dominance margin, and the population:
+
 $$
 \gamma_c = \gamma_c\bigl(x_{\text{reg}}, \, x_{\text{crit}}, \, \delta, \, N, \, H_{\min}\bigr).
 $$
 
 A leading-order **boundary-balance estimate** makes the dependence explicit. Consider a trajectory at the failure boundary, $x_{i^*} = x_{\text{crit}}$, with the other shares below $x_{\text{reg}}$. The replicator drives the dominant share outward at rate $\dot{x}_{i^*}^{\text{drift}} \approx x_{\text{crit}}(1 - x_{\text{crit}})\,\delta$ (from the bound in Lemma 1), while the brake (4) pulls it inward at rate $\approx \gamma\,(x_{\text{crit}} - x_{\text{reg}})$ (the redistribution term contributes at $O(1/N)$ and is dropped). The vector field points inward — keeping the trajectory off the boundary — when the brake dominates, giving
+
 $$
 \gamma_c \;\approx\; \frac{x_{\text{crit}}\,(1 - x_{\text{crit}})\,\delta}{x_{\text{crit}} - x_{\text{reg}}}.
 \tag{9}
 $$
+
 [`[HEURISTIC]`]. Estimate (9) is a leading-order balance, not a proof of Conjecture 1: it ignores the redistribution back-reaction, finite-$N$ corrections, and the coupled $H$ dynamics. But it predicts the qualitative dependence — $\gamma_c$ grows with the dominance margin $\delta$ and shrinks as the regulatory gap $x_{\text{crit}} - x_{\text{reg}}$ widens — and Appendix C confirms it numerically: the in-corridor transition in $\max_i x_i$ crosses $x_{\text{crit}}$ at the $\gamma_c$ that (9) predicts (to within the sweep resolution).
 
 **Conjecture 1 (Sufficiency).** *Under the assumptions of Theorem 1, with the regulatory threshold strictly below the failure threshold ($x_{\text{reg}} < x_{\text{crit}}$), the strengthened conjunction*
+
 $$
 \gamma > \gamma_c, \quad K > K_c, \quad \Omega(t) < S_{\max} \ \forall t
 $$
+
 *is sufficient for robust viability: there exists a non-empty open set $U \subseteq V$ such that every trajectory starting in $U$ remains in $V$ for all $t \geq 0$.* [`[CONJECTURE]`]
 
 Note the asymmetry: necessity requires only $\gamma > 0$ (Theorem 1); sufficiency is conjectured to require the stronger $\gamma > \gamma_c$. Establishing $\gamma_c$ explicitly — even for the all-to-all, large-$N$ case — would be the central technical step in proving Conjecture 1.
@@ -328,14 +355,17 @@ What we offer in lieu of proof:
 1. **Numerical evidence** (Appendix C): for a representative parameter triple satisfying the three inequalities, the TEO system exhibits stable long-time behaviour, and all three failure modes reproduce at the corridor boundaries — resource concentration (Lemma 1), coherence collapse (Lemma 2), and, under the canonical raw-throughput dissipation (§2.5), the substrate veto (Lemma 3): when throughput exceeds $D_{\max}$ the accumulated overshoot crosses $S_{\max}$ and $H \to 0$. (The health-coupled variant instead self-limits below $S_{\max}$ — the substrate-self-regulating regime of §6.1.) The evidence is illustrative — single initial conditions at representative parameters, not a sampling of the open set $U$ — and so corroborates rather than proves Conjecture 1.
 
 2. **A viability margin** built from margin-to-boundary terms, one per constraint:
+
 $$
 m_x = x_{\text{crit}} - \max_i x_i, \qquad
 m_r = r(t) - r_{\min}, \qquad
 m_S = S_{\max} - \Omega(t),
 $$
+
 $$
 M(\mathbf{x}, \boldsymbol{\theta}, H) := \min\{ m_x, \, m_r, \, m_S \}.
 $$
+
 Each $m_\bullet$ measures the signed distance to one boundary of $V$; $M$ is positive on the interior of $V$, vanishes on the boundary $\partial V$, and is negative outside. $M$ is **not** a Lyapunov function — $r(t)$ is not generally monotone, and $m_S$ only decreases under accumulated stress — so we make no monotonicity claim. $M$ is a *viability margin*: it tracks how close the trajectory is to violating the nearest constraint. Whether a monotone modification (a true Lyapunov function on the coupled system) exists is open; a smooth approximation $M_\beta = -\tfrac{1}{\beta}\log\sum_\bullet e^{-\beta m_\bullet}$ to the minimum may be more tractable for such an analysis.
 
 A formal proof of sufficiency, likely via Lyapunov or invariant-manifold methods adapted from coupled-oscillator stability theory (Strogatz, 1994; Aubin, 1991), is left as future work.
@@ -618,9 +648,11 @@ This appendix records the standard derivations behind Equations (1)–(6) and th
 **A.1 — Replicator dynamics and strict dominance (1), (1′).** The unregulated replicator equation $\dot{x}_i = x_i\big(f_i(\mathbf{x}) - \bar{\phi}(\mathbf{x})\big)$ with $\bar{\phi} = \sum_j x_j f_j$ preserves the simplex: $\sum_i \dot{x}_i = \sum_i x_i f_i - \bar{\phi}\sum_i x_i = \bar{\phi} - \bar{\phi} = 0$ (Taylor & Jonker, 1978; Hofbauer & Sigmund, 1998). For two strategies the log-ratio obeys $\frac{d}{dt}\log(x_i/x_j) = f_i - f_j$. Under strict dominance (1′), $f_{i^*}^{(0)} - f_j^{(0)} \geq \delta > 0$ for all $j \neq i^*$ and all $\mathbf{x}$, so with the substrate coupling (5′) the regulated-free ($\gamma = 0$) log-ratio grows at rate $H(f_{i^*}^{(0)} - f_j^{(0)}) \geq H\delta \geq 0$: while $H > 0$, $x_{i^*}/x_j$ is non-decreasing and diverges, giving $x_{i^*}(t) \to 1$ from any interior start. This is the mechanism of **Lemma 1**; it requires the dominance to hold at *every* state, which is the content (and the cost) of assumption (1′).
 
 **A.2 — Kuramoto critical coupling $K_c$ (2), (3).** At full substrate health, the all-to-all model $\dot{\theta}_i = \omega_i + \frac{K}{N}\sum_j \sin(\theta_j - \theta_i)$ rewrites, via the order parameter $r e^{i\psi} = \frac1N\sum_j e^{i\theta_j}$, as $\dot{\theta}_i = \omega_i + Kr\sin(\psi - \theta_i)$ — each oscillator couples to the mean field only through $(r, \psi)$. In the $N \to \infty$ limit, in the frame $\psi = 0$, oscillators with $|\omega_i| \leq Kr$ phase-lock at $\sin\theta_i = \omega_i/(Kr)$; the rest drift. Self-consistency of the locked population gives $r = Kr\int_{-\pi/2}^{\pi/2}\cos^2\theta\, g(Kr\sin\theta)\,d\theta$ (Kuramoto, 1975; Strogatz, 2000; Acebrón et al., 2005). A non-zero solution bifurcates from $r = 0$ where $1 = K_c\int_{-\pi/2}^{\pi/2}\cos^2\theta\, g(0)\,d\theta = K_c\,g(0)\,\tfrac{\pi}{2}$, i.e.
+
 $$
 K_c = \frac{2}{\pi\, g(0)}.
 $$
+
 For a Gaussian $g$ with std $\sigma$, $g(0) = 1/(\sigma\sqrt{2\pi})$ gives $K_c = 2\sigma\sqrt{2/\pi} \approx 1.596\,\sigma$ (used throughout Appendix C); for a Lorentzian $g(\omega) = (\Delta/\pi)/(\omega^2 + \Delta^2)$, $g(0) = 1/(\pi\Delta)$ gives $K_c = 2\Delta$. For $K < K_c$ only $r = 0$ is stable, so a coherent initial condition cannot be sustained — the mechanism of **Lemma 2**. (Finite $N$ and general networks have no sharp threshold; see §3.3 and Restrepo, Ott & Hunt, 2005.)
 
 **A.3 — The homeostatic brake (4) preserves the simplex.** With $\mathcal{H}_i(\mathbf{x}) = -\gamma(x_i - x_{\text{reg}})_+ + \frac{\gamma}{N}\sum_j (x_j - x_{\text{reg}})_+$, summing over $i$ gives $\sum_i \mathcal{H}_i = -\gamma\sum_i (x_i - x_{\text{reg}})_+ + \gamma\sum_j (x_j - x_{\text{reg}})_+ = 0$. Hence adding $\mathcal{H}_i$ to the replicator leaves $\sum_i \dot{x}_i = 0$, so $\sum_i x_i = 1$ is invariant for any $\gamma$ (verified numerically to $\sim 10^{-15}$, Appendix C). The first term penalises shares above the regulatory threshold $x_{\text{reg}}$; the uniform second term returns the aggregate penalty to the population — the caveat that a below-average-excess agent can net positive is discussed in §2.4 and §6.1.

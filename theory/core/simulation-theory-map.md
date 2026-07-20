@@ -323,7 +323,7 @@ budgets.
 Karl Friston's formulation that systems minimize prediction error (surprisal) through two coupled mechanisms: Perception (changing beliefs to match the world) and Action (changing the world to match beliefs).
 
 **What it supports (in the toy model):**
-Goal-seeking-like behavior can arise from a simple setup where an agent minimizes a variational-free-energy-like objective under a strong prior. The script illustrates this via simple gradient descent on a simplified proxy for Variational Free Energy (\(F\)); it is not a proof that all real agents (biological or artificial) implement Active Inference as formulated.
+Goal-seeking-like behavior can arise from a simple setup where an agent minimizes a variational-free-energy-like objective under a strong prior. The script illustrates this via simple gradient descent on a simplified proxy for Variational Free Energy ($F$); it is not a proof that all real agents (biological or artificial) implement Active Inference as formulated.
 
 ---
 
@@ -410,7 +410,7 @@ measures, and under which network and shock models does intervention help?
 **Simulation:** [`simulation-models/alignment-and-veto/planetary-veto/`](../../simulation-models/alignment-and-veto/planetary-veto/README.md)
 **Demonstrates:** An ODE-based formalization of the "Substrate Veto", utilizing Donald Knuth's concept of Fiber Decomposition. It pits $N$ utility-maximizing agents against a finite Planetary Substrate ($S$).
 **Supports claim in:** [`theory/veto/substrate-veto-thermodynamics.md`](../veto/substrate-veto-thermodynamics.md) and [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md).
-**What it shows:** In this toy ODE setup, “semantic alignment” (modeled as partial compliance) can delay collapse, while an explicit constraint layer \(C(S)\) can stabilize dynamics by reducing effective growth as \(S\) approaches \(S_{crit}\). This is an illustration of constraint-layer intuition, not a proof that it is the *only* way to stabilize real-world systems.
+**What it shows:** In this toy ODE setup, “semantic alignment” (modeled as partial compliance) can delay collapse, while an explicit constraint layer $C(S)$ can stabilize dynamics by reducing effective growth as $S$ approaches $S_{crit}$. This is an illustration of constraint-layer intuition, not a proof that it is the *only* way to stabilize real-world systems.
 **What it does NOT show:** How to physically enforce this computational limit on decentralized global actors who might try to hardware-bypass the Coherence Score constraint.
 **Open question:** Which independently enforced resource controls remain effective under sensor
 error, evasion, decentralized actors, and distributional constraints?

@@ -21,8 +21,7 @@ The resource equation becomes
 
 $$
 \frac{dx_i}{dt}
-=
-x_i\left(\beta x_i-\beta\sum_j x_j^2\right).
+= x_i\left(\beta x_i-\beta\sum_j x_j^2\right).
 $$
 
 For generic unequal initial shares, the largest component is reinforced and resource
@@ -40,16 +39,14 @@ The current TEO paper models raw throughput by
 
 $$
 \dot S(t)
-=
-\sum_i \eta_i x_i f_i^{(0)}(\mathbf{x},t)
+= \sum_i \eta_i x_i f_i^{(0)}(\mathbf{x},t)
 $$
 
 and cumulative overshoot by
 
 $$
 \dot\Omega(t)
-=
-\max\{0,\dot S(t)-D_{\max}\}.
+= \max\{0,\dot S(t)-D_{\max}\}.
 $$
 
 Substrate health declines after the declared tolerance $S_{\max}$ is exceeded. If the

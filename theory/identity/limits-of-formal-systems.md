@@ -22,7 +22,7 @@ analyzed. The theorem rules out a universal decider, not all useful prediction.
 
 ### Kolmogorov complexity
 
-The exact shortest-program length \(K(x)\) is uncomputable in general. Compression algorithms still
+The exact shortest-program length $K(x)$ is uncomputable in general. Compression algorithms still
 provide computable upper bounds, and model selection can use declared description languages. The
 result does not say that every structure is incompressible.
 

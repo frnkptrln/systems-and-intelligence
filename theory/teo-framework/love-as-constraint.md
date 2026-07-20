@@ -50,8 +50,7 @@ In a Kuramoto model,
 
 $$
 \frac{d\theta_i}{dt}
-=
-\omega_i + \frac{K}{N}\sum_j A_{ij}\sin(\theta_j-\theta_i),
+= \omega_i + \frac{K}{N}\sum_j A_{ij}\sin(\theta_j-\theta_i),
 $$
 
 topology and coupling strength jointly affect synchronization. Connectivity is necessary
@@ -89,8 +88,7 @@ $\mathcal C=\{c_1,\ldots,c_n\}$, one simple diagnostic is
 
 $$
 \operatorname{IP}(t)
-=
-\frac{|\{c_k\in\mathcal C:c_k\text{ is consulted at }t\}|}{n}.
+= \frac{|\{c_k\in\mathcal C:c_k\text{ is consulted at }t\}|}{n}.
 $$
 
 Consultation alone is insufficient. A system can read every constraint and still choose an

@@ -14,15 +14,15 @@ engineering design rather than an account of consciousness.
 
 ## A Reflectivity Parameter
 
-Let \(R\in[0,1]\) be a task-specific allocation parameter:
+Let $R\in[0,1]$ be a task-specific allocation parameter:
 
-- low \(R\): more budget for immediate action from local observations;
-- high \(R\): more budget for model comparison, review, and revision before action.
+- low $R$: more budget for immediate action from local observations;
+- high $R$: more budget for model comparison, review, and revision before action.
 
-\(R\) is not introspection, wisdom, or consciousness. Its operational definition must name the
+$R$ is not introspection, wisdom, or consciousness. Its operational definition must name the
 compute counted as review and the action latency or opportunity it displaces.
 
-A heterogeneous team may combine agents with different \(R\) values. The hypothesis is that such a
+A heterogeneous team may combine agents with different $R$ values. The hypothesis is that such a
 team can improve speed–error trade-offs when tasks genuinely differ in the value of review.
 
 ## Information Boundaries

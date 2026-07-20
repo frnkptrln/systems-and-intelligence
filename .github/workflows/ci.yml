@@ -20,3 +20,22 @@ jobs:
         run: pytest tests/ -q
       - name: Internal link validation
         run: python lab/tools/validate_links.py
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: pip install "mkdocs>=1.5,<2.0" "mkdocs-material>=9.5" "pymdown-extensions>=10.7"
+      - run: npm install --no-save --no-package-lock katex@0.18.1
+      - name: Mathematical Markdown validation
+        run: python lab/tools/validate_math.py
+      - name: Strict documentation build
+        run: mkdocs build --strict
+      - name: KaTeX rendering validation
+        run: node lab/tools/validate_katex.js site
