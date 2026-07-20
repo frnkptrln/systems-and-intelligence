@@ -718,7 +718,7 @@ def main() -> None:
     result = run_experiment(args.seeds)
     report(result)
     if args.save:
-        path = Path(__file__).resolve().parents[2] / "tools" / "co_stabilization_population.png"
+        path = Path(__file__).resolve().parents[2] / "tools" / "inverse_benchmark_population.png"
         plot(result, path)
 
 

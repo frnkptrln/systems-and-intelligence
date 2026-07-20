@@ -181,7 +181,7 @@ This is a pair with a fixed mask, not an ecology: nothing here composes spontane
 
 The useful result is negative and narrowing: **substitutive interdependence is not yet co-stabilization**. It produces a monoculture-like dependency pattern while failing the resilience criterion that motivated the ecology reading. Co-stabilization therefore remains `[HYPOTHESIZED]`. The next discriminating model must retain self-sufficiency and add redundant coupling; the population version remains one level further out.
 
-*The committed v1.9 figure predates this interpretive calibration. Re-run `co_stabilization.py --save` to regenerate it with the corrected labels; the numerical data are unchanged.*
+![Substitutive coupling under knockout and noise](../../tools/inverse_benchmark_co_stabilization.png)
 
 ## v1.10 — redundant mutual support under a matched budget (run)
 
@@ -224,7 +224,7 @@ The preregistered candidate criterion required three things: valid accounting, m
 
 The preregistered endogenous co-stabilization criterion is therefore **not supported**. v1.11 exposes the missing bridge between a mechanism that benefits a collective and one that evolution actually retains. The next discriminating models are not “more support” but mechanisms that can alter that selection problem: partner choice, conditional reciprocity, and spatial/kin assortment. Resource production and open-ended topology remain external beyond that.
 
-![Endogenous support population](../../tools/co_stabilization_population.png)
+![Endogenous support population](../../tools/inverse_benchmark_population.png)
 
 ## Running
 
@@ -273,4 +273,4 @@ Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 - [Measurement as Weak Intervention](../../../theory/core/measurement-as-weak-intervention.md) — the conceptual hinge on v1.1's hierarchy: coupling is not identification; plus the fourth (reflexive) regime the toys cannot exhibit.
 - [Open Problems](../../../theory/reference/open-problems.md) — Open Problem 11 (bounded inverse reconstruction).
 - [Related Work Map](../../../meta/research-alignment/related-work-map.md) — SINDy / system identification / program induction anchors.
-- [`lab/experiments/trace_to_generator/`](../../experiments/trace_to_generator/) — the earlier inverse-prompting scaffold.
+- [`lab/experiments/trace_to_generator/`](../../experiments/trace_to_generator/README.md) — the earlier inverse-prompting scaffold.
