@@ -67,3 +67,6 @@ Depends on: <theory docs / simulations>
 14. [`014_ui_ux_of_the_biological_veto.md`](014_ui_ux_of_the_biological_veto.md) — Vital Impact Cards and the cognitive-bandwidth bottleneck in human oversight
 15. [`015_post_silicon_architectures.md`](015_post_silicon_architectures.md) — TEO-native chip topologies: analog cores, γ-pin, Coupling Phase-Lock Loop
 16. [`016_the-runtime-is-part-of-the-generator.md`](016_the-runtime-is-part-of-the-generator.md) — Reproducibility requires diffing the full generator bundle (artifact + runtime + policy + history)
+17. [`017_provenance-depth-and-the-verification-economy.md`](017_provenance-depth-and-the-verification-economy.md) — Provenance depth and the cost of verifying generated artifacts
+18. [`018_the-city-panel-protocol.md`](018_the-city-panel-protocol.md) — Pre-registered city-scale field test of the corridor's three axes
+19. [`019_who_pays_for_the_veto.md`](019_who_pays_for_the_veto.md) — The benchmark's selection result aimed at the constraint architecture: a veto that can be exercised is still not stable if only its carrier pays

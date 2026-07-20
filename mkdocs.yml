@@ -182,6 +182,9 @@ nav:
           - UI/UX of the Biological Veto: logs/014_ui_ux_of_the_biological_veto.md
           - Post-Silicon Architectures: logs/015_post_silicon_architectures.md
           - The Runtime is Part of the Generator: logs/016_the-runtime-is-part-of-the-generator.md
+          - Provenance Depth: logs/017_provenance-depth-and-the-verification-economy.md
+          - The City Panel Protocol: logs/018_the-city-panel-protocol.md
+          - Who Pays for the Veto: logs/019_who_pays_for_the_veto.md
       - "Narrative Stress Tests":
           - World-Building Bible: fiction/README.md
           - The Impedance Crash: fiction/01_the_impedance_crash.md
