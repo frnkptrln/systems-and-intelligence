@@ -4,13 +4,25 @@ This document defines **where new content should live** so the project can scale
 
 ---
 
-## 0) Core Generative Idea
+## 0) Foundation and Research Arcs
 
-Intelligence is modeled here as constrained dynamical viability, not raw prediction or unconstrained optimization. A system becomes unsafe when local optimization outruns the carrying capacity of its substrate, regulators, or feedback channels; survivable intelligence requires entropy budgets, impedance matching, and veto paths that keep adaptation inside a viable corridor.
+The repository's mathematical language is defined in the [Foundations
+Reconstruction](../../theory/core/mathematical-axioms.md): standard Borel interfaces and stochastic
+processes, with typed sequential and parallel composition. This language derives structure through
+conditional prediction but does not derive identity, learning, intelligence, goals, or phenomenal
+consciousness without additional model structure.
 
-This claim is challengeable: if unbounded optimization can remain stable without substrate stress, regulator overload, or loss of corrective feedback, the central architecture is wrong.
+Two bounded research arcs then use that language. The **model-identification arc** studies
+equivalence classes, coverage, intervention, and revision under declared model families and costs.
+The **viability arc** models intelligence as constrained dynamical performance rather than raw
+prediction or unconstrained optimization. Its claims remain challengeable within their stated
+models: if optimization can scale without substrate stress, regulator overload, or loss of
+corrective feedback, those architecture claims weaken or fail.
 
-> **Relation to the Spine.** The information architecture described below sits inside a broader organizing question stated in [The Generator Question](../../theory/core/the-generator-question.md). The spine names *why* the asymmetry between forward (generator → trace) and inverse (trace → generator) is the project's deepest concern; this document handles *how* contributions are organized in light of that.
+> **Relation to the legacy spine.** [The Generator
+> Question](../../theory/core/the-generator-question.md) formerly supplied a universal organizing
+> frame. It is now retained as research history. Its bounded identification questions survive; the
+> unqualified generator and generic forward/inverse asymmetry do not control the architecture.
 
 ---
 

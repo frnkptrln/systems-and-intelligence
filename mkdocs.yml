@@ -1,5 +1,5 @@
 site_name: "Systems & Intelligence"
-site_description: "A research notebook on emergence, inverse reconstruction, and viability constraints in intelligent systems."
+site_description: "A research notebook on processes, model identification, emergence, and viability constraints."
 site_author: "Frank Peterlein"
 site_url: "https://frnkptrln.github.io/systems-and-intelligence"
 repo_url: https://github.com/frnkptrln/systems-and-intelligence
@@ -17,8 +17,9 @@ nav:
       - Overview: synthesis.md
       - Core Claims: meta/repository-meta/core-claims.md
       - "Course Path & Earlier Book":
+          - "Foundations Reconstruction": theory/core/mathematical-axioms.md
           - "Start: From Rule to Mind": book/09_from_rule_to_mind.md
-          - "Chapter 0: The Generator Question": theory/core/the-generator-question.md
+          - "Legacy: The Generator Question": theory/core/the-generator-question.md
           - "Earlier Introduction": book/00_introduction.md
           - "Part 1: Mechanics of Emergence": book/01_mechanics_of_emergence.md
           - "Part 2: Measuring the Mind": book/02_measuring_the_mind.md
@@ -30,7 +31,8 @@ nav:
           - Bibliography: book/07_bibliography.md
       - "Core Theory":
           - Theory Overview: theory/README.md
-          - The Generator Question: theory/core/the-generator-question.md
+          - Foundations Reconstruction: theory/core/mathematical-axioms.md
+          - "Legacy: The Generator Question": theory/core/the-generator-question.md
           - From Trace to World-Binding (the loop): theory/core/from-trace-to-world-binding.md
           - Trace to Generator (essay): theory/emergence/trace-to-generator.md
           - The Emergence Manifesto: theory/core/emergence-manifesto-v1.3.md
@@ -41,7 +43,6 @@ nav:
           - Machines of Loving Grace: theory/narrative/machines-of-loving-grace.md
           - Chord vs. Arpeggio Identity: theory/identity/chord-vs-arpeggio-identity.md
           - System Intelligence Index: theory/core/system-intelligence-index.md
-          - Mathematical Axioms: theory/core/mathematical-axioms.md
           - Local Causality: theory/emergence/local-causality-invisible-consequences.md
           - Thermodynamic Hardware Manifesto: theory/core/thermodynamic-hardware-manifesto.md
           - Mycelial Veto: theory/veto/the-mycelial-veto.md

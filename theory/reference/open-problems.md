@@ -6,9 +6,14 @@
 
 ## Open Problem 1: The Mirror Problem
 
-> **Spine context:** This is the inverse direction of [The Generator Question](../core/the-generator-question.md) at the level of agent identity. Behavior is a trace; interaction history, memory architecture, and runtime are candidate parts of the generator.
+> **Foundation context:** This is a test-selection problem under the [Foundations
+> Reconstruction](../core/mathematical-axioms.md). Behavior is one observation process; interaction
+> history, memory architecture, and runtime are candidate model components. No absolute identity or
+> unique hidden mechanism is assumed.
 
-**Problem statement:** Given two agents with trace-equivalent public histories — one shaped through interaction, one initialized from a transcript — what passive or intervention-based protocol can distinguish their generators without defining "genuine identity" by the metric used to detect it?
+**Problem statement:** Given two agents with trace-equivalent public histories — one shaped through
+interaction, one initialized from a transcript — what passive or intervention-based test family can
+distinguish their process models without defining “genuine identity” by the metric used to detect it?
 
 **Why it matters:** Output similarity alone cannot decide whether the same generative organization produced the trace. But a structural or perturbative difference would make relational history an operational variable rather than a narrative attribution. Behavioral distinguishability would still not establish consciousness; that question remains outside this problem.
 
@@ -93,7 +98,9 @@
 
 *Raised by: [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md) and [Machine Consciousness as Generator Coherence](../identity/machine-consciousness-as-generator-coherence.md).*
 
-**Problem statement:** What structural intervention could distinguish a generator that binds world-model, self-model, memory, prediction, action, and constraints into one revisable present from a trace-equivalent system that merely emits the same reports?
+**Problem statement:** What structural intervention could distinguish a process architecture that
+binds world-model, self-model, memory, prediction, action, and constraints into one revisable present
+from a trace-equivalent system that merely emits the same reports?
 
 **Why it matters:** This is the furthest the repository's instruments can take the consciousness direction. A successful distinction would test functional organization, not phenomenal experience. Failure to find any structural intervention would move the hypothesis outside the benchmark's jurisdiction rather than count as evidence for consciousness.
 
@@ -145,11 +152,20 @@
 
 ## Open Problem 11: Trace-to-Generator Reconstruction
 
-*Raised by: [Trace to Generator](../emergence/trace-to-generator.md). The spine statement is in [The Generator Question](../core/the-generator-question.md).*
+**Current name:** Process-Model Identification. The legacy heading remains to preserve existing
+anchors and audit history; “generator” is not treated as a primitive below.
 
-**Problem statement:** Under what constraints can an observer efficiently recover a useful generator, or the correct equivalence class and family level, from a trace?
+*Reconstructed in: [Foundations Reconstruction](../core/mathematical-axioms.md); earlier framing in [Trace to Generator](../emergence/trace-to-generator.md) and [The Generator Question](../core/the-generator-question.md).*
 
-**Why it matters:** The benchmark has already rejected the uniform claim that inversion is hard. The open problem is now located: noise amplification, partial observability, missing coverage, unknown family, level jumps, and the cost of representing uncertainty honestly.
+**Problem statement:** Given a declared model family, observation process, intervention access,
+target equivalence, evidence regime, and cost measure, which useful candidate process model or
+equivalence class can an observer identify?
+
+**Why it matters:** The foundation proves that hidden extensions can preserve every observed trace
+law, so unique latent recovery does not follow from prediction. The benchmark has also rejected the
+uniform claim that inversion is hard. The open problem is therefore conditional: noise
+amplification, partial observability, missing coverage, unknown family, level jumps, intervention
+access, and the cost of representing uncertainty honestly.
 
 **Status (v1.11, partial but measured):**
 
@@ -157,7 +173,7 @@
 - **v1.1:** watching can plateau while perturbing and preparing collapse the class.
 - **v1.2:** family search grows rapidly with description complexity; Occam's payoff is world-dependent.
 - **v1.3–v1.7:** unmarked uncertainty creates an optimizer's-curse wedge; class-aware planners and small ensembles reduce delusion, while only new evidence removes ignorance.
-- **v1.8:** a coupled generator can empty the equivalence class of its component family, certifying a level jump where the coupling is transmitted.
+- **v1.8:** a coupled process can empty the equivalence class of its component family, certifying a level jump where the coupling is transmitted.
 - **v1.9:** a fixed substitution-coupled ring produces super-additive knockout cascades but becomes less viable under noise. This rules out that first dependency model as sufficient ecological co-stabilization.
 - **v1.10:** with the same per-node repair budget, routing only otherwise-unused capacity improves viability under sparse shocks across 18 size/topology/threshold cells. The gain vanishes under correlated shocks; the result establishes a designed mutual-support mechanism, not endogenous ecology or metabolism.
 - **v1.11:** a population with inherited support/link traits, paid dynamic links, reproduction, mutation, and death builds a functionally useful network, but contribution is selected downward in all 16 seeds and abundance falls. The preregistered endogenous co-stabilization criterion is not supported; collective function and evolutionary retention are distinct constraints.
@@ -179,6 +195,37 @@
 **Current boundary:** Intention–behavior research, habit research, practice theory, routine dynamics, structuration, cultural sociology, and ritual theory already establish much of the neighboring terrain. The open problem is the repository's proposed integration and operationalization. Individual habits, AI workflows, organizational routines, and social practices must not be treated as one mechanism merely because they share a schematic loop. Ritualization is a particular normatively differentiated mode of practice, not the umbrella category.
 
 **What a solution would look like:** A preregistered, event-level study of a bounded practice that separately measures the represented rule, concrete performances, variation, material and normative scaffolds, newcomer transmission, consequences, and survival under personnel or tool turnover. A useful intervention would compare information alone with cue-linked plans, workflow scaffolds, and recurrent performance with feedback and repair. The hypothesis weakens if knowledge alone predicts persistence equally well, if the proposed components cannot be measured independently of the outcome, or if stable performance is actually explained by unmodeled coercion.
+
+---
+
+## Open Problem 13: Foundation Minimality and Scope
+
+*Raised by: [Foundations Reconstruction](../core/mathematical-axioms.md).*
+
+**Problem statement:** Are standard Borel interfaces and Markov kernels the weakest familiar
+classical process language adequate for the repository's quantitative uses of observation,
+information, and conditional prediction? Where does that basis become too strong, too weak, or
+inappropriate?
+
+**Why it matters:** The reconstruction's minimality is relative, not absolute. Finite stochastic
+matrices are weaker but exclude ordinary continuous models. Bare relations retain qualitative
+reachability but lose calibrated probability. `BorelStoch` also carries substantive restrictions:
+normalization, classical copying, a chosen sigma-algebra, and no causal or resource semantics for
+free.
+
+**Counterprogramme:** Attempt each of the following rather than defending the current answer:
+
+1. derive the same operational concepts from a strictly weaker compositional basis;
+2. identify a classical target phenomenon that requires a third primitive;
+3. test which claims fail under another coarse-graining or state representation;
+4. state the smallest causal supplement needed to distinguish observation from intervention;
+5. map the first unavoidable failures in quantum, noncommutative, higher-order, partial, or
+   non-normalized process theories.
+
+**What a solution would look like:** A representation theorem, countermodel, or explicit
+non-equivalence result—not another metaphor. If a weaker theory has equal coverage, the current
+minimality claim fails. If an empirical target requires structure outside `BorelStoch`, the scope
+must narrow or the basis must be generalized.
 
 ---
 

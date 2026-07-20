@@ -1,12 +1,14 @@
 ---
-title: "The Generator Question — The Spine of This Project"
+title: "The Generator Question — Legacy Spine Under Reconstruction"
 date: "2026-05-21"
-status: "Working Note"
-scope: "Makes the organizing question of the project explicit and names the foundational assumption it rests on."
+status: "Legacy framing — superseded as a foundation"
+scope: "Preserves the former organizing frame while its bounded model-identification claims are migrated to the process foundation."
 epistemic_status: >
-  Synthesis document. Restates an organizing question that was previously implicit across the
-  repository. Introduces one new claim status tag (`[FOUNDATIONAL ASSUMPTION]`) and applies it
-  to assumptions the project depends on but cannot itself prove.
+  Historical synthesis document. Its equivalence-class and intervention questions remain useful,
+  but the unqualified generator, generic forward/inverse asymmetry, P != NP assumption, and identity
+  reduction are no longer accepted as foundations. The Foundations Reconstruction controls.
+superseded_by:
+  - theory/core/mathematical-axioms.md
 related:
   - theory/core/emergence-manifesto-v1.3.md
   - theory/emergence/trace-to-generator.md
@@ -23,7 +25,16 @@ failure_conditions:
 
 # The Generator Question
 
-*The organizing question of this project, stated explicitly.*
+*The former organizing question, retained so the project's change of foundation remains visible.*
+
+> **Foundational status (2026-07-20).** This document no longer defines the project's foundation.
+> The [Foundations Reconstruction](mathematical-axioms.md) found no independent mathematical role
+> for an unqualified “generator.” It replaces that term with typed stochastic processes, treats
+> identity as test-relative, and rejects P $\ne$ NP as a load-bearing project assumption. The
+> bounded questions preserved here—model identification, observational equivalence, coverage,
+> intervention, and decision under model uncertainty—remain active. The stronger universal claims
+> below are retained as the history of the research path, not as established premises. Where the
+> two documents conflict, the reconstruction takes precedence.
 
 ---
 
