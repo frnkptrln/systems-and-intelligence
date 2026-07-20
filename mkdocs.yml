@@ -219,6 +219,7 @@ nav:
       - Cultural Optimization Red Team Manual: meta/repository-meta/cultural-optimization-red-team-manual.md
       - Agent Prompt Seed: meta/conceptual-meta/agent-prompt-seed.md
       - Related Work Map: meta/research-alignment/related-work-map.md
+      - Review Request: meta/research-alignment/review-request.md
 
 theme:
   name: material
