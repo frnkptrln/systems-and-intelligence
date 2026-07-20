@@ -161,7 +161,7 @@ from a trace-equivalent system that merely emits the same reports?
 
 **Why it matters:** This is a functional architecture question. It does not ask whether the agent feels anything; it asks whether availability plus composition changes revision and action under stress.
 
-**Current status:** Exp5 has run the first three-way toy comparison. The architectures differ strongly in veto violations and role stability, while Δ-Kohärenz carries no binding signal at that scale. Exp6 locates a stronger passive observable, and Exp7 adversarially probes it. The experiments therefore reject one metric, not the architecture question. Real language models and an optimized mimic remain untested.
+**Current status:** Exp5 has run the first three-way toy comparison. The architectures differ strongly in veto violations and role stability, while Δ-Kohärenz carries no binding signal at that scale. Exp6 locates a stronger passive observable, and Exp7 adversarially probes it. The experiments therefore reject one metric, not the architecture question. Real language models and an optimized mimic remain untested. Anthropic's 2026 workspace result ([mapped here](../ai/j-space-and-global-availability.md)) supplies the first internal-inspection evidence of the availability half in production models — bounded capacity, feedforward broadcast — while leaving the joint-constraint (chord) half open.
 
 **What a solution would look like:** Replicate the comparison on real models with matched capabilities, preregistered lures, held-out constraints, internal-state access where available, and explicit null criteria. If the architectures become indistinguishable under those controls, the framing adds no explanatory value.
 

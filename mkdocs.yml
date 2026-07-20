@@ -78,6 +78,7 @@ nav:
               - "Legacy: P vs NP as Generator Search": theory/computation/p-vs-np-as-generator-search.md
               - Static Information, Living Process: theory/computation/static-information-and-living-process.md
               - LLMs as Probabilistic Automata: theory/ai/llms-as-probabilistic-automata.md
+              - "The J-Space Result (2026)": theory/ai/j-space-and-global-availability.md
           - "Narrative Theory":
               - Tensor Logic Mini Paper: theory/narrative/tensor-logic-mini-paper.en.md
               - Asimov AI and Latent Thinking: theory/narrative/asimov-ai-latent-thinking.md

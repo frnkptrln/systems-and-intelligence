@@ -57,6 +57,12 @@ Repository translation:
 
 > Global actionability is one access-consciousness candidate; it does not establish phenomenal experience.
 
+Since July 2026 this anchor has an empirical instance: Anthropic's workspace paper reports a
+bounded, mid-layer, broadcast-coupled representation space in production Claude models, found by
+internal inspection and explicitly not offered as evidence of experience. The mapping, its
+lens-relativity caveat, and the chord-question it makes quantitative live in
+[The J-Space Result](../ai/j-space-and-global-availability.md).
+
 In the Agentic Identity Suite, a session is counted as persistent only when the chosen memory process
 retains it and it changes a later test. That is an instrument rule, not a general definition of identity.
 
