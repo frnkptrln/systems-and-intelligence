@@ -46,10 +46,15 @@ This document maps their relationship and then follows the second.
 1. **Foundation** — [Foundations Reconstruction](../../theory/core/mathematical-axioms.md): standard Borel interfaces, Markov kernels, composition, derivations, supplements, and limits.
 2. **Research frontier** — [inverse reconstruction](../../lab/benchmarks/inverse-reconstruction/README.md): bounded model identification under noise, observability, coverage, family search, and interventions.
 3. **Identity layer** — Mirror Problem, Chord/Arpeggio, IP, Δ-Kohärenz: competing test families and metrics for persistence. No absolute or generator-recovery identity is assumed. Consciousness is a separate boundary: functional architecture can be tested; experience is not derived ([home](../../theory/identity/consciousness-as-global-availability.md)).
-4. **Safety / application layer** — TEO, [the Viable Corridor](../../papers/viable-corridor.md), the veto cluster: what the asymmetry costs when optimizers outrun their constraints.
+4. **Safety / application layer** — TEO, [the Viable Corridor](../../papers/viable-corridor.md), the veto cluster: what happens when optimization pressure outruns the modeled constraints.
 5. **Narrative layer** — fiction, manifestos, logs: stress tests and concept generators, never evidence.
 
-A concept that fits none of these layers, and has no home file, experiment, or open problem, is decoration — see [What This Project Does NOT Claim](../../theory/reference/what-this-project-does-not-claim.md) for the enforced boundary, and the [Concept Registry](concept-registry.md) for the term-by-term audit (layer, home, status, operationalization — the project's "zone file").
+A concept that fits none of these layers, and has no home file, experiment, or open problem, is not
+part of the canonical claim structure. It may remain an explicitly unclassified seed in the
+[Thinking Space](https://frnkptrln.github.io/systems-and-intelligence/thinking-space/) without owing the project a promotion. Before it is
+used as a load-bearing claim, it needs a home, status, evidence path, and scope boundary — see [What
+This Project Does NOT Claim](../../theory/reference/what-this-project-does-not-claim.md) and the
+[Concept Registry](concept-registry.md) for the term-by-term audit.
 
 A note on tags. Each station below carries the status of its strongest content, using the project's vocabulary: `[FOUNDATIONAL ASSUMPTION]`, `[DEMONSTRATED]`, `[HYPOTHESIZED]`, `[FORMAL]`, `[CONJECTURE]`, `[HEURISTIC]`, `[EMPIRICAL CONJECTURE]`, `[MODEL ASSUMPTION]`, `[SIMULATION ARTIFACT]`, `[NARRATIVE STRESS TEST]`, `[OPEN PROBLEM]`. Mixed nodes are tagged per-claim, not globally.
 

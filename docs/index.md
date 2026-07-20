@@ -123,6 +123,17 @@ The inverse-reconstruction benchmark: the spine's asymmetry as curves. Equivalen
 
 <div class="card" markdown>
 
+### :material-lightbulb-on-outline: Thinking Space
+
+Questions before concepts: encounters, contradictions, and unfinished probes may remain open
+without promising to become canonical claims.
+
+[Enter the Thinking Space →](thinking-space.md)
+
+</div>
+
+<div class="card" markdown>
+
 ### :material-book-open-page-variant: Sci-Fi Synthesis
 
 Narrative stress tests that make abstract theoretical constraints visible in lived, emotional scenarios.
@@ -146,7 +157,11 @@ Narrative stress tests that make abstract theoretical constraints visible in liv
 2. **External review of the Viable Corridor** — freeze the paper's conceptual scope while its dynamical assumptions, sufficiency gap, and empirical mapping receive a critical read.
 3. **Rigorous sufficiency** — replace single-trajectory evidence with open-set tests and, if possible, construct or bound \(\gamma_c\).
 4. **Separate the real-model questions correctly** — live Agentic Identity Suite runs test Mirror/Chord/binding claims; P7/P8 require a distinct real-agent ecology with hard/soft budgets and independently varied constraint architecture.
-5. **From useful support to stable support** — v1.11's dynamic population builds links that help acutely, but contribution is selected downward in every seed and abundance falls. Test partner choice, conditional reciprocity, and spatial/kin assortment under the same costs before adding endogenous resource production.
+5. **Separate selection from drift after cost relocation** — v1.13's local group funding nearly
+   removes selection against support and suppresses seeded cheaters, but it does not meet the
+   retention criterion and makes within-group variation nearly cost-neutral. The next discriminating
+   arm should introduce a measurable within-group cost gradient without changing the matched group
+   budget.
 
 **Speculative / long-horizon** `[SPECULATIVE]`:
 

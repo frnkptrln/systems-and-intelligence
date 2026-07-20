@@ -85,6 +85,10 @@ Contradictions, partial models, scenario tests, and fragments are allowed here. 
 - `lab/` — the unified python framework, agentic experiments, cognitive benchmarks, and data-analysis tools
 - `meta/` — epistemic framing, repository structure, and maintenance notes
 
+Exploration does not owe the synthesis layer a result. A seed may be recorded before it has a
+stable claim, mechanism, home, or falsifier, and it may remain unresolved. The public overview and
+current unclassified seeds live in the public [Thinking Space](https://frnkptrln.github.io/systems-and-intelligence/thinking-space/).
+
 ### Synthesis (Claims)
 
 These files assert or compress claims about reality and therefore need clearer epistemic status, definitions, and failure conditions:
@@ -194,7 +198,11 @@ When adding a new artifact, ask:
 
 If two answers are true, choose one **home location** and cross-link instead of duplicating.
 
-Whatever it is — before committing, run it through [Feynman Mode](feynman-mode.md) (toy model? counterexample? load-bearing assumption? beautiful word in place of a mechanism?), and if it introduces a load-bearing term, add its [Concept Registry](concept-registry.md) row in the same change.
+If the artifact asserts or promotes a load-bearing claim, run it through [Feynman
+Mode](feynman-mode.md) before committing it (toy model? counterexample? load-bearing assumption?
+beautiful word in place of a mechanism?) and add any load-bearing term to the [Concept
+Registry](concept-registry.md) in the same change. An explicitly exploratory seed is exempt until it
+asks to enter the synthesis layer.
 
 ---
 
