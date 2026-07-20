@@ -1,4 +1,4 @@
-# Inverse-Reconstruction Benchmark (v0–v1.11) — Trace → Candidate Models
+# Inverse-Reconstruction Benchmark (v0–v1.12) — Trace → Candidate Models
 
 *Given a declared model family and a finite trace, which parameters, rules, or equivalence class can
 be recovered—and how do noise, observability, interventions, and coverage change the answer?*
@@ -226,6 +226,29 @@ The preregistered endogenous co-stabilization criterion is therefore **not suppo
 
 ![Endogenous support population](../../tools/inverse_benchmark_population.png)
 
+## v1.12 — visible contribution sorts the network but does not retain it (run)
+
+[`co_stabilization_selection.py`](co_stabilization_selection.py) takes up v1.11's diagnosis. In v1.11 a link forms with probability proportional to $\sqrt{g_u g_v}$ over the *link* genes only; the support gene never enters, so a non-contributor is exactly as attractive a partner as a contributor. v1.12 asks whether making contribution visible to partner formation changes the selection outcome — and what that visibility costs.
+
+Four arms share one accounting: **blind** (v1.11 unchanged), **partner choice** (both endpoints weight formation by the other's support, and links to low contributors break faster), **conditional reciprocity** (blind formation, but a donor scales its offer to each neighbour by decaying per-edge memory of what came back), and **assortment** (formation favours genetically similar partners). Following v1.10's matched-budget discipline, the three informed arms pay `ASSESS_COST` per assessed edge per step: free partner information would rig the comparison. The blind arm reproduces v1.11 trajectory-for-trajectory, so the arms differ only in the partner rule and its paid information.
+
+| Median over 16 seeds | linked support on | off | delta | positive seeds | vs. start |
+|---|---:|---:|---:|---:|---:|
+| blind | 0.375 | 0.483 | −0.1056 | 0% | −0.1277 |
+| **partner choice** | **0.543** | 0.566 | **−0.0287** | **19%** | **+0.0657** |
+| reciprocity | 0.382 | 0.485 | −0.0999 | 0% | −0.0875 |
+| assortment | 0.392 | 0.490 | −0.0956 | 0% | −0.0835 |
+
+- **The preregistered criterion is not supported.** No arm reversed the sign of support selection in a majority of seeds. Partner choice weakens the loss by roughly a factor of four and is the only arm with any positive seeds, but 19% is not a majority.
+- **Partner choice protects the network, not the population.** Seeded with 5% cheaters, the fraction of *linked* agents below support 0.20 ends at **1.2%** versus 22.0% under blind — near-total exclusion. Yet the cheater fraction in the population as a whole still rises to 27.1%. Non-contributors are excluded rather than eliminated, and persist unlinked.
+- **One preregistered prediction did not apply.** P4 expected a cost boundary: raise the price of partner information and the advantage should vanish. Instead partner choice's delta moves *toward* zero as cost rises (−0.0351 → −0.0012). A rewiring rule is not a taxed benefit; a higher price suppresses link formation in treatment and control alike. The prediction was the wrong shape for this mechanism, not a failed test of it.
+- **The measurement question is now itself open.** Against the *starting* level rather than the matched control, partner choice is the only arm that does not decay (+0.0657). Where a rule rewards support even with transfer off, the control rises too, so the on/off delta understates absolute retention. Reported as a post-hoc diagnostic; the preregistered comparison stands as the verdict.
+- **The common-mode limit holds** in every arm, as in v1.10 and v1.11.
+
+Making contribution visible is therefore **not sufficient** to make it evolutionarily retainable in this model. It is enough to sort the network: costly support survives where partners can refuse, while non-contributors accumulate outside it. Whether an excluded population is a stable outcome or a reservoir waiting for the network to weaken is the next discriminating question.
+
+![Partner rules and the retention of costly support](../../tools/inverse_benchmark_selection.png)
+
 ## Running
 
 ```bash
@@ -253,6 +276,8 @@ python co_stabilization_redundancy.py      # v1.10: matched-budget redundancy (~
 python co_stabilization_redundancy.py --save # also write the redundancy figure
 python co_stabilization_population.py      # v1.11: endogenous population (~7 s)
 python co_stabilization_population.py --save # also write the population figure
+python co_stabilization_selection.py       # v1.12: partner rules, four arms (~80 s)
+python co_stabilization_selection.py --save # also write the selection figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
@@ -261,7 +286,7 @@ Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 *(The benchmark sequence through v1.11 is run and documented above. The items below remain open.)*
 
-- **From useful support to stable support**: v1.11 lets links turn over, traits mutate, and individuals reproduce, but paid contribution is selected downward despite a positive acute ablation test. Next: compare **partner choice**, **conditional reciprocity**, and **spatial/kin assortment** under the same accounting and cheater controls. Only after one survives invasion and ablation should resource production and less constrained topology be added.
+- **From a sorted network to a retained trait**: v1.12 tested partner choice, conditional reciprocity, and assortment under one accounting. None reversed selection; partner choice excluded non-contributors from the network almost completely (1.2% of linked agents) while they persisted in the population (27.1%). The next discriminating models act on that excluded reservoir rather than adding more support: **whether exclusion is stable** when the network weakens, **partner choice with a memory of past exclusion**, and **endogenous resource production**, which would let excluded agents form a separate economy instead of merely surviving. The measurement question is also open: on/off deltas and drift-from-start disagree for rules that reward the trait independently of the transfer.
 - **Learned searchers vs. the enumerator**: family_search.py measures one exhaustive search. Compare learned and symbolic searchers on the same DSL, targets, compute budget, and held-out interventions rather than assuming either has a generic advantage.
 - **Re-simulation divergence** as a behavioral metric: does a recovered candidate process model match held-out trajectories and interventions even when its parameters differ?
 - **IFS testbed**: recover contractive affine maps from an attractor point cloud (hard even with known family — no time ordering).
