@@ -6,7 +6,7 @@ networkx>=3.0
 scikit-learn>=1.2
 
 # Documentation & PDF Build
-mkdocs>=1.5
+mkdocs>=1.5,<2.0
 mkdocs-material>=9.5
 pymdown-extensions>=10.7
 weasyprint>=61.0
