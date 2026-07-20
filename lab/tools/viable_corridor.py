@@ -1,8 +1,9 @@
 """
 viable_corridor.py — Visualization of the Viable Corridor in TEO parameter space.
 
-Generates Figure 1 for the paper "The Viable Corridor: A Three-Constraint
-Theorem for Survivable Multi-Agent Optimization" (papers/viable-corridor.md).
+Generates Figure 1 for the paper "The Viable Corridor: A
+Constraint-Architecture Framework for Survivable Multi-Agent Optimization"
+(papers/viable-corridor.md).
 
 The figure shows the three TEO necessity conditions — gamma > 0 (homeostatic
 regulation), K > K_c (value coupling above the Kuramoto critical threshold),
@@ -32,8 +33,9 @@ Usage::
 
 Related:
 
-- theory/core/the-generator-question.md (spine)
-- theory/teo-framework/love-as-constraint.md (three-constraint argument)
+- theory/core/mathematical-axioms.md (current foundation)
+- theory/core/the-generator-question.md (legacy motivation)
+- theory/teo-framework/love-as-constraint.md (modeling note)
 - theory/core/thermodynamics-of-orchestration.md (the TEO ODE system)
 - papers/quantifying-emergent-utility-in-llms.md (companion empirical paper)
 """

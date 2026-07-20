@@ -1,17 +1,13 @@
 """
 composition.py
 
-Generator composition: the empty class as a certificate. (Benchmark v1.8)
+Coupled processes: detecting model-family misspecification. (Benchmark v1.8)
 
-THE QUESTION.  The information-ladder note carries a [SPECULATIVE] bridge:
-higher-order generators may arise by COMPOSITION — existing generators
-coupling until the composite produces trace families none of its parts
-produces alone (symbiogenesis; Margulis; the BFF/computational-life
-illustrations; Agüera y Arcas's podcast compression: "life is an ecology
-of functions"). This file is the v0 move of that bridge toward the lab:
-not an ecology yet — a PAIR, with one dial. Can composition be *measured*
-from the trace, and what does "higher-order" mean in the benchmark's own
-currency, the consistent-generator equivalence class?
+THE QUESTION.  When data come from two coupled elementary cellular automata,
+when does a declared single-rule family become inconsistent with the trace?
+If the coupled family is then supplied, which exercised rule-table entries
+can be recovered? This is a model-selection and coverage experiment, not an
+ontological test for a “higher level.”
 
 THE SETUP.  Two elementary CAs, streams a and b on a ring (W=120), each
 evolving by its own rule — coupled at a fixed random site mask of density
@@ -21,13 +17,12 @@ is exercised harder. The observer sees STREAM A ONLY (the phenotype) and
 asks the benchmark's standard question: which elementary rule produced
 this?
 
-  Level-1 verdict: scan the observed transitions for functionality —
+  Single-family verdict: scan the observed transitions for functionality —
   the same 3-cell pattern mapping to two different successors anywhere
-  in the trace means NO elementary rule is consistent: the class at the
-  component level is EMPTY. An empty class is the trace's certificate
-  that the generator lives above the family being searched.
+  in the trace means NO elementary rule is consistent: the declared class is
+  EMPTY. This diagnoses family misspecification relative to the trace.
 
-  Level-2 recovery: with the coupled-pair family KNOWN (structure and
+  Coupled-family recovery: with the coupled-pair family supplied (structure and
   mask given — the v0 concession, as in the original benchmark) and both
   streams observed, tabulate the augmented neighborhoods and recover
   both rule tables.
@@ -38,20 +33,20 @@ this?
   ruleB = 0 collapses stream b to zeros after one step.
 
 PREDICTIONS (stated before the first run, per the repo's habit):
-  P1  g = 0: the level-1 class is never empty; with random ICs all eight
+  P1  g = 0: the single-rule class is never empty; with random ICs all eight
       patterns are exercised, so the class is exactly {ruleA} — the
-      composite ATTRIBUTES perfectly to a lone generator. Unexercised
-      composition does not exist for the observer.
+      observed stream is represented by ruleA. The unused coupling is not
+      identified from that observation.
   P2  Detection cost falls like a coverage law: median time-to-empty-class
       T_detect decreases monotonically in g, roughly hyperbolically
       (~1/(gW) until floor); by g = 0.1 detection is near-immediate
       (a few steps).
-  P3  Level-2 recovery stays cheap for every g with the family known:
-      near-exact rule bits for both streams. The composition wall is NOT
-      in parameter fitting — it is the description-size jump the observer
-      must accept when level 1 certifies empty (8 rule bits → 16 rule
-      bits + mask structure): the family-search floor (v1.2), one level up.
-  P4  THE STRUCTURAL ONE — the dying symbiont (ruleB = 0) stays level-1
+  P3  Coupled-family recovery stays cheap for every g with the family known:
+      near-exact rule bits for both streams. The mismatch is not parameter
+      fitting inside the single-rule family: the supplied coupled family has
+      additional rule bits and mask structure. This is a larger declared
+      family, not a general complexity bound.
+  P4  OBSERVATION-CHANNEL TEST — the dying symbiont (ruleB = 0) stays single-rule
       consistent at every g: compositionality is invisible when the
       coupling is never exercised. Composition is visible exactly insofar
       as it makes a difference in the trace — the coverage principle's
@@ -62,28 +57,28 @@ PREDICTIONS (stated before the first run, per the repo's habit):
 RESULT (run 1, 20 seeds x pairs — console numbers; two predictions were
 wrong, and the errors are the two best findings):
   P1  CONFIRMED: at g = 0, 100% consistent, class size exactly 1 on every
-      seed — the composite attributes cleanly to a lone generator.
+      seed — the observed stream is represented cleanly by one rule.
   P2  CONFIRMED for center-READING observers, sharper than predicted:
-      the two pairs whose ruleA reads its center (110, 30) empty on
+      the two pairs whose ruleA reads its center (110, 30) leave the
+      single-rule family empty on
       100% of seeds with median T_detect = 1 step for every g >= 0.02
       (75% and 2 steps already at g = 0.01). One live coupled site
       suffices, given trace. Detection is coverage-limited, not
       possibility-limited.
-  P3  CONFIRMED: family + mask known, level-2 tabulation recovers every
+  P3  CONFIRMED: family + mask known, coupled-family tabulation recovers every
       exercised rule bit exactly (accuracy 1.0 for all g > 0; coverage
-      ~8/8). The wall is the level jump, not the fit — as the v0 doctrine
-      holds.
+      ~8/8). The larger supplied family fits the exercised entries.
   P4  RE-FOUND, in a cleaner place than the control. The prediction named
       the dying symbiont; the run showed TWO invisibility mechanisms, and
       the elegant one was unplanned:
-        * STRUCTURAL (permanent): ruleA = 90 is center-blind, so coupling
+        * OBSERVATION-RELATIVE (permanent): ruleA = 90 is center-blind, so coupling
           through the center bit is invisible to it at EVERY density —
           empty-class rate 0/20 for all g. The composite is real, the
           partner is active, and the phenotype is still exactly a lone
           rule 90. Visibility is a property of whether the OBSERVED
-          generator reads the coupled channel, not of the coupling
+          update function reads the coupled channel, not of the coupling
           strength. This is the coverage principle sharpened: a difference
-          in the world that the generator's own function discards makes no
+          in the world that the observed function discards makes no
           difference in the trace.
         * TRANSIENT (my control, corrected): ruleB = 0 does NOT stay
           invisible — stream b's random initial condition participates in
@@ -92,23 +87,19 @@ wrong, and the errors are the two best findings):
           sites catch that single live step. A genuinely prepared zero-IC
           symbiont would be permanently invisible; a merely dying one is
           not. The prediction conflated "dies" with "never fired".
-  READING.  "Higher-order generator" gains a benchmark-native meaning: a
-      generator whose trace EMPTIES the equivalence class of the component
-      family. The certificate is cheap to earn (P2) but only where the
-      composition makes a trace-difference the observed generator actually
-      transmits (P4-structural) — and what it buys is an obligation, not
-      an answer: the search must climb to a family whose description size
-      just jumped (P3). The ecology version — a population where
-      composition and dissolution are continuous, and the question becomes
-      when a web of functions ("life is an ecology of functions", Agüera y
-      Arcas) starts maintaining itself as a whole — is v1, named and open.
+  READING.  An empty single-rule class is evidence that the declared family
+      cannot express the observed transitions. The supplied coupled family
+      restores a fit where the coupled channel changes the observed trace.
+      It is one candidate explanation, not a unique mechanism. The ecology
+      version — in which coupling and dissolution are dynamic and support
+      must reproduce its own conditions — remains open.
 
 WHAT THIS DOES NOT SHOW.  A pair with a fixed mask is not an ecology:
 nothing here composes spontaneously, persists differentially, or is
 selected — the BFF phenomena this bridge cites are exactly the parts not
 modeled. "Level" is defined relative to a fixed family ladder (elementary
 CA → coupled pair); real family ladders are not given in advance. And the
-empty-class certificate assumes noise-free traces — under noise, emptiness
+empty-class diagnosis assumes noise-free traces — under noise, emptiness
 must be statistical, which is an open sharpening.
 
 Usage::
@@ -119,7 +110,8 @@ Usage::
 Related:
 - theory/computation/static-information-and-living-process.md  (the composition bridge this operationalizes)
 - family_search.py                                (v1.2: the floor this jump lands on)
-- theory/core/the-generator-question.md           (equivalence classes; Wall framing)
+- theory/core/mathematical-axioms.md              (model-relative equivalence)
+- theory/core/the-generator-question.md           (legacy motivation)
 - lab/experiments/exp6_binding_observables.py     (the coverage principle, second appearance)
 """
 
@@ -247,7 +239,7 @@ def run_suite(n_seeds: int = N_SEEDS) -> dict:
 
 def print_summary(res: dict) -> None:
     print("=" * 78)
-    print("  BENCHMARK v1.8 — composition: the empty class as a certificate")
+    print("  BENCHMARK v1.8 — coupled processes: family misspecification")
     print(f"  (coupled elementary CAs, W={W}, T={T}, {N_SEEDS} seeds/pair)")
     print("=" * 78)
     print(f"\n  {'g':>6s} {'reading empty':>14s} {'median T_det':>13s} "
@@ -261,11 +253,13 @@ def print_summary(res: dict) -> None:
               f"{res['blind'][g]['rate']:12.2f} {res['dying'][g]['rate']:12.2f} "
               f"{np.mean(l2['cov']):9.1f} {np.mean(l2['ok']):9.2f}")
     print("\n  Reading: a center-READING observer's class empties within ~1 step")
-    print("  of any live coupling (composition certified); the center-BLIND")
-    print("  observer (rule 90) never empties at any g — structural invisibility;")
+    print("  of any live coupling (single-rule misspecification detected). The")
+    print("  center-BLIND observer (rule 90) never empties at any g under this")
+    print("  observation channel;")
     print("  the DYING symbiont leaks only through its initial condition, so its")
-    print("  empty-rate RISES with g. Family known → level-2 fit stays exact:")
-    print("  the wall is the level jump, not the parameter fit.")
+    print("  empty-rate RISES with g. When the coupled family and mask are")
+    print("  supplied, its fit stays exact; that larger family is not a unique")
+    print("  explanation of the hidden mechanism.")
 
 
 # ════════════════════════ Figure ════════════════════════════════════
@@ -285,7 +279,7 @@ def figure(res: dict, outdir: Path) -> Path:
             "s--", color="#999999", label="dying symbiont (ruleB=0)")
     ax.set_xlabel("coupling density g")
     ax.set_ylabel(f"empty-class rate within T={T}")
-    ax.set_title("(a) The certificate — and two ways to hide\n"
+    ax.set_title("(a) Single-rule family misspecification\n"
                  "(structural: blind never empties;\ntransient: dying leaks via its IC)")
     ax.legend(fontsize=8)
     ax.grid(alpha=0.3)
@@ -307,12 +301,12 @@ def figure(res: dict, outdir: Path) -> Path:
             color="#d62728", label="exact recovery × 8")
     ax.set_xlabel("coupling density g")
     ax.set_ylim(0, 8.5)
-    ax.set_title("(c) Family known → fit stays cheap\n(the wall is the level jump)")
+    ax.set_title("(c) Supplied coupled family fits cheaply\n(not a unique mechanism)")
     ax.legend()
     ax.grid(alpha=0.3)
 
-    fig.suptitle("Benchmark v1.8 — composition: an empty equivalence class "
-                 "is the trace's certificate of a higher-order generator",
+    fig.suptitle("Benchmark v1.8 — coupled data can empty a declared "
+                 "single-rule family",
                  fontsize=11)
     fig.tight_layout()
     out = outdir / "inverse_benchmark_composition.png"

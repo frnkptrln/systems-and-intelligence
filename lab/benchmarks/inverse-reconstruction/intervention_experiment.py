@@ -4,14 +4,12 @@ intervention_experiment.py
 Does the equivalence class collapse under interventions? (Benchmark v1, part 1)
 
 THE QUESTION.  `theory/computation/construction-vs-deduction.md` ends on an
-open thread with an old ontological core — *does the world already exist, or
-do we construct it?* — made operational: under passive observation, many
-generators may remain consistent with everything we will ever see (the
-consistent-generator equivalence class of the v0 benchmark). Experiments,
-however, are not traces. They are QUERIES: the observer chooses states and
-makes the generator answer. The measurable form of the question is therefore:
+open thread made operational: under a declared passive observation process,
+several candidate models may remain consistent with the available trace.
+An intervention prepares or perturbs state through a declared causal
+interface and returns a new trace. The measurable question is:
 
-    How does the size of the consistent-generator class shrink as a function
+    How does the size of the consistent-model class shrink as a function
     of INTERVENTION budget — and how does that compare, at equal observation
     budget, to merely watching longer?
 
@@ -37,19 +35,18 @@ TWO TESTBEDS.
          Omega = omega_i + K · r · sin(psi - theta_i)
      with all right-hand quantities CONSTANT. For any K' there is an
      omega_i' := Omega - K'·r·sin(psi - theta_i) reproducing the trace
-     exactly: a one-parameter family of generators, indistinguishable on the
-     attractor. Passive observation of a relaxed system therefore cannot
-     identify K — not for lack of data, but in principle. An intervention
-     (a phase kick) re-excites a transient and breaks the degeneracy.
+     exactly: a one-parameter family of parameterizations, indistinguishable
+     on that locked trace. Repeating the same passive regime therefore cannot
+     identify K under this model. A phase kick re-excites a transient and can
+     break the degeneracy.
      Metric: relative error on K vs. number of kicks, at fixed total
      observation time, against the passive baseline.
 
-READING.  Attractors hide generators. A relaxed system — synchronized,
-frozen, converged — is generator-degenerate: its trace is consistent with a
-continuum (or a 2^k set) of rules. Only perturbation reveals structure. This
-is the first-principles reason the repository's identity instruments
-(Δ-Kohärenz, Observer Divergence) are PERTURBATION protocols rather than
-passive transcript analyses: you cannot read a generator off an attractor.
+READING.  Under the declared observation maps, a relaxed trace can leave a
+continuum or finite class of candidate models. A discriminating perturbation
+can reduce that class. This motivates perturbation-based identity instruments,
+but it does not validate them from first principles or guarantee that every
+intervention identifies a unique mechanism.
 
 Usage::
 
@@ -59,7 +56,8 @@ Usage::
 Related:
 - inverse_benchmark.py                          (v0: noise/observability/coverage dials)
 - theory/computation/construction-vs-deduction.md  (the open thread this answers)
-- theory/core/the-generator-question.md         (the spine)
+- theory/core/mathematical-axioms.md            (current process foundation)
+- theory/core/the-generator-question.md         (legacy motivation)
 """
 
 from __future__ import annotations
@@ -233,7 +231,7 @@ def print_summary(ca: dict, kur: dict) -> None:
     print("=" * 70)
     print("  INTERVENTION EXPERIMENT — does the equivalence class collapse?")
     print("=" * 70)
-    print("\n[1] ELEMENTARY CA — log2(consistent-generator class size)")
+    print("\n[1] ELEMENTARY CA — log2(consistent-model class size)")
     print("    baseline: single-seed orbit, 100 steps; then 30 budget steps\n")
     for rule, pp in ca.items():
         print(f"    rule {rule:>3}:  start={pp['passive'][0]:.0f} bits unseen "
@@ -246,12 +244,12 @@ def print_summary(ca: dict, kur: dict) -> None:
     print("    (T_obs fixed at 40; kicks replace nothing — same budget)\n")
     print("    " + "  ".join(f"kicks={b}: {e:.1%}"
                              for b, e in zip(kur["kicks"], kur["K_err"])))
-    print("\nReading: passive observation of a relaxed system plateaus — the")
-    print("attractor is generator-degenerate (for locked Kuramoto, provably a")
-    print("one-parameter family). Local perturbations collapse the ambiguity")
-    print("gradually; one designed preparation collapses it at a stroke.")
-    print("Experiments are queries, not traces. Facts about the generator can")
-    print("be CREATED by intervention that observation alone cannot reach.")
+    print("\nReading: under the declared observation model, passive data from")
+    print("the locked Kuramoto regime admit a one-parameter family. Targeted")
+    print("perturbations exercise transients and reduce ambiguity; the designed")
+    print("CA preparation exercises all neighborhoods in this finite family.")
+    print("Interventions can provide distinguishing evidence absent from the")
+    print("selected passive trajectory; they do not guarantee a unique mechanism.")
 
 
 def _repo_lab_tools() -> Path:
@@ -274,7 +272,7 @@ def figure(ca: dict, kur: dict, outdir: Path) -> Path:
                         "flip": "intervene: flip one bit",
                         "design": "intervene: prepared state (de Bruijn)"}[pol])
     axL.set_xlabel("additional observation budget (update-rows)")
-    axL.set_ylabel(r"$\log_2$(consistent-generator class size)")
+    axL.set_ylabel(r"$\log_2$(consistent-model class size)")
     axL.set_title("(a) CA rule 90, single-seed start:\n"
                   "passive observation plateaus; queries collapse the class")
     axL.text(0.98, 0.55,
@@ -291,12 +289,12 @@ def figure(ca: dict, kur: dict, outdir: Path) -> Path:
                  color="#9467bd", lw=2)
     axR.set_xlabel("number of phase-kick interventions (fixed total T_obs)")
     axR.set_ylabel("relative error on K")
-    axR.set_title("(b) Kuramoto, observed on its locked attractor:\n"
-                  "passively unidentifiable — one kick breaks the degeneracy")
+    axR.set_title("(b) Kuramoto on the declared locked regime:\n"
+                  "a phase kick exercises an identifying transient")
     axR.grid(alpha=0.3)
 
-    fig.suptitle("Interventions vs. observation — facts about the generator "
-                 "that watching cannot reach, queries can create", fontsize=12)
+    fig.suptitle("Interventions vs. observation in declared model families",
+                 fontsize=12)
     fig.tight_layout(rect=[0, 0, 1, 0.94])
     out = outdir / "inverse_benchmark_interventions.png"
     fig.savefig(out, dpi=200, bbox_inches="tight")

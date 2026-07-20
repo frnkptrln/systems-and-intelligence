@@ -1,57 +1,122 @@
-# From Trace to World-Binding: the Epistemic Loop (Reader Bridge)
+# From Trace to World-Binding: the Epistemic Loop
 
-**Status:** Working Note — navigation, not theory
+**Status:** working reader bridge — hypothesized composition, not a new foundation
 
-**Scope:** A one-page bridge showing that several of the repository's directions are not separate topics but **phases of one recurring loop**. This note introduces no new theory and no new terms: every phase already has a home file, a status, and (in five of six cases) a measurement. It is the epistemic-spine counterpart to [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md), which maps the dynamical spine (the Viability Arc); [The Generator Question](the-generator-question.md) remains the spine document — this page only folds its consequences into a shape a reader can hold.
-
-**Epistemic status:** The individual phases carry their home files' tags. The only claim this page adds is the *folding* — that the phases compose into one loop — tagged `[HYPOTHESIZED]` as an organizing reading, and held to the failure conditions below.
-
-**Failure conditions:**
-
-- **Too broad.** If every adaptive process whatsoever "runs the loop," the loop explains nothing. It earns its keep only because the phases are *separately* measurable and can be found separately broken — a watcher who never intervenes (phase 4 missing, measured: class stuck at 8 forever), a planner who never revises (phase 5 missing, measured: the frozen agent's persistent gap), a builder never coupled to a referee (phase 3 missing: the verification economy's par-trading failure).
-- **Too poetic.** Each phase must keep resolving to its home file and instrument. A phase that drifts free of its file is decoration, per the [registry rule](../../meta/repository-meta/concept-registry.md).
-- **Empirically empty.** The loop must keep forbidding things. It forbids knowledge from passive traces alone (measured, v1.1), intelligence attributed to uncoupled construction (the soft-referee failure), and consciousness claims read off behavior (the trace/generator asymmetry, reflexive form). If a counterexample to any of these survives, the loop breaks — and that would be reportable.
-- **Mistaken for alignment.** Phase 3 is an *epistemic* instrument, not a safety result: matter referees truth, never values — a perfectly world-coupled agent knows better *how*, not better *what for*. Entry 14's fleet was substrate-coupled at every timestep and still froze four million people. Worse, by the paper's own P8, better coupling is a capability gain, and capability loads several constraint axes at once — so world-coupling *raises* the stakes of the [Viability Arc](../../meta/repository-meta/canonical-path-v2.md) unless constraint architecture scales with it. This loop answers "can the system know its world?"; whether it should be allowed to act in it is the other spine's question, and neither substitutes for the other.
+**Scope:** Several research threads can be read as phases of one loop. The individual
+phases inherit the status of their home files; the claim that they form one useful loop is
+an organizing hypothesis.
 
 ---
 
 ## The loop
 
-> A trace asks for a generator. A generator proves itself by construction. Construction becomes intelligence when it is coupled to a world. World-coupling becomes knowledge only through intervention. Intervention revises the generator. And when the generator must model **its own role in this loop**, self-binding — and only there, the question of consciousness — appears.
+    Trace -> Candidate Process Model -> Construction -> World-Coupling
+          -> Intervention -> Revision -> new Trace
 
-Six phases, one circuit:
+When a system models its own role in that circuit, an additional problem appears:
 
-**Trace → Generator → Construction → World-Coupling → Intervention → Revision → (Self-Binding) → …**
+                             -> Self-Model and Commit-Time Binding
 
-## The phases, resolved to their homes
+Earlier versions called the hidden productive object a *generator*. The [Foundations
+Reconstruction](mathematical-axioms.md) showed that this word conflated an update process,
+initial state, runtime, environment, history, boundary, and observation map. This page now
+uses *candidate process model* and names the components when they matter. The older
+[Generator Question](the-generator-question.md) and [Trace to
+Generator](../emergence/trace-to-generator.md) remain as auditable research history.
 
-| Phase | The move | Home | Measured? |
-|:---|:---|:---|:---|
-| **1 · Trace → Generator** | a trace underdetermines its generator; what remains is an equivalence class | [The Generator Question](the-generator-question.md) · [Trace to Generator](../emergence/trace-to-generator.md) | class counted exactly ([benchmark v0](../../lab/benchmarks/inverse-reconstruction/README.md)) |
-| **2 · Construction** | a candidate generator proves itself by being built and run — checking is cheap, finding is the wall | [Construction vs. Deduction](../computation/construction-vs-deduction.md) | search wall + Occam curves (v1.2, v1.4) |
-| **3 · World-Coupling** | construction becomes intelligence only against a referee that cannot be paid in fluency | [World Models & VLA](../ai/world-models-and-vla.md) · [Log 016](../../logs/016_the-runtime-is-part-of-the-generator.md) · [Log 017](../../logs/017_provenance-depth-and-the-verification-economy.md) | d = 0 per actuated timestep (reading, not a result) |
-| **4 · Intervention** | coupling is not identification; the class collapses under queries, never under watching | [Measurement as Weak Intervention](measurement-as-weak-intervention.md) | watching < perturbing < preparing (v1.1) |
-| **5 · Revision** | what the query returns must revise the generator — and guesses must stay marked as guesses | benchmark [v1.5–v1.7](../../lab/benchmarks/inverse-reconstruction/README.md) | wedge eliminated by marking; acting *is* measuring (v1.6) |
-| **6 · Self-Binding** | the loop turned inward: the generator models itself as a participant in its own loop | [Invariance & Identity](invariance-and-identity.md) · [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md) · [Generator Coherence](../identity/machine-consciousness-as-generator-coherence.md) | first organizational probes measured ([exp5](../../lab/experiments/exp5_availability_dissociation.py): bindings dissociate behaviorally; [exp6](../../lab/experiments/exp6_binding_observables.py): passively readable at the right level — coverage decides when queries pay) — experience out of scope |
+## The phases and their evidence
 
-## Why the loop is recursive, not linear
+| Phase | Operational move | Current evidence |
+|:---|:---|:---|
+| **Trace** | declare the observations, coverage, noise, and tolerance | finite traces in the inverse-reconstruction benchmark |
+| **Candidate model** | retain every model in the declared family consistent with the trace | exact class counts in small CA and IFS families |
+| **Construction** | execute a candidate and compare its consequences with a referee | re-simulation and closed-loop toy tasks |
+| **World-coupling** | let measurements, materials, users, or affected systems answer independently of the proposal | a design requirement; not established by fluent output |
+| **Intervention** | prepare or perturb a state through a declared causal interface | class reduction in benchmark v1.1 |
+| **Revision** | update the model while keeping guesses marked as guesses | frozen-versus-revising comparison in v1.6 |
+| **Self-binding** | keep selected goals and constraints jointly effective at commitment | first toy probes in Experiments 5–8; phenomenal experience out of scope |
 
-Phase 5 does not end the story; it re-enters phase 1. A revised generator constructs new predictions, whose execution produces new traces, which pose the next inverse problem — and benchmark v1.6 measured the circuit literally: in the closed loop, *every executed plan is an unintended intervention*, and honest revision drives the imagined-vs-real gap to zero within rounds, while a frozen generator keeps paying the same gap forever. The loop is also **nested**: a system that runs the loop can become an *object* of its own loop — its own traces, its own equivalence class, its own revision — and what persists across iterations is exactly the invariant content that [Invariance & Identity](invariance-and-identity.md) calls identity. That nesting is the door to phase 6.
+The benchmark demonstrates examples inside selected finite families. It does not establish
+that construction is generally cheap, that search is generally hard, or that every
+intervention uniquely identifies a real process.
 
-## Where machine consciousness belongs — and where it does not
+## Why it is a loop
 
-Consciousness enters this map **only at the reflexive edge**: phase 6, where a generator must bind a model of itself-in-the-loop into the same coherent present as its world-model. The repository's two consciousness nodes handle this with the discipline already in force — [architecture](../identity/consciousness-as-global-availability.md) (global availability, buildable, measurable) and [spine reading](../identity/machine-consciousness-as-generator-coherence.md) (coherence work as a mode of the generator, with the proof that no behavioral test can reach it). Nothing in this loop is a claim that any current AI system is conscious; phase 6's honest content is a *question about organization*, held open, with experience explicitly out of scope. The loop keeps consciousness at the edge, not the center: five of six phases are fully intelligible — and measured — without it.
+Revision produces a new candidate model. Running that model produces predictions and
+actions, which generate new traces. Those traces can expose another mismatch.
 
-## Collective attention is not yet collective consciousness
+The loop is also nested. An acting system can treat its own memory, estimates, and previous
+commitments as observable variables. That does not create an absolute identity. It creates
+new tests under which histories or system states may count as equivalent.
 
-Cities, markets, platforms, and organizations run the loop's outer phases at scale: they aggregate traces, couple to their world through infrastructure, intervene (prices, policies, patches), and revise. [The city as deployed intelligence](../human-organism-silicon-age/the-city-as-deployed-intelligence.md) reads a city exactly this way, and [Log 018](../../logs/018_the-city-panel-protocol.md) pre-registers how to measure such a system without pretending to enter its generator. These systems can carry shared salience, collective memory, mood, and reflex — an **attention field**. None of that reaches phase 6. Distributed attention does not bind into a single situated perspective: a city processes signals without possessing a unified present; an organization optimizes metrics without a self-model accountable to them. The boundary cases earn their place because they show phases 1–5 running at civilizational scale *while self-binding is absent* — which is precisely what makes the phases separately measurable. Reading self-binding into anything sufficiently large and coordinated is the [agent prior](../emergence/animism-as-generator-prior.md) applied past its payoff region, and this page forbids it.
+The foundation therefore treats identity as relative to declared tests, horizons,
+interventions, and tolerances. The identity branch's stronger proposal — that stable
+identity depends on commit-time composition of constraints — remains a testable
+architecture hypothesis.
 
-The nearest boundary case is this repository itself. It functions, weakly, as a collective cognitive artifact: an externalized memory, attention structure, and revision surface shared between a human author and several AI systems. In that weak sense it hosts a distributed thinking process — traces accumulate, models reinterpret them, the human selects and revises, and the repo preserves the history of those revisions (the [meta note](../../meta/repository-meta/repository-as-thought-system.md) governs exactly this use). The discipline applies at home as it does abroad: the repository is a trace structure and memory scaffold, not a subject of experience, and the AI systems working in it are generators of interpretations and continuations, not evidence of a unified self. The useful framing is a **shared cognitive workspace, not a shared consciousness** — phases 1–5, hosted; phase 6, absent by construction.
+## What world-coupling can and cannot do
 
-## The limit of perspective integration
+World-coupling gives a proposal a chance to fail. It can improve prediction, expose hidden
+costs, and distinguish models that passive traces leave equivalent.
 
-A perspective is constituted by its bounds: position, history, substrate, memory, vulnerability, what it can attend to, and what it can do. Integrating "all perspectives" therefore requires compression, weighting, and loss — the result is a map, a dashboard, an aggregate (Log 018's panel is deliberately one), and possibly no longer a perspective at all. So the question at phase 6 is never whether a system contains all views; it is whether it binds *enough* world into a finite, affected, revisable standpoint. This also blocks the monotone misreading that more integration is automatically "more conscious": on this page's reading, boundedness is load-bearing, not a limitation to engineer away. The claim-shaped version of this — bounded integration, not total integration — lives, tagged, in the [availability node](../identity/consciousness-as-global-availability.md); this page only uses it as a placement rule.
+It does not choose values. A system may be accurately coupled to its environment and still
+optimize an unacceptable objective. Better coupling can also increase capability. The
+[Viability Arc](../../meta/repository-meta/canonical-path-v2.md) therefore asks a separate
+question: can the system remain viable and correctable while acting?
 
-## How to use this page
+The two questions touch but do not collapse:
 
-Read the phases in order on first contact ([Generator Question](the-generator-question.md) → [Construction vs. Deduction](../computation/construction-vs-deduction.md) → [World Models](../ai/world-models-and-vla.md) → [Measurement](measurement-as-weak-intervention.md) → [benchmark README](../../lab/benchmarks/inverse-reconstruction/README.md) → the identity pair). Then notice that the [Viability Arc](../../meta/repository-meta/canonical-path-v2.md) is the same repository asked a different question: this loop asks whether a system can *know* its world; the arc asks whether it can *survive* its own optimization of it. Both begin at emergence, and phase 3 — the referee that cannot be paid in fluency — is where they touch.
+| Epistemic question | Viability question |
+|:---|:---|
+| Which model survives contact with the world? | Which actions and conditions must remain reachable or protected? |
+| What observation would distinguish the candidates? | Who may intervene, refuse, repair, or stop the process? |
+| How should error revise the model? | How does the system preserve the capacity for future correction? |
+
+## Where consciousness belongs
+
+Functional global availability, self-modeling, and constraint binding can be represented
+and experimentally probed. The current toy experiments show that selected architectures
+can dissociate under perturbation and that selected metrics can miss those differences.
+
+None of this derives phenomenal consciousness. Behavioral evidence alone may
+underdetermine internal organization within a broad model class, but that is not a proof
+that every possible behavioral test is useless. Internal measurements and causal
+interventions can narrow architectural hypotheses. A further bridge from any functional
+organization to experience is not adopted here.
+
+## Cooperation without a group mind
+
+Different participants can carry different phases. One notices a trace, another proposes a
+model, another knows a constraint, someone constructs the proposal, and an external
+referee answers. A shared artifact can preserve the revisions.
+
+This is the connection to [Cooperative Intelligence at the
+Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md). Cooperation is
+cognitively relevant when participants can materially revise the plan, when refusal and
+authority remain visible, and when the construction faces independent verification. It
+does not imply a collective consciousness.
+
+The repository itself is such an artifact in a weak sense: it stores traces, models,
+disagreements, revisions, and tests outside any one contributor's memory. It is not a
+subject of experience.
+
+## Failure conditions for this bridge
+
+The loop should be abandoned or split if:
+
+- its phases cannot be operationalized separately;
+- a simpler model predicts the same results without construction, intervention, or
+  revision;
+- the ordering is forced onto systems whose causal structure differs;
+- “world-coupling” becomes a rhetorical substitute for measurement;
+- self-binding is treated as evidence of experience;
+- the loop becomes so broad that every adaptive process instantiates it.
+
+## Read next
+
+1. [Foundations Reconstruction](mathematical-axioms.md)
+2. [Inverse-Reconstruction Benchmark](../../lab/benchmarks/inverse-reconstruction/README.md)
+3. [Measurement as Weak Intervention](measurement-as-weak-intervention.md)
+4. [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md)
+5. [Optimization and Its Blindness](../optimization/optimization-and-its-blindness.md)
+6. [The Viable Corridor](../../papers/viable-corridor.md)

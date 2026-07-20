@@ -1,5 +1,10 @@
 # Emergence and the Origin of Intelligence
 
+*Status: speculative, lyrical comparison of two readings. The claims that intelligence is a cosmic
+substrate, that life is intelligence, or that consciousness is self-referential compression are not
+adopted by the reconstructed foundation and are not established by the cited computational
+analogies.*
+
 After recently hearing about Asimov and different ways of thinking, today two other papers that — from entirely different directions — address the same topic.
 
 What if intelligence is not a product, but the origin?

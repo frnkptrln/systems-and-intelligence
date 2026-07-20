@@ -1,8 +1,12 @@
 # Thermodynamics of Emergent Orchestration (TEO)
 
-*A formal mathematical framework coupling evolutionary game theory, nonlinear dynamics, control theory, and thermodynamics to model intelligent collectives — whether silicon or civilizational.*
+*A stylized viability model coupling evolutionary game theory, nonlinear dynamics, control
+theory, and a substrate-budget proxy.*
 
-> **Spine context.** TEO is the project's main *forward-direction* system in the sense of [The Generator Question](the-generator-question.md): running these coupled ODEs forward predicts the dynamics of agent ecologies and civilizations. The inverse direction — recovering a TEO parameter set from observed civilizational data — is the open empirical problem named in [Future Perspectives §4](../../book/05_future_perspectives.md).
+> **Foundation context.** TEO is an added domain model, not the repository's mathematical
+> foundation. Running its ODEs predicts the model's own trajectories. Whether it describes
+> an AI ecology, organization, or civilization requires calibration and comparison with
+> alternatives.
 
 ---
 
@@ -25,7 +29,9 @@ $$\frac{dx_i}{dt} = x_i \left( f_i(\mathbf{x}) - \bar{\phi}(\mathbf{x}) \right)$
 
 where $f_i(\mathbf{x})$ is the fitness (profitability, task-completion rate) of agent $i$, and $\bar{\phi}(\mathbf{x}) = \sum_j x_j f_j(\mathbf{x})$ is the population-average fitness.
 
-**Interpretation:** Agents that outperform the average grow; underperformers shrink. Without regulation, this leads mathematically to **winner-take-all dynamics** — the formal expression of instrumental convergence.
+**Interpretation:** Agents that outperform the population average grow under this equation.
+Winner-take-all follows for selected fitness functions and dominance assumptions, not from
+every unregulated replicator system. The link to instrumental convergence is interpretive.
 
 ## 3. The Harmonic Paradigm — Kuramoto Synchronization
 
@@ -38,7 +44,10 @@ $$\frac{d\theta_i}{dt} = H\left[\omega_i + \frac{K}{N} \sum_{j=1}^{N} A_{ij} \si
 - $K > 0$: The global coupling strength (culture, discourse, shared media).
 - $A_{ij} \in \{0, 1\}$: The adjacency matrix of the communication network.
 
-**Interpretation:** When $K$ exceeds a critical threshold $K_c$, the population spontaneously synchronizes — it reaches cultural consensus. When $K < K_c$ (e.g., due to filter bubbles fragmenting $A_{ij}$), the system drifts into chaotic polarization.
+**Interpretation:** Under the frequency distribution, topology, coupling convention, and
+limit assumed in the paper, a Kuramoto synchronization transition occurs near $K_c$.
+Calling synchronized phase “cultural consensus” or low order “polarization” is a heuristic
+mapping. Low order does not imply chaos.
 
 The **order parameter** $r(t)$ measures global coherence:
 
@@ -58,7 +67,9 @@ where $\gamma > 0$ is the regulatory strength and $x_{\text{reg}}$ is a **regula
 
 ## 5. The Biological Veto — Entropy Budget
 
-Every action produces entropy. The substrate has a finite *instantaneous* dissipation ceiling $D_{\max}$ **and** a finite *cumulative* reservoir $S_{\max}$. Entropy production tracks **raw throughput** $f_i^{(0)}$ — a non-self-throttling optimiser dumps entropy at a rate set by its activity, not by how degraded the substrate already is:
+Physical implementations dissipate energy, but TEO selects a particular proxy. The model
+assigns a finite *instantaneous* capacity $D_{\max}$ and cumulative tolerance $S_{\max}$.
+Modeled production tracks **raw throughput** $f_i^{(0)}$:
 
 $$\frac{dS_{\text{sys}}}{dt} = \sum_{i=1}^{N} \eta_i\, x_i\, f_i^{(0)}(\mathbf{x})$$
 
@@ -68,7 +79,9 @@ $$\Omega(t) = \int_0^t \big(\dot{S}_{\text{sys}} - D_{\max}\big)_+\, ds, \qquad 
 
 and $H$ multiplies the replicator drift and the value dynamics (§3), so the system freezes as $H \to 0$. The operative constraint is **cumulative**, $\Omega(t) < S_{\max}$ for all $t$: a brief overshoot is survivable; only *sustained* overshoot that fills the reservoir collapses the substrate.
 
-**Interpretation:** When integrated overshoot fills the reservoir, the system undergoes a **forced phase transition** — collapse. This is the mathematical expression of planetary boundaries (Rockström et al., 2009), server thermal limits, and Peterlein's "Biological Veto."
+**Interpretation:** The chosen damage law sets $H=0$ when integrated overshoot fills the
+reservoir, freezing the modeled drift. This is inspired by finite physical limits; it is
+not a derivation of planetary boundaries or server failure from first principles.
 
 ## 6. The Full Coupled System
 
@@ -86,12 +99,15 @@ feeds back into both equations above. The brake $\mathcal{H}_i$ carries no $H$ p
 
 ## 7. Predictions
 
-This system makes testable predictions:
+Under the paper's stated assumptions, this system makes model-internal predictions:
 
-1. **Without homeostasis** ($\gamma = 0$): Resource distribution converges to a single dominant agent (monopoly / superintelligence takeover).
-2. **Without cultural coupling** ($K < K_c$): Value orientations diverge chaotically (polarization / agent misalignment).
-3. **At the substrate boundary** ($\Omega(t) \to S_{\max}$): The system undergoes a catastrophic phase transition (freeze) regardless of internal regulation.
-4. **Stable regime**: Requires $K > K_c$, $\gamma > 0$ (sufficiency is conjectured to need the stronger $\gamma > \gamma_c$), and bounded cumulative overshoot $\Omega(t) < S_{\max}$, simultaneously.
+1. **With strict dominance and $\gamma=0$:** the dominant resource share approaches a
+   simplex vertex.
+2. **Under the paper's Kuramoto assumptions and $K<K_c$:** a coherent initial state
+   dephases toward the reported low-order regime.
+3. **When $\Omega(t)$ reaches $S_{\max}$:** the declared health law sets $H=0$.
+4. **Viability in the model:** the stated component conditions are necessary; sufficiency
+   remains conjectured and is expected to require $\gamma>\gamma_c$.
 
 > **Canonical derivation.** This page is the conceptual derivation; the citation-ready, source-of-truth version of these equations — including the strict-dominance assumption, the $K_c = 2/(\pi g(0))$ result, and the capability-loading result — is [The Viable Corridor](../../papers/viable-corridor.md) (§2–§3, Appendix A).
 
@@ -99,12 +115,15 @@ This system makes testable predictions:
 
 Following Perrier & Bennett (2026), we define the **Identity Persistence $\text{IP}$** of an agent (see [glossary](../reference/glossary.md) and [lerchner-boundary.md](../teo-framework/lerchner-boundary.md) for the formal definition). 
 
-In TEO, a unified agentic self is not a static string, but a **simultaneously co-instantiated attractor** in the phase space. 
+The identity branch hypothesizes that selected goals and constraints should jointly affect
+a commitment under perturbation.
 
-- **The Arpeggio Postulate**: If the system's identity components (goals, safety, roles) are time-multiplexed (active at different $t$), the agent acts as an *unstable sequence*.
-- **The Chord Postulate**: True agentic identity requires all components to be operative in a single compute step $\Delta t$. This "Chord" state is the targeted thermodynamic equilibrium for TEO-orchestration.
+- **Arpeggio model:** selected components are consulted or applied at different times.
+- **Chord model:** selected components are composed at the commitment boundary.
 
-When $\text{IP} \to 1$, the system achieves **Identity Persistence**, bridging the gap between "talking about the self" and "being the self." The extended system intelligence measure becomes $\text{SII} = P \times R \times A \times \text{IP}$.
+IP and $\text{SII}=P\times R\times A\times\text{IP}$ are selected diagnostics for toy
+tests. Neither distinguishes “talking about the self” from “being the self” in general, and
+neither is derived from the TEO equations.
 
 ## References
 

@@ -1,53 +1,103 @@
 # The Snow Story
 
-**Status:** Feynman probe — reader entry, any age.
+**Status:** Feynman probe — reader entry, any age
 
-**Scope:** The whole repository, retold so that a child can follow it. This is the executed whole-project instance of [Feynman Mode](feynman-mode.md) question 1 ("can I explain it to a smart outsider in five minutes?"). Every paragraph resolves to a home file — the address list at the end is part of the page, because a story that cannot point back to its instruments is just a story.
-
-**Rule:** This page must stay retellable. If a new concept cannot be added without breaking the story's voice, that is evidence about the concept, not about the story. And if this page and the repository ever disagree, one of them is wrong — finding out which is a contribution.
+**Scope:** The repository retold so that a child can follow it. Every part points back to a
+model, experiment, or open question.
 
 ---
 
 ## The story
 
-Imagine walking through fresh snow in the morning, and you see footprints.
+Imagine walking through fresh snow in the morning and seeing footprints.
 
-*Making* footprints is easy: if you have the animal, it just walks, and the prints appear by themselves. But the other way around? You have **only the prints**, and you want to know: what made them? That is much, much harder. Maybe a dog. Maybe a fox. Maybe a kid stamping paw shapes with their fists to trick you. Many different animals can leave **exactly the same prints** — and then no amount of staring will tell you which one it was.
+You know that *something happened*. But what? A dog may have walked there. A fox may have
+walked there. A child may have made paw shapes with a glove. If the prints are blurry or
+you see only three of them, several stories can fit.
 
-**That is our big question.** Everything in the world leaves traces: flocks of birds in the sky, patterns on seashells, the sentences an AI writes. And we always ask: *what made these traces?* Forward is easy; backward is hard. We have even mapped out where the **walls** are — places where you can *prove* that some riddles can never be fully solved, no matter how clever you are. Knowing where the walls stand is half the prize.
+That is one big question in this project:
 
-We also found a trick that almost always helps: **looking is not enough — you have to poke.** If you want to know whether the prints belong to a dog or a fox, put some food out and watch what happens. A watcher who only watches often stays unsure forever; a clever poke gets answers. But — and we measured this — sometimes watching *does* suffice: exactly when the secret **gives itself away at every step**. A secret that is used all the time ends up written in the traces. Only a sleeping secret has to be poked awake.
+> From the marks we can see, which possible processes still fit?
 
-Then we build small **toy worlds** in the computer. For instance, toy robots with rules: "chase your goal", "stay yourself", "never touch the hot stove". One robot holds **all its rules at the same time** — like an orchestra, where all the notes sound together. The other thinks about **one rule after another** — like someone who is honest on Mondays, careful on Tuesdays, brave on Wednesdays. And here it comes: if the cookie shows up on exactly the day when the hot-stove rule is *not* the one being thought about… the robot grabs it. We measured this. The orchestra robot almost never grabs wrong. The one-rule-at-a-time robot does it constantly — **not because it is bad, but because its rule was somewhere else just then.**
+Sometimes the answer is easy. If we already know the few animals that live nearby and every
+print is clear, one animal may fit best. Sometimes it is not. Two different animals can
+leave the same prints that our eyes can tell apart. Then staring longer at those same
+prints cannot choose between them.
 
-Then we tried to **cheat**: we built a robot that only *pretends* to be an orchestra. The best part is why it got caught: to *look* like an orchestra, it had to *play* like one a little — and wherever it was only pretending, it still grabbed wrong, even more often than before. Pretending to follow rules is more expensive than it looks.
+So we may try a careful experiment. We look for fur, watch a wider path, prepare a harmless
+choice, or ask what each candidate would do next. A good experiment is one for which the
+remaining stories predict different answers. A poke is not magic: if both animals respond
+the same way, or if we cannot safely reach them, we remain unsure.
 
-Lastly, we **glued two small machines together** and asked: from the outside, does this look like one new, bigger machine? Answer: yes — the traces then fit *no* simple machine anymore, and that misfit is itself the proof that something bigger came into being. Except: if one machine never *looks* at the glue spot, its partner stays invisible forever. A companion who never makes a difference is, to someone who only reads traces, simply not there. A researcher whose work we build on put the big version of this in one line: **life is like a city of little helpers working together.** We are checking that, piece by piece.
+In the computer we build very small worlds where every rule is visible. This lets us count
+exactly how many rules fit a trace, change what the observer can see, and test which
+questions reduce the uncertainty. These worlds do not prove that people, societies, or
+large AI systems work the same way. They teach us how to state the question without
+pretending that one fitting story must be the true one.
 
-And the biggest question of all — could such a machine ever *feel* something? — we do **not** answer. We learned that you cannot see it from the outside, just as you cannot tell from a parrot whether it understands what it says. So we do the most honest thing one can do: we place the question carefully at the edge, stick a label on it — **"we don't know"** — and leave it open.
+We also build toy agents with several instructions: chase a goal, keep a promise, avoid a
+danger. One architecture checks the instructions together when it acts. Another checks
+them at different times. Under our chosen perturbations, those architectures behave
+differently. Then we built two hand-made imitators. They still leaked differences, although
+one of our measurements was fooled.
 
-Speaking of labels: that is our most important rule. In our big research notebook, **every claim wears a sticker** — "tested", "guessed", or "open question". And when an experiment shows we were wrong, we do not erase it. We write it down **extra large**. The wrong guesses are the ones that have taught us the most.
+That last part matters. The experiment did not discover the formula for a true self. It
+showed that a selected test can distinguish selected architectures — and that a measurement
+can look convincing while missing what we care about.
 
-So what do we do? **We collect traces, guess at the animals, build toy worlds to test our guessing, poke where looking is not enough, write stories to feel what our ideas would mean — and always say honestly what we know and what we only guess.**
+In another experiment we connected two small cellular-automaton processes. When we tried to
+fit the result with the old single-process family, sometimes nothing fit. That tells us the
+old family is missing something. Supplying the coupled family restores a fit. It does not
+prove that we found the one real hidden mechanism.
+
+Then comes a different question. A system can become very good at reaching a goal and still
+damage the things it needs: energy, maintenance, trust, people, or the environment. We use
+toy models to ask which brakes, budgets, vetoes, and repair paths keep future correction
+possible. The answers are conditional on those models, but the design question is real.
+
+No one has to solve all of this alone. A person may notice a problem. An AI may propose
+several models. Another person may know a constraint. A material, measurement, user, or
+community may show that the proposal fails. If they can really change one another's plan,
+they may build something none could have built alone. We call that possibility
+**cooperative intelligence**. It does not mean they become one mind.
+
+Practices can also outlast one episode. Repeated actions may become routines; routines can
+be taught, corrected, and connected to other routines. That is our new culture question:
+not “what is culture once and for all?”, but “which recurring practices help stabilize
+future action, and under which conditions?” Identity may be studied in a similar,
+test-relative way: as patterns that persist across selected changes, not as a hidden essence.
+
+And the biggest question — could a machine ever *feel* something? — remains open. We can
+study memory, broadcast, self-modeling, and the way constraints meet at action. None of
+those measurements currently gives us a mathematical bridge to experience. So the honest
+label is: **we do not know**.
+
+That is our most important rule. Every claim should wear a sticker such as “measured in a
+toy model,” “formal under these assumptions,” “hypothesis,” or “open question.” When an
+experiment shows that an older story was too strong, we keep the correction visible.
+
+So what do we do?
+
+> We collect traces, keep several possible stories, build small worlds, ask questions that
+> could prove us wrong, protect the conditions for correction, and say clearly what we know
+> and what we only imagine.
 
 ---
 
 ## The addresses
 
-Every paragraph above has a home. In story order:
-
 | Story piece | Where it lives |
 |:---|:---|
-| Footprints, and many animals with the same prints | [The Generator Question](../../theory/core/the-generator-question.md) — trace → generator; the equivalence class, counted exactly in [benchmark v0](../../lab/benchmarks/inverse-reconstruction/README.md) (rule 90, single seed: 8 animals fit the prints) |
-| The walls | The three walls — P vs. NP `[UNRESOLVED]`, Kolmogorov `[PROVEN UNCOMPUTABLE]`, Gödel `[PROVEN]` — in [the same document](../../theory/core/the-generator-question.md) |
-| Looking vs. poking | [Measurement as Weak Intervention](../../theory/core/measurement-as-weak-intervention.md); measured as watching < perturbing < preparing in [benchmark v1.1](../../lab/benchmarks/inverse-reconstruction/README.md) |
-| The secret that gives itself away at every step | The coverage result of [exp6](../../lab/experiments/exp6_binding_observables.py): constantly exercised differences are readable from passive traces at the right level |
-| Orchestra vs. one-rule-at-a-time, and the cookie | [Chord vs. Arpeggio](../../theory/identity/chord-vs-arpeggio-identity.md) (functional form: joint satisfaction at the commitment boundary), measured in [exp5](../../lab/experiments/exp5_availability_dissociation.py) |
-| The cheating robot that got caught | [exp7](../../lab/experiments/exp7_adversarial_arpeggio.py) — hand-built mimics fail to hide; the commit property under lure stays unfooled |
-| The glued machines, and the invisible companion | [Benchmark v1.8](../../lab/benchmarks/inverse-reconstruction/composition.py) — the empty equivalence class as certificate of a higher-order generator; rule-90 center-blindness as structural invisibility |
-| "A city of little helpers" | "Life is an ecology of functions" (Agüera y Arcas), framed and bounded in [the information ladder](../../theory/computation/static-information-and-living-process.md) |
-| The parrot, and the question at the edge | The [Mirror Problem](../../theory/reference/open-problems.md); the two consciousness nodes ([architecture](../../theory/identity/consciousness-as-global-availability.md), [spine reading](../../theory/identity/machine-consciousness-as-generator-coherence.md)); dramatized in [Entry 17](../../fiction/17_the_understudy.md) |
-| The stickers | Status tags throughout; [What This Project Does NOT Claim](../../theory/reference/what-this-project-does-not-claim.md); the [Concept Registry](concept-registry.md) |
-| The stories | [fiction/](../../fiction/README.md), governed by [Narrative as Cognitive Technology](../../theory/narrative/narrative-as-cognitive-technology.md) — stress tests, never evidence |
+| Footprints and several fitting stories | [Foundations Reconstruction](../../theory/core/mathematical-axioms.md) and the [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) |
+| Looking and intervening | [Measurement as Weak Intervention](../../theory/core/measurement-as-weak-intervention.md) and benchmark v1.1 |
+| Instructions together or apart | [Chord vs. Arpeggio](../../theory/identity/chord-vs-arpeggio-identity.md), Experiments 5–7 in the [Agentic Identity Suite](../../lab/AGENTIC_README.md) |
+| Coupled processes and the missing model family | Benchmark v1.8 in the [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) |
+| Capability and protected conditions | [Optimization and Its Blindness](../../theory/optimization/optimization-and-its-blindness.md) and [The Viable Corridor](../../papers/viable-corridor.md) |
+| Cooperative intelligence | [Cooperative Intelligence at the Separatrix](../../theory/symbiotic/cooperative-intelligence-at-the-separatrix.md) |
+| Recurring practice and culture | [From Action to Culture](../../theory/emergence/from-action-to-culture.md) |
+| Identity and experience | [Invariance and Identity](../../theory/core/invariance-and-identity.md), [Consciousness as Global Availability](../../theory/identity/consciousness-as-global-availability.md), and [Open Problems](../../theory/reference/open-problems.md) |
+| Claim stickers | [What This Project Does NOT Claim](../../theory/reference/what-this-project-does-not-claim.md), [Concept Registry](concept-registry.md), and [Limitations](../../theory/reference/limitations-and-honest-assessment.md) |
+| Stories as stress tests | [fiction/](../../fiction/README.md), governed by [Narrative as Cognitive Technology](../../theory/narrative/narrative-as-cognitive-technology.md) |
 
-If you can retell the story to someone else, you have understood what this project does. If we ever cannot keep it retellable, we have stopped understanding it ourselves.
+If this story ever becomes stronger than its addresses, the addresses win and the story
+must change.

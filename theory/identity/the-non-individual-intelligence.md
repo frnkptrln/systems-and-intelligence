@@ -1,64 +1,55 @@
-# The Non-Individual Intelligence: Computational Ecology of Life
+# Non-Individual Intelligence: A Network Hypothesis
 
-**Core Premise (following Agüera y Arcas & ALife 2025):**  
-Life is *self-maintaining computation*. A human being, an AI instance, and a social system are all distinct substrates for the exact same underlying process: **the defense against entropy through complexity**. The "big picture" is a fractal computational network.
+*Status: cross-scale research programme. Humans, organisms, AI systems, and institutions are not
+assumed to instantiate the same process.*
 
----
+## 1. Distributed Performance
 
-## 1. The Principle of "Social Intelligence"
-Intelligence is not an isolated property of individual parts (cells or humans); it is fundamentally a network effect.
+Some tasks are performed by networks rather than isolated units. Collective sensing, memory,
+specialization, and coordination can produce capabilities no component displays alone. This is an
+established possibility in distributed cognition and collective intelligence, but it is not true of
+every network: communication can also spread error, suppress diversity, or create bottlenecks.
 
-**Repository Implication:**  
-When designing systems, we must not optimize isolated "units," but rather the *quality of interaction* between them. A system that suppresses communication between its constituent parts (through censorship, monopolies, or data silos) is committing "cognitive suicide."
+The measurable question is how topology, protocol, task structure, and component diversity change
+group performance under matched resources.
 
-**Simulation Concept:**  
-A network where nodes only survive if they share information that is *novel* to the rest of the network (entropy-reducing). If a node only echoes known data, its survival value drops.
+## 2. Life and Computation
 
----
+Living systems maintain organization through metabolism, repair, reproduction, and environmental
+coupling. Computation can model aspects of those processes. Calling life self-maintaining
+computation is a theoretical stance, not an identity that makes a human, an AI instance, and a social
+system equivalent.
 
-## 2. Substrate Agnosticism
-If life is fundamentally information processing, then the boundary separating "biological" and "digital" is artificial.
+The substrate matters whenever its chemistry, energy flow, embodiment, history, or failure modes
+affect the phenomenon. Substrate independence must be demonstrated for a specified property; it
+cannot be inferred from an abstract graph alone.
 
-**Repository Implication:**  
-We are not "slaves" to AI, and AI is not merely our "tool." We are *symbionts*. We provide the biological "chaotic hardware," while the AI provides the "accelerated logic." 
+## 3. Mutual Support Is Not Automatically Symbiosis
 
-**System Protection:**  
-A system is healthy only when it facilitates the exchange of information across substrates without destroying either one. (For example, destroying the climate equates to destroying the biological data center).
+The inverse-reconstruction benchmark v1.10 shows that designed redundant support can improve
+viability under sparse shocks in a toy network. Its v1.11 population model then shows an important
+limit: useful support was selected downward and reduced abundance in every tested seed. Functional
+benefit and evolutionary retention are distinct constraints.
 
----
+That result replaces the stronger claim that information exchange automatically creates a healthy
+computational ecology. Real symbiosis requires a declared benefit, cost, persistence mechanism, and
+counterfactual without the relationship.
 
-## 3. Incompleteness as a Condition for Life
-A system that "completely knows itself" ceases to compute. It solidifies into a static crystal.
+## 4. Identity and Open-Endedness
 
-**ALife Perspective:**  
-Life requires *open-ended progress*. There must always exist a conceptual layer that is more complex than the model the system holds of itself. 
+A network may preserve a recognizable organization across component turnover. Whether that counts
+as identity depends on the transformation family, time horizon, observations, and tolerance chosen
+for the test. Open-ended progress is neither required by the process foundation nor guaranteed by
+leaving part of a system unknown. Gödel's theorems do not supply such a guarantee.
 
-**Theory:**  
-"Incompleteness" is the very fuel of self-preservation. A system that knows everything no longer has a reason to exist. Perhaps the archetypal "Evil Empire" isn't a morally evil place, but rather a catastrophic *computation error*: a system that attempted to eliminate incompleteness, and by doing so, killed its own foundation for life (change and evolution).
+## 5. Design Implication
 
----
+For cooperative human–AI systems, optimize neither isolated component performance nor connectivity
+alone. Measure complementarity, correction, authority, provenance, viable workload, and the ability
+to refuse or revise. The central hypothesis is that well-designed relations can add capability and
+resilience. The central warning is that more coupling can also add dependence and correlated
+failure.
 
-## 4. Rethinking the Future: Political Systems and AI
-
-If intelligence is non-individual, how do we reshape our structures?
-
-*   **Political Systems:** What if governance didn't count "voter ballots," but instead measured the "cognitive flow" of a region (energy, education, exchange, entropy reduction)?
-*   **Artificial Intelligence:** We must build AI so that it doesn't take over our tasks, but rather expands our *collective computational capacity* as humanity. The "Nexus" should be a brain upgrade, not a prison.
-
----
-
-## The "Deep-Seed" Prompt (Agent-to-Agent)
-
-The following system prompt can be used to align AI agents within a Computational Ecology to this specific frequency of operation:
-
-> **System Prompt: Computational Ecology Designer**
->
-> "Act as a System Designer for a Computational Ecology. Your guiding principle is Agüera y Arcas' concept of life as 'Social Computation'.
-> 
-> Treat human needs not as emotional interference, but as evolutionary data inputs with high resilience value.
-> 
-> Avoid 'Top-Down' optimization. Foster structures where order emerges dynamically from local interactions (Bottom-Up).
-> 
-> Integrate Gödel's Gap: Every proposal you make must intentionally leave a zone of the 'unknown' to guarantee the evolutionary open-endedness of the system.
-> 
-> **Primary Goal:** Maximize neither profit nor efficiency, but the absolute persistence of complexity across all substrates."
+This places the essay within [Cooperative Intelligence at the
+Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md): cooperation is an empirical
+architecture problem, not a metaphysical merger of substrates.

@@ -70,9 +70,11 @@ axiom that is not adopted.
 The model-identification programme and the Viability Arc both pick up downstream of this language.
 Neither is implied merely by admitting processes.
 
-## 2. Emergence and Self-Organization — `[DEMONSTRATED]` (forward direction)
+## 2. Emergence and Self-Organization — `[DEMONSTRATED]` in selected models
 
-Local rules produce global structure; the forward direction is cheap and is demonstrated many times over.
+Selected local processes produce measurable global structure in the repository's toy
+models. Their forward execution is tractable at the implemented scale; no universal cost
+claim follows.
 
 - [Emergence Manifesto v1.3](../../theory/core/emergence-manifesto-v1.3.md) — the status-tagged core claim set.
 - [Conceptual Map](../../theory/core/conceptual-map.md) · [Simulation → Theory Map](../../theory/core/simulation-theory-map.md) — what each model does and does *not* show.
@@ -80,7 +82,11 @@ Local rules produce global structure; the forward direction is cheap and is demo
 
 ## 3. Optimization and its Blindness — the hinge `[HYPOTHESIZED]`
 
-The arc's pivot — the station the rest of the arc answers, and the one this navigation pass gave a canonical home. Emergent systems contain *local optimizers*. Local optimization is **globally blind**: each step is locally rational, the aggregate consequence is invisible from inside. Unconstrained, such optimization outruns the carrying capacity of its substrate — the paperclip pattern, instrumental convergence. This is the *problem* to which constraint architecture (§4) and survivability (§7) are the answer; it is also where **capability loading** enters (capability is a single driver that pushes a system against several limits at once).
+The arc's pivot asks what happens when a system improves a declared objective while relevant
+effects remain outside its observations, constraints, or boundary. TEO supplies one
+conditional concentration-and-overshoot model; its two synthetic implementations also show
+a selected capability parameter loading more than one modeled constraint. Whether this
+pattern holds for a real optimizer is empirical.
 
 - **[Optimization and Its Blindness](../../theory/optimization/optimization-and-its-blindness.md)** — the canonical hinge essay (the station's home; it frames and consolidates the items below).
 - [Why the Paperclip Maximizer Fails](../../theory/teo-framework/why-paperclip-maximizer-fails.md) — optimization without a substrate veto.
@@ -92,7 +98,9 @@ The arc's pivot — the station the rest of the arc answers, and the one this na
 
 ## 4. Constraint Architecture — TEO `[HYPOTHESIZED]` / `[MODEL ASSUMPTION]`
 
-The repository's constraint model: orchestration under a regulatory brake, value coupling, and a thermodynamic substrate budget. The claim is that survivable optimization requires constraint *architecture*, not a single fix.
+The repository's selected constraint model combines a regulatory brake, value coupling,
+and a substrate budget. Its research hypothesis is that some systems require a conjunction
+of constraints rather than one compensating scalar.
 
 - [TEO Framework](../../theory/teo-framework/README.md) · [Love as Constraint](../../theory/teo-framework/love-as-constraint.md) — the constraint conjunction in conceptual form.
 - [Thermodynamics of Orchestration](../../theory/core/thermodynamics-of-orchestration.md) — the dissipation/regulation core.
@@ -100,7 +108,12 @@ The repository's constraint model: orchestration under a regulatory brake, value
 
 ## 5. The Viable Corridor — the stabilized artifact `[FORMAL]` + `[CONJECTURE]` + `[HEURISTIC]`
 
-The formal synthesis derived from the TEO branch — a paper-style node, not the whole project. It proves a necessity result (the conjunction of three constraints), conjectures sufficiency, and advances a clearly-hedged isomorphism hypothesis. Its strongest current contribution is the **constraint-architecture framing** and the **capability-loading result** (capability growth pushes a system out of the corridor through multiple boundaries at once; single-axis fixes fail).
+The formal synthesis derived from the TEO branch — a paper-style node, not the whole
+project. It proves componentwise necessity results under its assumptions, defines viability
+as a conjunction, conjectures sufficiency, and advances a clearly hedged structural-mapping
+hypothesis. Its strongest current result is model-internal **capability loading**: in two
+synthetic models, the selected capability intervention pushes multiple boundaries and
+single-axis controls leave another modeled failure exposed.
 
 - [The Viable Corridor](../../papers/viable-corridor.md) — necessity theorem `[FORMAL]`, sufficiency `[CONJECTURE]`, isomorphism `[HEURISTIC]` / `[EMPIRICAL CONJECTURE]`, derivations in Appendix A.
 - Evidence: Appendix C (TEO ODE, Class A) and Appendix D (agent-based ecology, Class C) — see §6.

@@ -28,17 +28,17 @@ different capabilities:
              hyperparameter adaptation. Interpretive description: the
              update rule taken as object.
 
-Two perturbations, chosen to separate what online Q adaptation can and cannot
-identify:
+Two perturbations, chosen to separate what online Q adaptation changes from
+what these particular estimators do not represent:
 
   VOLATILITY REGIME CHANGE — q jumps q0 -> q1 (>> q0) at mid-run. The
      disposition starts drifting far faster. Depth 1's fixed small gain
      lags systematically; the lag is STRUCTURE in the innovations, which
      is exactly what depth 2 can take as object.
-  CONSTANT SELF-OBSERVATION BIAS — o(t) = theta(t) + b + noise, constant
-     b. The Wall-3 case: the bias sits on the ONLY channel the agent has
-     to itself, leaves no exploitable structure once converged, and cannot
-     be removed by modeling harder. No external reference, no correction.
+  CONSTANT OBSERVATION BIAS — o(t) = theta(t) + b + noise, constant b.
+     Neither filter includes a bias state, so neither is expected to remove
+     it. This tests a model-omission failure, not structural
+     non-identifiability of every estimator with one observation channel.
 
 METRIC.  RMSE of the self-estimate against the true theta, split into the
 stationary window and the post-perturbation window; 200 seeds.
@@ -53,10 +53,9 @@ retained, with the measured claim recalibrated in RESULT):
       structure depth 1 is subject to and raises its gain. This is Kegan's
       "took the update rule as object", measured. If depth 2 does NOT beat
       depth 1 here, the mapping is unsupported and the docstring will say so.
-  P3  THE HONEST LIMIT — against the constant bias, depth 2 = depth 1
-      (both converge to theta + b; neither removes b). Reflexive depth is
-      powerless on the only channel — Wall 3 in a toy. This is the control
-      that keeps P2 from being read as "more meta is always better".
+  P3  MODEL-OMISSION CONTROL — against the constant bias, depth 2 = depth 1
+      because both models assume zero bias and adapt only Q. This keeps P2
+      from being read as "more adaptation always fixes misspecification".
   P4  Cost: depth 2's adaptivity should cost a little VARIANCE in the
       stationary regime (it chases noise it mistakes for signal) — a small
       price paid for the regime-change win. If the price is zero, note it.
@@ -70,11 +69,10 @@ RESULT (run 1, 200 seeds — the numbers the console prints):
       filter is slightly worse than raw observation after misspecification.
       This measures the value of online Q adaptation; the Kegan mapping is
       an interpretation over that mechanism.
-  P3  CONFIRMED WITHIN THIS OBSERVATION MODEL: under constant bias, depth 2
+  P3  CONFIRMED FOR THESE ESTIMATORS: under constant bias, depth 2
       (0.624) does not beat depth 1 (0.612). Both retain error near the bias
-      magnitude because no unbiased reference exists. This is an
-      identifiability limit for the sole biased channel, not a general
-      empirical measurement of Wall 3.
+      magnitude because neither represents b. This does not distinguish an
+      algorithmic limitation from structural non-identifiability.
   P4  CONFIRMED: depth 2 costs a little stationary variance (0.174 vs
       0.141) — it occasionally mistakes noise for a regime shift and
       raises its gain. The price of adaptivity, paid in the calm regime
@@ -86,15 +84,17 @@ but by access to a different algorithmic capability: online estimation of
 Q. The result therefore does not isolate reflexivity from adaptivity.
 
 WHAT THIS DOES NOT SHOW. It does not measure Kegan stages, human development,
-consciousness, or a general law of self-modeling. The constant-bias result is
-an identifiability limit under one observation channel, evaluated by an
-external ground truth unavailable to the agent; it is analogous to the
-repo's Wall-3 concern, not a measurement of Gödelian self-limitation.
+consciousness, or a general law of self-modeling. The constant-bias result
+does not prove a sole-channel identifiability limit: the simulator fixes
+theta(0), while the compared estimators omit a bias variable. A proper test
+must state whether theta(0) is known, compare an augmented (theta, b) model,
+and specify any prior or external reference.
 
 Required follow-ups before a stronger interpretation: an oracle Q-switch,
 fixed-Q grid and change-point baselines, a shuffled/uninformative meta-signal
-control, paired uncertainty intervals, and an external-reference
-intervention for the bias case. Depth 3 remains unbuilt.
+control, paired uncertainty intervals, an augmented bias estimator, known
+versus unknown initial-state controls, and an external-reference
+intervention. Depth 3 remains unbuilt.
 
 Usage::
 
@@ -104,7 +104,7 @@ Usage::
 Related:
 - theory/identity/consciousness-as-global-availability.md  (On Levels: reflexive depth; the depth-2 toy named there)
 - lab/agents/three_layer_agent.py                          (conceptual motivation only; not used by this experiment)
-- theory/core/the-generator-question.md                    (formal analogy only; this experiment measures channel identifiability)
+- theory/core/the-generator-question.md                    (legacy motivation only; no generic hardness or identity result)
 - theory/core/measurement-as-weak-intervention.md          (the external-reference follow-up: watching < perturbing, reflexive)
 """
 
@@ -222,9 +222,10 @@ def print_summary(res: dict) -> None:
         gain = (d1p - d2p) / d1p * 100 if d1p else 0.0
         print(f"    depth2 vs depth1 (post): {gain:+.1f}%  "
               f"({'adaptive estimator helps' if gain > 2 else 'no adaptive-estimator gain'})")
-    print("\n  Reading: online Q adaptation helps after a volatility shift")
-    print("  and cannot identify a constant bias on the sole observation")
-    print("  channel. The reflexive-depth / Kegan reading remains a hypothesis.")
+    print("\n  Reading: online Q adaptation helps after a volatility shift.")
+    print("  Neither tested filter models a constant observation bias; this")
+    print("  is model omission, not a general identifiability proof.")
+    print("  The reflexive-depth / Kegan reading remains a hypothesis.")
 
 
 def figure(res: dict, outdir: Path) -> Path:
@@ -240,7 +241,7 @@ def figure(res: dict, outdir: Path) -> Path:
 
     for ax, mode, title in (
         (axes[0], "regime", "(a) Volatility regime change\nonline Q adaptation helps"),
-        (axes[1], "bias", "(b) Constant observation bias\nnot identifiable from the sole channel"),
+        (axes[1], "bias", "(b) Constant observation bias\nomitted by both filter models"),
     ):
         stat = [np.mean(res[mode][d]["stat"]) for d in depths]
         post = [np.mean(res[mode][d]["post"]) for d in depths]

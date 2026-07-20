@@ -1,18 +1,24 @@
-# The Chord vs. Arpeggio: Identity as Simultaneity
+# Chord vs. Arpeggio: A Commit-Time Constraint Hypothesis
 
-*Exploring the "Time, Identity and Consciousness" framework (Perrier & Bennett, 2026) within the context of Emergent Systems.*
+*Status: functional architecture hypothesis. The terms do not identify consciousness or a "true self."*
 
 ---
 
 ## 🎹 The Musical Metaphor
 
-The core problem of modern AI agents is the **Temporal Gap**. An agent might recall its safety constraints at $t_1$ and execute its goal at $t_2$, but it often fails to co-instantiate them at the exact moment a decision is made.
+A possible failure mode in agent architectures is a **temporal gap**: a constraint is evaluated at
+$t_1$, but an action is committed at $t_2$ after that constraint has ceased to affect the decision.
+Whether and how often deployed agents exhibit this pattern is an empirical question.
 
 ### The Arpeggio (Standard Scaffolding)
-Most current agents are "Arpeggio" systems. Like notes in a melody played one after another, their identity "ingredients" (goals, roles, constraints) appear sequentially in a time window. From the outside, the agent looks stable because it can *talk* about its identity over time, but it lacks a unified self during the action step.
+An **Arpeggio** condition evaluates selected goals, roles, or constraints sequentially. Like notes in a
+melody played one after another, their causal influence can occur at different times. This is an
+experimental architecture label, not a claim about most current agents or whether they possess a self.
 
 ### The Chord (Integrated Identity)
-In a musical chord, all notes sound simultaneously. An agent in a "Chord" state has all its identity ingredients present and operative in a single objective step. This is **Integrated Identity**.
+In a musical chord, all notes sound together. A **Chord** condition requires selected constraints to
+be jointly satisfied at the action-commitment boundary. Physical simultaneity is unnecessary; an
+iterative or sequential solver can qualify if it computes the joint feasible set before commitment.
 
 ---
 
@@ -20,18 +26,23 @@ In a musical chord, all notes sound simultaneously. An agent in a "Chord" state 
 
 We plot agents on a map of **Identity Persistence ($\text{IP}$)** vs. **Coherence ($C$)**:
 
-- **Identity Persistence ($\text{IP}$)**: How much of the identity is operative during a task? (See [glossary](../reference/glossary.md) §Identity Persistence)
-- **Coherence ($C$)**: How logically stable is the agent's internal model?
+- **Identity Persistence ($\text{IP}$)**: How many declared components have detectable causal influence during a task? (See [glossary](../reference/glossary.md) §Identity Persistence)
+- **Coherence ($C$)**: A specified consistency statistic for the selected test.
 
-Systems that "flicker" out of their identity under stress (losing $\text{IP}$) are structurally barred from having a stable "self," regardless of their intelligence.
+Low values can reveal failures of the declared components under stress. They do not establish the
+presence or absence of a stable self, and high values can be fooled by consultation without joint
+satisfaction.
 
 ---
 
 ## 🔥 Thermodynamic Selfhood
 
-In this repository's **TEO (Thermodynamics of Emergent Orchestration)** framework, we treat identity as an **Attractor in Phase Space**. 
+Within one **TEO (Thermodynamics of Emergent Orchestration)** model, a persistent joint-constraint
+regime can be represented as an attractor in phase space.
 
-A system achieving the "Chord" state is in a state of **Active Homeostasis**. It is not just following a script; it is maintaining a high-dimensional alignment that necessitates simultaneous co-instantiation of all its governing equations.
+That representation is useful for analyzing stability in the chosen equations. It does not show
+that every Chord implementation is homeostatic, that it is more than a script, or that the attractor
+is an identity outside the model.
 
 ---
 
@@ -50,4 +61,6 @@ The deflated statement: **identity as simultaneity is really identity as joint s
 *Adversarial status ([exp7](../../lab/experiments/exp7_adversarial_arpeggio.py)):* hand-built mimics fail to fake the regime — a binding that consults everything at fractional strength both stays separable in the trace *and* leaks more than the naive rotation, while a low-pass disguise loses to the scale-invariance of the shape statistic. One casualty is the IP metric itself: consultation-without-composition scores a perfect 1.0, so IP certifies the guest list, not the negotiation. The unfooled measurement of the regime remains the commit property under adversarial lure; an *optimized* mimic is the open flank.
 
 > [!IMPORTANT]
-> **Conclusion**: If consciousness requires a unified identity, then the "Chord" is the structural prerequisite. Any agent that remains purely "Arpeggio" is fundamentally a simulation of a self, rather than a self.
+> **Bounded conclusion:** Exp5–7 motivate testing whether joint constraint satisfaction at commitment
+> improves robustness relative to matched sequential alternatives. They do not establish a sharp
+> phase transition, a necessary condition for identity, or any criterion for consciousness.

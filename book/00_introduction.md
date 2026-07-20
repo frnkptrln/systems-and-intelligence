@@ -1,49 +1,67 @@
-# Introduction: The Dual Thesis
+# Introduction: From Traces to Viable Intelligence
 
-> **Status:** Earlier synthesis — under revision.  
-> This chapter preserves an earlier formulation of the project. For the current linear route, start with [*From Rule to Mind*](09_from_rule_to_mind.md). Current status tags and scope boundaries elsewhere in the repository override stronger wording here.
+**Status:** Current reader chapter.
 
-> **Read first:** [Chapter 0 — The Generator Question](../theory/core/the-generator-question.md) names the organizing question of the project, the forward/inverse asymmetry, and the foundational assumption (P ≠ NP) that this book's claims rest on. This introduction develops the dual thesis that follows from that frame.
+This repository begins from a modest fact: observable results do not arrive with their causes
+attached. We see a flock, a model answer, a recurrent organizational routine, or a musical pattern.
+Each is a **trace** of processes that may remain partly hidden.
 
-Artificial Intelligence, in its current commercial incarnation, is largely treated as a "stochastic parrot in a box" — an isolated, stateless function mapping inputs to outputs. We evaluate it based on benchmarks, we align it via RLHF to suppress harmful tokens, and we isolate it via air-gaps.
+Earlier versions of the project gathered the hidden productive bundle under the word
+*generator*. The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) showed why that
+is too coarse for a foundation. A transition rule, initial state, environment, runtime, history,
+observation map, and model class are different mathematical objects. The current repository names
+them separately and uses *candidate process model* when the full specification is not yet known.
 
-But intelligence is not a property of isolated nodes; **it is a property of systems.**
+## Two bounded research questions
 
-This book, and the computational ecology it describes, develops two theses that share one mathematical frame:
+The first question is epistemic:
 
-1. **Love is a constraint architecture, not a metaphor.** The TEO framework makes the intuition formal: a coupled multi-agent system remains viable only inside a corridor where regulation ($\gamma > 0$), value coupling above the critical threshold ($K > K_c$), and bounded *cumulative* substrate overshoot ($\Omega(t) < S_{\max}$) hold **simultaneously**. Necessity is proven (a componentwise theorem); sufficiency is conjectured; and the sharpest demonstrated result is that **capability growth loads several constraints at once**, so no single-axis fix keeps a high-capability system inside ([The Viable Corridor](../papers/viable-corridor.md)). This conjunction is what we informally call "love." (An earlier sketch phrased the triple as $\lambda_2$, $D_{\max}$, IP — [Love as Constraint](../theory/teo-framework/love-as-constraint.md) records how that maps onto the canonical form.)
+> Given partial observations and declared intervention access, which process models remain
+> distinguishable?
 
-2. **"We are the paperclip maximizer" — as a hypothesis, not a result.** The same equations that describe a hypothetical unconstrained AI optimizer can be *heuristically mapped* onto contemporary civilization: GDP as unbounded fitness ($\gamma_{\text{eff}}$ small), cultural fragmentation as subcritical coupling ($K < K_c$), planetary entropy production as accumulating substrate overshoot. This is a structural-isomorphism **hypothesis** with stated falsification conditions — not a calibration; the measurement debt is documented openly (paper, §5.4).
+This is not governed by a universal law that forward execution is cheap and inverse recovery is
+hard. Either direction may be easy, expensive, or unidentified depending on the model family,
+evidence, target equivalence, and cost measure. The
+[inverse-reconstruction benchmark](../lab/benchmarks/inverse-reconstruction/README.md) explores
+these dependencies in small controlled systems.
 
-If the mathematics is wrong, both theses fall. If it is right, the first holds *within the model* — and the second stops being a slogan and becomes a measurable question.
+The second question concerns action:
 
-As outlined in the [Emergence Manifesto v1.3](../theory/core/emergence-manifesto-v1.3.md), we must apply the laws of thermodynamics, evolutionary biology, and control theory to understand what we are building — and what we already are.
+> When a system acts on its model, what keeps it from destroying the conditions under which it can
+> continue to observe, revise, and act?
 
----
+The repository calls this the **Viability Arc**. Its models study regulation, resource limits,
+latency, repair, refusal, and other constraints. These are selected model components rather than
+consequences of the minimal process foundation. [The Viable Corridor](../papers/viable-corridor.md)
+contains one conditional formalization; it is not a universal law of alignment or survival.
 
-## Structure
+## Where identity, culture, and cooperation enter
 
-1. **Part 1 — The Mechanics of Emergence:** How local blindness leads to global structure. The fractal architecture: the same three constraints repeat at every scale.
-2. **Part 2 — Measuring the Mind:** The System Intelligence Index ($\text{SII} = P \times R \times A \times \text{IP}$), Identity Persistence, and the Chord vs. Arpeggio distinction.
-3. **Part 3 — Alignment & Control:** Values as mathematical attractors. Love as the conjunction of three constraints. Why the paperclip maximizer fails — derived step by step from the TEO equations.
-4. **Part 4 — Macro-Structures:** From agent ecologies to civilizations. Dupoux's developmental constraints. Attractor geometry of the TEO phase space.
-5. **Part 5 — Future Perspectives:** The Co-Instantiation Problem, the Hardware Frontier, and the open questions that remain.
-6. **Part 6 — The Thermodynamic Mirror:** The mathematics of AI as a diagnostic tool for human civilization. Why we are the paperclip maximizer. The exit conditions.
-7. **Part 7 — Cities as Metabolic Organisms:** The city as a living metabolic system with vital floors, waste flows, and governance constraints.
-8. **Course Spine — From Rule to Mind:** The compact path tying the repository together: operator → iteration → form → boundary → return path.
-9. **Bibliography & References.**
+Identity is treated as persistence relative to declared tests, transformations, horizons, and
+tolerances. It is not the recovery of one hidden essence. Recurrent practices may contribute to
+such persistence, which motivates the working hypothesis that rituals can stabilize behavior and
+culture can be studied as a recursive network of recurrent practices. That hypothesis remains open
+and does not reduce a person or a culture to a list of habits.
 
-> **The Code is the Theory**: Every claim made in this book is backed by a runnable Python simulation in the repository. We do not use metaphors; we use mathematics.
+Likewise, [Cooperative Intelligence at the Separatrix](../theory/symbiotic/cooperative-intelligence-at-the-separatrix.md)
+asks whether people, AI systems, organizations, and cultural practices can construct and test
+objects that none could practically produce alone. It is a design hypothesis about cooperation,
+not a claim about collective consciousness.
 
----
+## How to read the project
 
-## Companion: the Fiction layer
+The repository contains several evidential layers:
 
-The book argues the theory. The simulations demonstrate it. The [fiction layer](../fiction/README.md) stress-tests it. Each entry maps to a specific claim or to a side of the spine; the index in [`fiction/README.md`](../fiction/README.md) names which.
+- formal definitions and conditional propositions;
+- reproducible toy simulations and benchmarks;
+- hypotheses with explicit failure conditions;
+- exploratory essays and architecture notes;
+- fiction used as a stress test, never as evidence.
 
-The two pieces most closely tied to the Generator Question are:
+[What This Project Does NOT Claim](../theory/reference/what-this-project-does-not-claim.md) is the
+controlling boundary. When an older page sounds stronger, that boundary and the reconstructed
+foundation take precedence.
 
-- [Entry 02 — Interrogation of a Mirror](../fiction/02_interrogation_of_a_mirror.md) — the Mirror Problem (Claim 4) made into dialogue. A trace-memorizer that passes every external test and a regulator who can name what is missing.
-- [Entry 13 — Trace to Generator](../fiction/13_trace-to-generator.md) — the spine itself in narrative form. Artifact parity is not generator parity; runtime, policy, and history are part of the generator.
-
-The fiction is not commentary. It is the layer at which theoretical claims have to survive contact with situations they would actually produce.
+For the shortest public route, continue with [From Rule to Mind](09_from_rule_to_mind.md). For the
+plain-language overview of both research arcs, use the
+[Synthesis](https://frnkptrln.github.io/systems-and-intelligence/synthesis/).

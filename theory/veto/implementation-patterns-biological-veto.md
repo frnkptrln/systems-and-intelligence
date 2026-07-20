@@ -1,38 +1,54 @@
-# Implementation Patterns: The Biological Veto in AI Agents
+# Implementation Patterns for Bounded AI Actions
 
-## Abstract
+*Status: candidate defense-in-depth patterns. They reduce selected risks under a threat model; they
+do not ensure deterministic control, human consensus, or an unbreakable biological veto.*
 
-This Request for Comments (RFC) defines standard architectural patterns within the Thermodynamics of Emergent Orchestration (TEO) framework for implementing safety constraints on autonomous AI systems. The objective is to prevent frictionless, unconstrained scaling of agentic execution loops by enforcing structural boundaries, collectively referred to as the Biological Veto. The patterns outlined below establish concrete, code-level constraints to ensure deterministic control over non-deterministic systems.
+## 1. Action Budgets
 
-## Architectural Constraints
+Limit tokens, tool calls, money, runtime, data access, and state-changing operations per task. Enforce
+the budget outside the proposing model and define what happens when it is exhausted.
 
-### 1. Action Budgets (Thermodynamic Limits)
+These are engineering and authorization limits, not thermodynamic bounds. A centralized budget
+manager can itself fail or be bypassed, and an agent may cause high impact with few actions. Test
+counter resets, parallel sessions, delegated tools, race conditions, and denial-of-service effects.
 
-To prevent runaway execution loops, agent state machines must be structurally constrained by pre-allocated resource limits per session state. These limits act as hard thermodynamic bounds on the agent's capacity to induce state changes.
+## 2. Staged High-Impact Commits
 
-*   **Token Quotas:** Strict, non-replenishable limits are enforced on the total aggregate tokens generated and processed per session instance.
-*   **API Invocation Caps:** Agents operate from a predefined, immutable budget of permissible third-party network requests, file I/O operations, or database mutations. Exceeding this budget automatically triggers an execution halt.
-*   **Time-to-Live (TTL) Decay:** The execution scope decays predictably. Sessions have a strict maximum runtime, requiring deliberate, external state renewal to continue operations.
-*   **Implementation Pattern:** Deploy a centralized `BudgetManager` middleware that intercepts, validates, and tracks all output commands from the agent. When resource metrics exceed threshold parameters, the middleware returns a deterministic failure code (e.g., HTTP 429) directly to the execution loop, forcing a halt.
+Place destructive, costly, or difficult-to-reverse actions in a review queue. Use out-of-band
+authorization, explicit diffs, time windows, cancellation, and two-person control where the risk
+justifies them.
 
-### 2. Meaningful Friction (The Veto)
+A hardware touch or signature proves control of a credential, not understanding or legitimate
+consent. Review interfaces must expose consequences, uncertainty, and alternatives, and must resist
+habitual approval, coercion, compromised devices, and emergency pressure.
 
-Frictionless autonomous execution is an architectural anti-pattern for critical, state-altering mutations. The system must introduce deliberate latency via UI/UX patterns that necessitate conscious, physical verification.
+## 3. A Separate Execution Gate
 
-*   **Hardware Validation:** The execution of high-privilege commands strictly requires physical human interaction, such as a YubiKey capacitive touch or a biometric hardware passkey.
-*   **Asynchronous Commits:** Destructive or high-impact systemic actions enter an asynchronous staging queue, requiring out-of-band user approval rather than executing in immediate real-time.
-*   **Cryptographic Signatures:** Human approvals are treated as cryptographically signed payloads. The backend execution engine explicitly rejects unsigned mutation requests originating from the automated agent layer.
-*   **Implementation Pattern:** The execution engine halts the current thread and emits a `HumanVerificationRequired` event to the client interface. The state machine remains suspended indefinitely until a cryptographically verified external payload is received.
+Require a lower-privilege component to validate typed commands against an allowlist, constrain
+arguments, and execute them in a sandbox. Keep the proposing model unable to modify the validator or
+its policy.
 
-### 3. The Edge Gatekeeper
+JSON, schemas, containers, and local execution shrink the attack surface but do not make it
+immutable. Parsers, allowed functions, dependencies, kernels, and update channels remain part of the
+trusted computing base. Prompt injection can also exploit an allowed action rather than request
+arbitrary code.
 
-System integrity relies on a strict topological separation between non-deterministic cloud generation models and deterministic local execution environments.
+## 4. Provenance, Revocation, and Recovery
 
-*   **Local Validation:** A standalone, deterministic compiled binary runs explicitly on the network edge or directly on the user's host device.
-*   **Action Filtering:** This gatekeeper evaluates all incoming instruction directives from the cloud-based LLM inference instance against a predefined, immutable local schema of permissible functions.
-*   **Sandboxing:** Approved functions are executed within isolated, low-privilege containers. Arbitrary code execution or system-level directives are outright rejected at the boundary.
-*   **Implementation Pattern:** The cloud LLM outputs commands strictly as JSON-RPC payloads. The edge binary parses the JSON, validates arguments against static type mappings, and executes the routines via restricted OS-level system calls, functioning as an immutable firewall against prompt injection or logic drift.
+Log proposals, evidence, approvals, executed effects, and policy versions. Make credentials and
+capabilities revocable. Provide idempotency, rollback where possible, incident containment, and a
+way to restore safe service after a false block.
 
-## Open Source Resilience and Human Agency
+Open implementations can improve inspection and reuse, while centralized and decentralized designs
+have different correlated-failure and governance risks. Neither topology guarantees human agency.
 
-Publishing these architectural constraints as distributed, open-source patterns provides a structurally superior mechanism for preserving human agency. Isolated, centralized AI monoliths introduce systemic single points of failure, relying entirely on the opaque self-regulation of corporate providers to enforce alignment. Conversely, standardizing biological vetoes and thermodynamic quotas as an open operational protocol democratizes the enforcement of computational limits. By embedding these friction-inducing patterns directly into the public software engineering commons, we establish decentralized cryptographic and structural guarantees that autonomous agents remain strictly subordinate to human consensus, regardless of the underlying foundation model's capability edge.
+## Evaluation Contract
+
+Define protected assets, attacker access, acceptable failure, and the action classes in scope.
+Red-team bypass, confused-deputy attacks, compromised approvers, validator bugs, concurrent agents,
+and recovery. Compare the full pattern set with simpler least-privilege and ordinary change-control
+baselines.
+
+The useful claim is modest: independent budgets, staged commitments, typed execution gates, and
+recoverable audit trails can reduce specific autonomous-action risks when correctly implemented and
+governed.

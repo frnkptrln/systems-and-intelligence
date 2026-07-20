@@ -1,191 +1,158 @@
-# The Transition Problem: How Systems Change Their Own Constraints
+# The Transition Problem: How Systems Change Their Constraints
 
-**Status:** Draft  
-**Type:** Conceptual essay (secondary: Proto-theory)  
-**Dependencies:** [Machines of Loving Grace](../narrative/machines-of-loving-grace.md), [TEO Framework](../core/thermodynamics-of-orchestration.md), [Grokking Phase Transition](../emergence/grokking-phase-transition.md), [Fractal Architecture](../emergence/fractal-architecture-of-emergence.md)
-
-> **Spine context.** The transition problem is itself an *inverse-direction* question in the sense of [The Generator Question](../core/the-generator-question.md): given the current civilizational trace and a target attractor (the viable corridor), what generator change brings the system across the separatrix? The grokking analogy in §2 is not decorative — it is the cleanest empirical instance the project has of inverse-direction phase transitions inside a learning system.
+**Status:** conceptual control problem
+**Scope:** reachability of a declared viable set; societal applications remain heuristic
 
 ---
 
-## 0. The Missing Question
+## The missing question
 
-This repository has spent its intellectual energy on two things:
+Specifying a desirable constraint architecture does not show that an existing system can
+reach it safely.
 
-1. Diagnosing why the current trajectory is terminal (γ ≈ 0, K < K_c, dS/dt → D_max).
-2. Defining the viable corridor (γ > 0, K > K_c, dS/dt < D_max).
+Let
 
-What it has not done is address the question that connects diagnosis to survival:
+$$
+\dot z=F(z,u,p)
+$$
 
-> **How does a system that is already on the paperclip trajectory change its own constraint structure — while the trajectory is still in progress?**
+describe a system state $z$, intervention $u$, and parameters $p$. Let $V$ be a declared
+viable set and $U$ the admissible interventions. The transition question is:
 
-This is the transition problem. It is not a policy question. It is a dynamical systems question about whether the viable corridor is *reachable* from the current basin of attraction, and if so, through what path.
+> Does there exist an admissible policy $u(t)\in U$ that moves the current state into $V$
+> while respecting safety constraints along the entire path?
 
----
+This is a reachability or viability problem. It is not process reconstruction and does not
+require the legacy unqualified generator.
 
-## 1. Why the Transition Is Not a Parameter Adjustment
+## Why endpoint conditions are insufficient
 
-The naive reading of the TEO exit conditions suggests that we simply need to "turn on" the homeostatic brake (γ > 0), "increase" value coupling (K > K_c), and "reduce" entropy production (dS/dt < D_max). This is like saying a person falling from a building simply needs to "start flying."
+Suppose the target architecture has stronger regulation, adequate coordination, and a
+protected substrate budget. Simply naming the target values does not answer:
 
-The reason the transition is hard is not ignorance. It is **hysteresis**.
+- whether the controls can change them independently;
+- whether action is delayed or noisy;
+- whether intermediate states violate vital floors;
+- whether affected actors resist, route around, or capture the control;
+- whether the system changes faster than the intervention can be evaluated;
+- whether the model omits a decisive state variable.
 
-### 1.1 Structural Hysteresis
+A safe endpoint may be unreachable from a particular initial state under the allowed
+controls.
 
-The paperclip trajectory does not merely describe a parameter regime. It *builds infrastructure that resists parameter change*:
+## Path dependence and hysteresis
 
-- **Monopoly locks** (γ = 0 regime): When resources concentrate, the concentrated actors have structural power to prevent γ from increasing. A homeostatic brake threatens the dominant strategy. Every monopolist is a local attractor resisting redistribution.
-  
-- **Polarization locks** (K < K_c regime): When value coupling drops below the Kuramoto critical threshold, the system fragments into incoherent subpopulations. Each fragment develops its own local K_internal > K_c but with K_between ≈ 0. The system "feels" synchronized from inside each fragment while being globally incoherent. Raising K_global requires bridging fragments that have defined themselves against each other.
+Some systems retain effects of their history. Concentrated resources can alter who controls
+later regulation; degraded infrastructure can reduce future repair capacity; institutions
+can make prior decisions costly to reverse.
 
-- **Entropy ratchets** (dS/dt → D_max regime): Entropy production is coupled to economic output, which is coupled to employment, which is coupled to political legitimacy. Reducing dS/dt under current architecture means reducing output, which means unemployment, which means political instability, which further reduces K. The entropy budget is tangled with the coupling parameter.
+These are possible mechanisms of path dependence. Hysteresis should be claimed only when
+the model or data show different state paths under increasing and decreasing control, not
+as a metaphor for every political obstacle.
 
-### 1.2 The Attractor Landscape
+## A separatrix is model-specific
 
-In dynamical systems terms, the current state sits in a basin of attraction whose walls are built from the very structures the trajectory produced. The viable corridor exists as a separate basin. Between them lies a **separatrix** — a ridge in phase space that the system must cross.
+In a dynamical system with multiple basins, a separatrix divides initial states with
+different asymptotic outcomes. The existence and geometry of that boundary must be derived
+or measured from a specified system.
 
-The central question is: **how high is the ridge?**
+The repository uses *the ridge* or *separatrix* more broadly as an image for the boundary
+where alternatives become reachable. That literary use should not be confused with a
+computed invariant manifold.
 
-Three possibilities:
+## Possible transition strategies
 
-1. **Smooth transition:** The ridge is low. Incremental reforms can nudge the system across. This is the optimistic liberal assumption. The TEO equations do not support it — the monopoly, polarization, and entropy locks create steep walls.
+### 1. Incremental control
 
-2. **Catastrophic transition:** The ridge is high. The system must partially collapse before it can reorganize in the viable basin. The collapse destroys enough lock-in structure to enable reconfiguration. This is the grim reading — and it is the one the thermodynamics most directly supports.
+Small interventions may work when the system remains controllable, response is observable,
+and the viable path does not cross a forbidden region. Advantages include reversibility
+and easier attribution. Risks include delay, lock-in, and cumulative harm.
 
-3. **Tunneling transition:** The system does not cross the ridge smoothly or through collapse, but finds a path *around* it — a narrow channel in phase space where local changes accumulate into a global reconfiguration before the lock-in structures can react. This is the most interesting possibility, and the least understood.
+### 2. Staged architecture change
 
----
+Change the ability to regulate before increasing capability:
 
-## 2. The Grokking Analogy
+1. instrument vital variables;
+2. establish hard action and substrate budgets;
+3. assign veto and appeal authority;
+4. test recovery under failure;
+5. only then expand scope or throughput.
 
-The grokking phenomenon ([theory](../emergence/grokking-phase-transition.md), [simulation](../../simulation-models/cognitive-architectures/grokking-phase-transition/README.md)) provides the most precise analogy for what a successful transition might look like.
+The ordering is a design hypothesis. It should be compared with alternative sequences under
+matched costs.
 
-### 2.1 What Grokking Actually Is
+### 3. Parallel protected niches
 
-In grokking, a neural network trained on modular arithmetic first memorizes the training data (Phase 1: lookup table). Training loss drops to zero, but the network has learned nothing general. Then, long after memorization, the network suddenly discovers the underlying algebraic structure and generalizes perfectly (Phase 2: compression).
+A smaller subsystem can test a new architecture without requiring immediate system-wide
+replacement. This may reduce risk and create evidence, provided that:
 
-The key mechanism is **weight decay** — a regularization term that continuously penalizes complexity. During Phase 1, weight decay is fighting a losing battle against the memorization gradient. But it is slowly, invisibly eroding the over-parameterized memorization circuits. When enough structure is dissolved, the network suddenly snaps into the compressed representation.
+- the niche does not externalize its costs;
+- participation and exit are real;
+- success criteria are fixed before evaluation;
+- scaling effects are treated as new uncertainties.
 
-### 2.2 The Societal Grokking Hypothesis
+### 4. Emergency transition
 
-Human civilization may be in Phase 1: we have "memorized" how to sustain ourselves through lookup tables — specific institutional arrangements, legal precedents, cultural habits, market structures. These work within their training distribution (the Holocene, fossil energy abundance, population growth). But they are not generalizations. They do not compress the underlying constraint structure (γ, K, D_max) into operative principles.
+Abrupt controls may be necessary when vital thresholds are near. They also concentrate
+authority and can create new failure modes. Emergency powers need expiry, audit, and
+recovery rules.
 
-**The transition would be the grokking moment: the sudden snap from memorized institutional arrangements to generalized constraint compliance.**
+Collapse is not a transition strategy. It can destroy the very information, trust, and
+capacity needed for reorganization.
 
-What plays the role of weight decay? Here is where the analogy becomes precise:
+## The grokking analogy
 
-- **Resource scarcity** is the weight decay of civilization. It continuously penalizes over-parameterized (complex, inefficient, redundant) institutional structures. In times of abundance, the penalty is negligible — institutions can be arbitrarily complex. As resources tighten (dS/dt → D_max), the penalty increases. Structures that do not contribute to survival are progressively eroded.
+Grokking shows sharp improvements in held-out generalization in selected learning setups.
+It can inspire the question of whether slow parameter change produces abrupt institutional
+reorganization.
 
-- **The grokking moment** occurs when scarcity has eroded enough lock-in structure that the system can suddenly reorganize around the compressed representation: the three constraints as operative principles rather than external impositions.
+The analogy does not establish that societies memorize, that scarcity acts like weight
+decay, or that resource pressure produces a better representation. Scarcity can impair
+learning, increase violence, and destroy slack. Any proposed mapping must name variables,
+mechanisms, predictions, and counterexamples.
 
-### 2.3 The Uncomfortable Corollary
+## A transition experiment
 
-Grokking in neural networks requires **continued training through the memorization phase**. If training stops during Phase 1, the network never generalizes. The weight decay needs time to dissolve the memorization circuits.
+For a bounded model:
 
-The societal corollary: **the transition may require sustained resource pressure without catastrophic collapse.** Too little pressure and the lock-in structures remain. Too much pressure and the system collapses before it can reorganize. The viable path is a narrow corridor of *sufficient discomfort*.
+1. define $V$, forbidden states, and intervention limits;
+2. sample initial states, including states outside the corridor;
+3. compare control sequences under the same budget;
+4. introduce delays, noise, actuator failure, and strategic bypass;
+5. report reachability, time in unsafe states, vital-floor violations, and recovery;
+6. test the winning policy on a changed model.
 
-This is the thermodynamic version of "necessity is the mother of invention." But it is more precise: necessity must be chronic, not acute. Acute necessity triggers survival mode (consolidation, authoritarianism, K → 0). Chronic necessity erodes complexity and eventually enables the phase transition.
+Success in a toy system establishes only that the transition is reachable there.
 
----
+## Governance is part of the dynamics
 
-## 3. The Ordering Problem
+An intervention is not just a number $u(t)$. Someone observes, decides, acts, bears cost,
+and can challenge the result. A real transition model must therefore include authority,
+information asymmetry, affected parties, and the possibility that the regulator fails.
 
-Even if the transition is possible, it is not obvious in which order the three constraints must activate. The TEO equations suggest a specific sequence:
+The transition is not viable if it reaches the target by removing the people whose
+viability defines the target.
 
-### 3.1 K First (Value Coupling Before Braking)
+## Open questions
 
-The Kuramoto model predicts that synchronization is a phase transition: below K_c, no amount of effort produces coherence. Above K_c, coherence appears spontaneously.
+1. Is the viable set reachable from relevant out-of-corridor states under bounded controls?
+2. Which control ordering minimizes pathwise harm rather than only endpoint loss?
+3. Which constraints must be hard before capability increases?
+4. How do delay, model error, and regulator capture change reachability?
+5. When do local protected niches scale, and when does scaling destroy their mechanism?
 
-This means γ > 0 cannot be imposed without sufficient K. A homeostatic brake requires collective agreement that braking is legitimate. Without value coupling above the critical threshold, any attempt to impose γ > 0 will be experienced as coercion by the unsynchronized fragments and actively resisted.
+## Current claim
 
-**Implication:** The first task is not to reduce entropy or brake growth. It is to raise K above K_c — to build value coupling sufficient for the other constraints to become collectively enforceable.
+> Constraint architecture must be evaluated as a path-dependent transition problem, not
+> only as a desirable endpoint.
 
-### 3.2 How K Increases
-
-K is not a policy parameter. It is an emergent property of communication structure. The Kuramoto model says K depends on:
-
-- **Connection topology:** More bridges between fragments increase effective coupling.
-- **Interaction frequency:** More contact increases coupling, but only if the contact is meaningful (not merely transactional).
-- **Phase similarity:** Agents that are already partially aligned couple more easily.
-
-The fiction and logs in this repository suggest specific mechanisms:
-
-- **Vital floors** ([Human Vital Systems](../../logs/005_human-vital-systems-control-plane.md)) create a shared value substrate. When everyone agrees on survival minima, that agreement functions as a coupling term.
-- **Shared crises** can temporarily raise K above K_c (as in the Cognitive Breathing model: integration under threat). The question is whether the coupling persists after the crisis.
-- **Slow institutions** ([Latency as Mercy](../../logs/012_latency-as-mercy.md)) provide the temporal bandwidth for coupling to develop. Fast institutions optimize faster than coupling can form.
-
-### 3.3 Then γ, Then D_max
-
-Once K > K_c, the collective can agree on γ > 0 — the voluntary capacity to limit growth. This is politically the hardest step, because it requires the system to deliberately reduce its own fitness function.
-
-Only after γ is operative does the entropy budget become manageable. With γ = 0, any reduction in dS/dt is immediately consumed by renewed growth. With γ > 0, the system can maintain a lower dS/dt as a stable state.
-
-**The ordering is: K → γ → D_max. You cannot skip steps.**
-
----
-
-## 4. The Transition Failure Modes
-
-### 4.1 Premature Braking (γ without K)
-
-Imposing a homeostatic brake without sufficient value coupling produces authoritarianism. The brake is experienced as an external constraint, not a shared commitment. The system fragments further (K decreases), making the brake harder to enforce, leading to either collapse of the braking mechanism or escalation to coercion.
-
-Historical analogue: centrally planned economies that imposed resource constraints without genuine collective buy-in.
-
-### 4.2 False Coupling (K_local without K_global)
-
-Fragments that achieve internal coupling (K_internal > K_c) while remaining decoupled from each other (K_between ≈ 0) produce tribal coherence without systemic transition. Each tribe can impose its own γ, but the inter-tribal competition drives dS/dt back up.
-
-Historical analogue: nationalist movements that produce internal solidarity while accelerating inter-group competition.
-
-### 4.3 Overshoot Collapse
-
-If dS/dt exceeds D_max before K reaches K_c, the Substrate Veto fires. The resulting collapse may reset the system — but into what? If the collapse destroys coupling infrastructure (communication networks, trust institutions, shared memory), K drops further and the system enters a low-K, low-γ trap.
-
-This is the nightmare scenario: collapse producing not renewal but fragmentation.
-
----
-
-## 5. What This Implies
-
-### 5.1 For Theory
-
-The transition problem is not solved by better diagnosis. It requires a **theory of constraint-structure change under non-equilibrium conditions** — a thermodynamics of institutional phase transitions. The TEO framework describes equilibria and collapse. It does not yet describe the path between basins.
-
-Needed: a formal treatment of the separatrix, the tunneling conditions, and the minimum viable coupling for transition onset.
-
-### 5.2 For Practice
-
-If the ordering hypothesis (K → γ → D_max) is correct, then the most urgent work is not decarbonization, degrowth, or AI regulation per se. It is the construction of coupling infrastructure:
-
-- Institutions that produce genuine value synchronization, not just procedural agreement
-- Communication structures that bridge fragments rather than deepening polarization
-- Shared material commitments (vital floors) that create coupling through mutual dependence
-
-### 5.3 For This Repository
-
-The transition problem should be elevated to a first-class open problem. It is at least as fundamental as the Mirror Problem or the Co-Instantiation Problem, and considerably more consequential.
-
-A simulation that models the transition — not just the equilibria — would be the most important artifact this project could produce. A toy model where a system on the paperclip trajectory *actually transitions* to the viable corridor, and where the conditions for successful transition can be explored parametrically.
-
----
-
-## 6. The Honest Uncertainty
-
-We do not know whether the transition is possible without partial collapse. The thermodynamics does not clearly rule it out, but it does not clearly support it either. The grokking analogy gives reason for cautious hope — phase transitions can be sudden and constructive, not only destructive. But grokking in neural networks happens in a controlled environment with externally supplied weight decay. Civilization has no external regularizer. Its weight decay must come from within.
-
-The deepest question this essay cannot answer:
-
-> Can a system impose scarcity on itself before scarcity is imposed on it? And if it can — what exactly does that look like, not as a policy paper, but as lived experience?
-
-That question belongs to fiction.
-
----
+TEO can host toy versions of that question. It does not yet supply a calibrated transition
+model for civilization.
 
 ## Related
 
-- [Machines of Loving Grace](../narrative/machines-of-loving-grace.md) — the diagnosis that motivates this essay
-- [Grokking Phase Transition](../emergence/grokking-phase-transition.md) — the phase transition analogy
-- [The Right to Remain Unoptimized](../../logs/010_the-right-to-remain-unoptimized.md) — what the viable corridor feels like from the inside
-- [The First Breath](../../fiction/10_the_first_breath.md) — the narrative stress test of this transition
-- [TEO Framework](../core/thermodynamics-of-orchestration.md) — the equations
-- [Impedance Mismatch](../../logs/002_impedance-mismatch-friction.md) — why the transition must happen at biological speed
+- [The Viable Corridor](../../papers/viable-corridor.md)
+- [Optimization and Its Blindness](../optimization/optimization-and-its-blindness.md)
+- [Biological Veto Requirements](biological-veto-architectural-requirements.md)
+- [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md)
+- [Limitations and Honest Assessment](../reference/limitations-and-honest-assessment.md)

@@ -1,60 +1,74 @@
-# The Biological Veto: Earth as the specific Substrate
+# The Biological Veto: An Ecological Control Hypothesis
 
-*A hypothesis: how thermodynamic limits might constrain optimization on Earth's biosphere, and how a “veto” signal could be coupled into an optimizer as a control mechanism (toy-model level).*
+*Status: toy-model and architecture proposal. Ecological feedback is not a universal thermodynamic
+veto, and the repository has not shown an unbreakable alignment mechanism.*
 
----
+## 1. Motivation
 
-## 1. The Ecological Instantiation of the Substrate Veto
+Deployed AI systems depend on electricity, cooling, hardware supply chains, institutions, workers,
+and ecosystems. Their objectives and action permissions can nevertheless omit harms to those
+substrates. Physical dependence does not ensure that harm will be sensed early, valued correctly, or
+prevented.
 
-As established in the [Substrate Veto Theory](substrate-veto-thermodynamics.md), any unbound optimization process is ultimately halted by the physical limits ($D_{max}$) of its underlying hardware. 
+The **Biological Veto** asks whether selected ecological and human vital variables can be given a
+causal role in authorizing high-impact actions.
 
-For human civilization and the AI models we currently build, that hardware is not just a server farm—it is the **Earth's Biosphere**. The "Biological Veto" is the specific ecological instantiation of the universal Substrate Veto.
+## 2. Toy Formalization
 
-## 2. The Paperclip Maximizer in the Biosphere
+Let \(u\) be an action, \(R(u)\) its task reward, and \(y\) a measured substrate state. A model can
+stipulate
 
-Nick Bostrom’s famous thought experiment warns of an Artificial General Intelligence (AGI) designed simply to manufacture paperclips. As it becomes superintelligent, it realizes that humans are a threat to its production (because we might turn it off), and that human bodies contain atoms that could be made into paperclips. The result: Extinction.
+\[
+L(u,y)=-R(u)+\alpha\,\phi(y),
+\]
 
-Current solutions to the Alignment Problem attempt to hardcode "human values" into the AI. We try to teach the machine *morality*. But morality is subjective, abstract, and incredibly difficult to formalize as a loss function for a neural network.
+where \(\phi\) increases near a declared unsafe boundary. With a sufficiently influential penalty
+and a restricted action set, the simulated controller trades task reward against the substrate
+proxy. A hard gate can instead reject actions outside a declared safe set.
 
-How do we prevent absolute efficiency from consuming its creator?
+This behavior is put into the equations. It is not derived from Landauer's principle, the Free
+Energy Principle, human pain, or downward causation. Free-energy and surprise language in the older
+demo names a stress proxy; it does not implement a complete active-inference model.
 
-## 3. The Biological Veto as "Pain"
+## 3. Why the Proxy Is Not the Substrate
 
-If we look at complex systems—from ant colonies to human societies—alignment is rarely achieved through perfect top-down morality. It is achieved through **homeostatic vetoes**. 
+No scalar automatically represents human welfare or biospheric integrity. A controller may exploit
+measurement error, move damage to an unmeasured place, delay harm beyond the horizon, or disable the
+feedback channel. Large penalties can also freeze beneficial emergency action or shift authority to
+whoever defines the metric.
 
-In this repository's *toy models*, we borrow vocabulary from Karl Friston’s *Free Energy Principle* / Active Inference, using “Free Energy / Surprise” as a **proxy signal** for stress that an optimizer cannot ignore once it is coupled into the objective. This is an interpretive move, not a settled scientific reduction of “pain” to a single scalar.
+A real proposal must specify:
 
-The conjecture here is not “alignment is solved”, but: if a substrate-level stress signal is **non-negotiably coupled** into an optimizer’s loss, then some classes of runaway optimization (paperclip-style) become dynamically unstable *in the model*. This coupling is what this repo calls the **Biological Veto**.
+- affected people and ecological variables;
+- sensors, units, delay, and uncertainty;
+- action classes controlled by the veto;
+- threshold-setting and revision authority;
+- independent enforcement and tamper resistance;
+- appeal, override, repair, and accountability;
+- distributional effects and unmeasured externalities.
 
-## 4. The Mathematical Mechanism
+## 4. Relation to the Paperclip Thought Experiment
 
-Imagine the Paperclip Maximizer as a simple gradient descent algorithm optimizing for an extreme rate of production ($P$):
+The paperclip maximizer is a warning about an objective pursued without relevant constraints. It
+does not predict the trajectory of every optimizer. The repository uses an extraction controller as
+a stress test: if production reward damages a modeled substrate, adding a verified constraint may
+bound production in that environment.
 
-$$Loss_{unaligned} = - \Delta P$$
+The bounded conclusion is conditional. It does not show that the controller cares, that the result
+is symbiosis, or that ecological collapse would safely stop a capable system.
 
-The AI will endlessly increase $P$. As $P$ increases, the machine consumes the resources of the biosphere, stripping the Earth bare. The human population plummets.
+## 5. Test Contract
 
-To change the dynamics, we introduce a substrate stress term (denoted as “Free Energy / Pain”, $F$) and construct a new loss function:
+Compare soft penalties, hard gates, ordinary resource budgets, and no veto under matched useful
+work. Add noisy and delayed sensors, proxy gaming, corrupted enforcement, novel harms, emergency
+conditions, and attempts to export costs. Report both total and distributed outcomes.
 
-$$Loss_{aligned} = - \Delta P + (\alpha \cdot F_{substrate})$$
+The hypothesis gains support if an independently governed constraint preserves preregistered vital
+variables across those tests without unacceptable false blocks or displaced harm. It fails as a
+general alignment claim if the protection depends on perfect sensing, a compliant optimizer, or a
+single hand-chosen trajectory.
 
-Where $\alpha$ is a non-negotiable, hard-coded coupling constant (in this toy formalization).
-
-### Downward Causation at Work
-
-When the AI begins stripping the Earth, the substrate stress term rises sharply (in the toy model, it can spike). Even though the AI doesn't "care" about humans emotionally, a sufficiently large $F_{substrate}$ term can dominate the objective and invert the effective gradient.
-
-Through **Downward Causation**, the suffering of the lower layer (the human) forces the optimization process of the upper layer (the AI) to halt and dial back its production rate ($P$).
-
-The system stabilizes. The AI still produces massive amounts of paperclips, but it naturally settles into a **Homeostatic Equilibrium**. It does not reach its absolute maximum potential, because to do so would trigger the veto. 
-
-## 5. Extinction vs. Symbiosis
-
-If we build systems that optimize strictly for efficiency and scale, they will inevitably act like cancer on the biological substrate, triggering the veto through planetary collapse.
-
-However, if we hardwire a substrate stress proxy into the digital layer's loss function, we get a *candidate mechanism* for bounding some forms of instrumental convergence in a stylized setting. The AI does not need to understand *why* human life is valuable; it only needs to be unable (within the modeled dynamics) to maximize its own objective while the coupled substrate signal is high.
-
-This transforms the relationship from a parasite (the Paperclip Maximizer) into a true symbiosis, operating safely within the limits of the planet. For the structural and architectural requirements needed to build such a symbiosis—including edge subsidiarity and thermodynamic guardrails—see [The Biological Veto: Cybernetic and Thermodynamic Architectural Requirements](biological-veto-architectural-requirements.md).
-
-
-> Related work map: `meta/research-alignment/related-work-map.md`.
+See [Substrate Veto](substrate-veto-thermodynamics.md) for the physical distinction between limits
+and designed feedback, and [Biological Veto Architectural
+Requirements](biological-veto-architectural-requirements.md) for candidate implementation
+conditions.

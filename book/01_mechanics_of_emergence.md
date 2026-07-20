@@ -1,69 +1,71 @@
 # Part 1: The Mechanics of Emergence
 
-> **Status:** Earlier synthesis — under revision.  
-> This chapter preserves an earlier formulation of the project. For the current linear route, start with [*From Rule to Mind*](09_from_rule_to_mind.md). Current status tags and scope boundaries elsewhere in the repository override stronger wording here.
+**Status:** Current reader chapter.
 
-Before we can build metrics for intelligence, we must understand how structure arises from chaos — and why the same structural constraints appear at every scale of organization.
+Emergence is not a substance added to a system. It is a relation between levels of description.
+A specified process evolves at one level; an observer selects variables, a scale, and a
+coarse-graining at another; stable or useful regularities may then become visible.
 
----
+Boids provide a simple example. Each simulated bird updates its velocity through separation,
+alignment, and cohesion. The flock is a macro-description of the resulting trajectories. The code
+demonstrates that those local updates can produce that measured pattern under the selected
+parameters. It does not prove that every collective structure has the same cause.
 
-## The Fractal Architecture
+## Local processes and global descriptions
 
-The core thesis of this repository is that **the same three constraints repeat on every scale — not by analogy, but by structural necessity.** This is the [Fractal Architecture of Emergence](../theory/emergence/fractal-architecture-of-emergence.md).
+The repository repeatedly studies three questions:
 
-### Constraint 1: Local Blindness
+1. Which local processes are specified?
+2. Which macro-variable is being measured?
+3. Under which perturbations does the macro-pattern persist or fail?
 
-The defining feature of complex systems is that no component has access to the global state it helps produce:
+Local components need not represent the selected macro-variable. That is true of many simulations
+here, but it is not a universal theorem that components can never obtain global information. Access
+depends on the communication architecture, sensors, memory, and model class.
 
-| Scale | Component | Global Structure | The component cannot see... |
-|:------|:----------|:-----------------|:---------------------------|
-| Neural | Neuron | Thought | ...that it is part of a mind |
-| Cellular | Cell | Organism | ...the body plan it executes |
-| Social | Human | Society | ...the civilizational trajectory |
-| Agentic | LLM Agent | Multi-Agent Ecology | ...the emergent utility function |
+## Formal tools, not axioms
 
-This is explored deeply in [Local Causality and Invisible Consequences](../theory/emergence/local-causality-invisible-consequences.md). It is the structural commonality of every simulation in this repository — from [Boids](../simulation-models/emergent-dynamics/boids-flocking/README.md) (no bird knows the flock's shape) to [Kuramoto oscillators](../simulation-models/emergent-dynamics/coupled-oscillators/README.md) (no oscillator knows the aggregate phase) to the [Ising model](../simulation-models/emergent-dynamics/phase-transition-explorer/README.md) (no spin knows the magnetization).
+Several established measures recur throughout the project. None defines emergence, life, or
+intelligence by itself.
 
-### Constraint 2: Asymmetric Causality
+| Domain | Instrument | What it can establish |
+|:---|:---|:---|
+| Graph theory | Fiedler value $\lambda_2$ | Whether a finite undirected graph is connected when $\lambda_2>0$, plus a topology-sensitive connectivity scale |
+| Information theory | Entropy and mutual information | Uncertainty and statistical dependence for declared variables and distributions |
+| Active inference | Variational or expected free energy | An objective inside a specified generative model, preference structure, and action scheme |
+| Algorithmic information | Description length and $K(x)$ | Compression relative to a language or machine; exact Kolmogorov complexity is generally uncomputable |
 
-Information flows upward (micro → macro) through aggregation, and downward (macro → micro) through constraint. But the two directions are not symmetric: upward causation is statistical and gradual; downward causation is abrupt and coercive. When the flock turns, each bird must follow. When the economy crashes, each worker is laid off. This asymmetry — explored in [Black Swans & Downward Causation](../theory/emergence/black-swans-and-downward-causation.md) — means that macro-level events can enslave micro-level components with zero negotiation.
+A high Fiedler value does not guarantee decentralization or resilience under every attack model.
+High entropy can be noise, while deterministic processes can exhibit complex coarse-grained
+behavior. Free-energy notation does not create a biological veto. Incompressibility does not imply
+novelty, value, or survival.
 
-### Constraint 3: Critical Thresholds
+## Thresholds are model-specific
 
-Phase transitions are not gradual. Below the Kuramoto critical coupling $K_c$, oscillators are incoherent; above it, they snap into synchronization. Below the Ising critical temperature $T_c \approx 2.269$, the system is frozen; above it, random; at exactly $T_c$, correlations diverge and information processing is maximal.
+Kuramoto synchronization, the Ising transition, percolation, and learning dynamics can each display
+sharp changes. Their control parameters and order parameters are not interchangeable. Evidence for
+a critical point in one model does not establish an “edge of chaos” law for organisms, minds, or
+societies.
 
-The [Phase Transition Explorer](../simulation-models/emergent-dynamics/phase-transition-explorer/README.md) and the [Self-Organized Criticality Sandpile](../simulation-models/emergent-dynamics/self-organized-criticality/README.md) make these thresholds tangible. The [Grokking Phase Transition](../theory/emergence/grokking-phase-transition.md) demonstrates the same phenomenon in neural networks: the shift from memorization to generalization is sudden, triggered by weight decay acting as Occam's Razor.
+The right comparative question is therefore not whether every scale uses the same equation, but
+whether carefully defined systems share a universality class or another invariant structure. That
+is an [open problem](../theory/reference/open-problems.md#open-problem-5-the-renormalization-question),
+not a premise.
 
----
+## Construction as evidence
 
-## Four Recurring Formal Tools
+The simulations make abstract claims executable:
 
-Four measures recur across the simulations in this repository:
+- [Boids](../simulation-models/emergent-dynamics/boids-flocking/README.md) test local motion rules.
+- [Coupled oscillators](../simulation-models/emergent-dynamics/coupled-oscillators/README.md) test
+  phase synchronization.
+- [Reaction–diffusion](../simulation-models/emergent-dynamics/reaction-diffusion/README.md) tests
+  pattern formation from local transport and reaction.
+- [Iterated function systems](../simulation-models/emergent-dynamics/iterated-function-systems/README.md)
+  test repeated contractive maps.
+- [Lenia](../simulation-models/emergent-dynamics/lenia/README.md) tests persistent structures in a
+  continuous cellular automaton.
 
-| Domain | Tool | What it measures |
-|:------|:-----|:-----------------|
-| **Graph Theory** | Fiedler value $\lambda_2$ | Structural resilience — how connected is the network? |
-| **Information Theory** | Shannon Entropy $H(X)$ | Surprise — how much information does a signal carry? |
-| **Active Inference** | Free Energy $F$ | Prediction error — how far is the model from reality? |
-| **Algorithmic Information** | Kolmogorov Complexity $K(x)$ | Compression — how much can be said with how little? |
-
-Earlier versions of this book presented these four as *axioms* of the project. They are not. The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) audited each one out of the foundation: algebraic connectivity states that a graph is connected without establishing a normative architecture; entropy is distribution- and coarse-graining-dependent and fixes no threshold for life; free-energy minimization yields no unbreakable veto; and algorithmic incompressibility guarantees neither value nor survival. They remain useful *instruments* — the metrics defined later (SII, IP, Δ-Kohärenz) are built from them — but each carries its own assumptions rather than inheriting authority from an axiom.
-
----
-
-## Self-Organization Without a Blueprint
-
-The simulations in Layer 1 demonstrate that global order emerges without design:
-
-- [**Stigmergy Swarm**](../simulation-models/social-computation/stigmergy-swarm/README.md) — ants find optimal paths via pheromones, without any ant knowing the optimal path
-- [**Iterated Function Systems**](../simulation-models/emergent-dynamics/iterated-function-systems/README.md) — Barnsley-style attractors from repeated contractive maps
-- [**L-Systems**](../simulation-models/emergent-dynamics/l-systems/README.md) — developmental morphology from parallel rewriting rules
-- [**Reaction-Diffusion**](../simulation-models/emergent-dynamics/reaction-diffusion/README.md) — Turing patterns (spots, stripes) emerge from homogeneous initial conditions
-- [**Lenia**](../simulation-models/emergent-dynamics/lenia/README.md) — continuous cellular automata produce organism-like structures that persist, move, and maintain boundaries
-- [**Hebbian Memory**](../simulation-models/cognitive-architectures/hebbian-memory/README.md) — content-addressable memory from correlation-based weight updates, no central indexer
-
-In each case: no agent knows the big picture. Global structure *emerges*.
-
-The new [Generative Form Systems](../theory/emergence/generative-form-systems.md) bridge keeps this chapter from becoming a catalogue: every external source must identify an operator, an iteration process, an emergent structure, a measurement, and a failure condition.
-
-*To see these mechanics in action, run the simulations directly or explore the [Simulation → Theory Map](../theory/core/simulation-theory-map.md).*
+Each artifact establishes behavior of its own declared process. Cross-scale interpretation begins
+only after the state variables, observations, interventions, and failure conditions have been
+matched.

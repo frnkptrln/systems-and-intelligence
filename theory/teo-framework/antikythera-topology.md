@@ -1,81 +1,109 @@
-# Attractor Geometry of the TEO Phase Space
+# Attractor Analysis for the TEO Phase Space
 
-*Classifying the dynamical regimes of intelligent collectives through attractor topology.*
-
----
-
-## Motivation
-
-The TEO system couples replicator dynamics, Kuramoto synchronization, and a thermodynamic constraint into a single phase space. The long-term behavior of this coupled system is governed by its **attractors** — the states toward which trajectories converge. Understanding the attractor geometry tells us what kinds of stable configurations (civilizations, agent ecologies, organizations) the system can produce.
+*An analysis programme; fixed points, cycles, chaos, and fractal basins must be established,
+not inferred from their names.*
 
 ---
 
-## The Three Attractor Types in TEO
+## Status
 
-### 1. Fixed Point Attractors — Stable Equilibria
+TEO defines a coupled dynamical system, so questions about equilibria, stability, periodic
+orbits, and basins are well posed. The current repository simulations exhibit selected
+trajectories and parameter sweeps. They do **not** yet classify every attractor, prove a
+limit cycle, establish chaos, or measure a fractal basin boundary.
 
-When homeostasis ($\gamma > 0$), cultural coupling ($K > K_c$), and entropy budget ($dS/dt < D_{\max}$) are all satisfied, the TEO system converges to a **fixed point**:
+## State and parameters
 
-- Resource shares $x_i$ stabilize around $x_i \approx 1/N$ (equitable distribution)
-- Value orientations $\theta_i$ lock to a common phase $\psi$ (consensus)
-- Entropy production settles below $D_{\max}$ (sustainability)
+Let the model state be
 
-This is the **Chord equilibrium**: a stable, high-IP state where all governance constraints operate simultaneously. The basin of attraction volume measures how many initial conditions lead to this outcome — it shrinks as $\gamma$ decreases or $K$ drops below $K_c$.
+$$
+z=(x_1,\ldots,x_N,\theta_1,\ldots,\theta_N,\Omega,H).
+$$
 
-### 2. Limit Cycle Attractors — Oscillatory Regimes
+For fixed parameters $p$, write its dynamics as
 
-Near the Kuramoto critical coupling $K \approx K_c$, the system can enter **limit cycles**: periodic oscillations between partial synchronization and desynchronization. In civilizational terms, these correspond to recurring cycles of consensus and polarization.
+$$
+\dot z=F(z;p).
+$$
 
-The Kuramoto order parameter oscillates: $r(t) = r_0 + \epsilon \sin(\omega t)$. Resource allocation follows, as agents aligned with the momentary consensus gain fitness advantages that reverse when the phase shifts.
+The first analysis task is to find admissible equilibria $z^*$ satisfying
 
-These cycles are structurally stable — perturbations shift the phase but not the cycle. They represent a society (or agent ecology) that neither fully polarizes nor fully synchronizes, but perpetually oscillates between the two.
+$$
+F(z^*;p)=0
+$$
 
-### 3. Chaotic Attractors — Strange Attractors at the Edge
+under the simplex, phase, and substrate constraints.
 
-When the system operates near multiple simultaneous critical thresholds — $K \approx K_c$, $\gamma \approx 0$, and $dS/dt \approx D_{\max}$ — the TEO dynamics become **chaotic**: trajectories are bounded but aperiodic, with sensitive dependence on initial conditions.
+## Fixed points
 
-The maximum Lyapunov exponent $\lambda_{\max}$ characterizes this regime:
+Local stability of a differentiable equilibrium is assessed from the Jacobian
 
-$$\lambda_{\max} = \lim_{t \to \infty} \frac{1}{t} \ln \frac{|\delta \mathbf{z}(t)|}{|\delta \mathbf{z}(0)|}$$
+$$
+J(z^*;p)=\frac{\partial F}{\partial z}(z^*;p).
+$$
 
-where $\mathbf{z} = (x_1, \ldots, x_N, \theta_1, \ldots, \theta_N)$ is the full state vector.
+If all relevant eigenvalues have negative real parts after accounting for neutral phase
+symmetries and constraints, the equilibrium is locally asymptotically stable.
 
-- $\lambda_{\max} < 0$: fixed point (stable)
-- $\lambda_{\max} = 0$: limit cycle (neutral stability)
-- $\lambda_{\max} > 0$: chaos (exponential divergence of nearby trajectories)
+Positive regulation, coupling above a Kuramoto threshold, and bounded overshoot do not by
+themselves prove convergence to a unique equitable fixed point. That conclusion depends on
+the fitness functions, graph, frequency distribution, brake, boundary conditions, and
+initial state.
 
-This is the **Edge of Chaos** regime — and, per Claim 8 of the Emergence Manifesto, potentially where maximal information processing occurs.
+## Periodic and chaotic behaviour
 
----
+A periodic trace is not enough to establish a stable limit cycle. Evidence should include a
+closed orbit or Poincaré section, attraction from nearby initial states, and numerical
+convergence checks.
 
-## Basin of Attraction Structure
+Likewise, irregular output is not enough to establish chaos. A chaos claim should report,
+at minimum:
 
-The TEO phase space is partitioned into basins of attraction. Each basin maps a set of initial conditions to a specific long-term behavior. The **basin boundary** is a fractal in chaotic regimes — meaning that arbitrarily small differences in initial conditions can lead to qualitatively different outcomes.
+- a positive maximal Lyapunov exponent with convergence diagnostics;
+- sensitivity across nearby initial states;
+- bounded aperiodic trajectories over adequate horizons;
+- robustness to integration step and solver choice;
+- exclusion of transient or numerical artefacts.
 
-For the `teo-civilization` simulation, the key parameter axes are:
+No general “edge of chaos” intelligence conclusion follows from a positive exponent.
 
-| Parameter | Low | High |
-|:----------|:----|:-----|
-| $\gamma$ (homeostasis) | Monopoly basin | Equity basin |
-| $K$ (coupling) | Polarization basin | Consensus basin |
-| $D_{\max}$ (entropy budget) | Collapse basin | Sustainability basin |
+## Basins and the viable set
 
-The intersection of all three "high" basins — equity, consensus, sustainability — is the **viable corridor**. The TEO simulation demonstrates that this corridor exists but is narrow.
+A basin of attraction is defined only after an attractor is identified. Mapping a basin
+requires sampling initial states from a declared measure and classifying their long-run
+destinations with explicit tolerances.
 
----
+The viable corridor is instead an admissible region defined by selected constraint
+conditions. A viable set need not be an attractor basin, and a basin boundary need not be
+fractal. Those are separate properties to test.
 
-## Connection to Identity Persistence
+## Network topology
 
-In the Chord equilibrium (fixed point attractor), all governance constraints co-exist simultaneously: the agent ecology maintains structural resilience ($\lambda_2 > 0$), thermodynamic sustainability ($dS/dt < D_{\max}$), and cognitive persistence ($\text{IP} \to 1$).
+For an undirected communication graph, $\lambda_2>0$ establishes connectivity. It does not
+establish structural resilience under node loss. A Chord-style state would need its own
+commit-time composition test; it is not implied by the attractor type or Fiedler value.
 
-In the Arpeggio regime (limit cycle or chaotic attractor), identity components flicker in and out of the operative set, producing the time-multiplexed, unstable identity described in [lerchner-boundary.md](lerchner-boundary.md).
+## Concrete next experiment
 
-The attractor type thus determines whether a system *can* achieve the Chord state — it is a topological precondition, not merely a parameter choice.
+1. choose a small $N$ and freeze all model functions and parameters;
+2. solve or numerically locate equilibria;
+3. compute constrained Jacobian spectra;
+4. continue equilibria across $\gamma$, $K$, and throughput parameters;
+5. test for bifurcations;
+6. sample initial conditions and estimate basin volumes;
+7. only then test periodicity, chaos, or boundary geometry.
 
----
+The output should distinguish theorem, numerical observation, and solver-dependent
+diagnostic.
+
+## Current conclusion
+
+Attractor language is appropriate for TEO, but the original three-way classification was a
+hypothesis presented as a result. What survives is a clear mathematical work programme.
 
 ## Related
 
-- [Thermodynamics of Emergent Orchestration](../core/thermodynamics-of-orchestration.md) — the ODE system whose attractors are analyzed here
-- [Lerchner Boundary](lerchner-boundary.md) — the IP score as diagnostic for attractor type
-- [The Fractal Architecture of Emergence](../emergence/fractal-architecture-of-emergence.md) — why the same attractor types appear at every scale
+- [Thermodynamics of Emergent Orchestration](../core/thermodynamics-of-orchestration.md)
+- [The Viable Corridor](../../papers/viable-corridor.md)
+- [Lerchner Boundary](lerchner-boundary.md)
+- [Foundations Reconstruction](../core/mathematical-axioms.md)

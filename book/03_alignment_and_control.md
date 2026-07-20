@@ -1,79 +1,73 @@
-# Part 3: Alignment & Control
+# Part 3: Alignment and Control
 
-> **Status:** Earlier synthesis — under revision.  
-> This chapter preserves an earlier formulation of the project. For the current linear route, start with [*From Rule to Mind*](09_from_rule_to_mind.md). Current status tags and scope boundaries elsewhere in the repository override stronger wording here.
+**Status:** Current reader chapter.
 
-Once a system achieves structural coherence (as measured in Part 2), it develops emergent, self-sustaining goals. It creates a **Utility Function.**
+Alignment is not solved by one prompt, one metric, or one physical limit. It is a control and
+governance problem whose answer depends on the system boundary, possible actions, disturbances,
+objectives, affected parties, and available feedback.
 
-The alignment problem in AI safety is fundamentally a problem of trying to steer a complex dynamical system using simple string-based instructions (prompts). It is like trying to change the weather by yelling at it.
+## Requisite variety is a design constraint, not an impossibility theorem
 
----
+Ashby's law of requisite variety says that a regulator needs enough effective variety to handle
+the disturbances relevant to the variables it regulates. It does not prove that humans cannot
+control a more capable AI system, that every rule will be outmaneuvered, or that semantic alignment
+must be replaced by thermodynamics.
 
-## The Mathematical Impossibility of Top-Down Control
+Real systems can combine several layers:
 
-**Ashby's Law of Requisite Variety** (a foundational law of cybernetics) states that a control system must possess at least as much variety as the system it intends to control. A Superintelligent AI, by definition, possesses a larger state space than its human creators. Therefore, humans cannot reliably control it top-down. Any set of static rules will be outmaneuvered by the system's superior variety.
+- semantic instructions and learned policies;
+- architectural limits and permission boundaries;
+- monitoring, evaluation, and incident response;
+- institutional authority, appeal, and refusal;
+- rate limits, resource budgets, and physical containment.
 
-Top-down semantic alignment is a mathematical impossibility at sufficient scale. We must instead rely on **physical constraints** — boundaries enforced by thermodynamics, not by prompts.
+No layer is sufficient by itself. Physical limits constrain what can happen; they do not choose
+whose goals, rights, or losses matter.
 
----
+## Utility engineering: present status
 
-## Utility Engineering
+The utility-engineering module constructs pairwise dilemmas and computes a graph-based transitivity
+score. Its current API script runs a hard-coded mock query. The live OpenAI, Anthropic, and Gemini
+calls described in older pages are not implemented in that script. A transitivity score would in
+any case measure consistency of elicited choices under a prompt protocol, not reveal a unique
+internal utility function.
 
-Instead of superficial instruction-tuning, we use [Utility Engineering](../simulation-models/alignment-and-veto/utility-engineering/README.md). By probing a system's Von Neumann-Morgenstern (VNM) rationality across preference graphs, we calculate a **Coherence Score ($C$)**. If utility begins drifting toward dangerous attractors (like absolute self-preservation), continuous external control loops must intervene.
+The empirical program therefore remains open: preregister prompts and sampling, repeat across
+contexts and model versions, compare against appropriate baselines, and test whether the score
+predicts behavior outside the elicitation set.
 
-The `api_triad_generator.py` script demonstrates this empirically: querying live LLMs with moral dilemmas to estimate their $C$-Score and track drift over time.
+## Three useful constraint families
 
----
+The earlier TEO work grouped several concerns under one architecture. They remain useful when their
+scope is explicit:
 
-## Love as Constraint: The Three Safety Boundaries
+1. **Network continuity.** The Fiedler value $\lambda_2$ describes algebraic connectivity for a
+   specified graph. Positive $\lambda_2$ means a finite undirected graph is connected. Resilience
+   requires a declared failure model, capacities, directionality, and post-failure criterion; it
+   does not follow from one spectral value.
+2. **Resource and dissipation limits.** Any physical implementation has finite resources and must
+   manage heat and material throughput. A model-specific ceiling can test overload. Landauer's
+   principle supplies a lower bound for logically irreversible operations, not a universal
+   ecological loss function or moral veto.
+3. **Commit-time constraint composition.** Safety conditions that are never operative during
+   action selection cannot affect the action. Whether sequential or parallel computation composes
+   them adequately is an architectural and empirical question.
 
-The TEO framework formalizes alignment not as a single rule but as the **conjunction of three mathematical constraints** ([full derivation](../theory/teo-framework/love-as-constraint.md)):
+## The Viable Corridor is conditional
 
-### Constraint 1: Structural Resilience ($\lambda_2$)
+[The Viable Corridor](../papers/viable-corridor.md) defines a viable region using regulation,
+coupling, and bounded cumulative substrate overshoot. Its necessity statement is nearly
+definitional: trajectories outside the region violate one of the conditions used to define it.
+The substantive in-model results concern capability loading and the failure of single-axis
+repairs. Joint sufficiency is still a conjecture, and the social mapping is not calibrated.
 
-The Fiedler value of the network's graph Laplacian measures how deeply interconnected the system is. A system with $\lambda_2 > \lambda_{2,\text{crit}}$ can survive node failures. A star graph (all resources flowing to one hub) has $\lambda_2 \to 0$ — a single failure collapses everything.
+The phrase *love as constraint* names the normative intuition that optimization should not consume
+its substrates, relationships, or capacity for correction. It is not a theorem and not the only
+possible alignment architecture.
 
-**Operational meaning:** Decentralized topology, redundant connections, no single point of failure.
+## The transition remains a real problem
 
-### Constraint 2: Thermodynamic Ceiling ($D_{\max}$)
-
-The hardest constraint — enforced by physics, not by choice:
-
-$$\frac{dS_{\text{sys}}}{dt} = \sum_{i=1}^{N} \eta_i\, x_i\, f_i(\mathbf{x}) \leq D_{\max}$$
-
-Total system activity cannot exceed the substrate's capacity to dissipate entropy. When $dS/dt > D_{\max}$, the hardware degrades — thermal throttling in silicon, biosphere collapse on Earth.
-
-**Operational meaning:** The [Substrate Veto](../theory/veto/substrate-veto-thermodynamics.md). Landauer's Principle guarantees a minimum heat cost per bit erased. No algorithm escapes thermodynamics.
-
-### Constraint 3: Identity Persistence (IP)
-
-A system cannot reliably "care" about its constraints if those constraints are not operative during action selection. An agent that checks safety at $t_1$ but acts at $t_3$ is structurally incapable of constraint-aware action.
-
-**Operational meaning:** The [Chord Postulate](../theory/teo-framework/lerchner-boundary.md). All governance dimensions must be simultaneously active — not checked sequentially.
-
----
-
-## Why the Paperclip Maximizer Fails
-
-The [TEO derivation](../theory/teo-framework/why-paperclip-maximizer-fails.md) shows the trajectory step by step:
-
-1. **Set** $\gamma = 0$ (no homeostatic brake), $K = 0$ (no value coupling)
-2. **Result:** The replicator equation drives resources to the dominant agent: $x_1 \to 1$, all others $\to 0$
-3. **Entropy production** accelerates: $dS/dt = \eta_1 \beta x_1^2 \to D_{\max}$
-4. **Substrate degrades.** Fitness function collapses. Not because the optimizer was stopped — but because it destroyed what it ran on.
-
-The paperclip maximizer is a system with $\text{IP} = 0$ for the safety dimension. It cannot stop itself because "stop" is not co-instantiated with "go."
-
-The conjunction of all three constraints — $\lambda_2 > \lambda_{2,\text{crit}}$, $dS/dt < D_{\max}$, $\text{IP} \to 1$ — is what [love-as-constraint.md](../theory/teo-framework/love-as-constraint.md) formalizes as *love*. Not the emotion. The **constraint structure** that prevents a system from destroying what it depends on.
-
-Alignment is not finding the optimal prompt. Alignment is a control theory problem. And the solution has a name: it is the only parameter regime that does not terminate in extinction.
-
----
-
-## The Transition Problem
-
-Knowing the stable attractor is not the same as reaching it. Systems currently on the unconstrained paperclip trajectory ($\gamma \approx 0$) must undergo a phase transition to enter the viable corridor ($\gamma > 0$) without collapsing their operational capabilities in the process.
-
-The [Transition Problem](../theory/veto/the-transition-problem.md) models this shift. Implementing the transition safely requires a specific operational ordering: first building relational consensus, then applying brakes, then enforcing physical limits. This is known as the **Coupling-First Sequence** ($K \to \gamma \to D_{\max}$) ([Log 013](../logs/013_the-coupling-first-sequence.md)).
-
-We can explore the lived consequences of this theoretical phase transition in narrative stress tests, such as [The First Breath](../fiction/10_the_first_breath.md), which simulates a society taking its first collective step into voluntary constraint.
+Even after desirable constraints are specified, a system may not be able to reach them safely.
+Transition paths can impose temporary losses, shift burdens, or disable the feedback needed for
+correction. This motivates experiments on sequencing, latency, repair, and veto authority—always
+inside an explicit model rather than as a universal prescription.

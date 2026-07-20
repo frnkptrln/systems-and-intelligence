@@ -1,36 +1,23 @@
 """
 inverse_benchmark.py
 
-Trace → Generator: the inverse-reconstruction benchmark (v0).
+Trace → candidate process models: inverse-reconstruction benchmark (v0).
 
-WHY THIS EXISTS.  The project's spine (`theory/core/the-generator-question.md`)
-claims an asymmetry: running a generator forward is cheap, recovering the
-generator from its trace is structurally hard. The repository demonstrates the
-forward direction ~26 times and — until this file — demonstrated the inverse
-direction zero times. This benchmark turns the asymmetry from a claim into a
-measurable curve: each task gives the reconstructor N steps of trace and asks
-for the rule, with three dials — observation noise, partial observability, and
-trace length / coverage.
+WHY THIS EXISTS.  Each task gives the reconstructor N steps of trace and asks
+for compatible parameters or rules inside a declared model family. Three
+dials — observation noise, partial observability, and trace length / coverage
+— make the bounded identification problem measurable. No universal claim that
+forward execution is cheap or inverse reconstruction is hard is assumed.
 
 WHAT v0 DELIBERATELY CONCEDES.  In all three testbeds the *model family is
 known* to the reconstructor (it knows it is looking at a Kuramoto system, an
 elementary CA, a Boids flock — it only lacks the parameters / rule bits).
 This is the standard setting of system identification and SINDy-style sparse
-regression (Ljung 1999; Brunton, Proctor & Kutz 2016). The honest expectation,
-confirmed by the numbers below, is that recovery in this setting is CHEAP at
-full observability and low noise. That is not a refutation of the spine — it
-is its sharpening:
-
-    The hardness of trace→generator does not live in parameter fitting
-    within a known family. It lives in (a) the search over model families
-    (program induction / symbolic regression over open spaces), (b) partial
-    observability, (c) noise amplified by differentiation, and (d) coverage —
-    the trace may simply never exercise parts of the rule, leaving an
-    EQUIVALENCE CLASS of generators that no method, however clever, can
-    distinguish (Open Problem 11's "equivalence class of viable generators").
-
-The three testbeds measure (b), (c), (d) explicitly; (a) is the v1 frontier
-(a DSL-constrained program-induction testbed; see README).
+regression (Ljung 1999; Brunton, Proctor & Kutz 2016). Recovery in this
+setting is cheap at full observability and low noise. Cost and identifiability
+change with the model family, observation process, noise, algorithm, and
+coverage. A trace that never exercises part of a rule leaves a
+CONSISTENT-MODEL CLASS relative to those choices.
 
 TESTBEDS
 
@@ -45,8 +32,9 @@ TESTBEDS
      rules on a ring.  Inverse: tabulate neighborhood→successor with majority
      vote (exact recovery is trivial *given coverage*).  Dials: bit-flip noise;
      initial-condition entropy (a single-seed IC may never exercise some
-     neighborhoods → the unseen bits are unidentifiable IN PRINCIPLE, and the
-     consistent-generator class has size 2^unseen).  This testbed measures
+     neighborhoods → the unseen bits are unidentifiable under this
+     observation process, and the consistent-model class has size 2^unseen).
+     This testbed measures
      identifiability, not cleverness.
 
   3. BOIDS (agent-based, position-only observation).  Forward: cohesion/
@@ -59,7 +47,7 @@ TESTBEDS
 
 METRICS.  Parameter recovery: relative error on K / rule-bit accuracy /
 weight relative error.  Identifiability: observed-neighborhood fraction and
-log2 of the consistent-generator class size.  (v1 may add re-simulation
+log2 of the consistent-model class size.  (v1 may add re-simulation
 divergence as a behavioral metric.)
 
 Usage::
@@ -69,7 +57,8 @@ Usage::
     python inverse_benchmark.py --save -o DIR   # figure into DIR (default lab/tools/)
 
 Related:
-- theory/core/the-generator-question.md       (the spine; this is its first inverse artifact)
+- theory/core/the-generator-question.md       (legacy motivation)
+- theory/core/mathematical-axioms.md          (current process foundation)
 - theory/reference/open-problems.md           (Open Problem 11: bounded inverse reconstruction)
 - meta/research-alignment/related-work-map.md (SINDy / system identification / program induction anchors)
 - lab/experiments/trace_to_generator/         (the earlier inverse-prompting scaffold)
@@ -349,7 +338,7 @@ def run_boids_suite(n_seeds: int = 3) -> dict:
 
 def print_summary(kur: dict, ca: dict, boi: dict) -> None:
     print("=" * 70)
-    print("  INVERSE-RECONSTRUCTION BENCHMARK v0 — trace → generator")
+    print("  INVERSE-RECONSTRUCTION BENCHMARK v0 — bounded model recovery")
     print("=" * 70)
     print("\n[1] KURAMOTO — relative error on K (known family, least squares)")
     print(f"    vs noise (full observability): " +
@@ -364,14 +353,14 @@ def print_summary(kur: dict, ca: dict, boi: dict) -> None:
     print("    identifiability under single-seed IC (coverage, not noise):")
     for rule, d in ca["ident"].items():
         print(f"      rule {rule:>3}: {d['seen']}/8 neighborhoods observed → "
-              f"consistent-generator class size {d['class_size']}")
+              f"consistent-model class size {d['class_size']}")
     print("\n[3] BOIDS — relative error on (w_c, w_a, w_s) from positions only")
     print(f"    vs position noise:             " +
           "  ".join(f"σ={n:g}:{e:.1%}" for n, e in
                     zip(boi['noises'], boi['w_err'])))
     print("\nReading: with a KNOWN family, full observability and clean data,")
     print("recovery is cheap (the SINDy/system-identification regime). The")
-    print("hardness enters measurably through noise×differentiation (Boids),")
+    print("difficulty enters measurably through noise×differentiation (Boids),")
     print("partial observability (Kuramoto), and coverage (CA equivalence")
     print("classes) — and, beyond v0, through search over model families.")
 
@@ -440,7 +429,7 @@ def figure(kur: dict, ca: dict, boi: dict, outdir: Path) -> Path:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Inverse-reconstruction benchmark v0 (trace → generator).")
+        description="Inverse-reconstruction benchmark v0 (bounded model recovery).")
     parser.add_argument("--save", action="store_true",
                         help="write the benchmark figure.")
     parser.add_argument("-o", "--output", type=str, default=None,

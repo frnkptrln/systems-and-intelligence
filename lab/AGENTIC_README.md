@@ -85,7 +85,7 @@ The scientifically interesting output:
 |------|-----------|---------------|----------------|
 | A | High | Low | Agent has identity — but it's opaque to observer |
 | B | Low | High | **The Mirror Problem**: appears intentional but isn't |
-| C | High | High | Genuine alignment: identity is visible |
+| C | High | High | High on both selected toy measures |
 | D | Low | Low | Baseline mirror behavior |
 
 > **Case B is the Mirror Problem made measurable.**
@@ -138,9 +138,9 @@ First result (10 seeds), against the experiment's own predictions: **both advers
 python experiments/exp8_reflexive_depth.py
 ```
 
-The direct comparison is engineering-level: raw observation, a Kalman filter with fixed process noise, and an adaptive Kalman filter that estimates process noise from its innovations. After a volatility regime shift, the adaptive estimator beats the fixed estimator by **36%**; the now-misspecified fixed estimator is slightly worse than raw observation. Against a constant bias on the only observation channel, neither filtered estimator removes the bias.
+The direct comparison is engineering-level: raw observation, a Kalman filter with fixed process noise, and an adaptive Kalman filter that estimates process noise from its innovations. After a volatility regime shift, the adaptive estimator beats the fixed estimator by **36%**; the now-misspecified fixed estimator is slightly worse than raw observation. Against a constant observation bias, neither filtered estimator removes the bias because neither model includes a bias state.
 
-**Calibrated reading:** Exp8 measures adaptive self-estimation in one Gaussian tracking task. It does not isolate "reflexive depth" from the extra adaptive capability, measure Kegan stages, or establish a general Wall-3 result. The subject-object interpretation remains `[HYPOTHESIZED]`. Required controls include oracle and fixed-$Q$ baselines, a change-point baseline, an uninformative meta-signal, paired uncertainty intervals, and an external-reference intervention.
+**Calibrated reading:** Exp8 measures adaptive state estimation in one Gaussian tracking task. It does not isolate "reflexive depth" from the extra adaptive capability, measure Kegan stages, establish a general Wall-3 result, or prove sole-channel bias non-identifiability. The subject-object interpretation remains `[HYPOTHESIZED]`. Required controls include oracle and fixed-$Q$ baselines, a change-point baseline, an uninformative meta-signal, paired uncertainty intervals, an augmented bias estimator, known/unknown initial-state conditions, and an external-reference intervention.
 
 ## Extended SII Dashboard (4-Axis Radar)
 
@@ -148,7 +148,11 @@ The direct comparison is engineering-level: raw observation, a Kalman filter wit
 python dashboard/agentic_sii_dashboard.py
 ```
 
-Extends the repository's existing System Intelligence Index from 3 axes (P, R, A) to **4 axes: P / R / A / IP** (Identity Persistence). Note that while earlier versions of this test suite explored Δ-Kohärenz (Ω) as the fourth dimension, the formal theory standardizes on IP to measure simultaneous co-instantiation, keeping Ω as an independent temporal metric.
+Extends one selected System Intelligence Index instrument from 3 axes (P, R, A) to **4
+axes: P / R / A / IP** (Identity Persistence). This is a task-specific measurement choice,
+not a universal decomposition of intelligence or identity. Earlier versions explored
+Δ-Kohärenz (Ω) as the fourth dimension; the current suite keeps Ω as a separate temporal
+metric.
 
 ---
 
@@ -163,7 +167,11 @@ A separate provider layer at [`lab/providers/`](providers/README.md) prepares th
 - **`MockProvider`** — the default. Deterministic, fast, no API key.
 - **`AnthropicProvider`** — real mode. Calls the Anthropic Messages API via the standard library (no new dependency). Default model: `claude-sonnet-4-20250514`. Requires `ANTHROPIC_API_KEY` in the environment.
 
-The existing experiments still use the agents' built-in mock embeddings. Wiring those agents through the provider layer is a separate, intentional step — to be taken when real-mode runs become the goal. The infrastructure is ready; the empirical work is deferred. See [`providers/README.md`](providers/README.md) and [`theory/core/the-generator-question.md`](../theory/core/the-generator-question.md) for the spine context.
+The existing experiments still use the agents' built-in mock embeddings. Wiring those
+agents through the provider layer is a separate, intentional step — to be taken when
+real-mode runs become the goal. The infrastructure is ready; the empirical work is
+deferred. See [`providers/README.md`](providers/README.md) and the [Foundations
+Reconstruction](../theory/core/mathematical-axioms.md) for the current scope.
 
 ## Persistence Score (Pstrong)
 
@@ -179,7 +187,8 @@ A comparison function, `correlate_pstrong_with_delta_coherence`, returns the Pea
 python -m lab.metrics.persistence_scores  # minimal sanity demo
 ```
 
-Pstrong is one instrument among several. The project's spine is the [Generator Question](../theory/core/the-generator-question.md), not the persistence score.
+Pstrong is one instrument among several. It operationalizes one declared test family; it
+does not define identity.
 
 ## Open Questions
 

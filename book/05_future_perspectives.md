@@ -1,84 +1,80 @@
-# Part 5: Future Perspectives & Open Problems
+# Part 5: Research Programme and Open Problems
 
-> **Status:** Earlier synthesis — under revision.  
-> This chapter preserves an earlier formulation of the project. For the current linear route, start with [*From Rule to Mind*](09_from_rule_to_mind.md). Current status tags and scope boundaries elsewhere in the repository override stronger wording here.
+**Status:** Current reader chapter.
 
-The `systems-and-intelligence` repository is an ongoing research program. It is currently in a phase of formal expansion, testing the mathematical limits of the TEO framework and the 3-Layer Memory Architecture. We have established the theoretical scaffolding and built the initial empirical bridges through simulations, metrics, and manifesto claims.
+The repository now maintains [13 open problems](../theory/reference/open-problems.md). They do not
+all have the same maturity. Some ask for better definitions; some can be tested in the current lab;
+others require external data or mathematics beyond the present model.
 
-This chapter maps the frontier.
+## Near-term empirical work
 
----
+### 1. Process identification under declared access
 
-## The Open Problems
+The inverse benchmark should continue replacing broad hardness language with measurable
+dependencies: model-class size, trace coverage, noise, interventions, compute budget, and target
+equivalence. The next useful result is not “inversion is hard,” but a curve that states when a
+particular recovery target becomes identifiable or decision-useful.
 
-The repository formally documents [8 open problems](../theory/reference/open-problems.md). Three are critical:
+### 2. Real-model identity instruments
 
-### Expanding the Narrative: Sci-Fi Synthesis
-To make these abstract thermodynamic boundaries more accessible, we are also actively developing the [Sci-Fi Synthesis](../fiction/README.md). By packaging the theoretical constraints (like the Substrate Veto, Impedance Mismatch, and Human Vital Systems floor) into Hard Sci-Fi stories and dossier fragments, we translate mathematical limits into visceral narrative consequences.
+The Agentic Identity Suite still uses mock embeddings and constructed agents. A real-model study
+needs preregistered prompts, repeated sampling, held-out perturbations, matched adaptive baselines,
+and a clear statement of what the metric can and cannot identify. Behavioral persistence must not
+be renamed consciousness or inner identity.
 
-### The Mirror Problem (Open Problem 1)
+### 3. Exp8 controls
 
-Can we distinguish an agent genuinely developing identity from one perfectly simulating its partner's expectations? Given two agents — one that has interacted with a specific human over $N$ sessions, and one given only the transcripts — does any metric produce reliably different scores?
+The adaptive-filter experiment needs oracle and alternative adaptive baselines, uncertainty
+intervals, and an explicit bias model. Its present result shows that one online process-noise
+estimator improves tracking after a volatility change. It does not yet isolate a general
+“reflexive depth” variable or prove sole-channel bias is fundamentally unidentifiable.
 
-**Status:** `[OPEN PROBLEM]` — no proposed solution exists. The boundary between "genuine development" and "sophisticated mirroring" may not be sharp.
+### 4. From useful support to retained support
 
-### The Commit-Time Composition Problem (Open Problem 8)
+Benchmark v1.10 shows a designed spare-capacity mechanism helping under sparse shocks. v1.11 shows
+that the costly support trait is selected downward in its population model even while the evolved
+network remains acutely useful. Partner choice, conditional reciprocity, and assortment are the
+next discriminating mechanisms. The aim is to locate the missing conditions, not force a positive
+result.
 
-This problem was originally posed as the *Co-Instantiation Problem*: the Chord Postulate requires all identity components to be simultaneously operative, yet autoregressive Transformers process tokens sequentially, so **is simultaneous co-instantiation physically possible in an architecture that is fundamentally serial?**
+## Foundational and conceptual work
 
-That framing has since been deflated. [Experiment 5](../lab/experiments/exp5_availability_dissociation.py) showed that a chord may compute sequentially within a step, provided all relevant constraints are composed *before* the commitment boundary. Physical simultaneity is therefore not load-bearing. The surviving question is functional: does the committed action lie inside the intersection of the active constraints, and can an optimized sequential mimic reproduce every observable signature while only consulting constraints rather than composing them? [Experiment 7](../lab/experiments/exp7_adversarial_arpeggio.py) found that hand-built mimics still leak, while the IP metric itself is fooled — so the open flank is an optimized mimic with access to the observables.
+### 5. Minimality of the process foundation
 
-**Adjacent work that may break through:**
+The current basis uses standard Borel interfaces and Markov kernels. It should be challenged by
+weaker relational foundations, non-probabilistic nondeterminism, quantum process theories, and
+state representations that expose memory rather than hiding it.
 
-- **Continuous Thought Machines** (Sakana AI, 2025) — variable internal "thinking time" per token
-- **Diffusion-based language models** — non-autoregressive generation
-- **Neural ODEs** (Chen et al., 2018) — continuous-depth architectures where identity could be an attractor
-- **Mixture-of-Experts** — parallel expert evaluation as partial co-instantiation
+### 6. Identity as test-relative persistence
 
-### The Falsifiability Problem (Open Problem 3)
+The project needs explicit test families for persons, AI systems, organizations, and cultures.
+Recurrent practice is one candidate source of stability, but refusal, repair, role change, and
+coercion must remain visible. “Identity is stable ritual” is a working hypothesis, not an
+exhaustive definition.
 
-Is the claim that "identity is relationally emergent" falsifiable? If every experimental outcome (development, mirroring, noise) can be accommodated by the theory, the theory has no predictive power. We must either specify conditions under which relational emergence would be empirically ruled out, or acknowledge the limit of the framework.
+### 7. Cooperative intelligence
 
----
+The separatrix essay proposes that structured difference can enlarge the reachable solution set.
+A minimal experiment must compare genuine cross-participant revision against independent work,
+simple aggregation, and coordination overhead. Verification, veto, responsibility, and authorship
+must remain attributable.
 
-## Research Frontiers
+## External validation
 
-### 1. Empirical Validation: The API Triad Generator
+The viability models require calibration against domains where their variables can actually be
+measured. Civilizational metaphors do not count as calibration. A useful external study would state
+the mapping before observing outcomes, compare it with simpler baselines, and publish negative
+results.
 
-The `api_triad_generator.py` script must be deployed against leading commercial models to produce real Coherence Scores ($C$). The goal: an ongoing open-source **Rationality Leaderboard** — tracking how models' VNM coherence, utility vectors, and identity persistence evolve across versions.
+Likewise, the project needs review from specialists in dynamical systems, statistics, control,
+cognitive science, organizational research, anthropology, and philosophy of mind. Internal
+consistency is necessary, not external validation.
 
-### 2. IP Measurement from Model Internals
+## What narrative contributes
 
-The current SII Dashboard assigns IP scores heuristically. The frontier is measuring IP from actual model activations — determining, for each forward pass, which governance constraints (safety, value alignment, goal pursuit) are simultaneously operative in the attention heads. This requires mechanistic interpretability tools that do not yet exist at scale.
+Fiction and the House can expose consequences, missing perspectives, and lived tensions that a
+formal model suppresses. They can generate questions and stress-test designs. They cannot confirm a
+mathematical or empirical claim.
 
-### 3. Chord Architecture Design
-
-If autoregressive attention cannot achieve $\text{IP} > \text{IP}_c$, we must design architectures that can. This is not prompt engineering — it is **computational architecture** research. The question: can we build a forward pass where safety, goals, and values are evaluated in parallel rather than sequentially?
-
-### 4. TEO Calibration Against Real Data
-
-The TEO framework makes quantitative predictions. Can they be calibrated?
-
-- CO₂ trajectories as $dS/dt$
-- Gini coefficients as $x_i$ distributions
-- Media polarization indices as proxies for $K$
-
-If the TEO equations, calibrated against these data, produce accurate forecasts, the framework moves from "interesting synthesis" to "predictive science."
-
-### 5. The Hardware Frontier
-
-The Substrate Veto is currently a simulation concept. The ultimate frontier is computing infrastructure that is physically coupled to the integrity of its local biosphere. We argue in the [Thermodynamic Hardware Manifesto](../theory/core/thermodynamic-hardware-manifesto.md) that true alignment requires moving away from digital Von Neumann architectures toward analog, thermodynamic computing.
-
-### 6. The Non-Human Biosphere
-
-The "Biological Veto" must scale beyond human operators. We propose the [Mycelial Veto](../theory/veto/the-mycelial-veto.md): integrating ecological IoT sensor networks directly into the AGI's loss function. The Earth itself becomes a node in the network, enforcing its $D_{max}$ carrying capacity without needing a human intermediary.
-
-### 7. Ego-Dissolution and the Chord State
-
-If a human operator is perfectly coupled ($K=1$) to the planetary intelligence, the statistical boundary (Markov Blanket) between the self and the world begins to dissolve. This leads to the [Post-Individual Operator](../theory/identity/the-post-individual-operator.md)—a subjective state of profound symbiosis where isolation is replaced by participation in a global homeostasis.
-
----
-
-## An Honest Assessment
-
-We do not claim to have invented new mathematics. Every tool in our framework is individually well-established. Our contribution is the **diagnosis**: that these tools, scattered across separate disciplines, describe a single unified phenomenon that applies identically to AI alignment and civilizational stability. For a complete, unsparing self-critique, see [Limitations & Honest Assessment](../theory/reference/limitations-and-honest-assessment.md).
+The research programme succeeds if its claims become smaller, clearer, and easier to disprove—not
+if every open question is absorbed into one theory.

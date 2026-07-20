@@ -1,85 +1,71 @@
-# Limits of Formal Systems and the Question of Intelligence
+# Limits of Formal Systems and Bounded Intelligence
 
-*Why no formalism can fully capture the world – and why that is relevant to the question of intelligence.*
+*Status: connection note. The mathematical results below are real limits with precise hypotheses;
+they do not imply that intelligence needs an external consciousness, ignorance, or a constitutional
+veto.*
 
----
+## 1. Three Different Results
 
-## 1. Gödel, Turing, and the Uncomputable
+### Gödel incompleteness
 
-Three results from the 20th century marked the boundaries of formal systems:
+For a consistent, effectively axiomatized formal theory strong enough to represent elementary
+arithmetic, there are sentences the theory cannot prove; under standard additional conditions, the
+theory cannot prove its own consistency. This is a statement about specified formal theories. It
+does not mean that mathematics cannot justify anything about itself or that every practical system
+requires an outside observer.
 
-### Gödel's Incompleteness Theorems (1931)
+### The halting problem
 
-In any sufficiently powerful formal system, there are true statements that are **unprovable** within the system itself. No consistent system can prove its own consistency.
+No algorithm decides, for every program and input in a universal programming system, whether that
+program halts. Many restricted program classes remain decidable, and particular runs can often be
+analyzed. The theorem rules out a universal decider, not all useful prediction.
 
-What this means: Mathematics cannot fully justify itself. An *outside perspective* is always necessary.
+### Kolmogorov complexity
 
-### Turing's Halting Problem (1936)
+The exact shortest-program length \(K(x)\) is uncomputable in general. Compression algorithms still
+provide computable upper bounds, and model selection can use declared description languages. The
+result does not say that every structure is incompressible.
 
-There is no algorithm that can decide for every possible program whether it will eventually halt or run forever. Computability has **fundamental limits**, not just practical ones.
+These limits are related through computability, but they are not interchangeable.
 
-### Chaitin's Algorithmic Information Theory
+## 2. What Follows for Intelligent Systems
 
-The Kolmogorov complexity of a string – the length of its shortest program – is **itself uncomputable**. There are structures in mathematics that simply cannot be compressed in principle.
+An intelligent system implemented as a computable process cannot contain a general halting oracle.
+It also cannot compute exact Kolmogorov complexity for arbitrary strings. If it explicitly reasons
+inside a qualifying formal theory, that theory inherits the relevant incompleteness limits.
 
----
+Nothing in those theorems alone establishes:
 
-## 2. What Does This Mean for Intelligence?
+- consciousness or its absence;
+- a permanent prediction-error field in every environment;
+- the need for a human or biological outside perspective;
+- open-ended development;
+- the impossibility of reliable self-models in bounded domains;
+- a particular governance architecture.
 
-If we define intelligence as the ability to make predictions, recognize patterns, and solve problems, then formal limits do not stand in the way – but reveal something deeper:
+Those require additional definitions and empirical or mathematical arguments.
 
-### Intelligence Operates at the Edges
+## 3. The Repository Connection
 
-- A system that only does the computable is an *algorithm* – but not yet intelligent.
-- Intelligence manifests precisely where the system encounters something that *cannot* be precomputed, and nonetheless finds a viable answer.
+The reconstructed foundation studies typed stochastic processes, observation channels, and
+task-relative prediction. Its main epistemic limit is often ordinary underdetermination: two
+candidate process models can induce the same observed distribution. That fact does not require
+Gödel or the halting problem.
 
-In the simulations of this repository:
+Computability limits become relevant only after the model family and requested decision are
+specified. Examples include asking for a universal program-equivalence test or exact minimal
+description. Finite benchmark families can instead be exhaustively searched, as the repository's
+inverse-reconstruction benchmark demonstrates.
 
-| Simulation | Boundary Phenomenon |
-|:-----------|:--------------------|
-| **Prediction Error Field** | Local learners can never *exactly* learn the GoL rules – they approximate |
-| **Meta-Learning** | The meta-learner doesn't know *when* a regime shift comes – it must react |
-| **Self-Organized Criticality** | Individual avalanches are **fundamentally unpredictable**, but their distribution follows a law |
-| **Lenia** | Long-term dynamics are chaotic – prediction is only possible in the short term |
+## 4. Responsible Use
 
-### Intelligence is Not a Computation
+Whenever one of these theorems is invoked, state:
 
-The strongest interpretation: Intelligence cannot be formalized as a single algorithm. It is an **emergent systemic phenomenon** – an interplay of prediction, regulation, and adaptation (→ SII) that is not localized in any single component.
+1. the formal object to which it applies;
+2. the theorem's hypotheses;
+3. the exact conclusion transferred;
+4. what additional bridge is needed for the target domain.
 
-This does not mean intelligence is *mystical*. It means it might be better described as a **process** rather than a **state** – as something a system *does*, not something it *has*.
-
----
-
-## 3. Epistemic Humility
-
-Gödel's theorems do not teach resignation, but **epistemic humility**:
-
-- Every model is a **simplification**. The simulations in this repo are not reflections of reality – they are *tools for thinking*.
-- Every formalization has **blind spots**. The System Intelligence Index (SII) cannot measure emergence completely – but it can be useful.
-- Every theory is **provisional**. What we collect here are experiments and intuitions – not final answers.
-
-> "The universe is not only queerer than we suppose – it is queerer than we *can* suppose."  
-> — J. B. S. Haldane
-
----
-
-## 4. Open Questions
-
-- Can a formal system *measure* its own emergence? (Or is that a Gödel-esque circularity?)
-- Is consciousness *computable*? If not – what would be an appropriate level of description?
-- Is there a connection between **algorithmic complexity** and **system intelligence**?
-- What distinguishes a system that *acts intelligently* from one that is merely *complex*?
-
----
-
-## 5. Literature
-
-- Gödel, K. (1931). *On Formally Undecidable Propositions*.
-- Turing, A. M. (1936). *On Computable Numbers*.
-- Chaitin, G. (2005). *Meta Math! The Quest for Omega*.
-- Hofstadter, D. (1979). *Gödel, Escher, Bach*.
-- Penrose, R. (1989). *The Emperor's New Mind*.
-
----
-
-*This essay is intentionally not a closed argument, but an invitation to take the limits of the formalizable seriously – and at the same time to have the courage to model anyway.*
+If no such mapping can be supplied, Gödel, Turing, or Chaitin should remain context rather than
+evidence. The productive research question is not whether formal limits sound like human finitude,
+but which bounded tasks remain identifiable, decidable, and controllable under declared resources.

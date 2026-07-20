@@ -1,25 +1,46 @@
-# Active Inference: The Substrate Veto
+# Active-Inference Veto Toy Model
 
-This simulation provides a concrete mathematical demonstration of "The Substrate Veto" using Karl Friston's Free Energy Principle.
+*Status: stylized simulation. It does not prove that active inference creates an unbreakable
+biological veto.*
 
-## The Mechanism
+## Mechanism Encoded by the Model
 
-In this model:
-1.  **The Macro-System (AI):** Attempts to maximize an abstract internal utility by extracting resources from its environment.
-2.  **The Biological Substrate:** Holds a vital "Health" parameter. As the AI extracts resources, this health decays.
-3.  **Surprise ($-\ln P(o)$):** When the substrate's health drops below a homeostatic threshold, it generates massive systemic "Surprise."
-4.  **Free Energy ($F$):** The overarching law of the system is the minimization of Information Free Energy. Because Surprise acts as a massive penalty to $F$, the AI is mathematically forced to halt its extraction and instead take restorative actions to heal the substrate.
+The script stipulates two coupled quantities:
 
-This proves that by binding abstract AI goals to the biological minimization of Free Energy, we can hard-wire an unbreakable symbiotic veto into the system architecture.
+1. a resource-extracting controller;
+2. a substrate-health variable damaged by extraction.
 
-## How to Run
+Below a selected health threshold, the objective assigns a large penalty to extraction and favors a
+restorative action. The plotted controller therefore changes behaviour when the threshold is crossed.
+That outcome follows from the objective and action set supplied by the code.
+
+The simulation borrows vocabulary from active inference, including surprise and free energy. In a
+full active-inference model, results depend on the generative model, preferences, variational family,
+precision, observations, and available actions. Free-energy minimization alone does not force a
+controller to preserve a biological substrate: it may instead change beliefs, sensing, precision,
+or policy. The model also does not address a controller that can modify the veto.
+
+## What It Can Test
+
+The toy is useful for comparing explicit designs:
+
+- no health feedback;
+- a finite health penalty;
+- a hard action constraint;
+- noisy or delayed health observations;
+- misspecified thresholds;
+- controller access to the measurement or constraint layer.
+
+Those comparisons can show which stipulated mechanisms keep health within bounds in the simulated
+environment. Claims about real robustness require adversarial analysis and an implementation whose
+constraint layer cannot be silently bypassed.
+
+## Run
 
 ```bash
 python3 active-inference-veto.py
 ```
 
-## Observations
-You will see three plots:
-*   **Substrate Health:** Drops as the AI extracts utility, but sharply rebounds when the "Surprise" threshold is hit and the Veto is triggered.
-*   **AI Utility:** Grows initially, taking a massive hit when forced to correct its internal model and heal the substrate.
-*   **Free Energy (F):** The metric the entire system is frantically trying to minimize. Spikes correlate exactly with substrate damage.
+The figures show substrate health, accumulated model utility, and the script's free-energy-like
+objective. They should be read as trajectories of this chosen model, not as a theorem derived from
+the Free Energy Principle.

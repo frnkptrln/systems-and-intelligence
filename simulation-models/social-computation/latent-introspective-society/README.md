@@ -1,8 +1,10 @@
 # 🧠 Cognitive Division of Labor (Latent vs. Introspective Agents)
 
-This simulation demonstrates the architectural implications of the [Asimov / Anthropic Parodox](../../../theory/identity/agentic-society-principles.md) in Multi-Agent Systems.
+This simulation explores one synthetic division-of-labor design connected to the [Agentic Society
+hypothesis](../../../theory/identity/agentic-society-principles.md).
 
-It posits that an efficient agentic society cannot consist solely of "omniscient, hyper-reflective" agents, nor solely of "blind, reactive" agents. Total omniscience causes cognitive paralysis (The Last Answer), while total reactivity causes chaotic inefficiency.
+> **Status:** The result follows from assigned movement delays, visibility, and pheromone rules. It
+> does not show that omniscience causes paralysis or that heterogeneous teams are always superior.
 
 ## The Simulation
 

@@ -1,8 +1,15 @@
 # Part 7: Cities as Metabolic Organisms
 
-Cities in this repository are not metaphors pretending to be biology. They are multi-layer control systems with throughput, dissipation, memory, and failure cascades.
+> **Status:** Functional analogy and research programme, not a claim that cities are literal
+> organisms or share one biological dynamics.
 
-A city metabolizes energy, food, trust, and attention. It scars. It forgets. It develops compensation patterns that later become pathology.
+Cities can be studied as multi-layer control systems with throughput, dissipation, institutional
+memory, and failure cascades. The metabolic vocabulary is useful only where each term is connected
+to a measurable urban process and compared with alternative descriptions.
+
+A city moves and transforms energy, food, materials, information, trust, and attention. It can
+retain institutional scars and compensation patterns that later become maladaptive. Calling these
+processes metabolic is a hypothesis-generating analogy, not a biological classification.
 
 ## Four functional layers
 1. **Circulation:** power, logistics, transit, data pathways.  

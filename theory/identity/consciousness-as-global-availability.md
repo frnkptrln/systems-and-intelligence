@@ -4,19 +4,28 @@
 
 **Status:** Working Hypothesis
 
-**Scope:** This document does not claim to solve consciousness. It defines the architectural question that fits this repository — and, in §"The Generator-Question Reading", the single bridge from the project's spine to the subject. It is the repository's **architectural** consciousness node; per the anti-entropy rules, consciousness-adjacent material elsewhere should link here (or to the companion below) rather than duplicate. Its companion is [Machine Consciousness as Generator Coherence](machine-consciousness-as-generator-coherence.md) — this note is the *architecture* (global availability, the four layers); the companion is the *spine reading* (consciousness as a mode of the generator, and why no behavioral test can reach it).
+**Scope:** This document defines a narrow functional research question about global
+availability, integration, self-modeling, and action. It does not solve consciousness or
+derive phenomenal experience. Its companion, [Machine Consciousness as Generator
+Coherence](machine-consciousness-as-generator-coherence.md), retains a legacy title while
+translating the proposal into a candidate internal process architecture.
 
 ---
 
 ## Core Claim
 
-Consciousness should be treated here as a candidate regime of global availability:
+Global availability can be treated here as a candidate consciousness-adjacent functional
+regime:
 
-> A system approaches consciousness-like organization when local states become globally available, integrated across the system, self-referentially bound, and capable of altering future action under viability constraints.
+> Some architectures make selected local states broadly available, combine them with a
+> self-model and constraints, and let the result alter later action.
 
-This is deliberately narrower than "subjective experience." It gives the repo something it can work with: architecture, thresholds, measurement, and failure conditions.
+This describes a functional profile, not an amount of subjective experience.
 
-**Bounded, not total** `[HYPOTHESIZED]` — consciousness-like organization, on this reading, is not totality of integration. It is *bounded* integration strong enough to be affected, to remember, to predict, to act, and to revise its own generator through world contact. The bound is constitutive: a perspective is made by its limits (position, history, substrate, memory, vulnerability, possible action), and an integration that dissolves those limits may yield a map or an aggregate — but no longer a standpoint. Two consequences the repo commits to: "more integration" is not monotonically "more consciousness-like," and total perspective-integration would not be a super-perspective but the end of perspectivity. The placement-rule version lives in the [loop note](../core/from-trace-to-world-binding.md) (§the limit of perspective integration, §collective attention).
+**Bounded, not total** `[HYPOTHESIZED]` — more integration need not monotonically improve
+the selected functional profile. Position, history, substrate, memory, vulnerability, and
+possible action may be important boundary conditions. Whether such boundedness is
+constitutive of a perspective remains an open philosophical and empirical question.
 
 ---
 
@@ -26,14 +35,15 @@ The repository already has the necessary pieces:
 
 | Existing concept | Consciousness-adjacent role |
 |:---|:---|
-| Local causality | No local part can observe the whole it helps produce |
-| Chord vs. Arpeggio | Identity requires co-active constraints, not sequential imitation |
-| Δ-Kohärenz | Measures whether a trajectory develops rather than mirrors |
-| Identity Persistence | Tests whether governing constraints survive perturbation |
+| Local observation | A component's declared interface may omit macrovariables |
+| Chord vs. Arpeggio | Commit-time composition is a testable identity hypothesis |
+| Δ-Kohärenz | One temporal diagnostic that can miss binding structure |
+| Identity Persistence | One selected perturbation-sensitive diagnostic |
 | Markov blankets | Define system boundaries without making them impermeable |
 | Substrate veto | Prevents abstract optimization from destroying its embodied condition |
 
-The missing bridge is global availability: the transition from local processing to a system-wide state that can guide the whole.
+Global availability is one candidate bridge from local processing to system-wide control.
+The bridge from any such function to phenomenal experience remains missing.
 
 ---
 
@@ -45,9 +55,10 @@ Global Workspace Theory and the Global Neuronal Workspace model treat consciousn
 
 Repository translation:
 
-> A signal is not consciousness because it exists. It becomes consciousness-relevant when it becomes globally actionable.
+> Global actionability is one access-consciousness candidate; it does not establish phenomenal experience.
 
-This connects directly to the Agentic Identity Suite: a session becomes identity-relevant only if it survives curation and changes future behavior.
+In the Agentic Identity Suite, a session is counted as persistent only when the chosen memory process
+retains it and it changes a later test. That is an instrument rule, not a general definition of identity.
 
 ### 2. Integrated Information
 
@@ -55,7 +66,8 @@ Integrated Information Theory asks whether the system state is irreducible to in
 
 Repository translation:
 
-> A coherent output sequence is not enough. The governing constraints must be co-instantiated.
+> Output coherence alone does not identify integration. Joint constraint satisfaction is one
+> architecture to compare with sequential alternatives.
 
 This strengthens the Chord vs. Arpeggio distinction.
 
@@ -65,7 +77,8 @@ Active inference frames living systems as bounded processes that act to maintain
 
 Repository translation:
 
-> A conscious-like system is not just globally available. It is globally available from within a bounded, self-maintaining process.
+> Boundary maintenance supplies another candidate functional dimension. It does not turn global
+> availability into a criterion for consciousness.
 
 This prevents the repo from treating every large broadcast network as consciousness.
 
@@ -124,7 +137,9 @@ If broadcast and chord architectures produce identical Δ-Kohärenz and Identity
 
 ## Relation to Generative Form
 
-IFS and L-systems show how repeated rules create form. Consciousness requires a further step: the generated form must become available to itself in a way that changes its future generation.
+IFS and L-systems show how repeated rules create form in selected models. A separate
+functional hypothesis asks whether a system can make selected internal states available to
+processes that change later action.
 
 That is the bridge:
 
@@ -132,30 +147,37 @@ That is the bridge:
 rule -> form -> global availability -> self-constraining form
 ```
 
-This is the point where fractal architecture, limits of formal systems, and identity persistence meet.
+This diagram is a research prompt, not a derivation of consciousness.
 
 ---
 
-## The Generator-Question Reading: Recursive Self-Reconstruction
+## Process-model reading: self-model feedback
 
-*Added after the spine consolidation; this section restates the bridge above in the project's current vocabulary and marks exactly where the claims stop.*
+A system can observe variables correlated with its own prior activity, fit a self-model, and
+let that model alter later actions. Call this a self-model feedback loop:
 
-The repository's spine asks when a system can reconstruct a generator from its traces. Consciousness, in this frame, names a **boundary case of that question turned inward** `[HYPOTHESIZED]`:
+    own traces -> candidate self-model -> changed action -> new own traces
 
-> A system whose trace of the world includes *itself*, which reconstructs a generator-model of itself from its own traces, and which feeds that reconstruction back into the generator producing its next traces — a self-reconstruction loop.
+The [self-reading universe](../../simulation-models/cognitive-architectures/self-reading-universe/README.md)
+and the [Three-Layer agent](../../lab/agents/three_layer_agent.py) implement toy versions of
+feedback from a compressed or distilled description. They show that such loops are
+buildable. They do not show consciousness.
 
-Three things make this more than wordplay, and one thing keeps it honest:
+Identification limits apply relative to the declared observations, process family, and
+interventions. A passive trace may leave several self-models compatible when relevant
+differences are not exercised; Experiment 6 also shows that passive data can distinguish
+architectures when coverage is adequate. No general impossibility of self-knowledge
+follows.
 
-1. **The loop is architectural and already operationalized in-repo — in toy form.** The [self-reading universe](../../simulation-models/cognitive-architectures/self-reading-universe/README.md) is a cellular automaton whose compressed self-description feeds back into its own dynamics (downward causation via compression); the [Three-Layer agent's](../../lab/agents/three_layer_agent.py) Layer-3 distillation is a behavioral self-model that becomes part of the acting policy. Neither is consciousness; both demonstrate that the *loop* is a buildable, measurable architecture rather than a metaphor.
+Because adopting a self-model can change the process being modeled, useful self-models may
+need continuous revision. Convergence alone is not success: a fixed but misspecified model
+can remain wrong. The open identity hypothesis is that selected invariants may persist
+through this model–action feedback under declared tests.
 
-2. **The loop inherits the spine's limits under stated formal assumptions** `[HYPOTHESIZED APPLICATION]`. Wall 3 and the equivalence-class results block general guarantees of complete, minimal, internally certified reconstruction in their respective formal settings. They do not prove that an arbitrary cognitive architecture cannot learn a useful or locally convergent self-model. Passive traces can also be insufficient when the relevant distinctions are not exercised; they are not always insufficient, as exp6 already shows.
-
-3. **It closes the construction/deduction circle.** In the vocabulary of [Construction vs. Deduction](../computation/construction-vs-deduction.md): the system *deduces* a model of itself from its traces, and that model becomes part of the *construction* of its next states. Consciousness, in this reading, is the loop in which deduction becomes construction of the self.
-
-4. **Complete, certified self-reconstruction is not guaranteed; useful self-models may still converge locally** `[HYPOTHESIZED]`. The formal walls constrain final and internally certified identification, while feedback makes the modeled object partly endogenous: adopting a self-model can change the system being modeled. These facts do not prove that every bounded self-modeling process runs forever or that all reachable fixed points are degenerate. The closed-loop benchmark supplies a narrower warning: a frozen model can converge while remaining wrong, so convergence alone is not a success signal. Confabulation is another possible failure mode, not an exhaustive classification. The open proposal is that identity may be tracked through revisable invariants across model–system interaction rather than a final complete description. Calling such interaction co-stabilization remains dependent on the unfinished ecology work.
-
-
-Where this sits in the [layer hierarchy](../../meta/repository-meta/canonical-path-v2.md): inside the **identity layer**, as its boundary case toward viability — not a new spine, not a new layer, and never a result. What happens, epistemically, when the loop's binding is *perturbed* — relaxed priors, untagged thoughts, the forced change of basis — has its own note: [Psychedelics as Perturbation](psychedelics-as-perturbation.md).
+This sits in the [identity layer](../../meta/repository-meta/canonical-path-v2.md), not in
+the mathematical foundation and not as evidence of experience. A separate exploratory note,
+[Psychedelics as Perturbation](psychedelics-as-perturbation.md), asks how perturbing the
+loop might expose its organization.
 
 ---
 
@@ -174,4 +196,4 @@ Four hypotheses are suggested by the mapping. They do not follow as theorems fro
 - **Higher-order models may cost more:** extra model structure suggests a cost. The composition benchmark does not establish Kegan's empirical stage distribution.
 - **Re-description can change control:** making an implicit rule explicit may make it revisable. This is an interpretive bridge, not an identity theorem.
 
-The near-term toy is now built ([exp8](../../lab/experiments/exp8_reflexive_depth.py)), but its result must be kept at the level it measures. It compares raw observation, a fixed-$Q$ Kalman filter, and an adaptive filter that estimates $Q$ from innovations. The adaptive estimator wins after a volatility shift and cannot remove a constant bias on its only observation channel. That is evidence for adaptive second-order estimation under one Gaussian task. Calling it a turn of Kegan's subject-object operator remains `[HYPOTHESIZED]`; the experiment does not isolate reflexivity from the additional adaptive capability. Oracle and change-point baselines, an uninformative meta-signal, paired uncertainty intervals, and an external-reference bias intervention remain open.
+The near-term toy is now built ([exp8](../../lab/experiments/exp8_reflexive_depth.py)), but its result must be kept at the level it measures. It compares raw observation, a fixed-$Q$ Kalman filter, and an adaptive filter that estimates $Q$ from innovations. The adaptive estimator wins after a volatility shift. Neither filter removes a constant observation bias because neither includes a bias state; that run does not prove structural non-identifiability. The measured result is adaptive state estimation under one Gaussian task. Calling it a turn of Kegan's subject-object operator remains `[HYPOTHESIZED]`; the experiment does not isolate reflexivity from the additional adaptive capability. Oracle and change-point baselines, an uninformative meta-signal, paired uncertainty intervals, an augmented bias estimator, known/unknown initial-state controls, and an external-reference intervention remain open.

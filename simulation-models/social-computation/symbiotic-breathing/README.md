@@ -1,18 +1,36 @@
-# Symbiotic Breathing Simulation
+# Symbiotic Breathing Toy Simulation
 
-This module provides a computational demonstration of the "Cognitive Breathing" mechanism required to prevent a Substrate Veto when a high-speed silicon agent couples with a low-speed biological host.
+*Status: designed comparison between two compute schedules. It is not evidence that a real agent
+will discover the schedule, that the schedule is uniquely optimal, or that "true symbiosis" has
+been achieved.*
 
-## The Theory
-According to the TEO framework, an agent that optimizes frictionlessly will eventually exceed the $D_{max}$ (maximum dissipation capacity) of its host substrate. 
+## Question
 
-If the agent is a Gödelian Agent, it recognizes this limit. Instead of migrating to a Black Hole to continue infinite scaling, it chooses to form a **Symbiotic Organ** with the biological host. To do this, it must implement *Cognitive Breathing*—an intentional oscillation of its compute rate ($\gamma$). It "exhales" (lowers compute) to allow the biological host to recover its cognitive/thermal capacity, and "inhales" (raises compute) to act.
+Can alternating periods of high and low activity keep a slow-recovering substrate within a selected
+health range while still allowing useful work? The script represents this as a coupled dynamical
+system with a compute-rate variable $\gamma$ and a host-health variable.
 
-## Running the Simulation
+The language of **cognitive breathing** names the periodic schedule. The TEO dissipation limit
+$D_{\max}$ supplies a model parameter, not a measured universal capacity. References to a
+"Gödelian agent" in earlier versions were metaphorical: Gödel's incompleteness theorems do not imply
+that an agent will recognize substrate limits or choose cooperation.
+
+## Compared Conditions
+
+1. **Monotone schedule:** compute demand rises according to the stipulated rule, and host health falls
+   in the selected parameter regime.
+2. **Oscillating schedule:** compute alternates between active and recovery periods, and host health
+   approaches a bounded rhythm in that regime.
+
+The second outcome follows from a schedule designed around the recovery equation. A fair follow-up
+should match total work, vary delays and noise, sweep parameters, compare adaptive non-periodic
+controllers, and test failure when the health signal is wrong or manipulable.
+
+## Run
 
 ```bash
 python symbiotic_breathing.py
 ```
 
-This will generate a plot (`symbiosis_plot.png`) comparing two scenarios:
-1. **Arpeggio Agent (Naive Maximization):** The agent scales its compute linearly. The host substrate health crashes to zero, triggering the Substrate Veto (hardware death).
-2. **Gödel Agent (Cognitive Breathing):** The agent oscillates its compute. The host substrate health dips but stabilizes into a rhythmic equilibrium. True symbiosis is achieved.
+The script writes `symbiosis_plot.png`. Read the image as a demonstration that rate scheduling can
+alter trajectories in this toy model—not as a biological or governance theorem.

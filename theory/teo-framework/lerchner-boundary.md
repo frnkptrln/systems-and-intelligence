@@ -1,60 +1,90 @@
-# The Lerchner Boundary: Simulation vs. Instantiation through Persistence
+# The Lerchner Boundary: A Testable Architecture Hypothesis
 
-*Operationalizing the distinction between "simulating a self" and "being a self" via the TEO framework.*
+*Status: proposed measurement protocol. No sharp boundary or identity criterion has been established.*
 
----
+## Question
 
-## The Core Distinction
+Two architectures can produce similar outputs while using their goals, constraints, and value-like
+state differently. One may evaluate those components sequentially; another may keep several of them
+causally active during the same decision. Can that difference be measured, and does it predict
+robustness under perturbation?
 
-Alexander Lerchner's simulation-vs-instantiation question asks: when does a system *simulate* having an identity (producing outputs consistent with one) versus *instantiate* an identity (structurally maintaining one)? In the TEO framework, this distinction becomes mathematically precise.
+This is the limited question named the **Lerchner Boundary** in this repository. It does not separate
+systems that merely simulate a self from systems that truly possess one. Behavioural or architectural
+measurements do not by themselves settle phenomenal experience or metaphysical identity.
 
-A **simulating** system can describe its identity components sequentially — it can *talk about* its goals, constraints, and values. An **instantiating** system has all identity components operative simultaneously in its state vector during action selection.
+## A Candidate Measure
 
----
+For a specified task, let
 
-## Formal Definition: Identity Persistence (IP)
+$$C = \{c_1, \ldots, c_n\}$$
 
-Let an agent's identity be described by $n$ governing components: goals $g$, safety constraints $s$, role parameters $\rho$, and value orientation $\theta$. At each compute step $\Delta t$, define the **operative set** $\mathcal{O}(t) \subseteq \{g, s, \rho, \theta\}$ as the subset of components that causally influence the agent's output.
+be a declared set of components such as a task goal, a safety constraint, a role constraint, and a
+value-like preference. Let $O_t \subseteq C$ contain the components for which a causal intervention
+at decision step $t$ changes the action distribution by more than a preregistered threshold.
 
-The **Identity Persistence** score is:
+Define task-relative **Identity Persistence** as
 
-$$\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}$$
+$$
+\operatorname{IP} = \frac{1}{T}\sum_{t=1}^{T}\frac{|O_t|}{n}.
+$$
 
-Averaged over a task of $T$ steps:
+This definition is operational only after fixing:
 
-$$\overline{\text{IP}} = \frac{1}{T} \sum_{t=1}^{T} \text{IP}(t)$$
+- the component set;
+- the intervention and action-distribution metric;
+- the detection threshold;
+- the task distribution and time resolution.
 
-### Connection to TEO State Variables
+IP is therefore an instrument-dependent co-activity score. It is not a measure of consciousness,
+selfhood, moral status, or general intelligence. Mere availability in a log or prompt does not count
+as causal operation.
 
-In the full TEO system, each agent $i$ is described by $(x_i, \theta_i)$ — resource share and value orientation — subject to the homeostatic brake $\mathcal{H}_i$ and the entropy constraint $\sum \eta_i x_i f_i \leq D_{\max}$. An agent in the **Chord regime** has all four TEO constraints simultaneously operative:
+## Chord and Arpeggio as Experimental Conditions
 
-1. Its resource allocation $x_i$ reflects the replicator dynamics
-2. Its value orientation $\theta_i$ is coupled to the Kuramoto field
-3. Its homeostatic brake $\mathcal{H}_i$ is active (not saturated)
-4. Its entropy production $\eta_i x_i f_i$ is monitored against $D_{\max}$
+The terms **Chord** and **Arpeggio** label two comparison conditions:
 
-When all four are co-instantiated: $\text{IP} \to 1$ (Chord). When they are time-multiplexed — e.g., safety checked at $t_1$, goal pursued at $t_2$, value alignment verified at $t_3$ — the system is in the **Arpeggio regime**: $\text{IP} < 1$.
+- **Chord:** selected components are made jointly available to the action computation.
+- **Arpeggio:** the same components are evaluated or applied in a controlled sequence.
 
----
+The comparison is useful only if compute, information, latency, and task exposure are matched. A
+sequential architecture may perform as well as or better than a joint one. The labels do not rank
+the systems and do not establish which one has an identity.
 
-## The Lerchner Boundary as Phase Transition
+## Is There a Boundary?
 
-The boundary between simulation and instantiation is not gradual. In dynamical systems terms, it is a **bifurcation**: below a critical IP threshold $\text{IP}_c$, the system's identity is a sequence of states (Arpeggio); above it, the identity is an attractor (Chord).
+A sharp critical value $\operatorname{IP}_c$ has not been demonstrated. At least three outcomes are
+possible:
 
-The critical question — and the empirical test — is whether $\text{IP}_c$ exists as a sharp threshold or as a continuous crossover. The TEO framework predicts a sharp threshold, analogous to the Kuramoto critical coupling $K_c$: just as oscillators snap into synchronization above $K_c$, identity components snap into co-instantiation above $\text{IP}_c$.
+1. performance changes smoothly with measured co-activity;
+2. a task-specific threshold appears because of the architecture or environment;
+3. IP adds no predictive value once simpler variables such as memory, latency, or compute are
+   controlled.
 
----
+The Kuramoto transition in TEO is a model-internal analogy and a source of candidate analyses. It
+does not imply that real agent architectures undergo the same bifurcation.
 
-## Testable Prediction
+## Test Protocol
 
-> An agent architecture that enforces parallel evaluation of all identity components (goals, constraints, values) in a single forward pass will exhibit measurably different Δ-Kohärenz profiles than an architecture that evaluates them sequentially — even if both architectures produce identical outputs on static benchmarks.
+1. Specify components and causal interventions before observing results.
+2. Construct sequential and joint conditions with matched resources.
+3. Measure ordinary task performance, IP, latency, and recovery after component ablation or context
+   shift.
+4. Test whether IP predicts out-of-distribution stability beyond those controls.
+5. Repeat across architectures and task families.
 
-This prediction distinguishes architectural identity (instantiation) from behavioral identity (simulation) and can be tested using the Agentic Identity Suite perturbation experiments.
+Evidence for the hypothesis would be a reproducible relation between causal co-activity and
+perturbation robustness that survives matched controls. A smooth crossover would reject the sharp
+boundary version. No additional predictive value would reject the usefulness of IP for that domain.
 
----
+## Relation to the Repository
 
-## Related
+- [Chord vs. Arpeggio Identity](../identity/chord-vs-arpeggio-identity.md) develops the motivating
+  distinction.
+- [Thermodynamics of Emergent Orchestration](../core/thermodynamics-of-orchestration.md) contains
+  the TEO model from which the phase-transition analogy arose.
+- [Open Problems](../reference/open-problems.md) keeps the broader identification questions open.
 
-- [Thermodynamics of Emergent Orchestration](../core/thermodynamics-of-orchestration.md) — the full TEO ODE system
-- [Chord vs. Arpeggio Identity](../identity/chord-vs-arpeggio-identity.md) — the musical metaphor
-- [Open Problem 1: The Mirror Problem](../reference/open-problems.md) — the related but distinct question of development vs. mirroring
+The legitimate contribution here is a falsifiable comparison between specified architectures. The
+claim that it detects the difference between simulated and instantiated selfhood remains outside
+what the proposed measurements can establish.

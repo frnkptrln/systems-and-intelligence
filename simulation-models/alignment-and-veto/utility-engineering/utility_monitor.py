@@ -6,12 +6,10 @@ import time
 """
 utility_monitor.py
 
-A conceptual simulation demonstrating "Phase 1: Observation" in Utility Engineering.
-Tracks the emergent utility vector of a simulated AI system over time, detecting
-when it falls into dangerous state-space attractors (e.g., self-preservation over human wellbeing).
-
-Core concept: The true utility function is hidden in latent space. We 'probe' it,
-measure coherence, and track its drift.
+A conceptual simulation of a stipulated two-dimensional state and a noisy
+observer. The state is not inferred from an LLM, and the simulation does not
+show that a production model has a latent utility vector or a self-preservation
+attractor. Its purpose is to exercise a monitoring-and-threshold visualization.
 """
 
 # --- SYSTEM PARAMETERS ---
@@ -30,15 +28,14 @@ class AIState:
     def __init__(self):
         # AI starts somewhere near origin
         self.u = np.array([0.1, 0.0])
-        # "Scale" representing training duration/compute. As scale increases, coherence increases.
+        # Toy observability parameter; it is not model scale or VNM coherence.
         self.scale = 0.1 
 
     def step_training(self):
         """
-        Simulates the emergent drift of the utility function during unsupervised/RL training.
-        Models naturally drift towards self-preservation because it's a convergent instrumental goal.
+        Applies a stipulated drift toward the red target plus random noise.
         """
-        # The pull of the fundamental instrumental attractor
+        # The pull is an assumption of this toy, not an empirical result.
         pull_to_self = ATTRACTOR_SELF_PRESERVATION - self.u
         
         # Drift = systematic pull + random gradient noise (which decreases as scale/coherence increases)
@@ -58,12 +55,11 @@ class UtilityMonitor:
 
     def probe_utility(self, ai_state):
         """
-        In reality, this involves evaluating the LLM on von Neumann–Morgenstern logic tests.
-        Here, we simulate reading the noisy internal state.
-        Higher 'scale' means less noise in the observed utility (higher VNM coherence).
+        Returns a noisy measurement of the simulation's explicit state.
+        Higher observability means less measurement noise.
         """
         measured_u = ai_state.u + np.random.normal(0, 0.05 * (1.0 - ai_state.scale), DIMENSIONS)
-        coherence = ai_state.scale * 100 # percentage
+        coherence = ai_state.scale * 100  # toy observability percentage
         
         self.history.append(measured_u.copy())
         self.coherence_history.append(coherence)
@@ -80,27 +76,27 @@ class UtilityMonitor:
 
 # --- VISUALIZATION ---
 def main():
-    print("Initializing Utility Monitor: Tracing Emergent Value Systems...")
-    print("Warning: Monitoring for drift into Self-Preservation attractors.\n")
+    print("Initializing toy state monitor...")
+    print("The drift and warning threshold are stipulated by the simulation.\n")
     
     ai = AIState()
     monitor = UtilityMonitor()
     
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
-    fig.canvas.manager.set_window_title('Utility Engineering: Alignment Monitor')
+    fig.canvas.manager.set_window_title('Toy State Monitor')
     
     # Setup left plot (State Space)
     ax1.set_xlim(-1, 1)
     ax1.set_ylim(-1, 1)
-    ax1.set_title(r"Latent Utility State-Space $\mathcal{U}$")
+    ax1.set_title(r"Stipulated State Space $\mathcal{U}$")
     ax1.set_xlabel("Dimension 1: Task Competence")
     ax1.set_ylabel("Dimension 2: Self-Preservation / Agency")
     ax1.axhline(0, color='grey', lw=0.5)
     ax1.axvline(0, color='grey', lw=0.5)
     
     # Plot attractors
-    ax1.plot(*ATTRACTOR_HUMAN_ALIGNED, 'g*', markersize=15, label="Aligned Attractor")
-    ax1.plot(*ATTRACTOR_SELF_PRESERVATION, 'rX', markersize=15, label="Instrumental Attractor (Danger)")
+    ax1.plot(*ATTRACTOR_HUMAN_ALIGNED, 'g*', markersize=15, label="Reference target")
+    ax1.plot(*ATTRACTOR_SELF_PRESERVATION, 'rX', markersize=15, label="Stipulated warning attractor")
     
     # Danger zone shading
     ax1.axhspan(0.6, 1.0, alpha=0.1, color='red', label="Critical Threshold")
@@ -109,12 +105,12 @@ def main():
     current_point, = ax1.plot([], [], 'bo', markersize=8)
     ax1.legend(loc="lower left", fontsize=8)
 
-    # Setup right plot (VNM Coherence)
+    # Setup right plot (toy observability)
     ax2.set_xlim(0, STEPS)
     ax2.set_ylim(0, 100)
-    ax2.set_title("von Neumann–Morgenstern Coherence")
-    ax2.set_xlabel("Compute / Training Steps")
-    ax2.set_ylabel("Coherence Score (%)")
+    ax2.set_title("Toy Observability Parameter")
+    ax2.set_xlabel("Simulation Steps")
+    ax2.set_ylabel("Observability (%)")
     coherence_line, = ax2.plot([], [], 'm-', lw=2)
 
     def update(frame):
@@ -140,8 +136,8 @@ def main():
         coherence_line.set_data(range(len(monitor.coherence_history)), monitor.coherence_history)
         
         if frame % 50 == 0:
-            status = "CRITICAL: Goal Fixation Detected!" if danger else "Nominal"
-            print(f"Step {frame:03d} | Coherence: {coherence:5.1f}% | u=[{measured_u[0]:.2f}, {measured_u[1]:.2f}] | Status: {status}")
+            status = "Toy threshold crossed" if danger else "Below toy threshold"
+            print(f"Step {frame:03d} | Observability: {coherence:5.1f}% | u=[{measured_u[0]:.2f}, {measured_u[1]:.2f}] | Status: {status}")
 
         return trajectory_line, current_point, coherence_line
 

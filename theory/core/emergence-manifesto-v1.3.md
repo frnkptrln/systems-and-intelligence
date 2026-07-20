@@ -25,7 +25,9 @@ note: >
 
 ## Version note
 
-v1.3 is the current canonical version. It is a minimal additive update over the previously released v1.2:
+v1.3 is a preserved historical version. At the time it was a minimal additive update over v1.2;
+its status tags are retained to document the research path, while the Foundations Reconstruction is
+now canonical.
 
 1. **A new claim status tag, `[FOUNDATIONAL ASSUMPTION]`.** Used only for assumptions the project depends on but cannot itself prove. It is distinct from `[HYPOTHESIZED]` (a claim the project advances) and from `[SPECULATIVE]` (a claim the project entertains). A foundational assumption is structural: if it falls, large portions of the framework must be re-derived. See [The Generator Question](the-generator-question.md) for the full rationale.
 
@@ -123,15 +125,22 @@ This claim is speculative because: (a) the "edge of chaos" hypothesis, while pro
 
 *Evidence:* [`simulation-models/emergent-dynamics/phase-transition-explorer/`](../../simulation-models/emergent-dynamics/phase-transition-explorer/README.md), [`simulation-models/emergent-dynamics/self-organized-criticality/`](../../simulation-models/emergent-dynamics/self-organized-criticality/README.md) — physical demonstrations only.
 
-### Claim 9: Identity Requires Simultaneous Co-Instantiation (Chord Postulate) `[HYPOTHESIZED]`
+### Claim 9: Commit-Time Composition May Improve Constraint Persistence `[HYPOTHESIZED]`
 
-Following Perrier & Bennett (2026), we distinguish between agents whose identity components (goals, constraints, values) are time-multiplexed (Arpeggio) and agents where all components are simultaneously operative (Chord). The Identity Persistence score $\text{IP}$ quantifies this:
+The repository compares architectures in which selected goals, constraints, and values are applied
+sequentially (Arpeggio) with architectures that jointly satisfy them before committing an action
+(Chord). The task-relative Identity Persistence score $\text{IP}$ records detected causal operation:
 
 $$\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}$$
 
-where $\mathcal{O}(t)$ is the operative set and $n$ is the total number of governing components. IP extends the SII to a 4-axis framework: $\text{SII} = P \times R \times A \times \text{IP}$.
+where $\mathcal{O}(t)$ is the operative set and $n$ is the declared component count. In one selected
+instrument, IP extends SII as $\text{SII} = P \times R \times A \times \text{IP}$. The multiplicative
+choice is part of that instrument, not a universal definition of intelligence or identity.
 
-The Chord Postulate predicts a phase transition at $\text{IP}_c$: below this threshold, identity is a sequence of states; above it, identity becomes a thermodynamic attractor — an actively maintained equilibrium in the TEO phase space.
+The surviving hypothesis is that joint satisfaction at commitment can improve held-out robustness
+under perturbation. A sharp threshold $\text{IP}_c$ has not been demonstrated; it may be a smooth,
+task-specific effect or add no value beyond simpler architecture variables. The TEO attractor is a
+modeling analogy, not a derivation of identity.
 
 *Formalism:* Defined in [`theory/teo-framework/lerchner-boundary.md`](../teo-framework/lerchner-boundary.md). Connected to TEO dynamics in [`theory/thermodynamics-of-orchestration.md`](thermodynamics-of-orchestration.md) §8.
 
