@@ -118,6 +118,8 @@ The complete index of simulations, theory essays, fiction stress tests, lab fram
 
 Entry points by interest:
 
+- **Open exploration:** [Thinking Space](docs/thinking-space.md) — questions before concepts,
+  contradictions, and unfinished seeds with no obligation to enter the canonical synthesis.
 - **Plain language:** [The Snow Story](meta/repository-meta/the-snow-story.md) — the whole project told so that a child can follow it, with every paragraph pointing back to its instruments.
 - **Theory:** [Foundations Reconstruction](theory/core/mathematical-axioms.md) (start here) → [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md) → [Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md).
 - **Measured core:** [Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md) — the spine's asymmetry as curves: where inversion is cheap and where it walls; equivalence classes counted and collapsed; the search wall; Occam's world-dependent payoff; the optimizer's curse, its cure, and the closed loop. Runs in seconds, `numpy` only.
