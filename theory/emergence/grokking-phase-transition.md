@@ -70,11 +70,11 @@ It is worth being explicit about the limits.
 - The transition is observed for specific algorithmic tasks with structured underlying rules. There is no result showing that grokking occurs for unstructured or genuinely random target functions.
 - The transition is sensitive to optimizer choice, weight decay strength, and architecture. It is not yet a controlled phenomenon, let alone a guarantee.
 
-### A second reading: phase transition under the foundational assumption
+### A second reading: the plateau as a search cost
 
-Under the project's `[FOUNDATIONAL ASSUMPTION]` that generator reconstruction is, in general, not efficiently tractable, the pre-grokking plateau acquires a specific meaning. It is not a failure of training. It is the trace of a hard search problem being executed by gradient descent inside a constrained architecture. The search is slow because the search space is large; the search succeeds because the regularizer (weight decay) prefers simpler representations once they exist; the success is sudden because phase transitions in this kind of optimization landscape are not gradual.
+The pre-grokking plateau reads naturally as the trace of a search problem being executed by gradient descent inside a constrained architecture. The search is slow because the search space is large; it succeeds because the regularizer (weight decay) prefers simpler representations once they exist; the success is sudden because phase transitions in this kind of optimization landscape are not gradual.
 
-If P = NP turned out to be the case (in a practically useful sense), the plateau before grokking would be a curiosity of optimization, not a structural feature. As things stand — see [The Generator Question](../core/the-generator-question.md) for the foundational-assumption framing — the plateau is exactly what the spine predicts: the inverse direction is hard, and its hardness is visible as the long stretch of apparent non-progress before the system discovers a generator that extends.
+This essay previously derived that reading from a project-level `[FOUNDATIONAL ASSUMPTION]` that reconstruction is generically intractable. The [Foundations Reconstruction §9.3](../core/mathematical-axioms.md#93-problems-in-the-former-generator-spine) withdrew that assumption, and the repository's own [benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) shows recovery can be cheap when the model family is known. The plateau therefore no longer confirms a general hardness law — it is one measured instance of search cost in one architecture and task, and the interesting question is which properties of *this* search space produce it. The [family-search floor](../../lab/benchmarks/inverse-reconstruction/README.md) is the repository's closest quantitative comparison.
 
 Whatever else grokking is, it is the project's single best empirical example of the inverse direction occurring.
 

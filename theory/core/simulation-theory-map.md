@@ -406,7 +406,7 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 **Supports claim in:** [`theory/chord-vs-arpeggio-identity.md`](../identity/chord-vs-arpeggio-identity.md) (Chord/Arpeggio distinction); [`theory/emergence-manifesto-v1.3.md`](emergence-manifesto-v1.3.md) Claim 9 (Identity as co-instantiation); [`theory/thermodynamics-of-orchestration.md`](thermodynamics-of-orchestration.md) §8 (Identity Persistence in TEO).
 **What it shows:** That agents under stress can be classified into Chord (high P, high C — identity maintained) and Arpeggio (flickering P, decaying C — identity fragmented) regimes. The TEO framework predicts this as a bifurcation analogous to the Kuramoto critical coupling.
 **What it does NOT show:** That IP is measurable from real LLM internals. The morphospace currently uses simulated trajectories. Bridging IP to actual model activations is an open challenge.
-**Open question:** Open Problem 8 — The Co-Instantiation Problem: can autoregressive architectures achieve the Chord state, or does IP require fundamentally different computational substrates?
+**Open question:** [Open Problem 8 — The Commit-Time Composition Problem](../reference/open-problems.md#open-problem-8-the-commit-time-composition-problem): does the committed action lie inside the intersection of the active constraints, or can a sequential mimic reproduce every observable while merely consulting them? (The earlier "Co-Instantiation" framing, which required physical simultaneity, was deflated by exp5.)
 
 ---
 

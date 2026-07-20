@@ -81,5 +81,5 @@ The conjunction of all three constraints — $\lambda_2 > \lambda_{2,\text{crit}
 ## Related
 
 - [The Substrate Veto: A Thermodynamic Boundary](../veto/substrate-veto-thermodynamics.md) — deepens Constraint 2
-- [Mathematical Axioms](../core/mathematical-axioms.md) — the four axioms include $\lambda_2$ and $K(x)$
+- [Foundations Reconstruction](../core/mathematical-axioms.md) — audits $\lambda_2$ and $K(x)$ *out* of the project's axiom set (§2.1). The constraints below are modelling choices inside the TEO framework, not consequences of the foundation
 - [Why the Paperclip Maximizer Fails](why-paperclip-maximizer-fails.md) — derives the failure trajectory in detail

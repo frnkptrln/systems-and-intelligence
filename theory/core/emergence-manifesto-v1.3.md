@@ -18,6 +18,9 @@ note: >
 
 *Conditions for Developing Agent Identity in Complex Systems*
 
+> **Status (2026-07-20):** Earlier claim set, read under the reconstructed foundation.  
+> The [Foundations Reconstruction](mathematical-axioms.md) retired the `[FOUNDATIONAL ASSUMPTION]` tag introduced by v1.3. P ≠ NP is no longer a load-bearing project assumption, and inversion is not uniformly hard. Claim 2's empirical half is unaffected; its precondition reading has been downgraded to `[SPECULATIVE]` below. The version note that follows records what v1.3 did at the time and is kept as history, not as current status.
+
 ---
 
 ## Version note
@@ -50,13 +53,13 @@ The System Intelligence Index (SII) measures three dimensions of system competen
 
 *Evidence:* [`data-analysis/sii_dashboard.py`](../../lab/data-analysis/sii_dashboard.py), [`simulation-models/cognitive-architectures/grokking-phase-transition/`](../../simulation-models/cognitive-architectures/grokking-phase-transition/README.md)
 
-### Claim 2: Local Blindness is a Precondition, Not an Obstacle `[DEMONSTRATED]` `[FOUNDATIONAL ASSUMPTION]`
+### Claim 2: Local Blindness is a Precondition, Not an Obstacle `[DEMONSTRATED]` (observation) + `[SPECULATIVE]` (structural reading)
 
 Every simulation in the repository independently demonstrates that global coherence arises from components that have no representation of the global state they collectively produce. This is not a deficiency to be engineered away. It appears to be a structural feature of emergent systems: the point at which components become fully aware of their global consequences may be the point at which emergence collapses.
 
 The empirical observation — that components do not represent the global state — is `[DEMONSTRATED]` across the simulation corpus.
 
-The structural reading — that this asymmetry is irreducible rather than a temporary engineering limit — rests on a `[FOUNDATIONAL ASSUMPTION]`: that reconstructing a generator from a trace is, in general, not efficiently tractable (the practical content of P ≠ NP). If that assumption fails, the empirical observation still holds, but the claim that local blindness is a *precondition* rather than a *workaround* must be re-derived. See [The Generator Question](the-generator-question.md) for the full statement of the assumption, what changes if it is disproven, and the distinction between the formal status (unresolved) and the practical status (load-bearing).
+The structural reading — that this asymmetry is irreducible rather than a temporary engineering limit — previously rested on a `[FOUNDATIONAL ASSUMPTION]`: that reconstructing a generator from a trace is, in general, not efficiently tractable (the practical content of P ≠ NP). **That support has been withdrawn.** The [Foundations Reconstruction §9.3](mathematical-axioms.md#93-problems-in-the-former-generator-spine) rejects P ≠ NP as a load-bearing project assumption and shows that neither direction is uniformly hard; the repository's own [benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) recovers known families cheaply. The empirical observation is unaffected. The precondition reading is now `[SPECULATIVE]` and must be re-derived per model — stating the family, evidence, intervention access, target equivalence, and cost measure — rather than inherited from a complexity conjecture.
 
 *Evidence:* See [`theory/simulation-theory-map.md`](simulation-theory-map.md) for the complete mapping. [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) develops this argument formally.
 
@@ -144,7 +147,7 @@ If an agent produces outputs that are coherent, contextually appropriate, and co
 
 This is not a rhetorical question. Experiment 3 of the Agentic Identity Suite is a first attempt at operationalizing it. The result — that the baseline mirror agent appears as **Case B** (externally attributed intentionality without internal coherence) — suggests that the distinction is at least partially measurable. But the mock embeddings used in v1 are not sufficient to make strong claims.
 
-The Mirror Problem is the inverse direction of [The Generator Question](the-generator-question.md) restated at the level of agent identity: a trace (behavior) is observed; the question is whether the generator behind it is a stored lookup or an internal model. The same forward/inverse asymmetry applies, and the same `[FOUNDATIONAL ASSUMPTION]` that distinguishing the two is, in general, hard.
+The Mirror Problem restates model identification at the level of agent identity: a trace (behavior) is observed; the question is whether the process behind it is a stored lookup or an internal model. Its difficulty is no longer inherited from a general hardness assumption — [Open Problem 1](../reference/open-problems.md#open-problem-1-the-mirror-problem) now states it as a *test-selection* problem, and the [hidden-extension result](mathematical-axioms.md#7-a-result-the-foundation-forces-non-identifiability) gives the sharper reason it is hard: predictively equivalent models can differ in latent organization, so no amount of passive trace matching settles it.
 
 The Mirror Problem is formally documented in [`theory/reference/open-problems.md`](../reference/open-problems.md) with falsification criteria and adjacent work. It is the most generative part of this project precisely because it is unresolved.
 
@@ -171,7 +174,7 @@ The following environmental and architectural factors are correlated with increa
 | Claim | Formalism | Simulation Evidence | Status |
 |:------|:----------|:-------------------|:-------|
 | Intelligence is compression | $K(x)$, SII | Grokking, SII Dashboard | `[DEMONSTRATED]` |
-| Local blindness as precondition | Computational irreducibility | Simulation corpus | `[DEMONSTRATED]` + `[FOUNDATIONAL ASSUMPTION]` |
+| Local blindness as precondition | Computational irreducibility | Simulation corpus | `[DEMONSTRATED]` (observation) + `[SPECULATIVE]` (precondition reading) |
 | Identity through selective forgetting | 3-Layer Architecture | Agentic Identity Suite (mock) | `[HYPOTHESIZED]` |
 | Development vs. mirroring | Δ-Kohärenz (Ω) | Experiment 3 | `[OPEN PROBLEM]` |
 | Observer shapes observed | Markov Blanket, Active Inference $F$ | Experiment 3 | `[HYPOTHESIZED]` |

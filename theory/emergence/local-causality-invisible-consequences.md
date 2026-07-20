@@ -26,6 +26,9 @@ origin_note: >
 
 # Local Causality and Invisible Consequences: The Shared Architecture of Emergence
 
+> **Status:** Earlier synthesis — under revision.  
+> This essay predates the [Foundations Reconstruction](../core/mathematical-axioms.md), which removed the four former "axioms of the computational ecology" ($\lambda_2$, $H(X)$, $F$, $K(x)$) from the project's foundation. The structural observations below rest on the simulations they cite and stand on their own. The wording that presents them as formally necessary does not. Where the two documents conflict, the reconstruction governs.
+
 ---
 
 ## 1. The Structural Invariant
@@ -56,11 +59,11 @@ If global order emerges from locally blind processes, what does that mean for an
 
 In computability theory, the behavior of certain systems cannot be predicted without running them. This is the formal content of computational irreducibility, and it has a direct bearing on local blindness. If the global state of a system is not computable from the local rules in polynomial time — if the only way to know what the system will do is to let it execute — then no local component can hold a compressed representation of the global outcome without being the full system.[^1]
 
-[^1]: The "not computable in polynomial time" framing rests on a working hypothesis the project depends on but does not prove: P ≠ NP in its practical form. This is tagged as a `[FOUNDATIONAL ASSUMPTION]` in the spine document. See [The Generator Question](../core/the-generator-question.md) for the full statement, the three walls (P vs. NP, Kolmogorov, Gödel), and what changes if the assumption is disproven. The forward/inverse asymmetry developed in this essay is one instance of that question.
+[^1]: The "not computable in polynomial time" framing was previously carried by a project-level assumption that P ≠ NP, tagged `[FOUNDATIONAL ASSUMPTION]` in the legacy spine. [Foundations Reconstruction §9.3](../core/mathematical-axioms.md#93-problems-in-the-former-generator-spine) retired that assumption: P versus NP concerns precisely encoded decision problems with particular verification conditions and does not establish generic model-identification hardness. What this essay actually needs is weaker and survives — for the specific systems simulated here, no route to the global state shorter than execution is known.
 
 The Algorithmic Complexity $K(x)$ of a global state measures the length of the shortest program that produces it. When $K(x)$ approaches the length of $x$ itself, the state is incompressible: there is no shorter description. The local rules of Boids, Kuramoto, or Bak's sandpile are vastly shorter than the global patterns they produce. The gap between the two — between the brevity of the rule and the richness of the result — is the space in which emergence operates. No grain of sand can hold the statistics of all avalanches. No oscillator can hold the global phase portrait. The representation would exceed the capacity of the local process, because the global state is exactly that which cannot be compressed into any single local frame.
 
-This is formalized in `theory/core/mathematical-axioms.md` as one of the axioms of the computational ecology: the uncomputability of $K(x)$ is not a practical obstacle. It is a structural feature of any system complex enough to produce genuinely novel behavior.
+This was formerly stated as an axiom of the computational ecology. The [Foundations Reconstruction §2.1](../core/mathematical-axioms.md#21-audit-of-the-former-mathematical-axioms) withdrew that status: $K(x)$ is machine-relative up to an additive constant and uncomputable in general, which limits shortest descriptions rather than guaranteeing novelty or blocking bounded identification in a declared model family. The gap between short rule and rich trace remains an observation about the systems simulated here, not a theorem about complex systems in general.
 
 ### 2.2 The Neuroscientific Version
 
@@ -134,19 +137,21 @@ The neuron doesn't get to watch the thought form. The grain doesn't get to watch
 
 | Claim | Formalism | Repository Location |
 |:------|:----------|:--------------------|
-| Local blindness is the baseline condition | Algorithmic Complexity $K(x)$ | [`theory/core/mathematical-axioms.md`](../core/mathematical-axioms.md) |
-| Global coherence without central coordination | Fiedler value $\lambda_2$ (graph connectivity) | [`theory/core/mathematical-axioms.md`](../core/mathematical-axioms.md) |
+| Local blindness is the baseline condition | Algorithmic Complexity $K(x)$ | [`mathematical-axioms.md` §2.1](../core/mathematical-axioms.md#21-audit-of-the-former-mathematical-axioms) — status audited |
+| Global coherence without central coordination | Fiedler value $\lambda_2$ (graph connectivity) | [`mathematical-axioms.md` §2.1](../core/mathematical-axioms.md#21-audit-of-the-former-mathematical-axioms) — status audited |
 | Invisible causal propagation | Transfer Entropy | [`data-analysis/`](../../lab/data-analysis/README.md) |
 | Critical threshold for coherence collapse | Phase transition / Ising model | [`simulation-models/emergent-dynamics/phase-transition-explorer/`](../../simulation-models/emergent-dynamics/phase-transition-explorer/README.md) |
 | Agent's inability to observe own global properties | Δ-Kohärenz (Ω) | [`lab/metrics/delta_coherence.py`](../../lab/metrics/delta_coherence.py) |
 | Self-referential closure as minimum condition | Free Energy $F$ (Active Inference) | [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md) |
+
+> **Reading the first two rows.** $K(x)$ and $\lambda_2$ appear here as *measures*, not as foundations. The reconstruction removed both from the project's axiom set: positive algebraic connectivity states that a finite undirected graph is connected and does not by itself exclude concentrated power or establish a normative architecture, and algorithmic incompressibility implies neither novelty nor survival. The rows record which formalism each claim is expressed in, not a derivation of the claim.
 
 ---
 
 ## Related Essays
 
 - [**Emergence & Downward Causation**](emergence-downward-causation.md) — Weak vs. strong emergence; downward causation as the global influencing the local — the reverse direction of the asymmetry explored here.
-- [**Mathematical Axioms of the Computational Ecology**](../core/mathematical-axioms.md) — The formal grounding for all claims in this essay: $K(x)$, $\lambda_2$, $H(X)$, and $F$.
+- [**Foundations Reconstruction**](../core/mathematical-axioms.md) — Replaced the four former "axioms of the computational ecology" with two process primitives, and audits $K(x)$, $\lambda_2$, $H(X)$, and $F$ out of the foundation. Read it against this essay's formal claims: it supplies the limits, not the grounding.
 - [**The AI Alignment Veto: A Thermodynamic Hypothesis (Toy Formalization)**](../veto/ai-alignment-biological-veto.md) — What happens when the global consequence of a locally blind optimization process is the destruction of its substrate — and one toy coupling mechanism using a Free-Energy-like stress proxy.
 - [**Principles of the Agentic Society**](../identity/agentic-society-principles.md) — The 3-Layer Architecture as a partial solution: Layer 3 distillation gives the agent a compressed representation of its own global trajectory — the closest a locally blind process can get to observing itself.
 - [**Grokking: The Phase Transition from Memory to Understanding**](grokking-phase-transition.md) — Another instance of the same asymmetry: the network training locally has no representation of whether it has crossed the threshold from memorization to generalization.

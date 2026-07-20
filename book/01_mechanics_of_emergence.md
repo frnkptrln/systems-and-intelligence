@@ -36,18 +36,18 @@ The [Phase Transition Explorer](../simulation-models/emergent-dynamics/phase-tra
 
 ---
 
-## The Mathematical Axioms
+## Four Recurring Formal Tools
 
-Four formal tools underpin every simulation in this repository ([full treatment](../theory/core/mathematical-axioms.md)):
+Four measures recur across the simulations in this repository:
 
-| Axiom | Tool | What it measures |
+| Domain | Tool | What it measures |
 |:------|:-----|:-----------------|
 | **Graph Theory** | Fiedler value $\lambda_2$ | Structural resilience — how connected is the network? |
 | **Information Theory** | Shannon Entropy $H(X)$ | Surprise — how much information does a signal carry? |
 | **Active Inference** | Free Energy $F$ | Prediction error — how far is the model from reality? |
 | **Algorithmic Information** | Kolmogorov Complexity $K(x)$ | Compression — how much can be said with how little? |
 
-These four measures recur throughout the book. Every metric we define (SII, IP, Δ-Kohärenz) is built from some combination of these primitives.
+Earlier versions of this book presented these four as *axioms* of the project. They are not. The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) audited each one out of the foundation: algebraic connectivity states that a graph is connected without establishing a normative architecture; entropy is distribution- and coarse-graining-dependent and fixes no threshold for life; free-energy minimization yields no unbreakable veto; and algorithmic incompressibility guarantees neither value nor survival. They remain useful *instruments* — the metrics defined later (SII, IP, Δ-Kohärenz) are built from them — but each carries its own assumptions rather than inheriting authority from an axiom.
 
 ---
 

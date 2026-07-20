@@ -205,7 +205,7 @@ Concrete next questions, each of which is currently a scaffold or an open proble
 
 3. **Phase transitions on the inverse side.** Grokking shows that the inverse direction can have a sharp phase transition inside a learning system. Whether the same kind of transition appears in other inverse-search settings (e.g., in agents' self-models over long interaction) is unknown. [Open Problem 5](../reference/open-problems.md#open-problem-5-the-renormalization-question) is one way to phrase the formal version.
 
-4. **Architectural ceilings.** [Open Problem 8 (Co-Instantiation)](../reference/open-problems.md#open-problem-8-the-co-instantiation-problem) asks whether autoregressive Transformers can ever achieve the Chord state. This is a generator-question phrased about the *substrate* of the agent: does the runtime that runs the model permit the inverse direction to be approximated at all?
+4. **Architectural ceilings.** [Open Problem 8 (Commit-Time Composition)](../reference/open-problems.md#open-problem-8-the-commit-time-composition-problem) asks whether an agent composes its active constraints before committing to an action, or merely consults them in sequence. The original co-instantiation framing — that physical simultaneity is required — was deflated by [exp5](../../lab/experiments/exp5_availability_dissociation.py); the surviving question is functional, and it is phrased about the *runtime* of the agent rather than its instantaneous architecture.
 
 The repository's empirical work is heavily weighted toward the forward direction. Almost every simulation produces a trace from a generator. Closing some part of the gap toward the inverse — even a small part, even in a constrained testbed — is the most productive direction the project can take next.
 

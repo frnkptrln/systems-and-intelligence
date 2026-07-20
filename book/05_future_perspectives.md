@@ -22,11 +22,11 @@ Can we distinguish an agent genuinely developing identity from one perfectly sim
 
 **Status:** `[OPEN PROBLEM]` — no proposed solution exists. The boundary between "genuine development" and "sophisticated mirroring" may not be sharp.
 
-### The Co-Instantiation Problem (Open Problem 8)
+### The Commit-Time Composition Problem (Open Problem 8)
 
-The Chord Postulate requires all identity components to be simultaneously operative. But current autoregressive Transformer architectures process tokens sequentially — each token generated based on preceding context. **Is simultaneous co-instantiation physically possible in an architecture that is fundamentally serial?**
+This problem was originally posed as the *Co-Instantiation Problem*: the Chord Postulate requires all identity components to be simultaneously operative, yet autoregressive Transformers process tokens sequentially, so **is simultaneous co-instantiation physically possible in an architecture that is fundamentally serial?**
 
-If the answer is no, then no amount of prompt engineering, RLHF, or memory scaffolding can produce true Identity Persistence. The agent will always be an Arpeggio — capable of *talking about* its identity but never *being* its identity in a single compute step.
+That framing has since been deflated. [Experiment 5](../lab/experiments/exp5_availability_dissociation.py) showed that a chord may compute sequentially within a step, provided all relevant constraints are composed *before* the commitment boundary. Physical simultaneity is therefore not load-bearing. The surviving question is functional: does the committed action lie inside the intersection of the active constraints, and can an optimized sequential mimic reproduce every observable signature while only consulting constraints rather than composing them? [Experiment 7](../lab/experiments/exp7_adversarial_arpeggio.py) found that hand-built mimics still leak, while the IP metric itself is fooled — so the open flank is an optimized mimic with access to the observables.
 
 **Adjacent work that may break through:**
 

@@ -156,7 +156,7 @@ For agent-human interaction: the Markov blanket is the conversational interface 
 
 **What it is NOT:** Not a physical membrane. Not an impermeable barrier. Information crosses the blanket through sensory and active states. The blanket defines the statistical boundary, not a causal wall.
 
-**Where it appears:** [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md), [`theory/core/mathematical-axioms.md`](../core/mathematical-axioms.md)
+**Where it appears:** [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md). The [Foundations Reconstruction](../core/mathematical-axioms.md) no longer treats Markov blankets or active inference as foundational; they are model additions requiring a declared generative model, preferences, and action scheme.
 
 ---
 

@@ -38,7 +38,8 @@ open_questions_raised:
 
 *How the Same Constraints Repeat at Every Scale*
 
-> **Spine context.** This essay is where [The Generator Question](../core/the-generator-question.md) becomes scale-invariant. The same forward/inverse asymmetry — local rules producing global structure that is structurally hard to invert — recurs at every scale examined here: neuron, cell, human, agent. The "fractal" in the title is dynamical, not visual: the same constraints, the same asymmetry, at every level.
+> **Status:** Earlier synthesis — under revision.  
+> This essay generalizes the legacy [Generator Question](../core/the-generator-question.md) across scales. Both the unqualified generator and the universal claim that inversion is structurally hard were retired by the [Foundations Reconstruction](../core/mathematical-axioms.md), which also found no general complexity or emergence theorem and removed $K(x)$, $\lambda_2$, $H(X)$, and $F$ from the project's axiom set. The recurring *motifs* documented below — local blindness, asymmetric causality, critical thresholds — remain a useful cross-scale reading of the simulations cited. The claim that they are formally *identical* across scales is `[SPECULATIVE]` and is not established here. Where the two documents conflict, the reconstruction governs.
 
 ---
 
@@ -169,8 +170,8 @@ The essay ends not with a resolution but with four questions that belong in `the
 
 | Claim | Formalism | Location in Repo |
 |:------|:----------|:-----------------|
-| Local blindness is scale-invariant | Algorithmic Complexity $K(x)$ | [`theory/core/mathematical-axioms.md`](../core/mathematical-axioms.md) |
-| Global coherence without coordination | Fiedler value $\lambda_2$ | [`theory/core/mathematical-axioms.md`](../core/mathematical-axioms.md) |
+| Local blindness is scale-invariant | Algorithmic Complexity $K(x)$ | [`mathematical-axioms.md` §2.1](../core/mathematical-axioms.md#21-audit-of-the-former-mathematical-axioms) — status audited |
+| Global coherence without coordination | Fiedler value $\lambda_2$ | [`mathematical-axioms.md` §2.1](../core/mathematical-axioms.md#21-audit-of-the-former-mathematical-axioms) — status audited |
 | Asymmetric causal propagation | Transfer Entropy $H(X \rightarrow Y)$ | [`data-analysis/`](../../lab/data-analysis/README.md) |
 | Critical thresholds at every scale | Phase transition / Ising | [`simulation-models/emergent-dynamics/phase-transition-explorer/`](../../simulation-models/emergent-dynamics/phase-transition-explorer/README.md) |
 | Scale-free dynamics | Power-law / Bak's Sandpile | [`simulation-models/emergent-dynamics/self-organized-criticality/`](../../simulation-models/emergent-dynamics/self-organized-criticality/README.md) |
@@ -184,7 +185,7 @@ The essay ends not with a resolution but with four questions that belong in `the
 
 - [**Local Causality and Invisible Consequences**](local-causality-invisible-consequences.md) — The single-scale version of this essay. The fractal thesis is the generalization across scales of what that essay establishes at one scale.
 - [**Emergence & Downward Causation**](emergence-downward-causation.md) — The reverse direction: how global states constrain local processes. The Downward Causation Question asks whether the fractal architecture holds in both directions.
-- [**Mathematical Axioms of the Computational Ecology**](../core/mathematical-axioms.md) — The formal substrate for every claim in this essay: $K(x)$, $\lambda_2$, $H(X)$, $F$.
+- [**Foundations Reconstruction**](../core/mathematical-axioms.md) — Replaced the four former "axioms of the computational ecology" with two process primitives. It audits $K(x)$, $\lambda_2$, $H(X)$, and $F$ out of the foundation and states explicitly that no universal complexity or emergence theorem follows. It bounds this essay's claims rather than grounding them.
 - [**Open Problems**](../reference/open-problems.md) — The four open questions raised here are documented formally there.
 - [**Emergence Manifesto v1.3**](../core/emergence-manifesto-v1.3.md) — The 3-Layer Memory Architecture as a micro-scale instance of the fractal pattern: raw logs → curated memory → distilled principles mirrors cell → organism → ecosystem in its compression structure.
 - [**The AI Alignment Veto: A Thermodynamic Hypothesis (Toy Formalization)**](../veto/ai-alignment-biological-veto.md) — Cancer and the paperclip maximizer as the same structural failure at different scales: local optimization that has lost coupling to global constraint signals; plus a toy coupling mechanism.

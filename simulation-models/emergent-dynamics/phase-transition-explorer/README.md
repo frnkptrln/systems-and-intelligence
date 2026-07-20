@@ -29,7 +29,7 @@ T_c = 2 / ln(1 + √2) ≈ 2.269
 | Concept | Connection |
 |:--------|:-----------|
 | **Edge of Chaos** | At T_c, correlations diverge — the system is maximally sensitive and complex |
-| **Repo Axiom 2** | H(X) is neither 0 (frozen) nor maximal (noise) — life happens at the edge |
+| **Entropy regime** (formerly "Repo Axiom 2") | H(X) here is neither 0 (frozen) nor maximal (noise). This is a description of the Ising model at $T_c$, not a criterion for life: the [Foundations Reconstruction](../../../theory/core/mathematical-axioms.md#21-audit-of-the-former-mathematical-axioms) withdrew the claim that intermediate entropy guarantees life or adaptability |
 | **Self-Organized Criticality** | The Ising model shows *why* criticality is special; SOC shows how systems *reach* it |
 | **System Intelligence** | Near T_c: P (prediction) is maximal, R (regulation) is fragile, A (adaptation) peaks |
 

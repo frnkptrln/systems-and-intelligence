@@ -14,7 +14,7 @@
 - ../../logs/016_the-runtime-is-part-of-the-generator.md (computation as unfolding: runtime is generator state)
 - ../computation/construction-vs-deduction.md (possession by execution)
 - ../emergence/emergence-origin-intelligence.md · ../identity/the-non-individual-intelligence.md (the repo's existing Agüera y Arcas line)
-- ../core/mathematical-axioms.md (H and K, as used in-repo)
+- ../core/mathematical-axioms.md (where H and K are derived and their former axiom status withdrawn)
 
 **Failure conditions:**
 
@@ -27,7 +27,7 @@
 
 ## The ladder
 
-**Shannon: information as resolved uncertainty.** Entropy, channel, mutual information — the mathematics of *traces and their correlations*. It is deliberately semantically neutral: a Shannon bit does not know what it is about, and mutual information between two streams says nothing about which generator coupled them. This is the repository's instrumentation rung ([Axiom 2](../core/mathematical-axioms.md); the [web explorer's](../../lab/tools/README.md) live entropy/MI charts). In spine terms: **a trace is information after the fact.**
+**Shannon: information as resolved uncertainty.** Entropy, channel, mutual information — the mathematics of *traces and their correlations*. It is deliberately semantically neutral: a Shannon bit does not know what it is about, and mutual information between two streams says nothing about which generator coupled them. This is the repository's instrumentation rung (the [web explorer's](../../lab/tools/README.md) live entropy/MI charts; entropy's former status as "Axiom 2" was withdrawn by the [Foundations Reconstruction §2.1](../core/mathematical-axioms.md#21-audit-of-the-former-mathematical-axioms), which derives mutual information from a state and a process rather than positing it). In spine terms: **a trace is information after the fact.**
 
 **Kolmogorov: information as shortest description.** $K(x)$ moves from the trace toward the generator — but only toward its *description*. Two things keep this rung honest, both already in force: $K(x)$ is uncomputable ([Wall 2](../core/the-generator-question.md)), and a description is **still static** — a program listing produces nothing until it runs. [Generative compression](../emergence/generative-compression.md) is this repository's operational version: what matters is not minimal length but *executable* description that supports prediction, variation, and intervention.
 
