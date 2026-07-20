@@ -28,7 +28,7 @@ This motivates measurable questions:
 - Who owns the shared state and can revise its rules?
 
 The **Chord State** remains a literary image for coordinated constraint satisfaction. It is not a
-phenomenological consequence of \(K=1\), and the TEO coupling parameter is not a scale of empathy or
+phenomenological consequence of $K=1$, and the TEO coupling parameter is not a scale of empathy or
 selfhood.
 
 ## Normative Boundary

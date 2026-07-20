@@ -34,11 +34,11 @@ The script `tensor_logic_demo.py`:
    - **Logical:** directly from the Parent matrix
    - **Embedding-based:** via
 
-     \[
+     $$
      \text{score}(a,b) = Emb[a]^T \cdot EmbParent \cdot Emb[b]
-     \]
+     $$
 
-     and a logistic function with temperature \(T\).
+     and a logistic function with temperature $T$.
 
 ## Usage
 

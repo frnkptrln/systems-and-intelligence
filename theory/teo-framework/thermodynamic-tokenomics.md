@@ -14,7 +14,7 @@ This resembles a permit or quota system more than a new base currency. Its behav
 sets the cap, which activities are covered, how use is measured, how permits are distributed, and
 which institutions can enforce or revise the rules.
 
-## Why One Global \(D_{\max}\) Is Insufficient
+## Why One Global $D_{\max}$ Is Insufficient
 
 The Earth has finite energy flows and radiative constraints, but ecological viability is not one
 established heat-dissipation scalar. Carbon, water, land, minerals, biodiversity, toxicity, local

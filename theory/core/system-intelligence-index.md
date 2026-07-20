@@ -57,15 +57,15 @@ capacities, and no theorem makes this list necessary or sufficient for intellige
 
 We can think of the SII as a product (or composition) of three factors:
 
-\[
+$$
 \text{SII} \approx P \times R \times A
-\]
+$$
 
 where:
 
-- \( P \) = **Predictive Power**  
-- \( R \) = **Regulation Ability**  
-- \( A \) = **Adaptive Capacity**
+- $ P $ = **Predictive Power**
+- $ R $ = **Regulation Ability**
+- $ A $ = **Adaptive Capacity**
 
 Each factor can be explored separately in simulations and models.
 
@@ -86,7 +86,7 @@ Possible operationalisations:
 - mutual information between internal state and future environment state  
 - convergence of internal models to external dynamics  
 
-In your nested-learning demos, \( P \) is high when the observer's internal
+In your nested-learning demos, $ P $ is high when the observer's internal
 transition matrix closely matches the true Markov process.
 
 ### 3.2 Regulation Ability (R)
@@ -106,7 +106,7 @@ Possible operationalisations:
 - time spent within a defined "viability corridor"  
 - robustness under perturbations (how quickly it returns to viable ranges)  
 
-In your ecosystem-regulation models, \( R \) increases when the system can
+In your ecosystem-regulation models, $ R $ increases when the system can
 compensate for shocks (e.g. random deaths) without collapsing or exploding.
 
 ### 3.3 Adaptive Capacity (A)
@@ -127,7 +127,7 @@ Possible operationalisations:
 - capacity to maintain performance across multiple environments  
 - diversity of internal models or strategies  
 
-In nested-learning setups, \( A \) shows up when a meta-learner adjusts the
+In nested-learning setups, $ A $ shows up when a meta-learner adjusts the
 learning rate or strategy of a lower-level learner in response to non-stationary
 dynamics.
 
@@ -137,9 +137,9 @@ dynamics.
 
 For many exploratory simulations, a simple multiplicative structure is enough:
 
-\[
+$$
 \text{SII} = f(P, R, A) \approx P \times R \times A
-\]
+$$
 
 Why consider a multiplicative toy score?
 
@@ -149,7 +149,7 @@ Why consider a multiplicative toy score?
 - if all three are moderately high, the system feels "intelligent" in a
   systems sense, even without consciousness or explicit goals
 
-In practice, each of \( P, R, A \) could be normalised to \([0, 1]\)
+In practice, each of $ P, R, A $ could be normalised to $[0, 1]$
 or to some bounded interval, and the resulting SII would also live in a
 bounded range.
 
@@ -169,15 +169,15 @@ To make SII less abstract, here are some informal sketches:
 
 - Predictive Power (P):  
   None in the internal sense – it just applies a rule, no explicit model.  
-  → \( P \) ≈ low
+  → $ P $ ≈ low
 
 - Regulation Ability (R):  
   High, if density hovers around a target with low variance.  
-  → \( R \) ≈ high
+  → $ R $ ≈ high
 
 - Adaptive Capacity (A):  
   Low, if the rule set is fully fixed.  
-  → \( A \) ≈ low
+  → $ A $ ≈ low
 
 Result:  
 SII is non-zero (the system is "smart" in regulating density),  
@@ -187,16 +187,16 @@ but not very high (no learning, no internal modelling).
 
 - Predictive Power (P):  
   High, if the learned transition matrix converges to the true dynamics.  
-  → \( P \) ≈ high
+  → $ P $ ≈ high
 
 - Regulation Ability (R):  
   Minimal – the model doesn't regulate a target variable, it only predicts.  
-  → \( R \) ≈ low
+  → $ R $ ≈ low
 
 - Adaptive Capacity (A):  
   Medium – it can adapt its model if the environment changes, but only via
   a simple learning rule.  
-  → \( A \) ≈ medium
+  → $ A $ ≈ medium
 
 Result:  
 SII is driven by prediction and some adaptation, but lacks explicit
@@ -212,9 +212,9 @@ A model where:
 
 could exhibit:
 
-- high \( P \) (accurate internal model)  
-- medium to high \( R \) (stable performance under noise)  
-- high \( A \) (robust under shifting regimes)
+- high $ P $ (accurate internal model)
+- medium to high $ R $ (stable performance under noise)
+- high $ A $ (robust under shifting regimes)
 
 Such systems are good candidates for high SII in simulations.
 
@@ -226,7 +226,7 @@ The **System Intelligence Index** is intentionally incomplete.
 Open issues include:
 
 - **Metric choice**  
-  How exactly should \( P, R, A \) be measured in different models?
+  How exactly should $ P, R, A $ be measured in different models?
 
 - **Non-multiplicative combinations**  
   In some systems, a weighted sum or more complex function might reflect
@@ -259,7 +259,7 @@ Even if SII never becomes a "standard metric", it is useful as a **lens**:
 
 Future work in this repository can:
 
-- implement concrete estimators for \( P, R, A \) in specific models  
+- implement concrete estimators for $ P, R, A $ in specific models
 - explore how changes in architecture or feedback affect SII  
 - connect SII to ideas from control theory, information theory, and
   active inference
@@ -272,12 +272,12 @@ a way to structure intuitions and guide the design of new experiments.
 ## 8. Optional Fourth Report: Component Activity (IP)
 
 For agent tasks with a preregistered set of governing components, the repository also reports an
-instrument historically called **Identity Persistence**. Let \(\mathcal{O}(t)\) contain the declared
-components whose causal intervention changes the action distribution at step \(t\):
+instrument historically called **Identity Persistence**. Let $\mathcal{O}(t)$ contain the declared
+components whose causal intervention changes the action distribution at step $t$:
 
-\[
+$$
 \operatorname{IP}(t)=\frac{|\mathcal{O}(t)|}{n}.
-\]
+$$
 
 The result depends on the component list, intervention, threshold, time resolution, and task. It
 reports detected component activity. It does not establish a self, consciousness, or metaphysical
@@ -286,9 +286,9 @@ does not identify the Chord regime it was intended to describe.
 
 For dashboards that intentionally require all four selected dimensions, one may report
 
-\[
+$$
 \operatorname{SII}_{PRAIP}=P\,R\,A\,\operatorname{IP}.
-\]
+$$
 
 A zero collapses this product because multiplication was chosen; the result does not classify a
 system as merely a tool or as integrated intelligence. Other aggregation rules encode different

@@ -30,11 +30,13 @@ Latency here is not incompetence. It is a deliberate insertion of temporal frict
 This extends `WAIT_STATE` from narrative artifact to architecture variable and complements impedance-mismatch theory: some mismatches are pathological, some are protective.
 
 ## Minimal formal intuition
-Let expected harm under immediate action be \(E[H_0]\), under delayed action \(E[H_\tau]\). Mercy-latency exists where:
-\[
+Let expected harm under immediate action be $E[H_0]$, under delayed action $E[H_\tau]$. Mercy-latency exists where:
+
+$$
 E[H_\tau] < E[H_0] \quad \text{and} \quad \frac{d\,trust}{d\tau} > -\epsilon
-\]
-for domain-specific \(\epsilon\), meaning delay reduces irreversible harm without collapsing legitimacy.
+$$
+
+for domain-specific $\epsilon$, meaning delay reduces irreversible harm without collapsing legitimacy.
 
 ## Open questions
 How should latency budgets be allocated when human review bandwidth is itself the bottleneck resource?

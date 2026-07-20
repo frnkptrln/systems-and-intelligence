@@ -155,7 +155,7 @@ Narrative stress tests that make abstract theoretical constraints visible in liv
 
 1. **Learned searchers vs. the family-search floor** — give LLMs or program synthesizers the same partial traces and query budgets as the exact CA baseline; pre-register consistency, truth recovery, description size, support violations, and cost.
 2. **External review of the Viable Corridor** — freeze the paper's conceptual scope while its dynamical assumptions, sufficiency gap, and empirical mapping receive a critical read.
-3. **Rigorous sufficiency** — replace single-trajectory evidence with open-set tests and, if possible, construct or bound \(\gamma_c\).
+3. **Rigorous sufficiency** — replace single-trajectory evidence with open-set tests and, if possible, construct or bound $\gamma_c$.
 4. **Separate the real-model questions correctly** — live Agentic Identity Suite runs test Mirror/Chord/binding claims; P7/P8 require a distinct real-agent ecology with hard/soft budgets and independently varied constraint architecture.
 5. **Separate selection from drift after cost relocation** — v1.13's local group funding nearly
    removes selection against support and suppresses seeded cheaters, but it does not meet the
@@ -165,7 +165,7 @@ Narrative stress tests that make abstract theoretical constraints visible in liv
 
 **Speculative / long-horizon** `[SPECULATIVE]`:
 
-- Hardware prototyping (analog / memristor circuits for physical \(\gamma\)-pin vetoes).
+- Hardware prototyping (analog / memristor circuits for physical $\gamma$-pin vetoes).
 - Protocol-level "Substrate Veto" specifications for decentralized governance systems.
 
 If you want to contribute, the project is open for critical **review**, preregistered **experiments**, external **baselines**, and corrections to any claim that exceeds its evidence.
