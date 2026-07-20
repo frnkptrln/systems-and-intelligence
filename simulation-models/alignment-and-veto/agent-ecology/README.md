@@ -11,8 +11,8 @@ the TEO ODE (Class A — model-internal; Appendix C). That cannot, by itself,
 tell us whether the regime claims are artifacts of that particular ODE. This
 module is a deliberately **different** model — discrete-time, stochastic,
 agent-based, with explicit *hard vs. soft (routable) budget* mechanics the ODE
-does not have. Agreement across the two is evidence that the P7/P8 regime
-behaviour is **structural**, not a quirk of the TEO formulation.
+does not have. Agreement across the two is a robustness check across two designed models. It does
+not establish that the regime behaviour is universal or independent of their shared assumptions.
 
 It introduces **no new theoretical concepts**: capability, hard/soft budgets,
 monopolistic concentration, and substrate overshoot are all defined in the
@@ -20,7 +20,7 @@ paper (§2, §5.3). This file only *operationalises* them in an independent
 setting, with each modelling choice tagged in the docstring.
 
 > **Honest scope.** This is a synthetic ABM, not a test on real AI agents. It
-> strengthens the *structural-robustness* case for P7/P8; the Class C claim
+> broadens the synthetic evidence for P7/P8; the Class C claim
 > about **real** agent ecologies (LLMs) remains open and is the companion
 > paper's subject (`papers/quantifying-emergent-utility-in-llms.md`).
 

@@ -1,55 +1,169 @@
-# Limitations, Honest Assessment & Future Directions
+# Limitations and Honest Assessment
 
-*An honest accounting of what this project is, what it isn't, and where it must go.*
+*What the repository currently establishes, what it proposes, and what would change our mind.*
 
 ---
 
-## What This Project Is
+## Current character of the project
 
-This repository is a **synthesis project**. It takes established mathematical tools from separate disciplines — game theory (1944), network science (1975), thermodynamics, control theory — and applies them to the emerging problem of multi-agent AI alignment.
+Systems & Intelligence is a living research space. Its current foundation is a
+compositional probability model of typed stochastic processes. That basis is established
+mathematics: standard Borel spaces, Markov kernels, composition, probability, information
+theory, and statistical decision theory.
 
-The contribution is not novel mathematics. It is a **novel diagnosis**: that AI alignment is fundamentally a complex systems control problem, not a natural language processing problem, and that the tools to address it already exist in physics, biology, and economics.
+The repository's possible contribution is not a new universal mathematics of intelligence.
+It is the organization of several bounded questions:
 
-## What This Project Is Not
+1. Which candidate process models remain identifiable from declared observations and
+   interventions?
+2. Which constraint architectures keep capable, coupled systems viable and correctable?
+3. Under what conditions can heterogeneous participants produce solutions that none could
+   reach alone?
+4. How can repeated practices stabilize action, identity, and culture without treating
+   those words as context-free mathematical objects?
 
-We do not claim to have invented:
+The first two have executable toy models. The latter two are currently conceptual research
+directions.
 
-- **The VNM Utility Theorem** — Von Neumann & Morgenstern, 1944. Our Coherence Score $C$ is a standard transitivity coefficient applied to directed preference graphs, a technique used in sociometry since the 1970s.
-- **PageRank centrality** — Page & Brin, 1998. Our derivation of the Utility Vector $U$ via the dominant eigenvector of a stochastic matrix is standard linear algebra.
-- **Cosine similarity** — The "Harmonic Resonance" between agent vectors is the most elementary measure in vector mathematics.
-- **The Kuramoto Model** — Kuramoto, 1975. Our synchronization dynamics are borrowed directly from nonlinear physics.
-- **The Replicator Equation** — Taylor & Jonker, 1978. Our market dynamics are textbook evolutionary game theory.
+## What is on firm ground
 
-Each individual component is well-established. The claim of this project is that their **coupling** — into a single dynamical system governing both AI ecologies and human civilizations — is new and useful.
+- The reconstructed process foundation is an instance of established categorical
+  probability, not new mathematics.
+- An observed trace can fail to identify a unique latent process. The foundation gives a
+  simple hidden-extension construction, and the inverse-reconstruction benchmark exhibits
+  finite equivalence classes in selected model families.
+- Observation, conditioning, and causal intervention are distinct once their interfaces
+  are declared.
+- Identity, learning, and intelligence require additional tests, tasks, losses, resources,
+  or intervention families; they do not follow from dynamics alone.
+- Phenomenal consciousness is not derived from functional organization in this repository.
+- The numerical outputs reported for the current benchmark and agentic toy experiments are
+  reproducible from the checked-in code.
 
-## The Central Open Question
+These statements are modest. Most are consequences or demonstrations of known theory.
 
-> **Does an LLM actually behave like a rational VNM agent?**
+## What is conditional on a model
 
-Our framework assumes that by querying an LLM pairwise, we extract genuine "preferences" that reveal an underlying utility function. This assumption is questionable:
+The Viable Corridor couples replicator, Kuramoto, regulation, and substrate equations.
+Its necessity results hold under the assumptions named in the paper. Its capability-loading
+pattern appears in two synthetic implementations. This is evidence about those models, not
+yet about production AI systems, organizations, or civilizations.
 
-- A Transformer has no internal "utility function." It has attention weights and learned distributions.
-- Pairwise responses may reflect **training data statistics** filtered through RLHF, not coherent goals.
-- The same model may yield different preference orderings depending on prompt framing, temperature, or context window — violating the stability assumptions of VNM theory.
+In particular:
 
-Our Coherence Score $C$ may therefore measure **RLHF consistency** rather than **emergent rationality**. This distinction is critical and remains empirically unresolved.
+- $\lambda_2>0$ establishes connectivity of an undirected graph; it does not by itself
+  establish robustness to node loss.
+- $K>K_c$ has meaning only for a specified oscillator model, topology, frequency
+  distribution, and limiting regime.
+- a TEO dissipation proxy is not a direct measurement of ecological or computational
+  thermodynamics;
+- the conjunction defining the corridor is not yet proved sufficient;
+- calling the selected constraint bundle *love* is normative framing, not a theorem.
 
-## The Tensor Logic Horizon
+## What the current experiments do not establish
 
-Recent work by Pedro Domingos (2025) on **Tensor Logic** demonstrates that logical deduction and neural network operations are mathematically isomorphic. If this architecture matures:
+### Inverse reconstruction
 
-- Our *external* Coherence Score $C$ could become unnecessary — logical consistency would be guaranteed *internally* by the network weights.
-- The Multi-Paradigm Orchestrator would shift from a *corrective* role (fixing broken agents) to a *coordinative* role (managing healthy agents with competing goals).
+The benchmark measures search and identifiability inside small declared languages and
+model families. Exponential enumeration curves are properties of those encodings and
+algorithms. They do not prove a general lower bound and do not settle P versus NP.
 
-This does not invalidate our framework. It evolves it. If Tensor Logic matures into a practical architecture with strong internal consistency guarantees, it could reduce the need for some *single-agent* external alignment scaffolding. Our orchestration architecture is aimed at *multi-agent* coordination dynamics; the two directions are plausibly complementary rather than competing.
+Interventions reduce a consistent-model class when the true process and a discriminating
+query lie inside the declared setup. This does not mean intervention always identifies a
+unique real mechanism.
 
-## What Must Come Next
+### Agentic identity suite
 
-1. **Empirical validation**: Running the API Triad Generator against live commercial models (GPT-4, Claude, Gemini) to produce real $C$-Scores rather than theoretical ones.
-2. **TEO simulation**: Numerically solving the coupled ODE system (Replicator + Kuramoto + Homeostatic + Entropy) and calibrating it against real-world data (CO₂ trajectories, Gini coefficients).
-3. **Peer review**: Submitting the formal paper to arXiv and inviting critical feedback from the alignment research community.
+The suite distinguishes hand-built architectures under selected perturbations. Identity
+Persistence and Δ-Kohärenz are instruments for those tests, not universal measures of
+identity or consciousness.
+
+Experiment 8 omits a constant bias from both compared filters. Its failure demonstrates
+model omission in that setup. It does not prove that a single observation channel makes
+the bias structurally unidentifiable. A proper identifiability study must vary initial-state
+knowledge, priors, reference signals, and an augmented state model.
+
+### Preference consistency
+
+The utility-engineering scripts currently feed hard-coded choices into a graph diagnostic.
+They do not query live models. An intransitive response graph can reflect framing,
+sampling, context, or aggregation; it does not uniquely reveal an internal utility
+function, irrationality, reward hacking, or safety risk.
+
+The older ChatGPT-versus-Claude note records an unreproducible manual exploration. It is
+research history, not empirical evidence.
+
+## Claims deliberately not made
+
+This repository does not currently establish:
+
+- a universal scalar measure of intelligence;
+- that an unqualified “generator” is a mathematical primitive;
+- that recovering a process is generally harder than running it;
+- that emergence has one scale-invariant equation;
+- that societies and AI systems are mathematically identical;
+- that any current AI system is conscious;
+- that Gödel's incompleteness theorem requires human oversight or prevents self-modeling;
+- that thermodynamics alone determines ethical values;
+- that a toy simulation predicts a deployment outcome.
+
+When an older exploratory page sounds stronger, this assessment and [What This Project Does
+NOT Claim](what-this-project-does-not-claim.md) govern.
+
+## The main methodological risk
+
+The repository is unusually rich in cross-domain mappings. That makes it generative, but
+also makes analogy easy to mistake for identity. A mapping earns stronger status only when
+it declares:
+
+1. source and target objects;
+2. preserved relations;
+3. observation and intervention procedures;
+4. estimated parameters and uncertainty;
+5. a prediction or failure condition not guaranteed by construction.
+
+Shared vocabulary is not enough.
+
+## What must come next
+
+1. **Model-identification controls:** compare search methods under matched languages,
+   compute budgets, noise, and out-of-family cases.
+2. **Experiment 8 controls:** add augmented-state estimators and vary what is known about
+   initial state, bias, and reference signals.
+3. **Real-model preference study:** preregister prompts and exclusions; repeat across
+   orderings, temperatures, model versions, and sessions; publish raw responses.
+4. **External viability tests:** calibrate variables to one bounded real system before
+   making civilizational claims.
+5. **Cooperative-intelligence experiment:** compare individual and mixed teams under equal
+   budgets, real revision authority, and independent verification.
+6. **Culture bridge:** operationalize recurrence, transmission, correction, and power; test
+   whether stable practices predict future action better than stated knowledge alone.
+7. **External review:** seek specialists in dynamical systems, causal inference,
+   information theory, cognitive science, anthropology, and organizational research.
+
+## Falsification posture
+
+The project should shrink when evidence requires it.
+
+- If passive data identifies the relevant process as reliably as intervention under matched
+  access, the intervention claim weakens.
+- If capability does not load multiple constraints in calibrated systems, the corridor's
+  broader architecture claim weakens.
+- If identity instruments fail to predict held-out behavior better than simpler baselines,
+  retire them.
+- If heterogeneous cooperation adds no reachable solutions after coordination cost, the
+  separatrix hypothesis fails.
+- If recurring practices add no predictive value beyond knowledge, incentives, and
+  resources, the proposed culture bridge fails.
+
+The repository is successful if it makes these failures visible, not if every earlier idea
+survives.
 
 ## References
 
-1. Domingos, P. (2025). *Tensor Logic.* Preprint.
-2. Mazeika, M. et al. (2025). *Utility Engineering.* Preprint.
+- [Foundations Reconstruction](../core/mathematical-axioms.md)
+- [Inverse-Reconstruction Benchmark](../../lab/benchmarks/inverse-reconstruction/README.md)
+- [The Viable Corridor](../../papers/viable-corridor.md)
+- [Agentic Identity Suite](../../lab/AGENTIC_README.md)
+- [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md)
+- [From Action to Culture](../emergence/from-action-to-culture.md)

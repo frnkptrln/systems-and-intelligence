@@ -1,11 +1,10 @@
 """
 black_swan_simulation.py
 
-Models 'Black Swan' regime shifts using Self-Organized Criticality (SOC)
-on a complex network. Incorporates spectral gap (lambda_2) for resilience,
-a proxy for Transfer Entropy to predict collapse, and an Active Inference
-Agent that uses the Biological Veto to prevent catastrophic avalanches
-at the cost of efficiency (throughput).
+Exploratory network-sandpile model with a threshold-based pause policy.
+The script reports algebraic connectivity and simple rolling warning
+statistics. It does not measure transfer entropy, prove power-law tails,
+or treat lambda_2 as a general robustness metric.
 """
 
 import numpy as np
@@ -38,7 +37,7 @@ class NetworkSandpile:
         self.capacity = np.array([dict(self.graph.degree())[i] * CAPACITY_MULTIPLIER for i in self.nodes])
         
         # Calculate Spectral Gap (lambda_2 of the Laplacian)
-        # Represents network resilience / algebraic connectivity
+        # Algebraic connectivity; robustness requires a separate failure model.
         L = nx.normalized_laplacian_matrix(self.graph).todense()
         eigenvalues = np.sort(np.linalg.eigvals(L).real)
         self.spectral_gap = eigenvalues[1] if len(eigenvalues) > 1 else 0

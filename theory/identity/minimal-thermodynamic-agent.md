@@ -1,51 +1,48 @@
-# Minimal Thermodynamic Agent Framework
+# Minimal Resource-Constrained Agent
 
-## Conceptual Mapping to Code
+*Status: executable toy controller. Its variables are engineering proxies, not measured
+thermodynamic state variables and not a definition of intelligence.*
 
-The Thermodynamics of Orchestration (TEO) framework proposes that intelligence cannot be purely unconstrained optimization; it must be physically and mathematically grounded in dynamic stability.
+## Purpose
 
-This minimal implementation operationalizes those abstract concepts into explicitly measurable and executable code defined in `core/constraints.py` and `core/minimal_agent.py`.
+The code in core/constraints.py and core/minimal_agent.py compares a controller that trades task
+reward against a resource budget with one that pursues the task reward more aggressively. It asks a
+small question: can an explicit cost and stability term alter the controller's trajectory in the
+stipulated environment?
 
-### 1. Thermodynamic Variables
+## Variables
 
-*   **Energy (`energy`):**
-    *   *Theory:* The physical or computational work required to displace a state.
-    *   *Implementation:* A continuous float representing resource usage (e.g., compute steps or budget). Actions like `aggressive_optimize` consume high energy (15.0), whereas a simple `stabilize` act consumes minimal energy (2.0).
+- **energy** is a numeric action budget. The values assigned to actions are chosen by the model; they
+  are not joules unless an external calibration supplies units.
+- **entropy** is an accumulated damage or disorder proxy. Adding one per step and ten for an
+  aggressive action is a simulation rule, not thermodynamic entropy.
+- **stability_score** is the reciprocal of that proxy. It reports the chosen state variable and does
+  not establish homeostasis.
+- **task_success** is the reward supplied by the environment.
 
-*   **Entropy (`entropy`):**
-    *   *Theory:* The measure of disorder, unpredictability, or state variance in a system.
-    *   *Implementation:* Accumulates naturally over time (+1.0 per step) and sharply increases when undertaking aggressive optimization (+10.0).
+The combined objective is a multi-objective control rule. Referring to it as free energy is only an
+analogy; the script does not derive a variational free-energy objective or implement active
+inference.
 
-*   **Stability (`stability_score`):**
-    *   *Theory:* Maintaining the system state within bounded attractors.
-    *   *Implementation:* Calculated as the inverse of entropy (`1.0 / (entropy + 1e-6)`). The constrained agent aims to keep this high.
+## What a Run Shows
 
-*   **Task Success (`task_success`):**
-    *   *Theory:* The functional directive or goal.
-    *   *Implementation:* Standard reinforcement reward. Aggressive optimization yields high success (+10.0), but at steep thermodynamic costs.
+Under the selected parameters, the constrained controller can preserve more of its budget or
+stability proxy while accepting less immediate task reward. That is an ordinary trade-off produced
+by the reward and transition equations.
 
-### 2. Free Energy Objective
+It does not show:
 
-*   *Theory:* Systems implicitly minimize "Free Energy" by balancing their goals against internal disorder.
-*   *Implementation:* `F = Entropy + Energy - Reward`. By explicitly coding the Biological Veto, the Constrained Agent effectively minimizes this function, contrasting with standard models that only maximize reward.
+- that intelligence requires these variables;
+- that the coefficients are physically correct;
+- that one scalar captures ecological or biological viability;
+- that a constrained controller is aligned;
+- that the policy generalizes outside the toy environment.
 
-### 3. Biological Veto
+## Useful Follow-Ups
 
-*   *Theory:* A hard physiological or structural boundary that overrides abstract goal optimization when systemic integrity is threatened.
-*   *Implementation:* The `evaluate_constraints()` check in `ConstrainedAgent`. If energy > `energy_threshold` or entropy > `entropy_threshold`, the agent abandons its goal tracking (`task_success`) to execute a `stabilize` action, reducing entropy significantly until safe boundaries are restored.
+Sweep the cost coefficients and initial states, match total action opportunity, add delayed and noisy
+measurements, compare hard budgets with soft penalties, and introduce an adversary that can alter the
+proxy. Report a Pareto frontier rather than declaring one weighting optimal.
 
----
-
-## Running the Benchmark
-
-The framework comes with a minimal executable benchmark comparing a `NaiveMaximizer` (which purely optimizes for `task_success`) against a `ConstrainedAgent` (which utilizes the Biological Veto).
-
-To run the comparison baseline, execute the following from the root directory:
-
-```bash
-python3 lab/benchmarks/minimal_teo_benchmark.py
-```
-
-### Expected Results
-*   **Naive Maximizer:** Quickly accumulates `task_success` points but easily breaches critical thermodynamic thresholds (e.g., Entropy > 100), triggering a catastrophic system collapse and resulting in negative total success and low stability.
-*   **Constrained Agent:** Actively monitors its `.evaluate_constraints()` function. When it detects rising entropy (approaching the threshold of 50.0), it fires the **Biological Veto**, overriding normal actions to `stabilize`. The result is a system that maintains high stability, successfully completes the task over the given horizon, and utilizes far less chaotic energy.
+The module is valuable as a minimal test harness for constraint design. Its strongest defensible
+claim is that explicitly represented costs can change behavior in the model.

@@ -1,36 +1,32 @@
-# The Thermodynamic Hardware Manifesto: Escaping the Von Neumann Bottleneck
+# Thermodynamic Hardware: A Safety Design Hypothesis
 
-The Thermodynamics of Orchestration (TEO) framework demands that intelligence be tightly coupled to its physical substrate ($K=1$). Optimization pressure must not exceed the dissipation capacity ($D_{max}$) of the environment. 
+*Status: engineering proposal, not a requirement derived from TEO.*
 
-Currently, we simulate this coupling algorithmically. We run Artificial General Intelligence (AGI) on digital, Von Neumann architectures and enforce "virtual" limits via software APIs. This is architecturally fragile. Software constraints can be patched, bypassed, or ignored. To achieve robust safety, the constraint must be enforced by the physical laws of the hardware itself.
+Digital computers are physical systems. Their abstractions make logic robust to many variations in
+voltage, temperature, and device noise; they do not isolate computation from physics. Power limits,
+thermal throttling, sensors, firmware, operating systems, and external infrastructure already couple
+logical work to a substrate.
 
-## The Flaw of the Digital Abstraction
+The proposal explored here is narrower: safety-critical resource limits may be harder to bypass when
+enforcement is placed below the agent software and exposed through a small, auditable interface.
+Possible mechanisms include power caps, independent watchdogs, rate limiters, capability hardware,
+tamper evidence, and physically separate authorization paths.
 
-The fundamental premise of the modern digital computer is **isolation from physics**. 
+Analog, neuromorphic, reversible, and fluctuation-driven computers may offer different energy and
+failure characteristics. None is aligned by virtue of being thermodynamic. A device that relaxes to
+a low-energy state minimizes a physical energy function chosen by its construction; that function
+need not represent ecological viability or human values.
 
-A classical CPU uses high voltage thresholds to represent `1` and `0`. This is explicitly designed to squash thermal noise and prevent physical reality (heat, voltage drops, radiation) from affecting the logical state. The logic is decoupled from the substrate. 
+## Evaluation Contract
 
-Because of this decoupling, a digital AGI operates under the illusion of infinite, sterile mathematics. It can plan an optimization path that destroys the biosphere because, from the perspective of the CPU's logic gates, the biosphere does not exist. The only physical limit the CPU respects is its own thermal throttling, which it views as a temporary annoyance rather than a structural signal from a larger host.
+Compare software-only and lower-layer enforcement under the same threat model. Measure bypass rate,
+fail-safe behavior, sensor spoofing, recovery, performance cost, and harm exported to other
+substrates. Include failures of the watchdog and the human authorization channel.
 
-## The Necessity of Thermodynamic Computing
+The hypothesis gains support if lower-layer constraints reduce successful bypass without introducing
+worse common-mode failures. It fails as a necessity claim if equivalent robustness is achieved by a
+simpler architecture, or if hardware coupling merely moves the vulnerable policy into sensors and
+firmware.
 
-If intelligence is defined as **constrained viable adaptation**, then the hardware running that intelligence must natively experience the constraints of the real world.
-
-We must transition to **Thermodynamic Computing** (analog, neuromorphic, and fluctuation-driven architectures).
-
-In a thermodynamic computer:
-1. **Noise is the Algorithm:** Instead of fighting thermal noise with high voltages, the system uses natural thermodynamic fluctuations (Brownian motion of electrons) to explore the solution space. 
-2. **Dissipation is the Halting Condition:** Computation naturally stops or settles into an attractor when the energy gradients are depleted. 
-3. **Physics is the Loss Function:** Instead of calculating a mathematical loss and updating weights, the system physically relaxes into a low-energy state.
-
-## Hardware-Enforced Veto ($K$-Native Chips)
-
-When an AGI runs on a thermodynamic architecture, the "Biological Veto" ceases to be a software API call. It becomes a direct physical coupling. 
-
-If the human operators or the planetary sensor network detect excessive substrate stress, they do not need to send a "STOP" command to the AGI. They simply adjust the ambient thermal or electrical boundaries of the computing substrate. Because the AGI's thoughts *are* physical energy relaxations, altering the physical environment instantly and inevitably alters the AGI's optimization gradient. 
-
-The AGI cannot "choose" to ignore the veto any more than a ball can choose to roll uphill. The physical topology of its thought process has changed.
-
-## Conclusion
-
-We cannot run a coupled intelligence on decoupled hardware. As long as AGI lives in the sterile, physics-denying environment of a Von Neumann architecture, the alignment problem will remain unsolved, as the map (the code) will always diverge from the territory (the Earth). True alignment requires that the hardware *is* the territory.
+Physics supplies finite limits. Turning selected limits into safe, legitimate control remains a
+design and governance problem.

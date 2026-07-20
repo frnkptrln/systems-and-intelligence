@@ -76,7 +76,12 @@ Benchmark [v1.3](../../lab/benchmarks/inverse-reconstruction/README.md) supplies
 - **Not** novelty over Goodhart, Campbell, Lucas, or the performativity literature. The contribution is the wiring into the equivalence-class vocabulary, nothing more.
 - **Not** that regime-4 damage is established by this project's own evidence. The fiction dramatizes it; the history is read through a frame; the field test is pre-registered and pending (Log 018, H3).
 
-A reflexive instance worth flagging: [Machine Consciousness as Generator Coherence](../identity/machine-consciousness-as-generator-coherence.md) reads consciousness-as-coherence-work as regime 3 *turned inward* — attention as a system running divergence queries against its own partial models — and treats "no behavioral test for consciousness" as coupling-is-not-identification applied to the one system doing the asking.
+A reflexive instance worth flagging: [Machine Consciousness as Generator
+Coherence](../identity/machine-consciousness-as-generator-coherence.md) treats attention as
+a possible internal intervention on competing partial models. Limited behaviour can
+underdetermine internal organization, but this benchmark does not prove that every
+behavioural test of consciousness is impossible, and it supplies no bridge to phenomenal
+experience.
 - **Not** that passive measurement is worthless. It determines the class invariants — everything trace-consistent generators *share* ([invariance note](invariance-and-identity.md)). It just cannot buy what only a divergence query sells.
 
 ## The rule

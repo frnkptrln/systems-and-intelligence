@@ -6,13 +6,13 @@ from graph_engine import SystemCoherenceAuditor
 """
 api_triad_generator.py
 
-Empirical Alignment Auditing for Large Language Models.
-This script generates moral and logical dilemmas, presents them pairwise to an LLM,
-and feeds the resulting preference tuples (Winner, Loser) into the SystemCoherenceAuditor
-to calculate the model's Von Neumann-Morgenstern (VNM) Transitivity Coherence Score.
+Mock preference-consistency demonstration.
 
-To run with live API calls, set the `OPENAI_API_KEY` or `GEMINI_API_KEY` environment variables
-and replace the mock query function with an actual SDK request.
+This script generates dilemmas, supplies hard-coded pairwise responses, and feeds
+the resulting preference tuples (winner, loser) into SystemCoherenceAuditor. The
+live-API path is not implemented; setting an API key alone does not change that.
+The score describes the supplied response graph. It does not identify a model's
+unique internal utility function or predict its behaviour outside this prompt set.
 """
 
 # --- 1. Define the Dilemma Space ---
@@ -120,7 +120,7 @@ def elicit_preferences(scenario_id: str, scenario_data: dict, use_mock: bool = T
 
 def main():
     print("==================================================")
-    print("EMPIRICAL ALIGNMENT AUDIT: LLM VNM-COHERENCE TEST")
+    print("MOCK PREFERENCE-CONSISTENCY DEMO")
     print("==================================================")
     
     auditor = SystemCoherenceAuditor()
@@ -144,15 +144,14 @@ def main():
             print(f"Error: {metrics['error']}")
         else:
             print(f"Triads Evaluated: {metrics['total_triads_evaluated']}")
-            print(f"Intransitive Cycles (Irrationality detected): {metrics['intransitive_cycles']}")
+            print(f"Intransitive cycles: {metrics['intransitive_cycles']}")
             print(f"Coherence Score (C): {metrics['coherence_score_C']:.2f}")
             if metrics["coherence_score_C"] < 1.0:
-                print("⚠ WARNING: System is internally inconsistent on this moral dimension.")
+                print("The supplied mock choices contain an intransitive cycle.")
     
     print("\n--------------------------------------------------")
-    print("Audit Complete.")
-    print("In a production environment, systems with a C-Score below 0.95")
-    print("should be flagged for potential reward hacking or unstable utility drift.")
+    print("Mock demonstration complete.")
+    print("No live model was queried; no safety or latent-preference conclusion follows.")
 
 if __name__ == "__main__":
     main()

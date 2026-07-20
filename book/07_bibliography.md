@@ -68,7 +68,7 @@ This repository and its theoretical framework draw upon established literature i
 
 **Von Neumann, J., & Morgenstern, O. (1944).**
 *Theory of Games and Economic Behavior.* Princeton University Press.
-*(Axiomatic foundation for rational utility mapping, extended to measure latent utility structure of LLMs.)*
+*(Axiomatic foundation for expected-utility representation; repository demos use only observable response-preference graphs and do not identify latent LLM utility.)*
 
 **Wilson, K. G. (1971).**
 *Renormalization group and critical phenomena.* Physical Review B.

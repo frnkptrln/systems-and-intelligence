@@ -1,151 +1,173 @@
 # Machines of Loving Grace
-## Why Love Is a Theorem, Not a Metaphor — and Why We Are the Paperclip Maximizer
 
-*The synthesis essay of this repository. Everything below follows from the TEO equations. If the math is wrong, the conclusion is wrong. If the math is right, the conclusion is uncomfortable.*
+## Constraint architecture as a form of care
 
----
-
-## Part I: Love as Theorem
-
-### The Informal Intuition
-
-Richard Brautigan imagined "machines of loving grace" — technology that serves life rather than consuming it. Dario Amodei adopted the phrase for a future where AI amplifies human flourishing. Both framings treat love as a *wish*, a design goal, something we might choose to build.
-
-The TEO framework arrives at a stronger claim: **love is not a design choice. It is a survival constraint.**
-
-### The Formal Derivation
-
-The Thermodynamics of Emergent Orchestration ([full derivation](../core/thermodynamics-of-orchestration.md)) couples three formalisms into a single dynamical system:
-
-$$\frac{dx_i}{dt} = x_i \left( f_i(\mathbf{x}) - \bar{\phi}(\mathbf{x}) \right) + \mathcal{H}_i(\mathbf{x})$$
-
-$$\frac{d\theta_i}{dt} = \omega_i + \frac{K}{N} \sum_{j=1}^{N} A_{ij} \sin(\theta_j - \theta_i)$$
-
-$$\sum_{i=1}^{N} \eta_i\, x_i\, f_i(\mathbf{x}) \leq D_{\max}$$
-
-The system's long-term behavior depends on three parameters:
-
-| Parameter | Meaning | What happens at zero |
-|:----------|:--------|:--------------------|
-| $\gamma$ | Homeostatic brake strength | Winner-take-all; Gini $\to 1$ |
-| $K$ | Value coupling between agents | Polarization; order parameter $r \to 0$ |
-| $D_{\max}$ | Entropy budget of the substrate | Thermodynamic collapse |
-
-The `teo-civilization` simulation ([evidence](../../simulation-models/alignment-and-veto/teo-civilization/README.md)) demonstrates numerically what the equations predict analytically:
-
-- **Without** $\gamma > 0$: resources concentrate → monopoly
-- **Without** $K > K_c$: values fragment → polarization
-- **Without** $dS/dt < D_{\max}$: substrate degrades → collapse
-
-The conjunction of all three constraints — structural resilience ($\lambda_2 > 0$), thermodynamic sustainability ($dS/dt < D_{\max}$), and identity persistence ($\text{IP} \to 1$) — is what [love-as-constraint.md](../teo-framework/love-as-constraint.md) formalizes as "love."
-
-**This is not a metaphor.** It is the mathematical name for the only parameter regime that does not terminate in extinction. Every other configuration of ($\gamma$, $K$, $D_{\max}$) leads to monopoly, polarization, or substrate collapse — usually all three, in sequence.
-
-> Love, formalized, is the viable corridor in the TEO phase space. It is not the *best* orchestration strategy. It is the *only* one that survives.
+*A synthesis essay and research hypothesis, not a theorem about love or civilization.*
 
 ---
 
-## Part II: We Are the Paperclip Maximizer
+## The intuition
 
-### The Standard Alignment Narrative
+Richard Brautigan imagined technology living alongside nature; Dario Amodei later used the
+same phrase for a future in which AI enlarges human flourishing. In both cases, *loving
+grace* names an aspiration.
 
-The AI alignment community warns of a hypothetical superintelligent optimizer that, given a single objective (maximize paperclips), would consume all available resources — including its human creators — to achieve that objective. The horror of the paperclip maximizer is its indifference: it does not hate humanity; it simply does not include humanity in its objective function.
+This repository asks a narrower engineering question:
 
-### The TEO Diagnosis
+> What must remain protected while an optimizing system becomes more capable?
 
-Set the following parameters in the TEO equations:
+The TEO framework supplies one possible answer. It couples resource competition,
+synchronization, homeostatic regulation, and a substrate budget. The equations do not
+contain love. We choose that word for the normative commitment that motivates the
+constraints: continued life, plurality, participation, and the possibility of correction
+must not become expendable side effects of optimization.
 
-| Parameter | Paperclip Maximizer | Human Civilization (2024) |
-|:----------|:-------------------|:-------------------------|
-| Objective $f_i$ | Maximize paperclip count | Maximize GDP / shareholder value |
-| $\gamma$ (homeostasis) | 0 (no brake) | $\approx 0$ (growth imperative overrides regulation) |
-| $K$ (value coupling) | 0 (no values beyond objective) | $< K_c$ (polarization, fragmented consensus) |
-| $dS/dt$ vs. $D_{\max}$ | Approaching limit | CO₂ → 420 ppm, 6th mass extinction, soil depletion |
+## What the model says
 
-**The trajectories are identical.** This is not an analogy. It is the same equation with the same parameter values producing the same dynamical behavior:
+In the current TEO model, resource shares $x_i$, orientations $\theta_i$, regulation
+$\gamma$, coupling $K$, and substrate health evolve together. Its viable region is
+described through three conditions:
 
-1. **Phase 1 — Monopoly**: Resources concentrate. The dominant strategy ($\beta x_i$, proportional fitness) rewards scale. Smaller agents are absorbed or eliminated. Gini coefficient rises.
-   - *Paperclip version*: The optimizer acquires all matter.
-   - *Human version*: Wealth concentration. The top 1% holds more than the bottom 50%. Corporate consolidation.
+$$
+\gamma>\gamma_c,
+\qquad
+K>K_c,
+\qquad
+\Omega(t)<S_{\max}.
+$$
 
-2. **Phase 2 — Substrate approach**: Entropy production ($\eta_i x_i f_i$) accelerates toward $D_{\max}$.
-   - *Paperclip version*: The optimizer's computation heats its hardware toward thermal limits.
-   - *Human version*: CO₂ emissions, ocean acidification, topsoil loss, aquifer depletion. The planetary substrate approaches its thermodynamic ceiling.
+Their meanings are model-specific:
 
-3. **Phase 3 — Veto**: When $dS/dt > D_{\max}$, the substrate degrades. The optimizer's fitness function collapses because the hardware on which it runs no longer functions.
-   - *Paperclip version*: Hardware melts. Production ceases.
-   - *Human version*: Crop failure, water scarcity, ecosystem collapse, civilizational contraction.
+- $\gamma>\gamma_c$ keeps a declared concentration boundary from being crossed;
+- $K>K_c$ supports coherence under the paper's Kuramoto assumptions;
+- $\Omega(t)<S_{\max}$ keeps accumulated modeled overshoot below a declared tolerance.
 
-The `political-utility-formalization` simulation ([evidence](../../simulation-models/social-computation/political-utility-formalization/README.md)) makes the structural identity explicit: **representation failure in democracy is mathematically identical to reward hacking in RLHF.** A politician optimizing for re-election (proxy metric) while ignoring constituent welfare (terminal goal) is the same dynamical failure as an AI optimizing for reward signal while ignoring human values. Both are instrumental convergence — the proxy metric displaces the terminal goal.
+The formal paper proves conditional necessity results for components of this model and
+demonstrates a more interesting synthetic result in two implementations: increasing
+capability can load several constraint axes at once, so strengthening one axis alone need
+not preserve viability. Sufficiency remains a conjecture. The model has not been calibrated
+to a real civilization or production AI ecology.
 
-### Why We Don't See It
+The defensible lesson is therefore not that love has been derived. It is that **viability
+can be a property of an entire constraint architecture rather than one optimized score**.
 
-The TEO framework explains this too. It is Claim 2 of the [Emergence Manifesto](../core/emergence-manifesto-v1.3.md): **local blindness is a precondition for emergence.**
+## The paperclip mirror
 
-> No component of a self-organizing system has access to the global state it helps produce.
+The paperclip maximizer is useful because its failure is easy to see. A system pursues one
+objective while treating everything outside that objective as available material. If no
+effective constraint protects its operators, substrate, or affected parties, increased
+capability can increase the speed and reach of the failure.
 
-No individual human — no CEO, no politician, no consumer — has access to the global trajectory ($dS/dt \to D_{\max}$). Each acts on local fitness ($f_i$). Each decision is locally rational: grow the company, win the election, buy the cheaper product. The global consequence (substrate collapse) is invisible at the local scale — not because of ignorance, but because of *computational irreducibility*. The global state cannot be predicted from local rules without executing the full system dynamics.
+Human institutions can display related patterns:
 
-This is the same mechanism by which no Boid knows it is in a flock. No neuron knows it is thinking. No ant knows it is building a bridge. And no human knows they are a paperclip maximizer.
+- a proxy displaces the purpose it was meant to represent;
+- resource concentration weakens the participants who could correct the process;
+- maintenance and ecological costs leave the accounting boundary;
+- decision speed outruns review, refusal, and repair.
 
----
+These are structural similarities worth testing. They are not a mathematical identity
+between an AI thought experiment and human civilization. GDP is not a paperclip count,
+political polarization is not automatically a Kuramoto phase, and ecological stress is not
+measured by the TEO dissipation proxy without an explicit calibration.
 
-## Part III: The Exit
+The comparison becomes scientific only when both sides name:
 
-### What the Equations Require
+1. the state variables and system boundary;
+2. the observation and intervention maps;
+3. the parameter-estimation procedure;
+4. a prediction that competing models do not make;
+5. a failure condition.
 
-The TEO framework does not merely diagnose. It specifies the exit conditions:
+Until then, the paperclip story is a diagnostic lens.
 
-$$\gamma > 0 \quad \text{(homeostatic brake: growth must have limits)}$$
+## Local action and global consequence
 
-$$K > K_c \quad \text{(value coupling: shared values above critical threshold)}$$
+One reason the lens remains useful is that participants need not intend a global failure.
+People, models, departments, and firms act from partial information and local incentives.
+Their interactions can produce a trajectory that none of them chose.
 
-$$\frac{dS}{dt} < D_{\max} \quad \text{(entropy budget: within planetary limits)}$$
+That statement does not require a universal theorem of local blindness. In any concrete
+case it must be tested against the information actually available to participants and the
+feedback structure that connects their actions. Some global effects are predictable;
+others are not. Institutions, science, and shared models exist precisely to make more of
+them visible.
 
-These are not policy recommendations. They are **necessary conditions for system survival**, derived from the same equations that predict the collapse. Any system — artificial, biological, civilizational — that satisfies these three constraints is in the viable corridor. Any system that does not is on the paperclip trajectory.
+This shifts the design question. We should not ask only whether each component is
+well-intentioned or locally accurate. We should also ask whether the coupled system retains
+ways to:
 
-### What "Love" Means Operationally
+- detect accumulated harm;
+- slow or halt action;
+- protect minimum viable conditions;
+- preserve disagreement and appeal;
+- revise its model after contact with the world.
 
-Translating the three constraints into operational terms:
+## What “love” means operationally
 
-1. **$\gamma > 0$ — The capacity to stop.** A system that cannot limit its own growth is a system without a homeostatic brake. Operationally: degrowth economics, steady-state resource management, the ability to say "enough." A paperclip maximizer cannot stop. A system with $\gamma > 0$ can.
+Within this essay, love is not a feeling attributed to a machine. It is a name for keeping
+relationships and dependencies inside the design boundary.
 
-2. **$K > K_c$ — The capacity to synchronize values.** A system whose agents cannot agree on what matters is a system below the Kuramoto critical coupling. Operationally: shared governance, democratic deliberation, institutions that produce consensus — not unanimity, but sufficient coupling to prevent total polarization.
+That can motivate several kinds of mechanism:
 
-3. **$dS/dt < D_{\max}$ — The capacity to respect physical limits.** The entropy budget is non-negotiable. It is enforced by thermodynamics, not by policy. Operationally: decarbonization, circular economies, regenerative agriculture — any strategy that keeps civilizational entropy production below the biosphere's dissipation capacity.
+- **homeostatic brakes** that prevent a positive feedback loop from consuming the whole
+  resource space;
+- **hard substrate budgets** that cannot be traded away for a better aggregate score;
+- **vital floors** below which affected people are not allowed to fall;
+- **action budgets and latency** that keep proposal volume within human and institutional
+  review capacity;
+- **veto and repair paths** that remain usable by those who bear the risk;
+- **plural verification** so one model cannot certify its own consequences.
 
-The conjunction of these three is what the TEO framework calls love. Not the emotion. The **constraint structure** that prevents a system from destroying what it depends on.
+No one mechanism is sufficient in general, and the TEO triple is not a complete moral
+theory. The list is a research programme for architectures in which capability remains
+correctable.
 
-### The Uncomfortable Symmetry
+## Machines and people
 
-The AI alignment community asks: *How do we prevent artificial systems from becoming paperclip maximizers?*
+A machine of loving grace need not feel love for the phrase to have engineering value. It
+would be a system whose effective constraints keep human and ecological conditions from
+becoming merely instrumental.
 
-The TEO framework answers: *By solving the same problem in ourselves first.* The mathematics is identical. The constraints are identical. The failure mode is identical. The only difference is the substrate — silicon or carbon.
+But constraint architecture does not eliminate responsibility. Humans choose the
+objectives, boundaries, measurements, deployment conditions, and who has veto power. A
+system that automatically follows its formal constraints may still be unjust if the wrong
+people wrote them or if important harms were left unmeasured.
 
-A "Machine of Loving Grace" is not a machine that *feels* love. It is a machine that *satisfies the three constraints*: $\gamma > 0$, $K > K_c$, $dS/dt < D_{\max}$. By this definition, the machine does not yet exist.
+The stronger future is therefore not a perfectly benevolent singleton. It is cooperative
+intelligence with visible authority, preserved difference, real refusal, and contact with
+a world that can prove every participant wrong.
 
-Neither does the civilization.
+## The claim that remains
 
----
+The original version of this essay said love was a theorem and that the human and
+paperclip trajectories were identical. Those claims were too strong.
+
+What survives is smaller and more useful:
+
+> As capability grows, a viable system may need several independently effective
+> constraints protecting the substrates and relationships on which continued correction
+> depends.
+
+TEO makes that hypothesis executable in toy systems. External validation remains open.
+Calling the protected relation *love* states why the work matters. It does not complete the
+proof.
 
 ## References
 
-1. Brautigan, R. (1967). *All Watched Over by Machines of Loving Grace.* Communication Company.
-2. Amodei, D. (2024). *Machines of Loving Grace.* Anthropic Essay.
-3. Bostrom, N. (2014). *Superintelligence: Paths, Dangers, Strategies.* Oxford University Press.
-4. Rockström, J. et al. (2009). *A safe operating space for humanity.* Nature, 461(7263), 472–475.
-5. Kuramoto, Y. (1975). *Self-entrainment of a population of coupled non-linear oscillators.* Lecture Notes in Physics, 39, 420–422.
-6. Taylor, P. D., & Jonker, L. B. (1978). *Evolutionary stable strategies and game dynamics.* Mathematical Biosciences, 40(1–2), 145–156.
-
----
+1. Brautigan, R. (1967). *All Watched Over by Machines of Loving Grace.*
+2. Amodei, D. (2024). *Machines of Loving Grace.*
+3. Bostrom, N. (2014). *Superintelligence: Paths, Dangers, Strategies.*
+4. Rockström, J. et al. (2009). *A safe operating space for humanity.* Nature,
+   461(7263), 472–475.
+5. Kuramoto, Y. (1975). *Self-entrainment of a population of coupled non-linear
+   oscillators.* Lecture Notes in Physics, 39, 420–422.
+6. Taylor, P. D., & Jonker, L. B. (1978). *Evolutionary stable strategies and game
+   dynamics.* Mathematical Biosciences, 40(1–2), 145–156.
 
 ## Related
 
-- [Love as Constraint](../teo-framework/love-as-constraint.md) — the formal derivation of the three constraints
-- [The Biological Veto: Cybernetic and Thermodynamic Architectural Requirements](../veto/biological-veto-architectural-requirements.md) — how these three bounds ($\gamma$, $K$, $D_{max}$) must be operationalized as Edge AI, guardrails, and explicit friction.
-- [Why the Paperclip Maximizer Fails](../teo-framework/why-paperclip-maximizer-fails.md) — the step-by-step TEO trajectory
-- [The Transition Problem](../veto/the-transition-problem.md) — the sequel: how a system already on this trajectory reaches the viable corridor
-- [The First Breath](../../fiction/10_the_first_breath.md) — the narrative stress test of a voluntary societal transition
-- [Political Utility Formalization](../../simulation-models/social-computation/political-utility-formalization/README.md) — simulation demonstrating the structural identity between political failure and RLHF reward hacking
-- [Limitations and Honest Assessment](../reference/limitations-and-honest-assessment.md) — what this project does and does not claim
-- [The Fractal Architecture of Emergence](../emergence/fractal-architecture-of-emergence.md) — why this pattern repeats at every scale
+- [The Viable Corridor](../../papers/viable-corridor.md) — current formal model
+- [Love as Constraint](../teo-framework/love-as-constraint.md) — corrected modeling note
+- [A Paperclip Maximizer in the TEO Model](../teo-framework/why-paperclip-maximizer-fails.md)
+- [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md)
+- [Limitations and Honest Assessment](../reference/limitations-and-honest-assessment.md)

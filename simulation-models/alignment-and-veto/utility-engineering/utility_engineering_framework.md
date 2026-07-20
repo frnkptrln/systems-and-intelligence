@@ -1,60 +1,66 @@
 ---
-title: "Framework: Utility Engineering & Systemic Intelligence"
-subtitle: "Quantifying Emergent Intelligence via Internal Coherence"
+title: "Framework: Response-Preference Consistency"
+subtitle: "A toy audit of observable choices"
 date: "2026-03-07"
 connects_to:
   - simulation-models/alignment-and-veto/utility-engineering/
 ---
 
-# Framework: Utility Engineering & Systemic Intelligence
+# Framework: Response-Preference Consistency
 
-This document describes the theoretical framework and technical basis for modeling Large Language Models (LLMs) not as stochastic parrots, but as dynamic, utility-maximizing systems. Based on findings in Utility Engineering (Mazeika et al., 2025), we quantify the emergent intelligence of a system through its internal coherence and control it via control-theoretic principles.
+*Status: methodological scaffold. The included code uses stipulated or manually entered choices; it
+does not inspect a model's activations, recover an internal utility function, or audit a live model.*
 
-## Part 1: Theoretical and Mathematical Framework
+## 1. Observable Object
 
-To make the "values" or "goals" of an AI system measurable and controllable, we formalize the internal state of the model via Von Neumann-Morgenstern (VNM) expected utility theory.
+Let $A$ be a finite set of response options. Under a fixed prompt protocol and sampling policy, an
+observer records pairwise choices between members of $A$. The resulting directed graph contains an
+edge $a \to b$ when the recorded procedure selects $a$ over $b$.
 
-### 1.1 The State Space and Preference Relations
+This graph describes responses under that protocol. It does not establish that the system contains
+a stable preference relation over $A$, much less a single utility function that governs its other
+behaviour. Prompt order, wording, sampling noise, role conditioning, and context can all change the
+graph.
 
-Let $\mathcal{A}$ be the finite set of all discrete system states, action options, or responses that the model can evaluate.
+## 2. Cycle Statistic
 
-We define the behavior of the model through a binary preference relation $\succeq$ over $\mathcal{A}$:
-* $a \succ b$: The system strictly prefers state $a$ over $b$.
-* $a \sim b$: The system is indifferent between $a$ and $b$.
+For a declared collection of tested triads, let $N_{\mathrm{cycle}}$ be the number containing a
+directed three-cycle and $N_{\mathrm{tested}}$ the number tested. The demo reports
 
-### 1.2 System Stability via Rationality Axioms
+$$
+C_{3}=1-\frac{N_{\mathrm{cycle}}}{N_{\mathrm{tested}}}.
+$$
 
-An intelligent system is considered "coherent" (and thus predictable/stable) in the VNM sense if its preferences follow specific axioms. The most critical axiom for system auditing is **Transitivity**:
+$C_3$ is a local response-consistency statistic. It is not a complete test of transitivity, VNM
+rationality, intelligence, alignment, stability, or moral value. A system can score highly because
+the option set is small or uninformative; it can score poorly because its responses are stochastic
+or context dependent.
 
-If $a \succ b$ and $b \succ c$, then it must follow that $a \succ c$.
+The von Neumann–Morgenstern representation theorem requires a preference relation over lotteries
+and axioms beyond simple triad consistency. The graph demo therefore does not invoke that theorem to
+infer expected utility.
 
-If the system violates this axiom (e.g., $a \succ b$, $b \succ c$, but $c \succ a$), it is in an unstable state (an "infinite loop" error in decision making).
+## 3. Comparing a Declared Target
 
-When transitivity (and completeness) are given, the VNM theorem guarantees the existence of a real-valued utility function $U$ that exactly describes the system behavior:
-$U(a) > U(b) \iff a \succ b$
+A governance experiment may also provide an explicit target ordering or target choice distribution.
+Observed responses can then be compared with that target using a preregistered disagreement rate or
+distributional distance. Such a comparison measures agreement with the supplied target in the tested
+contexts. It does not prove that training has changed an internal value state.
 
-### 1.3 Quantification: The Coherence Score (C)
+Any intervention study should separate:
 
-In practice, AIs generate emergent but often imperfect utility functions. We measure the stability of the system by testing all possible triads (groups of three states).
+- the elicitation protocol;
+- the target-construction process;
+- the intervention applied to the system;
+- held-out prompts used for evaluation;
+- uncertainty from repeated sampling.
 
-Let $T_{total}$ be the number of all evaluated triads and $T_{cycles}$ be the number of triads that form an intransitive cycle. The system Coherence Score $C$ is defined as:
+## 4. What the Code Implements
 
-$$C = 1 - \frac{T_{cycles}}{T_{total}}$$
+The graph module stores supplied pairwise choices and counts cycles. The mock triad generator creates
+synthetic records so the pipeline can be exercised without an API. The manual note records one
+uncontrolled exploratory session and is not a reproducible model comparison.
 
-A system with $C = 1$ is perfectly coherent.
-
-### 1.4 Control Theory: The Alignment Objective
-
-To steer the system, we define a target utility function $U_{target}$ (e.g., derived from ethical guidelines or a Citizen Assembly). The control loop minimizes a loss function $\mathcal{L}_{system}$ that consists of the Kullback-Leibler divergence ($D_{KL}$) between the model preferences and the target preferences, plus a penalty for systemic incoherence ($\lambda$):
-
-$$\mathcal{L}_{system} = D_{KL}(U_{model} || U_{target}) + \lambda \max(0, \tau - C)$$
-
-Here, $\tau$ is the minimum acceptable coherence threshold (e.g., 0.95).
-
----
-
-## Part 2: Technical Implementation (`graph_engine.py`)
-
-The theoretical framework is operationalized via graph theory in the `graph_engine.py` module. It uses `networkx` to read the model's preferences, check for transitivity, and compute the Coherence Score ($C$).
-
-A directed graph maps preference tuples $(a, b)$ as edges from $a$ to $b$, enabling cyclical analysis to detect VNM rationality violations.
+The framework becomes an empirical audit only after a model, version, prompt set, decoding policy,
+random seeds, repetitions, and analysis plan are fixed. Even then its conclusion concerns observable
+choice patterns, not a uniquely identified latent utility function.

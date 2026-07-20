@@ -11,7 +11,13 @@ Scaffolding for the Agentic Identity Suite's eventual switch from mock to real L
 
 ## Why this layer exists
 
-The Mirror Problem (see [Open Problem 1](../../theory/reference/open-problems.md#open-problem-1-the-mirror-problem)) and Claim 9 of [Emergence Manifesto v1.3](../../theory/core/emergence-manifesto-v1.3.md) need empirical validation with real language models. The mock embeddings used by `lab/agents/three_layer_agent.py` and `lab/agents/baseline_mirror_agent.py` are sufficient for unit-testing the suite's architecture, but not sufficient for the inverse-direction questions the project is structured around — see [The Generator Question](../../theory/core/the-generator-question.md) for the spine.
+The Mirror Problem (see [Open Problem
+1](../../theory/reference/open-problems.md#open-problem-1-the-mirror-problem)) needs
+empirical validation with real language models. The mock embeddings used by
+`lab/agents/three_layer_agent.py` and `lab/agents/baseline_mirror_agent.py` are
+sufficient for unit-testing the suite's architecture, but not for claims about real-model
+identity. See the [Foundations
+Reconstruction](../../theory/core/mathematical-axioms.md) for the current scope.
 
 This provider layer is the seam between the suite's mock-based architecture and its future empirical work. Nothing in the existing experiments has been changed; the suite still runs in mock mode by default.
 

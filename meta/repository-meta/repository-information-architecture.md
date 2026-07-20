@@ -125,9 +125,11 @@ The architecture should optimize for navigability, not taxonomy purity.
 
 ## 4) Three Non-Trivial Claims to Keep Testable
 
-1. **Substrate Veto:** An optimizer coupled to a finite substrate must be bounded by dissipation capacity; if optimization pressure exceeds $D_{\max}$, the system collapses or must throttle.
+1. **Substrate Veto:** Implemented optimizers have finite resource limits; the testable design claim
+   is that an independently enforced, measured capacity constraint can bound selected actions before
+   substrate failure. Physical collapse is not itself a safe veto.
 2. **Impedance Matching:** High-speed silicon proposal generation becomes unsafe when it exceeds the absorption bandwidth of slower biological or institutional regulators; action budgets and latency are safety mechanisms, not UX defects.
-3. **Identity Persistence:** A system with high prediction and adaptation scores can still lack stable identity if its goals, constraints, and values are only time-multiplexed; persistent identity requires co-active constraint structure under perturbation.
+3. **Identity Persistence:** The current hypothesis predicts that systems with high prediction and adaptation scores can still differ in the stability of goals, constraints, and values under perturbation; whether co-active constraint structure improves that stability must be tested against sequential alternatives.
 
 Each claim should remain connected to at least one simulation, benchmark, or explicit open problem.
 

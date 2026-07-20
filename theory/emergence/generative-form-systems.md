@@ -116,7 +116,8 @@ That connects to:
 - Global Neuronal Workspace: local signals become globally broadcast.
 - Integrated Information Theory: a system's state may be irreducible to independent parts.
 - Active Inference and Markov blankets: a system maintains a boundary while acting to preserve viable states.
-- The repo's Chord vs. Arpeggio identity claim: governing components must be co-active, not merely time-multiplexed.
+- The repository's Chord vs. Arpeggio hypothesis: compare joint satisfaction at commitment with
+  matched sequential constraint processing under perturbation.
 
 This makes consciousness a boundary problem, not a mystical endpoint.
 
@@ -149,4 +150,3 @@ This keeps the project lecture-like: many domains, one spine.
 - Bak, P., Tang, C. & Wiesenfeld, K. (1987). *Self-organized criticality*.
 - Dehaene, S., Kerszberg, M. & Changeux, J.-P. (1998). *A neuronal model of a global workspace in effortful cognitive tasks*.
 - Oizumi, M., Albantakis, L. & Tononi, G. (2014). *From the phenomenology to the mechanisms of consciousness: Integrated Information Theory 3.0*.
-

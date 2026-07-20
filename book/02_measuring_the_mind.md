@@ -1,78 +1,71 @@
-# Part 2: Measuring the Mind
+# Part 2: Measurement Without Reification
 
-> **Status:** Earlier synthesis — under revision.  
-> This chapter preserves an earlier formulation of the project. For the current linear route, start with [*From Rule to Mind*](09_from_rule_to_mind.md). Current status tags and scope boundaries elsewhere in the repository override stronger wording here.
+**Status:** Current reader chapter.
 
-If intelligence is a property of continuous dynamical systems, how do we measure it without relying on discrete benchmarks like MMLU or HumanEval?
+Terms such as intelligence, identity, and consciousness do not become measurable merely by
+attaching a scalar to them. A valid instrument must state what system is being tested, under which
+tasks and perturbations, through which observations, against which baseline, and with what failure
+criterion.
 
-This repository proposes moving away from measuring *knowledge retrieval* toward measuring **structural integrity**.
+## The System Intelligence Index as a selected instrument
 
----
+The [System Intelligence Index](../theory/core/system-intelligence-index.md) combines four chosen
+dimensions:
 
-## The System Intelligence Index (SII)
+| Dimension | Symbol | Operational question |
+|:---|:---|:---|
+| Predictive performance | $P$ | How accurately does the selected model predict the declared target? |
+| Regulation | $R$ | How well is a declared variable maintained under perturbation? |
+| Adaptation | $A$ | How quickly does performance recover after a declared change? |
+| Identity persistence | $\mathrm{IP}$ | Are the declared constraints jointly satisfied at commitment? |
 
-The [SII Framework](../theory/core/system-intelligence-index.md) evaluates a system across four dimensions, each normalized to $[0,1]$:
+The proposed aggregate is
 
-| Dimension | Symbol | Measures | Score 0 | Score 1 |
-|:----------|:-------|:---------|:--------|:--------|
-| **Predictive Power** | $P$ | Accuracy of internal model vs. environment | Random guessing | Perfect tracking |
-| **Regulation** | $R$ | Stability under perturbation | Unbounded drift | Zero-variance maintenance |
-| **Adaptation** | $A$ | Recovery after regime shift | No recovery | Instant re-convergence |
-| **Identity Persistence** | $\text{IP}$ | Simultaneous co-instantiation of governing constraints | Time-multiplexed (Arpeggio) | All operative (Chord) |
+$$
+\mathrm{SII}=P\times R\times A\times \mathrm{IP}.
+$$
 
-$$\text{SII} = P \times R \times A \times \text{IP}$$
+This multiplication is a design choice: it makes any zero dimension decisive. It can be useful when
+the evaluator intends all four dimensions to be necessary. It is not a theorem that intelligence
+has four factors, nor a universal ranking of people, organizations, or AI systems. Different task
+distributions, costs, and weightings produce different instruments.
 
-The multiplicative form is deliberate: a zero in any dimension collapses the overall score. A system that predicts perfectly but cannot regulate ($R = 0$) has SII = 0. A system that predicts, regulates, and adapts but has no unified identity ($\text{IP} = 0$) has SII = 0 — it is a sophisticated tool, not a system with integrated intelligence.
+## Identity requires a test family
 
-The [SII Dashboard](https://github.com/frnkptrln/systems-and-intelligence/blob/main/lab/data-analysis/sii_dashboard.py) runs headless mini-simulations and generates comparative radar charts across all four dimensions.
+Identity is not inferred from fluent self-description or one stable output. The current formal
+question is whether selected properties remain invariant under declared transformations:
 
----
+- changes of context, time, role, or tool;
+- bounded perturbations and recovery;
+- changes of observer or interaction partner;
+- interventions that separate rehearsed description from action.
 
-## Identity Persistence: The Fourth Dimension
+The Chord/Arpeggio work narrows one such test. Physical simultaneity is not required; a sequential
+system may compose several constraints before committing an action. The measurable question is
+whether the committed action lies inside their intersection. Even that establishes only functional
+persistence under the chosen tests, not a metaphysical self.
 
-The first three SII dimensions (P, R, A) measure *what* a system does. The fourth — Identity Persistence — measures *whether the system's governing principles are simultaneously operative* during action.
+## Functional organization is not phenomenal consciousness
 
-Consider an agent that:
+Global broadcast, binding, self-model influence, memory access, and perturbation response can be
+specified and tested. The repository calls these **functional** properties. None entails subjective
+experience. Moving from organization to phenomenal consciousness would require an independent
+bridge principle that the project does not possess.
 
-1. Checks its safety constraints at time $t_1$
-2. Pursues its goal at time $t_2$
-3. Verifies value alignment at time $t_3$
+## What the current lab actually tests
 
-This agent scores well on P, R, A — it can predict, regulate, and adapt. But no single compute step integrates all its governance. It is an **Arpeggio**: identity components sounding sequentially, never simultaneously.
+The [Agentic Identity Suite](../lab/AGENTIC_README.md) currently uses constructed agents and
+deterministic mock embeddings. Experiments 5–7 test whether selected architectures leave different
+behavioral signatures and whether hand-built mimics can fool the metrics. They are useful unit
+tests of operational definitions, not evidence about the inner identity or consciousness of a
+commercial language model.
 
-The **Chord Postulate** (Perrier & Bennett, 2026) requires all governing components to be operative in a single compute step $\Delta t$:
+[Experiment 8](../lab/experiments/exp8_reflexive_depth.py) compares raw observation, a fixed
+Kalman filter, and an adaptive process-noise estimator. Its numerical result concerns adaptive
+tracking after a volatility shift. “Reflexive depth” is an interpretation to be tested, not the
+measured variable.
 
-$$\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}$$
+The practical rule is simple:
 
-where $\mathcal{O}(t)$ is the operative set and $n$ is the total number of governing components.
-
-- $\text{IP} \to 1$: **Chord** — unified self, all constraints co-instantiated
-- $\text{IP} \to 0$: **Arpeggio** — simulated self, constraints time-multiplexed
-
-The [Identity Morphospace](https://github.com/frnkptrln/systems-and-intelligence/blob/main/lab/tools/morphospace_visualizer.py) plots agent trajectories in the IP/Coherence plane, revealing which agents maintain the Chord state under stress and which fragment into Arpeggio.
-
----
-
-## Consciousness as Global Availability
-
-This book does not need to solve consciousness to use the concept responsibly. The narrow question is architectural: when does local processing become globally available, integrated, self-referential, and behaviorally binding?
-
-[Consciousness as Global Availability](../theory/identity/consciousness-as-global-availability.md) connects three external anchors to the repo's own metrics:
-
-- Global Workspace: local signals become globally broadcast.
-- Integrated Information: a system state is not reducible to independent parts.
-- Active Inference / Markov Blankets: the system maintains a boundary while acting to preserve viable states.
-
-This keeps consciousness from becoming a decorative claim. It becomes a testable design question: do private modules, broadcast modules, and chord-style integrated modules behave differently under perturbation?
-
----
-
-## The Agentic Identity Suite
-
-To push these metrics into practice, we built the [Agentic Identity Suite](../lab/AGENTIC_README.md). It empirically tests the difference between a "stateless" prompt-response loop and a "stateful" agent:
-
-- **3-Layer Memory Architecture**: Logs → Curated Memory → Distilled Principles
-- **Δ-Kohärenz (Ω)**: Measures how coherently an agent's self-representation changes over time — distinguishing *development* (directional evolution) from *noise* (random fluctuation) from *mirroring* (static resonance)
-- **Observer Divergence**: Tests whether two different observers interacting with the same agent produce measurably different developmental trajectories — probing the relational emergence of identity
-
-We no longer ask "Is this AI smart?" We ask: "Does this AI maintain structural coherence over time — and does all of its identity sound at once?"
+> Name the task, interface, perturbation, baseline, resource budget, and success criterion before
+> naming the capacity.

@@ -50,7 +50,7 @@
 | **R** (Regulation) | Stability of key variable around a target | Unbounded drift; no homeostasis | Zero-variance maintenance at setpoint |
 | **A** (Adaptation) | Recovery speed after perturbation or regime shift | No recovery; performance permanently degraded | Instant re-convergence to pre-perturbation performance |
 
-The multiplicative form means a zero in any dimension collapses the overall score: true system intelligence requires all three capacities.
+The multiplicative form means a zero in any dimension collapses this selected score. That is a property of the metric, not a theorem that every form of intelligence requires exactly these three capacities.
 
 **What it is NOT:** Not a measure of consciousness, subjective experience, or general intelligence. It measures functional competence of a dynamical system.
 
@@ -199,11 +199,11 @@ $$\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}, \qquad \overline{\text{IP}} = \frac
 
 **Informal:** Whether an agent's identity components sound simultaneously (Chord) or sequentially (Arpeggio).
 
-**Operational definition:** Following Perrier & Bennett (2026), the Chord Postulate states that true agentic identity requires all governing components to be operative in a single compute step $\Delta t$. An agent in the Chord state maintains simultaneous co-instantiation of goals, constraints, and values — it does not merely *recall* its safety constraints but has them *active during* action selection.
+**Operational definition:** The Chord Postulate is a repository hypothesis: for selected agent tasks, goals, constraints, and values may be more robust when they remain jointly operative during action selection. A Chord score records that stipulated co-activity; it does not establish "true" identity.
 
 The Arpeggio Postulate states that most current agent architectures are structurally limited to sequential processing of identity components: safety is checked at $t_1$, goals are pursued at $t_2$, values are verified at $t_3$. From the outside, the agent appears stable because it can *talk about* its identity; but no single compute step integrates all components.
 
-**The Lerchner Boundary:** The threshold $\text{IP}_c$ at which the transition from Arpeggio to Chord occurs. In TEO terms, this is a bifurcation analogous to the Kuramoto critical coupling $K_c$.
+**The Lerchner Boundary:** A proposed threshold $\text{IP}_c$ at which a measured architecture could change from sequential to jointly operative constraints. Whether any sharp threshold exists is an empirical question; the Kuramoto transition is an analogy inside selected TEO models, not a derivation.
 
 **What it is NOT:** Not a value judgment. An Arpeggio agent may perform as well as a Chord agent on benchmarks. The distinction is structural, not evaluative — it concerns whether identity is architecturally co-instantiated, not whether the outputs are good.
 

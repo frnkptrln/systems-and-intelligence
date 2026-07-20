@@ -1,9 +1,10 @@
 # ⚡ Self-Organized Criticality – Bak's Sandpile
 
 This simulation implements the **Bak-Tang-Wiesenfeld sandpile** (1987),
-the canonical model of **self-organized criticality (SOC)**: a system
-that drives itself to a critical state where perturbations trigger
-avalanches of all sizes, following a **power-law distribution**.
+the canonical model of **self-organized criticality (SOC)**. The script
+lets a finite open-boundary pile approach a stationary regime and plots
+the observed avalanche-size distribution. A power-law claim requires a
+fit comparison and finite-size analysis beyond the visual included here.
 
 ---
 
@@ -21,16 +22,17 @@ After a transient phase, the system reaches a **critical state** where:
 | Property | Value |
 |:---------|:------|
 | Small avalanches | Very frequent |
-| Large avalanches | Rare but inevitable |
-| Size distribution | P(s) ~ s^(−τ),  τ ≈ 1.1 – 1.3 |
-| Tuning required | **None** – criticality is self-organized |
+| Large avalanches | Possible and less frequent in typical runs |
+| Size distribution | Estimated from the run; model- and size-dependent |
+| Tuning required | Slow drive and open-boundary dissipation are built in |
 
 ### Why is this mind-blowing?
 
-Most phase transitions require precise parameter tuning (temperature
-at exactly the Curie point, coupling at exactly K_c). The sandpile
-tunes **itself** to criticality – no external hand needed. This is why
-power laws appear everywhere:
+Many familiar phase transitions are studied by varying a control parameter
+through a critical region. The sandpile is a precise example in which slow
+driving and dissipation produce scale-rich cascades without tuning such a
+parameter to a single value. It motivated comparisons with many empirical
+systems, but their power laws and mechanisms must be established separately:
 
 - **Earthquakes** (Gutenberg-Richter law)
 - **Forest fires** (fire size distribution)
@@ -49,8 +51,9 @@ Two-panel display:
 | **Left** | Current sandpile height map (sand-coloured heatmap) |
 | **Right** | Log-log plot of avalanche size distribution with fitted power-law exponent τ |
 
-The power law becomes visible after a few thousand grains, and gets
-cleaner with more data. The fitted τ is displayed as a dashed line.
+The log-log plot and fitted slope are exploratory diagnostics. Establishing a
+power law requires testing alternative heavy-tailed distributions, a fitting
+range, goodness of fit, uncertainty, and finite-size effects.
 
 Press `ESC` to exit.
 
@@ -60,11 +63,11 @@ Press `ESC` to exit.
 
 - **Regulation (R):** The average height self-regulates near 2.0 –
   too much sand → large avalanches dissipate it
-- **Predictive Power (P):** While individual avalanches are
-  unpredictable, the *distribution* is perfectly lawful
-- **The deep point:** In SOC, the system is at the boundary between
-  order and chaos – where many theorists believe computation and
-  intelligence are maximised
+- **Predictive Power (P):** Individual avalanches vary while aggregate
+  distributions can be estimated with uncertainty.
+- **Research connection:** Critical regimes are candidates for studying
+  information propagation and computation; this simulation does not show
+  that intelligence is maximized there.
 
 ---
 

@@ -1,26 +1,28 @@
 # Course Spine: From Rule to Mind
 
-*A compact course spine for the existing book and site.*
+*A compact pedagogical path through the book and site.*
 
-> **Status after the foundations audit (2026-07-20):** this is an earlier pedagogical path, not the
-> mathematical foundation. Read the [Foundations
-> Reconstruction](../theory/core/mathematical-axioms.md) first. The operator–iteration–form pattern is
-> useful in selected models; it is not a universal law, an intelligence definition, or a derivation
-> of identity or consciousness.
+> **Status after the foundations audit (2026-07-20):** current reader path, not a
+> mathematical foundation. The operator–iteration–form pattern is useful in selected
+> models; it is not a universal law, an intelligence definition, or a derivation of
+> identity or consciousness. [Foundations
+> Reconstruction](../theory/core/mathematical-axioms.md) governs formal claims.
 
 This is not a second book and not a complete lecture script. The site itself is the script: book chapters, simulations, theory notes, logs, fiction, and meta pages form the interactive course. This page only names the spine that keeps the material teachable.
 
 The repository contains many objects: cellular automata, flocking, IFS attractors, L-systems, random graphs, language agents, institutions, veto protocols, fiction, and architecture logs. They should not be read as a catalogue.
 
-They belong together when they instantiate the same movement:
+They can be compared through the following movement:
 
 ```text
 operator -> iteration -> form -> boundary -> return path
 ```
 
-A local operation repeats. Repetition produces a form. The form develops a boundary. Once bounded, the form begins to constrain the operations that produced it.
+A local operation repeats. Under some conditions its traces stabilize into a form. An
+observer draws or detects a boundary, and the resulting macrodescription may help constrain
+later operations.
 
-That is the spine.
+That is the pedagogical spine. Each transition must still be established in its own model.
 
 ---
 
@@ -48,7 +50,9 @@ A single operation rarely matters. Form appears through repetition.
 
 The Barnsley fern needs many sampled transformations. An L-system needs depth. A graph needs edge additions. A memory system needs repeated sessions. A culture needs recurrence.
 
-Iteration is where time enters the theory. Without iteration, there is no development, only output.
+Iteration is one way time enters these models. A single transformation can still contain
+temporal structure; the point here is that recurrence makes change and stabilization easier
+to study.
 
 ---
 
@@ -62,7 +66,7 @@ Form is not decoration. It is the stabilized trace of repeated operation.
 | Morphology | L-system plant, reaction-diffusion pattern |
 | Collective structure | Flock, swarm path, economic network |
 | Critical regime | Ising transition, sandpile avalanche distribution |
-| Identity | Stable principles after memory distillation |
+| Test-relative continuity | Principles or policies preserved under declared memory tests |
 
 This is the point where beauty and rigor meet. A good form is visible enough to orient thought, but measurable enough to resist fantasy.
 
@@ -70,7 +74,8 @@ This is the point where beauty and rigor meet. A good form is visible enough to 
 
 ## 4. Boundary
 
-A form becomes system-like when it gains a boundary.
+A form becomes system-like for an observer when a boundary makes its inside, outside, and
+allowed interactions explicit.
 
 The boundary may be physical, statistical, informational, institutional, or narrative:
 
@@ -82,15 +87,17 @@ The boundary may be physical, statistical, informational, institutional, or narr
 - a memory layer,
 - a veto protocol.
 
-Without a boundary, there is no system. There is only flux. With a boundary, the system can preserve itself, but it can also become brittle, defensive, extractive, or blind.
+Without a declared boundary, many claims about the system remain ambiguous. Boundaries can
+support persistence, but they can also become brittle, defensive, extractive, or blind.
 
 ---
 
 ## 5. Return Path
 
-The decisive step is downward causation.
+One further step is feedback from the macrodescription to later local dynamics.
 
-The generated form begins to constrain the lower-level operations that generated it:
+In some models, the generated form or a variable summarizing it constrains later
+lower-level operations:
 
 - the flock changes how each bird moves,
 - the organism regulates its cells,
@@ -99,7 +106,8 @@ The generated form begins to constrain the lower-level operations that generated
 - the substrate veto constrains optimization,
 - the repo structure constrains future thought.
 
-This is where emergence stops being a one-way story. It becomes recursive.
+When that feedback is interventionally distinguishable, emergence is no longer only a
+one-way description.
 
 ---
 
@@ -138,11 +146,12 @@ Read the project in this order:
 5. **Bounded systems act back**  
    Downward causation, substrate veto, biological veto, vital floors.
 
-6. **Some systems become globally available to themselves**  
-   Global workspace, integration, chord identity, Δ-Kohärenz.
+6. **Some architectures implement global availability**
+   Global-workspace models, integration, commit-time binding, Δ-Kohärenz. This is a
+   functional research question, not a derivation of experience.
 
-7. **Every claim meets a limit**  
-   Gödel, Turing, Chaitin, uncomputability, honest assessment.
+7. **Every formal claim has a scope**
+   Model assumptions, identifiability, computability, uncertainty, and honest assessment.
 
 For the explicit scale-by-scale comparison, see [Across Scales](../theory/emergence/scale-comparison-map.md). It asks where the structure holds, where it breaks, and how far macro, micro, consciousness, and cosmic boundary language can be pushed without becoming loose metaphor.
 
@@ -154,7 +163,7 @@ This is not a closed doctrine. It is a disciplined way to keep opening the same 
 ## Model-identification direction
 
 The pedagogical movement here follows operator → iteration → form → boundary → return path. A
-separate bounded research thread asks: given a trace, a model family, and specified observational or
+bounded model-identification thread asks: given a trace, a model family, and specified observational or
 interventional access, which candidate process models or equivalence class are identifiable? See the
 [Foundations Reconstruction](../theory/core/mathematical-axioms.md) for the formal limits and [Trace
 to Generator](../theory/emergence/trace-to-generator.md) for the earlier essay whose title preserves

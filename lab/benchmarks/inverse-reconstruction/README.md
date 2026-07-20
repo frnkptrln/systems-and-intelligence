@@ -1,16 +1,21 @@
-# Inverse-Reconstruction Benchmark (v0–v1.11) — Trace → Generator, Measured
+# Inverse-Reconstruction Benchmark (v0–v1.11) — Trace → Candidate Models
 
-*The first runnable artifact on the inverse side of the project's spine: given N steps of trace, reconstruct the generator — with noise, observability, and coverage as dials.*
+*Given a declared model family and a finite trace, which parameters, rules, or equivalence class can
+be recovered—and how do noise, observability, interventions, and coverage change the answer?*
 
 ## Why this exists
 
-[The Generator Question](../../../theory/core/the-generator-question.md) claims an asymmetry: forward (generator → trace) is cheap, inverse (trace → generator) is structurally hard. The repository demonstrates the forward direction ~26 times; until this benchmark, the inverse direction existed only as framing and a prompt-search scaffold. This benchmark turns the asymmetry from a claim into a **measurable curve** — and, in doing so, *sharpens* the claim (see "The honest finding" below).
+The legacy [Generator Question](../../../theory/core/the-generator-question.md) proposed a universal
+forward/inverse asymmetry. The [Foundations
+Reconstruction](../../../theory/core/mathematical-axioms.md) withdrew that claim. This benchmark is
+the empirical correction: it separates parameter fitting, family search, noise, partial
+observability, coverage, and intervention rather than assigning one hardness label to all of them.
 
 ## The three testbeds
 
-Each testbed reuses one of the repo's own forward generators. In all three, the **model family is known** to the reconstructor — it lacks only parameters / rule bits. This is deliberately the standard *system-identification / SINDy* setting (Ljung 1999; Brunton, Proctor & Kutz 2016): the cheap regime, against which the dials measure where hardness actually enters.
+Each testbed reuses one of the repo's specified process models. In all three, the **model family is known** to the reconstructor—it lacks only parameters or rule bits. This is deliberately the standard *system-identification / SINDy* setting (Ljung 1999; Brunton, Proctor & Kutz 2016).
 
-| Testbed | Generator | Inverse method | Dials |
+| Testbed | Process model | Inverse method | Dials |
 |---|---|---|---|
 | **Kuramoto** | mean-field ODE, $\dot\theta_i = \omega_i + Kr\sin(\psi-\theta_i)$ | finite-difference $\dot\theta$, least squares on the known library $\{1,\, r\sin(\psi-\theta_i)\}$ → all $\omega_i$ and shared $K$ | angle noise; **observed fraction** (mean field then computed from the observed subset only — a biased field) |
 | **Elementary CA** | one of the 256 Wolfram rules on a ring | tabulate neighborhood → successor, majority vote | bit-flip noise; **IC entropy** (a single-seed IC may never exercise some neighborhoods) |
@@ -25,7 +30,7 @@ KURAMOTO  — rel. error on K
 CA        — rule-bit accuracy (observed bits), random IC
   p=0 … 0.2: 100%   p=0.3: 93%      (majority vote is noise-robust)
   single-seed IC:  rule 110: 8/8 seen → class 1;  rule 30: 8/8 → class 1
-                   rule 90:  5/8 seen → consistent-generator CLASS SIZE 8
+                   rule 90:  5/8 seen → consistent-model CLASS SIZE 8
 BOIDS     — rel. error on (w_c, w_a, w_s) from positions only
   σ=0: 3%   σ=0.003: 35%   σ=0.01: 226%   σ=0.03: 789%
 ```
@@ -38,29 +43,48 @@ BOIDS     — rel. error on (w_c, w_a, w_s) from positions only
 
 1. **Noise × differentiation** (Boids): observing *state* instead of derivatives means differencing, and differencing amplifies noise; recovery degrades from 3% to ~800% error within $\sigma = 0.03$.
 2. **Partial observability** (Kuramoto): an unobserved part of the system biases the reconstructed mean field; error grows monotonically as coverage shrinks.
-3. **Coverage / identifiability** (CA): a low-entropy trace may never exercise parts of the rule. Rule 90 from a single seed exposes only 5/8 neighborhoods — the remaining 3 bits are unidentifiable **in principle**, leaving a *consistent-generator equivalence class* of size $2^3 = 8$. No method, however clever, can do better than the class. This is [Open Problem 11](../../../theory/reference/open-problems.md)'s "equivalence class of viable generators", measured for the first time in this repo.
-4. **Family search** (not in v0): the genuinely hard regime — recovering the generator when the *model class itself* is unknown — is the program-induction / open-ended symbolic-regression setting (Schmidt & Lipson 2009; Cranmer's PySR; Lake et al. 2015; Ellis et al. 2021). That is the v1 frontier.
+3. **Coverage / identifiability** (CA): a low-entropy trace may never exercise parts of the rule. Rule 90 from a single seed exposes only 5/8 neighborhoods—the remaining 3 bits are unidentifiable **within this evidence and model family**, leaving a consistent-model equivalence class of size $2^3 = 8$. No estimator using only that trace can select one member without an additional assumption.
+4. **Family search** (not in v0): when the model class is not supplied, program induction or symbolic regression must search a declared representation language. Its cost depends on that language, search procedure, target, and resource measure.
 
-This sharpens the spine rather than weakening it: the P≠NP framing of [The Generator Question](../../../theory/core/the-generator-question.md) is about the *search over candidate generators*, not about fitting parameters inside a family someone already handed you.
+None of these results establishes an NP-hardness claim. The benchmark measures finite search and
+identification problems; it does not use P $\ne$ NP as a project foundation.
 
 ## v1, part 1 — the intervention experiment (run)
 
-[`intervention_experiment.py`](intervention_experiment.py) answers the open thread raised in [Construction vs. Deduction](../../../theory/computation/construction-vs-deduction.md): **does the consistent-generator equivalence class collapse when observation is replaced by intervention?** Experiments are *queries*, not traces — the observer chooses states and makes the generator answer. Results:
+[`intervention_experiment.py`](intervention_experiment.py) asks whether a consistent-model
+equivalence class shrinks when passive observation is supplemented by declared interventions. The
+observer chooses states and measures the specified process response. Results:
 
 - **CA (rule 90, single-seed start, class 8):** *passive* observation plateaus at class 8 **forever** — the orbit's neighborhood distribution is exhausted, more watching buys nothing. *One-bit flips* collapse the class within ~10 queries. A single *prepared state* (a de Bruijn row containing every neighborhood) collapses it to 1 **in one step**. The hierarchy is strict: watching < perturbing < preparing.
 - **The frozen exception (rule 0, class 16):** on a dead background, a one-bit flip only produces the four neighborhoods already known — *single-bit interventions never collapse the class*. Only the prepared state does. **The deader the dynamics, the more structure the query itself must supply** — if the system's own dynamics carry no information, the experimenter's design must. (In TEO terms: a frozen system, $H \to 0$, is also epistemically opaque.)
-- **Kuramoto on its locked attractor:** observing a *synchronized* system, $K$ is unidentifiable **in principle**, not for lack of data — in the locked state $\Omega = \omega_i + K r \sin(\psi - \theta_i)$ with all right-hand quantities constant, so every $K'$ has an $\omega_i'$ reproducing the trace exactly: a one-parameter generator family. Measured: passive error on $K$ ≈ 83% (noise-fitting); **one phase kick: 3%**; eight kicks: 0.3%.
+- **Kuramoto on its locked attractor:** within the fitted family, the passive synchronized trace does
+  not separately identify $K$ and the $\omega_i$. Every $K'$ can be paired with an $\omega_i'$ that
+  reproduces the locked trace. Measured: passive error on $K$ ≈ 83% (noise-fitting); **one phase
+  kick: 3%**; eight kicks: 0.3%.
 
-**Reading.** Attractors hide generators: a relaxed system — synchronized, frozen, converged — is generator-degenerate, and no amount of passive observation resolves it. Facts about the generator can be *created* by intervention that observation alone cannot reach (the constructivist half) — though what the query exposes was the rule's content all along (the Platonist half). This is also the first-principles justification for an existing repo methodology: the identity instruments (Δ-Kohärenz, Observer Divergence) are **perturbation protocols** precisely because you cannot read a generator off an attractor — a system at rest, like a mirror at rest, reveals nothing but the room.
+**Reading.** A passive attractor trace can leave parameters or rule bits observationally
+equivalent. An intervention changes the evidence distribution and can separate members of that
+declared class. This supports perturbation as a method in these testbeds; it does not by itself
+validate the repository's identity instruments or establish a general hierarchy for every causal
+system.
 
-**The folk version.** The oldest equivalence-class puzzle in circulation: smash the radio and the music stops — which leaves *production* and *reception* equally consistent with the trace. The class collapses only under divergence queries: a second receiver correlating without connection, the signal measured independently of the device. Where such queries exist, run them. Where a hypothesis retreats until none exist, it has left this benchmark's jurisdiction — and science's. (The brain-as-antenna theory of consciousness is the famous instance; see [Psychedelics as Perturbation](../../../theory/identity/psychedelics-as-perturbation.md) for what survives of it.)
+**Scope.** The interventions are available because the simulated causal interface is known. In
+physical, biological, or social systems, observational conditioning and causal intervention must
+not be conflated, and the available intervention set has to be justified independently.
 
 ## v1, part 2 — family search: the wall, measured (run)
 
-[`family_search.py`](family_search.py) measures the regime v0 deliberately excluded: recovering a generator when the **model family is unknown**. Hypothesis space: a complete DSL of boolean formulas over the CA neighborhood (NOT/AND/OR/XOR over $l, c, r$); every one of the 256 rules has an exactly computable **minimal description size** in it — the DSL-relative Kolmogorov complexity, computable here precisely because the toy is small (in general it is not computable at all).
+[`family_search.py`](family_search.py) removes the supplied elementary-rule table and searches a
+declared DSL of Boolean formulas over the CA neighborhood (NOT/AND/OR/XOR over $l,c,r$). Every one
+of the 256 rules has an exactly computable minimal description size in this finite DSL. This is
+language-relative description length, not general Kolmogorov complexity.
 
-- **(A) The search wall.** Verifying a candidate costs 8 bit-comparisons, flat. *Generating* candidates in size order costs exponentially in the target's minimal size: rule 90 (XOR, size 3) is found within ≤36 candidates; rule 30 (size 5) within ≤771; rule 110 (size 8) within ≤116,232; size-10 targets within ≤4.2M. **Finding grows exponentially with the target's description complexity while checking stays flat** — the P-vs-NP shape of the spine, drawn from a real enumeration (Levin search is the formalized version of this enumerator; Rissanen's MDL the formalized version of the selection below).
-- **(B) Elegance as a prior — and whom it serves.** Under partial coverage the searcher returns the *minimal consistent* formula (Occam). Measured: over **simple** targets (size ≤ 4) Occam hits 22%→100% as coverage grows; over a **uniform** world (all 256 rules) it equals 1/class-size — *exactly chance*; over **complex** targets (size ≥ 7) it sits at **0%** until coverage is nearly total, because it deterministically picks the simple impostor. Elegance finds elegant worlds, is chance on uniform ones, and systematically misses complex ones. (The single-seed orbit anecdotes land on the friendly side: for rules 90 and 0, the most elegant consistent generator *is* the true one.)
+- **(A) The enumeration cost.** Verifying a candidate costs 8 bit-comparisons. This particular
+  size-ordered enumerator visits exponentially more formulas as target description size grows:
+  rule 90 (size 3) appears within ≤36 candidates; rule 30 (size 5) within ≤771; rule 110 (size 8)
+  within ≤116,232; size-10 targets within ≤4.2M. That is a measured property of this DSL and
+  enumerator, not a P-vs-NP result or a lower bound for other search algorithms.
+- **(B) Elegance as a prior — and whom it serves.** Under partial coverage the searcher returns the *minimal consistent* formula (Occam). Measured: over **simple** targets (size ≤ 4) Occam hits 22%→100% as coverage grows; over a **uniform** world (all 256 rules) it equals 1/class-size — *exactly chance*; over **complex** targets (size ≥ 7) it sits at **0%** until coverage is nearly total, because it deterministically picks the simple impostor. Elegance finds elegant worlds, is chance on uniform ones, and systematically misses complex ones. For rules 90 and 0, the most elegant consistent rule happens to be the true one.
 
 This refines the claim in [Construction vs. Deduction](../../../theory/computation/construction-vs-deduction.md) that elegance "does real work" as the selection principle inside the equivalence class: it does — *conditional on the world being biased toward simplicity*. The measurement says precisely when the condition holds. **Honest scope:** this is the exhaustive-search *floor*. Whether learned searchers (LLMs, program synthesizers) beat the enumeration floor — and whether they are construction machines or deduction machines — is the open real-model question; this testbed is the baseline they must beat.
 
@@ -71,15 +95,22 @@ This refines the claim in [Construction vs. Deduction](../../../theory/computati
 - **The selection decomposition.** Across *all* candidates, the gap (imagined − real) averages ≈ 0 at every $u$ — the guesses are wrong but **unbiased**. The **chosen** plan's gap is positive, and the wedge between the two curves — the **optimizer's curse** (Smith & Winkler, 2006), isolated — grows **monotonically** with class size: $0 \to 0.042 \to 0.049 \to 0.066 \to 0.078 \to 0.085$. Model exploitation is the equivalence class, priced by an argmax. At $u = 0$ both gaps vanish by construction: the model *is* the world.
 - **The honest null (a prediction revised mid-experiment).** Run 1 predicted "divergence-seeking" — that the chosen plan would *visit* unseen neighborhoods more than the average candidate. **It does not**: usage is statistically identical at every $u$. The refinement matters: the optimizer does not steer *into* the model's fantasy regions; at equal exposure it *selects the fantasies that pay*. Exploitation is selection over guess-outcomes, not navigation toward guess-territory — in this open-loop setting; whether closed-loop agents learn to navigate toward exploitable regions is open.
 
-**Bridge to the industrial case:** this is the null model for model-based RL's exploitation problem, and it predicts that uncertainty-blind planning inherits a positive imagined-vs-real gap scaling with model underdetermination *even when the model is unbiased*. The field's known cures — ensembles, pessimism penalties on uncertain regions — are, in this vocabulary, ways of letting the planner see which bits are guesses.
+**Hypothesis for larger systems:** this toy suggests that uncertainty-blind planning can acquire a
+positive imagined-vs-real gap through selection even when candidate errors average to zero. Whether
+the scaling survives different model classes, correlated errors, learned policies, and closed-loop
+data is an empirical question.
 
 ## v1.4 — weakness vs simplicity: the Bennett bridge (run)
 
-[`weakness_selector.py`](weakness_selector.py) tests the selector principle of Bennett's Stack Theory (*The Optimal Choice of Hypothesis Is the Weakest, Not the Shortest*, 2023; *No Selves, No Consciousness*, AAAI SSS 2026) on this testbed's own generator. Under partial coverage the **weakest consistent hypothesis** turns out to be an old acquaintance: the partial rule asserting exactly the observed neighborhoods — **the uncollapsed consistent-generator equivalence class itself** (v1.1's object). The shortest is v1.2's Occam pick. The experiment prices the choice in two currencies — uncertainty *held open* (wmax: $u$ bits, always) versus survival odds *paid* (simpmax: $-\log_2 P(\text{pick}=\text{truth})$) — and reports **commitment efficiency**: bits closed minus odds paid.
+[`weakness_selector.py`](weakness_selector.py) tests the selector principle of Bennett's Stack Theory
+on the CA rule family. Under partial coverage, the **weakest consistent hypothesis** is the partial
+rule asserting exactly the observed neighborhoods—the uncollapsed equivalence class itself. The
+shortest is v1.2's Occam pick. The experiment prices uncertainty held open against the odds paid by
+committing to one member.
 
 - **The exchange rate between the currencies is the world bias, measured.** Efficiency: **+2.7 → +1.0** on the simple world (committing is profitable compression); **0.00 ± 0.03** on the uniform world — the analytic prediction (hit = $2^{-u}$, so committing buys *exactly nothing*) confirmed to two decimals; **strongly negative** on the complex world (Laplace-floored below −7 with zero measured hits at $k \le 5$; −3.7 / −1.2 at $k = 6/7$).
-- **Worse than a coin, systematically.** On the complex world the elegant guess loses to admitted ignorance at every coverage (1.28 vs 1.00 wrong unseen bits at $k=6$; 0.78 vs 0.49 at $k=7$) — anti-correlated with complex truths, not merely uninformed. And at $k \le 5$ the pick lies **outside the world's support 100% of the time**: elegance there does not miss, it asserts generators the world cannot even contain.
-- **Reading.** Bennett's Exp. 1, reproduced on our generator from the cost side: holding the class is 0-regret by construction (partly definitional — stated honestly), and the measured content is the *size and sign* of the commitment gaps plus the support-violation rate. This closes a loop with v1.3: the exploiting planner's disease is consuming committed-but-unmarked guesses; wmax is the accounting discipline that refuses the commitment at selection time — "mark what the traces actually determine" ([Measurement as Weak Intervention](../../../theory/core/measurement-as-weak-intervention.md)), now with a price tag.
+- **Worse than a coin, systematically.** On the complex world the elegant guess loses to admitted ignorance at every coverage (1.28 vs 1.00 wrong unseen bits at $k=6$; 0.78 vs 0.49 at $k=7$) — anti-correlated with complex truths, not merely uninformed. And at $k \le 5$ the pick lies **outside the world's support 100% of the time**: elegance there does not miss, it asserts rules the sampled world cannot contain.
+- **Reading.** Holding the class has 0 regret by construction; the measured content is the size and sign of the commitment gaps plus the support-violation rate. This closes a loop with v1.3: the exploiting planner consumes committed-but-unmarked guesses, while wmax refuses that commitment at selection time.
 
 ![Weakness vs simplicity](../../tools/inverse_benchmark_weakness.png)
 
@@ -87,7 +118,10 @@ This refines the claim in [Construction vs. Deduction](../../../theory/computati
 
 [`wmax_planner.py`](wmax_planner.py) closes the v1.3/v1.4 pair: what happens when **the planner itself holds the class** — when the guessed bits are marked as guesses at planning time? Four planners on the *same* episodes (paired): **committed** (v1.3's baseline, guess as fact), **wmean** (score = class-average imagined reward — the ensemble cure, exact), **wmin** (score = class-minimum — the pessimism cure, exact; corridor-flavored: viability, not optimality), **oracle** (true rule, reference). One vectorized rollout per candidate over all $2^u$ members yields every score *and* the real outcome, since the truth is a class member.
 
-- **The wedge is the unmarked commitment, nothing else.** Committed replicates v1.3 exactly (wedge $0 \to .042 \to .049 \to .066 \to .078 \to .085$ — same numbers, independent implementation path). **wmean's wedge is statistically zero at every $u$** (.002–.005 ± .003): the curse was never about having an imperfect model — it is eliminated, not mitigated, the moment the argmax sees which bits are guesses. (Theorem-grade given the uniform class, stated as P2 before the run; the run validates the mechanism.)
+- **Within the declared uniform class, the wedge is the unmarked commitment.** Committed replicates
+  v1.3 exactly. The exact class mean has a statistically zero wedge at every $u$ (.002–.005 ± .003).
+  This follows from the uniform-class setup; it is not a theorem about arbitrary uncertainty
+  representations.
 - **And it pays:** wmean's real-reward regret vs the oracle is **35–60% below** committed's at every $u > 0$ (.014 vs .035 at $u{=}1$; .055 vs .073 at $u{=}5$). Marking guesses is not just epistemically honest — it wins in achieved reward, as Bayes-optimality says it must; the measurement is the size.
 - **The surprise is the pessimist.** wmin is never disappointed (chosen gap $\le 0$ pointwise, down to $-0.30$ at $u{=}5$ — by construction, the truth is in the class) but pays for it in reality: **more regret than the committed gambler** from $u \ge 3$ (.070 vs .057; .080 vs .073 at $u{=}5$). In this setting, guaranteed-never-overpromising costs more real reward than delusional optimism. For the corridor vocabulary that is a sharp note-to-self: worst-case discipline is a *safety* instrument, and it is not free — matching model-based RL's folklore that overdone pessimism underperforms.
 - **Honest scope:** open-loop toy, exact enumerable class. Industrially the class is *not* enumerable — ensembles approximate wmean, pessimism penalties approximate wmin — which is why "mark what the traces actually determine" ([Measurement as Weak Intervention](../../../theory/core/measurement-as-weak-intervention.md)) is an architecture requirement, not a free lunch.
@@ -114,13 +148,23 @@ This refines the claim in [Construction vs. Deduction](../../../theory/computati
 
 ![Ensemble size](../../tools/inverse_benchmark_ensemble_size.png)
 
-## v1.8 — composition: the empty class as a certificate (run)
+## v1.8 — coupled processes: detecting family misspecification (run)
 
-[`composition.py`](composition.py) moves the information-ladder note's [SPECULATIVE] composition bridge toward the lab. Two elementary CAs, XOR-coupled at a fixed random site mask of density $g$; the observer sees **one stream only** and asks which single elementary rule produced it. "Higher-order generator" gets a benchmark-native meaning: a generator whose trace **empties the equivalence class** of the component family — the same 3-cell pattern mapping to two successors means no elementary rule is consistent, and an empty class is the trace's certificate that the generator lives above the family being searched.
+[`composition.py`](composition.py) couples two elementary CAs through XOR at a fixed random site
+mask of density $g$. The observer sees one stream and asks whether any single elementary rule is
+consistent. If the same 3-cell pattern has two observed successors, the single-rule class is empty.
+That is a certificate of **model-family misspecification**, not an ontological proof that the process
+"lives above" the family.
 
-- **The certificate is cheap where composition is transmitted:** for observers whose rule reads its center bit (110, 30), one live coupled site empties the class within a **median 1 step** at every $g \ge 0.02$ (100% of seeds). Detection is coverage-limited, not possibility-limited.
-- **Two ways composition stays invisible — and only one was predicted.** *Structural:* rule 90 is $L \oplus R$, **center-blind**, so XOR-coupling the center bit is invisible to it at **every** density (empty-rate 0/20 throughout) — the composite is real and active, the phenotype is still exactly a lone rule 90. Visibility is a property of whether the observed generator *reads the coupled channel*, not of coupling strength. *Transient:* the "dying symbiont" (ruleB = 0) does **not** stay hidden — its random initial condition fires the coupling once before it dies, so the empty-rate *rises* with $g$ (0.30 → 1.00). A prepared zero-IC symbiont would be permanently invisible; a merely dying one is not.
-- **The wall is the level jump, not the fit:** with the coupled-pair family and mask known, level-2 tabulation recovers every exercised rule bit **exactly** (accuracy 1.0, coverage 8/8, all $g$). The cost of composition is the description-size jump the observer must accept once level 1 certifies empty — the [family-search floor](family_search.py) (v1.2), one level up.
+- **Misspecification is detected quickly when coupling affects the observed channel:** for rules 110
+  and 30, one live coupled site empties the single-rule class within a median 1 step at every
+  $g\ge0.02$.
+- **Coupling can remain observationally invisible:** rule 90 does not read the center bit, so the
+  chosen center-bit coupling leaves its observed transition table unchanged at every density.
+  A second process that quickly dies can still leave a transient signature.
+- **Changing the family restores fit:** when the coupled-pair family and mask are supplied,
+  tabulation recovers every exercised rule bit exactly. The benchmark thereby measures the cost of
+  moving from one declared model family to another; it does not discover a unique hidden mechanism.
 
 This is a pair with a fixed mask, not an ecology: nothing here composes spontaneously, persists differentially, or is selected. The population version is v1.9 below.
 
@@ -218,14 +262,14 @@ Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 *(The benchmark sequence through v1.11 is run and documented above. The items below remain open.)*
 
 - **From useful support to stable support**: v1.11 lets links turn over, traits mutate, and individuals reproduce, but paid contribution is selected downward despite a positive acute ablation test. Next: compare **partner choice**, **conditional reciprocity**, and **spatial/kin assortment** under the same accounting and cheater controls. Only after one survives invasion and ablation should resource production and less constrained topology be added.
-- **Learned searchers vs. the floor**: family_search.py measures exhaustive enumeration; the open question is whether LLMs / program synthesizers beat that floor on the same tasks, and whether their behaviour is construction- or deduction-shaped (the real-model question; needs API budget). The industrial arena for exactly this is **ARC-AGI**: few-shot trace→generator with unknown family (v1/v2), and since ARC-AGI-3 *interactive* — the field's own watching→perturbing move; winning systems pair a corpus prior proposing candidates with cheap verification, i.e. the wall's shape, exploited.
-- **Re-simulation divergence** as a behavioral metric (does the recovered generator *behave* identically, even when parameters differ?) — connects to the equivalence-class framing.
+- **Learned searchers vs. the enumerator**: family_search.py measures one exhaustive search. Compare learned and symbolic searchers on the same DSL, targets, compute budget, and held-out interventions rather than assuming either has a generic advantage.
+- **Re-simulation divergence** as a behavioral metric: does a recovered candidate process model match held-out trajectories and interventions even when its parameters differ?
 - **IFS testbed**: recover contractive affine maps from an attractor point cloud (hard even with known family — no time ordering).
 - Cross-method comparison: hand-rolled least squares (v0) vs. SINDy/PySR as external baselines (would add dependencies; deliberately out of v0).
 
 ## Related
 
-- [The Generator Question](../../../theory/core/the-generator-question.md) — the spine; this benchmark is its first inverse-direction artifact.
+- [The Generator Question](../../../theory/core/the-generator-question.md) — the superseded spine that motivated the benchmark; retained as audit history.
 - [Measurement as Weak Intervention](../../../theory/core/measurement-as-weak-intervention.md) — the conceptual hinge on v1.1's hierarchy: coupling is not identification; plus the fourth (reflexive) regime the toys cannot exhibit.
 - [Open Problems](../../../theory/reference/open-problems.md) — Open Problem 11 (bounded inverse reconstruction).
 - [Related Work Map](../../../meta/research-alignment/related-work-map.md) — SINDy / system identification / program induction anchors.

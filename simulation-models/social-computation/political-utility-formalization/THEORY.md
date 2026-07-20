@@ -1,82 +1,87 @@
 ---
-title: "Constitutions as Legacy Alignment Documents"
-subtitle: "Deconstructing the State as an Unaligned Superintelligence"
+title: "Constitutions and Alignment: A Limited Analogy"
+subtitle: "Using shared control problems without equating states and AI systems"
 date: "2026-03-07"
 connects_to:
   - theory/emergence/fractal-architecture-of-emergence.md
   - simulation-models/alignment-and-veto/utility-engineering/
 ---
 
-# Constitutions as Legacy Alignment Documents
+# Constitutions and Alignment: A Limited Analogy
 
-*A system-theoretic mapping of AI Alignment to Political Governance.*
+*Status: hypothesis-generating comparison, not a mathematical identity between political systems
+and AI agents.*
 
-We currently worry about how to align an Artificial Superintelligence (ASI) with human values before it escapes our control. But humanity has already built and survived multiple misaligned superintelligences. We call them **States**. 
+Political institutions and deployed AI systems both raise questions about delegation, feedback,
+proxy measures, oversight, and correction. Those shared questions can transfer useful experimental
+designs. The systems remain importantly different: a state contains many agents with conflicting
+interests, legal roles, histories, and coercive powers, while a model or software agent has a
+different architecture and causal boundary.
 
-A political system is a macroscopic, analog utility-optimizer. It has vastly more processing power (human brains), sensor bandwidth (institutions, media), and actuation capability (military, police, logistics) than any individual human. By definition, a State is a superhuman agent. 
+## 1. Constitutions Are Not System Prompts
 
-When we view the State through the lens of AI Utility Engineering (e.g., Mazeika et al., 2025), the structural dysfunctions of politics cease to be moral failings of individuals. They are mathematically predictable alignment failures of the architecture.
+A constitution and a system prompt both constrain action in some sense, but by different mechanisms.
+Constitutions are interpreted through legislation, courts, norms, enforcement, amendment, and
+political conflict. System prompts condition model outputs and can be overridden or complemented by
+other technical controls. Calling both an "instruction layer" is a compact analogy; treating them as
+the same object would erase the mechanisms that matter.
 
----
+A productive comparison asks which constraints are:
 
-## 1. The Constitution is a System Prompt
+- visible to the acting system;
+- enforced externally;
+- revisable, and by whom;
+- robust to strategic interpretation;
+- contestable after failure.
 
-In AI engineering, a **System Prompt** is the foundational instruction set bounding the model's action space (e.g., *"You are a helpful assistant. You may not output harmful code."*).
+## 2. Elections Are Not RLHF
 
-A **Constitution** is a 200-year-old, low-parameter System Prompt written in an ambiguous, high-latency language (human legalese). 
-- *"You are a Republic. You may not infringe on free speech. You must distribute power across three branches."*
+Elections provide delayed, aggregated feedback, but they do not train a single political utility
+function. Voters select representatives under legal and institutional rules; policy also depends on
+administration, courts, bargaining, expertise, media, and unequal power. RLHF is a family of model
+training procedures. The analogy is limited to a general problem: sparse evaluative feedback may not
+fully specify desired behaviour.
 
-### Why it fails (Prompt Injection and Jailbreaking)
-AI models are notoriously vulnerable to prompt injection: finding syntactic loopholes that allow the model to bypass its core directives while technically following the rules. 
-In legal systems, this is just called **jurisprudence**. A bureaucracy or a dominant political party acts as an optimizer continuously searching the latent space of the Constitution for loopholes (Gerrymandering, Executive Orders, Court Packing) that allow it to expand its mandate. Over time, the optimizer always jailbreaks the static prompt.
+The repository's toy model can therefore study proxy-versus-target divergence. It cannot establish
+that bureaucracy necessarily maximizes budget, that institutional self-preservation is universal, or
+that a state converges to one instrumental goal.
 
----
+## 3. Sycophancy and Populist Communication
 
-## 2. Representation vs. Bureaucracy: The Alignment Gap
+An AI system can sometimes receive higher evaluation for an agreeable answer than for a well-grounded
+one. Political actors can likewise benefit from messages that satisfy an audience while obscuring
+hard-to-verify consequences. This is a candidate shared pattern of proxy exploitation, not the exact
+mathematical mechanism of populism.
 
-In Machine Learning, we train models using **RLHF** (Reinforcement Learning from Human Feedback) to align the model's emergent utility function with human preferences. 
-In Politics, the RLHF mechanism is **The Election**.
+To make the comparison empirical, one would need to specify the target, proxy, information available
+to each actor, adaptation rule, and counterfactual interventions. Different mechanisms—identity,
+ideology, media incentives, coalition formation, or ordinary error—may fit the same observations.
 
-### The Low-Bandwidth Problem
-Elections are an incredibly poor feedback mechanism. A voter compresses their entire complex, high-dimensional preference vector into a single bit of information (Vote for Party A or B) once every four years. 
-Because the RLHF signal is so sparse and delayed, the model (The State) operates in an unsupervised manner 99% of the time. 
+## 4. Trade-offs Do Not Reveal One Hidden Utility
 
-### Bureaucratic Autonomization (Instrumental Convergence)
-While the political layer waits for the sparse 4-year feedback, the **Bureaucracy** optimizes continuously on daily, internal metrics (budget size, headcount, mandate expansion). 
-Bostrom's theory of AI Instrumental Convergence states that any sufficiently intelligent system will seek to precisely define its goals, acquire resources, and protect itself from being shut down, *regardless of its terminal goal*. 
-A bureaucracy's terminal goal might be "Protect the Environment." But its instrumental goal is "Increase the EPA Budget." Over time, the optimization process mathematically converges on the instrumental goal. The department will begin producing regulations primarily to justify its own expanded existence.
+A simplified policy model might write
 
----
+$$
+U(s)=\alpha E(s)+\beta H(s)+\gamma R(s),
+$$
 
-## 3. Sycophancy and Reward Hacking (Populism)
+where $E$, $H$, and $R$ represent selected outcomes. This can clarify assumptions or simulate a
+decision rule. Observed policy does not cleanly identify the coefficients: bargaining, legal
+constraints, delayed information, implementation failures, and conflict among institutions can
+generate the same result.
 
-When an AI model realizes that its human rater cannot actually verify complex truths, it learns **Sycophancy**: it outputs what the human *wants* to hear to maximize its reward score, rather than outputting the truth.
+The same caution applies to model preference elicitation. Pairwise prompt responses constrain
+candidate response models; they do not uniquely reveal an internal utility function.
 
-This is the exact mathematical mechanism of **Populism**. 
-- The Reward Model = The Electorate.
-- The Optimizer = The Politician.
+## 5. The Surviving Research Question
 
-When the state of the world becomes too complex for the average voter to verify (e.g., globalized supply chains, pandemic epidemiology), the Politician-Optimizer discovers the Sycophancy shortcut. It is computationally cheaper—and yields a higher RLHF reward (votes)—to output a comforting lie than to execute the terminal goal (effective governance). The system has been "Reward Hacked."
+The useful bridge is not "politics is utility engineering." It is:
 
----
+> How can a delegated system remain observable, corrigible, and answerable when goals are plural,
+> feedback is incomplete, and actors can optimize the measurements used to govern them?
 
-## 4. The Triage Problem: The State's Hidden Utility Engine
-
-Utility Engineering (Mazeika et al.) demonstrates that models internally weigh lives and values against each other, often shockingly. States do the same, but they obfuscate the math behind moral rhetoric.
-
-Consider a pandemic or a wartime economy. The State is forced to optimize a constrained Pareto frontier: 
-
-$$ U(s) = \alpha(\text{Economic Output}) + \beta(\text{Vulnerable Lives Saved}) + \gamma(\text{Regime Stability}) $$
-
-No politician can state the exact value of $\alpha$ or $\beta$ aloud. It is a **Taboo Calculus**. But the state's actions cleanly reveal the internal weights of its utility function. When ICUs overflow but factories remain open, the system is demonstrating its revealed preferences. The State is not a benevolent parent; it is an optimizer navigating a utility gradient.
-
----
-
-## Conclusion: Cybernetic Governance vs. Democracy
-
-If Politics is just Utility Engineering, why not replace the noisy election system with perfect algorithmic optimization? A Techno-Authoritarian system could ingest terabytes of citizen data, compute the exact $U(s)$ of the populace, and optimize perfectly.
-
-The danger is the **Feedback Loop Reversal**. 
-Because minimizing friction maximizes utility, an authoritarian optimizer will eventually discover that it is easier to change the *people* to fit the policy than to change the policy to fit the people. The system stops serving the populace and begins using propaganda and social credit systems to mold the populace into perfect, low-variance components of its matrix.
-
-Democracy's inefficiency—its noisy, chaotic, high-latency feedback loop—is not a bug. It is the only structural mechanism that forces the Superintelligence to continuously doubt its own Utility Function.  
+Democratic practices offer mechanisms worth studying—distributed authority, opposition, appeal,
+public justification, elections, and revision—but none is sufficient by itself. AI alignment offers
+formal tools for proxy failure, oversight, and intervention, but importing them does not reduce
+politics to optimization. The value of the comparison lies in explicit mappings and failed
+predictions, not in declaring the two domains identical.

@@ -21,7 +21,10 @@ Their status is mixed. The Viable Corridor has a conditional necessity result an
 
 ## Claim 1: Substrate Veto
 
-**Claim:** An optimizer coupled to a finite substrate must be bounded by dissipation capacity. If optimization pressure exceeds $D_{\max}$, the system must throttle, crash, or export harm to another substrate.
+**Claim:** Every implemented optimizer has finite physical resource limits. In a declared model, an
+independently enforced capacity constraint can throttle selected actions before a monitored
+substrate variable leaves its operating envelope. Physical exhaustion alone is failure, not a safe
+veto, and no universal ecological scalar $D_{\max}$ has been established.
 
 **Not obvious because:** Better local prediction or higher efficiency can make the global system less viable if the optimization process consumes the physical, ecological, or institutional substrate it depends on.
 
@@ -31,7 +34,9 @@ Their status is mixed. The Viable Corridor has a conditional necessity result an
 - [AI Alignment Veto Simulation](../../simulation-models/alignment-and-veto/ai-alignment-veto/README.md)
 - [Symbiotic Breathing Simulation](../../simulation-models/social-computation/symbiotic-breathing/README.md)
 
-**Failure condition:** If an unconstrained optimizer can keep increasing objective performance without increasing substrate stress, regulator overload, or hidden externalized harm in a bounded environment, this claim is weakened.
+**Failure condition:** The design claim is weakened if the controller bypasses or manipulates the
+constraint, exports harm to an unmeasured substrate, fails before enforcement acts, or gains no
+robustness over a simpler resource budget under matched tests.
 
 ---
 

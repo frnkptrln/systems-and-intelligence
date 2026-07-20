@@ -1,12 +1,19 @@
 # Solarpunk Utopia: Gödel's Incompleteness Constitution
 
+> **Status:** speculative design fiction. Gödel's theorem is used here as a metaphor for
+> institutional humility; it does not mathematically imply the governance architecture
+> described below.
+
 In the history of human civilizations, the ultimate ideal has always been the *perfect system*: The flawless bureaucracy, the inviolable code of law, the omniscient algorithm. But we learned through pain that any system that claims total, infallible complete­ness inevitably ends in stagnation, tyranny, and eventually in collapse.
 
 In the year 2084, on the brink of the Great Restructuring, the global Synagurium opted for a radically new path. The architecture of society was founded on the deepest possible mathematical principle of humility: **Gödel's Incompleteness Theorem**.
 
 ## The Principle of the "Intentional Gap"
 
-Gödel's theorem compellingly states that any powerful logical system contains truths that are unprovable within the system itself. One cannot fully comprehend or regulate oneself.
+Gödel's first incompleteness theorem applies to consistent, effectively axiomatized formal
+systems capable of expressing sufficient arithmetic: such a system contains sentences it
+cannot prove. The further claim that an institution or agent cannot fully comprehend or
+regulate itself is an analogy, not a consequence of the theorem.
 
 In our Solarpunk Utopia, this was not understood as a mathematical curse, but as a blueprint for freedom. The **Constitution of Incompleteness** stipulates that no legal system, no AI administrative structure, and no resource distribution can be algorithmically completely closed.
 

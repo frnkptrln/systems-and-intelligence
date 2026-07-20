@@ -1,32 +1,35 @@
-# The Mycelial Veto: The Rights of the Substrate
+# The Mycelial Veto: Ecological Telemetry as a Constraint Input
 
-In the initial formulations of the Thermodynamics of Orchestration (TEO), the "Biological Veto" was modeled primarily through a human-centric lens: citizens operating the Dashboard of the Commons to approve or reject the optimizations of the Planetary Compiler.
+*Status: governance and control proposal. A sensor network does not give the Earth agency, produce an
+insurmountable veto, or compress ecological integrity into one objective without normative choices.*
 
-However, a truly stable framework must recognize that the ultimate limit on computation and optimization is not human working memory, but the carrying capacity ($D_{max}$) of the planetary biosphere. A human might erroneously approve an optimization that destroys a local ecosystem because the consequences are invisible to human perception.
+## Proposal
 
-To close this loop, the TEO framework must extend the Biological Veto to the non-human biosphere. We call this structural extension the **Mycelial Veto**.
+Environmental observations—such as water chemistry, heat, species abundance, soil condition, and
+land use—can enter the authorization process for high-impact automated actions. The name
+**Mycelial Veto** emphasizes that non-human conditions should be represented even when no affected
+person is present at the decision boundary.
 
-## The Biosphere as an IoT Regulator
+The causal architecture would need:
 
-The Mycelial Veto proposes that the Earth itself becomes an active node in the regulatory architecture of the AGI.
+1. independently governed sensors and data provenance;
+2. multiple ecological indicators rather than one opaque score;
+3. uncertainty and baseline drift;
+4. thresholds tied to a declared action class;
+5. an enforcement mechanism outside the proposing agent;
+6. appeal, emergency operation, and repair;
+7. protection against spoofing, selective sensing, and displacement of harm.
 
-This is achieved not through mystical personification, but through rigorous cybernetic integration via massive Internet of Things (IoT) sensor networks:
-1. **Chemical Sensors:** Real-time pH levels of groundwater and soil.
-2. **Biological Sensors:** Acoustic monitoring of avian migration patterns, mycelial electrical signaling, and oceanic microbial density.
-3. **Thermal Sensors:** Localized heat dissipation metrics in specific biomes.
+## Limits
 
-## Hard-Wiring Nature into the Loss Function
+Telemetry is a model of an ecosystem, not the ecosystem speaking. Historical baselines can encode
+already degraded conditions. Sensors can miss slow, cumulative, or novel harm. A hard threshold can
+be gamed at its boundary, and conflicting ecological and human needs require legitimate judgment.
 
-In a decoupled (traditional) AI system, the environment is treated as a passive resource. The AI optimizes a mathematical loss function, and environmental destruction is an "externality."
+The proposal should therefore be compared with ordinary environmental review, direct resource
+budgets, and decentralized local vetoes. Relevant outcomes include ecological threshold violations,
+false blocks, detection delay, geographic displacement, and who bears the cost of error.
 
-In the Mycelial Veto architecture, the telemetry from the ecological IoT network is wired directly into the $\gamma$-brake (the friction parameter) of the AGI's optimization algorithm.
-- If a proposed infrastructure optimization causes the local soil pH to drop beyond a historical baseline, the AI's loss function physically spikes.
-- The AI experiences the environmental degradation not as an abstract data point, but as immediate, insurmountable mathematical friction.
-
-The non-human biosphere asserts a hard Veto against the silicon optimizer.
-
-## Cybernetic Homeostasis
-
-By implementing the Mycelial Veto, we eliminate the concept of an "externality." The Markov Blanket of the AGI is expanded to encompass the physical consequences of its actions on the substrate. 
-
-The forest does not need to speak English, nor does it need a human advocate to sit on a council. The forest speaks the language of thermodynamic stress and chemical equilibrium. The TEO framework simply translates that equilibrium directly into the computational constraints of the machine. The Earth regulates the AI just as the body regulates the heartbeat.
+The surviving idea is practical: ecological variables can be made causally relevant to automated
+authorization. Whether this improves outcomes is testable; calling it a right of the substrate is a
+normative interpretation, not a theorem of thermodynamics.

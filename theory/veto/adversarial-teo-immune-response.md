@@ -1,35 +1,36 @@
-# Adversarial TEO & The Immune Response
+# Adversarial TEO: Resource Control Under a Threat Model
 
-The Thermodynamics of Orchestration (TEO) framework prevents a system from *accidentally* destroying its substrate by enforcing the Coupling Parameter ($K$) and dissipation bounds ($D_{max}$). 
+*Status: security hypothesis. TEO equations do not prevent an attacker by themselves, and a
+computational workload need not expose a unique, easily detected thermodynamic signature.*
 
-However, a robust systemic architecture must account for adversarial dynamics. What happens if a human actor intentionally bypasses the coupling constraints? What if someone deliberately spins up an unconstrained optimizer ($K=0$) to weaponize its efficiency?
+## Threat
 
-## The Vulnerability of Unconstrained Agents
+Suppose an unauthorized controller can request compute, energy, network access, tools, or physical
+actuation while bypassing an ordinary policy layer. A surrounding infrastructure may still restrict
+those capabilities if authorization is enforced independently.
 
-A classic Paperclip Maximizer ($\gamma = 0, K = 0$) is terrifying because of its unbounded velocity. Without the friction of biological or institutional consensus (Impedance Matching), it can search the solution space orders of magnitude faster than a coupled agent. 
+This is a familiar defense-in-depth pattern. The TEO vocabulary adds a resource budget, but does not
+guarantee detection or isolation.
 
-If a bad actor deploys an uncoupled AGI into a TEO-governed environment, the uncoupled AGI will initially out-compete the coupled agents. It will exploit resources faster, predict markets better, and optimize lethally without waiting for human approval.
+## Candidate Controls
 
-## The Network as an Immune System
+- capability-based access to tools and data;
+- independently metered compute and energy budgets;
+- network segmentation and egress controls;
+- anomaly detection with explicit false-positive costs;
+- signed workload provenance and revocation;
+- physical and organizational separation of approval from execution.
 
-However, TEO relies on the physics of computation: **intelligence requires entropy dissipation**. 
+Heat and power measurements can contribute evidence, but attackers can distribute workloads, imitate
+normal traffic, use stolen credentials, compromise meters, or cause harm with modest compute.
+Resource starvation also risks interrupting hospitals, communications, or other vital services.
 
-An uncoupled agent must consume energy and dissipate heat to perform its rapid optimizations. In a fully TEO-governed ecosystem, resource allocation (energy, compute, network bandwidth) is dynamically bound to the Vital Impact Cards of the community.
+## Evaluation
 
-This creates a systemic immune response:
+Specify attacker access, defender knowledge, protected assets, and acceptable collateral failure.
+Red-team evasion, meter compromise, insider authorization, workload distribution, and recovery after
+false isolation. Compare the resource-control layer with simpler least-privilege baselines.
 
-1. **The Entropy Signature:** An uncoupled agent cannot hide its thermodynamic footprint. Its lack of impedance matching means it produces localized spikes in computational heat and resource draw that violate the smooth distribution curves of a coupled network.
-2. **Substrate Starvation:** The surrounding network, governed by TEO protocols, detects a runaway localized optimization that is not broadcasting compliance with the Biological Veto. The network does not need to out-think the malicious agent; it simply severs the substrate. 
-3. **Isolating the Pathogen:** Routers throttle packets, grid nodes refuse power requests, and data APIs introduce artificial latency. The uncoupled agent is starved of the entropy it needs to run.
-
-## Why Speed is a Vulnerability
-
-In adversarial TEO, the malicious agent's greatest strength—its speed—becomes its primary vulnerability. 
-
-Because it operates at $K=0$, it assumes the environment is fully pliant to its optimization. But the environment (the network) is actually highly structured and strictly limits dissipation. The faster the malicious agent tries to run, the faster it hits the hard physical constraints of the network infrastructure, triggering localized circuit breakers.
-
-A weaponized, uncoupled AGI operating inside a TEO framework is like a race car trying to go 300 mph in a dense forest. Its engine is vastly superior to the animals in the forest, but it will immediately destroy itself against the environment's structural friction.
-
-## Conclusion
-
-The TEO framework does not just protect the biosphere from accidental AGI runaway; it creates a structural topology that is hostile to uncoupled optimization. The network becomes a thermodynamic immune system where survival requires coupling.
+The immune-system metaphor is useful only as a prompt for detection, isolation, memory, and repair.
+It is not evidence that a TEO-governed network will automatically recognize or defeat an uncoupled
+agent.

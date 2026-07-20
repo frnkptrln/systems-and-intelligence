@@ -1,31 +1,28 @@
-# ⚡ The Grokking Phase Transition
+# Grokking: Delayed Generalization
 
-This module provides a visual, real-time simulation of the "Grokking" phenomenon, representing a critical breakthrough in our understanding of how Artificial Intelligence develops generalized knowledge.
+*Status: reproduction attempt on a small modular-arithmetic task. A sharp loss change does not by
+itself identify an internal algorithm, understanding, intelligence, or a universal phase
+transition.*
 
-Inspired by the landmark ArXiv paper: **[Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets (Power et al., 2022)](https://arxiv.org/abs/2201.02177)**.
+Power et al. reported that neural networks trained on some small algorithmic datasets can reach low
+training error long before their test performance improves. Continued optimization with particular
+regularization and data conditions can then produce delayed, sometimes sharp generalization.
 
-## The Phenomenon
+The included script trains an MLP on modular arithmetic with AdamW and weight decay and plots train
+and test metrics. Exact timing and final accuracy depend on the split, seed, optimizer, model size,
+regularization, hardware, and training duration. A plateau need not be a random walk, and weight
+decay is not proof that the model replaces a lookup table with the true algorithm.
 
-In standard machine learning wisdom, if a model perfectly memorizes its training data but fails on test data, it has severely **overfitted**, and training should be stopped. 
+## Run
 
-However, OpenAI researchers discovered a bizarre phase transition. If you train a small neural network on an algorithmic task (like modular addition $a + b \mod P$) and keep training it *long after* it has perfectly memorized the training set, something magical happens. The test accuracy suddenly spikes from random guessing to 100%. 
+Install the declared dependencies, then execute:
 
-The network abandons its internal "lookup table" (memorization) and collapses its weights into a structured, generalizing graph (understanding/intelligence). It "groks" the underlying rules of the universe.
+    pip install torch numpy matplotlib
+    python grokking.py
 
-## The Simulation
+Report configuration, seeds, curves, and failures as well as successful runs. Mechanistic claims
+require additional analyses such as representation probes, ablations, and comparison with simpler
+generalizing solutions.
 
-The included script `grokking.py` trains a simple Multi-Layer Perceptron (MLP) on modular arithmetic ($P = 97$). It visualizes this thermodynamic-like phase transition in real-time.
-
-1. **Phase 1 (Memorization):** Train Loss plunges to near zero. Train accuracy hits 100%. Test loss remains high and test accuracy stays flat.
-2. **Phase 2 (The Plateau):** The model spends thousands of epochs changing its internal weight representations without altering its external accuracy (the "Random Walk" phase). **Weight Decay** slowly acts as Occam's Razor, punishing complex memory tables.
-3. **Phase 3 (Grokking):** Test loss abruptly collapses. Test accuracy rockets to 100%. Intelligence has emerged.
-
-## Running the Simulation
-
-You will need PyTorch to run this model. It heavily relies on the optimization process (`AdamW` + `weight_decay`). 
-*Note: Depending on your hardware (CPU vs GPU), the phase transition usually occurs between epoch 3,000 and 10,000.*
-
-```bash
-pip install torch numpy matplotlib
-python grokking.py
-```
+Reference: Power et al. (2022), *Grokking: Generalization Beyond Overfitting on Small Algorithmic
+Datasets*.

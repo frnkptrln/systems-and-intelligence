@@ -1,7 +1,7 @@
-# From Trace to Generator
+# From Trace to Generator — Legacy Essay
 *On generative compression, reconstruction, and the limits of understanding*
 
-**Status:** Working Note
+**Status:** Legacy framing under reconstruction
 
 **Scope:** Conceptual synthesis introducing the inverse counterpart to the emergence axis: trace → generator.
 
@@ -24,6 +24,13 @@
 - The frame collapses into vague analogy.
 - It fails to generate measurable reconstruction tasks.
 - It treats verification analogies as proofs.
+
+> **Foundational status (2026-07-20).** The [Foundations Reconstruction](../core/mathematical-axioms.md)
+> found no independent mathematical role for an unqualified generator. Read “generator” below as a
+> candidate typed process model whose state, transition kernel, observation channel, evidence regime,
+> and target equivalence must be declared. The essay's questions about reconstruction and
+> observational equivalence remain useful; its universal definitions of intelligence and generic
+> forward/inverse asymmetry are historical hypotheses, not current foundations.
 
 ---
 
@@ -51,9 +58,12 @@ A trace points beyond itself. It suggests a hidden generator.
 *   A mathematical solution may point to a certificate.
 *   A physical world may point to laws, symmetries, constraints, fields, or perhaps computation.
 
-This essay begins from a simple thesis:
+This legacy essay began from a simple thesis:
 
 > **Objects are traces. Intelligence searches for generators.**
+
+The current foundation does not adopt that sentence as a definition. Objects need not be modeled as
+traces, and prediction, control, learning, and intelligence require separate task-relative structure.
 
 ---
 

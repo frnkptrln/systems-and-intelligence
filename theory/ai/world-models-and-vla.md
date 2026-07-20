@@ -1,53 +1,68 @@
-# World Models and VLA: The Spine, Industrialized (Framing Note)
+# World Models and VLA Systems: A Process-Model Mapping
 
-**Status:** Working Note
+**Status:** Hypothesis-generating mapping, not a survey, capability forecast, or claim that robotics
+implements the repository's former generator spine.
 
-**Scope:** Reading two current AI research programs through the repository's instruments: world models as trace → generator at industrial scale, and vision-language-action models as the reconstructed generator coupled back to matter. Not a survey, not a capability forecast — a mapping.
+## Scope
 
-**Epistemic status:** `[HYPOTHESIZED]` mapping over well-documented research lines. The individual observations (model exploitation, causal confusion, Moravec's asymmetry) are established in their home literatures; connecting them as instances of this repository's two directions is the note's contribution.
+A learned world model estimates selected aspects of an environment's dynamics from data. A
+vision-language-action (VLA) system maps observations and instructions to actions, often with a
+learned policy and representations inherited from large-scale training. Both can be expressed using
+the reconstructed foundation's typed processes, observation kernels, policies, and interventions.
 
-**Related files:**
+Calling a world model a reconstructed generator is too strong unless the state, observation channel,
+equivalence target, and identification result are specified. It is ordinarily one predictive model
+optimized for a task, not a uniquely recovered mechanism.
 
-- llms-as-probabilistic-automata.md
-- ../core/the-generator-question.md
-- ../../lab/benchmarks/inverse-reconstruction/README.md
-- ../../logs/016_the-runtime-is-part-of-the-generator.md
-- ../../logs/017_provenance-depth-and-the-verification-economy.md
+## World Models and Underdetermination
 
-**Failure conditions:**
+A model can fit training trajectories yet fail when a planner selects states where its errors are
+large. Model-based control studies this as model bias or model exploitation. The repository's v1.3
+toy isolates a related optimizer's-curse pattern: selecting the best-looking plan from uncertain
+model values creates disappointment even when individual errors are unbiased.
 
-- Claiming contributions to robotics or model-based RL. This note reads those fields; it does not advance them.
-- Letting the mapping flatten real differences: a learned latent dynamics model is not a CA rule table, and industrial scale changes what the toy results license.
+The connection is structural, not quantitative. The cellular-automaton benchmark does not predict a
+robotics failure rate, and its finite equivalence classes are not learned latent dynamics.
 
----
+Passive records can also leave causal alternatives unresolved. Action-conditioned data or targeted
+experiments may distinguish some alternatives, as the benchmark's interventions do in its declared
+family. They need not identify a unique true model, and embodiment is neither necessary nor
+sufficient for causal identification.
 
-## The claim
+## VLA Systems and World Coupling
 
-The two directions of [the Generator Question](../core/the-generator-question.md) have both become industries, and they arrived as a matched pair `[HYPOTHESIZED]`:
+Physical action supplies consequences and new observations that text-only evaluation may omit. It
+also introduces latency, actuator limits, damage, and safety constraints. This makes action a useful
+source of evidence and a costly intervention.
 
-> **A world model is the inverse direction at scale** — a generator reconstructed from traces, so that planning can run inside the reconstruction. **A VLA is the construction direction at scale** — a generator coupled to actuators, so that every output is submitted to matter. Together they close the loop the spine describes: observe traces → reconstruct a generator → act through it → let the referee vote.
+Matter is not a perfect referee. Sensors are partial and noisy, reward can be misspecified, delayed
+effects can escape the horizon, and a successful action does not verify the model that proposed it.
+The provenance-depth language can record that an output reached a physical process; depth zero does
+not mean epistemic certainty or harmlessness.
 
-## World models: the inverse direction as an industry
+Torque, power, battery, and workspace limits are real constraints on a specified platform. They do
+not automatically encode human or ecological values, and failure at a physical limit is not a safe
+veto.
 
-From Ha & Schmidhuber's *World Models* (2018) through the Dreamer line (Hafner et al.), LeCun's JEPA program, and action-controllable video models (Genie), the recipe is constant: learn a compressed generator of environment dynamics from observation traces, then plan or imagine inside it. This is trace → generator, executed daily at scale — with Sutton's Dyna (1991) as the ancestor that named the move.
+## What the Mapping Contributes
 
-Three of this repository's results describe that industry's known pain points, which is the evidence the mapping carries content:
+The mapping suggests four test questions:
 
-1. **The learned model is one member of the equivalence class.** A world model consistent with all training traces may still be the wrong generator out of distribution. Model-based RL knows the consequence intimately as **model exploitation**: the policy, optimizing inside the learned model, systematically discovers and exploits the regions where the reconstruction diverges from reality. In this repo's terms: *the policy is an adversarial divergence-query generator running against its own world model* — Total-Rickall logic, with the agent as the interrogator and its own model as the impostor.
-2. **Passive traces hit the passive ceiling.** The [intervention experiment](../../lab/benchmarks/inverse-reconstruction/README.md) showed the consistent-generator class does not collapse under watching — only under queries. The industrial instance: world models trained on passive video inherit exactly this underdetermination (imitation learning's **causal confusion** — de Haan et al. 2019 — is the documented case: passive traces cannot distinguish causes from correlates). Action-conditioned data is the intervention protocol; embodiment is not a luxury but the class-collapsing query channel.
-3. **The runtime is part of the generator** ([Log 016](../../logs/016_the-runtime-is-part-of-the-generator.md)): a world model's validity is indexed to the embodiment and regime it was trained in — a provenance question ([Log 017](../../logs/017_provenance-depth-and-the-verification-economy.md)'s reference-class field, applied to dynamics models).
+1. Which candidate dynamics models remain consistent with the available trajectories?
+2. Where does planning amplify model error relative to non-optimizing baselines?
+3. Which actions are informative enough to justify their cost and risk?
+4. Which independently enforced limits remain effective when the learned policy encounters
+   out-of-distribution states?
 
-## VLA: where the antenna meets the referee
+The repository benchmarks provide small controls for these questions. Transfer to learned world
+models or VLA systems requires matched experiments on those systems.
 
-A vision-language-action model couples a corpus-trained core — in the [antenna reading](../identity/psychedelics-as-perturbation.md), a compressed *receiver of the cultural field* — to a physical actuator (RT-2, OpenVLA, π0). Two things happen at that coupling, and both are this repository's themes:
+## Boundary
 
-- **The referee changes.** A language model's outputs face a soft referee — plausibility, consensus, resonance. A gripper faces matter. Every VLA action is a performance node: **d = 0 verification at every timestep**, unpurchaseable by fluency. Moravec's paradox, in verification-economy terms: the tasks that look hard (deduction-shaped, corpus-covered) have cheap referees, and the tasks that look trivial (pouring water) have the expensive one. VLAs are where a deduction-shaped intelligence is finally billed at the hard rate.
-- **The budgets turn hard by physics.** Entry 14's catastrophe was a dissipation budget left as a sentence in a config file. An embodied agent's torque limits, battery, and breakable environment are budgets *poured in concrete by default* — which cuts both ways: the substrate constraint binds honestly, and the cost of the impostor-generator failure mode (acting on a wrong world model) is paid in atoms, not tokens.
+No robotics timeline, mechanism-identification claim, or quantitative transfer follows. The mapping
+fails if its vocabulary does not improve preregistration, baseline selection, or failure prediction
+beyond the fields' existing concepts.
 
-## What follows (and what doesn't)
-
-The pair sharpens the repo's open real-model question: world models *are* learned searchers in generator space, operating far above the [family-search floor](../../lab/benchmarks/inverse-reconstruction/README.md) — and their documented failure modes (exploitation, causal confusion) are exactly what the toy results predict for reconstruction under passive data and open families. The first bridge this note flagged has since been **measured** (benchmark v1.3): the exploitation wedge — chosen-plan gap minus candidate-average gap, i.e. the optimizer's curse isolated — grows monotonically with equivalence-class size even though the model's guesses are unbiased on average, and the honest null came with it: the planner does not *visit* the guessed regions more, it *selects* the guesses that pay. The cure side is measured as well (v1.5): letting the planner hold the class — the exact form of the field's ensemble cure — *eliminates* the wedge and cuts real-reward regret 35–60%, while the exact pessimism cure overpays: never disappointed, but poorer in achieved reward than the committed baseline. The closed loop is measured too (v1.6): in the loop, *acting is measuring* — execution collapses the class for free — and the risky prediction that the optimizer would explore its own delusions preferentially was falsified: the argmax is not curious, it re-uses known orbits. Ensemble size (v1.7): a handful of hypotheses buys most of the honesty; none buys knowledge — the regret floor is ignorance, and only queries remove it. Still open: whether VLAs exhibit the P8 pattern — capability gains loading physical constraint axes faster than their safety architecture scales.
-
-What does *not* follow: any forecast about robotics timelines, any claim that the toy results transfer quantitatively, any suggestion that this repository's vocabulary improves on the fields' own. The mapping earns its keep only as long as it keeps predicting which failure modes those fields will report next.
-
-> **Related work.** Ha & Schmidhuber (2018), *World Models*; Hafner et al., Dreamer/DreamerV3 (2019–2023); LeCun (2022), *A Path Towards Autonomous Machine Intelligence* (JEPA); Bruce et al. (2024), Genie; Sutton (1991), Dyna; de Haan et al. (2019), *Causal Confusion in Imitation Learning*; Brohan et al. (2023), RT-2; Kim et al. (2024), OpenVLA; Physical Intelligence (2024), π0; Moravec (1988). Mapping in the [Related Work Map](../../meta/research-alignment/related-work-map.md).
+Related anchors include Dyna, learned world models, model-based reinforcement learning, causal
+confusion in imitation learning, and VLA research. The [Related Work
+Map](../../meta/research-alignment/related-work-map.md) maintains the project-specific comparison.

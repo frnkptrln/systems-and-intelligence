@@ -23,15 +23,23 @@
 
 ## The claim
 
-Art and science are **one generative practice under two verification regimes** `[HYPOTHESIZED]`.
+Art and science may share practices of construction while using different evaluation
+regimes `[HYPOTHESIZED]`.
 
-Both build *generators* — structures that produce rich traces: a style, a theory, a technique, a model. The forward machinery is the same and is the one described in [Construction vs. Deduction](../computation/construction-vs-deduction.md): play → intuition → construction; a possessed generator that often cannot be articulated by its owner. Where the two practices diverge is not in the making but in the **referee**. Science submits its traces to *matter* — the experiment, the d = 0 performance node of [Log 017](../../logs/017_provenance-depth-and-the-verification-economy.md). Art submits its traces to *resonance* — audiences, tradition, the trained eye. Same workshop, different courts.
+Both can build artifacts, techniques, and models through iteration, intuition, and explicit
+construction. That overlap does not make their productive processes identical. A scientific
+claim is answerable to reproducible observation and intervention; an artwork may be
+evaluated through experience, tradition, craft, and interpretation. These regimes overlap
+in practice but are not interchangeable.
 
 This single move explains both intuitions at once: why, to a practitioner, the two feel inseparable (*the making is the same activity* — which is why so many scientists play instruments and so many artists build systems), and why institutions rightly keep them apart (*the verification economies are incompatible* — resonance is not evidence, and evidence is not beauty).
 
 ## The receipts (the repository was already doing this)
 
-- **Elegance, measured.** The aesthetic criterion *par excellence* sits inside the repo's science as the selection principle over generator equivalence classes — and the [family-search testbed](../../lab/benchmarks/inverse-reconstruction/README.md) measured exactly when it works (simple worlds), when it is chance (uniform worlds), and when it fails (complex worlds). Beauty doing epistemic work, *with a failure mode* — that is the art–science connection in its most honest form.
+- **A simplicity prior, measured.** The [family-search
+  testbed](../../lab/benchmarks/inverse-reconstruction/README.md) measures when selecting
+  the shortest consistent formula in one finite DSL recovers the target rule and when that
+  prior fails. It does not measure beauty in general.
 - **The fiction layer's generative direction.** [Entry 15](../../fiction/15_the_exchange_rate.md) → [Log 017](../../logs/017_provenance-depth-and-the-verification-economy.md): an artwork generated a schema. Documented, dated, one day apart.
 - **Generative form systems.** [IFS, L-systems, Lenia](../emergence/generative-form-systems.md) are boundary objects — theory demonstrations that are also, unapologetically, generative art. That lineage never respected the border in the first place.
 - **The identity layer speaks music.** Chord vs. Arpeggio — the repo's central identity distinction — is a musical formalism doing technical work.
@@ -39,12 +47,21 @@ This single move explains both intuitions at once: why, to a practitioner, the t
 
 ## The oldest intervention protocol in the humanities
 
-Giovanni Morelli (1880s) attributed paintings not by composition — which imitators study — but by incidental morphology: earlobes, fingernails, drapery folds, the places where the master's generator leaks through *habits no forger thinks to fake*. That is the Total-Rickall move a century early: query the region where the impostor's generator diverges from the original's. Carlo Ginzburg generalized it as the **evidential paradigm** (*Clues: Morelli, Freud, Sherlock Holmes*, 1979): a whole tradition of knowledge-from-traces running through art history, psychoanalysis, and detection — the humanities' own Trace → Generator school, older than the term. Connoisseurship, in this light, is inverse reconstruction performed by one trained-but-inarticulate generator on the traces of another: forward-cheap, inverse-hard, and famously unable to explain itself ("I just see it").
+Giovanni Morelli (1880s) attributed paintings partly through incidental morphology such as
+ears, hands, and drapery. In current language, these features can be treated as observations
+that may discriminate between candidate attribution models. Carlo Ginzburg generalized
+such practices as an **evidential paradigm**. The comparison to inverse reconstruction is
+useful, but it supplies no universal forward/inverse cost law and does not make expert
+judgment infallible.
 
 So the traffic runs both ways. Science lends art its instruments; art lends science its *verification vocabulary* and its oldest working examples of trace-based inference. Neither is the decoration of the other.
 
 ## What remains open
 
-Whether the shared-generator claim survives outside the friendly cases: a domain where generative practice and aesthetic selection come fully apart would weaken it, and a measurement of *resonance* as rigorous as Log 017's d-scale for *matter* does not exist (and may not be possible — that asymmetry between the two referees may be the deepest real difference). Per [Feynman Mode](../../meta/repository-meta/feynman-mode.md): the toy model is the elegance curve; the counterexample is wanted; and if this note ever starts calling art "data," delete it.
+The open question is which construction practices genuinely transfer between domains and
+which similarities are only retrospective analogy. The finite-DSL simplicity curve is not
+a measure of artistic resonance. Per [Feynman
+Mode](../../meta/repository-meta/feynman-mode.md), counterexamples are wanted; if this note
+starts calling art scientific evidence, revise it.
 
 > **Related work.** Ginzburg, *Clues: Roots of an Evidential Paradigm* (1979, in *Myths, Emblems, Clues* 1986); Morelli's attribution method (1880s). Internal: the receipts above. Mapping in the [Related Work Map](../../meta/research-alignment/related-work-map.md).

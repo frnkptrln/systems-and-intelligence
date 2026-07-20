@@ -62,11 +62,18 @@ distinguish their process models without defining “genuine identity” by the 
 
 *Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
 
-**Problem statement:** The Fractal Architecture of Emergence claims that the same three structural constraints — local blindness, asymmetric causality, and critical thresholds — repeat at every scale of complex systems. Is there a minimum scale below which this architecture breaks down? Is a single neuron too simple to exhibit all three constraints? Is a single transistor?
+**Problem statement:** Local information limits, distributed causal effects, and regime
+changes recur in several models. Under which state descriptions and coarse-grainings do
+these motifs preserve a nontrivial relation across scales, and where does the comparison
+break?
 
-**Why it matters:** If the fractal thesis has no lower bound, it risks being unfalsifiable — applicable to everything and therefore predictive of nothing. If it has a clear lower bound, that bound empirically tests the thesis: any system above it should exhibit the architecture, any system below it should not.
+**Why it matters:** If every feedback system is counted as an instance, the thesis predicts
+nothing. A useful cross-scale claim must specify the state spaces, observation maps,
+interventions, and relations that survive the mapping.
 
-**What a solution would look like:** A formal definition of "sufficient complexity" that specifies the minimum conditions (connectivity, feedback loops, information capacity) required for the three constraints to emerge. This definition should be testable against the simulations in the repo: at what parameter settings does each simulation lose its emergent properties?
+**What a solution would look like:** At least one explicit mapping between two model
+families that preserves a measurable relation, predicts a held-out result, and outperforms a
+simpler analogy-only baseline.
 
 ---
 
@@ -76,7 +83,10 @@ distinguish their process models without defining “genuine identity” by the 
 
 **Problem statement:** Can the mathematical tools of renormalization group theory be applied to the models in this repository to formally test scale-invariance? What would it mean if the critical exponents of phase transitions in `phase-transition-explorer` matched those of coherence transitions measured by Δ-Kohärenz in the Agentic Identity Suite?
 
-**Why it matters:** A match in universality classes across scales would constitute strong evidence that the fractal thesis is not merely suggestive but formally grounded — the same equations describing dynamics at every level. A mismatch would either falsify the thesis or reveal that the constraints are scale-invariant but the transitions are not — a distinction worth making precisely.
+**Why it matters:** A well-supported match in universality class would show shared
+large-scale critical behaviour under a declared coarse-graining. It would not show that the
+microscopic equations or domains are identical. A mismatch would reject that specified
+mapping, not every possible cross-scale comparison.
 
 **What a solution would look like:** A computational experiment applying coarse-graining and renormalization to at least two simulations at different scales, computing critical exponents, and comparing them. This is a research project, not a quick test, but the prediction is clear enough to motivate it.
 
@@ -86,11 +96,18 @@ distinguish their process models without defining “genuine identity” by the 
 
 *Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
 
-**Problem statement:** The fractal thesis as stated describes bottom-up emergence. But `self-reading-universe` and `theory/emergence/emergence-downward-causation.md` document the reverse: global states feeding back to constrain local processes. Is the fractal architecture bidirectional? Does the same self-similarity hold for downward causation?
+**Problem statement:** When does a macrovariable add interventionally useful information
+about later local dynamics beyond a chosen microdescription? Can this relation be compared
+across more than one model family?
 
-**Why it matters:** If the fractal architecture holds only bottom-up but not top-down, the thesis is incomplete — it describes half the dynamics. The 3-Layer Memory Architecture suggests bidirectionality (Layer 3 distillations constrain Layer 2 curation), as do hormonal regulation (organism-level state constraining cellular behavior) and neuromodulation (global brain state modulating individual neuron firing). The formal structure of these downward-causal mechanisms has not been compared across scales.
+**Why it matters:** Feedback through a coarse-grained variable can be causal, or it can be a
+convenient redescription of microdynamics. The distinction matters before institutional,
+biological, and computational examples are treated as one structure.
 
-**What a solution would look like:** A comparative analysis showing that downward causation at the neural scale (neuromodulation), cellular scale (hormonal regulation), social scale (institutional constraint), and agent scale (Layer 3 → Layer 2 feedback) share the same formal structure — or demonstrating where the parallel breaks down.
+**What a solution would look like:** A causal model with realizable interventions on a
+macrovariable, a micro-level baseline, and a comparative test in a second domain. The
+analysis should state whether the macrovariable changes prediction, control, or only
+description.
 
 ---
 
@@ -164,7 +181,8 @@ equivalence class can an observer identify?
 **Why it matters:** The foundation proves that hidden extensions can preserve every observed trace
 law, so unique latent recovery does not follow from prediction. The benchmark has also rejected the
 uniform claim that inversion is hard. The open problem is therefore conditional: noise
-amplification, partial observability, missing coverage, unknown family, level jumps, intervention
+amplification, partial observability, missing coverage, unknown family, out-of-family
+misspecification, intervention
 access, and the cost of representing uncertainty honestly.
 
 **Status (v1.11, partial but measured):**
@@ -173,7 +191,7 @@ access, and the cost of representing uncertainty honestly.
 - **v1.1:** watching can plateau while perturbing and preparing collapse the class.
 - **v1.2:** family search grows rapidly with description complexity; Occam's payoff is world-dependent.
 - **v1.3–v1.7:** unmarked uncertainty creates an optimizer's-curse wedge; class-aware planners and small ensembles reduce delusion, while only new evidence removes ignorance.
-- **v1.8:** a coupled process can empty the equivalence class of its component family, certifying a level jump where the coupling is transmitted.
+- **v1.8:** a coupled process can empty the equivalence class of a declared single-rule family where the coupling reaches the observed channel. Supplying the coupled family restores fit; this diagnoses family misspecification, not a unique hidden mechanism or ontological level.
 - **v1.9:** a fixed substitution-coupled ring produces super-additive knockout cascades but becomes less viable under noise. This rules out that first dependency model as sufficient ecological co-stabilization.
 - **v1.10:** with the same per-node repair budget, routing only otherwise-unused capacity improves viability under sparse shocks across 18 size/topology/threshold cells. The gain vanishes under correlated shocks; the result establishes a designed mutual-support mechanism, not endogenous ecology or metabolism.
 - **v1.11:** a population with inherited support/link traits, paid dynamic links, reproduction, mutation, and death builds a functionally useful network, but contribution is selected downward in all 16 seeds and abundance falls. The preregistered endogenous co-stabilization criterion is not supported; collective function and evolutionary retention are distinct constraints.

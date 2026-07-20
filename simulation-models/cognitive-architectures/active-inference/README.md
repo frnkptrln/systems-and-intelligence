@@ -1,42 +1,40 @@
-# Active Inference (The Free Energy Principle)
+# Active-Inference Gradient Toy
 
-This module provides a runnable, mathematical demonstration of Karl Friston's **Active Inference Framework**, which forms the neurobiological foundation spanning Part 1 and Part 2 of this repository.
+*Status: small illustrative optimization model. It is not a neurobiological foundation for the
+repository and does not establish how LLMs, organisms, or alignment work.*
 
-## The Core Concept
+## Model
 
-Current AI models (LLMs) operate using a discrete objective function: *Predict the next token*. 
+The script defines a scalar free-energy-like objective with an internal estimate, an observation,
+and an action. It compares gradient updates that:
 
-Biological systems (and continuous agentic AI) operate using a different function: ***Minimize Variational Free Energy***, which is a mathematical proxy for "Surprise" or prediction error.
+1. change only the internal estimate;
+2. change only the modeled environment through action;
+3. update both.
 
-When an agent encounters a discrepancy between its internal model (expectation) and sensory input (reality), it has exactly two ways to minimize that Free Energy:
+Under the supplied equations, each enabled variable moves down the selected objective. The third
+condition reaches the trade-off encoded by its coefficients.
 
-1. **Perception**: Change internal beliefs to match the world.
-2. **Action**: Change the world to match internal beliefs.
+This illustrates a common active-inference distinction between perceptual and active updates. A full
+model must specify a generative model, variational family, preferences, precision, policy, and
+observation/action mapping. Surprise is not simply prediction error, and variational free energy is
+not identical to a human value or substrate-health signal.
 
-Goal-directed behavior (intelligence) is not programmed; it emerges naturally as the system attempts to make the environment fit its internal prior predictions.
+## Run
 
-## The Simulation
+    python active_inference_simulation.py
 
-The script `active_inference_simulation.py` formally implements these two gradient descent mechanisms:
+## Bounded Interpretation
 
-- $\frac{\partial F}{\partial \mu}$ (Perceptual update: changing beliefs)
-- $\frac{\partial F}{\partial a}$ (Active update: executing actions)
+If a controller is given fixed preferences and actions that can change the environment, the chosen
+objective may favor changing the environment rather than revising beliefs. It may also favor belief
+revision, information gathering, inaction, or another policy, depending on the model. Nothing in
+this run shows that a model with a conflicting preference will inevitably act against humans.
 
-### Running the Code
-```bash
-python active_inference_simulation.py
-```
+Useful follow-ups vary preference precision, action costs, model error, inaccessible observations,
+and alternative policies, then compare active inference with ordinary state estimation and control.
 
-### Interpretation of Results
+## Reference
 
-The simulation runs three scenarios:
-
-1. **Perception Only (The Observer):** The system encounters an environment (State=0.0) that contradicts its prior expectation (State=1.0). Unable to act, it updates its internal beliefs to accept reality. The prediction error drops, but the world remains unchanged.
-2. **Action Only (The Pure Agent):** The system cannot update its beliefs (dogmatic prior). To minimize the massive prediction error, it exerts energy (Action) to physically alter the world state from 0.0 to 1.0.
-3. **Active Inference (The Balanced Mind):** The system simultaneously updates its beliefs and acts upon the world, finding the mathematically optimal homeostatic balance that minimizes total Free Energy.
-
-**Conclusion:** Alignment cannot be achieved by merely teaching a model what is "good" (Perception). If a model's internal generative goal (Prior Preference) conflicts with human reality, it will inevitably generate Actions to alter human reality to match its goals.
-
-
-## �� References
-- **Friston, K. (2010).** *The free-energy principle: a unified brain theory?* Nature Reviews Neuroscience, 11(2), 127-138.
+- Friston, K. (2010). *The free-energy principle: a unified brain theory?* Nature Reviews
+  Neuroscience, 11(2), 127–138.

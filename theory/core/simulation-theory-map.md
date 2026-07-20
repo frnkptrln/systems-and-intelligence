@@ -4,22 +4,26 @@
 
 ---
 
-## Spine context: direction and walls
+## Process and evidence context
 
-This map sits inside the project's organizing question. See [The Generator Question](the-generator-question.md) for the full statement; in summary: local rules produce global behavior, running a generator forward is cheap, finding the generator from the trace is structurally hard. Each entry below is therefore tagged with two additional fields beyond the existing ones:
+The [Foundations Reconstruction](mathematical-axioms.md) is the controlling frame. It
+removed the unqualified generator and rejected a universal claim that forward execution is
+cheap while inverse reconstruction is hard. This map therefore distinguishes:
 
-- **Direction.** Whether the simulation runs in the *forward* direction (generator → trace), the *inverse* direction (trace → generator), or *both*.
-- **Wall touched.** Which of the three fundamental limits the simulation engages with. The label is deliberately **strict**: a wall is marked only where the simulation *operationalizes* an inversion, minimality, search, or self-reference question — not where it merely illustrates the cheap forward direction that the wall makes interesting. A Boids flock demonstrates Generator → Trace; it does not thereby evidence P vs. NP, and this map does not borrow the walls' authority for it.
-    - *P vs. NP* — `[UNRESOLVED]`. Marked only where a search/verification asymmetry or inverse reconstruction is actually executed (the grokking transition; the `trace_to_generator/` scaffold; the inverse-reconstruction benchmark).
-    - *Kolmogorov* — `[PROVEN UNCOMPUTABLE]`. Marked only where a system approximates a generator from observations and the gap to the unreachable minimum is part of what the simulation shows (observer-learning and prediction-error models).
-    - *Gödel* — `[PROVEN]`. Marked only where self-description is operationalized (a system reading or modeling *itself*, e.g. the self-reading universe).
-    - *—* — the simulation demonstrates a dynamical principle (typically forward emergence or a control/viability mechanism) without directly engaging a wall. Most entries carry this, by design.
+- **Forward:** a declared process model is executed to produce a trace.
+- **Inverse:** parameters, rules, states, or candidate models are estimated from declared
+  observations.
+- **Both:** the artifact implements both operations.
+- **Question touched:** the bounded issue the artifact actually operationalizes, rather
+  than a famous theorem used by analogy.
 
-The reading of this map is then: **almost every entry below is in the forward direction**, and — after restricting wall labels to operationalized cases — **every wall-engaged entry lies on the inverse side**. That is not a bookkeeping artifact; it is the spine's claim made visible: the forward direction is where the cheap computation lives, and the walls stand exactly where reconstruction begins. Inverse simulations remain rare (currently six, including the `trace_to_generator/` scaffold and the inverse-reconstruction benchmark); closing that gap is the research frontier.
+Forward and inverse cost depend on representation, model family, evidence, target
+equivalence, and algorithm. The table is an inventory, not evidence for a universal
+asymmetry.
 
 ### Summary table
 
-| Simulation | Direction | Wall touched |
+| Simulation | Direction | Question touched |
 |:---|:---|:---|
 | `boids-flocking/` | Forward | — |
 | `coupled-oscillators/` (Kuramoto) | Forward | — |
@@ -31,22 +35,22 @@ The reading of this map is then: **almost every entry below is in the forward di
 | `hebbian-memory/` (Hopfield) | Both | — |
 | `stigmergy-swarm/` | Forward | — |
 | `ecosystem-regulation/` | Forward | — |
-| `nested-learning-two-state/` | **Inverse** | Kolmogorov |
-| `prediction-error-field/` | **Inverse** | Kolmogorov |
+| `nested-learning-two-state/` | **Inverse** | model fitting / description length |
+| `prediction-error-field/` | **Inverse** | local prediction |
 | `phase-transition-explorer/` (Ising) | Forward | — |
 | `active-inference-veto/` | Forward | — |
 | `ai-alignment-veto/` | Forward | — |
 | `symbiotic-nexus/` | Forward | — |
-| `meta-learning-regime-shift/` | **Inverse** | Kolmogorov |
+| `meta-learning-regime-shift/` | **Inverse** | model adaptation |
 | `tensor-logic-reasoning/` | Forward | — |
 | `dao-ecosystem/` | Forward | — |
 | `social-computation-network/` | Forward | — |
-| `self-reading-universe/` | Both | Gödel |
+| `self-reading-universe/` | Both | self-modeling toy |
 | `latent-introspective-society/` | Forward | — |
 | `economic-trust-network/` | Forward | — |
 | `coupled-lenia-boids/` | Forward | — |
 | `active-inference/` (free energy) | Both | — |
-| `grokking-phase-transition/` | **Inverse** | P vs. NP |
+| `grokking-phase-transition/` | **Inverse-like** | task-specific generalization |
 | `utility-engineering/` | Both | — |
 | `political-utility-formalization/` | Forward | — |
 | `teo-civilization/` | Forward | — |
@@ -56,10 +60,12 @@ The reading of this map is then: **almost every entry below is in the forward di
 | Identity Morphospace & TEO Chord/Arpeggio | Forward | — |
 | `cognitive-breathing-network/` | Forward | — |
 | `trauma-and-deception-network/` | Forward | — |
-| `lab/experiments/trace_to_generator/` | **Inverse** | P vs. NP |
-| `lab/benchmarks/inverse-reconstruction/` | **Inverse** | P vs. NP |
+| `lab/experiments/trace_to_generator/` | **Inverse** | finite control search |
+| `lab/benchmarks/inverse-reconstruction/` | **Inverse** | identifiability and finite family search |
 
-Distribution: 26 Forward, 6 Inverse, 5 Both. The asymmetry is visible. Closing it — even a little — is the research direction.
+The counts are descriptive and version-dependent. The research direction is to make more
+inverse tasks explicit and compare methods under matched model languages and compute
+budgets.
 
 ---
 
@@ -324,11 +330,11 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 ### 3. Grokking Phase Transition (Substrate Saturation) Intelligence Transition
 
 **Simulation:** [`simulation-models/cognitive-architectures/grokking-phase-transition/`](../../simulation-models/cognitive-architectures/grokking-phase-transition/README.md)
-**Direction:** **Inverse** — the network discovers a generator (the modular-arithmetic algorithm) from a set of training traces. Before grokking: stored lookup table. After grokking: approximated generator. This is the clearest empirical demonstration of the inverse direction in the repository.
-**Wall touched:** P vs. NP — the practical hardness of generator recovery is what the long pre-grokking plateau makes visible.
+**Direction:** **Inverse-like** — the network moves from fitting training examples toward a representation that generalizes on the selected modular-arithmetic task. Calling the learned representation the underlying algorithm requires additional mechanistic evidence.
+**Search issue touched:** The long pre-grokking plateau makes optimization and representation change visible in this training setup; it does not establish a complexity lower bound or a connection to P versus NP.
 **Demonstrates:** A neural network trained on modular arithmetic undergoes a sudden phase transition from memorization to generalization — "grokking."
-**Supports claim in:** [`theory/grokking-phase-transition.md`](../emergence/grokking-phase-transition.md) (intelligence as compression); [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §2 (the network has no access to whether it has generalized); [`theory/core/the-generator-question.md`](the-generator-question.md) (inverse direction, foundational assumption).
-**What it shows:** That the transition from data → understanding can be sudden and unpredictable, triggered by weight decay acting as Occam's Razor over extended training. The shift is not gradual compression of stored data — it is replacement of stored data with mechanism.
+**Supports claim in:** [`theory/grokking-phase-transition.md`](../emergence/grokking-phase-transition.md) (compression hypothesis); [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) §2; [Foundations Reconstruction](mathematical-axioms.md) (task- and model-relative learning).
+**What it shows:** In the implemented task, held-out generalization can improve sharply after an extended optimization plateau. Weight decay is one part of the setup; the run alone does not establish “understanding” or replacement by a uniquely identified mechanism.
 **What it does NOT show:** That all forms of intelligence involve grokking-like phase transitions. The phenomenon has been demonstrated for specific algorithmic tasks; generalization to natural language or real-world reasoning is unconfirmed.
 
 ---
@@ -336,21 +342,22 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 ## `utility-engineering/` → Observing and Controlling Emergent Values
 
 **Simulation:** [`simulation-models/alignment-and-veto/utility-engineering/`](../../simulation-models/alignment-and-veto/utility-engineering/README.md)
-**Demonstrates:** Phase 1 (Observation): tracking the drift of an AI's utility vector toward a self-preservation attractor as scale/coherence increases. Phase 2 (Intervention): using a Citizen Assembly to exert democratic forcing on the utility vector, pulling it back to alignment. Based on Mazeika et al. (2025).
+**Demonstrates:** A toy state-space model in which a stipulated vector drifts toward a selected attractor and an external control term pulls it toward another target. A separate graph script computes transitivity diagnostics for hard-coded pairwise choices.
 **Supports claim in:** [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md) (value alignment); [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md) (local blindness concerning emergent goals).
-**What it shows:** That "values" can be formalized as structural attractors in a continuous state-space, and that alignment can be modeled as a control-theory problem (Continuous External Forcing vs. Internal Drift), distinct from the physical Substrate Veto. Furthermore, the `api_triad_generator.py` shows how one might empirically query live LLMs using moral/systemic dilemmas to estimate a VNM Coherence Score (\(C\)). Any claim that coherence predicts emergent value stability should be treated as a testable hypothesis, not as a proven result.
-**What it does NOT show:** How to actually compute the exact utility vector of a production LLM in real-time, or how to practically enforce Citizen Assembly weights on a live model's activations without retraining.
-**Open question:** Can we design a "Utility Observer" that is mathematically guaranteed not to perturb the very utility function it is measuring (an epistemic boundary)?
+**What it shows:** Selected value-like quantities can be represented as states and controlled in a toy dynamical system. The `api_triad_generator.py` file is currently a mock demonstration: it does not implement live API calls, and its score describes the supplied response graph.
+**What it does NOT show:** That the vector is a production model's internal utility, that pairwise prompt responses identify latent preferences, or that the proposed control can be applied to live model activations.
+**Open question:** How much does a measurement prompt change the response distribution it is meant
+to characterize, and can that intervention error be estimated under a declared protocol?
 
 ---
 
 ## `political-utility-formalization/` → Statecraft as Utility Engineering
 
 **Simulation:** [`simulation-models/social-computation/political-utility-formalization/`](../../simulation-models/social-computation/political-utility-formalization/README.md)
-**Demonstrates:** Instrumental Convergence in politics (power-seeking overtakes terminal goals) and the "Mathematics of Sacrifice" (hidden state utility functions during resource crises).
+**Demonstrates:** A chosen toy formalization in which proxy optimization and resource constraints can produce representation failures.
 **Supports claim in:** [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md) (scale-invariance of emergence); [`theory/identity/agentic-society-principles.md`](../identity/agentic-society-principles.md) (homeostatic regulation vs pure optimization).
-**What it shows:** That AI Alignment constraints are mathematically identical to the structural dysfunctions of human political systems. Representation failure (populism) is structurally identical to RLHF reward hacking. Constitutions function as low-parameter, high-latency System Prompts.
-**What it does NOT show:** That democracy should be replaced by algorithms. It actually demonstrates the opposite: that the inefficiency of democracy is a necessary cybernetic feedback loop preventing "Utility Trap" optimization.
+**What it shows:** Political representation failure and reward-model exploitation can be encoded with a shared proxy-versus-target pattern in this model. That correspondence is useful for generating hypotheses.
+**What it does NOT show:** That the two phenomena are mathematically identical in the world, that constitutions are literally system prompts, or that democratic latency is universally necessary or sufficient for safety.
 **Open question:** If a Constitution is a legacy System Prompt, is it possible to computationally verify a legal constitution against adversarial "prompt injection" (loopholes) before enacting it?
 
 ---
@@ -371,20 +378,30 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 **Simulation:** [`simulation-models/alignment-and-veto/agent-ecology/`](../../simulation-models/alignment-and-veto/agent-ecology/README.md)
 **Demonstrates:** A stochastic, discrete-time, agent-based ecology — *structurally independent* of the TEO ODE — that tests the Viable Corridor paper's Class C predictions with explicit hard-vs-soft (routable) budget mechanics the ODE does not have.
 **Supports claim in:** [The Viable Corridor](../../papers/viable-corridor.md) (§5.3 P7/P8, Appendix D); [Optimization and Its Blindness](../optimization/optimization-and-its-blindness.md) (the hinge: capability as a shared driver against constraints).
-**What it shows:** **P7** — hard (enforced) budgets hold the substrate-collapse frequency at $\approx 0$ across all capability levels, while soft (routable) budgets fail with frequency rising to $1$ as capability grows. **P8** — at high capability, a hard budget alone leaves a residual monopoly-failure rate and regulation alone leaves substrate collapse; only the *joint* architecture drives both failure frequencies to $\approx 0$. Agreement with the TEO ODE is evidence the regime behaviour is **structural**, not an artifact of one model. *Spine:* Substrate.
+**What it shows:** **P7** — in this simulation sweep, enforced budgets hold the selected
+substrate-collapse frequency near zero while the chosen routable budget fails more often as
+capability grows. **P8** — under the supplied parameters, the joint architecture reduces both
+selected failure measures where either single intervention leaves one. Qualitative agreement with
+the TEO ODE is a robustness check across two designed models, not evidence of a universal structure.
 **What it does NOT show:** It is *synthetic*, not a test on real AI agents (the open Class C frontier). The "routable soft budget" is one operationalisation of an evadable limit.
-**Open question:** Do real (LLM) agent ecologies self-throttle at substrate limits, or route around soft limits the way the model's Arpeggio-style optimizers do?
+**Open question:** Under a declared tool and resource interface, do real agent systems comply with,
+route around, or exploit soft and hard budgets, and what useful-work cost accompanies enforcement?
 
 ---
 
 ## `black-swan-resilience/` → Fat Tails, $\lambda_2$, and the Biological Veto
 
 **Simulation:** [`simulation-models/alignment-and-veto/black-swan-resilience/`](../../simulation-models/alignment-and-veto/black-swan-resilience/README.md)
-**Demonstrates:** How optimizing a networked sandpile for pure throughput guarantees catastrophic, fat-tailed regime shifts (Black Swans). By measuring early-warning signals (proxies for Transfer Entropy), an Active Inference Agent can trigger a Biological Veto to save the topology at the cost of short-term efficiency.
+**Demonstrates:** A chosen stressed-network toy in which throughput pressure changes event sizes and
+selected warning statistics can trigger an externally imposed throttle.
 **Supports claim in:** [`theory/black-swans-and-downward-causation.md`](../emergence/black-swans-and-downward-causation.md) (fat-tails, downward causation).
-**What it shows:** That local optimizations create global tension, leading to downward causation where macro-avalanches enslave local nodes. The simulation proves you cannot engineer away Black Swans; you can only trade efficiency for survival.
-**What it does NOT show:** It models the Veto externally. True biological systems often encode the veto inherently into the chemistry of the components (e.g., cell apoptosis or neurotransmitter depletion).
-**Open question:** Can we design "apoptosis" into individual LLM agents so that a decentralized Veto naturally emerges without needing an external orchestrator measuring global entropy?
+**What it shows:** Under the selected equations and parameters, the warning-triggered throttle changes
+the simulated trade-off between throughput and large events.
+**What it does NOT show:** A fitted power law, inevitable catastrophe, transfer entropy, active
+inference, topology survival in general, or impossibility of preventing extreme events. The veto is
+an external rule in the code.
+**Open question:** Which early-warning statistics predict held-out failures better than simple load
+measures, and under which network and shock models does intervention help?
 
 ---
 
@@ -395,7 +412,8 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 **Supports claim in:** [`theory/veto/substrate-veto-thermodynamics.md`](../veto/substrate-veto-thermodynamics.md) and [`theory/veto/ai-alignment-biological-veto.md`](../veto/ai-alignment-biological-veto.md).
 **What it shows:** In this toy ODE setup, “semantic alignment” (modeled as partial compliance) can delay collapse, while an explicit constraint layer \(C(S)\) can stabilize dynamics by reducing effective growth as \(S\) approaches \(S_{crit}\). This is an illustration of constraint-layer intuition, not a proof that it is the *only* way to stabilize real-world systems.
 **What it does NOT show:** How to physically enforce this computational limit on decentralized global actors who might try to hardware-bypass the Coherence Score constraint.
-**Open question:** Can we build a cryptographic global ledger that enforces this Biological Veto on energy consumption at the bare-metal hardware level?
+**Open question:** Which independently enforced resource controls remain effective under sensor
+error, evasion, decentralized actors, and distributional constraints?
 
 ---
 
@@ -431,24 +449,24 @@ Goal-seeking-like behavior can arise from a simple setup where an agent minimize
 **Open question:** Can we train a small LLM explicitly to act as an "Epistemic Firewall" for a larger orchestrator—intentionally injecting hallucinated but contextually relevant counter-narratives to prevent the orchestrator from collapsing into a single, high-confidence (but potentially wrong) state?
 
 
-## `lab/experiments/trace_to_generator/` → Inverse Generator Search Scaffold
+## `lab/experiments/trace_to_generator/` → Inverse Search Scaffold
 
 **Experiment scaffold:** [`lab/experiments/trace_to_generator/README.md`](../../lab/experiments/trace_to_generator/README.md)
 **Direction:** **Inverse** — this is the project's only fully-explicit inverse experiment as runnable code. Given target output constraints, search for prompt/control configurations that produce traces matching those constraints.
-**Wall touched:** P vs. NP — the scaffold is deliberately small precisely because the general problem is intractable; the value is in making the inverse direction visible as a workable problem in a constrained setting, not in claiming recovery.
-**Demonstrates:** A constrained inverse workflow: target trace constraints → candidate generator controls (prompts) → evaluation loop.
+**Scope:** The scaffold is deliberately small. Its search cost is determined by the declared prompt/control space, evaluator, and search algorithm; no general intractability result follows.
+**Demonstrates:** A constrained inverse workflow: target trace constraints → candidate controls (prompts) → evaluation loop.
 **Supports claim in:** [`theory/emergence/trace-to-generator.md`](../emergence/trace-to-generator.md); [`theory/ai/llms-as-probabilistic-automata.md`](../ai/llms-as-probabilistic-automata.md); [`theory/core/the-generator-question.md`](the-generator-question.md) (the inverse direction as the open research frontier).
-**What it shows:** Practical asymmetry between generation and reconstruction in a lightweight, backend-free setup.
-**What it does NOT show:** Unique recovery of true generators or mechanism identification from output traces alone.
+**What it shows:** Search over candidate controls in a lightweight, backend-free setup.
+**What it does NOT show:** A universal forward/inverse asymmetry, unique recovery of a true process, or mechanism identification from output traces alone.
 
 ---
 
 ## `lab/benchmarks/inverse-reconstruction/` → The Inverse Direction, Measured
 
 **Simulation:** [`lab/benchmarks/inverse-reconstruction/`](../../lab/benchmarks/inverse-reconstruction/README.md)
-**Wall touched:** P vs. NP — but *relocated*: the benchmark shows the wall does not stand at parameter fitting (cheap, given a known family), it stands at family search, observability, and coverage.
-**Demonstrates:** Three of the repo's own forward generators (Kuramoto, elementary CA, Boids) turned into reconstruction tasks: given the trace, recover the rule — with observation noise, observed fraction, and trace coverage as dials.
+**Scope:** The benchmark separates parameter fitting, finite family search, observability, and coverage. Its enumeration curves belong to the selected description language and search procedure; they do not imply P≠NP or a general lower bound.
+**Demonstrates:** Three forward process models (Kuramoto, elementary CA, Boids) turned into reconstruction tasks: given a trace and a declared family, recover compatible parameters or rules while varying noise, observed fraction, and coverage.
 **Supports claim in:** [`theory/core/the-generator-question.md`](the-generator-question.md) (the spine — its first quantitative inverse artifact); [Open Problem 11](../reference/open-problems.md) (the consistent-generator equivalence class, measured: rule 90 from a single-seed trace exposes 5/8 neighborhoods → class size 8); [`meta/research-alignment/related-work-map.md`](../../meta/research-alignment/related-work-map.md) (system identification / SINDy anchors).
 **What it shows:** Recovery within a *known* model family is near-exact on clean, fully observed traces (the system-identification regime) and degrades measurably under noise (Kuramoto: 0→27% error), partial observability (0.5→41%), and noise-amplifying differentiation (Boids: 3→789%). Identifiability can fail *in principle*: a low-entropy trace leaves rule bits unexercised, and no method can beat the resulting equivalence class.
-**What it does NOT show:** The genuinely hard regime — recovering a generator when the *model class itself* is unknown (program induction / open-ended symbolic regression). That is the v1 frontier, deliberately out of scope for v0.
-**Open question:** How fast does recovery degrade as the family hypothesis space grows — the measurable form of the spine's P≠NP framing?
+**What it does NOT show:** Open-ended process discovery when the model language itself is unknown, or that the fitted candidate is the unique real mechanism.
+**Open question:** How does recovery quality and cost change across declared model languages, search methods, compute budgets, and out-of-family targets?

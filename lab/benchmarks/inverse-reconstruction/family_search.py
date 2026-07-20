@@ -1,34 +1,30 @@
 """
 family_search.py
 
-Family search: the wall, measured. (Benchmark v1, part 2)
+Finite family search in a Boolean DSL. (Benchmark v1, part 2)
 
-THE QUESTION.  Benchmark v0 showed that recovering a generator is cheap when
-the MODEL FAMILY is known — fit parameters, done. The spine's hardness claim
-was therefore relocated to *family search*: finding the generator when the
-hypothesis space is a space of programs, not a parameter vector. This module
-measures that wall in the smallest honest setting.
+THE QUESTION.  How do description length, enumeration cost, and partial
+coverage interact inside one fully declared finite language?
 
-THE SETUP.  Target generators: the 256 elementary CA rules. Hypothesis space:
+THE SETUP.  Targets: the 256 elementary CA rules. Hypothesis space:
 a DSL of boolean formulas over the neighborhood variables (l, c, r) with
 operators NOT, AND, OR, XOR. Every rule is expressible (the DSL is complete
 for 3-variable boolean functions); each rule therefore has a MINIMAL
 DESCRIPTION SIZE — the node count of its shortest formula. Rule 90 is
-XOR(l, r): size 3. Rule 110 needs a deeper formula. The minimal size is the
-DSL-relative Kolmogorov complexity of the rule, and it is exactly computable
-here (which is the point of the toy: in general it is uncomputable).
+XOR(l, r): size 3. Rule 110 needs a deeper formula. This is an exactly
+computable finite-DSL description length, not general Kolmogorov complexity.
 
 TWO MEASUREMENTS.
 
-  A. THE SEARCH WALL.  An exhaustive enumerator generates candidate formulas
+  A. ENUMERATION COST.  An exhaustive enumerator generates candidate formulas
      in size order and tests each against the trace. Testing one candidate
      costs 8 bit-comparisons — flat, tiny: VERIFICATION IS CHEAP. But the
      number of candidates that must be generated before reaching size m grows
-     exponentially in m (counted exactly by recurrence, no enumeration
-     needed): CONSTRUCTION IS EXPENSIVE, and the cost is set by the *target's
-     description complexity*, not by the data. This is the P-vs-NP shape of
-     the spine, drawn from a real (if small) system: cost-to-find grows like
-     the candidate stream; cost-to-check stays at 8 operations.
+     rapidly with m (counted exactly by recurrence, no enumeration needed).
+     This is a property of the chosen grammar and size-ordered enumerator.
+     Cost-to-find grows with the candidate stream while one complete
+     truth-table check stays at 8 comparisons. No general lower bound or
+     P-versus-NP result follows.
 
   B. OCCAM UNDER PARTIAL COVERAGE.  When the trace exercises only k of the 8
      neighborhoods, many formulas are consistent with everything seen. The
@@ -36,17 +32,14 @@ TWO MEASUREMENTS.
      exactly the move `theory/computation/construction-vs-deduction.md`
      claims we perform on the world ("the world-as-modeled is chosen from the
      equivalence class by criteria that are ours"). Here that claim becomes a
-     curve: how often does the most elegant consistent generator equal the
-     true one, as a function of coverage k? Occam is a *prior*, and priors
+     curve: how often does the shortest consistent formula equal the
+     target rule, as a function of coverage k? Occam is a *prior*, and priors
      can be wrong; this measures how wrong, where.
 
-WHAT THIS DOES NOT SHOW.  This is exhaustive search in a complete, tiny DSL —
-the FLOOR of family search, not a model of intelligent search. Whether
-learned searchers (LLMs, program synthesizers) beat the enumeration floor,
-and by how much, is exactly the open real-model question; this testbed
-provides the baseline they must beat. (Levin search formalizes the
-enumeration strategy; Rissanen's MDL formalizes the Occam selection. See the
-README's related-work pointers.)
+WHAT THIS DOES NOT SHOW.  This is exhaustive search in a complete, tiny DSL.
+It is a baseline for comparing searchers under the same language and compute
+accounting, not a universal floor for model discovery. (Levin search and MDL
+are related formal anchors; see the README.)
 
 Usage::
 
@@ -236,12 +229,12 @@ def print_summary(best: dict[int, int], s: list[int], occ: dict) -> None:
         print(f"      rule {rule:>3}: orbit covers {k}/8 patterns; "
               f"{ccount} consistent; most elegant = {verdict} "
               f"(min size {best[pick]}, {ties} tie(s))")
-    print("\nReading: verification stays at 8 operations while construction")
-    print("cost grows exponentially with the target's description size — the")
-    print("P-vs-NP shape, drawn from a real enumeration. Under partial")
-    print("coverage, elegance (minimal consistent description) is a prior:")
-    print("strong but fallible, and measurably so. This is the FLOOR that")
-    print("any intelligent searcher — including a language model — must beat.")
+    print("\nReading: verification costs 8 table checks per candidate, while")
+    print("this grammar and enumerator visit rapidly more candidates as the")
+    print("allowed expression size grows. This is a finite, language-relative")
+    print("search cost, not a P-vs-NP result or universal lower bound. Under")
+    print("partial coverage, minimal description is a world-dependent prior.")
+    print("Learned searchers should be compared under matched task budgets.")
 
 
 def _repo_lab_tools() -> Path:
@@ -289,8 +282,8 @@ def figure(best: dict[int, int], s: list[int], occ: dict, outdir: Path) -> Path:
     axB.legend(fontsize=8, loc="upper left")
     axB.grid(alpha=0.3)
 
-    fig.suptitle("Family search (benchmark v1.2) — the hardness the spine claimed, "
-                 "as two curves", fontsize=12)
+    fig.suptitle("Finite DSL family search (benchmark v1.2): "
+                 "enumeration cost and prior fit", fontsize=12)
     fig.tight_layout(rect=[0, 0, 1, 0.94])
     out = outdir / "inverse_benchmark_family_search.png"
     fig.savefig(out, dpi=200, bbox_inches="tight")

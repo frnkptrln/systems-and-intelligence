@@ -1,6 +1,7 @@
 # System Intelligence Index (SII)
 
-*Exploratory notes on how to think about "intelligence" as a property of systems.*
+*Status: task-relative reporting instrument for selected prediction, regulation, adaptation, and
+component-activity measures. It is not a general definition or validated index of intelligence.*
 
 ---
 
@@ -38,7 +39,7 @@ In this context, a *system* is any configuration of interacting components:
 - species in an ecosystem  
 - agents in an economy  
 
-We call a system *intelligent* (in a weak sense) if it exhibits:
+For a declared benchmark, the instrument records:
 
 1. **Predictive structure** – it encodes regularities of its environment or of
    its own dynamics.
@@ -47,7 +48,8 @@ We call a system *intelligent* (in a weak sense) if it exhibits:
 3. **Adaptive flexibility** – it can change its own behaviour or structure in
    response to perturbations.
 
-The **System Intelligence Index** is meant to reflect these three aspects.
+The **System Intelligence Index** combines these three selected aspects. Systems can have other
+capacities, and no theorem makes this list necessary or sufficient for intelligence.
 
 ---
 
@@ -139,9 +141,9 @@ For many exploratory simulations, a simple multiplicative structure is enough:
 \text{SII} = f(P, R, A) \approx P \times R \times A
 \]
 
-Why multiplicative?
+Why consider a multiplicative toy score?
 
-- if any factor is **near zero**, the overall intelligence feels low  
+- if any factor is **near zero**, the chosen product becomes low by construction
   - a system that predicts well but cannot regulate anything  
   - a system that regulates well but never learns  
 - if all three are moderately high, the system feels "intelligent" in a
@@ -151,7 +153,7 @@ In practice, each of \( P, R, A \) could be normalised to \([0, 1]\)
 or to some bounded interval, and the resulting SII would also live in a
 bounded range.
 
-This is not a final definition, but a **working model** to connect:
+This is not a definition of intelligence, but a **working reporting choice** to connect:
 
 - predictive models (nested learning)  
 - regulatory structures (homeostasis)  
@@ -267,64 +269,39 @@ a way to structure intuitions and guide the design of new experiments.
 
 ---
 
-## 8. The Fourth Dimension: Identity Persistence (IP)
+## 8. Optional Fourth Report: Component Activity (IP)
 
-The original SII framework measures *what* a system does — predict, regulate,
-adapt. But it does not measure *whether the system's governing principles are
-simultaneously operative* during action. A system can predict well, regulate
-well, and adapt well while time-multiplexing its governance — checking safety
-at $t_1$, pursuing goals at $t_2$, verifying alignment at $t_3$. Such a system
-scores high on P, R, A but has no unified self during any single step.
-
-Identity Persistence ($\text{IP}$) closes this gap.
-
-### 8.1 Definition
-
-Let an agent's identity be described by $n$ governing components. At each
-compute step, the **operative set** $\mathcal{O}(t)$ is the subset of
-components that causally influence the agent's output:
+For agent tasks with a preregistered set of governing components, the repository also reports an
+instrument historically called **Identity Persistence**. Let \(\mathcal{O}(t)\) contain the declared
+components whose causal intervention changes the action distribution at step \(t\):
 
 \[
-\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}
+\operatorname{IP}(t)=\frac{|\mathcal{O}(t)|}{n}.
 \]
 
-- $\text{IP} \to 1$: All components co-instantiated (**Chord** regime)
-- $\text{IP} \to 0$: Components time-multiplexed (**Arpeggio** regime)
+The result depends on the component list, intervention, threshold, time resolution, and task. It
+reports detected component activity. It does not establish a self, consciousness, or metaphysical
+identity. Exp5–7 also show that consultation without joint satisfaction can score highly, so IP alone
+does not identify the Chord regime it was intended to describe.
 
-### 8.2 Updated SII Formula
+For dashboards that intentionally require all four selected dimensions, one may report
 
 \[
-\text{SII} = P \times R \times A \times \text{IP}
+\operatorname{SII}_{PRAIP}=P\,R\,A\,\operatorname{IP}.
 \]
 
-The multiplicative form applies: a system that predicts, regulates, and adapts
-perfectly but has zero identity persistence ($\text{IP} = 0$) has SII = 0. It
-is a sophisticated tool, not a system with integrated intelligence.
+A zero collapses this product because multiplication was chosen; the result does not classify a
+system as merely a tool or as integrated intelligence. Other aggregation rules encode different
+trade-offs and should be compared.
 
-### 8.3 Examples
+Cross-system examples such as Boids, an Ising model, an ecosystem, and an agent should not receive
+shared scores until each axis has commensurable units and a common task. Magnetization at the Ising
+critical point is not, by itself, identity persistence.
 
-| System | P | R | A | IP | SII |
-|:-------|:--|:--|:--|:---|:----|
-| Simple Homeostatic CA | low | high | low | low | very low |
-| Nested Learning | high | low | medium | medium | low |
-| Boids Flocking | high | high | high | medium | medium |
-| Ising at $T_c$ | high | high | high | high | high |
+The Lerchner Boundary note states the appropriate test: compare sequential and jointly constrained
+architectures under matched resources and perturbations. Whether a sharp boundary exists is open.
 
-The Ising model at criticality scores highest on IP because global order
-(magnetization) is maintained simultaneously across all spins — no spin
-"checks" the global state sequentially; all spins contribute to the global
-order parameter at each step.
-
-### 8.4 Connection to the Chord Postulate
-
-The Identity Persistence score operationalizes Perrier & Bennett's (2026)
-Chord vs. Arpeggio distinction within the SII framework. The Chord Postulate
-predicts a phase transition at $\text{IP}_c$: below it, the system acts as a
-sequence of states; above it, identity becomes an attractor. This connects IP
-to the critical thresholds studied throughout this repository.
-
-See [`theory/teo-framework/lerchner-boundary.md`](../teo-framework/lerchner-boundary.md)
-for the formal derivation, and [`theory/glossary.md`](../reference/glossary.md) §Identity
-Persistence for the canonical definition.
+See [the Lerchner Boundary](../teo-framework/lerchner-boundary.md) for the proposed test protocol and
+the [glossary](../reference/glossary.md) for the maintained instrument definition.
 
 ---

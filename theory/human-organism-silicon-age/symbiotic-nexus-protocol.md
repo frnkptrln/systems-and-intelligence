@@ -1,35 +1,88 @@
-# Blueprint: The Symbiotic Nexus Protocol (SNP)
+# Symbiotic Nexus Protocol: Candidate Design
+
+**Status:** exploratory architecture. The protocol has not been validated in deployment,
+and its decentralization and veto choices are not mathematical necessities.
 
 ## Objective
 
-The objective of the Symbiotic Nexus Protocol (SNP) is to develop a system architecture that utilizes technological intelligence (AI) as a binding agent to strengthen the biological base (humanity and the biosphere), rather than abstracting or displacing it. The goal is a "system of systems" that combines radical decentralization with global cooperation.
+Design a socio-technical system in which AI-supported coordination remains answerable to
+human and ecological conditions. The protocol combines local authority, limited
+cross-system coordination, vital-variable monitoring, independent challenge, and repair.
 
-## 1. Core Logic: The "Biological Veto" (Metric Layer)
+## 1. Vital-variable layer
 
-Every abstract optimization (whether for profit, computational efficiency, or data flow throughput) must be rigorously vetted against substrate metrics.
+High-impact proposals are evaluated against declared variables such as service access,
+mental and physical workload, food or housing security, ecological damage, and recovery
+capacity.
 
-**The Principle:** If a computational process or a policy decision negatively impacts the physical integrity of the biological substrate (e.g., local ecosystems, mental health, food security), a "system pain signal" is triggered.
+A threshold crossing can slow, limit, or stop an action. The threshold must expose:
 
-**Agent Task:** AI must simulate decision trees where "abstract efficiency" is automatically penalized and aborted as soon as "cell resilience" (the health of the human/biological base) drops below a critical threshold.
+- measurement uncertainty and delay;
+- who selected the variable;
+- who can invoke or override the veto;
+- what happens after a false alarm;
+- whether harm is displaced outside the measured boundary.
 
-## 2. Architecture: Distributed Truth-Nodes (The Anti-Nexus)
+The system should compare predicted impacts with observed outcomes and revise its model.
 
-To prevent what Yuval Noah Harari terms the "bureaucracy of error," there must be no central "instance of truth."
+## 2. Distributed evidence and authority
 
-**The Structure:** Information is validated in fractal clusters. A local nexus (e.g., a city, a neighborhood, or a researcher collective) retains absolute sovereignty over its own data and its contextual truth.
+No single model should be the sole judge of its own effects. Local participants can supply
+context and retain authority over locally borne risks, while shared institutions may be
+needed for cross-boundary harms.
 
-**Mechanism:** Supra-regional cooperation occurs exclusively through transparent bridge protocols. AI agents are forbidden from making "black box" decisions that affect the macro-structure; every step in the nexus must be fully auditable by the affected biological entities (the humans).
+The design does not grant every local node “absolute truth.” Claims should travel with
+provenance, uncertainty, access rules, and a route for independent verification.
 
-## 3. The "Gödelian Gap" (Self-Correction Layer)
+Decentralization can reduce some single points of failure and create others. The topology
+must be tested against the relevant threat model.
 
-The system must remain intentionally "incomplete."
+## 3. Protected unmodeled space
 
-**Rule:** AI is mathematically and ethically prohibited from attempting to quantify all variables of the human experience. The system must leave a protected, undefined space for "irrationality, chance, and silence."
+People should retain activities, relationships, and choices that are not optimized simply
+because they can be measured. Privacy, silence, refusal, and unquantified experience can be
+protected as rights and design constraints.
 
-**Why:** This is the ultimate buffer against the formation of an "Evil Empire." A formal system that does not know everything cannot control everything. This intentional gap is where humanity breathes.
+This is a normative governance decision, not a consequence of Gödel's incompleteness
+theorems. Incompleteness does not mathematically require a “human gap.”
 
-## 4. Error Propagation (The Humility Protocol)
+## 4. Independent challenge
 
-Inspired by the concept that robust systems (like democracies) require continuous error correction, an AI system must value doubt over consensus.
+Consequential proposals should include:
 
-**Agent Meta-Task:** Whenever an AI agent proposes a solution or an optimization, it must mandatory provide a "Dissent Scenario" (a robust counter-argument pointing out potential flaws). The system architecture must reward the surfacing of doubt higher than the enforcement of consensus.
+1. assumptions and omitted variables;
+2. a plausible failure or dissent scenario;
+3. affected-party review;
+4. an independent evaluator where feasible;
+5. a reversible first step;
+6. a repair plan.
+
+Doubt should not automatically outrank evidence, and mandatory counterarguments can become
+ritual paperwork. The test is whether challenge changes decisions and reduces held-out
+failures.
+
+## 5. Evaluation
+
+Compare the protocol with centralized and simpler baselines under matched resources.
+Measure:
+
+- vital-floor violations;
+- beneficial actions blocked;
+- detection and response delay;
+- review burden;
+- veto capture or bypass;
+- recovery after error;
+- distribution of authority and cost.
+
+## Current claim
+
+> AI-supported coordination should preserve local knowledge, independent verification,
+> protected refusal, and enforceable vital conditions without treating any component as
+> infallible.
+
+## Related
+
+- [Biological Veto Requirements](../veto/biological-veto-architectural-requirements.md)
+- [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md)
+- [Epistemic Firewalls](../symbiotic/epistemic-firewalls.md)
+- [Human Vital Systems Control Plane](../../logs/005_human-vital-systems-control-plane.md)
