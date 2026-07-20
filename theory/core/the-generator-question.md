@@ -122,6 +122,11 @@ For this project, the relevant consequence is narrow but specific: an agent that
 
 ## The foundational assumption `[FOUNDATIONAL ASSUMPTION]`
 
+> **Retired as a foundation (2026-07-20).** P $\ne$ NP is no longer a load-bearing project
+> assumption; see [non-claim #3](../reference/what-this-project-does-not-claim.md) and
+> [Foundations Reconstruction §9.3](mathematical-axioms.md#93-problems-in-the-former-generator-spine).
+> The section below is preserved unchanged as research history.
+
 This project assumes P ≠ NP as a working hypothesis. The assumption is structural: it shapes how emergence, local blindness, the Mirror Problem, and identity reconstruction are framed throughout the repository. Until now, the assumption was implicit. It is stated explicitly here.
 
 **The assumption.** Generator reconstruction from a trace is, in general, not efficiently solvable. There exist regimes in which a trace can be locally verified against a candidate generator but no candidate can be found by a tractable search. Emergence, in this framework, is a phenomenon whose forward direction is computationally cheap and whose inverse direction is, in the worst case, intractable.
@@ -138,6 +143,11 @@ This project assumes P ≠ NP as a working hypothesis. The assumption is structu
 This is what `[FOUNDATIONAL ASSUMPTION]` is for: a load-bearing premise that is honest about its load-bearing status.
 
 ### A second assumption: the identity reduction `[FOUNDATIONAL ASSUMPTION]`
+
+> **Retired as a foundation (2026-07-20).** The identity reduction is withdrawn: identity is
+> relative to declared tests and interventions
+> ([Foundations Reconstruction §5.1](mathematical-axioms.md#51-identity)). The section below is
+> preserved unchanged as research history.
 
 There is a second load-bearing premise in this document that has, until now, traveled untagged. When the spine claims that the Mirror Problem, the Chord Postulate, and the Identity Persistence framework are "instances of asking: given a trace, what generator produced it," it assumes that **the trace/generator formalization captures what matters about identity** — that the question "is this agent the same agent?" reduces, without remainder that matters, to a question about generator recovery from behavioral traces.
 
