@@ -64,4 +64,4 @@ foundation take precedence.
 
 For the shortest public route, continue with [From Rule to Mind](09_from_rule_to_mind.md). For the
 plain-language overview of both research arcs, use the
-[Synthesis](../docs/synthesis.md).
+[Synthesis](https://frnkptrln.github.io/systems-and-intelligence/synthesis/).
