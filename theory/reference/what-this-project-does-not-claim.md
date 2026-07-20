@@ -92,8 +92,7 @@ The specific non-claims, each with the place where the boundary is stated:
 
 16. **We do not treat fiction as evidence or claim external validation.** Fiction can stress-test or
     originate a concept; resonance does not confirm it. The project has not yet received the external
-    domain review needed to stabilize its broader claims; the claims we most want checked, and what
-    would refute each, are listed in the [Review Request](../../meta/research-alignment/review-request.md). [Narrative as Cognitive
+    domain review needed to stabilize its broader claims. [Narrative as Cognitive
     Technology](../narrative/narrative-as-cognitive-technology.md); [Log 017](../../logs/017_provenance-depth-and-the-verification-economy.md).
 
 ---
