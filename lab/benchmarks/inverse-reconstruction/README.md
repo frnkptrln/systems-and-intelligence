@@ -158,6 +158,8 @@ Headline case: `N = 32`, small-world graph, threshold `0.70`, 20 seeds.
 
 This operationalizes one **designed, budget-matched mechanism of functional mutual support**: healthy nodes' spare capacity improves collective viability under sparse shocks without requiring keystone fragility. It does **not** establish spontaneous ecology, metabolism, life, or a general self-maintenance threshold. The next level is endogenous: populations must build, retain, and dissolve the coupling structure rather than receive it from the experimenter.
 
+![Redundancy under a matched budget](../../tools/inverse_benchmark_redundancy.png)
+
 ## v1.11 — useful support is not yet evolutionarily stable (run)
 
 [`co_stabilization_population.py`](co_stabilization_population.py) removes v1.10's supplied support graph. Individuals occupy a 12 × 12 toroidal lattice, receive environmental resources, suffer shocks, die, reproduce locally, and mutate. Support propensity and link propensity are inherited. Realized links form and break during the run; every link, transfer, self-repair, and birth is paid from stored energy. Low-contributing recipients are allowed, and there is no explicit fitness or group reward. The potential neighborhood remains spatially constrained, but the occupied population and realized support graph are endogenous.
@@ -177,6 +179,8 @@ The preregistered candidate criterion required three things: valid accounting, m
 - **Low contributors persist.** `40.4%` of linked agents finish below support `0.20`; `17.6%` combine that low contribution with link propensity above `0.50`.
 
 The preregistered endogenous co-stabilization criterion is therefore **not supported**. v1.11 exposes the missing bridge between a mechanism that benefits a collective and one that evolution actually retains. The next discriminating models are not “more support” but mechanisms that can alter that selection problem: partner choice, conditional reciprocity, and spatial/kin assortment. Resource production and open-ended topology remain external beyond that.
+
+![Endogenous support population](../../tools/co_stabilization_population.png)
 
 ## Running
 
