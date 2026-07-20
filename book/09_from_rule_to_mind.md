@@ -2,6 +2,12 @@
 
 *A compact course spine for the existing book and site.*
 
+> **Status after the foundations audit (2026-07-20):** this is an earlier pedagogical path, not the
+> mathematical foundation. Read the [Foundations
+> Reconstruction](../theory/core/mathematical-axioms.md) first. The operator–iteration–form pattern is
+> useful in selected models; it is not a universal law, an intelligence definition, or a derivation
+> of identity or consciousness.
+
 This is not a second book and not a complete lecture script. The site itself is the script: book chapters, simulations, theory notes, logs, fiction, and meta pages form the interactive course. This page only names the spine that keeps the material teachable.
 
 The repository contains many objects: cellular automata, flocking, IFS attractors, L-systems, random graphs, language agents, institutions, veto protocols, fiction, and architecture logs. They should not be read as a catalogue.
@@ -145,7 +151,11 @@ This is not a closed doctrine. It is a disciplined way to keep opening the same 
 > How does constrained repetition become form, and when does form become capable of shaping its own future?
 
 
-## Inverse Direction (Trace → Generator)
-The primary spine here follows operator → iteration → form → boundary → return path (generator → trace).
-A complementary research thread asks the inverse question: given a trace, which constrained generators could have produced it?
-See [`theory/emergence/trace-to-generator.md`](../theory/emergence/trace-to-generator.md) for the companion axis and limits.
+## Model-identification direction
+
+The pedagogical movement here follows operator → iteration → form → boundary → return path. A
+separate bounded research thread asks: given a trace, a model family, and specified observational or
+interventional access, which candidate process models or equivalence class are identifiable? See the
+[Foundations Reconstruction](../theory/core/mathematical-axioms.md) for the formal limits and [Trace
+to Generator](../theory/emergence/trace-to-generator.md) for the earlier essay whose title preserves
+the legacy vocabulary.

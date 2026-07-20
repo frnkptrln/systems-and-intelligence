@@ -8,7 +8,12 @@
 
 ## Relation to the Project
 
-[The Generator Question](../../theory/core/the-generator-question.md) is the shared root: traces underdetermine generators, and reconstruction has measurable limits. The repository then separates an epistemic loop from a viability arc. The claims below belong to the latter and to its identity boundary; they do not answer every question raised by the spine.
+The [Foundations Reconstruction](../../theory/core/mathematical-axioms.md) supplies the shared process
+language and its limits. The repository then separates a bounded model-identification programme from
+a viability arc. The older [Generator Question](../../theory/core/the-generator-question.md) no
+longer supplies a universal spine; its useful residue is the measured underdetermination of candidate
+process models under declared evidence and interventions. The claims below belong to the viability
+arc and to one proposed identity test family; they are not consequences of the foundation.
 
 Their status is mixed. The Viable Corridor has a conditional necessity result and two synthetic demonstrations of capability loading; the wider applicability of the claims below remains hypothesized. Each claim therefore carries an artifact and a failure condition.
 

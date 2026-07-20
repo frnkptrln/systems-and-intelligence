@@ -2,9 +2,9 @@
 
 <div class="hero-banner" markdown>
 
-## A Research Notebook on Generators, Intelligence, and Viability
+## A Research Notebook on Processes, Identification, and Viability
 
-*How systems produce traces, how observers reconstruct them, and how optimization remains survivable.*
+*What follows from a process model, what evidence can identify, and how optimization remains survivable.*
 
 **Frank Peterlein** · Independent Research · 2024–2026
 
@@ -37,17 +37,17 @@
 ## The Core Questions
  
 !!! success "TL;DR"
-    This repository studies two connected questions:
+    This repository now begins with a foundational audit and then studies two bounded questions:
 
-    1. **Epistemic spine:** How can an observer move from a trace to a useful generator — through construction, world-coupling, intervention, and revision?
+    1. **Model identification:** How can an observer move from traces to useful candidate process models — through construction, world-coupling, intervention, and revision?
     2. **Viability arc:** How can an optimizing system remain viable when growing capability loads several constraints at once?
 
-    The first is folded into [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md). The second is mapped in [Canonical Path v2](meta/repository-meta/canonical-path-v2.md). They share a root in emergence, but neither replaces the other.
+    The [Foundations Reconstruction](theory/core/mathematical-axioms.md) establishes the common process language and shows where extra assumptions enter. The first research question is folded into [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md). The second is mapped in [Canonical Path v2](meta/repository-meta/canonical-path-v2.md).
 
 !!! note "Epistemic status — read this first"
-    This is a **research notebook**, not a theory of everything. The inverse-reconstruction results are measured in small, controlled systems. The Viable Corridor necessity result is conditional on its model assumptions; **sufficiency is conjectured, not proved**; the civilizational mapping is **heuristic**, not measured; and the AI-specific predictions have not been tested on real agent ecologies. Claims throughout are tagged — *demonstrated / formal / conjecture / hypothesized / heuristic / open problem*. The flagship paper, *The Viable Corridor*, remains a **working draft (not submission-ready)**. The explicit negative space is maintained at [What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md).
+    This is a **research notebook**, not a theory of everything. The process foundation is established mathematics rather than a novel empirical theory. Identity remains test-relative; learning and intelligence require declared tasks; phenomenal consciousness is not derived. The inverse-reconstruction results are measured in small, controlled systems. The Viable Corridor necessity result is conditional on its model assumptions; **sufficiency is conjectured, not proved**; the civilizational mapping is **heuristic**, not measured; and the AI-specific predictions have not been tested on real agent ecologies. The explicit negative space is maintained at [What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md).
 
-The measured core is the [inverse-reconstruction benchmark](lab/benchmarks/inverse-reconstruction/README.md): known-family inversion, equivalence classes, intervention, family search, model exploitation, marked uncertainty, closed-loop revision, ensembles, and generator composition. The Viability Arc is currently supported by formal results and two synthetic models; external calibration and real-agent tests remain open.
+The measured core is the [inverse-reconstruction benchmark](lab/benchmarks/inverse-reconstruction/README.md): known-family inversion, equivalence classes, intervention, family search, model exploitation, marked uncertainty, closed-loop revision, ensembles, and process composition. The Viability Arc is currently supported by formal results and two synthetic models; external calibration and real-agent tests remain open.
 
 ---
 
@@ -61,12 +61,13 @@ The measured core is the [inverse-reconstruction benchmark](lab/benchmarks/inver
 
 New to this project? Start here for the most direct path through the core theory and proofs.
 
-1. **[The Generator Question](theory/core/the-generator-question.md)** — The organizing question; forward vs. inverse asymmetry; the three walls.
-2. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md)** — The core claim set (emergence).
-3. **[Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md)** — The hinge: why unconstrained optimization is non-viable, and how capability loads multiple constraints at once.
-4. **[TEO Framework](theory/teo-framework/README.md)** — The constraint-architecture model.
-5. **[The Viable Corridor](papers/viable-corridor.md)** — The formal synthesis (a stabilized *node*, not the whole project).
-6. **[Canonical Path v2](meta/repository-meta/canonical-path-v2.md)** — The full map of the arc.
+1. **[Foundations Reconstruction](theory/core/mathematical-axioms.md)** — Minimal primitives, axioms, derivations, counterexamples, and comparison with neighboring theories.
+2. **[From Trace to World-Binding](theory/core/from-trace-to-world-binding.md)** — The bounded model-identification loop.
+3. **[Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md)** — The measured equivalence classes and intervention results.
+4. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md)** — The earlier emergence claim set, read under the reconstructed foundation.
+5. **[Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md)** — The hinge into the viability arc.
+6. **[The Viable Corridor](papers/viable-corridor.md)** — One conditional formal model.
+7. **[Canonical Path v2](meta/repository-meta/canonical-path-v2.md)** — The full map and migration status.
 
 </div>
 
@@ -82,11 +83,11 @@ A compact linear route through the current material. Earlier book chapters remai
 
 <div class="card" markdown>
 
-### :material-flask: Core Theories
+### :material-flask: Core Theory
 
-The formal essays. Emergence Manifesto, TEO framework, Black Swan dynamics, and an honest self-assessment.
+The reconstructed foundation first; then the formal and exploratory essays it now constrains.
 
-[Explore theories →](theory/core/emergence-manifesto-v1.3.md)
+[Explore the foundation →](theory/core/mathematical-axioms.md)
 
 </div>
 

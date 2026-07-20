@@ -4,6 +4,12 @@
 
 > **External anchors.** The repo keeps its internal vocabulary, but no term is meant to float free of established research. Three companion documents carry the mapping: the **Internal Language Anchors** table in [Repository Information Architecture §6](../../meta/repository-meta/repository-information-architecture.md) (repo term → systems theory / physics / computer science), the [Related Work Map](../../meta/research-alignment/related-work-map.md) (concept by concept, with literature), and the [Concept Registry](../../meta/repository-meta/concept-registry.md) (every load-bearing term: layer, home, status, operationalization). If a term has no entry in any of them, that is a defect worth filing.
 
+> **Foundational control (2026-07-20).** This glossary contains operational instruments and legacy
+> vocabulary from several research phases; it is not an axiom list. The [Foundations
+> Reconstruction](../core/mathematical-axioms.md) controls whenever definitions conflict. In
+> particular, the unqualified generator is retired as a foundation, identity is test-relative,
+> learning and intelligence require task structure, and phenomenal consciousness is not derived.
+
 ---
 
 ## Emergence
@@ -223,22 +229,39 @@ The system makes four testable predictions about when stability, monopoly, polar
 
 
 ## Trace
-An observed output, pattern, behavior, signal, artifact, or measurement that may have been produced by one or more generative processes.
+An observed output, pattern, behavior, signal, artifact, or measurement, represented as the output
+of a declared observation process. What counts as a trace depends on the selected interface and
+coarse-graining.
 
 ## Generator
-A process, rule, program, model, mechanism, or coupled runtime that can produce a trace or a class of traces.
+**Status: retired as an unqualified foundational term.** Earlier files used this word for a process,
+rule, program, model, mechanism, or rule–runtime–environment–history bundle. Those are not one
+mathematical type. Use *transition kernel*, *process family*, *candidate process model*, *model
+class*, or an explicitly decomposed *process-model bundle*. Qualified established terms such as
+*infinitesimal generator*, *generating set*, and *generative model* remain valid.
+
+## Process Model
+A typed diagram of measurable interfaces and stochastic or deterministic processes, together with
+the initial states, time convention, observation processes, and any boundary/input conditions needed
+for the question being asked. A candidate process model is not assumed to be unique or ontologically
+complete.
 
 ## Generative Compression
 A compressed description that can expand into new traces, predictions, or variants rather than merely storing the original data.
 
 ## Runtime
-The interpreter, substrate, environment, context, tools, feedback, and execution conditions required for a generator to produce behavior.
+The interpreter, substrate, environment, context, tools, feedback, and execution conditions under
+which a specified rule or process is realized. These components must be listed when they affect the
+trace; “runtime” is not a single universal kernel.
 
 ## Reconstruction
-The constrained search process of inferring one or more plausible generators from an observed trace.
+The bounded identification of one or more candidate process models or an equivalence class from
+declared evidence, model families, intervention access, and costs.
 
 ## Witness
-A candidate solution/certificate/generator that can be checked by a verifier under specified constraints.
+A candidate solution or certificate that can be checked by a verifier under specified constraints.
+Whether a process model is a polynomially checkable witness is a property of a precisely encoded
+decision problem, not a generic fact.
 
 ## Inverse Prompting
 The task of finding prompts, context, examples, or control conditions that steer a language model toward a desired output class.

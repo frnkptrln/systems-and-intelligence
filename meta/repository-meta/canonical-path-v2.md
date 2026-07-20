@@ -1,43 +1,51 @@
 ---
-title: "Canonical Path v2 — From Emergence to Survivability"
+title: "Canonical Path v2.1 — After the Foundations Reconstruction"
 date: "2026-05-29"
-status: "Working Note"
+updated: "2026-07-20"
+status: "Working Note — foundation migrated, terminology migration ongoing"
 scope: >
-  A repository-level navigation pass that locates the Viable Corridor / TEO work
-  inside the wider systems-and-intelligence project. It does not replace the
-  earlier reading path or the Generator-Question spine; it names the present
-  research arc and shows how each station already exists in the repo.
+  A repository-level navigation pass that places the minimal process foundation before the
+  bounded model-identification and viability research arcs. It preserves the earlier Generator
+  Question as research history while removing it as the project's foundation.
 related:
+  - theory/core/mathematical-axioms.md
   - theory/core/the-generator-question.md
   - meta/repository-meta/repository-information-architecture.md
   - papers/viable-corridor.md
   - theory/reference/open-problems.md
 ---
 
-# Canonical Path v2: From Emergence to Survivability
+# Canonical Path v2.1: Foundation, Identification, and Survivability
 
-*The current research arc through the repository, after the Viable Corridor / TEO work.*
+*The current research path after the foundations audit.*
 
 ---
 
 ## Purpose
 
-This document describes the **present canonical path** through the repository. It does not replace the older reading path in the project's `README`, nor the project's primary spine, [The Generator Question](../../theory/core/the-generator-question.md). It clarifies the *second* spine that the recent work has sharpened.
+This document describes the **present canonical path** through the repository. The path now begins
+with the [Foundations Reconstruction](../../theory/core/mathematical-axioms.md). That audit found no
+independent mathematical role for an unqualified generator, rejected a generic forward/inverse
+complexity law, and made identity test-relative. The older [Generator
+Question](../../theory/core/the-generator-question.md) is retained as a legacy framing whose bounded
+identification questions survive.
 
-Two spines run through this project, sharing one root:
+After the foundation, two research arcs remain:
 
-- **The Generator Question** (the *epistemic* spine): emergence is cheap to run forward (generator → trace) and structurally hard to invert (trace → generator). This organizes the project's work on recoverability, identity, and the three walls (P vs. NP, Kolmogorov, Gödel). Its phases are folded into one recurring loop in [From Trace to World-Binding](../../theory/core/from-trace-to-world-binding.md) — the reader bridge this document is for the arc below.
+- **Model identification** (the *epistemic* arc): under declared model families, evidence, intervention access, target equivalence, and cost measures, which candidate process models can an observer distinguish? Its phases are folded into [From Trace to World-Binding](../../theory/core/from-trace-to-world-binding.md) and measured in the inverse-reconstruction benchmark.
 - **The Viability Arc** (the *dynamical* spine, this document): *what happens to an emergent optimizing system over time, and what does it take to keep it alive?* This runs **emergence → optimization → constraint architecture → survivability** and terminates in the Viable Corridor paper.
 
-Both begin at emergence. One asks whether a system can *recover its generator*; the other asks whether a system can *survive its own optimization*. This document maps the second.
+They share a compositional process language, not a universal law. One asks what evidence identifies;
+the other asks whether a specified optimizing process remains inside a declared viability region.
+This document maps their relationship and then follows the second.
 
 > **The paper is a node, not the project.** [The Viable Corridor](../../papers/viable-corridor.md) is one citable artifact produced *by* this repository — a stabilized synthesis at the sharp end of the arc. The repository remains the generative system: a map of related models, essays, simulations, narratives, and open problems. This path is written to keep the paper in proportion.
 
 **How the layers stack.** Not everything is equally central, and the concepts should not compete for the throne. The working hierarchy:
 
-1. **Spine** — [The Generator Question](../../theory/core/the-generator-question.md): the asymmetry itself.
-2. **Research frontier** — [inverse reconstruction](../../lab/benchmarks/inverse-reconstruction/README.md): where the spine becomes measurable (noise, observability, coverage, family search, interventions).
-3. **Identity layer** — Mirror Problem, Chord/Arpeggio, IP, Δ-Kohärenz: identity *as* a generator-recovery question, resting on a tagged `[FOUNDATIONAL ASSUMPTION]`. Consciousness is handled strictly as this layer's boundary case — a self-reconstruction loop, architecture only, experience explicitly out of scope ([home](../../theory/identity/consciousness-as-global-availability.md)).
+1. **Foundation** — [Foundations Reconstruction](../../theory/core/mathematical-axioms.md): standard Borel interfaces, Markov kernels, composition, derivations, supplements, and limits.
+2. **Research frontier** — [inverse reconstruction](../../lab/benchmarks/inverse-reconstruction/README.md): bounded model identification under noise, observability, coverage, family search, and interventions.
+3. **Identity layer** — Mirror Problem, Chord/Arpeggio, IP, Δ-Kohärenz: competing test families and metrics for persistence. No absolute or generator-recovery identity is assumed. Consciousness is a separate boundary: functional architecture can be tested; experience is not derived ([home](../../theory/identity/consciousness-as-global-availability.md)).
 4. **Safety / application layer** — TEO, [the Viable Corridor](../../papers/viable-corridor.md), the veto cluster: what the asymmetry costs when optimizers outrun their constraints.
 5. **Narrative layer** — fiction, manifestos, logs: stress tests and concept generators, never evidence.
 
@@ -47,14 +55,20 @@ A note on tags. Each station below carries the status of its strongest content, 
 
 ---
 
-## 1. The Generator Question — the shared root
+## 1. Foundations Reconstruction — the shared language
 
-Why the project begins with an inverse problem: a trace does not reveal its generator, and recovering the generator is, in general, intractable. This is the foundational asymmetry the whole repository circles.
+The project begins with the smallest familiar classical basis adequate through prediction: measurable
+interfaces and stochastic processes, composed sequentially and in parallel. Structure, discrete
+dynamics, invariance, observation, information, and conditional prediction are derived. Identity,
+learning, and intelligence require declared supplements; phenomenal consciousness requires a bridge
+axiom that is not adopted.
 
-- [The Generator Question](../../theory/core/the-generator-question.md) — the spine document `[FOUNDATIONAL ASSUMPTION]` (P ≠ NP, working).
-- [Trace to Generator](../../theory/emergence/trace-to-generator.md) — the long-form essay.
+- [Foundations Reconstruction](../../theory/core/mathematical-axioms.md) — the canonical foundation and adversarial audit.
+- [The Generator Question](../../theory/core/the-generator-question.md) — the superseded spine, preserved for research history.
+- [Trace to Generator](../../theory/emergence/trace-to-generator.md) — a long-form legacy essay; read “generator” as an explicitly decomposed candidate process model.
 
-The Viability Arc picks up *downstream* of this: take emergence as given, and ask what its optimizing products do.
+The model-identification programme and the Viability Arc both pick up downstream of this language.
+Neither is implied merely by admitting processes.
 
 ## 2. Emergence and Self-Organization — `[DEMONSTRATED]` (forward direction)
 
@@ -71,7 +85,7 @@ The arc's pivot — the station the rest of the arc answers, and the one this na
 - **[Optimization and Its Blindness](../../theory/optimization/optimization-and-its-blindness.md)** — the canonical hinge essay (the station's home; it frames and consolidates the items below).
 - [Why the Paperclip Maximizer Fails](../../theory/teo-framework/why-paperclip-maximizer-fails.md) — optimization without a substrate veto.
 - [Local Causality and Invisible Consequences](../../theory/emergence/local-causality-invisible-consequences.md) — the locally-rational / globally-blind mechanism (computational irreducibility form).
-- [P vs. NP as Generator Search](../../theory/computation/p-vs-np-as-generator-search.md) — optimization-as-search; the link back to the Generator Question.
+- [P vs. NP as Generator Search](../../theory/computation/p-vs-np-as-generator-search.md) — a legacy complexity analogy, not a foundation for generic identification hardness.
 - Runnable: [stigmergy swarm](../../simulation-models/social-computation/stigmergy-swarm/README.md) — optimization emerging from local deposits `[SIMULATION ARTIFACT]`.
 
 *(The hinge essay consolidates the existing material above; it asserts no new claim. The station is named because the arc is unintelligible without it: constraints answer a question, and this is the question.)*

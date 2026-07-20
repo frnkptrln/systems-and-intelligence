@@ -10,11 +10,11 @@ Most of these essays exist for no better reason than that a question interested 
 
 The canonical claims and central formalisms of the repository.
 
-- **[The Generator Question](core/the-generator-question.md)** — The organizing question of the project, stated explicitly. Forward vs. inverse asymmetry, the three walls (P vs. NP, Kolmogorov, Gödel), and the `[FOUNDATIONAL ASSUMPTION]` (P ≠ NP) the project depends on. Read first.
-- **[Emergence Manifesto v1.3](core/emergence-manifesto-v1.3.md)** — 9 claims with explicit status tags; the project's central theoretical document. Adds `[FOUNDATIONAL ASSUMPTION]` to Claim 2; otherwise additive over [v1.3](core/emergence-manifesto-v1.3.md) (version-locked).
+- **[Foundations Reconstruction](core/mathematical-axioms.md)** — Read first. Rebuilds the project from standard Borel interfaces and Markov kernels; derives structure through prediction; marks the additional assumptions needed for identity, learning, intelligence, and consciousness; and adversarially tests the result against neighboring theories.
+- **[The Generator Question](core/the-generator-question.md)** — Legacy organizing frame. Its bounded model-identification questions remain active, but the unqualified generator, generic forward/inverse law, P $\ne$ NP assumption, and identity reduction no longer define the foundation.
+- **[Emergence Manifesto v1.3](core/emergence-manifesto-v1.3.md)** — An earlier, version-locked emergence claim set with explicit status tags. Read it under the reconstructed foundation; its former generator/P $\ne$ NP foundation does not take precedence.
 - **[Thermodynamics of Emergent Orchestration (TEO)](core/thermodynamics-of-orchestration.md)** — Coupled ODE system: Replicator + Kuramoto + Entropy Budget.
 - **[System Intelligence Index (SII)](core/system-intelligence-index.md)** — P × R × A × IP: the 4-axis measure of system competence.
-- **[Mathematical Axioms](core/mathematical-axioms.md)** — Graph Theory (λ₂), Information Theory (H), Active Inference (F), Algorithmic Complexity (K).
 - **[Conceptual Map](core/conceptual-map.md)** — Visual overview: how everything connects.
 - **[Simulation → Theory Map](core/simulation-theory-map.md)** — Which simulation demonstrates which claim, what it does *not* show.
 
@@ -84,4 +84,3 @@ Stable reference material, glossaries, and honest assessment.
 
 - **[TEO Framework](teo-framework/README.md)** — Five sub-documents deriving IP, attractor geometry, love-as-constraint, and the paperclip failure.
 - **[Human Organism in Silicon Age](human-organism-silicon-age/core-theses.md)** — Alignment, resistance, Gödel's Constitution, and the Symbiotic Nexus.
-

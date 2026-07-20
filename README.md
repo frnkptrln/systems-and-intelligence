@@ -5,24 +5,24 @@
 [![Docs](https://github.com/frnkptrln/systems-and-intelligence/actions/workflows/deploy-docs.yml/badge.svg)](https://frnkptrln.github.io/systems-and-intelligence)
 
 <div align="center">
-  <h3><i>A research notebook on emergence, inverse reconstruction, and viability constraints in intelligent systems</i></h3>
+  <h3><i>A research notebook on processes, model identification, emergence, and viability</i></h3>
 </div>
 
-> **What this is — and is not.** This repository does not claim a theory of everything. It studies one recurring asymmetry: simple generators produce rich traces cheaply, but reconstructing the generator from its trace — especially under noise, partial observability, and an unknown model class — is hard; and optimizing systems become dangerous when their constraint architecture cannot scale with their capability. At its speculative edge it asks, without answering, whether phenomena like identity and consciousness are best read not as properties of behavior but as *modes of generative organization* — a question kept open, and explicitly not a claim that any present system is conscious. Every major claim carries an epistemic status tag, every major concept an external anchor in the [Related Work Map](meta/research-alignment/related-work-map.md), and the boundaries are stated explicitly in **[What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md)**.
+> **What this is — and is not.** This repository is a living research notebook, not a theory of everything. Its current [Foundations Reconstruction](theory/core/mathematical-axioms.md) starts from typed stochastic processes and asks which stronger concepts actually follow. Structure through prediction can be formalized; identity is relative to declared tests; learning and intelligence require tasks and losses; phenomenal consciousness is not derived. The older “generator” spine remains as research history and bounded work on model identification, not as a primitive or universal forward/inverse law. A second, separate arc studies when optimizing systems remain viable under explicit constraints. The boundaries are maintained in **[What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md)**.
 
 ---
 
 ## ⚡ Try it live in your browser
 Don't want to install anything? You can experience the core concepts immediately directly in your browser:
 
-- 🧭 **Recommended Reading Path** — the research arc *emergence → optimization → constraint architecture → survivability* (full map: **[Canonical Path v2](meta/repository-meta/canonical-path-v2.md)**; the epistemic spine folded into one page: **[From Trace to World-Binding](theory/core/from-trace-to-world-binding.md)**):
-  1. **[The Generator Question](theory/core/the-generator-question.md)** — The organizing question. Forward vs. inverse asymmetry. The three walls (P vs. NP, Kolmogorov, Gödel). The foundational assumption.
-  2. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md)** — The core claim set (emergence).
-  3. **[Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md)** — The hinge: why unconstrained optimization of an emergent system is non-viable, and why capability loads multiple constraints at once.
-  4. **[TEO Framework](theory/teo-framework/README.md)** — The constraint-architecture model.
-  5. **[The Viable Corridor](papers/viable-corridor.md)** — The formal synthesis: constraint architecture + capability loading (a stabilized *node*, not the whole repo).
-  6. **[From Rule to Mind](book/09_from_rule_to_mind.md)** — The compact course spine connecting the whole system.
-  7. **[AI Alignment Veto](simulation-models/alignment-and-veto/ai-alignment-veto/README.md)** — A runnable proof artifact.
+- 🧭 **Recommended Reading Path** — foundations first, then the two bounded research arcs (full map: **[Canonical Path v2](meta/repository-meta/canonical-path-v2.md)**):
+  1. **[Foundations Reconstruction](theory/core/mathematical-axioms.md)** — Two primitives, explicit axioms, derivations, counterexamples, literature comparison, and the removal of the unqualified generator.
+  2. **[From Trace to World-Binding](theory/core/from-trace-to-world-binding.md)** — The model-identification loop: observation, construction, intervention, and revision.
+  3. **[Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md)** — Where identification is cheap, where evidence leaves equivalence classes, and what interventions change.
+  4. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md)** — The earlier emergence claim set, now read under the reconstructed foundation.
+  5. **[Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md)** — The hinge into the separate viability arc.
+  6. **[The Viable Corridor](papers/viable-corridor.md)** — One conditional constraint model, with explicit limits.
+  7. **[From Rule to Mind](book/09_from_rule_to_mind.md)** — The earlier compact course path.
 - 🕹️ **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** — An interactive Cellular Automata sandbox with real-time entropy and mutual information charts.
 - 📖 **[Read the Interactive Book](https://frnkptrln.github.io/systems-and-intelligence)** — The curated online book: the reader-first path through the theory. (A PDF snapshot lives at [`systems-and-intelligence-book.pdf`](systems-and-intelligence-book.pdf).)
 
@@ -78,7 +78,7 @@ Claims in this repository have different epistemic statuses:
 |:-----------|:---------|:-------|
 | Computational demonstrations | Kuramoto synchronization, Bak's Sandpile power laws | ✅ Well-established |
 | Measurable hypotheses | Δ-Kohärenz, 3-Layer Memory coherence | 🧪 Testable — see `lab/AGENTIC_README.md` |
-| Theoretical frameworks | Markov Blanket as agent-human boundary, Free Energy alignment | 📐 Formalized — see `theory/core/mathematical-axioms.md` |
+| Mathematical foundation | Standard Borel interfaces, Markov kernels, composition, conditioning | 📐 Established substrate + repository audit — see `theory/core/mathematical-axioms.md` |
 | Open problems | The Mirror Problem, bootstrapping of identity | ❓ Unresolved — see `theory/reference/open-problems.md` |
 | Speculative framings | Relational emergence, criticality as intelligence zone | 💭 Speculative — see `theory/reference/glossary.md` for definitions |
 
@@ -119,7 +119,7 @@ The complete index of simulations, theory essays, fiction stress tests, lab fram
 Entry points by interest:
 
 - **Plain language:** [The Snow Story](meta/repository-meta/the-snow-story.md) — the whole project told so that a child can follow it, with every paragraph pointing back to its instruments.
-- **Theory:** [The Generator Question](theory/core/the-generator-question.md) (start here) → [Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md) → [Trace to Generator](theory/emergence/trace-to-generator.md).
+- **Theory:** [Foundations Reconstruction](theory/core/mathematical-axioms.md) (start here) → [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md) → [Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md).
 - **Measured core:** [Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md) — the spine's asymmetry as curves: where inversion is cheap and where it walls; equivalence classes counted and collapsed; the search wall; Occam's world-dependent payoff; the optimizer's curse, its cure, and the closed loop. Runs in seconds, `numpy` only.
 - **Runnable code:** [Simulation → Theory Map](theory/core/simulation-theory-map.md) lists all 35 simulations with their direction (Forward / Inverse / Both) and the wall they touch.
 - **Lab:** [Agentic Identity Suite](lab/AGENTIC_README.md), [LLM provider layer](lab/providers/README.md), [Identity Persistence (Pstrong)](lab/metrics/persistence_scores.py).
