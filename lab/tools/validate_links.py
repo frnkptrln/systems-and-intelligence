@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
 Validate internal markdown links across the repository.
-Finds broken references (links to files that don't exist).
+Finds broken references: links to files that don't exist, image embeds
+whose file is missing, and #anchors that match no heading in the target
+markdown file.
 
 Usage:
     python3 tools/validate_links.py
@@ -15,7 +17,28 @@ REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 SKIP_DIRS = {'.git', '.venv', 'site', '__pycache__', '.pytest_cache', 'node_modules', '.gemini'}
 
 # Match markdown links: [text](path.md) or [text](path.md#anchor)
-LINK_PATTERN = re.compile(r'\[([^\]]*)\]\(([^)]+\.(?:md|py|html|yml|yaml))(?:#[^)]*)?\)')
+LINK_PATTERN = re.compile(r'\[([^\]]*)\]\(([^)]+\.(?:md|py|html|yml|yaml|png))(#[^)]*)?\)')
+HEADING_PATTERN = re.compile(r'^#{1,6}\s+(.*)$', re.MULTILINE)
+
+_anchor_cache = {}
+
+
+def slugify(heading):
+    """GitHub/mkdocs-style anchor slug for a heading line."""
+    s = heading.strip().lower()
+    s = re.sub(r'[^\w\s-]', '', s)
+    return re.sub(r'\s+', '-', s).strip('-')
+
+
+def anchors_of(md_path):
+    """Set of valid anchor slugs in a markdown file (cached)."""
+    if md_path not in _anchor_cache:
+        with open(md_path, 'r') as f:
+            content = f.read()
+        _anchor_cache[md_path] = {
+            slugify(h) for h in HEADING_PATTERN.findall(content)
+        }
+    return _anchor_cache[md_path]
 
 
 def find_markdown_files():
@@ -39,22 +62,33 @@ def validate_links(filepath):
             for match in LINK_PATTERN.finditer(line):
                 link_text = match.group(1)
                 link_path = match.group(2)
-                
+                anchor = (match.group(3) or '').lstrip('#')
+
                 # Skip external links
                 if link_path.startswith(('http://', 'https://', 'mailto:', '#')):
                     continue
-                
+
                 # Resolve relative path
                 target = os.path.normpath(os.path.join(filedir, link_path))
-                
+                rel_source = os.path.relpath(filepath, REPO)
+
                 if not os.path.exists(target):
-                    rel_source = os.path.relpath(filepath, REPO)
                     broken.append({
                         'source': rel_source,
                         'line': lineno,
                         'link_text': link_text,
                         'target': link_path,
                         'resolved': os.path.relpath(target, REPO),
+                    })
+                elif anchor and target.endswith('.md') and \
+                        slugify(anchor) not in anchors_of(target):
+                    broken.append({
+                        'source': rel_source,
+                        'line': lineno,
+                        'link_text': link_text,
+                        'target': f'{link_path}#{anchor}',
+                        'resolved': f'no heading "#{anchor}" in '
+                                    f'{os.path.relpath(target, REPO)}',
                     })
     
     return broken
