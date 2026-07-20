@@ -69,6 +69,8 @@ That gives a preregistrable prediction with a real failure mode:
 
 Either outcome is informative. The second would be more interesting and worse for the repository's current design vocabulary.
 
+**Run, 2026-07-20** — [v1.13](../lab/benchmarks/inverse-reconstruction/co_stabilization_pool.py) built that arm and the answer is *neither cleanly*. Group funding cut selection against support from −0.1056 to −0.0075 and raised positive seeds from 0% to 44% — short of the majority the preregistration required, so the criterion is not met. But the prediction this log did not make came out sharpest: seeded cheaters fell to 2.6% against the donor arm's 21.6%, *below* their starting frequency, because a levy set by the group mean leaves a defector no way to avoid paying. Relocation removes the reward for defecting more effectively than it rewards contributing. The bill is population size (77.8 versus 104.5). And the finding carries its own caveat: with the levy pegged to the group mean, within-group variation is nearly cost-neutral, so what looks like retention may be drift rather than advantage. The design consequence below therefore stands as a sharpened hypothesis, not as a validated recommendation — and the next measurement has to separate selection from drift before any of it is offered as advice.
+
 ## What this log does NOT claim
 
 - **No result about human institutions.** Toy populations with inherited scalar traits are not organizations. Nothing here measures a workplace, a regulator, or a review process.

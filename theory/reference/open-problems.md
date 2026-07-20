@@ -185,7 +185,7 @@ amplification, partial observability, missing coverage, unknown family, out-of-f
 misspecification, intervention
 access, and the cost of representing uncertainty honestly.
 
-**Status (v1.12, partial but measured):**
+**Status (v1.13, partial but measured):**
 
 - **v0:** known-family recovery is cheap in favorable conditions; noise and partial observability degrade it.
 - **v1.1:** watching can plateau while perturbing and preparing collapse the class.
@@ -196,8 +196,9 @@ access, and the cost of representing uncertainty honestly.
 - **v1.10:** with the same per-node repair budget, routing only otherwise-unused capacity improves viability under sparse shocks across 18 size/topology/threshold cells. The gain vanishes under correlated shocks; the result establishes a designed mutual-support mechanism, not endogenous ecology or metabolism.
 - **v1.11:** a population with inherited support/link traits, paid dynamic links, reproduction, mutation, and death builds a functionally useful network, but contribution is selected downward in all 16 seeds and abundance falls. The preregistered endogenous co-stabilization criterion is not supported; collective function and evolutionary retention are distinct constraints.
 - **v1.12:** making contribution visible to partner formation does not restore retention either. Across four arms under one accounting — blind, partner choice, conditional reciprocity, assortment, with partner information explicitly paid for — no arm reverses the sign of support selection in a majority of seeds. Partner choice comes closest and does something different: it excludes non-contributors from the network almost completely (1.2% of linked agents versus 22.0% blind) while they persist in the population (27.1%). Visibility sorts the network; it does not retain the trait.
+- **v1.13:** moving the cost from the donor to the local group nearly removes the penalty without reversing it. A group-mean levy cuts selection against support from −0.1056 to −0.0075 (44% of seeds positive, up from 0%) and drops seeded cheaters to 2.6% against 21.6% — below their starting frequency, falsifying the preregistered prediction that pooling would ease free-riding. The cost is population size. Whether the retained trait is selected for or merely no longer selected against is unresolved: a group-mean levy makes within-group variation nearly cost-neutral, so drift may be carrying it.
 
-**Open remainder:** learned searchers and program synthesizers under matched budgets; the time-order-free IFS testbed; external SINDy/PySR baselines; re-simulation divergence; whether network exclusion is a stable outcome or a reservoir that returns when the network weakens; endogenous resource production, which would let excluded agents form a separate economy rather than merely surviving; and the measurement question v1.12 raised, since on/off deltas and drift-from-start disagree for rules that reward a trait independently of the transfer.
+**Open remainder:** learned searchers and program synthesizers under matched budgets; the time-order-free IFS testbed; external SINDy/PySR baselines; re-simulation divergence; separating selection from drift in the v1.13 pool arm via a within-group cost gradient; whether network exclusion is a stable outcome or a reservoir that returns when the network weakens; endogenous resource production; and the measurement question v1.12 raised, since on/off deltas and drift-from-start disagree for rules that reward a trait independently of the transfer.
 
 **What a solution would look like:** Not one universal reconstructor, but a set of bounded results stating the family, evidence, query access, cost, recoverable equivalence class, and failure region. Learned systems must be compared against the exact toy floor rather than judged by persuasive outputs.
 

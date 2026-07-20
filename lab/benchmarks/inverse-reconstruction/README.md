@@ -1,4 +1,4 @@
-# Inverse-Reconstruction Benchmark (v0–v1.12) — Trace → Candidate Models
+# Inverse-Reconstruction Benchmark (v0–v1.13) — Trace → Candidate Models
 
 *Given a declared model family and a finite trace, which parameters, rules, or equivalence class can
 be recovered—and how do noise, observability, interventions, and coverage change the answer?*
@@ -249,6 +249,26 @@ Making contribution visible is therefore **not sufficient** to make it evolution
 
 ![Partner rules and the retention of costly support](../../tools/inverse_benchmark_selection.png)
 
+## v1.13 — relocating the cost nearly removes the penalty, and reverses invasion (run)
+
+[`co_stabilization_pool.py`](co_stabilization_pool.py) tests the arm [Log 019](../../../logs/019_who_pays_for_the_veto.md) preregistered. In v1.11 and v1.12 the cost of support falls entirely on the individual donor (`support_i × spare_i`). If *who pays* is the obstruction, moving the cost to the local group should retain the trait; if it is still selected down, the obstruction lies below the accounting, in the selection level itself.
+
+Two arms, one accounting. **donor** is v1.11 unchanged. **pool** lets each connected component of the link graph fund support at a rate set by the group's *mean* support gene: every member pays that same rate on its own spare capacity regardless of its own gene, and damaged members draw by need. An individual's cost is thereby decoupled from its own generosity. This is "charge the veto to the institution, not the reviewer" made mechanical. The donor arm reproduces v1.11 trajectory-for-trajectory, which a test asserts, so the arms differ only in who bears the cost.
+
+| Median over 16 seeds | linked support on | off | delta | positive seeds | vs. start | abundance | group size |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| donor | 0.375 | 0.483 | −0.1056 | 0% | −0.1277 | 104.5 | 7.7 |
+| **pool** | 0.461 | 0.483 | **−0.0075** | **44%** | **−0.0143** | 77.8 | 4.4 |
+
+- **The criterion is not met, but the penalty nearly vanishes.** Selection against support drops from −0.1056 to −0.0075, and drift from the starting level from −0.1277 to −0.0143. Positive seeds rise from 0% to 44% — short of the majority the preregistration required.
+- **A preregistered prediction was falsified in the opposite direction.** P3 predicted that pooling makes free-riding *easier*, since a mutant could pay the group rate while contributing nothing to it. The reverse happened: seeded with 4.9% cheaters, the donor arm ends at 21.6% while the pool arm ends at **2.6%** — below its seeded level — with mean support 0.874 versus 0.713. Because the levy tracks the group mean, a low-support mutant inside a cooperative group cannot avoid paying, so defection buys it nothing. Relocation does not only dilute the penalty for contributing; it removes the reward for defecting.
+- **Relocation is not free.** The pool arm sustains a smaller population (77.8 versus 104.5) and smaller groups (4.4 versus 7.7). The group pays in size for what it buys in retention.
+- **The common-mode limit holds** and the low-support fraction among linked agents halves (20.2% versus 40.4%).
+
+The honest reading is that this is the most informative of the four co-stabilization arms and still not a positive result. Two questions the model cannot settle: whether 44% would cross a majority under a longer horizon or weaker mutation, and — more importantly — whether what is seen here is *selection for* support or merely the *absence of selection against* it. With the levy set by the group mean, within-group variation in the gene is nearly cost-neutral, so drift rather than advantage may be carrying it. Distinguishing those two is the next discriminating measurement, not a larger version of this one.
+
+![Donor-funded versus group-pool-funded support](../../tools/inverse_benchmark_pool.png)
+
 ## Running
 
 ```bash
@@ -278,6 +298,8 @@ python co_stabilization_population.py      # v1.11: endogenous population (~7 s)
 python co_stabilization_population.py --save # also write the population figure
 python co_stabilization_selection.py       # v1.12: partner rules, four arms (~80 s)
 python co_stabilization_selection.py --save # also write the selection figure
+python co_stabilization_pool.py            # v1.13: donor vs group-pool funding (~20 s)
+python co_stabilization_pool.py --save     # also write the pool figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
@@ -286,7 +308,7 @@ Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 
 *(The benchmark sequence through v1.11 is run and documented above. The items below remain open.)*
 
-- **From a sorted network to a retained trait**: v1.12 tested partner choice, conditional reciprocity, and assortment under one accounting. None reversed selection; partner choice excluded non-contributors from the network almost completely (1.2% of linked agents) while they persisted in the population (27.1%). The next discriminating models act on that excluded reservoir rather than adding more support: **whether exclusion is stable** when the network weakens, **partner choice with a memory of past exclusion**, and **endogenous resource production**, which would let excluded agents form a separate economy instead of merely surviving. The measurement question is also open: on/off deltas and drift-from-start disagree for rules that reward the trait independently of the transfer.
+- **Is it selection or only the absence of selection?**: v1.13 moved the cost of support from the donor to the local group. Selection against the trait nearly vanished (−0.0075 versus −0.1056) and seeded cheaters fell below their starting frequency (2.6% versus 21.6%), but positive seeds reached only 44% and population size dropped. Because a group-mean levy makes within-group variation nearly cost-neutral, the retained support may be drift rather than advantage. The next arm must separate those: a **within-group cost gradient** that keeps relocation while restoring a measurable selection differential, plus longer horizons and weaker mutation to test whether 44% is a boundary or a plateau. Endogenous resource production and open topology remain beyond that.
 - **Learned searchers vs. the enumerator**: family_search.py measures one exhaustive search. Compare learned and symbolic searchers on the same DSL, targets, compute budget, and held-out interventions rather than assuming either has a generic advantage.
 - **Re-simulation divergence** as a behavioral metric: does a recovered candidate process model match held-out trajectories and interventions even when its parameters differ?
 - **IFS testbed**: recover contractive affine maps from an attractor point cloud (hard even with known family — no time ordering).
