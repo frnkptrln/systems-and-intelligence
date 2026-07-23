@@ -38,18 +38,18 @@ translating every new encounter immediately into language it already knows.
 
 ---
 
-## Blips: the smallest unit
+## Exploratory notes: the smallest unit
 
 The raw note layer lives in [`ideas/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas).
-A **Blip** holds one observation, question, hypothesis, analogy, or disturbance — usually in about
+Each note holds one observation, question, hypothesis, analogy, or disturbance — usually in about
 100–200 words — before it needs a category or destination. Links may accumulate; classification does
 not have to come first.
 
-The Thinking Space remains the wider map of exploratory work. It can surface selected Blips,
-contradictions, experiments, logs, or fiction without turning the Blip collection into a queue for
-canonical promotion.
+The Thinking Space remains the wider map of exploratory work. It can surface selected notes,
+contradictions, experiments, logs, or fiction without turning `ideas/` into a queue for canonical
+promotion.
 
-[Browse the Blips on GitHub →](https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas)
+[Browse the notes on GitHub →](https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas)
 
 ---
 
