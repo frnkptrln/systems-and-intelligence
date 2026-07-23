@@ -28,6 +28,14 @@ corrective feedback, those architecture claims weaken or fail.
 
 ## 1) Content Lanes (What goes where)
 
+### `ideas/` → Atomic notes (Blips)
+Use this for **one thought before it needs a stable home**.  
+Characteristics:
+- usually around 100–200 words
+- begins with an observation, question, hypothesis, analogy, or disturbance
+- preserves context and an open tension without requiring a category or destination
+- explicitly non-canonical until developed elsewhere
+
 ### A. `book/` → Curated narrative
 Use this for the **reader-first canonical path**.  
 Characteristics:
@@ -79,6 +87,7 @@ The repository should remain split into two modes. The point is not to make all 
 
 Contradictions, partial models, scenario tests, and fragments are allowed here. These files should remain visibly exploratory:
 
+- `ideas/` — atomic, unclassified Blips before clustering or synthesis
 - `logs/` — applied architecture journals and deployment sketches
 - `fiction/` — narrative stress tests constrained by the theory
 - `simulation-models/` — toy models, visualizations, and executable probes
@@ -86,8 +95,10 @@ Contradictions, partial models, scenario tests, and fragments are allowed here. 
 - `meta/` — epistemic framing, repository structure, and maintenance notes
 
 Exploration does not owe the synthesis layer a result. A seed may be recorded before it has a
-stable claim, mechanism, home, or falsifier, and it may remain unresolved. The public overview and
-current unclassified seeds live in the public [Thinking Space](https://frnkptrln.github.io/systems-and-intelligence/thinking-space/).
+stable claim, mechanism, home, or falsifier, and it may remain unresolved. Raw unclassified notes
+live in [`ideas/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas). The public
+[Thinking Space](https://frnkptrln.github.io/systems-and-intelligence/thinking-space/) maps the wider
+exploration landscape and may surface selected seeds without promoting them.
 
 ### Synthesis (Claims)
 
@@ -118,6 +129,7 @@ Recommended conceptual architecture:
 | Conceptual layer | Current location | Role |
 |:---|:---|:---|
 | Entry point | `README.md`, `docs/index.md` | Short orientation and one reading path |
+| Seeds | `ideas/` | Atomic notes before classification, clustering, or synthesis |
 | Core claims | `theory/` (sub-dirs: `core/`, `veto/`, `emergence/`, `identity/`, `symbiotic/`, `narrative/`, `reference/`, `teo-framework/`, `human-organism-silicon-age/`), `papers/`, `book/` | Synthesis layer and publication packaging |
 | Models | `simulation-models/`, `lab/core/`, `lab/orchestration/` | Executable demonstrations and reusable primitives |
 | Lab | `logs/`, `fiction/`, `lab/benchmarks/`, `lab/experiments/`, `lab/tools/`, `lab/data-analysis/` | Experiments, stress tests, applied designs, narrative probes |
@@ -183,6 +195,9 @@ Custom terms should be kept, but anchored to known concepts.
 
 When adding a new artifact, ask:
 
+If it is still one small, unfinished observation, question, or hypothesis, record it as a Blip in
+`ideas/` without forcing it through the choices below.
+
 1. **Is this primarily runnable?**  
    → put in `simulation-models/`, `lab/core/`, or `lab/orchestration/`.
 2. **Is this primarily a formal argument?**  
@@ -208,7 +223,8 @@ asks to enter the synthesis layer.
 
 ## 8) Minimal Maturity Tags (recommended)
 
-For non-code documents, add a short status line near the top:
+For non-code documents, add a short status line near the top. Blips use `Status: Blip` and remain
+outside the maturity ladder until they begin to develop into a larger artifact.
 
 - `Status: Draft`
 - `Status: Working Note`
