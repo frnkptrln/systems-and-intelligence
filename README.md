@@ -90,6 +90,7 @@ We believe intellectual honesty about these distinctions makes the project *more
 
 To keep this repository coherent while it grows, use this practical split:
 
+- **`ideas/`** = Blips: small atomic notes before classification, clustering, or synthesis
 - **`book/`** = curated reading path ("online book")
 - **`papers/` + `docs/papers/`** = publication-style outputs (compact, citable, less narrative)
 - **`theory/`** = formal and semi-formal theory essays
@@ -101,6 +102,7 @@ If you're unsure where new material belongs, see **[`meta/repository-meta/reposi
 
 | Folder | Purpose |
 | :--- | :--- |
+| **`ideas/`** | 💭 **Blips**: Atomic observations, questions, and hypotheses allowed to remain unclassified and non-canonical. |
 | **`docs/`** | The curated reading path, MkDocs build resources, and the complete "Online Book". |
 | **`fiction/`** | 🎬 **The Narrative Synthesis**: Hard Sci-Fi "found footage" translating the math into stories. |
 | **`lab/`** | The unified Python ecosystem. Contains the Multi-Paradigm Orchestrator (`orchestration/`), the empirical Agentic Identity Suite (`experiments/`), the inverse-reconstruction benchmark and cognitive stress tests (`benchmarks/`), info-theoretic tools (`data-analysis/`), and reusable primitives (`core/`). |
@@ -118,8 +120,7 @@ The complete index of simulations, theory essays, fiction stress tests, lab fram
 
 Entry points by interest:
 
-- **Open exploration:** [Thinking Space](docs/thinking-space.md) — questions before concepts,
-  contradictions, and unfinished seeds with no obligation to enter the canonical synthesis.
+- **Open exploration:** [Ideas / Blips](ideas/README.md) holds atomic notes before classification; [Thinking Space](docs/thinking-space.md) maps the wider non-canonical exploration landscape.
 - **Plain language:** [The Snow Story](meta/repository-meta/the-snow-story.md) — the whole project told so that a child can follow it, with every paragraph pointing back to its instruments.
 - **Theory:** [Foundations Reconstruction](theory/core/mathematical-axioms.md) (start here) → [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md) → [Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md).
 - **Measured core:** [Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md) — the spine's asymmetry as curves: where inversion is cheap and where it walls; equivalence classes counted and collapsed; the search wall; Occam's world-dependent payoff; the optimizer's curse, its cure, and the closed loop. Runs in seconds, `numpy` only.
