@@ -28,7 +28,7 @@ corrective feedback, those architecture claims weaken or fail.
 
 ## 1) Content Lanes (What goes where)
 
-### `ideas/` → Atomic notes (Blips)
+### `ideas/` → Exploratory notes
 Use this for **one thought before it needs a stable home**.  
 Characteristics:
 - usually around 100–200 words
@@ -87,7 +87,7 @@ The repository should remain split into two modes. The point is not to make all 
 
 Contradictions, partial models, scenario tests, and fragments are allowed here. These files should remain visibly exploratory:
 
-- `ideas/` — atomic, unclassified Blips before clustering or synthesis
+- `ideas/` — small, unclassified notes before clustering or synthesis
 - `logs/` — applied architecture journals and deployment sketches
 - `fiction/` — narrative stress tests constrained by the theory
 - `simulation-models/` — toy models, visualizations, and executable probes
@@ -195,8 +195,8 @@ Custom terms should be kept, but anchored to known concepts.
 
 When adding a new artifact, ask:
 
-If it is still one small, unfinished observation, question, or hypothesis, record it as a Blip in
-`ideas/` without forcing it through the choices below.
+If it is still one small, unfinished observation, question, or hypothesis, record it as an
+exploratory note in `ideas/` without forcing it through the choices below.
 
 1. **Is this primarily runnable?**  
    → put in `simulation-models/`, `lab/core/`, or `lab/orchestration/`.
@@ -223,8 +223,9 @@ asks to enter the synthesis layer.
 
 ## 8) Minimal Maturity Tags (recommended)
 
-For non-code documents, add a short status line near the top. Blips use `Status: Blip` and remain
-outside the maturity ladder until they begin to develop into a larger artifact.
+For non-code documents, add a short status line near the top. Notes in `ideas/` use
+`Status: Exploratory note` and remain outside the maturity ladder until they begin to develop into a
+larger artifact.
 
 - `Status: Draft`
 - `Status: Working Note`
