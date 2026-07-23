@@ -38,9 +38,24 @@ translating every new encounter immediately into language it already knows.
 
 ---
 
+## Exploratory notes: the smallest unit
+
+The raw note layer lives in [`ideas/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas).
+Each note holds one observation, question, hypothesis, analogy, or disturbance — usually in about
+100–200 words — before it needs a category or destination. Links may accumulate; classification does
+not have to come first.
+
+The Thinking Space remains the wider map of exploratory work. It can surface selected notes,
+contradictions, experiments, logs, or fiction without turning `ideas/` into a queue for canonical
+promotion.
+
+[Browse the notes on GitHub →](https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas)
+
+---
+
 ## Questions before concepts
 
-These seeds are deliberately not additional claims or numbered open problems.
+These selected seeds are deliberately not additional claims or numbered open problems.
 
 ### J-space and JEPA: availability is not prediction
 
