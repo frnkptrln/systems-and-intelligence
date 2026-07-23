@@ -1,12 +1,12 @@
 ---
 title: Intelligence as Convergence
 date: 2026-07-23
-status: blip
+status: exploratory note
 ---
 
 # Intelligence as Convergence
 
-**Status:** Blip — exploratory, not a repository claim.
+**Status:** Exploratory note — not a repository claim.
 
 **Hypothesis.** Different intelligent systems may develop similar structures even when their substrates, histories, and representations differ. Intelligence might therefore be less a property than a convergent movement: under comparable constraints, systems repeatedly discover compression, modularity, prediction, feedback, abstraction, or shared latent geometry.
 
