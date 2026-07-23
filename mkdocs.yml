@@ -108,7 +108,7 @@ nav:
           - Open Problems: theory/reference/open-problems.md
           - Limitations & Honest Assessment: theory/reference/limitations-and-honest-assessment.md
   - "Thinking Space (Exploration)":
-      - "Blips (atomic notes)": https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas
+      - "Ideas (exploratory notes)": https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas
       - Overview: thinking-space.md
       - "Emergent Dynamics":
           - Boids Flocking: simulation-models/emergent-dynamics/boids-flocking/README.md
