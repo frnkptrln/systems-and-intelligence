@@ -25,5 +25,7 @@ Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title kee
 
 ## Notes
 
+- [The Graph Is a Materialized Prompt](2026-07-24-the-graph-is-a-materialized-prompt.md)
+- [Self-Improvement Needs a Referee](2026-07-24-self-improvement-needs-a-referee.md)
 - [The Same World Is Not the Same World](2026-07-23-the-same-world-is-not-the-same-world.md)
 - [Intelligence as Convergence](2026-07-23-intelligence-as-convergence.md)
