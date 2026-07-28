@@ -1,4 +1,4 @@
-# 🧠 Systems & Intelligence
+# Systems & Intelligence
 
 <div class="hero-banner" markdown>
 
@@ -11,25 +11,6 @@
 [Start Here :material-compass:](synthesis.md){ .md-button .md-button--primary }
 [Source Repository :fontawesome-brands-github:](https://github.com/frnkptrln/systems-and-intelligence){ .md-button }
 
-</div>
-
-<div class="stats-bar" markdown>
-<div class="stat" markdown>
-<span class="stat-number">Run</span>
-<span class="stat-label">Simulation Models</span>
-</div>
-<div class="stat" markdown>
-<span class="stat-number">10</span>
-<span class="stat-label">Reader Nodes</span>
-</div>
-<div class="stat" markdown>
-<span class="stat-number">4</span>
-<span class="stat-label">ODE Paradigms</span>
-</div>
-<div class="stat" markdown>
-<span class="stat-number">1</span>
-<span class="stat-label">Empirical Audit</span>
-</div>
 </div>
 
 ---

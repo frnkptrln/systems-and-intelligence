@@ -439,43 +439,6 @@ a {
   background: var(--md-accent-fg-color) !important;
 }
 
-/* --- Stats bar on landing page --- */
-.md-typeset .stats-bar {
-  display: flex;
-  justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  margin: 2rem 0;
-  padding: 1.5rem;
-  background: var(--si-surface);
-  border: 1px solid var(--si-border);
-  border-radius: 12px;
-}
-
-.md-typeset .stat {
-  text-align: center;
-}
-
-.md-typeset .stat-number {
-  font-family: "Outfit", var(--md-text-font);
-  font-weight: 700;
-  font-size: 2rem;
-  background: linear-gradient(135deg, var(--si-gradient-start), var(--si-gradient-end));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-  line-height: 1.1;
-}
-
-.md-typeset .stat-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  opacity: 0.6;
-  font-weight: 500;
-}
-
 /* --- Smooth page load --- */
 .md-content {
   animation: fadeIn 0.3s ease;

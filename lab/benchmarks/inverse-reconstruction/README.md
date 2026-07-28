@@ -62,6 +62,10 @@ observer chooses states and measures the specified process response. Results:
   reproduces the locked trace. Measured: passive error on $K$ ≈ 83% (noise-fitting); **one phase
   kick: 3%**; eight kicks: 0.3%.
 
+![Interventions versus observation](../../tools/inverse_benchmark_interventions.png)
+
+*Interventions vs. observation in declared model families.*
+
 **Reading.** A passive attractor trace can leave parameters or rule bits observationally
 equivalent. An intervention changes the evidence distribution and can separate members of that
 declared class. This supports perturbation as a method in these testbeds; it does not by itself
@@ -86,6 +90,10 @@ language-relative description length, not general Kolmogorov complexity.
   enumerator, not a P-vs-NP result or a lower bound for other search algorithms.
 - **(B) Elegance as a prior — and whom it serves.** Under partial coverage the searcher returns the *minimal consistent* formula (Occam). Measured: over **simple** targets (size ≤ 4) Occam hits 22%→100% as coverage grows; over a **uniform** world (all 256 rules) it equals 1/class-size — *exactly chance*; over **complex** targets (size ≥ 7) it sits at **0%** until coverage is nearly total, because it deterministically picks the simple impostor. Elegance finds elegant worlds, is chance on uniform ones, and systematically misses complex ones. For rules 90 and 0, the most elegant consistent rule happens to be the true one.
 
+![Finite DSL family search](../../tools/inverse_benchmark_family_search.png)
+
+*Finite DSL family search (benchmark v1.2): enumeration cost and prior fit.*
+
 This refines the claim in [Construction vs. Deduction](../../../theory/computation/construction-vs-deduction.md) that elegance "does real work" as the selection principle inside the equivalence class: it does — *conditional on the world being biased toward simplicity*. The measurement says precisely when the condition holds. **Honest scope:** this is the exhaustive-search *floor*. Whether learned searchers (LLMs, program synthesizers) beat the enumeration floor — and whether they are construction machines or deduction machines — is the open real-model question; this testbed is the baseline they must beat.
 
 ## v1.3 — model exploitation: the world-models bridge (run)
@@ -94,6 +102,11 @@ This refines the claim in [Construction vs. Deduction](../../../theory/computati
 
 - **The selection decomposition.** Across *all* candidates, the gap (imagined − real) averages ≈ 0 at every $u$ — the guesses are wrong but **unbiased**. The **chosen** plan's gap is positive, and the wedge between the two curves — the **optimizer's curse** (Smith & Winkler, 2006), isolated — grows **monotonically** with class size: $0 \to 0.042 \to 0.049 \to 0.066 \to 0.078 \to 0.085$. Model exploitation is the equivalence class, priced by an argmax. At $u = 0$ both gaps vanish by construction: the model *is* the world.
 - **The honest null (a prediction revised mid-experiment).** Run 1 predicted "divergence-seeking" — that the chosen plan would *visit* unseen neighborhoods more than the average candidate. **It does not**: usage is statistically identical at every $u$. The refinement matters: the optimizer does not steer *into* the model's fantasy regions; at equal exposure it *selects the fantasies that pay*. Exploitation is selection over guess-outcomes, not navigation toward guess-territory — in this open-loop setting; whether closed-loop agents learn to navigate toward exploitable regions is open.
+
+![Model exploitation and equivalence-class size](../../tools/inverse_benchmark_model_exploitation.png)
+
+*Model exploitation vs. equivalence-class size (benchmark v1.3) — the
+world-models bridge, measured.*
 
 **Hypothesis for larger systems:** this toy suggests that uncertainty-blind planning can acquire a
 positive imagined-vs-real gap through selection even when candidate errors average to zero. Whether
