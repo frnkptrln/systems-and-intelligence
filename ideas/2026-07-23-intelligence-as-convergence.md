@@ -18,5 +18,6 @@ This would not mean that every intelligence approaches one worldview. Convergenc
 
 - [The Same World Is Not the Same World](2026-07-23-the-same-world-is-not-the-same-world.md)
 - [Invariance and Identity](../theory/core/invariance-and-identity.md)
+- [The Witness Principle](../theory/core/the-witness-principle.md)
 - [J-Space and Global Availability](../theory/ai/j-space-and-global-availability.md)
 - [World Models and VLA](../theory/ai/world-models-and-vla.md)
