@@ -1,6 +1,6 @@
 # Witness-Generation Benchmark — Candidate Class → Distinguishing Query
 
-**Status:** exact finite baseline
+**Status:** exact finite lemma and exhaustive cross-check
 
 *Given a declared candidate class and an intervention budget, can an observer construct a
 low-cost query under which the candidates disagree?*
@@ -29,10 +29,11 @@ construction explicit. It is the first finite instrument for the
 | secondary score | expected remaining class size under a uniform prior |
 | generator | exhaustive search over every row at the declared cost |
 | baseline | exact mean over all rows at the same cost |
+| analytical check | neighborhood coverage and rule-table difference layers |
 
 The generator is exact enumeration, not a learned model. It establishes the finite floor
 that a learned system must match before claims about reusable witness construction become
-interesting.
+interesting. The analytical route is independent of the query search.
 
 ## Run
 
@@ -62,6 +63,46 @@ query is rotationally equivalent, so structured and unstructured selection tie. 
 appears only when the same number of prepared bits can be arranged in more or less
 discriminating patterns.
 
+## Coverage–distinction receipt
+
+The enumeration has a closed-form explanation.
+
+For deterministic lookup-table candidates, let $C(q)$ be the table coordinates exposed
+by query $q$, and let $D(\theta,\theta')$ be the coordinates on which two candidates
+differ. Then
+
+$$
+q\text{ separates }\theta,\theta'
+\quad\Longleftrightarrow\quad
+C(q)\cap D(\theta,\theta')\ne\varnothing.
+$$
+
+An identifying query must therefore hit every remaining pairwise difference set. This
+decomposes the problem into the **distinction geometry** of the candidate class and the
+**access geometry** of admissible interventions.
+
+For the full ECA family, a row containing $k$ distinct neighborhoods reveals exactly $k$
+of the eight rule-table bits. Every resulting candidate block has size
+
+$$
+2^{8-k}.
+$$
+
+Thus worst-case and uniform expected residuals are both $2^{8-k}$. The code checks this
+identity for every width-eight row.
+
+This also quotients the raw action space. Two queries are equivalent for the full family
+exactly when they expose the same neighborhood set and therefore induce the same
+candidate partition. The 256 width-eight rows collapse to 21 such query classes. Search
+can operate on those structural classes and retain only the cheapest representative,
+rather than treating rotations or other surface variants as independent discoveries.
+
+A width-eight ring exposes all eight neighborhoods exactly when it is a binary de Bruijn
+cycle of order three. Exactly four of the eight three-bit words have a central one, so
+every universal width-eight query has cost four. The exhaustive route finds 16 such
+linear rows: the rotations of the two binary de Bruijn cycles. This makes the cost-four
+optimum necessary and sufficient.
+
 ## Pairwise witness profile
 
 For every unordered pair of distinct ECA rules, the benchmark also finds the cheapest row
@@ -75,6 +116,13 @@ on which their successor traces differ:
 | 3 | 128 |
 | **total** | **32,640** |
 
+This distribution also follows without searching rows. The lookup coordinates form
+Hamming-weight layers of sizes 1, 3, 3, and 1. After revealing the layers through costs
+0, 1, 2, and 3, the numbers of still-unresolved pairs are respectively
+$16{,}256$, $1{,}920$, $128$, and $0$. Successive differences from the initial
+$32{,}640$ pairs give exactly the table above. The implementation asserts that the
+analytical profile equals the exhaustive profile.
+
 This profile is relative to the all-zero reference state, width-eight query language,
 complete successor observation, deterministic rule family, and Hamming cost. Change any
 of those and the witness profile may change.
@@ -87,12 +135,15 @@ The benchmark demonstrates three bounded statements:
    problem;
 2. query cost and identifying power are separate quantities;
 3. at matched cost, arrangement can determine whether a query merely reduces a class or
-   identifies one member.
+   identifies one member;
+4. identifiability depends jointly on where candidates differ and what the intervention
+   interface can reach.
 
 It does **not** demonstrate:
 
 - a new result in automata learning or experimental design;
 - that exhaustive search scales;
+- that the full-family task is a sufficient learned-witness benchmark;
 - that a neural system can learn the generator;
 - that every useful abstraction has a cheap witness;
 - that witness construction is sufficient for intelligence;
@@ -100,16 +151,20 @@ It does **not** demonstrate:
 
 ## Next falsifiable step
 
-Hold the candidate family and intervention budget fixed, then compare:
+The full 256-rule family becomes a coverage problem once its table structure is known.
+The next benchmark must therefore vary the candidate class rather than train on one
+universal row. Sample disjoint candidate subsets and access constraints, then compare:
 
 1. random equal-cost queries;
 2. exact information-gain search;
 3. a learned witness generator trained on disjoint rule pairs;
 4. a predictive model whose queries are selected only through rollout search.
 
-The learned generator matters only if it approaches the exact frontier on unseen pairs
-with less search, and the advantage survives accounting for training compute, query cost,
-noise, and model-family misspecification.
+The learned generator matters only if it approaches the exact frontier on unseen
+candidate subsets and access geometries with less search, and the advantage survives
+accounting for training compute, query cost, noise, and model-family misspecification.
+Equivalent query classes should receive equal credit; reproducing the exact benchmark row
+is not the target.
 
 ## Related
 

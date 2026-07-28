@@ -38,7 +38,8 @@ different outcomes.
 
 The [Witness Principle](../core/the-witness-principle.md) names this inverse interface, and the
 [Witness-Generation Benchmark](../../lab/benchmarks/witness-generation/README.md) supplies an exact
-finite baseline. It does not show that learned world models can generate transferable experiments.
+lookup-table lemma and exhaustive finite baseline. It does not show that learned world models can
+generate transferable experiments across candidate classes or access geometries.
 The relevant comparison is not against random action alone, but against explicit
 information-gain or experimental-design search under matched compute, action, and risk budgets.
 

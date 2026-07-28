@@ -52,7 +52,51 @@ class TestClassWitnessFrontier(unittest.TestCase):
         self.assertAlmostEqual(points[4].mean_worst_case_remaining, 40 / 7)
 
 
+class TestCoverageDuality(unittest.TestCase):
+    def test_full_family_partition_is_determined_by_coverage(self):
+        for cost in range(9):
+            for row in wb.rows_at_cost(8, cost):
+                score = wb.score_query(range(256), row)
+                residual = wb.full_family_residual(row)
+                self.assertEqual(score.worst_case_remaining, residual)
+                self.assertEqual(score.expected_remaining, residual)
+
+    def test_universal_width_eight_queries_are_cost_four_de_bruijn_rows(self):
+        rows = wb.universal_witnesses(width=8)
+        self.assertEqual(len(rows), 16)
+        self.assertEqual({sum(row) for row in rows}, {4})
+        self.assertTrue(
+            all(wb.neighborhoods(row) == tuple(range(8)) for row in rows)
+        )
+
+    def test_query_space_quotients_to_coverage_classes(self):
+        classes = wb.coverage_classes(width=8)
+        self.assertEqual(sum(len(rows) for rows in classes.values()), 256)
+        self.assertEqual(len(classes), 21)
+
+        partitions = set()
+        for rows in classes.values():
+            class_partitions = {
+                frozenset(
+                    frozenset(block)
+                    for block in wb.query_partition(range(256), row)
+                )
+                for row in rows
+            }
+            self.assertEqual(len(class_partitions), 1)
+            partitions.update(class_partitions)
+
+        self.assertEqual(len(partitions), 21)
+
+
 class TestPairwiseWitnesses(unittest.TestCase):
+    def test_difference_coordinate_oracle_by_cost_layer(self):
+        for rule_b, expected_cost in ((1, 0), (2, 1), (8, 2), (128, 3)):
+            self.assertEqual(
+                wb.analytic_pair_witness_cost(0, rule_b),
+                expected_cost,
+            )
+
     def test_deepest_pair_requires_three_prepared_bits(self):
         # Rules 0 and 128 differ only on neighborhood 111.
         self.assertIsNone(wb.separating_witness(0, 128, width=8, max_cost=2))
@@ -67,6 +111,7 @@ class TestPairwiseWitnesses(unittest.TestCase):
             dict(counts),
             {0: 16384, 1: 14336, 2: 1792, 3: 128},
         )
+        self.assertEqual(counts, wb.analytic_pairwise_witness_costs())
         self.assertEqual(sum(counts.values()), 256 * 255 // 2)
 
 

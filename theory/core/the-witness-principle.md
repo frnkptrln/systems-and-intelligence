@@ -1,6 +1,6 @@
 # The Witness Principle: Constructing Distinguishing Interventions
 
-**Status:** working hypothesis with one exact finite baseline
+**Status:** working hypothesis with one exact finite lemma and benchmark
 
 **Scope:** This note adds a constructive operator to the repository's model-identification
 loop. It does not define intelligence in general, establish a new theory of scientific
@@ -11,8 +11,8 @@ bisimulation, or abstraction refinement.
 
 - the definitions below are standard finite-model-identification machinery arranged in the
   repository's vocabulary;
-- the elementary-cellular-automaton result is exact inside its declared family and query
-  language;
+- the coverage–distinction lemma and elementary-cellular-automaton result are exact inside
+  their declared deterministic lookup-table setting;
 - the proposed relevance to learned world models and representation convergence is a
   repository hypothesis;
 - “self-falsifying world model” names an architectural direction, not an accomplished
@@ -99,6 +99,64 @@ with the tuple read lexicographically. Other applications may replace this objec
 with information gain, downstream value, risk, or experiment duration. Those choices are
 not interchangeable and must be reported.
 
+## Coverage–distinction duality
+
+There is one exact result beneath the broader hypothesis.
+
+Let each deterministic candidate $\theta \in \Theta$ be a table
+$\theta:X\to Y$. An admissible query $q$ exposes a declared coordinate set
+$C(q)\subseteq X$. For two candidates define their disagreement set
+
+$$
+D(\theta,\theta') =
+\left\{
+x\in X : \theta(x)\ne\theta'(x)
+\right\}.
+$$
+
+Then:
+
+> **Coverage–distinction lemma.** A noiseless query $q$ distinguishes
+> $\theta$ and $\theta'$ exactly when
+> $C(q)\cap D(\theta,\theta')\ne\varnothing$. It identifies the candidate
+> class exactly when $C(q)$ intersects every pairwise disagreement set.
+
+The proof is immediate but useful. If the query exposes no coordinate on which two tables
+differ, their observed restrictions are equal. If it exposes at least one such coordinate,
+their outcomes differ. Universal identification is therefore a hitting condition over all
+remaining candidate pairs.
+
+This separates two structures that information gain alone can hide:
+
+- **distinction geometry:** where the remaining candidates differ;
+- **access geometry:** which coordinate sets an admissible intervention can expose, and at
+  what cost.
+
+For the full table family $Y^X$, every coordinate must be exposed because some candidate
+pair differs only there. For a restricted candidate class, a smaller hitting set may
+suffice. A minimum-cost identifying query is therefore a constrained hitting-set problem
+over the coverage sets realizable by the intervention interface. A minimum-cost
+non-adaptive suite of several queries becomes a set-cover problem over candidate pairs.
+
+The same condition defines a useful quotient of the query space. Write
+
+$$
+q \sim_\Theta q'
+\quad\Longleftrightarrow\quad
+\Pi_q(\Theta)=\Pi_{q'}(\Theta).
+$$
+
+Equivalent queries may look different while making exactly the same candidate
+distinctions. Search and evaluation should therefore operate on
+$\mathcal Q/{\sim_\Theta}$ when possible, assigning each query class the cost of its
+cheapest admissible representative. For the full table family, two queries are equivalent
+exactly when they expose the same coordinate set. For a restricted family, even different
+coverage sets may become equivalent because some table distinctions are absent.
+
+This lemma does not transfer unchanged to partial, stochastic, or noisy observations.
+There the binary disagreement set must be replaced by a declared statistical
+distinguishability condition.
+
 ## The principle
 
 > **Witness Principle — repository hypothesis.** In bounded model identification,
@@ -146,14 +204,15 @@ misspecified. Matter can answer only the experiment that was actually performed.
 ## Exact finite baseline
 
 The [Witness-Generation
-Benchmark](../../lab/benchmarks/witness-generation/README.md) makes the operator concrete
-for the 256 elementary cellular-automaton rules.
+Benchmark](../../lab/benchmarks/witness-generation/README.md) makes the lemma and operator
+concrete for the 256 elementary cellular-automaton rules.
 
 - Candidate class: all 256 rule tables.
 - Query: prepare one binary row of width eight and observe its successor.
 - Cost: Hamming distance from the all-zero row.
 - Generator: exhaustive search over every row at the same cost.
 - Baseline: the mean over all equal-cost rows, computed exactly rather than sampled.
+- Independent check: an analytical coverage calculation.
 
 The exact frontier is:
 
@@ -170,10 +229,66 @@ three-bit neighborhood. One observed update therefore identifies the rule exactl
 the declared family. Four ones are not intrinsically intelligent; their arrangement is
 informative relative to this rule language and observation map.
 
-The pairwise witness profile is also exact. Among all $32{,}640$ unordered pairs of
-distinct rules, the cheapest separating row has cost 0 for $16{,}384$ pairs, cost 1 for
-$14{,}336$, cost 2 for $1{,}792$, and cost 3 for $128$. This is a finite receipt,
-not evidence for the same distribution in learned or continuous systems.
+### Why the frontier has this form
+
+Let $k(q)$ be the number of distinct three-bit neighborhoods in a query row. Observing one
+successor reveals exactly those $k(q)$ bits of the eight-bit rule table. For the full
+256-rule family, every outcome block consequently has size
+
+$$
+2^{8-k(q)}.
+$$
+
+Therefore both the worst-case and uniform expected residual are exactly
+
+$$
+R_{\max}(q)=R_{\mathrm{avg}}(q)=2^{8-k(q)}.
+$$
+
+The exhaustive query search and this analytical route agree for all 256 width-eight
+rows.
+
+The same 256 rows collapse to 21 coverage-equivalent query classes. For the full rule
+family these 21 classes induce 21 distinct candidate partitions. The frontier can
+therefore be searched over structural query classes rather than raw rows; rotations and
+other surface variants do not count as separate epistemic solutions. Some rows with the
+same coverage have different preparation costs, so the cheapest representative still
+matters.
+
+A width-eight ring has exactly eight cyclic three-bit windows. It exposes all eight
+neighborhoods if and only if it is a binary de Bruijn cycle of order three. Each possible
+three-bit word then appears once. Exactly four of those words have a central one, so every
+such row has Hamming cost four. The cost-four result is thus necessary as well as
+sufficient, not merely the best row found by enumeration. The exhaustive check returns
+16 linear rows: the rotations of the two binary de Bruijn cycles.
+
+### Why the pairwise profile has this form
+
+Two ECA rules differ on a subset of their eight lookup coordinates. The cheapest query
+that reaches a coordinate is its three-bit Hamming weight: cost 0 for `000`, cost 1 for
+`001`, `010`, and `100`, cost 2 for `011`, `101`, and `110`, and cost 3 for `111`.
+The cheapest witness for a rule pair is therefore the lowest-weight coordinate on which
+the rules differ.
+
+Starting with all $\binom{256}{2}=32{,}640$ pairs, the unresolved counts after exposing
+successive coordinate layers are
+
+$$
+2\binom{128}{2}=16{,}256,\qquad
+16\binom{16}{2}=1{,}920,\qquad
+128\binom{2}{2}=128,\qquad
+0.
+$$
+
+Taking successive differences yields the measured profile: cost 0 for $16{,}384$ pairs,
+cost 1 for $14{,}336$, cost 2 for $1{,}792$, and cost 3 for $128$. The benchmark now
+computes the profile both by exhaustive witness search and by this independent analytical
+derivation.
+
+This is a finite receipt, not evidence for the same distribution in learned or continuous
+systems. It also exposes the limit of the full-family baseline: once coverage is known,
+its optimum is combinatorial rather than learned. A meaningful transfer benchmark must
+vary the candidate subset, admissible coverage geometry, or both.
 
 ## What becomes testable
 
@@ -205,6 +320,10 @@ construct equivalent distinguishing queries under the same task, intervention fa
 tolerance, and cost. Comparing their **witness profiles** may therefore separate
 world-imposed convergence from similarity introduced by a representation lens.
 
+Query equivalence makes “equivalent” testable in the finite baseline: systems receive
+credit for reaching the same partition of the candidate class, not for reproducing the
+same surface row.
+
 This is the bridge to the exploratory note [Intelligence as
 Convergence](https://github.com/frnkptrln/systems-and-intelligence/blob/main/ideas/2026-07-23-intelligence-as-convergence.md).
 It is not yet a validated representation-similarity measure.
@@ -213,8 +332,19 @@ It is not yet a validated representation-similarity measure.
 
 The components are not new:
 
+- Moore's experiments on sequential machines and later finite-state-machine testing study
+  distinguishing input sequences (Moore
+  [1956](https://www.cs.cmu.edu/~cdm/resources/Moore1956-gedanken-experiments.pdf);
+  Lee & Yannakakis
+  [1994](https://doi.org/10.1109/12.272431)).
 - Angluin's active automata learning uses queries and counterexamples to identify regular
   languages ([1987](https://doi.org/10.1016/0890-5401(87)90052-6)).
+- Teaching dimension measures how many selected examples uniquely specify a concept
+  within a class (Goldman & Kearns
+  [1995](https://doi.org/10.1006/jcss.1995.1003)).
+- De Bruijn cycles are classical universal cycles containing every fixed-length word
+  exactly once (de Bruijn
+  [1946](https://research.tue.nl/en/publications/a-combinatorial-problem/)).
 - Local and stochastic distinguishing experiments represent partially observable states
   through action-observation experiments (Collins & Shen
   [2017](https://doi.org/10.1016/j.bica.2017.07.005);
@@ -231,9 +361,10 @@ The components are not new:
   2026](https://arxiv.org/abs/2605.30542)).
 
 The repository-specific move is narrower: put **construction of the distinguishing query**
-between candidate-class maintenance and intervention, give it an explicit cost, and ask
-whether learned systems can produce that query before failure. The finite benchmark is a
-baseline for that question, not a novelty claim about its ingredients.
+between candidate-class maintenance and intervention, give it an explicit cost, separate
+candidate distinction geometry from intervention access geometry, and ask whether learned
+systems can produce that query before failure. The finite lemma and benchmark are a
+baseline for that question, not a novelty claim about their ingredients.
 
 ## Failure conditions
 

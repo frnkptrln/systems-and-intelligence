@@ -46,7 +46,7 @@ A plausible process model earns trust by being constructed and run. Its predicti
 
 Passive observation is often not enough. If several models remain compatible with the same trace, an observer has to intervene: prepare a state, perturb the system, ask a discriminating question, or act and observe what resists. The result becomes a new trace and must be allowed to revise the model. Conditioning on an observation and causally replacing a process are distinct operations; an intervention requires declared causal access.
 
-Choosing that intervention is itself a construction problem. The [Witness Principle](theory/core/the-witness-principle.md) asks for a low-cost query on which the remaining candidates disagree; the [exact finite benchmark](lab/benchmarks/witness-generation/README.md) measures the resulting query frontier for elementary cellular automata. Learned and transferable witness construction remains open.
+Choosing that intervention is itself a construction problem. The [Witness Principle](theory/core/the-witness-principle.md) asks for a low-cost query on which the remaining candidates disagree and separates candidate distinction geometry from intervention access geometry; the [exact finite benchmark](lab/benchmarks/witness-generation/README.md) derives and enumerates the resulting query frontier for elementary cellular automata. Learned and transferable witness construction remains open.
 
 The repository folds this into one recurring epistemic loop:
 

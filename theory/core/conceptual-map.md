@@ -36,7 +36,7 @@ The [Epistemic Loop](from-trace-to-world-binding.md) and [Canonical Path v2](../
 |:---|:---|:---|:---|
 | **Forward process** | declared rules unfold into traces and global organization | [Emergence Manifesto](emergence-manifesto-v1.3.md), simulation models | selected toy processes; no claim that all intelligence reduces to one formalism |
 | **Inverse reconstruction** | traces constrain a class of candidate process models | [Foundations Reconstruction](mathematical-axioms.md), [Generator Question](the-generator-question.md) (legacy) | benchmark v0–v1.8 |
-| **Construction and coupling** | candidates are built, run, or turned into distinguishing queries and refereed by a world | [Construction vs. Deduction](../computation/construction-vs-deduction.md), [Witness Principle](the-witness-principle.md), [World Models & VLA](../ai/world-models-and-vla.md) | family-search curves; exact witness frontier; runtime/provenance constraints |
+| **Construction and coupling** | candidates are built, run, or turned into distinguishing queries and refereed by a world | [Construction vs. Deduction](../computation/construction-vs-deduction.md), [Witness Principle](the-witness-principle.md), [World Models & VLA](../ai/world-models-and-vla.md) | family-search curves; coverage–distinction lemma and exact witness frontier; runtime/provenance constraints |
 | **Intervention and revision** | distinguishing queries collapse the class; execution updates the model | [Measurement as Weak Intervention](measurement-as-weak-intervention.md) | watching < perturbing < preparing; closed-loop revision |
 | **Identity boundary** | persistence is tested under perturbation and commitment | [Invariance & Identity](invariance-and-identity.md), [Chord vs. Arpeggio](../identity/chord-vs-arpeggio-identity.md) | Exp5–7; real models and optimized mimics open |
 | **Constraint architecture** | capability loads concentration, coherence, and substrate constraints | [TEO](../teo-framework/README.md), [Viable Corridor](../../papers/viable-corridor.md) | demonstrated in two synthetic models; real systems open |
@@ -69,7 +69,7 @@ These results are receipts, not universal laws. Their scope is maintained in [Wh
 
 ## The Current Frontier
 
-1. **Learned witness construction** — can a system approach the exact query frontier on unseen candidate relations without enumerating the query space again?
+1. **Learned witness construction** — can a system approach the exact query frontier across unseen candidate subsets and access geometries without enumerating the query space again?
 2. **Learned searchers vs. exact family search** — can LLMs or program synthesizers beat the enumeration floor under matched evidence and query budgets?
 3. **From useful support to evolutionarily stable support** — can partner choice, conditional reciprocity, or spatial/kin assortment preserve contribution against low-contributing recipients under matched costs?
 4. **Real-model identity probes** — do the Exp5–7 distinctions survive outside handcrafted toy agents?

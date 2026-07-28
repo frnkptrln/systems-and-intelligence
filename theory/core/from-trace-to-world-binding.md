@@ -30,7 +30,7 @@ Generator](../emergence/trace-to-generator.md) remain as auditable research hist
 |:---|:---|:---|
 | **Trace** | declare the observations, coverage, noise, and tolerance | finite traces in the inverse-reconstruction benchmark |
 | **Candidate models** | retain every model in the declared family consistent with the trace | exact class counts in small CA and IFS families |
-| **Construction** | execute a candidate, or construct a query on which candidates diverge | re-simulation, closed-loop toys, and the exact witness-generation baseline |
+| **Construction** | execute a candidate, or construct a query on which candidates diverge | re-simulation, closed-loop toys, and the exact lookup-table witness lemma and baseline |
 | **World-coupling** | let measurements, materials, users, or affected systems answer independently of the proposal | a design requirement; not established by fluent output |
 | **Intervention** | prepare or perturb a state through a declared causal interface | class reduction in benchmark v1.1 |
 | **Revision** | update the model while keeping guesses marked as guesses | frozen-versus-revising comparison in v1.6 |
@@ -45,8 +45,9 @@ inside the loop. Instead of receiving an intervention from outside, an observer 
 remaining candidate class, a query language, and a cost budget as input and constructs a
 query intended to split the class. The [finite
 baseline](../../lab/benchmarks/witness-generation/README.md) performs this operation by
-exact enumeration for elementary cellular automata. Whether a learned system can acquire
-and transfer that ability is Open Problem 14.
+exact enumeration for elementary cellular automata and derives the result independently
+from neighborhood coverage. Whether a learned system can acquire and transfer that ability
+across candidate subsets and access geometries is Open Problem 14.
 
 ## Why it is a loop
 
