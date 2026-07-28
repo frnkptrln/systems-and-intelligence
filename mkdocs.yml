@@ -32,9 +32,12 @@ nav:
       - "Core Theory":
           - Theory Overview: theory/README.md
           - Foundations Reconstruction: theory/core/mathematical-axioms.md
+          - Invariance and Identity: theory/core/invariance-and-identity.md
           - "Legacy: The Generator Question": theory/core/the-generator-question.md
           - From Trace to World-Binding (the loop): theory/core/from-trace-to-world-binding.md
+          - Measurement as Weak Intervention: theory/core/measurement-as-weak-intervention.md
           - The Witness Principle: theory/core/the-witness-principle.md
+          - Optimization and Its Blindness: theory/optimization/optimization-and-its-blindness.md
           - "Legacy: Trace to Generator": theory/emergence/trace-to-generator.md
           - The Emergence Manifesto: theory/core/emergence-manifesto-v1.3.md
           - Thermodynamics of Orchestration (TEO): theory/core/thermodynamics-of-orchestration.md
@@ -61,6 +64,7 @@ nav:
               - "Emergence & Origin of Intelligence (speculative)": theory/emergence/emergence-origin-intelligence.md
               - Weak vs Strong Emergence: theory/emergence/emergence-downward-causation.md
               - Black Swans & Downward Causation: theory/emergence/black-swans-and-downward-causation.md
+              - Animism as a Generator Prior: theory/emergence/animism-as-generator-prior.md
           - "Identity & Consciousness":
               - Minimal Thermodynamic Agent: theory/identity/minimal-thermodynamic-agent.md
               - Consciousness as Global Availability: theory/identity/consciousness-as-global-availability.md
@@ -68,6 +72,7 @@ nav:
               - The Non-Individual Intelligence: theory/identity/the-non-individual-intelligence.md
               - Agentic Society Principles: theory/identity/agentic-society-principles.md
               - Limits of Formal Systems: theory/identity/limits-of-formal-systems.md
+              - Psychedelics as Perturbation: theory/identity/psychedelics-as-perturbation.md
               - "The Post-Individual Operator (scenario)": theory/identity/the-post-individual-operator.md
           - "Veto & Alignment Essays":
               - AI Alignment Veto: theory/veto/ai-alignment-biological-veto.md
@@ -77,13 +82,17 @@ nav:
               - "Black Hole Thermodynamics (speculative)": theory/veto/black-hole-thermodynamics-of-agi.md
           - "Computation & AI":
               - "Legacy: P vs NP as Generator Search": theory/computation/p-vs-np-as-generator-search.md
+              - Construction and Deduction: theory/computation/construction-vs-deduction.md
               - Static Information, Living Process: theory/computation/static-information-and-living-process.md
               - LLMs as Probabilistic Automata: theory/ai/llms-as-probabilistic-automata.md
+              - World Models and VLA Systems: theory/ai/world-models-and-vla.md
               - "The J-Space Result (2026)": theory/ai/j-space-and-global-availability.md
           - "Narrative Theory":
               - Tensor Logic Mini Paper: theory/narrative/tensor-logic-mini-paper.en.md
               - Asimov AI and Latent Thinking: theory/narrative/asimov-ai-latent-thinking.md
               - Asimov's Paradox of Eternity: theory/narrative/asimov-paradox-eternity.md
+              - Narrative as Cognitive Technology: theory/narrative/narrative-as-cognitive-technology.md
+              - "Art and Science: One Practice, Two Referees": theory/narrative/art-science-one-practice-two-referees.md
       - "TEO Framework Details":
           - Love as Constraint: theory/teo-framework/love-as-constraint.md
           - Why the Paperclip Maximizer Fails: theory/teo-framework/why-paperclip-maximizer-fails.md
@@ -99,6 +108,7 @@ nav:
           - The Breathing Machine: theory/symbiotic/the-breathing-machine.md
       - "Human Organism in Silicon Age":
           - Core Theses: theory/human-organism-silicon-age/core-theses.md
+          - The City as Deployed Intelligence: theory/human-organism-silicon-age/the-city-as-deployed-intelligence.md
           - Guide for Cells in Resistance: theory/human-organism-silicon-age/guide-for-cells-in-resistance.md
           - Solarpunk Utopia: theory/human-organism-silicon-age/solarpunk-utopia-goedel-constitution.md
           - Symbiotic Protocol: theory/human-organism-silicon-age/symbiotic-nexus-protocol.md
@@ -108,6 +118,7 @@ nav:
           - Glossary: theory/reference/glossary.md
           - Open Problems: theory/reference/open-problems.md
           - Limitations & Honest Assessment: theory/reference/limitations-and-honest-assessment.md
+          - What This Project Does NOT Claim: theory/reference/what-this-project-does-not-claim.md
   - "Thinking Space (Exploration)":
       - "Ideas (exploratory notes)": https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas
       - Overview: thinking-space.md
@@ -160,6 +171,7 @@ nav:
           - Symbiotic Nexus: simulation-models/alignment-and-veto/symbiotic-nexus/README.md
           - Active Inference Veto: simulation-models/alignment-and-veto/active-inference-veto/README.md
           - AI Alignment Veto: simulation-models/alignment-and-veto/ai-alignment-veto/README.md
+          - Agent-Ecology Stress Test: simulation-models/alignment-and-veto/agent-ecology/README.md
           - TEO Framework Sim: simulation-models/alignment-and-veto/teo-framework/README.md
       - "Lab Frameworks":
           - Systems Orchestration: lab/README.md
@@ -203,6 +215,11 @@ nav:
           - Dashboard of the Commons: fiction/11_the_dashboard_of_the_commons.md
           - The Chord State: fiction/12_the_chord_state.md
           - Trace to Generator: fiction/13_trace-to-generator.md
+          - The Third Wall: fiction/14_the_third_wall.md
+          - The Exchange Rate: fiction/15_the_exchange_rate.md
+          - The Second Receiver: fiction/16_the_second_receiver.md
+          - The Understudy: fiction/17_the_understudy.md
+          - The Village in the Snow: fiction/18_the_village_in_the_snow.md
       - "Interactive Tools":
           - Web Emergence Explorer: interactive/web-explorer.md
           - Tensor Logic Visualizer: interactive/tensor-logic.md
@@ -211,13 +228,27 @@ nav:
           - Data Analysis: lab/data-analysis/README.md
           - Tools: lab/tools/README.md
           - "Benchmarks":
-              - Cognitive Stress Tests: lab/benchmarks/cognitive-stress-tests/README.md
+              - "Cognitive Stress Tests":
+                  - Overview: lab/benchmarks/cognitive-stress-tests/README.md
+                  - Design Notes: lab/benchmarks/cognitive-stress-tests/DESIGN_NOTES.md
+                  - Scenario Schema: lab/benchmarks/cognitive-stress-tests/SCHEMA.md
+                  - "Scenarios":
+                      - Distributed Government: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/distributed_government.md
+                      - Supply Chain Shock Coordination: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/emergent_coordination_supply_chain.md
+                      - Intelligence Threshold: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/intelligence_threshold.md
+                      - Moral Drift: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/moral_drift.md
+                      - Resource Equilibrium: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/resource_equilibrium.md
+                      - Self-Optimizing City: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/self_optimizing_city.md
+              - Inverse Reconstruction: lab/benchmarks/inverse-reconstruction/README.md
               - Witness Generation: lab/benchmarks/witness-generation/README.md
               - TEO Framework Benchmark: lab/benchmarks/teo-framework/README.md
   - "Meta":
       - Overview: meta/README.md
       - Repository Architecture: meta/repository-meta/repository-information-architecture.md
+      - Canonical Path: meta/repository-meta/canonical-path-v2.md
       - Repository as Thought System: meta/repository-meta/repository-as-thought-system.md
+      - Concept Registry: meta/repository-meta/concept-registry.md
+      - Feynman Mode: meta/repository-meta/feynman-mode.md
       - Core Claims: meta/repository-meta/core-claims.md
       - Speculative Writing Guidelines: meta/repository-meta/speculative-writing-guidelines.md
       - Cultural Optimization Red Team Manual: meta/repository-meta/cultural-optimization-red-team-manual.md

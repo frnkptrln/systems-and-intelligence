@@ -47,6 +47,8 @@ jobs:
           node-version: 22
       - run: pip install -r requirements-docs.txt
       - run: npm install --no-save --no-package-lock katex@0.18.1
+      - name: Documentation navigation validation
+        run: python lab/tools/validate_nav.py
       - name: Mathematical Markdown validation
         run: python lab/tools/validate_math.py
       - name: Strict documentation build
