@@ -276,7 +276,7 @@ instrument historically called **Identity Persistence**. Let $\mathcal{O}(t)$ co
 components whose causal intervention changes the action distribution at step $t$:
 
 $$
-\operatorname{IP}(t)=\frac{|\mathcal{O}(t)|}{n}.
+\mathrm{IP}(t)=\frac{|\mathcal{O}(t)|}{n}.
 $$
 
 The result depends on the component list, intervention, threshold, time resolution, and task. It
@@ -287,7 +287,7 @@ does not identify the Chord regime it was intended to describe.
 For dashboards that intentionally require all four selected dimensions, one may report
 
 $$
-\operatorname{SII}_{PRAIP}=P\,R\,A\,\operatorname{IP}.
+\mathrm{SII}_{PRAIP}=P\,R\,A\,\mathrm{IP}.
 $$
 
 A zero collapses this product because multiplication was chosen; the result does not classify a

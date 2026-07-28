@@ -266,7 +266,7 @@ This is the standard open-set / positive-invariance notion of viability (Aubin, 
 In the parameter space $(\gamma, K, S_{\max}) \in \mathbb{R}^3_{\geq 0}$, define the **viable corridor** $\mathcal{C}$ as the set of parameter triples admitting robust viability:
 
 $$
-\mathcal{C} = \left\{(\gamma, K, S_{\max}) : (\gamma, K, S_{\max}) \text{ admits robust viability as defined in Section 3.1}\right\}.
+\mathcal{C} = \left\lbrace(\gamma, K, S_{\max}) : (\gamma, K, S_{\max}) \text{ admits robust viability as defined in Section 3.1}\right\rbrace.
 \tag{7}
 $$
 

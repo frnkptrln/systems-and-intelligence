@@ -87,7 +87,7 @@ operative when it commits to an action. For a declared set of components
 $\mathcal C=\{c_1,\ldots,c_n\}$, one simple diagnostic is
 
 $$
-\operatorname{IP}(t)
+\mathrm{IP}(t)
 = \frac{|\{c_k\in\mathcal C:c_k\text{ is consulted at }t\}|}{n}.
 $$
 

@@ -16,7 +16,13 @@ def scan(tmp_path, source):
 def test_accepts_portable_inline_and_display_math(tmp_path):
     problems, expression_count = scan(
         tmp_path,
-        'Inline $x^2$ expression.\n\n$$\n\\frac{x}{y} = z\n$$\n',
+        (
+            'Inline $\\mathrm{IP}(t)$ expression.\n\n'
+            '$$\n'
+            'S = \\left\\lbrace x \\right\\rbrace,\n'
+            '\\qquad q = \\mathop{\\mathrm{arg\\,min}}\\limits_x f(x)\n'
+            '$$\n'
+        ),
     )
 
     assert problems == []
@@ -54,3 +60,28 @@ def test_ignores_literal_escaped_brackets_and_code(tmp_path):
 
     assert problems == []
     assert expression_count == 0
+
+
+def test_rejects_github_blocked_operatorname_macro(tmp_path):
+    problems, expression_count = scan(
+        tmp_path,
+        (
+            'Inline $\\operatorname{IP}(t)$ expression.\n\n'
+            '$$\n'
+            'q = \\operatorname*{arg\\,min}_x f(x)\n'
+            '$$\n'
+        ),
+    )
+
+    assert sum('operatorname' in message for message in problems) == 2
+    assert expression_count == 2
+
+
+def test_rejects_github_unsafe_escaped_brace_delimiters(tmp_path):
+    problems, expression_count = scan(
+        tmp_path,
+        '$$\nS = \\left\\{x : x > 0\\right\\}\n$$\n',
+    )
+
+    assert any(r'\left\lbrace' in message for message in problems)
+    assert expression_count == 1
