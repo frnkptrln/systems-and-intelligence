@@ -16,6 +16,7 @@ The canonical claims and central formalisms of the repository.
 - **[Thermodynamics of Emergent Orchestration (TEO)](core/thermodynamics-of-orchestration.md)** — Coupled ODE system: Replicator + Kuramoto + Entropy Budget.
 - **[System Intelligence Index (SII)](core/system-intelligence-index.md)** — P × R × A × IP: one selected 4-axis instrument for toy tasks.
 - **[Conceptual Map](core/conceptual-map.md)** — Visual overview: how everything connects.
+- **[The Witness Principle](core/the-witness-principle.md)** — A costed constructive operator from a remaining candidate class to a distinguishing intervention, with an exact coverage–distinction lemma and learned transfer left open.
 - **[Simulation → Theory Map](core/simulation-theory-map.md)** — Which simulation demonstrates which claim, what it does *not* show.
 
 ## Substrate & Veto

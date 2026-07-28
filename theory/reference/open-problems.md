@@ -249,6 +249,44 @@ must narrow or the basis must be generalized.
 
 ---
 
+## Open Problem 14: Learned Witness Construction
+
+*Raised by: [The Witness Principle](../core/the-witness-principle.md) and the exact
+[Witness-Generation Benchmark](../../lab/benchmarks/witness-generation/README.md).*
+
+**Problem statement:** Can a learned system take a previously unseen candidate class, admissible
+query language, observation map, tolerance, and intervention budget and construct a low-cost query
+that separates the candidates? Can it transfer the separation structure to unseen candidate pairs
+or related process families without enumerating the complete query space again?
+
+**Why it matters:** The repository already measures that supplied interventions can collapse a
+finite candidate class. The new baseline constructs the best query by exhaustive search, and its
+coverage–distinction lemma solves the full ECA family analytically. That success also reveals the
+baseline's limit: a fixed full lookup-table family reduces to universal coordinate coverage. A
+learned witness generator would be interesting only if it acquires reusable structure across
+varying candidate subsets and access geometries—not merely predicting the result of a given action,
+and not memorizing one prepared state per training class.
+
+**Current boundary:** Active automata learning, distinguishing experiments, optimal experimental
+design, active system identification, causal discovery, CEGAR, bisimulation refinement, and
+adaptive state abstraction already solve neighboring versions of the problem. The repository does
+not claim a new field or a general definition of intelligence. Its narrower question is whether
+explicitly learning the inverse map from *remaining distinctions* to *discriminating intervention*
+adds measurable capability beyond rollout search and information-gain planning.
+
+**What a solution would look like:** Train on disjoint finite process families, candidate subsets,
+and admissible coverage constraints; evaluate on unseen subsets, candidate pairs, and held-out query
+compositions. Compare random equal-cost queries, exact or bounded information-gain search,
+predictive-model rollout search, and direct witness generation under matched training compute,
+inference compute, world-query cost, noise, and intervention risk. Use the exact full-family result
+as an oracle check, not as the transfer task itself. Report class reduction, regret, transfer,
+calibration, query-class equivalence rather than exact surface-action matching, and failure under
+family misspecification. The hypothesis weakens if the direct generator offers no advantage over
+search, fails outside memorized templates, or loses its gain once its full compute and intervention
+costs are counted.
+
+---
+
 ## How to Contribute
 
 If you identify a new open problem, or have a proposed solution for an existing one, please:

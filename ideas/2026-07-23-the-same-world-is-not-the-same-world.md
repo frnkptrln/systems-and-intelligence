@@ -17,5 +17,6 @@ The practical problem is not to make both models identical. Complete alignment c
 **Connections.**
 
 - [Intelligence as Convergence](2026-07-23-intelligence-as-convergence.md)
+- [The Witness Principle](../theory/core/the-witness-principle.md)
 - [World Models and VLA](../theory/ai/world-models-and-vla.md)
 - [From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md)

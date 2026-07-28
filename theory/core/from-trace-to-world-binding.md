@@ -10,7 +10,7 @@ an organizing hypothesis.
 
 ## The loop
 
-    Trace -> Candidate Process Model -> Construction -> World-Coupling
+    Trace -> Candidate Process Models -> Construction -> World-Coupling
           -> Intervention -> Revision -> new Trace
 
 When a system models its own role in that circuit, an additional problem appears:
@@ -29,8 +29,8 @@ Generator](../emergence/trace-to-generator.md) remain as auditable research hist
 | Phase | Operational move | Current evidence |
 |:---|:---|:---|
 | **Trace** | declare the observations, coverage, noise, and tolerance | finite traces in the inverse-reconstruction benchmark |
-| **Candidate model** | retain every model in the declared family consistent with the trace | exact class counts in small CA and IFS families |
-| **Construction** | execute a candidate and compare its consequences with a referee | re-simulation and closed-loop toy tasks |
+| **Candidate models** | retain every model in the declared family consistent with the trace | exact class counts in small CA and IFS families |
+| **Construction** | execute a candidate, or construct a query on which candidates diverge | re-simulation, closed-loop toys, and the exact lookup-table witness lemma and baseline |
 | **World-coupling** | let measurements, materials, users, or affected systems answer independently of the proposal | a design requirement; not established by fluent output |
 | **Intervention** | prepare or perturb a state through a declared causal interface | class reduction in benchmark v1.1 |
 | **Revision** | update the model while keeping guesses marked as guesses | frozen-versus-revising comparison in v1.6 |
@@ -39,6 +39,15 @@ Generator](../emergence/trace-to-generator.md) remain as auditable research hist
 The benchmark demonstrates examples inside selected finite families. It does not establish
 that construction is generally cheap, that search is generally hard, or that every
 intervention uniquely identifies a real process.
+
+The [Witness Principle](the-witness-principle.md) isolates one constructive operator
+inside the loop. Instead of receiving an intervention from outside, an observer takes the
+remaining candidate class, a query language, and a cost budget as input and constructs a
+query intended to split the class. The [finite
+baseline](../../lab/benchmarks/witness-generation/README.md) performs this operation by
+exact enumeration for elementary cellular automata and derives the result independently
+from neighborhood coverage. Whether a learned system can acquire and transfer that ability
+across candidate subsets and access geometries is Open Problem 14.
 
 ## Why it is a loop
 
@@ -115,8 +124,10 @@ The loop should be abandoned or split if:
 ## Read next
 
 1. [Foundations Reconstruction](mathematical-axioms.md)
-2. [Inverse-Reconstruction Benchmark](../../lab/benchmarks/inverse-reconstruction/README.md)
-3. [Measurement as Weak Intervention](measurement-as-weak-intervention.md)
-4. [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md)
-5. [Optimization and Its Blindness](../optimization/optimization-and-its-blindness.md)
-6. [The Viable Corridor](../../papers/viable-corridor.md)
+2. [The Witness Principle](the-witness-principle.md)
+3. [Inverse-Reconstruction Benchmark](../../lab/benchmarks/inverse-reconstruction/README.md)
+4. [Witness-Generation Benchmark](../../lab/benchmarks/witness-generation/README.md)
+5. [Measurement as Weak Intervention](measurement-as-weak-intervention.md)
+6. [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md)
+7. [Optimization and Its Blindness](../optimization/optimization-and-its-blindness.md)
+8. [The Viable Corridor](../../papers/viable-corridor.md)

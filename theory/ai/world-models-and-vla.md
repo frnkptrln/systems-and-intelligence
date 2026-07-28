@@ -29,6 +29,20 @@ experiments may distinguish some alternatives, as the benchmark's interventions 
 family. They need not identify a unique true model, and embodiment is neither necessary nor
 sufficient for causal identification.
 
+## From Supplied Queries to Constructed Queries
+
+Query-conditioned world models ask for the simplest model sufficient to answer a supplied
+intervention query. A different capability is required when no useful query has been supplied:
+construct an admissible intervention under which the remaining candidate dynamics predict
+different outcomes.
+
+The [Witness Principle](../core/the-witness-principle.md) names this inverse interface, and the
+[Witness-Generation Benchmark](../../lab/benchmarks/witness-generation/README.md) supplies an exact
+lookup-table lemma and exhaustive finite baseline. It does not show that learned world models can
+generate transferable experiments across candidate classes or access geometries.
+The relevant comparison is not against random action alone, but against explicit
+information-gain or experimental-design search under matched compute, action, and risk budgets.
+
 ## VLA Systems and World Coupling
 
 Physical action supplies consequences and new observations that text-only evaluation may omit. It
@@ -50,7 +64,8 @@ The mapping suggests four test questions:
 
 1. Which candidate dynamics models remain consistent with the available trajectories?
 2. Where does planning amplify model error relative to non-optimizing baselines?
-3. Which actions are informative enough to justify their cost and risk?
+3. Can the system construct an action that distinguishes the remaining candidates, and does its
+   information justify the cost and risk?
 4. Which independently enforced limits remain effective when the learned policy encounters
    out-of-distribution states?
 

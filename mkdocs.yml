@@ -34,6 +34,7 @@ nav:
           - Foundations Reconstruction: theory/core/mathematical-axioms.md
           - "Legacy: The Generator Question": theory/core/the-generator-question.md
           - From Trace to World-Binding (the loop): theory/core/from-trace-to-world-binding.md
+          - The Witness Principle: theory/core/the-witness-principle.md
           - "Legacy: Trace to Generator": theory/emergence/trace-to-generator.md
           - The Emergence Manifesto: theory/core/emergence-manifesto-v1.3.md
           - Thermodynamics of Orchestration (TEO): theory/core/thermodynamics-of-orchestration.md
@@ -211,6 +212,7 @@ nav:
           - Tools: lab/tools/README.md
           - "Benchmarks":
               - Cognitive Stress Tests: lab/benchmarks/cognitive-stress-tests/README.md
+              - Witness Generation: lab/benchmarks/witness-generation/README.md
               - TEO Framework Benchmark: lab/benchmarks/teo-framework/README.md
   - "Meta":
       - Overview: meta/README.md
