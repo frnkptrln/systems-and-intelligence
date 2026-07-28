@@ -149,6 +149,25 @@ class TestRestrictedCandidateClasses(unittest.TestCase):
         self.assertEqual(gap.maximal_coverage_separable, 32512)
         self.assertEqual(gap.divergence_count, 128)
 
+    def test_cost_three_queries_trade_pairwise_distinctions(self):
+        maximal_coverage = (0, 0, 0, 0, 1, 0, 1, 1)
+        candidate_aware = (0, 0, 0, 0, 0, 1, 1, 1)
+
+        coverage_pairs = wb.separated_rule_pairs(range(256), maximal_coverage)
+        candidate_pairs = wb.separated_rule_pairs(range(256), candidate_aware)
+
+        self.assertEqual(len(coverage_pairs), 32512)
+        self.assertEqual(len(candidate_pairs), 32256)
+        self.assertEqual(len(candidate_pairs - coverage_pairs), 128)
+        self.assertEqual(len(coverage_pairs - candidate_pairs), 384)
+        self.assertEqual(
+            max(
+                wb.separated_pair_count(range(256), row)
+                for row in wb.rows_at_cost(8, 3)
+            ),
+            32512,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

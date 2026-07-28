@@ -71,7 +71,7 @@ class ObjectiveComparison:
 
 @dataclass(frozen=True)
 class PairwiseObjectiveGap:
-    """Pairwise separability gap at one exact query cost."""
+    """Existential pairwise separability across equal-cost query families."""
 
     cost: int
     pair_count: int
@@ -187,6 +187,28 @@ def query_partition(rules: Iterable[int], row: Sequence[int]) -> tuple[tuple[int
     for rule in rules:
         blocks[step(rule, row)].append(rule)
     return tuple(tuple(block) for block in blocks.values())
+
+
+def separated_rule_pairs(
+    rules: Iterable[int],
+    row: Sequence[int],
+) -> frozenset[tuple[int, int]]:
+    """Return the unordered candidate pairs separated by one specific query."""
+    candidate_rules = declared_candidates(rules)
+    return frozenset(
+        (rule_a, rule_b)
+        for rule_a, rule_b in combinations(candidate_rules, 2)
+        if step(rule_a, row) != step(rule_b, row)
+    )
+
+
+def separated_pair_count(rules: Iterable[int], row: Sequence[int]) -> int:
+    """Count candidate pairs separated by one query without listing them."""
+    candidate_rules = declared_candidates(rules)
+    blocks = query_partition(candidate_rules, row)
+    return comb(len(candidate_rules), 2) - sum(
+        comb(len(block), 2) for block in blocks
+    )
 
 
 def score_query(rules: Iterable[int], row: Row) -> QueryScore:
@@ -346,11 +368,12 @@ def pairwise_objective_gap(
     width: int = 8,
     cost: int,
 ) -> PairwiseObjectiveGap:
-    """Count pairs separable by any query but not by a coverage maximizer.
+    """Count pairs with some separating query in each equal-cost query family.
 
-    Both arms receive the same exact preparation cost. The maximal-coverage
-    arm may use any query tied for greatest neighborhood coverage, so the
-    reported divergence is objective-level rather than tie-break-specific.
+    This is an existential comparison for each pair: the candidate-aware arm
+    may choose any query at the declared cost, while the maximal-coverage arm
+    may choose any query tied for greatest neighborhood coverage. It does not
+    claim that one query separates every pair counted by an arm.
     """
     candidate_rules = declared_candidates(rules)
     signatures = tuple(

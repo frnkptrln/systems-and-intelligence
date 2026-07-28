@@ -148,11 +148,14 @@ seven-coordinate coverage omits `111`; there are 16 such maximizers, and none se
 the pair. The coverage arm in the code receives the best candidate score among all tied
 maximizers, so this is not a tie-breaking artifact.
 
-The divergence has an exact full-family count. At cost three, some query separates every
-one of the 32,640 unordered rule pairs. Maximal-coverage queries separate 32,512. The
-remaining **128 pairs** differ only on coordinate `111`. This is the measured collapse
-boundary: full-family witness generation is coordinate coverage, while restricted-class
-witness generation is hitting the declared class's actual difference sets.
+At cost three, no single query separates all 32,640 unordered rule pairs: the best any
+cost-three query achieves is 32,512. The maximal-coverage queries reach that maximum and
+miss exactly the 128 pairs that differ only on coordinate `111` — none of the 16
+maximizers exposes it. The candidate-aware query `00000111` separates all 128 of those
+pairs, at the price of separating 32,256 pairs overall. The two queries therefore
+separate incomparable sets. That is the measured collapse boundary: coverage is not a
+weaker objective in general; it is the wrong objective relative to a declared class's
+actual difference sets.
 
 For the full 256-rule product family, adaptivity cannot improve this objective. After any
 observation, every unobserved rule-table coordinate remains an independent free bit, so
