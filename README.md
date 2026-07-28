@@ -59,6 +59,13 @@ cd systems-and-intelligence
 pip install -r requirements.txt
 ```
 
+For development and documentation work, install the matching environment:
+
+```bash
+pip install -r requirements-dev.txt   # core runtime plus pytest
+pip install -r requirements-docs.txt  # core runtime plus MkDocs and PDF tools
+```
+
 Run the animated Boids model shown above:
 
 ```bash

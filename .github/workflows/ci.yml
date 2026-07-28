@@ -15,11 +15,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: pip install numpy networkx pytest
+      - run: pip install -r requirements-dev.txt
       - name: Unit tests + benchmark headline regression
         run: pytest tests/ -q
       - name: Internal link validation
         run: python lab/tools/validate_links.py
+
+  ml:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: pip install -r requirements-dev.txt
+      - run: pip install --index-url https://download.pytorch.org/whl/cpu -r requirements-ml.txt
+      - name: Require PyTorch
+        run: python -c "import torch; print(torch.__version__)"
+      - name: CTM neuron-level model tests
+        run: pytest tests/test_ctm_nlm.py -q
 
   docs:
     runs-on: ubuntu-latest
@@ -31,7 +45,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: pip install "mkdocs>=1.5,<2.0" "mkdocs-material>=9.5" "pymdown-extensions>=10.7"
+      - run: pip install -r requirements-docs.txt
       - run: npm install --no-save --no-package-lock katex@0.18.1
       - name: Mathematical Markdown validation
         run: python lab/tools/validate_math.py

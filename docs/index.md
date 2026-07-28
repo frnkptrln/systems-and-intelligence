@@ -186,7 +186,7 @@ python simulation-models/alignment-and-veto/teo-civilization/teo_simulation.py
 python simulation-models/alignment-and-veto/black-swan-resilience/black_swan_simulation.py
 
 # Serve this book locally
-pip install mkdocs-material python-markdown-math
+pip install -r requirements-docs.txt
 mkdocs serve
 ```
 

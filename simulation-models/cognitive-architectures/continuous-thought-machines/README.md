@@ -22,7 +22,12 @@ Optional (for CTM / PyTorch-based simulations):
 pip install -r requirements-ml.txt
 ```
 
+For a CPU-only installation, use PyTorch's CPU wheel index:
+
+```bash
+pip install --index-url https://download.pytorch.org/whl/cpu -r requirements-ml.txt
+```
+
 ### Contents
 
 - `ctm/`: small reusable building blocks (starting with Neuron-Level Models / NLMs).
-
