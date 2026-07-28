@@ -9,7 +9,9 @@ The documentation is read in two places with different renderers:
 Both accept ``$...$`` for inline mathematics and ``$$...$$`` for display
 mathematics, but GitHub can reinterpret malformed display blocks as ordinary
 Markdown. In particular, a bare ``=`` inside an unrecognised block becomes a
-Setext heading. This validator keeps the shared subset explicit.
+Setext heading. GitHub also rejects ``\\operatorname`` and does not reliably
+preserve escaped braces after ``\\left`` or ``\\right``. This validator keeps the
+shared subset explicit.
 
 Usage:
     python lab/tools/validate_math.py
@@ -46,6 +48,8 @@ LATEX_COMMAND_RE = re.compile(
     r'left|right|quad|qquad|times|otimes|rightsquigarrow|Longleftrightarrow'
     r')\b'
 )
+GITHUB_OPERATORNAME_RE = re.compile(r'(?<!\\)\\operatorname\*?')
+GITHUB_ESCAPED_DELIMITER_RE = re.compile(r'(?<!\\)\\(?:left|right)\\[{}]')
 
 
 @dataclass(frozen=True)
@@ -157,6 +161,24 @@ def brace_problem(expression: str) -> str | None:
     return None
 
 
+def expression_problems(expression: str) -> list[str]:
+    """Return syntax and GitHub-renderer compatibility problems."""
+    problems = []
+    message = brace_problem(expression)
+    if message:
+        problems.append(message)
+    if GITHUB_OPERATORNAME_RE.search(expression):
+        problems.append(
+            r'GitHub rejects \operatorname; use a portable \mathrm or \mathop form'
+        )
+    if GITHUB_ESCAPED_DELIMITER_RE.search(expression):
+        problems.append(
+            r'GitHub does not reliably render \left\{ or \right\}; '
+            r'use \left\lbrace and \right\rbrace'
+        )
+    return problems
+
+
 def scan_file(filepath: str) -> tuple[list[Problem], int]:
     """Validate one Markdown file and return problems plus expression count."""
     relative = os.path.relpath(filepath, REPO)
@@ -190,8 +212,7 @@ def scan_file(filepath: str) -> tuple[list[Problem], int]:
         if legacy_display_start is not None:
             if LEGACY_DISPLAY_CLOSE_RE.match(stripped):
                 expression_count += 1
-                message = brace_problem('\n'.join(legacy_display_lines))
-                if message:
+                for message in expression_problems('\n'.join(legacy_display_lines)):
                     problems.append(Problem(relative, legacy_display_start, message))
                 legacy_display_start = None
                 legacy_display_lines = []
@@ -236,8 +257,7 @@ def scan_file(filepath: str) -> tuple[list[Problem], int]:
                         'display mathematics needs a blank line after closing $$ for GitHub',
                     ))
                 expression = '\n'.join(display_lines)
-                message = brace_problem(expression)
-                if message:
+                for message in expression_problems(expression):
                     problems.append(Problem(relative, display_start, message))
                 display_start = None
                 display_lines = []
@@ -255,8 +275,7 @@ def scan_file(filepath: str) -> tuple[list[Problem], int]:
 
         for match in re.finditer(r'(?<!\\)\$\$(.+?)(?<!\\)\$\$', line):
             expression_count += 1
-            message = brace_problem(match.group(1))
-            if message:
+            for message in expression_problems(match.group(1)):
                 problems.append(Problem(relative, line_number, message))
         without_same_line_display = re.sub(
             r'(?<!\\)\$\$(.+?)(?<!\\)\$\$',
@@ -272,8 +291,7 @@ def scan_file(filepath: str) -> tuple[list[Problem], int]:
                 line_number,
                 r'non-portable inline-math delimiters \(...\); use $...$',
             ))
-            message = brace_problem(match.group(1))
-            if message:
+            for message in expression_problems(match.group(1)):
                 problems.append(Problem(relative, line_number, message))
             for position in range(match.start(), match.end()):
                 without_legacy_inline[position] = ' '
@@ -302,8 +320,7 @@ def scan_file(filepath: str) -> tuple[list[Problem], int]:
             expression = without_legacy_inline[start + 1:end]
             if not expression.strip():
                 problems.append(Problem(relative, line_number, 'empty inline mathematical expression'))
-            message = brace_problem(expression)
-            if message:
+            for message in expression_problems(expression):
                 problems.append(Problem(relative, line_number, message))
             for position in range(start, end + 1):
                 outside[position] = ' '

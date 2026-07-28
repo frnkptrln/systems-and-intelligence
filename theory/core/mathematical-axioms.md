@@ -212,7 +212,7 @@ Admissible processes are closed under this operation.
 Every interface has an identity process
 
 $$
-\operatorname{id}_X(x,B)=\delta_x(B).
+\mathrm{id}_X(x,B)=\delta_x(B).
 $$
 
 Composition is associative and identities are left and right units. For concrete Markov kernels,
@@ -298,7 +298,7 @@ $$
 Repeated composition gives
 
 $$
-T^0=\operatorname{id}_X, \qquad T^{n+1}=T\circ T^n.
+T^0=\mathrm{id}_X, \qquad T^{n+1}=T\circ T^n.
 $$
 
 Thus a chosen one-step process induces an $\mathbb N$-indexed dynamical semigroup. The initial state
@@ -308,7 +308,7 @@ General time is not free. Continuous-time, reversible-time, or event-indexed dyn
 additional time monoid $M$ and a homomorphism
 
 $$
-\Phi:M\to\operatorname{End}(X), \qquad
+\Phi:M\to\mathrm{End}(X), \qquad
 \Phi_{s+t}=\Phi_s\circ\Phi_t,
 $$
 

@@ -26,7 +26,7 @@ at decision step $t$ changes the action distribution by more than a preregistere
 Define task-relative **Identity Persistence** as
 
 $$
-\operatorname{IP} = \frac{1}{T}\sum_{t=1}^{T}\frac{|O_t|}{n}.
+\mathrm{IP} = \frac{1}{T}\sum_{t=1}^{T}\frac{|O_t|}{n}.
 $$
 
 This definition is operational only after fixing:
@@ -53,7 +53,7 @@ the systems and do not establish which one has an identity.
 
 ## Is There a Boundary?
 
-A sharp critical value $\operatorname{IP}_c$ has not been demonstrated. At least three outcomes are
+A sharp critical value $\mathrm{IP}_c$ has not been demonstrated. At least three outcomes are
 possible:
 
 1. performance changes smoothly with measured co-activity;

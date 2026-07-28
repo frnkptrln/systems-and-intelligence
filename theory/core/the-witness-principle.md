@@ -59,9 +59,9 @@ Every query induces a partition
 
 $$
 \Pi_q(\Theta_e) =
-\left\{
+\left\lbrace
 [\theta]_q : \theta \in \Theta_e
-\right\},
+\right\rbrace,
 $$
 
 where two candidates share a block when the query does not distinguish their outcome
@@ -87,7 +87,7 @@ Given a query cost $c(q)$ and budget $b$, an exact **witness generator** may cho
 $$
 q_b^\star
 \in
-\operatorname*{arg\,min}_{q \in \mathcal Q,\;c(q)\le b}
+\mathop{\mathrm{arg\,min}}\limits_{q \in \mathcal Q,\;c(q)\le b}
 \left(
 R_{\max}(q;\Theta_e),
 R_{\mathrm{avg}}(q;\Theta_e),
@@ -109,9 +109,9 @@ $C(q)\subseteq X$. For two candidates define their disagreement set
 
 $$
 D(\theta,\theta') =
-\left\{
+\left\lbrace
 x\in X : \theta(x)\ne\theta'(x)
-\right\}.
+\right\rbrace.
 $$
 
 Then:
