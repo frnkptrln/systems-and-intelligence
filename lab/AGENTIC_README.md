@@ -103,6 +103,10 @@ The three-architecture probe pre-registered in [Consciousness as Global Availabi
 
 First result (10 seeds): the dissociation is carried by behavior (veto violations 0.74 / 0.59 / 0.03; role stability 0.00 / 0.30 / 0.69) and by IP (its ordering is designed, not discovered) — while **Δ-Kohärenz carries no binding signal at all** (all three architectures classify 'noise' on every seed). The full prediction-vs-outcome accounting, including the two design defects the first run exposed, lives in the module docstring.
 
+![Availability and binding dissociation](tools/exp5_availability_dissociation.png)
+
+*Exp 5 — availability/binding dissociation: private / broadcast / chord.*
+
 ---
 
 ### Experiment 6: Which Observable Carries Binding Structure?
@@ -115,6 +119,11 @@ python experiments/exp6_binding_observables.py
 Picks up exp5's loose end. Four bindings (adds a schedule-free random arpeggio), five observables — four passive trace statistics and one prepared-state probe protocol — scored by separability across seeds.
 
 First result (10 seeds): **binding is passively readable at the right level.** A per-step action-increment statistic separates both arpeggios from the chord (|d| ≈ 4) and *beats* the prepared probe-retest query (|d| ≈ 1.95) — because the binding difference is exercised on every step, coverage is total, and watching suffices. Joint satisfaction *glues* the action to the constraint set (median increment 0.0004); the stream moves only when the anchors move. Δ-Kohärenz's exp5 blindness was a wrong-*level* failure, not evidence that binding is trace-invisible. The intervention hierarchy is not overturned but *located*: queries buy signal where the trace has coverage gaps — exactly the Mirror Problem's regime. Includes one methods lesson (a zero-variance baseline makes Cohen's d flatter a dead observable) in the docstring's honest accounting.
+
+![Binding-structure separability per observable](tools/exp6_binding_observables.png)
+
+*Exp 6 — binding-structure separability per observable (passive: Ω, inter-mod,
+kurtosis, rot-spec · prepared query: retest).*
 
 ---
 
@@ -129,6 +138,11 @@ Two hand-built adversaries attack exp6's finding: **blended** (consults all five
 
 First result (10 seeds), against the experiment's own predictions: **both adversaries fail to hide.** Blended dents the kurtosis signature (|d| 4.04 → 2.42) but leaks *more* than the naive arpeggio (violations 0.74 vs 0.59) — to look glued you must actually pull toward the constraints, and fractional pulls still leak. Smoothing barely registers (|d| = 3.91), because excess kurtosis is **scale-invariant**: inertia shrinks increments, the shape survives. The commit property under lure remains the strongest and only unfooled separator (|d| 3.0–4.1) — and **IP is fooled by construction** (blended scores 1.0, identical to chord: the Jaccard bookkeeping sees the guest list, not the negotiation). Chord's measured cost: ~40% of stimulus alignment paid for holding itself together. Open flank, named in the docstring: an *optimized* mimic with access to the observables.
 
+![Adversarial binding observables](tools/exp7_adversarial_arpeggio.png)
+
+*Exp 7 — adversarial bindings fail to hide: the signature dents, the commit
+property stands.*
+
 ---
 
 ### Experiment 8: Adaptive Self-Estimation
@@ -141,6 +155,10 @@ python experiments/exp8_reflexive_depth.py
 The direct comparison is engineering-level: raw observation, a Kalman filter with fixed process noise, and an adaptive Kalman filter that estimates process noise from its innovations. After a volatility regime shift, the adaptive estimator beats the fixed estimator by **36%**; the now-misspecified fixed estimator is slightly worse than raw observation. Against a constant observation bias, neither filtered estimator removes the bias because neither model includes a bias state.
 
 **Calibrated reading:** Exp8 measures adaptive state estimation in one Gaussian tracking task. It does not isolate "reflexive depth" from the extra adaptive capability, measure Kegan stages, establish a general Wall-3 result, or prove sole-channel bias non-identifiability. The subject-object interpretation remains `[HYPOTHESIZED]`. Required controls include oracle and fixed-$Q$ baselines, a change-point baseline, an uninformative meta-signal, paired uncertainty intervals, an augmented bias estimator, known/unknown initial-state conditions, and an external-reference intervention.
+
+![Adaptive self-estimation](tools/exp8_reflexive_depth.png)
+
+*Exp 8 — adaptive self-estimation (fixed vs online process-noise model).*
 
 ## Extended SII Dashboard (4-Axis Radar)
 
