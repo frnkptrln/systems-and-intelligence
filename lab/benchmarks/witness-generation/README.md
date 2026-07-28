@@ -40,6 +40,7 @@ interesting. The analytical route is independent of the query search.
 ```bash
 cd lab/benchmarks/witness-generation
 python witness_benchmark.py
+python witness_benchmark.py --candidates 0,128
 ```
 
 The code uses only the Python standard library.
@@ -127,9 +128,43 @@ This profile is relative to the all-zero reference state, width-eight query lang
 complete successor observation, deterministic rule family, and Hamming cost. Change any
 of those and the witness profile may change.
 
+## Restricted candidate classes: where coverage stops being enough
+
+The same exact machinery accepts any declared subset through `--candidates` or the
+`restricted_frontier()` API. This exposes the distinction that the full 256-rule family
+hides: a query should cover coordinates on which the *remaining candidates differ*, not
+simply as many coordinates as possible.
+
+At exact cost three:
+
+| candidate class | candidate-aware query | coordinates seen | worst-case remaining | strongest maximal-coverage query | coordinates seen | worst-case remaining |
+|:---|:---:|---:|---:|:---:|---:|---:|
+| `{0, 128}` | `00000111` | 6 | **1** | `00001011` | 7 | 2 |
+| `{0, 64, 128, 192}` | `00000111` | 6 | **1** | `00001011` | 7 | 2 |
+
+Rules 0 and 128 differ only at table coordinate `111`. The candidate-aware query spends
+its three prepared bits to expose that coordinate. Every cost-three query with maximal
+seven-coordinate coverage omits `111`; there are 16 such maximizers, and none separates
+the pair. The coverage arm in the code receives the best candidate score among all tied
+maximizers, so this is not a tie-breaking artifact.
+
+The divergence has an exact full-family count. At cost three, some query separates every
+one of the 32,640 unordered rule pairs. Maximal-coverage queries separate 32,512. The
+remaining **128 pairs** differ only on coordinate `111`. This is the measured collapse
+boundary: full-family witness generation is coordinate coverage, while restricted-class
+witness generation is hitting the declared class's actual difference sets.
+
+For the full 256-rule product family, adaptivity cannot improve this objective. After any
+observation, every unobserved rule-table coordinate remains an independent free bit, so
+the residual class depends only on the union of coordinates exposed, not on the observed
+values or the branch taken. A two-query adaptive policy and a non-adaptive pair with the
+same reachable coverage therefore have the same residual class. Restricted families can
+break that symmetry; an adaptive comparison needs a separately declared total-cost and
+branch-cost convention and is left as a follow-up rather than silently choosing one.
+
 ## Interpretation
 
-The benchmark demonstrates three bounded statements:
+The benchmark demonstrates four bounded statements:
 
 1. a consistent candidate class can be treated as the input to a constructive query
    problem;
@@ -151,9 +186,9 @@ It does **not** demonstrate:
 
 ## Next falsifiable step
 
-The full 256-rule family becomes a coverage problem once its table structure is known.
-The next benchmark must therefore vary the candidate class rather than train on one
-universal row. Sample disjoint candidate subsets and access constraints, then compare:
+The exact restricted-class arm now measures where coverage and distinction diverge. The
+next benchmark should sample disjoint candidate subsets and access constraints, then
+compare:
 
 1. random equal-cost queries;
 2. exact information-gain search;
