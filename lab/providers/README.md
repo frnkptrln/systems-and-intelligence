@@ -6,7 +6,7 @@ Scaffolding for the Agentic Identity Suite's eventual switch from mock to real L
 
 - `base.py` — Abstract `LLMProvider` interface. Every provider implements `complete(prompt, system=None)` and `embed(text)`.
 - `mock_provider.py` — Default. Deterministic, fast, no API key required.
-- `anthropic_provider.py` — Real mode. Calls `POST /v1/messages` via `urllib` (no new dependency). Default model: `claude-sonnet-4-20250514`.
+- `anthropic_provider.py` — Real mode. Calls `POST /v1/messages` via `urllib` (no new dependency). Default model: `claude-sonnet-5`.
 - `factory.py` — `load_config()` and `get_provider(cfg)`. Mock is the default; setting `llm.provider: anthropic` switches to real mode.
 
 ## Why this layer exists
@@ -31,8 +31,14 @@ This provider layer is the seam between the suite's mock-based architecture and 
    ```yaml
    llm:
      provider: anthropic
+     anthropic:
+       model: claude-sonnet-5
    ```
 3. Wire the provider into whichever experiment will be updated. The agents are not currently wired through the provider — that is a deliberate next step to be done when Frank decides to take it.
+
+Current Claude models reject sampling parameters, so the provider does not send
+`temperature`, `top_p`, or `top_k`. Experiments that need behavioral variance must
+elicit it through a recorded prompt rather than an untracked sampling setting.
 
 ## Embeddings note
 

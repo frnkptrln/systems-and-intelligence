@@ -8,10 +8,10 @@ llm:
   # provider: 'mock' (default, deterministic, no API calls) | 'anthropic'
   provider: mock
   anthropic:
-    # Frank's intended model for empirical runs. Override via env if needed.
-    model: claude-sonnet-4-20250514
-    max_tokens: 1024
-    temperature: 1.0
+    # Real-mode target. Change this value to run against another model.
+    model: claude-sonnet-5
+    # For current models this cap includes thinking and the visible response.
+    max_tokens: 4096
     # API key is read from this environment variable. Real mode fails fast
     # if the variable is unset; mock mode does not read it.
     api_key_env: ANTHROPIC_API_KEY
