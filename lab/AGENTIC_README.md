@@ -165,7 +165,12 @@ All parameters are centralized in `config.yaml`. The `USE_MOCK_LLM: true` flag e
 A separate provider layer at [`lab/providers/`](providers/README.md) prepares the suite for the eventual switch from mock embeddings to real model calls. Two providers are implemented:
 
 - **`MockProvider`** — the default. Deterministic, fast, no API key.
-- **`AnthropicProvider`** — real mode. Calls the Anthropic Messages API via the standard library (no new dependency). Default model: `claude-sonnet-4-20250514`. Requires `ANTHROPIC_API_KEY` in the environment.
+- **`AnthropicProvider`** — real mode. Calls the Anthropic Messages API via the
+  standard library (no new dependency). It targets `claude-sonnet-5` by default;
+  the model is configurable under `llm.anthropic.model` in `lab/config.yaml`.
+  Requires `ANTHROPIC_API_KEY` in the environment. Sampling parameters are omitted
+  for compatibility with current models; controlled variance must be elicited and
+  recorded in the prompt.
 
 The existing experiments still use the agents' built-in mock embeddings. Wiring those
 agents through the provider layer is a separate, intentional step — to be taken when

@@ -22,7 +22,14 @@ from pathlib import Path
 
 import yaml
 
-from .anthropic_provider import AnthropicProvider
+from .anthropic_provider import (
+    DEFAULT_API_VERSION,
+    DEFAULT_ENDPOINT,
+    DEFAULT_MAX_TOKENS,
+    DEFAULT_MODEL,
+    DEFAULT_TIMEOUT,
+    AnthropicProvider,
+)
 from .base import LLMProvider
 from .mock_provider import MockProvider
 
@@ -64,12 +71,11 @@ def get_provider(cfg: dict | None = None) -> LLMProvider:
         a = llm_cfg.get("anthropic", {}) or {}
         return AnthropicProvider(
             api_key_env=a.get("api_key_env", "ANTHROPIC_API_KEY"),
-            model=a.get("model", "claude-sonnet-4-20250514"),
-            max_tokens=a.get("max_tokens", 1024),
-            temperature=a.get("temperature", 1.0),
-            endpoint=a.get("endpoint", "https://api.anthropic.com/v1/messages"),
-            api_version=a.get("api_version", "2023-06-01"),
-            timeout_seconds=a.get("timeout_seconds", 60),
+            model=a.get("model", DEFAULT_MODEL),
+            max_tokens=a.get("max_tokens", DEFAULT_MAX_TOKENS),
+            endpoint=a.get("endpoint", DEFAULT_ENDPOINT),
+            api_version=a.get("api_version", DEFAULT_API_VERSION),
+            timeout_seconds=a.get("timeout_seconds", DEFAULT_TIMEOUT),
         )
 
     raise ValueError(

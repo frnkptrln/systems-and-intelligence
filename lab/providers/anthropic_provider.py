@@ -36,13 +36,18 @@ from .mock_provider import MockProvider
 
 DEFAULT_ENDPOINT = "https://api.anthropic.com/v1/messages"
 DEFAULT_API_VERSION = "2023-06-01"
-DEFAULT_MODEL = "claude-sonnet-4-20250514"
-DEFAULT_MAX_TOKENS = 1024
+DEFAULT_MODEL = "claude-sonnet-5"
+DEFAULT_MAX_TOKENS = 4096
 DEFAULT_TIMEOUT = 60
 
 
 class AnthropicProvider(LLMProvider):
-    """Calls the Anthropic Messages API. Real mode."""
+    """Calls the Anthropic Messages API. Real mode.
+
+    Sampling parameters are deliberately not exposed or sent: current Claude
+    models reject them. If a run needs stylistic or behavioral variance, elicit
+    it in the prompt and record that prompt as part of the experiment.
+    """
 
     def __init__(
         self,
@@ -50,7 +55,6 @@ class AnthropicProvider(LLMProvider):
         api_key_env: str = "ANTHROPIC_API_KEY",
         model: str = DEFAULT_MODEL,
         max_tokens: int = DEFAULT_MAX_TOKENS,
-        temperature: float = 1.0,
         endpoint: str = DEFAULT_ENDPOINT,
         api_version: str = DEFAULT_API_VERSION,
         timeout_seconds: int = DEFAULT_TIMEOUT,
@@ -65,7 +69,6 @@ class AnthropicProvider(LLMProvider):
         self._api_key = key
         self.model = model
         self.max_tokens = max_tokens
-        self.temperature = temperature
         self.endpoint = endpoint
         self.api_version = api_version
         self.timeout_seconds = timeout_seconds
@@ -77,16 +80,21 @@ class AnthropicProvider(LLMProvider):
     def name(self) -> str:
         return "anthropic"
 
-    def complete(self, prompt: str, system: str | None = None) -> str:
+    def _build_request_body(
+        self, prompt: str, system: str | None = None
+    ) -> dict[str, object]:
+        """Build a Messages API body without unsupported sampling parameters."""
         body: dict = {
             "model": self.model,
             "max_tokens": self.max_tokens,
-            "temperature": self.temperature,
             "messages": [{"role": "user", "content": prompt}],
         }
         if system is not None:
             body["system"] = system
+        return body
 
+    def complete(self, prompt: str, system: str | None = None) -> str:
+        body = self._build_request_body(prompt, system)
         data = json.dumps(body).encode("utf-8")
         request = urllib.request.Request(
             self.endpoint,
