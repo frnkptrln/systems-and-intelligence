@@ -115,5 +115,40 @@ class TestPairwiseWitnesses(unittest.TestCase):
         self.assertEqual(sum(counts.values()), 256 * 255 // 2)
 
 
+class TestRestrictedCandidateClasses(unittest.TestCase):
+    def test_cli_candidate_declaration(self):
+        self.assertEqual(wb.parse_candidates("0, 64,128, 192"), (0, 64, 128, 192))
+        for invalid in ("", "0,0", "-1,0", "0,256", "not-a-rule"):
+            with self.assertRaises(Exception):
+                wb.parse_candidates(invalid)
+
+    def test_restricted_frontier_is_candidate_aware(self):
+        points = wb.restricted_frontier((0, 128), width=8, max_cost=3)
+        self.assertEqual(
+            [point.best.worst_case_remaining for point in points],
+            [2, 2, 2, 1],
+        )
+        self.assertEqual(points[3].best.row, (0, 0, 0, 0, 0, 1, 1, 1))
+        self.assertEqual(points[3].best.neighborhoods_seen, 6)
+
+    def test_distinguishing_query_beats_every_coverage_maximizer(self):
+        comparison = wb.compare_candidate_and_coverage(
+            (0, 128),
+            width=8,
+            max_cost=3,
+        )[3]
+        self.assertEqual(comparison.candidate_aware.worst_case_remaining, 1)
+        self.assertEqual(comparison.maximal_neighborhoods, 7)
+        self.assertEqual(comparison.maximal_coverage.worst_case_remaining, 2)
+        self.assertEqual(comparison.maximal_coverage_query_count, 16)
+
+    def test_exact_full_family_pair_gap_at_cost_three(self):
+        gap = wb.pairwise_objective_gap(width=8, cost=3)
+        self.assertEqual(gap.pair_count, 32640)
+        self.assertEqual(gap.candidate_aware_separable, 32640)
+        self.assertEqual(gap.maximal_coverage_separable, 32512)
+        self.assertEqual(gap.divergence_count, 128)
+
+
 if __name__ == "__main__":
     unittest.main()

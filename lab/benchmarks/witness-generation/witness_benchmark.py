@@ -21,6 +21,7 @@ benchmark.
 
 Usage:
     python witness_benchmark.py
+    python witness_benchmark.py --candidates 0,128
 """
 
 from __future__ import annotations
@@ -55,6 +56,51 @@ class FrontierPoint:
     best: QueryScore
     mean_worst_case_remaining: float
     query_count: int
+
+
+@dataclass(frozen=True)
+class ObjectiveComparison:
+    """Candidate-aware optimum versus the strongest coverage optimum."""
+
+    cost: int
+    candidate_aware: QueryScore
+    maximal_coverage: QueryScore
+    maximal_neighborhoods: int
+    maximal_coverage_query_count: int
+
+
+@dataclass(frozen=True)
+class PairwiseObjectiveGap:
+    """Pairwise separability gap at one exact query cost."""
+
+    cost: int
+    pair_count: int
+    candidate_aware_separable: int
+    maximal_coverage_separable: int
+
+    @property
+    def divergence_count(self) -> int:
+        return self.candidate_aware_separable - self.maximal_coverage_separable
+
+
+def declared_candidates(rules: Iterable[int]) -> tuple[int, ...]:
+    """Validate and freeze a declared subset of the 256 ECA rules."""
+    candidates = tuple(rules)
+    if not candidates:
+        raise ValueError("candidate class must not be empty")
+    if any(not isinstance(rule, int) or not 0 <= rule < 256 for rule in candidates):
+        raise ValueError("ECA rules must be integers in [0, 255]")
+    if len(set(candidates)) != len(candidates):
+        raise ValueError("candidate class must not contain duplicates")
+    return candidates
+
+
+def parse_candidates(value: str) -> tuple[int, ...]:
+    """Parse a comma-separated candidate declaration for the CLI."""
+    try:
+        return declared_candidates(int(item.strip()) for item in value.split(","))
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from exc
 
 
 def neighborhoods(row: Sequence[int]) -> tuple[int, ...]:
@@ -145,9 +191,7 @@ def query_partition(rules: Iterable[int], row: Sequence[int]) -> tuple[tuple[int
 
 def score_query(rules: Iterable[int], row: Row) -> QueryScore:
     """Score one query by worst-case and uniform-prior residual class size."""
-    candidate_rules = tuple(rules)
-    if not candidate_rules:
-        raise ValueError("candidate class must not be empty")
+    candidate_rules = declared_candidates(rules)
     blocks = query_partition(candidate_rules, row)
     sizes = [len(block) for block in blocks]
     expected = sum(size * size for size in sizes) / len(candidate_rules)
@@ -167,7 +211,7 @@ def best_query_at_cost(
     cost: int,
 ) -> QueryScore:
     """Construct the best query at one exact preparation cost."""
-    candidate_rules = tuple(rules)
+    candidate_rules = declared_candidates(rules)
     scores = (score_query(candidate_rules, row) for row in rows_at_cost(width, cost))
     return min(
         scores,
@@ -186,7 +230,7 @@ def generate_witness(
     max_cost: int,
 ) -> QueryScore:
     """Construct the best query available at or below a preparation budget."""
-    candidate_rules = tuple(rules)
+    candidate_rules = declared_candidates(rules)
     candidates = (
         best_query_at_cost(candidate_rules, width=width, cost=cost)
         for cost in range(max_cost + 1)
@@ -209,7 +253,7 @@ def exact_frontier(
     max_cost: int = 4,
 ) -> tuple[FrontierPoint, ...]:
     """Compute the structured optimum and full equal-cost baseline."""
-    candidate_rules = tuple(rules)
+    candidate_rules = declared_candidates(rules)
     points = []
     for cost in range(max_cost + 1):
         scores = [
@@ -237,6 +281,108 @@ def exact_frontier(
     return tuple(points)
 
 
+def restricted_frontier(
+    candidates: Iterable[int],
+    *,
+    width: int = 8,
+    max_cost: int = 4,
+) -> tuple[FrontierPoint, ...]:
+    """Run the exact frontier over an explicitly declared proper subset."""
+    candidate_rules = declared_candidates(candidates)
+    if len(candidate_rules) == 256 and set(candidate_rules) == set(range(256)):
+        raise ValueError("restricted frontier requires a proper subset")
+    return exact_frontier(candidate_rules, width=width, max_cost=max_cost)
+
+
+def compare_candidate_and_coverage(
+    rules: Iterable[int],
+    *,
+    width: int = 8,
+    max_cost: int = 4,
+) -> tuple[ObjectiveComparison, ...]:
+    """Compare candidate-aware search with maximal coordinate coverage.
+
+    At each exact cost, the coverage arm first maximizes the number of
+    neighborhoods exposed. Among all tied coverage maximizers, it receives
+    the strongest possible candidate-class score. A remaining gap therefore
+    cannot be attributed to an unlucky tie-break.
+    """
+    candidate_rules = declared_candidates(rules)
+    comparisons = []
+    for cost in range(max_cost + 1):
+        scores = [
+            score_query(candidate_rules, row)
+            for row in rows_at_cost(width, cost)
+        ]
+        score_key = lambda score: (
+            score.worst_case_remaining,
+            score.expected_remaining,
+            score.row,
+        )
+        candidate_aware = min(scores, key=score_key)
+        maximal_neighborhoods = max(
+            score.neighborhoods_seen for score in scores
+        )
+        coverage_scores = [
+            score
+            for score in scores
+            if score.neighborhoods_seen == maximal_neighborhoods
+        ]
+        comparisons.append(
+            ObjectiveComparison(
+                cost=cost,
+                candidate_aware=candidate_aware,
+                maximal_coverage=min(coverage_scores, key=score_key),
+                maximal_neighborhoods=maximal_neighborhoods,
+                maximal_coverage_query_count=len(coverage_scores),
+            )
+        )
+    return tuple(comparisons)
+
+
+def pairwise_objective_gap(
+    rules: Iterable[int] = range(256),
+    *,
+    width: int = 8,
+    cost: int,
+) -> PairwiseObjectiveGap:
+    """Count pairs separable by any query but not by a coverage maximizer.
+
+    Both arms receive the same exact preparation cost. The maximal-coverage
+    arm may use any query tied for greatest neighborhood coverage, so the
+    reported divergence is objective-level rather than tie-break-specific.
+    """
+    candidate_rules = declared_candidates(rules)
+    signatures = tuple(
+        frozenset(neighborhoods(row))
+        for row in rows_at_cost(width, cost)
+    )
+    maximal_size = max(len(signature) for signature in signatures)
+    maximal_signatures = tuple(
+        signature
+        for signature in signatures
+        if len(signature) == maximal_size
+    )
+
+    pair_count = 0
+    candidate_aware_separable = 0
+    maximal_coverage_separable = 0
+    for rule_a, rule_b in combinations(candidate_rules, 2):
+        pair_count += 1
+        differences = frozenset(rule_difference_coordinates(rule_a, rule_b))
+        if any(signature & differences for signature in signatures):
+            candidate_aware_separable += 1
+        if any(signature & differences for signature in maximal_signatures):
+            maximal_coverage_separable += 1
+
+    return PairwiseObjectiveGap(
+        cost=cost,
+        pair_count=pair_count,
+        candidate_aware_separable=candidate_aware_separable,
+        maximal_coverage_separable=maximal_coverage_separable,
+    )
+
+
 def separating_witness(
     rule_a: int,
     rule_b: int,
@@ -255,15 +401,19 @@ def separating_witness(
     return None
 
 
-def pairwise_witness_costs(*, width: int = 8) -> Counter[int]:
-    """Exact minimal-cost distribution over all unordered ECA rule pairs."""
+def pairwise_witness_costs(
+    rules: Iterable[int] = range(256),
+    *,
+    width: int = 8,
+) -> Counter[int]:
+    """Exact minimal-cost distribution over a declared ECA candidate class."""
+    candidate_rules = declared_candidates(rules)
     counts: Counter[int] = Counter()
-    for rule_a in range(256):
-        for rule_b in range(rule_a + 1, 256):
-            row = separating_witness(rule_a, rule_b, width=width)
-            if row is None:  # unreachable for distinct deterministic rule tables
-                raise AssertionError(f"no witness for rules {rule_a} and {rule_b}")
-            counts[sum(row)] += 1
+    for rule_a, rule_b in combinations(candidate_rules, 2):
+        row = separating_witness(rule_a, rule_b, width=width)
+        if row is None:  # unreachable for distinct deterministic rule tables
+            raise AssertionError(f"no witness for rules {rule_a} and {rule_b}")
+        counts[sum(row)] += 1
     return counts
 
 
@@ -317,10 +467,28 @@ def _row_text(row: Row) -> str:
     return "".join(str(bit) for bit in row)
 
 
-def print_report(width: int = 8, max_cost: int = 4) -> None:
-    frontier = exact_frontier(width=width, max_cost=max_cost)
+def print_report(
+    width: int = 8,
+    max_cost: int = 4,
+    rules: Iterable[int] = range(256),
+) -> None:
+    candidate_rules = declared_candidates(rules)
+    full_family = (
+        len(candidate_rules) == 256
+        and set(candidate_rules) == set(range(256))
+    )
+    frontier = exact_frontier(
+        candidate_rules,
+        width=width,
+        max_cost=max_cost,
+    )
     print("WITNESS-GENERATION BENCHMARK")
-    print(f"family: all 256 ECA rules | query width: {width}")
+    family = (
+        "all 256 ECA rules"
+        if full_family
+        else "declared rules " + ",".join(str(rule) for rule in candidate_rules)
+    )
+    print(f"family: {family} | query width: {width}")
     print()
     print("cost  seen  best_remaining  equal_cost_mean  best_query")
     for point in frontier:
@@ -332,43 +500,71 @@ def print_report(width: int = 8, max_cost: int = 4) -> None:
             f"{_row_text(point.best.row)}"
         )
 
-    universal = universal_witnesses(width=width)
-    universal_costs = Counter(sum(row) for row in universal)
-    query_classes = coverage_classes(width=width)
-    print()
-    print("COVERAGE-DUALITY RECEIPT")
-    print("full-family residual: 2^(8 - neighborhoods seen)")
-    print(
-        f"raw queries / coverage classes: "
-        f"{2**width} / {len(query_classes)}"
-    )
-    print(f"universal width-{width} queries: {len(universal)}")
-    print(
-        "universal cost profile: "
-        + ", ".join(
-            f"cost {cost}: {count}"
-            for cost, count in sorted(universal_costs.items())
+    if full_family:
+        universal = universal_witnesses(width=width)
+        universal_costs = Counter(sum(row) for row in universal)
+        query_classes = coverage_classes(width=width)
+        print()
+        print("COVERAGE-DUALITY RECEIPT")
+        print("full-family residual: 2^(8 - neighborhoods seen)")
+        print(
+            f"raw queries / coverage classes: "
+            f"{2**width} / {len(query_classes)}"
         )
-    )
+        print(f"universal width-{width} queries: {len(universal)}")
+        print(
+            "universal cost profile: "
+            + ", ".join(
+                f"cost {cost}: {count}"
+                for cost, count in sorted(universal_costs.items())
+            )
+        )
+    else:
+        print()
+        print("CANDIDATE-AWARE VS MAXIMAL COVERAGE")
+        print("cost  aware_remaining  coverage_remaining  aware_query  coverage_query")
+        for comparison in compare_candidate_and_coverage(
+            candidate_rules,
+            width=width,
+            max_cost=max_cost,
+        ):
+            print(
+                f"{comparison.cost:>4}  "
+                f"{comparison.candidate_aware.worst_case_remaining:>15}  "
+                f"{comparison.maximal_coverage.worst_case_remaining:>18}  "
+                f"{_row_text(comparison.candidate_aware.row)}  "
+                f"{_row_text(comparison.maximal_coverage.row)}"
+            )
 
     print()
     print("PAIRWISE MINIMAL WITNESS COSTS")
-    counts = pairwise_witness_costs(width=width)
+    counts = pairwise_witness_costs(candidate_rules, width=width)
     for cost in sorted(counts):
         print(f"cost {cost}: {counts[cost]:>5} rule pairs")
     print(f"total : {sum(counts.values()):>5} rule pairs")
-    print(
-        "analytic profile matches exhaustive search: "
-        f"{counts == analytic_pairwise_witness_costs()}"
-    )
+    if full_family:
+        print(
+            "analytic profile matches exhaustive search: "
+            f"{counts == analytic_pairwise_witness_costs()}"
+        )
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--width", type=int, default=8)
     parser.add_argument("--max-cost", type=int, default=4)
+    parser.add_argument(
+        "--candidates",
+        type=parse_candidates,
+        default=tuple(range(256)),
+        help="comma-separated ECA rule subset, for example 0,128",
+    )
     args = parser.parse_args()
-    print_report(width=args.width, max_cost=args.max_cost)
+    print_report(
+        width=args.width,
+        max_cost=args.max_cost,
+        rules=args.candidates,
+    )
 
 
 if __name__ == "__main__":
