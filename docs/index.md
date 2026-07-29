@@ -23,12 +23,12 @@
     1. **Model identification:** How can an observer move from traces to useful candidate process models — through construction, world-coupling, intervention, and revision?
     2. **Viability arc:** How can an optimizing system remain viable when growing capability loads several constraints at once?
 
-    The [Foundations Reconstruction](theory/core/mathematical-axioms.md) establishes the common process language and shows where extra assumptions enter. The first research question is folded into [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md). The second is mapped in [Canonical Path v2](meta/repository-meta/canonical-path-v2.md).
+    The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) establishes the common process language and shows where extra assumptions enter. The first research question is folded into [From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md). The second is mapped in [Canonical Path v2](../meta/repository-meta/canonical-path-v2.md).
 
 !!! note "Epistemic status — read this first"
-    This is a **research notebook**, not a theory of everything. The process foundation is established mathematics rather than a novel empirical theory. Identity remains test-relative; learning and intelligence require declared tasks; phenomenal consciousness is not derived. The inverse-reconstruction results are measured in small, controlled systems. The Viable Corridor necessity result is conditional on its model assumptions; **sufficiency is conjectured, not proved**; the civilizational mapping is **heuristic**, not measured; and the AI-specific predictions have not been tested on real agent ecologies. The explicit negative space is maintained at [What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md).
+    This is a **research notebook**, not a theory of everything. The process foundation is established mathematics rather than a novel empirical theory. Identity remains test-relative; learning and intelligence require declared tasks; phenomenal consciousness is not derived. The inverse-reconstruction results are measured in small, controlled systems. The Viable Corridor necessity result is conditional on its model assumptions; **sufficiency is conjectured, not proved**; the civilizational mapping is **heuristic**, not measured; and the AI-specific predictions have not been tested on real agent ecologies. The explicit negative space is maintained at [What This Project Does NOT Claim](../theory/reference/what-this-project-does-not-claim.md).
 
-The measured core is the [inverse-reconstruction benchmark](lab/benchmarks/inverse-reconstruction/README.md): known-family inversion, equivalence classes, intervention, family search, model exploitation, marked uncertainty, closed-loop revision, ensembles, and process composition. The Viability Arc is currently supported by formal results and two synthetic models; external calibration and real-agent tests remain open.
+The measured core is the [inverse-reconstruction benchmark](../lab/benchmarks/inverse-reconstruction/README.md): known-family inversion, equivalence classes, intervention, family search, model exploitation, marked uncertainty, closed-loop revision, ensembles, and process composition. The Viability Arc is currently supported by formal results and two synthetic models; external calibration and real-agent tests remain open.
 
 ---
 
@@ -42,13 +42,13 @@ The measured core is the [inverse-reconstruction benchmark](lab/benchmarks/inver
 
 New to this project? Start here for the most direct path through the core theory and proofs.
 
-1. **[Foundations Reconstruction](theory/core/mathematical-axioms.md)** — Minimal primitives, axioms, derivations, counterexamples, and comparison with neighboring theories.
-2. **[From Trace to World-Binding](theory/core/from-trace-to-world-binding.md)** — The bounded model-identification loop.
-3. **[Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md)** — The measured equivalence classes and intervention results.
-4. **[Emergence Manifesto](theory/core/emergence-manifesto-v1.3.md)** — The earlier emergence claim set, read under the reconstructed foundation.
-5. **[Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md)** — The hinge into the viability arc.
-6. **[The Viable Corridor](papers/viable-corridor.md)** — One conditional formal model.
-7. **[Canonical Path v2](meta/repository-meta/canonical-path-v2.md)** — The full map and migration status.
+1. **[Foundations Reconstruction](../theory/core/mathematical-axioms.md)** — Minimal primitives, axioms, derivations, counterexamples, and comparison with neighboring theories.
+2. **[From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md)** — The bounded model-identification loop.
+3. **[Inverse-Reconstruction Benchmark](../lab/benchmarks/inverse-reconstruction/README.md)** — The measured equivalence classes and intervention results.
+4. **[Emergence Manifesto](../theory/core/emergence-manifesto-v1.3.md)** — The earlier emergence claim set, read under the reconstructed foundation.
+5. **[Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md)** — The hinge into the viability arc.
+6. **[The Viable Corridor](../papers/viable-corridor.md)** — One conditional formal model.
+7. **[Canonical Path v2](../meta/repository-meta/canonical-path-v2.md)** — The full map and migration status.
 
 </div>
 
@@ -58,7 +58,7 @@ New to this project? Start here for the most direct path through the core theory
 
 A compact linear route through the current material. Earlier book chapters remain available as evolving synthesis, while this spine keeps the route aligned with the present repository.
 
-[Follow *From Rule to Mind* →](book/09_from_rule_to_mind.md)
+[Follow *From Rule to Mind* →](../book/09_from_rule_to_mind.md)
 
 </div>
 
@@ -68,7 +68,7 @@ A compact linear route through the current material. Earlier book chapters remai
 
 The reconstructed foundation first; then the formal and exploratory essays it now constrains.
 
-[Explore the foundation →](theory/core/mathematical-axioms.md)
+[Explore the foundation →](../theory/core/mathematical-axioms.md)
 
 </div>
 
@@ -78,7 +78,7 @@ The reconstructed foundation first; then the formal and exploratory essays it no
 
 <p class="si-feature-description">Runnable simulations: Boids, Kuramoto, SOC, Lenia, IFS, L-systems, TEO Civilization, Identity Morphospace, and more.</p>
 
-[Run the code →](simulation-models/alignment-and-veto/utility-engineering/README.md)
+[Run the code →](../simulation-models/alignment-and-veto/utility-engineering/README.md)
 
 </div>
 
@@ -88,7 +88,7 @@ The reconstructed foundation first; then the formal and exploratory essays it no
 
 The inverse-reconstruction benchmark: the spine's asymmetry as curves. Equivalence classes counted and collapsed, the search wall, Occam's world-dependent payoff, the optimizer's curse, its cure — and the closed loop. Every claim runs in seconds.
 
-[Run the benchmark →](lab/benchmarks/inverse-reconstruction/README.md)
+[Run the benchmark →](../lab/benchmarks/inverse-reconstruction/README.md)
 
 </div>
 
@@ -98,7 +98,7 @@ The inverse-reconstruction benchmark: the spine's asymmetry as curves. Equivalen
 
 *The Viable Corridor* — the flagship formal synthesis (constraint architecture + capability loading; a **working draft**). Its empirical companion is *Quantifying Emergent Utility & Stability in Multi-Agent LLM Ecosystems*.
 
-[Read the Viable Corridor →](papers/viable-corridor.md)
+[Read the Viable Corridor →](../papers/viable-corridor.md)
 
 </div>
 
@@ -119,7 +119,7 @@ without promising to become canonical claims.
 
 Narrative stress tests that make abstract theoretical constraints visible in lived, emotional scenarios.
 
-[Read the Fiction →](fiction/README.md)
+[Read the Fiction →](../fiction/README.md)
 
 </div>
 

@@ -10,7 +10,7 @@ We hear a sound, watch a flock, read a model's answer, or encounter an instituti
 
 A sound could come from a string, a room, a body, a machine, or a SuperCollider patch. Several processes may produce something that sounds nearly identical. Recording the waveform perfectly would preserve the trace, but it would not reveal which process made it.
 
-The same problem appears in science, artificial intelligence, organizations, and everyday life. We observe behavior and try to infer the rules, structures, histories, and constraints behind it. Earlier versions of this repository called the whole hidden productive bundle a **generator**. The [Foundations Reconstruction](theory/core/mathematical-axioms.md) found that the word adds no independent mathematics: an update rule, initial state, runtime, environment, boundary, history, and observation map are different objects. This page therefore uses **candidate process model** and names the components when they matter.
+The same problem appears in science, artificial intelligence, organizations, and everyday life. We observe behavior and try to infer the rules, structures, histories, and constraints behind it. Earlier versions of this repository called the whole hidden productive bundle a **generator**. The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) found that the word adds no independent mathematics: an update rule, initial state, runtime, environment, boundary, history, and observation map are different objects. This page therefore uses **candidate process model** and names the components when they matter.
 
 > **In one sentence:** This project studies how finite observers construct and revise candidate process models from partial traces — and what constraint architecture lets an acting system remain viable while doing so.
 
@@ -38,7 +38,7 @@ This is not simply a search for a hidden correct answer. Different process model
 
 This is the repository's shared root: understanding is not the passive storage of appearances. It is the construction of a process that can generate predictions, variations, and counterfactuals — followed by tests that expose where that process fails.
 
-The [Foundations Reconstruction](theory/core/mathematical-axioms.md) gives the formal frame and proves an elementary hidden-extension result: even a complete observed trace law need not select a unique latent process. The older essay [From Trace to Generator](theory/emergence/trace-to-generator.md) develops the intuition through sound, images, computation, biology, and scientific explanation; its title and unqualified terminology are retained as research history. [The Generator Question](theory/core/the-generator-question.md) is likewise a legacy spine, not the current foundation.
+The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) gives the formal frame and proves an elementary hidden-extension result: even a complete observed trace law need not select a unique latent process. The older essay [From Trace to Generator](../theory/emergence/trace-to-generator.md) develops the intuition through sound, images, computation, biology, and scientific explanation; its title and unqualified terminology are retained as research history. [The Generator Question](../theory/core/the-generator-question.md) is likewise a legacy spine, not the current foundation.
 
 ## 2. A candidate model has to meet a world
 
@@ -46,7 +46,7 @@ A plausible process model earns trust by being constructed and run. Its predicti
 
 Passive observation is often not enough. If several models remain compatible with the same trace, an observer has to intervene: prepare a state, perturb the system, ask a discriminating question, or act and observe what resists. The result becomes a new trace and must be allowed to revise the model. Conditioning on an observation and causally replacing a process are distinct operations; an intervention requires declared causal access.
 
-Choosing that intervention is itself a construction problem. The [Witness Principle](theory/core/the-witness-principle.md) asks for a low-cost query on which the remaining candidates disagree and separates candidate distinction geometry from intervention access geometry; the [exact finite benchmark](lab/benchmarks/witness-generation/README.md) derives and enumerates the resulting query frontier for elementary cellular automata. Learned and transferable witness construction remains open.
+Choosing that intervention is itself a construction problem. The [Witness Principle](../theory/core/the-witness-principle.md) asks for a low-cost query on which the remaining candidates disagree and separates candidate distinction geometry from intervention access geometry; the [exact finite benchmark](../lab/benchmarks/witness-generation/README.md) derives and enumerates the resulting query frontier for elementary cellular automata. Learned and transferable witness construction remains open.
 
 The repository folds this into one recurring epistemic loop:
 
@@ -66,7 +66,7 @@ Each move matters:
 
 An AI system can produce a convincing description of a bridge, a policy, or another AI system. That output is still a trace. Fluency alone does not establish the process behind it, the truth of its world-model, or the consequences of acting on it. Construction and contact with a real referee are what turn a proposal into something testable.
 
-The [inverse-reconstruction benchmark](lab/benchmarks/inverse-reconstruction/README.md) measures parts of this loop in small, controlled systems. It shows where known-family recovery is cheap, where missing coverage leaves several process models indistinguishable, where intervention collapses that class, and where closed-loop revision corrects a frozen model. These are existence demonstrations and measurable floors, not evidence that the same curves automatically generalize to people, institutions, or current AI systems.
+The [inverse-reconstruction benchmark](../lab/benchmarks/inverse-reconstruction/README.md) measures parts of this loop in small, controlled systems. It shows where known-family recovery is cheap, where missing coverage leaves several process models indistinguishable, where intervention collapses that class, and where closed-loop revision corrects a frozen model. These are existence demonstrations and measurable floors, not evidence that the same curves automatically generalize to people, institutions, or current AI systems.
 
 When a system must also model its own role in this loop, questions of identity and self-binding appear. Identity is not absolute in the foundation: it is an equivalence under declared tests, interventions, horizons, and tolerances. Functional global availability can be tested as architecture; subjective experience is not derived from behavior, recurrence, integration, or organizational complexity.
 
@@ -86,7 +86,7 @@ Once a system develops the ability to preserve and extend a pattern, optimizatio
 
 The repository therefore treats constraints as architecture rather than decoration. Hard caps, vital floors, action budgets, latency, vetoes, and repair paths shape which trajectories remain reachable. They are not merely brakes applied after intelligence has finished its work. They help determine whether the system can keep learning after error.
 
-[Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md) explains this hinge. [The Viable Corridor](papers/viable-corridor.md) gives one formal model of the idea. Its necessity result is conditional on that model's assumptions; sufficiency remains a conjecture, and its larger social mapping is heuristic. The corridor is not a proved universal law or a formula for morality.
+[Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md) explains this hinge. [The Viable Corridor](../papers/viable-corridor.md) gives one formal model of the idea. Its necessity result is conditional on that model's assumptions; sufficiency remains a conjecture, and its larger social mapping is heuristic. The corridor is not a proved universal law or a formula for morality.
 
 ## 4. Why the two questions belong together
 
@@ -105,13 +105,13 @@ The project connects the spines because an intelligence worth building needs bot
 
 The loop does not have to live inside one person or machine. Different participants can carry different phases. One notices a trace. Another proposes a model. Another knows a constraint the first two missed. Someone constructs the proposal. Materials, users, measurements, or affected communities answer. The shared result preserves those answers long enough to change the next move.
 
-This is the narrower idea behind [Cooperative Intelligence at the Separatrix](theory/symbiotic/cooperative-intelligence-at-the-separatrix.md). Cooperation becomes cognitively load-bearing when participants can materially revise one another's plans, the construction faces a real test, and authority, veto, and responsibility remain visible. It is not a claim about a group mind, and it does not require treating humans, AI systems, organizations, and cultures as the same kind of entity.
+This is the narrower idea behind [Cooperative Intelligence at the Separatrix](../theory/symbiotic/cooperative-intelligence-at-the-separatrix.md). Cooperation becomes cognitively load-bearing when participants can materially revise one another's plans, the construction faces a real test, and authority, veto, and responsibility remain visible. It is not a claim about a group mind, and it does not require treating humans, AI systems, organizations, and cultures as the same kind of entity.
 
 A repository, protocol, workshop, or house can serve as a shared object through which partial views meet. The object stores revisions outside any one participant's memory. Its resistance reveals disagreements that a fluent summary might hide. What emerges can exceed each contributor's practical repertoire without making authorship or responsibility anonymous.
 
 Cooperative intelligence is a conceptual bridge, not a third spine. Its current claim is a testable design hypothesis: structured difference may add reachable solutions faster than coordination consumes them. If the same results appear without cross-participant revision, real refusal, and independent verification, the stronger claim fails.
 
-One episode of successful cooperation is not yet a durable capacity. [From Action to Culture](theory/emergence/from-action-to-culture.md) adds the missing persistence question: how a represented rule becomes situated action, how recurrent enactment becomes a transmissible practice, and how that practice changes the conditions of the next action. Its working hypothesis is that recurrent practices can stabilize behavior and culture can be studied as a recursive network of such processes. The larger active bundle still includes traces, participants, competence, materials, norms, transmission, feedback, power, and history; neither ritual nor knowledge executes itself. The proposal is an unmeasured bridge, not a general theory of culture.
+One episode of successful cooperation is not yet a durable capacity. [From Action to Culture](../theory/emergence/from-action-to-culture.md) adds the missing persistence question: how a represented rule becomes situated action, how recurrent enactment becomes a transmissible practice, and how that practice changes the conditions of the next action. Its working hypothesis is that recurrent practices can stabilize behavior and culture can be studied as a recursive network of such processes. The larger active bundle still includes traces, participants, competence, materials, norms, transmission, feedback, power, and history; neither ritual nor knowledge executes itself. The proposal is an unmeasured bridge, not a general theory of culture.
 
 ## 6. What is established — and what remains open
 
@@ -123,35 +123,35 @@ The repository deliberately mixes simulations, formal arguments, working hypothe
 - **Heuristic or speculative:** civilizational mappings and questions of subjective experience.
 - **Still missing:** external expert review, real-agent ecology tests, calibration outside synthetic systems, and evidence that the proposed cooperative mechanism survives its coordination costs.
 
-[What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md) is the controlling boundary. If another page sounds stronger than that boundary allows, the boundary wins.
+[What This Project Does NOT Claim](../theory/reference/what-this-project-does-not-claim.md) is the controlling boundary. If another page sounds stronger than that boundary allows, the boundary wins.
 
 ## Continue into the repository
 
 ### Read the central movement
 
-1. [Foundations Reconstruction](theory/core/mathematical-axioms.md) — the minimal process basis and adversarial audit.
-2. [From Trace to Generator](theory/emergence/trace-to-generator.md) — the earlier conceptual essay, now read as legacy terminology.
-3. [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md) — the epistemic loop and its measured homes.
-4. [Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md) — the hinge from capability to constraint architecture.
-5. [Cooperative Intelligence at the Separatrix](theory/symbiotic/cooperative-intelligence-at-the-separatrix.md) — how the loop can be distributed without dissolving difference or responsibility.
-6. [From Action to Culture](theory/emergence/from-action-to-culture.md) — how revised action can become recurrent, transmissible practice without reducing culture to repetition.
+1. [Foundations Reconstruction](../theory/core/mathematical-axioms.md) — the minimal process basis and adversarial audit.
+2. [From Trace to Generator](../theory/emergence/trace-to-generator.md) — the earlier conceptual essay, now read as legacy terminology.
+3. [From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md) — the epistemic loop and its measured homes.
+4. [Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md) — the hinge from capability to constraint architecture.
+5. [Cooperative Intelligence at the Separatrix](../theory/symbiotic/cooperative-intelligence-at-the-separatrix.md) — how the loop can be distributed without dissolving difference or responsibility.
+6. [From Action to Culture](../theory/emergence/from-action-to-culture.md) — how revised action can become recurrent, transmissible practice without reducing culture to repetition.
 
 ### Inspect the claims and evidence
 
-1. [Foundations Reconstruction](theory/core/mathematical-axioms.md) — primitives, axioms, dependencies, counterexamples, and neighboring theories.
-2. [Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md) — the measured core, including failed predictions and scope limits.
-3. [The Generator Question](theory/core/the-generator-question.md) — the superseded spine, retained to make the revision auditable.
-4. [Canonical Path v2](meta/repository-meta/canonical-path-v2.md) — the Viability Arc and current migration map.
-5. [The Viable Corridor](papers/viable-corridor.md) — necessity result, sufficiency conjecture, synthetic evidence, and limitations.
-6. [Core Claims](meta/repository-meta/core-claims.md) — the maintained small claim set.
+1. [Foundations Reconstruction](../theory/core/mathematical-axioms.md) — primitives, axioms, dependencies, counterexamples, and neighboring theories.
+2. [Inverse-Reconstruction Benchmark](../lab/benchmarks/inverse-reconstruction/README.md) — the measured core, including failed predictions and scope limits.
+3. [The Generator Question](../theory/core/the-generator-question.md) — the superseded spine, retained to make the revision auditable.
+4. [Canonical Path v2](../meta/repository-meta/canonical-path-v2.md) — the Viability Arc and current migration map.
+5. [The Viable Corridor](../papers/viable-corridor.md) — necessity result, sufficiency conjecture, synthetic evidence, and limitations.
+6. [Core Claims](../meta/repository-meta/core-claims.md) — the maintained small claim set.
 
 ### Follow a broader path
 
-- [From Rule to Mind](book/09_from_rule_to_mind.md) — the compact course spine through emergence, boundary, and return paths.
-- [Conceptual Map](theory/core/conceptual-map.md) — current layers, measured results, and frontier.
-- [Simulation to Theory Map](theory/core/simulation-theory-map.md) — where claims touch executable artifacts.
-- [Open Problems](theory/reference/open-problems.md) — the maintained unresolved questions.
-- [Concept Registry](meta/repository-meta/concept-registry.md) — home, status, and operationalization for load-bearing terms.
+- [From Rule to Mind](../book/09_from_rule_to_mind.md) — the compact course spine through emergence, boundary, and return paths.
+- [Conceptual Map](../theory/core/conceptual-map.md) — current layers, measured results, and frontier.
+- [Simulation to Theory Map](../theory/core/simulation-theory-map.md) — where claims touch executable artifacts.
+- [Open Problems](../theory/reference/open-problems.md) — the maintained unresolved questions.
+- [Concept Registry](../meta/repository-meta/concept-registry.md) — home, status, and operationalization for load-bearing terms.
 
 ## Rule of this synthesis
 

@@ -2,8 +2,9 @@
 """
 Validate internal markdown links across the repository.
 Finds broken references: links to files that don't exist, image embeds
-whose file is missing, and #anchors that match no heading in the target
-markdown file.
+whose file is missing, repository links that traverse symlinks GitHub
+cannot follow, and #anchors that match no heading in the target markdown
+file.
 
 Usage:
     python3 tools/validate_links.py
@@ -78,7 +79,20 @@ def validate_links(filepath):
                         'line': lineno,
                         'link_text': link_text,
                         'target': link_path,
-                        'resolved': os.path.relpath(target, REPO),
+                        'resolved': (
+                            f'{os.path.relpath(target, REPO)} (NOT FOUND)'
+                        ),
+                    })
+                elif os.path.abspath(target) != os.path.realpath(target):
+                    broken.append({
+                        'source': rel_source,
+                        'line': lineno,
+                        'link_text': link_text,
+                        'target': link_path,
+                        'resolved': (
+                            f'{os.path.relpath(target, REPO)} '
+                            '(TRAVERSES SYMLINK; GITHUB CANNOT RESOLVE IT)'
+                        ),
                     })
                 elif anchor and target.endswith('.md') and \
                         slugify(anchor) not in anchors_of(target):
@@ -108,7 +122,7 @@ def main():
         for b in all_broken:
             print(f"  {b['source']}:{b['line']}")
             print(f"    [{b['link_text']}]({b['target']})")
-            print(f"    → resolves to: {b['resolved']} (NOT FOUND)")
+            print(f"    → resolves to: {b['resolved']}")
             print()
         sys.exit(1)
     else:
