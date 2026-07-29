@@ -7,6 +7,8 @@ repo_name: frnkptrln/systems-and-intelligence
 edit_uri: blob/main/
 
 docs_dir: 'docs'
+hooks:
+  - lab/tools/mkdocs_repo_links.py
 exclude_docs: |
   lab/tools/web-explorer/README.md
 

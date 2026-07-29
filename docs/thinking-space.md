@@ -59,8 +59,8 @@ These selected seeds are deliberately not additional claims or numbered open pro
 
 ### J-space and JEPA: availability is not prediction
 
-- **Encounter:** The [J-space result](theory/ai/j-space-and-global-availability.md) reports a bounded,
-  broadcast-coupled internal representation space; [JEPA and related world models](theory/ai/world-models-and-vla.md)
+- **Encounter:** The [J-space result](../theory/ai/j-space-and-global-availability.md) reports a bounded,
+  broadcast-coupled internal representation space; [JEPA and related world models](../theory/ai/world-models-and-vla.md)
   organize predictive representations without making the same workspace claim.
 - **Disturbance:** Reading J-space only through the existing global-availability vocabulary may
   assimilate the result too quickly. Predictive adequacy and broad internal availability may be
@@ -72,7 +72,7 @@ These selected seeds are deliberately not additional claims or numbered open pro
 
 ### After the generator: what brings structure forth?
 
-- **Encounter:** The [Foundations Reconstruction](theory/core/mathematical-axioms.md) found no
+- **Encounter:** The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) found no
   independent mathematical role for one unqualified “generator”; update rules, state, environment,
   runtime, history, and observation belong to a typed process description.
 - **Disturbance:** Decomposing the old word corrects the mathematics without exhausting the older
@@ -86,7 +86,7 @@ These selected seeds are deliberately not additional claims or numbered open pro
 
 ### Who pays for viability?
 
-- **Encounter:** Benchmark v1.13 and [Log 019](logs/019_who_pays_for_the_veto.md) show that relocating
+- **Encounter:** Benchmark v1.13 and [Log 019](../logs/019_who_pays_for_the_veto.md) show that relocating
   the cost of support from an individual donor to its local group nearly removes selection against
   support and suppresses seeded cheaters, while reducing population size.
 - **Disturbance:** The topology of payment may matter as much as the nominal constraint. A mechanism
@@ -114,7 +114,7 @@ into a canonical claim.
 architectures, social computation, model identification, and alignment or veto mechanisms. They do
 not all instantiate one framework.
 
-[Explore the simulations →](simulation-models/emergent-dynamics/boids-flocking/README.md)
+[Explore the simulations →](../simulation-models/emergent-dynamics/boids-flocking/README.md)
 
 </div>
 
@@ -125,7 +125,7 @@ not all instantiate one framework.
 The Agentic Identity Suite develops toy observables and perturbation protocols for persistence,
 availability, and commit-time composition. Real-model and longitudinal tests remain open.
 
-[View the Agentic Identity Suite →](lab/AGENTIC_README.md)
+[View the Agentic Identity Suite →](../lab/AGENTIC_README.md)
 
 </div>
 
@@ -136,7 +136,7 @@ availability, and commit-time composition. Real-model and longitudinal tests rem
 Applied design notes can hold options, unresolved trade-offs, and deployment questions without
 presenting them as demonstrated architecture.
 
-[Read the logs →](logs/README.md)
+[Read the logs →](../logs/README.md)
 
 </div>
 
@@ -147,7 +147,7 @@ presenting them as demonstrated architecture.
 Narrative stress tests expose lived consequences, missing perspectives, and tensions that a clean
 formalization can hide. They are instruments of attention, not evidence.
 
-[Read the fiction →](fiction/README.md)
+[Read the fiction →](../fiction/README.md)
 
 </div>
 
