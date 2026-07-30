@@ -38,6 +38,7 @@ The [Epistemic Loop](from-trace-to-world-binding.md) and [Canonical Path v2](../
 | **Inverse reconstruction** | traces constrain a class of candidate process models | [Foundations Reconstruction](mathematical-axioms.md), [Generator Question](the-generator-question.md) (legacy) | benchmark v0–v1.8 |
 | **Construction and coupling** | candidates are built, run, or turned into distinguishing queries and refereed by a world | [Construction vs. Deduction](../computation/construction-vs-deduction.md), [Witness Principle](the-witness-principle.md), [World Models & VLA](../ai/world-models-and-vla.md) | family-search curves; coverage–distinction lemma and exact witness frontier; runtime/provenance constraints |
 | **Intervention and revision** | distinguishing queries collapse the class; execution updates the model | [Measurement as Weak Intervention](measurement-as-weak-intervention.md) | watching < perturbing < preparing; closed-loop revision |
+| **Situated agent boundary** | capability is evaluated over a declared controller–body–interface–environment–memory coupling | [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md), [Embodiment and Goal Decomposition](../optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md) | [situated-stack benchmark](../../lab/benchmarks/situated-stack/README.md); no universal boundary or invariant-factorization theorem |
 | **Identity boundary** | persistence is tested under perturbation and commitment | [Invariance & Identity](invariance-and-identity.md), [Chord vs. Arpeggio](../identity/chord-vs-arpeggio-identity.md) | Exp5–7; real models and optimized mimics open |
 | **Constraint architecture** | capability loads concentration, coherence, and substrate constraints | [TEO](../teo-framework/README.md), [Viable Corridor](../../papers/viable-corridor.md) | demonstrated in two synthetic models; real systems open |
 | **Consciousness boundary** | functional self-binding is a research question at the loop's reflexive edge | [Global Availability](../identity/consciousness-as-global-availability.md), [Coherence Work](../identity/machine-consciousness-as-generator-coherence.md) | organizational hypotheses only; no inference to experience or present-system consciousness |
@@ -58,6 +59,7 @@ The [Epistemic Loop](from-trace-to-world-binding.md) and [Canonical Path v2](../
 - **Unmarked uncertainty is exploitable.** The optimizer's-curse wedge grows with class size and disappears when the planner represents the class honestly.
 - **Optimization is not curiosity.** In the closed loop, argmax planning does not collapse uncertainty faster than random exploration.
 - **Binding has a functional signature in the current toys.** Exp5–7 separate joint satisfaction at the commitment boundary from rotating or blended constraint use; IP and Δ-Kohärenz each have measured blind spots.
+- **Controller identity does not fix selected capability in the situated-stack toy.** One policy scores from 0 to 1 as sensors, actuators, body, environment, and goal interface vary; a coordinated mirror preserves physical behavior, and equal aggregate scores can hide different traces.
 - **Capability loading and single-axis insufficiency occur in-model.** They have been reproduced in the TEO ODE and a structurally different agent-ecology ABM, not yet in real agent ecologies.
 - **Coupling can expose family misspecification.** In v1.8, data from a coupled process can
   leave the declared single-rule family empty; supplying the coupled family restores a fit.
@@ -74,7 +76,8 @@ These results are receipts, not universal laws. Their scope is maintained in [Wh
 3. **From useful support to evolutionarily stable support** — can partner choice, conditional reciprocity, or spatial/kin assortment preserve contribution against low-contributing recipients under matched costs?
 4. **Real-model identity probes** — do the Exp5–7 distinctions survive outside handcrafted toy agents?
 5. **Real-agent constraint architectures** — do P7/P8 survive when budgets and capability are varied in actual agent ecologies?
-6. **External review and calibration** — does the Viable Corridor survive scrutiny beyond its own equations and synthetic models?
+6. **Self-model causality and trace governance** — do hidden-state perturbations distinguish self-report from metacognitive control, and do provenance/decay/reset policies improve recovery after memory regime shifts?
+7. **External review and calibration** — does the Viable Corridor survive scrutiny beyond its own equations and synthetic models?
 
 The maintained problem statements live in [Open Problems](../reference/open-problems.md). New concepts do not enter this map until they have a home, status, and instrument or explicit open problem in the [Concept Registry](../../meta/repository-meta/concept-registry.md).
 
@@ -88,7 +91,8 @@ The maintained problem statements live in [Open Problems](../reference/open-prob
 4. [Inverse-Reconstruction Benchmark](../../lab/benchmarks/inverse-reconstruction/README.md)
 5. [Witness-Generation Benchmark](../../lab/benchmarks/witness-generation/README.md)
 6. [Optimization and Its Blindness](../optimization/optimization-and-its-blindness.md)
-7. [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md)
-8. [The Viable Corridor](../../papers/viable-corridor.md)
+7. [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md)
+8. [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md)
+9. [The Viable Corridor](../../papers/viable-corridor.md)
 
 The repository is a research notebook: theory proposes, code constrains, fiction stress-tests consequences, and meta-governance keeps the claim surface below the evidence.

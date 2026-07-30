@@ -32,6 +32,7 @@ This is a research notebook, not a theory of everything. It contains established
 | change rules and watch a system evolve | **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** |
 | inspect the mathematical foundation | **[Read the Foundations Reconstruction](theory/core/mathematical-axioms.md)** |
 | see the measured model-identification results | **[Run the Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md)** |
+| examine whether capability belongs to a controller or a complete situated stack | **[Read The Agent Is Not Where the Model Ends](theory/identity/the-agent-is-not-where-the-model-ends.md)** |
 | read the current formal synthesis | **[Open The Viable Corridor](papers/viable-corridor.md)** |
 | browse unfinished questions before they become claims | **[Enter Ideas](ideas/README.md)** |
 
@@ -86,6 +87,7 @@ More executable work:
 - [Reaction–Diffusion](simulation-models/emergent-dynamics/reaction-diffusion/README.md) — pattern formation from local chemistry
 - [Nested Emergence](simulation-models/social-computation/nested-emergence-demo/README.md) — coupled dynamics across scales
 - [Referee Benchmark](lab/benchmarks/recursive-workbench/README.md) — when does a self-revising loop actually improve, exactly measured
+- [Situated-Stack Benchmark](lab/benchmarks/situated-stack/README.md) — one controller under changed sensors, actuators, bodies, environments, goals, and observer lenses
 - [Agentic Identity Suite](lab/AGENTIC_README.md) — experimental tests for persistence, binding, and availability
 
 ## What lives where

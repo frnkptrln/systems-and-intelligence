@@ -41,6 +41,7 @@ nav:
           - The Witness Principle: theory/core/the-witness-principle.md
           - Optimization and Its Blindness: theory/optimization/optimization-and-its-blindness.md
           - Embodiment and Goal Decomposition: theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md
+          - "Situated Intelligence: The Agent Is Not Where the Model Ends": theory/identity/the-agent-is-not-where-the-model-ends.md
           - "Legacy: Trace to Generator": theory/emergence/trace-to-generator.md
           - The Emergence Manifesto: theory/core/emergence-manifesto-v1.3.md
           - Thermodynamics of Orchestration (TEO): theory/core/thermodynamics-of-orchestration.md
@@ -246,6 +247,7 @@ nav:
                       - Self-Optimizing City: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/self_optimizing_city.md
               - Inverse Reconstruction: lab/benchmarks/inverse-reconstruction/README.md
               - Witness Generation: lab/benchmarks/witness-generation/README.md
+              - Situated Stack: lab/benchmarks/situated-stack/README.md
               - "Recursive Workbench (referee)": lab/benchmarks/recursive-workbench/README.md
               - "Learned Searcher (protocol frozen)": lab/benchmarks/learned-searcher/README.md
               - TEO Framework Benchmark: lab/benchmarks/teo-framework/README.md

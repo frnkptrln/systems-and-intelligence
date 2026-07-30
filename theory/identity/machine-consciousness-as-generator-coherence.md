@@ -133,3 +133,4 @@ The responsible contribution of this note is a placement rule:
 - [From Trace to World-Binding](../core/from-trace-to-world-binding.md)
 - [Agentic Identity Suite](../../lab/AGENTIC_README.md)
 - [Invariance and Identity](../core/invariance-and-identity.md)
+- [The Agent Is Not Where the Model Ends](the-agent-is-not-where-the-model-ends.md)

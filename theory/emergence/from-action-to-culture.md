@@ -152,6 +152,24 @@ practice feedback:     how a revised way of acting is reproduced and changed
 viability arc:         which reproduced constraints keep the system correctable
 ```
 
+### Capacity preservation as a return-path constraint
+
+An alignment system can satisfy represented preferences while weakening the practices through which
+people notice concerns, articulate values, make commitments, and coordinate action. Rousse's
+AGI-26 analysis treats **receptivity, articulation, commitment, and coordination** as cultivable
+capacities of care rather than items in a preference list.
+
+The repository consequence is a generator claim: preserving a value trace is not equivalent to
+preserving the capacities that generate, contest, enact, and revise future values. Assistance can
+support those capacities, or it can substitute for them until the output remains while the human
+practice atrophies.
+
+This motivates **capacity-preserving alignment** as a hypothesis, not a settled objective: assess
+whether a system leaves people able to notice, formulate, choose, commit, refuse, and coordinate
+without the system taking ownership of the process. The open normative questions remain which
+capacities, whose authority, and when assistance or delegation is justified. The broader distinction
+is developed in [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md#11-care-value-formation-and-human-agency).
+
 ## 7. Established knowledge, synthesis, and open contribution
 
 The evidential boundary should remain explicit.
@@ -207,6 +225,7 @@ The most important counterexample is simple: repeated action can be empty, coerc
 - [Invariance and Identity](../core/invariance-and-identity.md) — identity as what survives a specified transformation
 - [The Runtime Is Part of the Generator](../../logs/016_the-runtime-is-part-of-the-generator.md) — why an artifact does not contain its own execution
 - [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md) — cultural skills as load-bearing coordination practices
+- [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md) — situated agency, external memory, and capacity-preserving alignment
 - [Open Problem 12: The Practice-Reproduction Problem](../reference/open-problems.md#open-problem-12-the-practice-reproduction-problem) — the empirical boundary
 
 ## External anchors
@@ -220,3 +239,4 @@ The most important counterexample is simple: repeated action can be empty, coerc
 - Giddens, A. (1984). [*The Constitution of Society: Outline of the Theory of Structuration*](https://www.ucpress.edu/book/9780520057289/the-constitution-of-society). University of California Press.
 - Swidler, A. (1986). [Culture in action: Symbols and strategies](https://doi.org/10.2307/2095521). *American Sociological Review*, 51(2), 273–286.
 - Bell, C. (1992/2009). [*Ritual Theory, Ritual Practice*](https://global.oup.com/academic/product/ritual-theory-ritual-practice-9780199733620). Oxford University Press.
+- Rousse, B. S. (2026). [Care, human enfeeblement, and the existential implications of AGI](https://doi.org/10.1007/978-3-032-33195-3_16). In *Artificial General Intelligence (AGI 2026)*, LNCS 16855, 211–218.

@@ -70,6 +70,16 @@ The [inverse-reconstruction benchmark](../lab/benchmarks/inverse-reconstruction/
 
 When a system must also model its own role in this loop, questions of identity and self-binding appear. Identity is not absolute in the foundation: it is an equivalence under declared tests, interventions, horizons, and tolerances. Functional global availability can be tested as architecture; subjective experience is not derived from behavior, recurrence, integration, or organizational complexity.
 
+[The Agent Is Not Where the Model Ends](../theory/identity/the-agent-is-not-where-the-model-ends.md)
+develops the corresponding boundary question without adding a third spine. A measured capability
+may belong to a complete controller–body–interface–environment–memory coupling rather than to the
+controller alone. Its candidate notation $J_{\ell,\tau}(\Sigma)$ keeps the observer lens and task
+family visible; its exact
+[situated-stack benchmark](../lab/benchmarks/situated-stack/README.md) shows both sides of the
+claim in one finite toy: uncoordinated interface changes destroy selected capability, while a
+coordinated sensor–actuator transformation preserves every physical trace. This is evidence for
+declaring the equivalence relation, not a proof that embodiment defeats every capability invariant.
+
 ## 3. Better models create capability, not purpose
 
 A system that predicts and intervenes well becomes more capable. But capability does not decide what should be optimized, who bears the cost, or which conditions must remain intact.
@@ -111,7 +121,18 @@ A repository, protocol, workshop, or house can serve as a shared object through 
 
 Cooperative intelligence is a conceptual bridge, not a third spine. Its current claim is a testable design hypothesis: structured difference may add reachable solutions faster than coordination consumes them. If the same results appear without cross-participant revision, real refusal, and independent verification, the stronger claim fails.
 
+Persistent shared artifacts also alter later control. Provenance, aging, correction, invalidation,
+and reset are therefore alignment properties of the memory substrate, not clerical afterthoughts.
+That extension does not make the repository or organization a conscious group mind; it makes the
+external trace ecology part of the process model whenever changing it changes future action.
+
 One episode of successful cooperation is not yet a durable capacity. [From Action to Culture](../theory/emergence/from-action-to-culture.md) adds the missing persistence question: how a represented rule becomes situated action, how recurrent enactment becomes a transmissible practice, and how that practice changes the conditions of the next action. Its working hypothesis is that recurrent practices can stabilize behavior and culture can be studied as a recursive network of such processes. The larger active bundle still includes traces, participants, competence, materials, norms, transmission, feedback, power, and history; neither ritual nor knowledge executes itself. The proposal is an unmeasured bridge, not a general theory of culture.
+
+That cultural return path also complicates alignment. A system can satisfy represented preferences
+while weakening the human capacities through which later concerns and commitments are formed.
+“Capacity-preserving alignment” is the resulting hypothesis: evaluate whether assistance preserves
+receptivity, articulation, commitment, coordination, refusal, and revision. Which capacities and
+whose authority remain normative questions; the process formalism does not answer them.
 
 ## 6. What is established — and what remains open
 
@@ -134,7 +155,8 @@ The repository deliberately mixes simulations, formal arguments, working hypothe
 3. [From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md) — the epistemic loop and its measured homes.
 4. [Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md) — the hinge from capability to constraint architecture.
 5. [Cooperative Intelligence at the Separatrix](../theory/symbiotic/cooperative-intelligence-at-the-separatrix.md) — how the loop can be distributed without dissolving difference or responsibility.
-6. [From Action to Culture](../theory/emergence/from-action-to-culture.md) — how revised action can become recurrent, transmissible practice without reducing culture to repetition.
+6. [The Agent Is Not Where the Model Ends](../theory/identity/the-agent-is-not-where-the-model-ends.md) — how embodiment, action, self-models, and external traces change the unit being evaluated.
+7. [From Action to Culture](../theory/emergence/from-action-to-culture.md) — how revised action can become recurrent, transmissible practice without reducing culture to repetition.
 
 ### Inspect the claims and evidence
 

@@ -62,10 +62,33 @@ asymmetry.
 | `trauma-and-deception-network/` | Forward | — |
 | `lab/experiments/trace_to_generator/` | **Inverse** | finite control search |
 | `lab/benchmarks/inverse-reconstruction/` | **Inverse** | identifiability and finite family search |
+| `lab/benchmarks/situated-stack/` | Forward comparison | stack- and lens-relative capability |
 
 The counts are descriptive and version-dependent. The research direction is to make more
 inverse tasks explicit and compare methods under matched model languages and compute
 budgets.
+
+---
+
+## `situated-stack/` → Capability Depends on the Declared Coupling and Lens
+
+**Benchmark:** [`lab/benchmarks/situated-stack/`](../../lab/benchmarks/situated-stack/README.md)
+
+**Demonstrates:** One deterministic controller evaluated across changed sensors, actuators, body
+constraints, environment, and goal interface.
+
+**Supports claim in:** [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md);
+[Embodiment and Goal Decomposition](../optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md).
+
+**What it shows:** The controller spans success rates from 0 to 1 in the declared task family. A
+coordinated sensor–actuator mirror preserves complete physical traces but not controller-token
+traces. Equal aggregate scores and task-success profiles can also hide different physical failure
+dynamics.
+
+**What it does NOT show:** That no body-independent capability invariant exists, that embodiment
+refutes every orthogonality thesis, or that the toy controller is generally intelligent. It
+demonstrates why a comparison must state the complete stack, task transport, observer lens, and
+equivalence relation.
 
 ---
 

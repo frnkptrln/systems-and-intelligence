@@ -20,6 +20,35 @@ only that bodies impose practical limits. It asks whether embodiment changes the
 operational distinctions through which capabilities and goals can be realised
 and measured.
 
+## Situated evaluation
+
+Use the candidate stack vocabulary from
+[The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md):
+
+$$
+\Sigma=(P,B,E,C,O,A,M,V).
+$$
+
+For an observer lens $\ell$ and task family $\tau$, let
+
+$$
+J_{\ell,\tau}(\Sigma)
+$$
+
+denote a selected capability measure. An orthogonality or transport claim is
+then incomplete until it specifies:
+
+- the admissible transformations of $\Sigma$;
+- which variables must remain fixed;
+- how tasks are transported across stacks;
+- the observer lens and equality criterion; and
+- the equivalence relation licensing “the same intelligence” or “the same
+  goal.”
+
+The notation does not make intelligence a scalar in general. It prevents a
+score obtained from one complete coupling from being silently attributed to
+$P$ alone.
+
 ## Effective goal space
 
 Let an embodiment–environment coupling $e$ map a controller class $\mathcal C$
@@ -69,6 +98,23 @@ declared transport between their trajectory spaces and an equality criterion the
 transport preserves. Goal identity can be lens-relative in this operational
 sense without making semantic or normative identity merely observer-created.
 
+## Embodiment as curriculum
+
+Embodiment may also shape the abstractions available before an objective is
+chosen. Klimaj and Safron propose that embodied self-models bootstrap through
+sensorimotor contingencies and hierarchical generative models. The repository's
+narrower extraction is that a body can provide a repeatable learning geometry:
+persistent availability, action-dependent observation, cross-modal temporal
+correlation, self-contact, internal causal structure, and salient viability
+signals.
+
+Under that hypothesis, a body does not merely remove policies from a
+pre-existing possibility space. It helps determine which causal distinctions,
+self–world relations, and later abstractions can be learned reliably. This
+strengthens the non-invariance challenge without establishing biological
+exclusivity: persistent virtual interfaces, tools, and social environments may
+provide functionally equivalent curricula.
+
 ## Alignment conjecture
 
 Selecting an objective remains necessary, but may be insufficient. Alignment may
@@ -96,6 +142,8 @@ embodiments and environments in scope.
   learned, or imposed by the evaluator?
 - How can an experiment distinguish embodiment restricting a fixed goal space
   from embodiment changing its effective distinctions?
+- Which concepts require a repeatable action–perception geometry, and what
+  would count as transporting that geometry to another body or interface?
 - What invariants should alignment preserve, and under which admissible
   transformations?
 
@@ -111,7 +159,9 @@ detail rather than a generator of the effective goal space.
 - [Paper-specific research note](https://github.com/frnkptrln/systems-and-intelligence/blob/main/ideas/2026-07-29-embodiment-and-the-non-invariant-decomposition-of-goals.md)
 - [Foundations Reconstruction](../core/mathematical-axioms.md)
 - [Invariance and Identity](../core/invariance-and-identity.md)
+- [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md)
 - [World Models and VLA](../ai/world-models-and-vla.md)
+- [Situated-Stack Benchmark](../../lab/benchmarks/situated-stack/README.md)
 - [Optimization and Its Blindness](optimization-and-its-blindness.md)
 - [Intelligence as Convergence](https://github.com/frnkptrln/systems-and-intelligence/blob/main/ideas/2026-07-23-intelligence-as-convergence.md)
 - [The Same World Is Not the Same World](https://github.com/frnkptrln/systems-and-intelligence/blob/main/ideas/2026-07-23-the-same-world-is-not-the-same-world.md)
