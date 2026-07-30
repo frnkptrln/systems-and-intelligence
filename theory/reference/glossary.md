@@ -279,10 +279,13 @@ of a declared observation process. What counts as a trace depends on the selecte
 coarse-graining.
 
 ## Generator
-**Status: retired as an unqualified foundational term.** Earlier files used this word for a process,
-rule, program, model, mechanism, or rule–runtime–environment–history bundle. Those are not one
-mathematical type. Use *transition kernel*, *process family*, *candidate process model*, *model
-class*, or an explicitly decomposed *process-model bundle*. Qualified established terms such as
+**Status: active when typed; retired only as an unqualified foundational term.** A typed generator
+is a declared map or process that produces, proposes, or indexes elements of a stated possibility
+space. Its interfaces, execution conditions, and output relation must be named. Earlier files also
+used “generator” for a complete process, model, mechanism, or
+rule–runtime–environment–history bundle; those are not one mathematical type. Use *transition
+kernel*, *process family*, *candidate process model*, *model class*, or an explicitly decomposed
+*process-model bundle* where those are intended. Qualified established terms such as
 *infinitesimal generator*, *generating set*, and *generative model* remain valid.
 
 ## Process Model

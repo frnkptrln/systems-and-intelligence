@@ -1,7 +1,7 @@
-# From Trace to Generator — Legacy Essay
+# From Trace to Generator — Typed Reconstruction
 *On generative compression, reconstruction, and the limits of understanding*
 
-**Status:** Legacy framing under reconstruction
+**Status:** Active bounded reconstruction programme; original universal framing preserved for audit
 
 **Scope:** Conceptual synthesis introducing the inverse counterpart to the emergence axis: trace → generator.
 
@@ -28,10 +28,11 @@
 - It treats verification analogies as proofs.
 
 > **Foundational status (2026-07-20).** The [Foundations Reconstruction](../core/mathematical-axioms.md)
-> found no independent mathematical role for an unqualified generator. Read “generator” below as a
-> candidate typed process model whose state, transition kernel, observation channel, evidence regime,
-> and target equivalence must be declared. The essay's questions about reconstruction and
-> observational equivalence remain useful; its universal definitions of intelligence and generic
+> found no independent mathematical role for an unqualified generator. This types and bounds the
+> programme rather than ending it. Read “generator” below as a declared constructive map or
+> candidate typed process model whose state, transition kernel, observation channel, evidence
+> regime, and target equivalence must be declared. The questions about reconstruction and
+> observational equivalence remain active; the universal definitions of intelligence and generic
 > forward/inverse asymmetry are historical hypotheses, not current foundations.
 >
 > The Day 2 integration adds a complementary audit: even a fixed typed process

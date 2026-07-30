@@ -70,18 +70,19 @@ These selected seeds are deliberately not additional claims or numbered open pro
 - **Do not conclude yet:** that J-space and JEPA name the same object, that either is necessary for
   intelligence, or that workspace-like function establishes experience.
 
-### After the generator: what brings structure forth?
+### After the generator audit: what brings structure forth?
 
 - **Encounter:** The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) found no
   independent mathematical role for one unqualified “generator”; update rules, state, environment,
   runtime, history, and observation belong to a typed process description.
-- **Disturbance:** Decomposing the old word corrects the mathematics without exhausting the older
-  question. It remains meaningful to ask why some processes form, persist, recur, or become
-  explanatory while others do not.
+- **Disturbance:** Decomposing the old word corrects the mathematics without abolishing the
+  Generator Question. It remains meaningful to ask which typed processes bring structures forth,
+  why some forms persist or recur, and which evidence makes one process explanatory rather than
+  merely compatible with a trace.
 - **Question:** After the bundle is decomposed, what explanatory remainder—selection, constraint,
   symmetry breaking, boundary formation, observer-relative compression, or something else—accounts
   for stable form?
-- **Do not conclude yet:** that this remainder requires a new primitive or restores the legacy
+- **Do not conclude yet:** that this remainder requires a new primitive or restores an unqualified
   generator as a universal object.
 
 ### Who pays for viability?

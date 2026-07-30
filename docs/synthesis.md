@@ -10,7 +10,7 @@ We hear a sound, watch a flock, read a model's answer, or encounter an instituti
 
 A sound could come from a string, a room, a body, a machine, or a SuperCollider patch. Several processes may produce something that sounds nearly identical. Recording the waveform perfectly would preserve the trace, but it would not reveal which process made it.
 
-The same problem appears in science, artificial intelligence, organizations, and everyday life. We observe behavior and try to infer the rules, structures, histories, and constraints behind it. Earlier versions of this repository called the whole hidden productive bundle a **generator**. The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) found that the word adds no independent mathematics: an update rule, initial state, runtime, environment, boundary, history, and observation map are different objects. This page therefore uses **candidate process model** and names the components when they matter.
+The same problem appears in science, artificial intelligence, organizations, and everyday life. We observe behavior and try to infer the rules, structures, histories, and constraints behind it. Earlier versions of this repository called the whole hidden productive bundle a **generator**. The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) found that the unqualified word adds no independent mathematics: an update rule, initial state, runtime, environment, boundary, history, and observation map are different objects. This is a demand for typing, not a dismissal of the Generator Question. This page therefore uses **candidate process model** for the complete explanatory candidate and **typed generator** only for a declared map that produces, proposes, or indexes possibilities.
 
 > **In one sentence:** This project studies how finite observers construct and revise candidate process models from partial traces — and what constraint architecture lets an acting system remain viable while doing so.
 
@@ -38,7 +38,7 @@ This is not simply a search for a hidden correct answer. Different process model
 
 This is the repository's shared root: understanding is not the passive storage of appearances. It is the construction of a process that can generate predictions, variations, and counterfactuals — followed by tests that expose where that process fails.
 
-The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) gives the formal frame and proves an elementary hidden-extension result: even a complete observed trace law need not select a unique latent process. The older essay [From Trace to Generator](../theory/emergence/trace-to-generator.md) develops the intuition through sound, images, computation, biology, and scientific explanation; its title and unqualified terminology are retained as research history. [The Generator Question](../theory/core/the-generator-question.md) is likewise a legacy spine, not the current foundation.
+The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) gives the formal frame and proves an elementary hidden-extension result: even a complete observed trace law need not select a unique latent process. [From Trace to Generator](../theory/emergence/trace-to-generator.md) develops the active reconstruction question through sound, images, computation, biology, and scientific explanation; its original universal wording is preserved but bounded by the current foundation. [The Generator Question](../theory/core/the-generator-question.md) remains an organizing research question, not a mathematical primitive or universal complexity law.
 
 ## 2. A candidate model has to meet a world
 
@@ -81,7 +81,8 @@ coordinated sensor–actuator transformation preserves every physical trace. Thi
 declaring the equivalence relation, not a proof that embodiment defeats every capability invariant.
 
 [Competence, Constraint, and Verification](../theory/core/competence-constraint-and-verification.md)
-extends this boundary analysis without restoring the retired generic generator.
+extends this boundary analysis without treating a generator as sufficient or
+leaving its type unspecified.
 It separates a typed process from the constraints that make trajectories
 admissible, selectors that make regions usable, interaction history, the lens
 that reports equivalence, and the verifier that can revise the process. Its
@@ -162,7 +163,7 @@ The repository deliberately mixes simulations, formal arguments, working hypothe
 ### Read the central movement
 
 1. [Foundations Reconstruction](../theory/core/mathematical-axioms.md) — the minimal process basis and adversarial audit.
-2. [From Trace to Generator](../theory/emergence/trace-to-generator.md) — the earlier conceptual essay, now read as legacy terminology.
+2. [From Trace to Generator](../theory/emergence/trace-to-generator.md) — the active typed reconstruction programme, with its earlier universal language preserved for audit.
 3. [From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md) — the epistemic loop and its measured homes.
 4. [Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md) — the hinge from capability to constraint architecture.
 5. [Cooperative Intelligence at the Separatrix](../theory/symbiotic/cooperative-intelligence-at-the-separatrix.md) — how the loop can be distributed without dissolving difference or responsibility.
@@ -174,7 +175,7 @@ The repository deliberately mixes simulations, formal arguments, working hypothe
 
 1. [Foundations Reconstruction](../theory/core/mathematical-axioms.md) — primitives, axioms, dependencies, counterexamples, and neighboring theories.
 2. [Inverse-Reconstruction Benchmark](../lab/benchmarks/inverse-reconstruction/README.md) — the measured core, including failed predictions and scope limits.
-3. [The Generator Question](../theory/core/the-generator-question.md) — the superseded spine, retained to make the revision auditable.
+3. [The Generator Question](../theory/core/the-generator-question.md) — the active organizing question and an auditable record of its superseded universal formulation.
 4. [Canonical Path v2](../meta/repository-meta/canonical-path-v2.md) — the Viability Arc and current migration map.
 5. [The Viable Corridor](../papers/viable-corridor.md) — necessity result, sufficiency conjecture, synthetic evidence, and limitations.
 6. [Core Claims](../meta/repository-meta/core-claims.md) — the maintained small claim set.

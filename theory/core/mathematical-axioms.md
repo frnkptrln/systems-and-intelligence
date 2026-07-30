@@ -626,6 +626,30 @@ These meanings are not interchangeable.
 historical or literary shorthand if they point to an explicit process-model decomposition and make
 no uniqueness claim.
 
+### 6.5 What the audit does not retire
+
+Failure to qualify a term is not evidence that every qualified use is empty. The audit distinguishes
+three statuses:
+
+| Use | Status after the audit |
+|:---|:---|
+| generator as an independent primitive or universal explanation | rejected |
+| typed generator as a map or process that produces, proposes, or indexes declared possibilities | active |
+| the Generator Question as bounded construction and model identification | active |
+
+A scientific programme can be organized around a derived or composite relation without promoting
+that relation to a mathematical primitive. In current repository use, a **typed generator** must
+declare its interfaces, output relation, and execution conditions. A grammar, transition kernel,
+developmental process, proposal mechanism, and generative statistical model can each occupy that
+role, but they are not interchangeable.
+
+The active inverse question is therefore not “what is *the* generator?” without qualification. It
+is: given a declared model family, evidence regime, intervention access, target equivalence, and
+cost measure, which typed generators or process-model bundles remain viable, and what could
+distinguish them? The [Generator Question](the-generator-question.md) and [From Trace to
+Generator](../emergence/trace-to-generator.md) retain that role. The audit removes their former
+universal overreach, not the research programme.
+
 ---
 
 ## 7. A result the foundation forces: non-identifiability
@@ -1023,9 +1047,9 @@ question: which capacities become reachable and observable after changes to
 constraints, coupling, history, selection, or tests?
 
 That extension preserves the audit's central correction. An unqualified
-generator remains retired. “Generator,” “selector,” and “verifier” are useful
-only as typed causal roles inside a declared model, and observer-relative
-competence does not identify a unique historical process.
+generator remains outside the primitive basis, while “generator,” “selector,”
+and “verifier” remain active as typed causal roles inside a declared model.
+Observer-relative competence does not identify a unique historical process.
 
 ---
 
@@ -1040,5 +1064,6 @@ prediction arises by conditioning. It also exposes the point at which mathematic
 identity needs tests, learning needs a task, intelligence needs values and resources, and phenomenal
 consciousness needs a bridge not contained in the process description.
 
-The unqualified generator contributes no independent mathematics. It should leave the foundation.
-What remains is smaller, less original, and more reliable.
+The unqualified generator contributes no independent mathematics. It should leave the foundation,
+not the active research programme. What remains is smaller, more precisely typed, and more
+reliable.

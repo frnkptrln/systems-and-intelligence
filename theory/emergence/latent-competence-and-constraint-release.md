@@ -231,6 +231,6 @@ confounded.
 - [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md)
 - [Embodiment and Goal Decomposition](../optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md)
 - [Measurement as Weak Intervention](../core/measurement-as-weak-intervention.md)
-- [Trace to Generator](trace-to-generator.md) — legacy title, model-identification question
+- [Trace to Generator](trace-to-generator.md) — active typed construction and model-identification question
 - [Weak and Strong Emergence](emergence-downward-causation.md)
 - [Constraint-Release Benchmark](../../lab/benchmarks/constraint-release/README.md)

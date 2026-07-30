@@ -1,13 +1,14 @@
 ---
-title: "The Generator Question — Legacy Spine Under Reconstruction"
+title: "The Generator Question — Typed Reconstruction"
 date: "2026-05-21"
-status: "Legacy framing — superseded as a foundation"
-scope: "Preserves the former organizing frame while its bounded model-identification claims are migrated to the process foundation."
+updated: "2026-07-30"
+status: "Active bounded research programme; former universal framing superseded"
+scope: "Reconstructs the organizing question in typed form while preserving its former universal formulation for audit."
 epistemic_status: >
-  Historical synthesis document. Its equivalence-class and intervention questions remain useful,
-  but the unqualified generator, generic forward/inverse asymmetry, P != NP assumption, and identity
-  reduction are no longer accepted as foundations. The Foundations Reconstruction controls.
-superseded_by:
+  Active synthesis and historical record. Typed construction, model-identification,
+  equivalence-class, and intervention questions remain active; the unqualified generator, generic
+  forward/inverse asymmetry, P != NP assumption, and identity reduction are not foundations.
+formal_basis:
   - theory/core/mathematical-axioms.md
 related:
   - theory/core/emergence-manifesto-v1.3.md
@@ -25,16 +26,17 @@ failure_conditions:
 
 # The Generator Question
 
-*The former organizing question, retained so the project's change of foundation remains visible.*
+*An active organizing question, reconstructed under a typed process foundation.*
 
-> **Foundational status (2026-07-20).** This document no longer defines the project's foundation.
-> The [Foundations Reconstruction](mathematical-axioms.md) found no independent mathematical role
-> for an unqualified “generator.” It replaces that term with typed stochastic processes, treats
-> identity as test-relative, and rejects P $\ne$ NP as a load-bearing project assumption. The
-> bounded questions preserved here—model identification, observational equivalence, coverage,
-> intervention, and decision under model uncertainty—remain active. The stronger universal claims
-> below are retained as the history of the research path, not as established premises. Where the
-> two documents conflict, the reconstruction takes precedence.
+> **Current status (2026-07-30).** The [Foundations
+> Reconstruction](mathematical-axioms.md) found no independent mathematical role for an
+> unqualified “generator.” That result removes a primitive and universal explanation; it does not
+> abolish generation as a typed causal role or reconstruction as a research problem. In current
+> use, a generator must declare its interfaces and what it produces, proposes, or indexes. Model
+> identification, observational equivalence, coverage, intervention, construction, and decision
+> under model uncertainty remain active. The stronger universal claims below are retained as the
+> history of the research path, not as established premises. Where they conflict, the reconstruction
+> takes precedence.
 
 ---
 

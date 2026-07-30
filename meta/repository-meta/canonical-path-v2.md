@@ -1,12 +1,12 @@
 ---
 title: "Canonical Path v2.1 — After the Foundations Reconstruction"
 date: "2026-05-29"
-updated: "2026-07-20"
+updated: "2026-07-30"
 status: "Working Note — foundation migrated, terminology migration ongoing"
 scope: >
   A repository-level navigation pass that places the minimal process foundation before the
-  bounded model-identification and viability research arcs. It preserves the earlier Generator
-  Question as research history while removing it as the project's foundation.
+  bounded model-identification and viability research arcs. It retains the Generator Question as
+  an active typed research programme while preserving its former universal formulation for audit.
 related:
   - theory/core/mathematical-axioms.md
   - theory/core/the-generator-question.md
@@ -27,8 +27,10 @@ This document describes the **present canonical path** through the repository. T
 with the [Foundations Reconstruction](../../theory/core/mathematical-axioms.md). That audit found no
 independent mathematical role for an unqualified generator, rejected a generic forward/inverse
 complexity law, and made identity test-relative. The older [Generator
-Question](../../theory/core/the-generator-question.md) is retained as a legacy framing whose bounded
-identification questions survive.
+Question](../../theory/core/the-generator-question.md) therefore remains active only in typed,
+bounded form: which declared process models or constructive maps are compatible with a trace, and
+what evidence distinguishes them? Its former universal framing remains visible but does not control
+the foundation.
 
 After the foundation, two research arcs remain:
 
@@ -69,8 +71,8 @@ learning, and intelligence require declared supplements; phenomenal consciousnes
 axiom that is not adopted.
 
 - [Foundations Reconstruction](../../theory/core/mathematical-axioms.md) — the canonical foundation and adversarial audit.
-- [The Generator Question](../../theory/core/the-generator-question.md) — the superseded spine, preserved for research history.
-- [Trace to Generator](../../theory/emergence/trace-to-generator.md) — a long-form legacy essay; read “generator” as an explicitly decomposed candidate process model.
+- [The Generator Question](../../theory/core/the-generator-question.md) — the active bounded programme and the auditable record of its superseded universal formulation.
+- [Trace to Generator](../../theory/emergence/trace-to-generator.md) — the long-form reconstruction essay; read “generator” as a declared constructive map or explicitly decomposed candidate process model.
 
 The model-identification programme and the Viability Arc both pick up downstream of this language.
 Neither is implied merely by admitting processes.
