@@ -9,7 +9,9 @@ status: exploratory research note
 **Status:** Exploratory research note. This is the paper-specific reconstruction:
 Bennett's result, the repository's reading, and its limits. The durable
 conceptual extraction lives separately in
-[Effective Goal Space](../theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md).
+[Effective Goal Space](../theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md);
+the broader system-boundary synthesis is
+[The Agent Is Not Where the Model Ends](../theory/identity/the-agent-is-not-where-the-model-ends.md).
 
 **Question.** Intelligence and goals may be conceptually distinguishable without
 admitting an implementation-neutral decomposition of realised success in an
@@ -50,6 +52,20 @@ is treated as an implementation-invariant engineering decomposition. Within a
 frozen stack, reusable optimisers and separately varied task specifications can
 remain useful abstractions.
 
+## Orthogonality claims need a domain
+
+The conference discussion makes three further theses worth separating:
+
+| Thesis | Scope | Status after Bennett's challenge |
+|:---|:---|:---|
+| **Strong representation-invariant orthogonality** | any intelligence level and goal can be paired independently of body, substrate, interface, environment, and representation | Bennett directly challenges the assumed invariant factorisation |
+| **Fixed-stack orthogonality** | for a specified body, architecture, interface, and environment, substantial competence–objective variation remains possible | not refuted; Bennett explicitly allows reusable optimisation inside a frozen stack |
+| **Practical or local goal independence** | within a restricted system class, changing goals need not strongly change a declared capability score | an empirical claim whose truth depends on the class, task family, and observer lens |
+
+Rejecting the first thesis does not reject the other two. Conversely, showing
+modularity inside one interface does not establish a projection that survives
+changes of interface, embodiment, or representation.
+
 ## Repository extraction
 
 The durable question is not whether embodiment uniquely supplies goals. It is
@@ -81,7 +97,8 @@ That construction is the repository's interpretation, not Bennett's theorem.
 ## Primary sources
 
 - Michael Timothy Bennett, [*Lies, Damned Lies, and the Orthogonality
-  Thesis*](https://doi.org/10.31219/osf.io/zcfw6_v4), version 4, 2026.
+  Thesis*](https://doi.org/10.1007/978-3-032-33010-9_5), AGI-26 Proceedings,
+  Part I, 2026. [Version 4 preprint](https://doi.org/10.31219/osf.io/zcfw6_v4).
 - Michael Timothy Bennett, [*Computational Dualism and Objective
   Superintelligence*](https://arxiv.org/abs/2302.00843), AGI 2024.
 - Nick Bostrom, [*The Superintelligent Will: Motivation and Instrumental
@@ -91,5 +108,7 @@ That construction is the repository's interpretation, not Bennett's theorem.
 ## Connections
 
 - [Effective Goal Space](../theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md)
+- [The Agent Is Not Where the Model Ends](../theory/identity/the-agent-is-not-where-the-model-ends.md)
+- [Situated-Stack Benchmark](../lab/benchmarks/situated-stack/README.md)
 - [Intelligence as Convergence](2026-07-23-intelligence-as-convergence.md)
 - [The Same World Is Not the Same World](2026-07-23-the-same-world-is-not-the-same-world.md)

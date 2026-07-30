@@ -185,6 +185,27 @@ the mathematical foundation and not as evidence of experience. A separate explor
 [Psychedelics as Perturbation](psychedelics-as-perturbation.md), asks how perturbing the
 loop might expose its organization.
 
+### When self-description becomes control
+
+Talking about oneself, representing a current process state, reasoning over that representation,
+and letting it change future processing are different capacities. The functional threshold used
+here is causal:
+
+> A self-model becomes architecturally significant when an intervention on the represented
+> self-state changes later control in the predicted way.
+
+This separates indirect metacognitive knowledge learned from descriptions, direct access to the
+system's current process state, performative self-report, and a causally effective self-model. A
+useful perturbation should vary actual tool, memory, budget, confidence, or impasse state while
+holding the verbal description fixed; a complementary false-belief intervention should vary the
+description while holding the process state fixed. Strategy and resource allocation should track
+the causally available state if the self-model participates in control.
+
+The full test family and its connection to the AGI-26 metacognition work are in
+[The Agent Is Not Where the Model Ends](the-agent-is-not-where-the-model-ends.md#6-the-self-model-as-a-control-object).
+Passing such a test would establish functional metacognition under the declared intervention, not
+accurate introspection, sentience, or phenomenal consciousness.
+
 ---
 
 ## On Levels: Reflexive Depth, Not Degrees of Experience

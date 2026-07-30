@@ -47,6 +47,7 @@ Structural claims about how local processes produce global behavior.
 
 Operational hypotheses about continuity, binding, and cognition.
 
+- **[The Agent Is Not Where the Model Ends](identity/the-agent-is-not-where-the-model-ends.md)** — Working synthesis on the correct unit of intelligence, identity, observation, memory, and functional self-model claims; proposes a situated stack and preserves the consciousness ontology dispute.
 - **[Chord vs. Arpeggio Identity](identity/chord-vs-arpeggio-identity.md)** — Commit-time composition as a testable identity hypothesis.
 - **[The Non-Individual Intelligence](identity/the-non-individual-intelligence.md)** — A network-performance hypothesis that keeps life, computation, and institutions distinct.
 - **[Principles of the Agentic Society](identity/agentic-society-principles.md)** — Testable division-of-labor, information-boundary, and stigmergic-memory designs.

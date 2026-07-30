@@ -14,6 +14,7 @@
 - ../identity/psychedelics-as-perturbation.md
 - ../../lab/benchmarks/inverse-reconstruction/README.md
 - ../identity/consciousness-as-global-availability.md
+- ../identity/the-agent-is-not-where-the-model-ends.md
 
 **Failure conditions:**
 

@@ -18,6 +18,14 @@ A bounded experiment would freeze task, evaluator, permissions, and control logi
 
 This motivated the [`recursive-workbench`](../lab/benchmarks/recursive-workbench/README.md), which now exists: the loop is the object of study, and its first experiments improve bounded artifacts rather than their own control system. Its paired v0.1 measures the three regimes exactly — saturation at the evidence ceiling under a frozen referee, held-out gains from referee-side queries, and a tripled observed-vs-held-out gap under evaluator capture.
 
+**Trace-governance extension.** The proposal history, summaries, cached evaluations, checkpoints,
+and repository state are also part of the loop's effective control state. A frozen evaluator does
+not prevent a stale trace from repeatedly steering the proposer toward an obsolete region after the
+task changes. Future loop comparisons should therefore vary provenance, aging, invalidation, and
+reset policies, and measure recovery after a regime shift. This is distinct from evaluator capture:
+the referee can remain write-protected while the shared memory substrate still preserves a bad
+attractor. See [The Agent Is Not Where the Model Ends](../theory/identity/the-agent-is-not-where-the-model-ends.md#7-memory-outside-the-agent).
+
 **Connections.**
 
 - [The Graph Is a Materialized Prompt](2026-07-24-the-graph-is-a-materialized-prompt.md)

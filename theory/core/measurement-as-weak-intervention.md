@@ -12,6 +12,7 @@
 - invariance-and-identity.md
 - ../../lab/benchmarks/inverse-reconstruction/README.md
 - ../ai/world-models-and-vla.md
+- ../identity/the-agent-is-not-where-the-model-ends.md
 - ../human-organism-silicon-age/the-city-as-deployed-intelligence.md
 - ../../logs/016_the-runtime-is-part-of-the-generator.md
 - ../../logs/018_the-city-panel-protocol.md

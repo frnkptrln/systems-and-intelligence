@@ -81,3 +81,6 @@ beyond the fields' existing concepts.
 Related anchors include Dyna, learned world models, model-based reinforcement learning, causal
 confusion in imitation learning, and VLA research. The [Related Work
 Map](../../meta/research-alignment/related-work-map.md) maintains the project-specific comparison.
+[The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md)
+extends the mapping to the full observation–action–body–memory coupling and asks which capability
+comparisons survive a change of stack.

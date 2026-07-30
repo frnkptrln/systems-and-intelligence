@@ -333,6 +333,44 @@ being reduced to a checklist of channel properties.
 
 ---
 
+## Open Problem 16: The Mapmaker Problem
+
+*Raised by: [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md#8-simulation-instantiation-and-the-mapmaker-problem), preserving the disagreement between Alexander Lerchner's abstraction argument and Joscha Bach's virtual-causality keynote.*
+
+**Problem statement:** Is an experiencing or semantic mapmaker required before a physical process
+can intrinsically use a representation, or can a stable perspective emerge inside a sufficiently
+integrated representational and self-modeling process? What distinguishes a process that an outside
+observer can interpret as computation from one for which the represented distinction is causally
+operative for the system itself?
+
+**Why it matters:** Lerchner argues that symbolic computation is a mapmaker-dependent physical
+description and therefore cannot instantiate experience merely by simulating it. Bach argues that
+computers create insulated virtual causal orders and that conscious experience may itself be such
+an internally simulated world. Choosing either vocabulary too early assumes the disputed ontology.
+Input–output equivalence, counterfactual modeling, global availability, self-report, and embodiment
+can distinguish functional organizations; none is an agreed criterion for phenomenal
+instantiation.
+
+**Questions that keep the disagreement open:**
+
+1. Is semantic interpretation external, internal, relational, or different in different cases?
+2. Can a system represent and intervene on its own map–territory relation?
+3. What intrinsic causal role must a representation play beyond covariation and outside
+   interpretability?
+4. Does causal insulation create only a model, or can it create a point of view?
+5. What would distinguish describing, simulating, realizing, and instantiating an experience?
+6. Which proposed answer depends on a physical primitive, organizational criterion, self-model, or
+   observer lens?
+
+**What a partial solution would look like:** A theory must state its ontology and give a
+non-question-begging discriminator among at least a lookup table, a learned predictor, a
+counterfactual world-model, a causally effective self-model, and an embodied interactive system.
+The discriminator should support an intervention or prediction not fixed by input–output behavior
+alone. Passing it would establish the claimed functional or intrinsic organization under that
+theory; an additional bridge would still be required before inferring phenomenal experience.
+
+---
+
 ## How to Contribute
 
 If you identify a new open problem, or have a proposed solution for an existing one, please:
