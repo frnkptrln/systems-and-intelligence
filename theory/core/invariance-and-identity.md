@@ -52,10 +52,79 @@ The instruments this repository already runs are invariance tests that never sai
 
 One discipline falls out, and it is this note's corrected rule: **never claim an invariant without naming the transformation family, represented quantity, and equality notion.** “X is invariant” is an empty compliment; “the distribution of $q$ is unchanged under intervention family $S$, up to tolerance $\varepsilon$” is a measurement instruction.
 
+## Self-modification and the projector audit
+
+Elija Perrier's 2026 operator proposal gives one specialized implementation of
+that discipline. Let $\mathcal V$ be a declared system-state space,
+$\hat U$ an update operator, $\hat D$ a discrimination operator that selects
+identity-relevant distinctions, $\hat R$ a self-representation operator, and
+$\Pi$ a nontrivial projector onto a proposed identity-bearing subspace.
+
+In the paper's definition, **weak self-modification** requires
+
+$$
+[\hat U,\Pi]=[\hat D,\Pi]=[\hat R,\Pi]=0.
+$$
+
+The frequently quoted condition $\hat U\Pi=\Pi\hat U$ states only the first
+commutation. It is insufficient for Perrier's full criterion: the projector
+must also survive the system's discrimination and representation operations.
+The algebra, state space, interpretation of $\Pi$, and transformation scope
+must all be declared.
+
+This is a concrete instance of test-relative identity, not its replacement.
+The repository's more general relation remains
+
+$$
+x\sim_{\mathcal Q}x'
+\quad\Longleftrightarrow\quad
+Q(x)\overset{d}{=}Q(x')
+\text{ for every }Q\in\mathcal Q.
+$$
+
+A projector selects one linear subspace and one operator family. A test family
+can instead examine:
+
+- state continuity;
+- functional and goal continuity;
+- memory and causal continuity;
+- self-model continuity;
+- embodied or historical continuity; and
+- externally attributed identity.
+
+**Strong self-modification** in Perrier's model allows $\hat U$ to alter the
+discrimination structure, so no unconditional unifying projector is available
+in general. This threatens that projector-based criterion. The paper's
+liar-paradox and Derridean reading is a philosophical interpretation of the
+operator construction, not a theorem that every possible persistence relation
+is impossible.
+
+For autonomous research loops, the engineering question is sharper than
+absolute sameness:
+
+> Which revision authority, test history, provenance relation, and viability
+> constraint must remain outside a particular update for the next version to
+> count as a justified continuation?
+
+Git history, signed artifacts, external evaluation, and institutional custody
+can establish a **succession relation** without asserting that an
+observer-independent agent essence survived. If a loop can rewrite its theory,
+tests, prompts, and evaluator, the unchanged repository name is not evidence
+of continuity. The [Recursive Workbench](../../lab/benchmarks/recursive-workbench/README.md)
+already supplies the finite warning: evaluator capture can improve the report
+while leaving held-out performance unchanged.
+
+The full integration and primary-source qualification are in
+[Competence, Constraint, and Verification](competence-constraint-and-verification.md#9-identity-under-modification)
+and the [Day 2 Source Map](../../meta/research-alignment/agi-26-day-2-source-map.md#identity-and-self-modification).
+
 ## Open threads
 
 - **Noether for agents:** which *symmetries* of an agent's architecture generate its persistent quantities? If IP is a conservation law, what is the symmetry behind it? (Speculative but well-posed; the Chord architecture is the natural testbed.)
 - **Time's arrow and identification:** prediction and retrodiction can have different conditioning and computational costs in specified models, but no generic forward/inverse hardness law follows. A relation to the thermodynamic arrow would require an explicit model and is not pursued here.
 - **Measure it:** the Identity Suite's metrics could be reorganized explicitly as invariance reports — *property, transformation family, equality/tolerance, preserved or not* — which would make the identity layer's claims mechanically auditable.
+- **Succession under ontology revision:** can a repository or agent revise the
+  test language used to individuate it while preserving an externally
+  auditable, non-circular continuation relation?
 
 > **Related work.** Klein (1872), *Vergleichende Betrachtungen über neuere geometrische Forschungen* (the Erlangen Program); Noether (1918), *Invariante Variationsprobleme*; Nozick (2001), *Invariances*; Einstein (1905) as practice. Mapping in the [Related Work Map](../../meta/research-alignment/related-work-map.md).

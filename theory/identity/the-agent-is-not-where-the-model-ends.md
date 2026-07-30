@@ -529,6 +529,14 @@ Two existing instruments already cover adjacent claims:
 - [Recursive Workbench](../../lab/benchmarks/recursive-workbench/README.md) —
   self-modification under a frozen external referee.
 
+The Day 2 synthesis extends rather than replaces this stack. It treats
+constraints as operators on reachable trajectories, separates behavioral
+exposure from observer reinterpretation, adds interaction-history semantics,
+and asks how replay or proof revises the process that generated a claim. See
+[Competence, Constraint, and Verification](../core/competence-constraint-and-verification.md)
+and the exact
+[Constraint-Release Benchmark](../../lab/benchmarks/constraint-release/README.md).
+
 The next unimplemented experiments should be causal rather than rhetorical:
 perturb hidden self-state access and measure control, and perturb trace
 persistence under environmental change while varying provenance, decay, and

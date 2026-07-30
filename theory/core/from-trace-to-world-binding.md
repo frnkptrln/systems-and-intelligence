@@ -54,6 +54,15 @@ across candidate subsets and access geometries is Open Problem 14.
 Revision produces a new candidate model. Running that model produces predictions and
 actions, which generate new traces. Those traces can expose another mismatch.
 
+The replay relation is part of the model, not neutral bookkeeping. Exact
+equality, predictive equivalence, and safety-preserving equivalence retain
+different distinctions. A failed replay can therefore revise the candidate
+model, its state representation, or the test protocol itself. This recursive
+case is developed in
+[Verification as Reverse Pressure](verification-as-reverse-pressure.md);
+[Competence, Constraint, and Verification](competence-constraint-and-verification.md)
+places it alongside constraint release and observer-relative capability.
+
 The loop is also nested. An acting system can treat its own memory, estimates, and previous
 commitments as observable variables. That does not create an absolute identity. It creates
 new tests under which histories or system states may count as equivalent.
@@ -131,3 +140,5 @@ The loop should be abandoned or split if:
 6. [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md)
 7. [Optimization and Its Blindness](../optimization/optimization-and-its-blindness.md)
 8. [The Viable Corridor](../../papers/viable-corridor.md)
+9. [Competence, Constraint, and Verification](competence-constraint-and-verification.md)
+10. [Verification as Reverse Pressure](verification-as-reverse-pressure.md)

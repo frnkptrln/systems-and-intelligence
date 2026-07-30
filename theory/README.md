@@ -17,6 +17,8 @@ The canonical claims and central formalisms of the repository.
 - **[System Intelligence Index (SII)](core/system-intelligence-index.md)** — P × R × A × IP: one selected 4-axis instrument for toy tasks.
 - **[Conceptual Map](core/conceptual-map.md)** — Visual overview: how everything connects.
 - **[The Witness Principle](core/the-witness-principle.md)** — A costed constructive operator from a remaining candidate class to a distinguishing intervention, with an exact coverage–distinction lemma and learned transfer left open.
+- **[Competence, Constraint, and Verification](core/competence-constraint-and-verification.md)** — Working synthesis that extends the situated stack with constraints, history, observer-relative tests, and corrective verification without restoring the retired generic generator.
+- **[Verification as Reverse Pressure on Construction](core/verification-as-reverse-pressure.md)** — Connects replay and proof as non-identical correction loops in which failed verification can revise the definitions and models that produced a claim.
 - **[Simulation → Theory Map](core/simulation-theory-map.md)** — Which simulation demonstrates which claim, what it does *not* show.
 
 ## Substrate & Veto
@@ -42,6 +44,7 @@ Structural claims about how local processes produce global behavior.
 - **[Local Causality and Invisible Consequences](emergence/local-causality-invisible-consequences.md)** — An earlier synthesis of recurring local/global motifs.
 - **[Black Swans and Downward Causation](emergence/black-swans-and-downward-causation.md)** — Tail models, network failure, and conditional early warning.
 - **[Grokking Phase Transition](emergence/grokking-phase-transition.md)** — Sudden generalization from memorization.
+- **[Latent Competence and Constraint Release](emergence/latent-competence-and-constraint-release.md)** — Separates competence exposure, amplification, creation, and observer reinterpretation under controlled transformations.
 
 ## Identity & Cognition
 
@@ -54,6 +57,7 @@ Operational hypotheses about continuity, binding, and cognition.
 - **[Minimal Thermodynamic Agent](identity/minimal-thermodynamic-agent.md)** — A resource-constrained toy controller whose variables are explicit proxies.
 - **[Limits of Formal Systems](identity/limits-of-formal-systems.md)** — The precise scope—and frequent overextension—of Gödel, Turing, and Kolmogorov limits.
 - **[Consciousness as Global Availability](identity/consciousness-as-global-availability.md)** — Consciousness framed as broadcast, integration, boundary maintenance, and perturbation response.
+- **[Interaction-Grounded Semantics](ai/interaction-grounded-semantics.md)** — A functional, policy-relative account of meaning as a stable role in action–feedback histories.
 
 ## Symbiotic Organ Hypothesis
 

@@ -80,6 +80,17 @@ claim in one finite toy: uncoordinated interface changes destroy selected capabi
 coordinated sensor–actuator transformation preserves every physical trace. This is evidence for
 declaring the equivalence relation, not a proof that embodiment defeats every capability invariant.
 
+[Competence, Constraint, and Verification](../theory/core/competence-constraint-and-verification.md)
+extends this boundary analysis without restoring the retired generic generator.
+It separates a typed process from the constraints that make trajectories
+admissible, selectors that make regions usable, interaction history, the lens
+that reports equivalence, and the verifier that can revise the process. Its
+[exact companion benchmark](../lab/benchmarks/constraint-release/README.md)
+shows why that separation matters: one constraint release and one lens edit
+both move observed competence from zero to one, but only the release changes
+physical traces. The result is a finite identification control, not evidence
+that every surprising capacity was pre-existing.
+
 ## 3. Better models create capability, not purpose
 
 A system that predicts and intervenes well becomes more capable. But capability does not decide what should be optimized, who bears the cost, or which conditions must remain intact.
@@ -156,7 +167,8 @@ The repository deliberately mixes simulations, formal arguments, working hypothe
 4. [Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md) — the hinge from capability to constraint architecture.
 5. [Cooperative Intelligence at the Separatrix](../theory/symbiotic/cooperative-intelligence-at-the-separatrix.md) — how the loop can be distributed without dissolving difference or responsibility.
 6. [The Agent Is Not Where the Model Ends](../theory/identity/the-agent-is-not-where-the-model-ends.md) — how embodiment, action, self-models, and external traces change the unit being evaluated.
-7. [From Action to Culture](../theory/emergence/from-action-to-culture.md) — how revised action can become recurrent, transmissible practice without reducing culture to repetition.
+7. [Competence, Constraint, and Verification](../theory/core/competence-constraint-and-verification.md) — how constraints expose behavior, interaction supports functional semantics, and verification feeds back into construction.
+8. [From Action to Culture](../theory/emergence/from-action-to-culture.md) — how revised action can become recurrent, transmissible practice without reducing culture to repetition.
 
 ### Inspect the claims and evidence
 
@@ -166,6 +178,7 @@ The repository deliberately mixes simulations, formal arguments, working hypothe
 4. [Canonical Path v2](../meta/repository-meta/canonical-path-v2.md) — the Viability Arc and current migration map.
 5. [The Viable Corridor](../papers/viable-corridor.md) — necessity result, sufficiency conjecture, synthetic evidence, and limitations.
 6. [Core Claims](../meta/repository-meta/core-claims.md) — the maintained small claim set.
+7. [AGI-26 Day 2 Source Map](../meta/research-alignment/agi-26-day-2-source-map.md) — primary-source ledger and inclusion/exclusion decisions for the situated-competence extension.
 
 ### Follow a broader path
 

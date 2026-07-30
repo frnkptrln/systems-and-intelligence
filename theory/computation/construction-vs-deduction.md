@@ -84,6 +84,31 @@ A machine-checked proof that an alloy exists is not a bridge made from that allo
 proof can still guide search, rule out impossibilities, and certify properties of a later
 construction. Deduction and construction are complementary possessions.
 
+Verification can also exert **reverse pressure** on construction. A replay
+mismatch can reveal a defective world-model state or interface; a failed proof
+or an unnecessarily difficult successful proof can reveal a false target,
+missing assumption, weak definition, representation mismatch, or search
+failure. These diagnoses must not be conflated, but each can revise the system
+that generated the candidate.
+
+The proposed common schema is
+
+$$
+\text{proposal process}
+\rightarrow
+\text{candidate}
+\rightarrow
+\text{verifier}
+\rightarrow
+\text{counterexample}
+\rightarrow
+\text{process revision}.
+$$
+
+It is a structural bridge, not a reduction of empirical testing to proof or a
+claim that proof is backpropagation. The typed comparison and its failure modes
+are in [Verification as Reverse Pressure](../core/verification-as-reverse-pressure.md).
+
 ## A personal thread
 
 The distinction matters to me because I often learn by taking a thing apart, trying moves,
@@ -155,3 +180,5 @@ This framing fails when it:
 - [From Trace to World-Binding](../core/from-trace-to-world-binding.md)
 - [Art and Science](../narrative/art-science-one-practice-two-referees.md)
 - [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md)
+- [Verification as Reverse Pressure](../core/verification-as-reverse-pressure.md)
+- [Competence, Constraint, and Verification](../core/competence-constraint-and-verification.md)

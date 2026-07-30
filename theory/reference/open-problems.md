@@ -371,6 +371,99 @@ theory; an additional bridge would still be required before inferring phenomenal
 
 ---
 
+## Open Problem 17: The Competence-Attribution Problem
+
+*Raised by: [Competence, Constraint, and
+Verification](../core/competence-constraint-and-verification.md) and [Latent
+Competence and Constraint
+Release](../emergence/latent-competence-and-constraint-release.md).*
+
+**Problem statement:** When a low-description intervention exposes a large
+behavioral capacity, how should explanatory credit be allocated among the
+system's selection or training history, process structure, embodiment,
+environmental regularities, released constraint, adaptation after release, and
+observer lens? Under what controls can competence exposure be distinguished
+from competence creation, amplification, and reinterpretation?
+
+**Why it matters:** “The intervention caused the behavior” and “the substrate
+already contained the behavior” are both underspecified. The first can hide
+historical and architectural complexity; the second can treat a merely
+possible trajectory as an operative capacity. The current
+[constraint-release benchmark](../../lab/benchmarks/constraint-release/README.md)
+separates one exact exposure case from a lens-only score change and a
+transition-process edit. It does not supply a representation-independent
+accounting law or support transfer to living systems.
+
+**What a partial solution would look like:** Declare a process family,
+reference coupling, admissible transformations, task, physical trace, lens,
+adaptation window, and an intervention coding scheme before evaluation. Compare
+matched-description constraint releases, process edits, learned adaptations,
+and lens-only controls over many graph families and seeds. An attribution rule
+should remain stable under reasonable recodings or state explicitly how it
+changes. The latent-competence framing weakens if apparent exposure routinely
+vanishes once hidden process edits, post-intervention learning, and lens
+changes are controlled.
+
+---
+
+## Open Problem 18: The Replay-Equivalence Problem
+
+*Raised by: [Verification as Reverse Pressure on
+Construction](../core/verification-as-reverse-pressure.md) and [World Models &
+VLA](../ai/world-models-and-vla.md).*
+
+**Problem statement:** What equivalence relation should a revisable world model
+preserve when replaying its history? Byte-exact equality can force incidental
+details into the model; coarse behavioral equivalence can hide distinctions
+that matter for later action, safety, or transfer. Can a verifier learn or
+refine its test family without making success circular?
+
+**Why it matters:** Replay determines what becomes a regression. A world model
+optimized against the wrong relation can be exactly consistent and still
+misrepresent the actionable structure. The same problem appears in
+autoformalization when a proof succeeds only because a definition is weak or a
+desired obligation was never stated.
+
+**What a partial solution would look like:** Construct environments with
+controlled nuisance variations and delayed causal distinctions. Compare exact
+replay, predictive equivalence, policy-preserving equivalence, bisimulation,
+and adaptively refined tests under matched model and verification budgets.
+Report fit, transfer, counterexample discovery, revision cost, and false
+merges/splits. A proposed relation fails when it either memorizes irrelevant
+surface detail or merges histories that demand different future actions.
+
+---
+
+## Open Problem 19: Succession Under Criterion Revision
+
+*Raised by: the [self-modification projector
+audit](../core/invariance-and-identity.md#self-modification-and-the-projector-audit)
+and the repository's [autonomous-loop referee
+problem](#open-problem-15-the-minimal-external-referee).*
+
+**Problem statement:** How should continuity be represented when an autonomous
+system may edit the goal, memory, self-model, or projector used to evaluate its
+own identity? Which invariants must be externally anchored, and when is a
+provenance-backed succession relation more accurate than claiming that the
+post-update system is strictly the same agent?
+
+**Why it matters:** Commutation with a fixed projector can express weak
+self-modification. It cannot settle a case in which the projector and its
+authority are themselves changed. Collapsing state, functional, goal, memory,
+causal, self-model, and externally attributed continuity into one identity
+predicate hides the engineering question.
+
+**What a partial solution would look like:** Build a versioned autonomous loop
+with independently frozen tests, editable internal identity criteria, and a
+tamper-evident provenance graph. Apply controlled edits to code, memory, goals,
+tests, and the projector separately. Compare continuation judgments under each
+criterion with a weaker succession relation that records causal descent
+without asserting sameness. A useful account must say who chooses the
+criterion, which edits invalidate it, and what evidence can survive the
+system's write access.
+
+---
+
 ## How to Contribute
 
 If you identify a new open problem, or have a proposed solution for an existing one, please:
