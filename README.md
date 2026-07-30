@@ -42,15 +42,23 @@ This is a research notebook, not a theory of everything. It contains established
 | Layer | Role | Main artifacts |
 |:---|:---|:---|
 | **Foundation** | Defines the process language and marks what does not follow from it. | [Foundations Reconstruction](theory/core/mathematical-axioms.md) · [What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md) |
-| **Model identification** | Studies how traces constrain candidate process models and how interventions change the evidence. | [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md) · [Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md) |
+| **Model identification** | Studies how traces constrain typed generators or candidate process models and how interventions change the evidence. | [The Generator Question](theory/core/the-generator-question.md) · [From Trace to World-Binding](theory/core/from-trace-to-world-binding.md) · [Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md) |
 | **Viability** | Studies optimization under explicit dynamical and substrate constraints. | [Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md) · [The Viable Corridor](papers/viable-corridor.md) |
 
-The earlier unqualified **generator** framing is retained as research history, not as a primitive or universal law. Identity, consciousness, cooperative intelligence, culture, and the narrative work remain active layers around this spine, each with its own scope and status. The [Conceptual Map](theory/core/conceptual-map.md) shows how they connect.
+The **Generator Question remains active** as a typed construction and
+model-identification programme. What the foundations audit rejects is the
+unqualified generator as a mathematical primitive, universal law, or complete
+explanation. Current uses must say what generates what: a transition kernel,
+developmental process, grammar, proposal mechanism, or another declared map.
+The earlier universal claims remain visible as research history. Identity,
+consciousness, cooperative intelligence, culture, and the narrative work remain
+active layers around this spine, each with its own scope and status. The
+[Conceptual Map](theory/core/conceptual-map.md) shows how they connect.
 
-The current situated-competence extension asks a downstream question rather
-than adding a new primitive: which capacities become reachable and observable
-under changed constraints, embodiment, selection, interaction history, and
-verification? Its central synthesis is
+The situated-competence extension does not replace that question or add a new
+primitive. It asks which capacities a typed process can express under changed
+constraints, embodiment, selection, interaction history, and verification. Its
+central synthesis is
 [Competence, Constraint, and Verification](theory/core/competence-constraint-and-verification.md).
 
 ## Run something

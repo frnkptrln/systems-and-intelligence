@@ -21,7 +21,7 @@ nav:
       - "Course Path & Book":
           - "Foundations Reconstruction": theory/core/mathematical-axioms.md
           - "Start: From Rule to Mind": book/09_from_rule_to_mind.md
-          - "Legacy: The Generator Question": theory/core/the-generator-question.md
+          - "The Generator Question": theory/core/the-generator-question.md
           - "Introduction": book/00_introduction.md
           - "Part 1: Mechanics of Emergence": book/01_mechanics_of_emergence.md
           - "Part 2: Measuring the Mind": book/02_measuring_the_mind.md
@@ -36,7 +36,7 @@ nav:
           - Foundations Reconstruction: theory/core/mathematical-axioms.md
           - Competence, Constraint, and Verification: theory/core/competence-constraint-and-verification.md
           - Invariance and Identity: theory/core/invariance-and-identity.md
-          - "Legacy: The Generator Question": theory/core/the-generator-question.md
+          - "The Generator Question": theory/core/the-generator-question.md
           - From Trace to World-Binding (the loop): theory/core/from-trace-to-world-binding.md
           - Verification as Reverse Pressure: theory/core/verification-as-reverse-pressure.md
           - Measurement as Weak Intervention: theory/core/measurement-as-weak-intervention.md
@@ -44,7 +44,7 @@ nav:
           - Optimization and Its Blindness: theory/optimization/optimization-and-its-blindness.md
           - Embodiment and Goal Decomposition: theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md
           - "Situated Intelligence: The Agent Is Not Where the Model Ends": theory/identity/the-agent-is-not-where-the-model-ends.md
-          - "Legacy: Trace to Generator": theory/emergence/trace-to-generator.md
+          - "From Trace to Generator": theory/emergence/trace-to-generator.md
           - The Emergence Manifesto: theory/core/emergence-manifesto-v1.3.md
           - Thermodynamics of Orchestration (TEO): theory/core/thermodynamics-of-orchestration.md
           - TEO Framework Overview: theory/teo-framework/README.md

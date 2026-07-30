@@ -471,7 +471,8 @@ standards remain domain-specific.
 | intelligence is navigation | **refined** | navigation requires a reachable space, coupling, selector, history, and lens |
 | convergence reveals intelligence | **weakened** | convergence can be imposed by constraints or coarse evaluation and need not identify a mechanism |
 | embodiment matters to capability | **strengthened** | constraint release gives an explicit access mechanism; biological evidence supplies nonstandard configurations |
-| generator as universal primitive | **left retired** | typed processes are useful; an unqualified generator remains too ambiguous |
+| typed generator as a constructive role | **retained and refined** | the generating map must be declared and analyzed alongside the conditions that make its outputs accessible |
+| generator as universal primitive or sufficient explanation | **remains rejected** | an unqualified generator conflates typed processes, runtime conditions, history, and observation |
 | identity is invariance under declared tests | **strengthened and narrowed** | projector preservation is one formal instance, not an absolute identity theorem |
 | construction and deduction face different referees | **refined** | both can participate in revision loops, but proof and empirical replay retain different semantics |
 | external referee is necessary for improvement | **challenged at the boundary** | a verifier can be internal, but independence must then come from information, permissions, or failure authority |

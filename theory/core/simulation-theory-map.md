@@ -7,8 +7,8 @@
 ## Process and evidence context
 
 The [Foundations Reconstruction](mathematical-axioms.md) is the controlling frame. It
-removed the unqualified generator and rejected a universal claim that forward execution is
-cheap while inverse reconstruction is hard. This map therefore distinguishes:
+removed the unqualified generator from the primitive basis and rejected a universal claim that
+forward execution is cheap while inverse reconstruction is hard. This map therefore distinguishes:
 
 - **Forward:** a declared process model is executed to produce a trace.
 - **Inverse:** parameters, rules, states, or candidate models are estimated from declared

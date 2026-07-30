@@ -55,7 +55,8 @@ description language and must be evaluated by prediction or task loss.
 ## Relation to process identification
 
 Earlier repository versions treated grokking as evidence for a universal forward/inverse
-asymmetry: easy execution, hard recovery of a hidden generator. That reading is retired.
+asymmetry: easy execution, hard recovery of a hidden generator. That universal reading is retired;
+the bounded question of which typed computation training constructs remains active.
 
 A safer connection is:
 

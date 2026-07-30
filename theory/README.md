@@ -11,13 +11,13 @@ Most of these essays exist for no better reason than that a question interested 
 The canonical claims and central formalisms of the repository.
 
 - **[Foundations Reconstruction](core/mathematical-axioms.md)** — Read first. Rebuilds the project from standard Borel interfaces and Markov kernels; derives structure through prediction; marks the additional assumptions needed for identity, learning, intelligence, and consciousness; and adversarially tests the result against neighboring theories.
-- **[The Generator Question](core/the-generator-question.md)** — Legacy organizing frame. Its bounded model-identification questions remain active, but the unqualified generator, generic forward/inverse law, P $\ne$ NP assumption, and identity reduction no longer define the foundation.
+- **[The Generator Question](core/the-generator-question.md)** — Active typed construction and model-identification programme. Its former universal framing is preserved for audit, while the unqualified primitive, generic forward/inverse law, P $\ne$ NP assumption, and identity reduction no longer define the foundation.
 - **[Emergence Manifesto v1.3](core/emergence-manifesto-v1.3.md)** — An earlier, version-locked emergence claim set with explicit status tags. Read it under the reconstructed foundation; its former generator/P $\ne$ NP foundation does not take precedence.
 - **[Thermodynamics of Emergent Orchestration (TEO)](core/thermodynamics-of-orchestration.md)** — Coupled ODE system: Replicator + Kuramoto + Entropy Budget.
 - **[System Intelligence Index (SII)](core/system-intelligence-index.md)** — P × R × A × IP: one selected 4-axis instrument for toy tasks.
 - **[Conceptual Map](core/conceptual-map.md)** — Visual overview: how everything connects.
 - **[The Witness Principle](core/the-witness-principle.md)** — A costed constructive operator from a remaining candidate class to a distinguishing intervention, with an exact coverage–distinction lemma and learned transfer left open.
-- **[Competence, Constraint, and Verification](core/competence-constraint-and-verification.md)** — Working synthesis that extends the situated stack with constraints, history, observer-relative tests, and corrective verification without restoring the retired generic generator.
+- **[Competence, Constraint, and Verification](core/competence-constraint-and-verification.md)** — Working synthesis that extends the situated stack with constraints, history, observer-relative tests, and corrective verification; the typed generator remains one causal role rather than the whole explanation.
 - **[Verification as Reverse Pressure on Construction](core/verification-as-reverse-pressure.md)** — Connects replay and proof as non-identical correction loops in which failed verification can revise the definitions and models that produced a claim.
 - **[Simulation → Theory Map](core/simulation-theory-map.md)** — Which simulation demonstrates which claim, what it does *not* show.
 
@@ -44,6 +44,7 @@ Structural claims about how local processes produce global behavior.
 - **[Local Causality and Invisible Consequences](emergence/local-causality-invisible-consequences.md)** — An earlier synthesis of recurring local/global motifs.
 - **[Black Swans and Downward Causation](emergence/black-swans-and-downward-causation.md)** — Tail models, network failure, and conditional early warning.
 - **[Grokking Phase Transition](emergence/grokking-phase-transition.md)** — Sudden generalization from memorization.
+- **[From Trace to Generator](emergence/trace-to-generator.md)** — Active reconstruction programme: infer typed candidate processes or equivalence classes from declared traces, evidence, interventions, and costs.
 - **[Latent Competence and Constraint Release](emergence/latent-competence-and-constraint-release.md)** — Separates competence exposure, amplification, creation, and observer reinterpretation under controlled transformations.
 
 ## Identity & Cognition

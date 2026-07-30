@@ -19,10 +19,11 @@ prediction or unconstrained optimization. Its claims remain challengeable within
 models: if optimization can scale without substrate stress, regulator overload, or loss of
 corrective feedback, those architecture claims weaken or fail.
 
-> **Relation to the legacy spine.** [The Generator
-> Question](../../theory/core/the-generator-question.md) formerly supplied a universal organizing
-> frame. It is now retained as research history. Its bounded identification questions survive; the
-> unqualified generator and generic forward/inverse asymmetry do not control the architecture.
+> **Relation to the Generator Question.** [The Generator
+> Question](../../theory/core/the-generator-question.md) remains an active typed construction and
+> model-identification programme. Its former universal formulation is retained as research history:
+> the unqualified generator and generic forward/inverse asymmetry do not control the architecture,
+> but that correction does not make generation or reconstruction merely historical.
 
 ---
 
