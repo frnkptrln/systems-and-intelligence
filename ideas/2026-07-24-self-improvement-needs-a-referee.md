@@ -18,6 +18,14 @@ A bounded experiment would freeze task, evaluator, permissions, and control logi
 
 This motivated the [`recursive-workbench`](../lab/benchmarks/recursive-workbench/README.md), which now exists: the loop is the object of study, and its first experiments improve bounded artifacts rather than their own control system. Its paired v0.1 measures the three regimes exactly — saturation at the evidence ceiling under a frozen referee, held-out gains from referee-side queries, and a tripled observed-vs-held-out gap under evaluator capture.
 
+The proof/replay integration adds a second requirement: the referee should
+return evidence that can revise definitions, state representations, and
+interfaces, not only approve or reject a final output. This is
+[verification as reverse pressure](../theory/core/verification-as-reverse-pressure.md).
+If the loop can also rewrite the tests by which its continuation is judged,
+the result may still have a provenance-based succession relation, but strict
+identity is no longer supplied by the loop's self-report.
+
 **Trace-governance extension.** The proposal history, summaries, cached evaluations, checkpoints,
 and repository state are also part of the loop's effective control state. A frozen evaluator does
 not prevent a stale trace from repeatedly steering the proposer toward an obsolete region after the
@@ -31,3 +39,5 @@ attractor. See [The Agent Is Not Where the Model Ends](../theory/identity/the-ag
 - [The Graph Is a Materialized Prompt](2026-07-24-the-graph-is-a-materialized-prompt.md)
 - [From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md)
 - [Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md)
+- [Verification as Reverse Pressure](../theory/core/verification-as-reverse-pressure.md)
+- [Invariance and Identity](../theory/core/invariance-and-identity.md#self-modification-and-the-projector-audit)

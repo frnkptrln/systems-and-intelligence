@@ -1014,6 +1014,21 @@ anchor, not endorsement of every larger claim made in that source.
 
 ---
 
+## Situated-competence extension
+
+The [Competence, Constraint, and Verification](competence-constraint-and-verification.md)
+synthesis does not add another foundation. It uses the typed-process base and
+the existing situated tuple $\Sigma=(P,B,E,C,O,A,M,V)$ to ask a downstream
+question: which capacities become reachable and observable after changes to
+constraints, coupling, history, selection, or tests?
+
+That extension preserves the audit's central correction. An unqualified
+generator remains retired. “Generator,” “selector,” and “verifier” are useful
+only as typed causal roles inside a declared model, and observer-relative
+competence does not identify a unique historical process.
+
+---
+
 ## Final verdict
 
 The smallest defensible classical foundation found here is not a theory of intelligence or

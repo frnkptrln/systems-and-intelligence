@@ -92,3 +92,12 @@ The [invariance note](invariance-and-identity.md) ends in a discipline: never cl
 > **Never book a measurement without naming the class it collapses.** "We instrumented X" is an empty sentence until it says which candidate generators the instrument can tell apart — and, in regime 4, what the instrument's presence does to the generator it is pointed at.
 
 > **Related work.** Goodhart (1975), *Problems of Monetary Management* (Strathern's 1997 phrasing: "when a measure becomes a target, it ceases to be a good measure"); Campbell (1979), *Assessing the Impact of Planned Social Change*; Lucas (1976), *Econometric Policy Evaluation: A Critique*; MacKenzie (2006), *An Engine, Not a Camera*; Pearl (2009), *Causality* (seeing vs. doing — the formal ancestor of regimes 1 vs. 3); Roethlisberger & Dickson (1939) / Landsberger (1958) for the contested Hawthorne record. Internal receipts: benchmark v1.1 (the intervention hierarchy, measured) and v1.3 (the exploitation wedge); [Entry 14](../../fiction/14_the_third_wall.md) (the dramatized regime-4 audit). Mapping in the [Related Work Map](../../meta/research-alignment/related-work-map.md).
+
+The same rule now has a competence-side control. In the
+[Constraint-Release Benchmark](../../lab/benchmarks/constraint-release/README.md),
+changing one observer equivalence raises the reported competence from zero to
+one without changing a physical trace; releasing one blocked transition
+produces the same score increase and changes every task trace. The comparison
+operationalizes the distinction between behavioral exposure and lens
+reinterpretation developed in
+[Latent Competence and Constraint Release](../emergence/latent-competence-and-constraint-release.md).

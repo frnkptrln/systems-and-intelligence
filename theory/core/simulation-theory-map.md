@@ -63,6 +63,7 @@ asymmetry.
 | `lab/experiments/trace_to_generator/` | **Inverse** | finite control search |
 | `lab/benchmarks/inverse-reconstruction/` | **Inverse** | identifiability and finite family search |
 | `lab/benchmarks/situated-stack/` | Forward comparison | stack- and lens-relative capability |
+| `lab/benchmarks/constraint-release/` | Controlled forward comparison | constraint exposure versus lens reinterpretation |
 
 The counts are descriptive and version-dependent. The research direction is to make more
 inverse tasks explicit and compare methods under matched model languages and compute
@@ -89,6 +90,31 @@ dynamics.
 refutes every orthogonality thesis, or that the toy controller is generally intelligent. It
 demonstrates why a comparison must state the complete stack, task transport, observer lens, and
 equivalence relation.
+
+---
+
+## `constraint-release/` → Exposure Is Not Reinterpretation
+
+**Benchmark:** [`lab/benchmarks/constraint-release/`](../../lab/benchmarks/constraint-release/README.md)
+
+**Demonstrates:** A fixed seeded transition substrate and fixed policy under
+four arms: reference, one-bit constraint release, one-rule observer-lens
+change, and transition-generator edit.
+
+**Supports claim in:** [Latent Competence and Constraint
+Release](../emergence/latent-competence-and-constraint-release.md);
+[Competence, Constraint, and Verification](competence-constraint-and-verification.md).
+
+**What it shows:** Constraint release and lens-only reinterpretation both
+increase observed competence from 0 to 1. Only release changes physical traces
+and exact-goal success while preserving the transition generator. The
+generator-edit control achieves the endpoint but is not classified as latent
+exposure. Six seeded state relabelings preserve these relations.
+
+**What it does NOT show:** That real biological competence is pre-existing,
+that one-bit Hamming distance is a representation-independent intervention
+cost, or that explanatory credit belongs to the substrate rather than its
+history, environment, task, or evaluator.
 
 ---
 

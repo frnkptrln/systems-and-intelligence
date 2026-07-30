@@ -18,6 +18,8 @@
 - [Open Problems](../reference/open-problems.md)
 - [From Rule to Mind](../../book/09_from_rule_to_mind.md)
 - [Related Work Map](../../meta/research-alignment/related-work-map.md)
+- [Competence, Constraint, and Verification](../core/competence-constraint-and-verification.md)
+- [Latent Competence and Constraint Release](latent-competence-and-constraint-release.md)
 
 **Failure conditions:**
 
@@ -31,6 +33,11 @@
 > and target equivalence must be declared. The essay's questions about reconstruction and
 > observational equivalence remain useful; its universal definitions of intelligence and generic
 > forward/inverse asymmetry are historical hypotheses, not current foundations.
+>
+> The Day 2 integration adds a complementary audit: even a fixed typed process
+> does not determine expressed competence without constraints, embodiment,
+> selection, interaction history, tasks, and a lens. See
+> [Competence, Constraint, and Verification](../core/competence-constraint-and-verification.md).
 
 ---
 

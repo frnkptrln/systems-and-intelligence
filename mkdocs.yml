@@ -34,9 +34,11 @@ nav:
       - "Core Theory":
           - Theory Overview: theory/README.md
           - Foundations Reconstruction: theory/core/mathematical-axioms.md
+          - Competence, Constraint, and Verification: theory/core/competence-constraint-and-verification.md
           - Invariance and Identity: theory/core/invariance-and-identity.md
           - "Legacy: The Generator Question": theory/core/the-generator-question.md
           - From Trace to World-Binding (the loop): theory/core/from-trace-to-world-binding.md
+          - Verification as Reverse Pressure: theory/core/verification-as-reverse-pressure.md
           - Measurement as Weak Intervention: theory/core/measurement-as-weak-intervention.md
           - The Witness Principle: theory/core/the-witness-principle.md
           - Optimization and Its Blindness: theory/optimization/optimization-and-its-blindness.md
@@ -63,6 +65,7 @@ nav:
               - Generative Compression: theory/emergence/generative-compression.md
               - Generative Form Systems: theory/emergence/generative-form-systems.md
               - From Action to Culture: theory/emergence/from-action-to-culture.md
+              - Latent Competence and Constraint Release: theory/emergence/latent-competence-and-constraint-release.md
               - Fractal Architecture of Emergence: theory/emergence/fractal-architecture-of-emergence.md
               - Across Scales: theory/emergence/scale-comparison-map.md
               - "Emergence & Origin of Intelligence (speculative)": theory/emergence/emergence-origin-intelligence.md
@@ -90,6 +93,7 @@ nav:
               - Static Information, Living Process: theory/computation/static-information-and-living-process.md
               - LLMs as Probabilistic Automata: theory/ai/llms-as-probabilistic-automata.md
               - World Models and VLA Systems: theory/ai/world-models-and-vla.md
+              - Interaction-Grounded Semantics: theory/ai/interaction-grounded-semantics.md
               - "The J-Space Result (2026)": theory/ai/j-space-and-global-availability.md
           - "Narrative Theory":
               - Tensor Logic Mini Paper: theory/narrative/tensor-logic-mini-paper.en.md
@@ -248,6 +252,7 @@ nav:
               - Inverse Reconstruction: lab/benchmarks/inverse-reconstruction/README.md
               - Witness Generation: lab/benchmarks/witness-generation/README.md
               - Situated Stack: lab/benchmarks/situated-stack/README.md
+              - Constraint Release: lab/benchmarks/constraint-release/README.md
               - "Recursive Workbench (referee)": lab/benchmarks/recursive-workbench/README.md
               - "Learned Searcher (protocol frozen)": lab/benchmarks/learned-searcher/README.md
               - TEO Framework Benchmark: lab/benchmarks/teo-framework/README.md
@@ -263,6 +268,7 @@ nav:
       - Cultural Optimization Red Team Manual: meta/repository-meta/cultural-optimization-red-team-manual.md
       - Agent Prompt Seed: meta/conceptual-meta/agent-prompt-seed.md
       - Related Work Map: meta/research-alignment/related-work-map.md
+      - AGI-26 Day 2 Source Map: meta/research-alignment/agi-26-day-2-source-map.md
 
 theme:
   name: material

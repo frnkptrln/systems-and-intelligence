@@ -14,6 +14,13 @@ This would not mean that every intelligence approaches one worldview. Convergenc
 
 **Open question.** Which similarities are imposed by the world, which by shared tasks and training regimes, and which by the observer's comparison method? A useful probe would vary substrate and learning history while holding only selected problem constraints stable.
 
+The Day 2 integration sharpens the warning: convergence can be produced by a
+shared bottleneck, selector, verifier, or coarse lens. Similar scores therefore
+do not establish a shared internal structure. A convergence claim should
+transport the task and lens, compare interaction histories, and test whether
+the proposed invariant survives constraint release rather than merely becoming
+visible under the same evaluator.
+
 **Connections.**
 
 - [The Same World Is Not the Same World](2026-07-23-the-same-world-is-not-the-same-world.md)
@@ -21,3 +28,5 @@ This would not mean that every intelligence approaches one worldview. Convergenc
 - [The Witness Principle](../theory/core/the-witness-principle.md)
 - [J-Space and Global Availability](../theory/ai/j-space-and-global-availability.md)
 - [World Models and VLA](../theory/ai/world-models-and-vla.md)
+- [Competence, Constraint, and Verification](../theory/core/competence-constraint-and-verification.md)
+- [Interaction-Grounded Semantics](../theory/ai/interaction-grounded-semantics.md)

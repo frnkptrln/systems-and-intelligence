@@ -33,6 +33,7 @@ This is a research notebook, not a theory of everything. It contains established
 | inspect the mathematical foundation | **[Read the Foundations Reconstruction](theory/core/mathematical-axioms.md)** |
 | see the measured model-identification results | **[Run the Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md)** |
 | examine whether capability belongs to a controller or a complete situated stack | **[Read The Agent Is Not Where the Model Ends](theory/identity/the-agent-is-not-where-the-model-ends.md)** |
+| distinguish generated, exposed, selected, and observer-attributed competence | **[Read Competence, Constraint, and Verification](theory/core/competence-constraint-and-verification.md)** |
 | read the current formal synthesis | **[Open The Viable Corridor](papers/viable-corridor.md)** |
 | browse unfinished questions before they become claims | **[Enter Ideas](ideas/README.md)** |
 
@@ -45,6 +46,12 @@ This is a research notebook, not a theory of everything. It contains established
 | **Viability** | Studies optimization under explicit dynamical and substrate constraints. | [Optimization and Its Blindness](theory/optimization/optimization-and-its-blindness.md) · [The Viable Corridor](papers/viable-corridor.md) |
 
 The earlier unqualified **generator** framing is retained as research history, not as a primitive or universal law. Identity, consciousness, cooperative intelligence, culture, and the narrative work remain active layers around this spine, each with its own scope and status. The [Conceptual Map](theory/core/conceptual-map.md) shows how they connect.
+
+The current situated-competence extension asks a downstream question rather
+than adding a new primitive: which capacities become reachable and observable
+under changed constraints, embodiment, selection, interaction history, and
+verification? Its central synthesis is
+[Competence, Constraint, and Verification](theory/core/competence-constraint-and-verification.md).
 
 ## Run something
 
@@ -88,6 +95,7 @@ More executable work:
 - [Nested Emergence](simulation-models/social-computation/nested-emergence-demo/README.md) — coupled dynamics across scales
 - [Referee Benchmark](lab/benchmarks/recursive-workbench/README.md) — when does a self-revising loop actually improve, exactly measured
 - [Situated-Stack Benchmark](lab/benchmarks/situated-stack/README.md) — one controller under changed sensors, actuators, bodies, environments, goals, and observer lenses
+- [Constraint-Release Benchmark](lab/benchmarks/constraint-release/README.md) — separates behavioral exposure from a lens-only score increase under a fixed seeded substrate
 - [Agentic Identity Suite](lab/AGENTIC_README.md) — experimental tests for persistence, binding, and availability
 
 ## What lives where

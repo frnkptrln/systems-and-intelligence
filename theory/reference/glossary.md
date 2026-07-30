@@ -227,6 +227,51 @@ The system makes four testable predictions about when stability, monopoly, polar
 
 **Where it appears:** [`theory/thermodynamics-of-orchestration.md`](../core/thermodynamics-of-orchestration.md), [`theory/teo-framework/`](../teo-framework/README.md), [`simulation-models/alignment-and-veto/teo-civilization/`](../../simulation-models/alignment-and-veto/teo-civilization/README.md)
 
+## Situated Competence
+
+A task- and lens-relative capability of a declared situated system
+$\Sigma=(P,B,E,C,O,A,M,V)$ under admissibility conditions $\Gamma$, retained
+history $H_t$, and a verification protocol $\mathcal Q$. The diagnostic
+$\mathsf{Cap}_{\ell,\tau}(\Sigma,\Gamma,H_t;\mathcal Q)$ is not a universal
+scalar intelligence function; it is a reminder to report the process, body,
+environment, coupling, interfaces, memory, viability conditions, task, lens,
+history, and tests that make a competence claim meaningful.
+
+**Where it appears:** [Competence, Constraint, and
+Verification](../core/competence-constraint-and-verification.md).
+
+## Latent Competence
+
+A capacity absent from a reference configuration but detected after an
+admissible constraint or coupling transformation while the underlying process,
+task, and observer lens remain fixed. This is a relative exposure claim. A
+changed score under a changed lens alone is reinterpretation; a changed
+operative process may be competence creation or import.
+
+**Where it appears:** [Latent Competence and Constraint
+Release](../emergence/latent-competence-and-constraint-release.md) and the
+[constraint-release benchmark](../../lab/benchmarks/constraint-release/README.md).
+
+## Selector
+
+A typed causal mechanism—such as a policy, adapter, gate, search procedure, or
+intervention—that makes part of a declared possibility space more likely or
+usable. A selector may itself be generated, but its causal role is distinct at
+the level being analyzed. An observer lens is not a selector unless it feeds
+back into the system dynamics.
+
+## Verifier
+
+A procedure that compares a proposal with proof obligations, replay history,
+held-out observations, or externally governed tests. Its outputs may include
+acceptance, counterexamples, unresolved obligations, or requests for evidence.
+Verification becomes **reverse pressure** when those outputs can revise the
+definitions, interfaces, constraints, model family, or proposal process that
+generated the candidate.
+
+**Where it appears:** [Verification as Reverse Pressure on
+Construction](../core/verification-as-reverse-pressure.md).
+
 
 ## Trace
 An observed output, pattern, behavior, signal, artifact, or measurement, represented as the output

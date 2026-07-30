@@ -58,9 +58,47 @@ Torque, power, battery, and workspace limits are real constraints on a specified
 not automatically encode human or ecological values, and failure at a physical limit is not a safe
 veto.
 
+## Replay makes the preserved distinctions explicit
+
+For a recorded history
+
+$$
+H_t=\{(o_i,a_i,o_{i+1})\}_{i<t},
+$$
+
+an executable transition hypothesis $M_t$ passes replay under test family
+$\mathcal Q$ when
+
+$$
+M_t(o_i,a_i)\sim_{\mathcal Q}o_{i+1}
+\quad
+\text{for every recorded transition}.
+$$
+
+Byte equality is one choice of $\sim_{\mathcal Q}$. It can force a model to
+memorize incidental rendering details. A coarser equivalence can improve
+abstraction while hiding a causal or safety-relevant difference. Passing the
+retained history establishes consistency with those tests, not truth,
+mechanism identity, or held-out transfer.
+
+Rodionov's 2026 ARC-AGI-3 work provides a concrete coding-agent loop with
+textual and executable world models, simplification, and replay. The later
+ablation is the controlling evidence: executable representation was not
+uniformly better than text; stronger model and reasoning settings had the most
+robust effect; and the full verification treatment led the four main settings
+while using substantially more resources. Private or otherwise held-out
+performance remained untested. The useful result here is therefore the
+revisable-model architecture, not a benchmark headline.
+
+Replay also feeds backward. A mismatch can identify a wrong transition,
+missing object, over-coarse state, or bad interface and thereby revise the
+model that generated the prediction. The general correction bridge, including
+its analogy to formal proof, is developed in
+[Verification as Reverse Pressure](../core/verification-as-reverse-pressure.md).
+
 ## What the Mapping Contributes
 
-The mapping suggests four test questions:
+The mapping suggests five test questions:
 
 1. Which candidate dynamics models remain consistent with the available trajectories?
 2. Where does planning amplify model error relative to non-optimizing baselines?
@@ -68,6 +106,8 @@ The mapping suggests four test questions:
    information justify the cost and risk?
 4. Which independently enforced limits remain effective when the learned policy encounters
    out-of-distribution states?
+5. Which observation equivalence should replay preserve, and what revision does each mismatch
+   trigger?
 
 The repository benchmarks provide small controls for these questions. Transfer to learned world
 models or VLA systems requires matched experiments on those systems.
@@ -84,3 +124,5 @@ Map](../../meta/research-alignment/related-work-map.md) maintains the project-sp
 [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md)
 extends the mapping to the full observation–action–body–memory coupling and asks which capability
 comparisons survive a change of stack.
+[Competence, Constraint, and Verification](../core/competence-constraint-and-verification.md)
+connects replay to constraint access, interaction semantics, and identity under revision.
