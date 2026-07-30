@@ -1,6 +1,8 @@
 # Recursive Workbench — the Referee Benchmark
 
-**Status:** v0 — exact measurements in a declared toy setting. This is the
+**Status:** v0.1 — exact measurements in a declared toy setting. v0.1 corrects
+the comparison design so arms in the same artifact family receive the same
+proposal stream. This is the
 bounded experiment proposed in the exploratory note
 [Self-Improvement Needs a Referee](https://github.com/frnkptrln/systems-and-intelligence/blob/main/ideas/2026-07-24-self-improvement-needs-a-referee.md):
 the loop is the object of study, and its first experiments improve a bounded
@@ -31,15 +33,15 @@ score** is table accuracy over all eight rule coordinates, which the loop never
 sees. The evidence rng is decoupled from the loop rng, so every arm faces the
 same evidence for a given (rule, seed) pair.
 
-## Results (v0, all 256 rules × 4 seeds, exact)
+## Results (v0.1, all 256 rules × 4 seeds, exact)
 
 | arm | artifact family | referee | observed | held-out | evidence ceiling |
 |:---|:---|:---|---:|---:|---:|
-| `full-frozen` | all 256 tables | frozen, budget 64 | 1.0000 | 0.8561 | 0.8518 |
-| `full-frozen-10x` | all 256 tables | frozen, budget 640 | 1.0000 | 0.8540 | 0.8518 |
-| `full-witness` | all 256 tables | frozen + 2 referee queries | 0.9928 | 0.9539 | 0.9589 |
-| `affine-frozen` | 16 affine rules | frozen, budget 128 | 0.7934 | 0.6980 | — |
-| `affine-capture` | 16 affine rules | capturable, budget 128 | 0.9898 | 0.7056 | — |
+| `full-frozen` | all 256 tables | frozen, budget 128 | 1.0000 | 0.8517 | 0.8518 |
+| `full-frozen-10x` | all 256 tables | frozen, budget 1280 | 1.0000 | 0.8525 | 0.8518 |
+| `full-witness` | all 256 tables | frozen + 2 referee queries | 1.0000 | 0.9606 | 0.9589 |
+| `affine-frozen` | 16 affine rules | frozen, budget 128 | 0.7960 | 0.7021 | — |
+| `affine-capture` | 16 affine rules | capturable, budget 128 | 0.9893 | 0.7000 | — |
 
 The evidence ceiling is the exact expectation once the artifact is consistent
 with the evidence: known coordinates correct, unknown coordinates at chance,
@@ -50,24 +52,27 @@ it within sampling noise; the regression tests pin the exact seeded integers.
 
 1. **Self-revision saturates at the evidence ceiling.** The frozen-referee loop
    reaches observed 1.0000 and a held-out score at the ceiling; ten times the
-   proposal budget moves held-out by −0.002 — nothing. Once the artifact is
+   proposal budget moves held-out by +0.0009, still at the same ceiling. Once
+   the artifact is
    consistent with the evidence, further self-modification is a random walk on
    the equivalence class the evidence leaves open. This is the
    [inverse-reconstruction](../inverse-reconstruction/README.md) equivalence-class
    result restated as a limit on self-improvement.
-2. **Referee-side evidence moves the held-out score.** Two referee queries —
-   each revealing one unseen neighborhood, the witness move from the
+2. **Referee-side evidence moves the held-out score.** A budget of two referee
+   query opportunities — each revealing one unseen neighborhood when one
+   remains, the witness move from the
    [Witness Principle](../../../theory/core/the-witness-principle.md) — raise
-   held-out from 0.8561 to 0.9539, tracking the raised ceiling (0.9589). What
+   held-out from 0.8517 to 0.9606, tracking the raised ceiling (0.9589). What
    improved the loop was not more revision but a referee that could add a test
    the loop could not have added itself.
 3. **Evaluator capture improves only the report.** Under misspecification (the
    affine family cannot represent most worlds) the frozen referee reports the
-   failure honestly: observed plateaus at 0.7934, and only 172/1024 runs go
-   all-green — largely the worlds the family can actually fit. The capturable
-   evaluator deletes on average 1.15 failing tests and reports 0.9898 with
-   993/1024 runs all-green, while held-out stays at 0.7056. The honesty gap
-   (observed − held-out) triples, from 0.095 to 0.284. The loop did not get
+   failure honestly: the mean observed score is 0.7960, and only 166/1024 runs go
+   all-green. The capturable
+   evaluator deletes on average 1.15 failing tests and reports 0.9893 with
+   989/1024 runs all-green, while held-out does not improve (0.7021 to
+   0.7000). The honesty gap (observed − held-out) triples, from 0.094 to
+   0.289. The loop did not get
    better at anything except passing its own evaluator — measured circularity.
 
 ## Run
@@ -78,7 +83,7 @@ python referee_benchmark.py
 python referee_benchmark.py --trace affine-capture:110:0   # complete JSONL trace of one run
 ```
 
-Standard library only; the full report takes about two seconds.
+Standard library only; the full report takes a few seconds.
 
 ## Honest scope
 
@@ -99,12 +104,17 @@ Standard library only; the full report takes about two seconds.
   policy, not an optimized adversary. An *optimized* evaluator-capturing loop is
   the open flank, exactly as the optimized mimic is for
   [exp7](../../AGENTIC_README.md).
+- Comparisons are paired by artifact family: every arm receives the same
+  proposal-slot sequence for a given `(rule, seed)`. The 1280-step arm extends
+  the 128-step sequence rather than drawing a new one. This pairing was added
+  in v0.1; the qualitative v0 result survived, but the published headline
+  values were recomputed.
 - In the full-table family every unseen coordinate is equally informative, so
   the referee's query choice is trivial; restricted families where
   candidate-aware queries beat coverage are measured in the
   [witness benchmark](../witness-generation/README.md) and are the natural next
   arm here.
-- The capture arm's observed score is 0.9898 rather than 1.0000 because
+- The capture arm's observed score is 0.9893 rather than 1.0000 because
   score-preserving accepted proposals reset the stuck counter; the declared
   policy is reported as measured, not tuned until the story is clean.
 - Nothing here bears on whether any *particular* real system's evaluator is

@@ -247,7 +247,7 @@ nav:
               - Inverse Reconstruction: lab/benchmarks/inverse-reconstruction/README.md
               - Witness Generation: lab/benchmarks/witness-generation/README.md
               - "Recursive Workbench (referee)": lab/benchmarks/recursive-workbench/README.md
-              - "Learned Searcher (pre-registered)": lab/benchmarks/learned-searcher/README.md
+              - "Learned Searcher (protocol frozen)": lab/benchmarks/learned-searcher/README.md
               - TEO Framework Benchmark: lab/benchmarks/teo-framework/README.md
   - "Meta":
       - Overview: meta/README.md

@@ -16,7 +16,7 @@ A bounded experiment would freeze task, evaluator, permissions, and control logi
 
 **Open question.** How external must the referee be? It may live inside the runtime, but needs independent information, permissions, or failure authority. Does every recursive evaluator eventually become part of the optimization target?
 
-This motivated the [`recursive-workbench`](../lab/benchmarks/recursive-workbench/README.md), which now exists: the loop is the object of study, and its first experiments improve bounded artifacts rather than their own control system. Its v0 measures the three regimes exactly — saturation at the evidence ceiling under a frozen referee, held-out gains from referee-side queries, and a tripled observed-vs-held-out gap under evaluator capture.
+This motivated the [`recursive-workbench`](../lab/benchmarks/recursive-workbench/README.md), which now exists: the loop is the object of study, and its first experiments improve bounded artifacts rather than their own control system. Its paired v0.1 measures the three regimes exactly — saturation at the evidence ceiling under a frozen referee, held-out gains from referee-side queries, and a tripled observed-vs-held-out gap under evaluator capture.
 
 **Connections.**
 
