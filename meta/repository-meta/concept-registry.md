@@ -82,6 +82,7 @@
 | Mycelial Veto | [the-mycelial-veto.md](../../theory/veto/the-mycelial-veto.md) | narrative/speculative | **no operationalization — flagged by this registry**: needs an experiment, an open problem, or an explicit narrative marking |
 | Thermodynamic Hardware Manifesto | [thermodynamic-hardware-manifesto.md](../../theory/core/thermodynamic-hardware-manifesto.md) | `[SPECULATIVE]` | frontdoor lists hardware prototyping as speculative/long-horizon |
 | "Grand Synthesis" | — | **retired** | removed from all frontdoor surfaces (2026-06); kept here so its retirement is on record |
+| Effective goal space | [embodiment-and-the-non-invariant-decomposition-of-goals.md](../../theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md) | interpretation + conjecture | quotient of goals by behavioural equality on reachable trajectories, relative to a declared coupling and lens; the counterexample condition (a body class under which the quotient is invariant) is stated in the home file |
 
 ## Meta / governance
 

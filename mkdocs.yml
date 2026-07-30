@@ -40,6 +40,7 @@ nav:
           - Measurement as Weak Intervention: theory/core/measurement-as-weak-intervention.md
           - The Witness Principle: theory/core/the-witness-principle.md
           - Optimization and Its Blindness: theory/optimization/optimization-and-its-blindness.md
+          - Embodiment and Goal Decomposition: theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md
           - "Legacy: Trace to Generator": theory/emergence/trace-to-generator.md
           - The Emergence Manifesto: theory/core/emergence-manifesto-v1.3.md
           - Thermodynamics of Orchestration (TEO): theory/core/thermodynamics-of-orchestration.md
@@ -202,6 +203,7 @@ nav:
           - Provenance Depth: logs/017_provenance-depth-and-the-verification-economy.md
           - The City Panel Protocol: logs/018_the-city-panel-protocol.md
           - Who Pays for the Veto: logs/019_who_pays_for_the_veto.md
+          - The Referee Boundary: logs/020_the-referee-boundary.md
       - "Narrative Stress Tests":
           - World-Building Bible: fiction/README.md
           - The Impedance Crash: fiction/01_the_impedance_crash.md
@@ -222,6 +224,7 @@ nav:
           - The Second Receiver: fiction/16_the_second_receiver.md
           - The Understudy: fiction/17_the_understudy.md
           - The Village in the Snow: fiction/18_the_village_in_the_snow.md
+          - The Green Board: fiction/19_the_green_board.md
       - "Interactive Tools":
           - Web Emergence Explorer: interactive/web-explorer.md
           - Tensor Logic Visualizer: interactive/tensor-logic.md
@@ -243,6 +246,8 @@ nav:
                       - Self-Optimizing City: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/self_optimizing_city.md
               - Inverse Reconstruction: lab/benchmarks/inverse-reconstruction/README.md
               - Witness Generation: lab/benchmarks/witness-generation/README.md
+              - "Recursive Workbench (referee)": lab/benchmarks/recursive-workbench/README.md
+              - "Learned Searcher (pre-registered)": lab/benchmarks/learned-searcher/README.md
               - TEO Framework Benchmark: lab/benchmarks/teo-framework/README.md
   - "Meta":
       - Overview: meta/README.md

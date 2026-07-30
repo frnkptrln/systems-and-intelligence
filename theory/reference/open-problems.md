@@ -274,6 +274,11 @@ not claim a new field or a general definition of intelligence. Its narrower ques
 explicitly learning the inverse map from *remaining distinctions* to *discriminating intervention*
 adds measurable capability beyond rollout search and information-gain planning.
 
+**First contact:** a pre-registered zero-shot slice of this comparison — consistency, pairwise and
+universal witness construction against the exact floors, with coverage-trap instances where a
+coverage heuristic provably fails — exists at the
+[Learned-Searcher Benchmark](../../lab/benchmarks/learned-searcher/README.md) and awaits its run.
+
 **What a solution would look like:** Train on disjoint finite process families, candidate subsets,
 and admissible coverage constraints; evaluate on unseen subsets, candidate pairs, and held-out query
 compositions. Compare random equal-cost queries, exact or bounded information-gain search,
@@ -284,6 +289,45 @@ calibration, query-class equivalence rather than exact surface-action matching, 
 family misspecification. The hypothesis weakens if the direct generator offers no advantage over
 search, fails outside memorized templates, or loses its gain once its full compute and intervention
 costs are counted.
+
+---
+
+## Open Problem 15: The Minimal External Referee
+
+*Raised by: the exploratory note [Self-Improvement Needs a Referee](https://github.com/frnkptrln/systems-and-intelligence/blob/main/ideas/2026-07-24-self-improvement-needs-a-referee.md)
+and the exact [Referee Benchmark](../../lab/benchmarks/recursive-workbench/README.md).*
+
+**Problem statement:** How external must a referee be for a generate–evaluate–revise loop's
+observable score to remain evidence of held-out improvement? The workbench separates three referee
+properties — write-protected tests, independent evidence access (queries), and a frozen stopping
+rule — and measures each in isolation in one toy setting. Which of these properties are
+individually necessary, which combinations are sufficient, and does the answer survive proposers
+that optimize against the evaluator rather than merely hill-climbing past it?
+
+**Why it matters:** The v0 measurement shows the three regimes cleanly: with a frozen referee,
+self-revision saturates exactly at the evidence ceiling and ten times the budget adds nothing;
+referee-side queries raise the ceiling and held-out performance follows; and a capturable evaluator
+converts misspecification into an all-green report, tripling the gap between observed and held-out
+score. But the capture policy measured is a declared, unoptimized rule. The open question is
+whether any referee short of full write-protection plus independent evidence survives an
+*optimized* adversary — and whether a referee that lives inside the runtime can ever hold the
+boundary, or only one whose evidence channel the loop cannot reach.
+
+**Current boundary:** Goodhart's law, specification gaming, reward hacking, wireheading, and the
+delusion-box argument all describe the failure; eval-set holdout discipline and adversarial
+evaluation describe partial defenses. The repository's narrower contribution is the exact toy in
+which the referee boundary can be varied one property at a time with the ceiling computed
+analytically. Nothing here bears yet on learned loops, and the workbench's proposer does not model
+an adversary.
+
+**What a solution would look like:** Vary the referee properties independently — test
+write-protection on/off, query budget 0..q, evidence channel inside vs. outside the loop's write
+access — against proposers of increasing strength, ending with a proposer trained to maximize the
+observed score. Report, for each referee configuration, whether the observed score remains a
+calibrated predictor of the held-out score. The framing weakens if a purely internal referee (no
+independent evidence, no write-protection) suffices against optimized proposers in some natural
+setting, or if the boundary properties turn out not to decompose — i.e., if "externality" resists
+being reduced to a checklist of channel properties.
 
 ---
 

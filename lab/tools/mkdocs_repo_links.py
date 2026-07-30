@@ -3,10 +3,26 @@
 import re
 
 
+# Repository layers exposed inside docs_dir as symlinks. Kept as an explicit
+# tuple so the hook stays deterministic; tests/test_mkdocs_repo_links.py
+# asserts this tuple matches the actual symlink set in docs/, so adding a new
+# layer without updating the hook fails the test suite instead of silently
+# leaving that layer's root-page links unrewritten.
+ROOT_LAYERS = (
+    'book',
+    'fiction',
+    'lab',
+    'logs',
+    'meta',
+    'papers',
+    'simulation-models',
+    'theory',
+)
+
 ROOT_PAGES = {'index.md', 'synthesis.md', 'thinking-space.md'}
 REPO_ROOT_LINK = re.compile(
     r'(\]\()\.\./'
-    r'(?=(?:book|fiction|lab|logs|meta|papers|simulation-models|theory)/)'
+    r'(?=(?:' + '|'.join(re.escape(layer) for layer in ROOT_LAYERS) + r')/)'
 )
 
 

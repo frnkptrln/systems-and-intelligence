@@ -70,3 +70,4 @@ Depends on: <theory docs / simulations>
 17. [`017_provenance-depth-and-the-verification-economy.md`](017_provenance-depth-and-the-verification-economy.md) — Provenance depth and the cost of verifying generated artifacts
 18. [`018_the-city-panel-protocol.md`](018_the-city-panel-protocol.md) — Pre-registered city-scale field test of the corridor's three axes
 19. [`019_who_pays_for_the_veto.md`](019_who_pays_for_the_veto.md) — The benchmark's selection result aimed at the constraint architecture: a veto that can be exercised is still not stable if only its carrier pays
+20. [`020_the-referee-boundary.md`](020_the-referee-boundary.md) — The referee benchmark's three regimes as a deployment checklist: which side of the loop's write access each evaluator constituent lives on
