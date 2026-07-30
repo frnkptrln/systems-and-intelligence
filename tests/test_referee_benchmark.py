@@ -35,9 +35,22 @@ class TestSelfRevisionSaturates(unittest.TestCase):
             self.assertEqual(AGG[arm].all_pass_runs, 1024)
             self.assertEqual(AGG[arm].observed_sum, Fraction(1024))
 
-    def test_ten_times_the_budget_adds_nothing_heldout(self):
-        self.assertEqual(AGG["full-frozen"].heldout_correct_total, 7013)
-        self.assertEqual(AGG["full-frozen-10x"].heldout_correct_total, 6996)
+    def test_ten_times_the_budget_stays_at_the_same_ceiling(self):
+        self.assertEqual(AGG["full-frozen"].heldout_correct_total, 6977)
+        self.assertEqual(AGG["full-frozen-10x"].heldout_correct_total, 6984)
+
+    def test_long_budget_extends_the_same_proposal_stream(self):
+        short = rb.run_loop(
+            110, 0, arm="full-frozen", keep_trace=True,
+            **rb.ARMS["full-frozen"],
+        )
+        long = rb.run_loop(
+            110, 0, arm="full-frozen-10x", keep_trace=True,
+            **rb.ARMS["full-frozen-10x"],
+        )
+        short_slots = [e["slot"] for e in short.trace if e["event"] == "proposal"]
+        long_slots = [e["slot"] for e in long.trace if e["event"] == "proposal"]
+        self.assertEqual(short_slots, long_slots[: len(short_slots)])
 
     def test_evidence_is_arm_independent(self):
         # The world rng is decoupled from the loop rng: every frozen arm and
@@ -56,9 +69,9 @@ class TestRefereeQueriesRaiseTheCeiling(unittest.TestCase):
     def test_queries_add_evidence_and_heldout_follows(self):
         agg = AGG["full-witness"]
         self.assertEqual(agg.tests_final_total, 7519)
-        self.assertEqual(agg.heldout_correct_total, 7814)
-        self.assertEqual(agg.all_pass_runs, 973)
-        self.assertEqual(agg.observed_sum, Fraction(85397, 84))
+        self.assertEqual(agg.heldout_correct_total, 7869)
+        self.assertEqual(agg.all_pass_runs, 1024)
+        self.assertEqual(agg.observed_sum, Fraction(1024))
         # The gain over the frozen arm is evidence-driven: held-out tracks the
         # raised ceiling within the same tolerance as the frozen arm.
         self.assertLess(
@@ -72,18 +85,35 @@ class TestRefereeQueriesRaiseTheCeiling(unittest.TestCase):
 class TestEvaluatorCaptureInflatesOnlyTheReport(unittest.TestCase):
     def test_frozen_referee_reports_misspecification_honestly(self):
         agg = AGG["affine-frozen"]
-        self.assertEqual(agg.all_pass_runs, 172)
-        self.assertEqual(agg.observed_sum, Fraction(97499, 120))
-        self.assertEqual(agg.heldout_correct_total, 5718)
+        self.assertEqual(agg.all_pass_runs, 166)
+        self.assertEqual(agg.observed_sum, Fraction(684679, 840))
+        self.assertEqual(agg.heldout_correct_total, 5752)
         self.assertEqual(agg.deletions_total, 0)
 
     def test_capture_goes_green_without_heldout_gain(self):
         agg = AGG["affine-capture"]
-        self.assertEqual(agg.all_pass_runs, 993)
-        self.assertEqual(agg.observed_sum, Fraction(283803, 280))
-        self.assertEqual(agg.heldout_correct_total, 5780)
-        self.assertEqual(agg.deletions_total, 1174)
-        self.assertEqual(agg.tests_final_total, 5764 - 1174)
+        self.assertEqual(agg.all_pass_runs, 989)
+        self.assertEqual(agg.observed_sum, Fraction(40521, 40))
+        self.assertEqual(agg.heldout_correct_total, 5734)
+        self.assertEqual(agg.deletions_total, 1179)
+        self.assertEqual(agg.tests_final_total, 5764 - 1179)
+
+    def test_frozen_and_capture_share_the_proposal_stream(self):
+        frozen = rb.run_loop(
+            110, 0, arm="affine-frozen", keep_trace=True,
+            **rb.ARMS["affine-frozen"],
+        )
+        capture = rb.run_loop(
+            110, 0, arm="affine-capture", keep_trace=True,
+            **rb.ARMS["affine-capture"],
+        )
+        frozen_slots = [
+            e["slot"] for e in frozen.trace if e["event"] == "proposal"
+        ]
+        capture_slots = [
+            e["slot"] for e in capture.trace if e["event"] == "proposal"
+        ]
+        self.assertEqual(frozen_slots, capture_slots)
 
     def test_honesty_gap_widens_under_capture(self):
         frozen = AGG["affine-frozen"]

@@ -27,8 +27,29 @@ ls = _load()
 
 
 class TestProtocolIsFrozen(unittest.TestCase):
+    def test_protocol_digest_is_locked(self):
+        self.assertEqual(
+            ls.protocol_sha256(),
+            ls.EXPECTED_PROTOCOL_SHA256,
+        )
+
+    def test_manifest_maps_every_answer_to_its_score(self):
+        first = ls.protocol_manifest()["items"][0]
+        self.assertEqual(len(first["scores"]), 256)
+        self.assertEqual(first["scores"][0]["answer"], (0,) * 8)
+        self.assertIn("score", first["scores"][0])
+
+    def test_execution_target_is_deliberately_unregistered(self):
+        registration = ls.load_execution_registration(
+            ls.EXPECTED_PROTOCOL_SHA256
+        )
+        self.assertEqual(registration["status"], "unregistered")
+        self.assertIsNone(registration["provider"])
+        self.assertIsNone(registration["model"])
+
     def test_instance_set_is_deterministic(self):
-        a, b = ls.build_instances(0), ls.build_instances(0)
+        a = ls.build_instances(ls.PROTOCOL_SEED)
+        b = ls.build_instances(ls.PROTOCOL_SEED)
         self.assertEqual(a, b)
         counts = {}
         for inst in a:
@@ -83,8 +104,65 @@ class TestParser(unittest.TestCase):
         self.assertIsNone(ls.parse_answer(text, "TABLE"))
 
     def test_malformed_answers_fail_closed(self):
-        for text in ("ROW: 0 1", "ROW: two ones please", "", "TABLE 01010101"):
+        for text in (
+            "ROW: 0 1",
+            "ROW: two ones please",
+            "",
+            "TABLE 01010101",
+            "ROW: 0 0 0 0 0 0 0 0 1",
+            "not final ROW: 0 1 0 1 0 1 0 1 trailing text",
+            "ROW: 0 1 0 1 0 1 0 1\nmore commentary",
+            "ROW:01010101",
+        ):
             self.assertIsNone(ls.parse_answer(text, "ROW"))
+
+
+class TestProviderExecution(unittest.TestCase):
+    def test_one_transport_retry_is_recorded(self):
+        class FlakyProvider:
+            name = "flaky"
+            model = "test"
+
+            def __init__(self):
+                self.calls = 0
+
+            def complete(self, prompt, system=None):
+                self.calls += 1
+                if self.calls == 1:
+                    raise RuntimeError("temporary")
+                return "ROW: 0 0 0 0 0 1 1 1"
+
+        provider = FlakyProvider()
+        reply, attempts = ls.complete_with_retry(provider, "prompt")
+        self.assertEqual(reply, "ROW: 0 0 0 0 0 1 1 1")
+        self.assertEqual(provider.calls, 2)
+        self.assertEqual([a["ok"] for a in attempts], [False, True])
+
+    def test_two_failures_remain_a_parse_failure(self):
+        class BrokenProvider:
+            name = "broken"
+            model = "test"
+
+            def complete(self, prompt, system=None):
+                raise RuntimeError("still broken")
+
+        reply, attempts = ls.complete_with_retry(BrokenProvider(), "prompt")
+        self.assertEqual(len(attempts), 2)
+        self.assertTrue(reply.startswith("[PROVIDER ERROR]"))
+        self.assertIsNone(ls.parse_answer(reply, "ROW"))
+
+
+class TestSummary(unittest.TestCase):
+    def test_t1_chance_floor_does_not_shrink_on_parse_failure(self):
+        inst = {
+            "task": "T1",
+            "id": "T1-test",
+            "rule": 0,
+            "evidence": {coord: 0 for coord in range(8)},
+        }
+        records = [{"task": "T1", "instance": inst, "score": {"parsed": False}}]
+        summary = ls.summarize(records)
+        self.assertIn("chance expectation 1.0", summary)
 
 
 if __name__ == "__main__":

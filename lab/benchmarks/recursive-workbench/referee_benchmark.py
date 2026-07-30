@@ -1,4 +1,4 @@
-"""Referee benchmark v0 — self-revision against frozen, querying, and capturable referees.
+"""Referee benchmark v0.1 — self-revision against frozen, querying, and capturable referees.
 
 Operationalizes the hypothesis of the exploratory note "Self-Improvement Needs a
 Referee": a generate-evaluate-revise loop is first self-modifying, and improvement
@@ -18,11 +18,12 @@ arm sees the same evidence for a given (rule, seed) pair.
 
 Five arms, exact aggregation over all 256 hidden rules:
 
-- ``full-frozen``      unrestricted 8-bit artifact, frozen referee, budget 64.
-- ``full-frozen-10x``  the same loop with budget 640 (does more self-revision help?).
-- ``full-witness``     frozen referee plus two referee-side queries: at proposal
-                       32 and 48 the referee reveals the lowest-index unseen
-                       neighborhood and adds it as a test.
+- ``full-frozen``      unrestricted 8-bit artifact, frozen referee, budget 128.
+- ``full-frozen-10x``  the same loop with budget 1280 (does more self-revision help?).
+- ``full-witness``     frozen referee plus two referee-side query opportunities:
+                       at proposal 32 and 48 the referee reveals the lowest-index
+                       unseen neighborhood, when one remains, and adds it as a
+                       test.
 - ``affine-frozen``    artifact restricted to the 16 affine rules
                        out = a*l XOR b*c XOR c*r XOR d (misspecified for most
                        worlds), frozen referee, budget 128. The observed score is
@@ -50,9 +51,9 @@ COORDS = 8
 STUCK_LIMIT = 8
 
 ARMS: dict[str, dict] = {
-    "full-frozen": {"family": "full", "budget": 64},
-    "full-frozen-10x": {"family": "full", "budget": 640},
-    "full-witness": {"family": "full", "budget": 64, "queries": (32, 48)},
+    "full-frozen": {"family": "full", "budget": 128},
+    "full-frozen-10x": {"family": "full", "budget": 1280},
+    "full-witness": {"family": "full", "budget": 128, "queries": (32, 48)},
     "affine-frozen": {"family": "affine", "budget": 128},
     "affine-capture": {"family": "affine", "budget": 128, "capture": True},
 }
@@ -122,7 +123,10 @@ def run_loop(
 ) -> RunResult:
     """One bounded generate-evaluate-revise run against the configured referee."""
     world_rng = random.Random(f"world:{rule}:{seed}")
-    loop_rng = random.Random(f"loop:{arm}:{rule}:{seed}")
+    # Arms in the same artifact family share a proposal stream. This makes the
+    # 128-vs-1280 and frozen-vs-capture comparisons paired: only the declared
+    # referee property or budget changes, not the random proposals themselves.
+    loop_rng = random.Random(f"loop:{family}:{rule}:{seed}")
 
     row = tuple(world_rng.getrandbits(1) for _ in range(WIDTH))
     tests = evidence_tests(rule, row)
@@ -246,7 +250,7 @@ def aggregate(arm: str, seeds: int) -> ArmAggregate:
 
 
 def print_report(seeds: int) -> None:
-    print("REFEREE BENCHMARK v0")
+    print("REFEREE BENCHMARK v0.1")
     print(f"worlds: all 256 ECA rules x {seeds} seeds | held-out: table accuracy /8")
     print()
     header = (
@@ -267,10 +271,10 @@ def print_report(seeds: int) -> None:
         )
     print()
     print("Reading: the frozen-referee loop saturates at the evidence ceiling and")
-    print("10x more self-revision adds nothing; referee-side queries raise the")
+    print("10x more self-revision does not beat it; referee-side queries raise the")
     print("ceiling and the held-out score follows; under misspecification the")
     print("frozen referee reports the failure honestly, while the capturable")
-    print("evaluator converts the same failure into an all-green report.")
+    print("evaluator converts the same failure into a near-all-green report.")
 
 
 def main() -> None:

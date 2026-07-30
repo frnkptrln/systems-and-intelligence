@@ -72,6 +72,9 @@ class AnthropicProvider(LLMProvider):
         self.endpoint = endpoint
         self.api_version = api_version
         self.timeout_seconds = timeout_seconds
+        self.last_usage: dict | None = None
+        self.last_stop_reason: str | None = None
+        self.last_request_id: str | None = None
 
         # Reuse the mock embedder for `embed()`. See module docstring.
         self._fallback_embedder = MockProvider(embedding_dim=embedding_dim)
@@ -94,6 +97,9 @@ class AnthropicProvider(LLMProvider):
         return body
 
     def complete(self, prompt: str, system: str | None = None) -> str:
+        self.last_usage = None
+        self.last_stop_reason = None
+        self.last_request_id = None
         body = self._build_request_body(prompt, system)
         data = json.dumps(body).encode("utf-8")
         request = urllib.request.Request(
@@ -109,6 +115,10 @@ class AnthropicProvider(LLMProvider):
         try:
             with urllib.request.urlopen(request, timeout=self.timeout_seconds) as resp:
                 payload = json.loads(resp.read().decode("utf-8"))
+                self.last_request_id = (
+                    resp.headers.get("request-id")
+                    or resp.headers.get("x-request-id")
+                )
         except urllib.error.HTTPError as e:
             detail = e.read().decode("utf-8", errors="replace") if e.fp else ""
             raise RuntimeError(
@@ -119,6 +129,8 @@ class AnthropicProvider(LLMProvider):
 
         # The Messages API returns content as a list of blocks. Concatenate
         # text blocks; ignore tool-use or other block types for now.
+        self.last_usage = payload.get("usage")
+        self.last_stop_reason = payload.get("stop_reason")
         blocks = payload.get("content", [])
         parts = [b.get("text", "") for b in blocks if b.get("type") == "text"]
         return "".join(parts)

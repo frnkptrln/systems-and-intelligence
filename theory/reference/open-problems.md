@@ -274,10 +274,12 @@ not claim a new field or a general definition of intelligence. Its narrower ques
 explicitly learning the inverse map from *remaining distinctions* to *discriminating intervention*
 adds measurable capability beyond rollout search and information-gain planning.
 
-**First contact:** a pre-registered zero-shot slice of this comparison — consistency, pairwise and
+**First contact:** a frozen zero-shot task protocol for this comparison — consistency, pairwise and
 universal witness construction against the exact floors, with coverage-trap instances where a
 coverage heuristic provably fails — exists at the
-[Learned-Searcher Benchmark](../../lab/benchmarks/learned-searcher/README.md) and awaits its run.
+[Learned-Searcher Benchmark](../../lab/benchmarks/learned-searcher/README.md).
+Its execution target is deliberately unregistered: whether to run it, and against
+which exact model, remains a separate decision.
 
 **What a solution would look like:** Train on disjoint finite process families, candidate subsets,
 and admissible coverage constraints; evaluate on unseen subsets, candidate pairs, and held-out query
@@ -304,10 +306,10 @@ rule — and measures each in isolation in one toy setting. Which of these prope
 individually necessary, which combinations are sufficient, and does the answer survive proposers
 that optimize against the evaluator rather than merely hill-climbing past it?
 
-**Why it matters:** The v0 measurement shows the three regimes cleanly: with a frozen referee,
-self-revision saturates exactly at the evidence ceiling and ten times the budget adds nothing;
+**Why it matters:** The paired v0.1 measurement shows the three regimes cleanly: with a frozen referee,
+self-revision saturates at the evidence ceiling and ten times the budget does not move it beyond that ceiling;
 referee-side queries raise the ceiling and held-out performance follows; and a capturable evaluator
-converts misspecification into an all-green report, tripling the gap between observed and held-out
+converts misspecification into a near-all-green report, tripling the gap between observed and held-out
 score. But the capture policy measured is a declared, unoptimized rule. The open question is
 whether any referee short of full write-protection plus independent evidence survives an
 *optimized* adversary — and whether a referee that lives inside the runtime can ever hold the

@@ -25,7 +25,7 @@ Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title kee
 
 ## Notes
 
-- [Embodiment and the Non-Invariant Decomposition of Goals](2026-07-29-embodiment-and-the-non-invariant-decomposition-of-goals.md) — promoted to [theory](../theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md)
+- [Embodiment and the Non-Invariant Decomposition of Goals](2026-07-29-embodiment-and-the-non-invariant-decomposition-of-goals.md) — paper-specific research note; durable [effective-goal-space model](../theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md)
 - [The Graph Is a Materialized Prompt](2026-07-24-the-graph-is-a-materialized-prompt.md)
 - [Self-Improvement Needs a Referee](2026-07-24-self-improvement-needs-a-referee.md)
 - [The Same World Is Not the Same World](2026-07-23-the-same-world-is-not-the-same-world.md)

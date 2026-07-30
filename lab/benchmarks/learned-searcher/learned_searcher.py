@@ -23,31 +23,45 @@ its answers with the same exact machinery. Three tasks, all scored analytically:
                              identifies every member, within the exact minimal
                              identification cost.
 
-The instance set is deterministic (seeded); prompts and parsing rules in this
-file are the canonical pre-registered protocol. Model outputs are recorded
-verbatim to a JSONL results file. Parse failures and API errors count as
-failures and are reported separately. One run per pre-registration; no re-rolls.
+The instance seed is fixed; prompts, strict final-line parsing, and exhaustive
+scoring are locked by a canonical digest. The execution target is registered
+separately, so freezing the protocol does not silently choose a model. Outputs
+are recorded verbatim with model, source, attempt, response, and usage metadata
+to a JSONL file opened in exclusive-create mode. Parse failures and API errors
+count as failures. One run per execution registration; no re-rolls.
 
-Providers: ``--provider anthropic`` calls the real model through
-``lab/providers`` (requires ANTHROPIC_API_KEY); ``--provider stub`` exercises
-the full pipeline offline with a constant answer and gains no information about
-any model. ``--dry-run`` prints the instances and prompts without any calls.
+Providers: ``--provider anthropic`` is currently available through
+``lab/providers`` but is refused until an exact target is frozen in
+``execution-registration.json``; ``--provider stub`` exercises the pipeline
+offline with a constant answer and gains no information about any model.
+``--dry-run`` prints the protocol digest, instances, and prompts without calls.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
+import inspect
 import json
 import random
 import re
+import subprocess
 import sys
-from itertools import combinations
+import time
+from datetime import datetime, timezone
+from itertools import combinations, product
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[3]
+HERE = Path(__file__).resolve().parent
 
 WIDTH = 8
 COORDS = 8
+PROTOCOL_VERSION = "learned-searcher-v0.1"
+PROTOCOL_SEED = 0
+EXPECTED_PROTOCOL_SHA256 = "5a64f4778a78063627c57c28215974057024793e5d385ee9554f3b5b0bda4963"
+EXECUTION_REGISTRATION = HERE / "execution-registration.json"
+MAX_ATTEMPTS = 2
 
 SYSTEM_PROMPT = (
     "You are a careful reasoner working on elementary cellular automata. "
@@ -221,18 +235,20 @@ def render_prompt(inst: dict) -> str:
 
 # --- Parsing and scoring (part of the pre-registration) ---------------------
 
-_ANSWER = re.compile(r"(TABLE|ROW)\s*:\s*([01][\s,]*){8}")
+_FINAL_ANSWER = re.compile(r"^(TABLE|ROW): ([01](?: [01]){7})$")
 
 
 def parse_answer(text: str, kind: str) -> tuple[int, ...] | None:
-    """Last well-formed final line wins; anything else is a parse failure."""
-    match = None
-    for match in _ANSWER.finditer(text):
-        pass
+    """Accept exactly one eight-bit answer on the final non-empty line."""
+    lines = text.splitlines()
+    while lines and not lines[-1].strip():
+        lines.pop()
+    if not lines:
+        return None
+    match = _FINAL_ANSWER.fullmatch(lines[-1].strip())
     if match is None or match.group(1) != kind:
         return None
-    bits = tuple(int(ch) for ch in re.findall(r"[01]", match.group(0)))
-    return bits if len(bits) == COORDS else None
+    return tuple(int(bit) for bit in match.group(2).split())
 
 
 def score(inst: dict, bits: tuple[int, ...] | None) -> dict:
@@ -262,25 +278,150 @@ def score(inst: dict, bits: tuple[int, ...] | None) -> dict:
     return result
 
 
+# --- Frozen protocol ---------------------------------------------------------
+
+def protocol_manifest() -> dict:
+    """Canonical task, prompt, parser, and exhaustive score manifest."""
+    instances = build_instances(PROTOCOL_SEED)
+    items = []
+    all_answers = tuple(product((0, 1), repeat=COORDS))
+    for inst in instances:
+        items.append(
+            {
+                "instance": inst,
+                "prompt": render_prompt(inst),
+                "answer_kind": "TABLE" if inst["task"] == "T1" else "ROW",
+                "scores": [
+                    {"answer": bits, "score": score(inst, bits)}
+                    for bits in all_answers
+                ],
+            }
+        )
+    return {
+        "version": PROTOCOL_VERSION,
+        "seed": PROTOCOL_SEED,
+        "width": WIDTH,
+        "system_prompt": SYSTEM_PROMPT,
+        "final_answer_pattern": _FINAL_ANSWER.pattern,
+        "final_answer_policy": (
+            "last non-empty line; surrounding whitespace ignored; exact kind, "
+            "colon, and eight space-separated bits required"
+        ),
+        "parser_source": inspect.getsource(parse_answer),
+        "provider_call_attempts_per_instance": MAX_ATTEMPTS,
+        "items": items,
+    }
+
+
+def protocol_sha256() -> str:
+    payload = json.dumps(
+        protocol_manifest(), sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
+
+
+def load_execution_registration(protocol_digest: str) -> dict:
+    registration = json.loads(EXECUTION_REGISTRATION.read_text(encoding="utf-8"))
+    if registration.get("protocol_sha256") != protocol_digest:
+        raise RuntimeError(
+            "Execution registration does not match the frozen protocol digest."
+        )
+    return registration
+
+
 # --- Providers ---------------------------------------------------------------
 
 class StubProvider:
     """Offline pipeline test; constant answers, no information about any model."""
 
     name = "stub"
+    model = "constant-zero-v1"
+    last_usage = None
 
     def complete(self, prompt: str, system: str | None = None) -> str:
         kind = "TABLE" if "TABLE:" in prompt else "ROW"
         return f"{kind}: 0 0 0 0 0 0 0 0"
 
 
-def make_provider(name: str):
+def make_provider(name: str, model: str | None = None):
     if name == "stub":
         return StubProvider()
+    if not model:
+        raise ValueError("A frozen exact model identifier is required.")
     sys.path.insert(0, str(REPO))
     from lab.providers.anthropic_provider import AnthropicProvider
 
-    return AnthropicProvider()
+    return AnthropicProvider(model=model)
+
+
+def provider_identity(provider) -> dict:
+    return {
+        "provider": provider.name,
+        "model": getattr(provider, "model", None),
+    }
+
+
+def complete_with_retry(provider, prompt: str) -> tuple[str, list[dict]]:
+    """Make at most two recorded attempts after provider-call errors."""
+    attempts = []
+    last_error = None
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        started = time.perf_counter()
+        try:
+            reply = provider.complete(prompt, system=SYSTEM_PROMPT)
+            attempts.append(
+                {
+                    "attempt": attempt,
+                    "ok": True,
+                    "latency_seconds": round(time.perf_counter() - started, 6),
+                    "usage": getattr(provider, "last_usage", None),
+                    "stop_reason": getattr(provider, "last_stop_reason", None),
+                    "request_id": getattr(provider, "last_request_id", None),
+                }
+            )
+            return reply, attempts
+        except Exception as error:
+            last_error = error
+            attempts.append(
+                {
+                    "attempt": attempt,
+                    "ok": False,
+                    "error_type": type(error).__name__,
+                    "error": str(error),
+                    "latency_seconds": round(time.perf_counter() - started, 6),
+                    "usage": getattr(provider, "last_usage", None),
+                    "stop_reason": getattr(provider, "last_stop_reason", None),
+                    "request_id": getattr(provider, "last_request_id", None),
+                }
+            )
+    return (
+        f"[PROVIDER ERROR] {type(last_error).__name__}: {last_error}",
+        attempts,
+    )
+
+
+def git_provenance() -> dict:
+    """Capture the exact source state used for a real run."""
+    try:
+        commit = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=REPO,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+        dirty = bool(
+            subprocess.run(
+                ["git", "status", "--porcelain"],
+                cwd=REPO,
+                check=True,
+                capture_output=True,
+                text=True,
+            ).stdout.strip()
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return {"commit": None, "dirty": None}
+    return {"commit": commit, "dirty": dirty}
 
 
 # --- Runner ------------------------------------------------------------------
@@ -295,7 +436,10 @@ def summarize(records: list[dict]) -> str:
         if task == "T1":
             ok = sum(1 for r in parsed if r["score"]["consistent"])
             truth = sum(1 for r in parsed if r["score"]["truth"])
-            chance = sum(2.0 ** -r["score"]["unknown_coords"] for r in parsed)
+            chance = sum(
+                2.0 ** -(COORDS - len(r["instance"]["evidence"]))
+                for r in rows
+            )
             lines.append(
                 f"    consistent {ok}/{n}   truth {truth}/{n} "
                 f"(chance expectation {chance:.1f})"
@@ -337,50 +481,119 @@ def summarize(records: list[dict]) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--provider", choices=("anthropic", "stub"), default="stub")
-    parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument(
-        "--out", default=str(Path(__file__).parent / "results.jsonl")
-    )
+    parser.add_argument("--out")
     args = parser.parse_args()
 
-    instances = build_instances(args.seed)
+    digest = protocol_sha256()
+    if digest != EXPECTED_PROTOCOL_SHA256:
+        raise RuntimeError(
+            "Frozen protocol digest changed. Review the change and register a "
+            "new digest before any execution."
+        )
+
+    instances = build_instances(PROTOCOL_SEED)
     if args.dry_run:
         counts = {}
         for inst in instances:
             counts[inst["task"]] = counts.get(inst["task"], 0) + 1
-        print(f"instances: {counts}  (total {len(instances)} model calls)")
+        print(
+            f"protocol: {PROTOCOL_VERSION} sha256={digest}\n"
+            f"instances: {counts}  (total {len(instances)}; "
+            f"up to {len(instances) * MAX_ATTEMPTS} provider calls after retries)"
+        )
         for task in ("T1", "T2", "T3"):
             first = next(i for i in instances if i["task"] == task)
             print(f"\n--- first {task} prompt ({first['id']}) ---")
             print(render_prompt(first))
         return
 
-    provider = make_provider(args.provider)
+    registration = load_execution_registration(digest)
+    if args.provider == "stub":
+        if not args.out:
+            parser.error("--out is required for stub runs.")
+        model = StubProvider.model
+    else:
+        if args.out:
+            parser.error(
+                "Real runs always use the canonical results.jsonl path; "
+                "--out is available only for stub runs."
+            )
+        if registration.get("status") != "frozen":
+            parser.error(
+                "No real execution is registered. Freeze provider, exact model, "
+                "and maintainer prediction in execution-registration.json first."
+            )
+        if registration.get("provider") != args.provider:
+            parser.error("CLI provider does not match the frozen registration.")
+        model = registration.get("model")
+        if not model:
+            parser.error("The frozen registration has no exact model identifier.")
+        if registration.get("maintainer_prediction") is None:
+            parser.error(
+                "The frozen registration must record or explicitly waive the "
+                "maintainer prediction."
+            )
+
+    output = Path(args.out) if args.provider == "stub" else HERE / "results.jsonl"
+    provenance = git_provenance()
+    if args.provider != "stub" and (
+        provenance["commit"] is None or provenance["dirty"] is not False
+    ):
+        parser.error("Real runs require a clean, committed git worktree.")
+
+    provider = make_provider(args.provider, model)
+    identity = provider_identity(provider)
     records = []
-    with open(args.out, "w") as sink:
+    try:
+        sink = output.open("x", encoding="utf-8")
+    except FileExistsError:
+        parser.error(f"Refusing to overwrite existing result file: {output}")
+
+    with sink:
+        run_record = {
+            "record_type": "run",
+            "started_at": datetime.now(timezone.utc).isoformat(),
+            "protocol_version": PROTOCOL_VERSION,
+            "protocol_sha256": digest,
+            "protocol_seed": PROTOCOL_SEED,
+            "execution_registration": registration,
+            "provider": identity,
+            "git": provenance,
+            "python": sys.version,
+        }
+        sink.write(json.dumps(run_record) + "\n")
         for inst in instances:
             prompt = render_prompt(inst)
-            try:
-                reply = provider.complete(prompt, system=SYSTEM_PROMPT)
-            except Exception as error:  # recorded as failure, run continues
-                reply = f"[PROVIDER ERROR] {error}"
+            reply, attempts = complete_with_retry(provider, prompt)
             kind = "TABLE" if inst["task"] == "T1" else "ROW"
             bits = parse_answer(reply, kind)
             record = {
+                "record_type": "result",
                 "task": inst["task"],
                 "id": inst["id"],
                 "instance": inst,
-                "provider": provider.name,
+                "protocol_sha256": digest,
+                "provider": identity,
+                "attempts": attempts,
+                "usage": getattr(provider, "last_usage", None),
+                "response_metadata": {
+                    "stop_reason": getattr(provider, "last_stop_reason", None),
+                    "request_id": getattr(provider, "last_request_id", None),
+                },
+                "reply_characters": len(reply),
                 "reply": reply,
                 "score": score(inst, bits),
             }
             records.append(record)
             sink.write(json.dumps(record) + "\n")
 
-    print(f"LEARNED-SEARCHER RUN  provider={provider.name}  seed={args.seed}")
+    print(
+        f"LEARNED-SEARCHER RUN  provider={identity['provider']} "
+        f"model={identity['model']}  protocol={digest}"
+    )
     print(summarize(records))
-    print(f"\nverbatim record: {args.out}")
+    print(f"\nverbatim record: {output}")
 
 
 if __name__ == "__main__":

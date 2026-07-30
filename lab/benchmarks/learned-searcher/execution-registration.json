@@ -1,0 +1,8 @@
+{
+  "status": "unregistered",
+  "protocol_sha256": "5a64f4778a78063627c57c28215974057024793e5d385ee9554f3b5b0bda4963",
+  "provider": null,
+  "model": null,
+  "maintainer_prediction": null,
+  "note": "Freeze the target and maintainer prediction in a separate commit before the first real call."
+}
