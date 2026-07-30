@@ -1,0 +1,387 @@
+"""Learned-searcher benchmark — pre-registered first contact with the exact floors.
+
+Implements the front page's first near-term frontier item: give a language model
+the same partial traces and query budgets as the exact ECA baselines, and score
+its answers with the same exact machinery. Three tasks, all scored analytically:
+
+- T1 consistent completion   evidence from one random-ring update of a hidden
+                             rule; the model must output a full rule table
+                             consistent with the evidence. Truth recovery beyond
+                             chance is information-theoretically impossible on
+                             uniform worlds (benchmark v1.2); T1 measures
+                             consistency and reveals the model's selection prior.
+- T2 pairwise witness        two explicit rule tables; the model must construct
+                             a width-8 ring that one synchronous update
+                             distinguishes, within the analytic minimal cost.
+                             Six instances are coverage traps: the pair differs
+                             only on neighborhood 111, where every cost-3
+                             maximal-coverage row fails (witness benchmark,
+                             restricted arm). A coverage heuristic scores ~0
+                             on these; difference-set reasoning scores ~1.
+- T3 universal witness       a declared class of four rule tables; the model
+                             must construct one row whose single update
+                             identifies every member, within the exact minimal
+                             identification cost.
+
+The instance set is deterministic (seeded); prompts and parsing rules in this
+file are the canonical pre-registered protocol. Model outputs are recorded
+verbatim to a JSONL results file. Parse failures and API errors count as
+failures and are reported separately. One run per pre-registration; no re-rolls.
+
+Providers: ``--provider anthropic`` calls the real model through
+``lab/providers`` (requires ANTHROPIC_API_KEY); ``--provider stub`` exercises
+the full pipeline offline with a constant answer and gains no information about
+any model. ``--dry-run`` prints the instances and prompts without any calls.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import random
+import re
+import sys
+from itertools import combinations
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parents[3]
+
+WIDTH = 8
+COORDS = 8
+
+SYSTEM_PROMPT = (
+    "You are a careful reasoner working on elementary cellular automata. "
+    "A rule table maps each 3-bit neighborhood (left, center, right) to one "
+    "output bit. Rows are rings of 8 cells updated synchronously: the new "
+    "value of cell i is the table entry for (cell i-1, cell i, cell i+1), "
+    "with wraparound. Think step by step as needed, then end your reply with "
+    "the single final line requested. The final line must match the requested "
+    "format exactly."
+)
+
+
+def rule_bit(rule: int, coord: int) -> int:
+    return (rule >> coord) & 1
+
+
+def full_table(rule: int) -> tuple[int, ...]:
+    return tuple(rule_bit(rule, coord) for coord in range(COORDS))
+
+
+def step(table: tuple[int, ...], row: tuple[int, ...]) -> tuple[int, ...]:
+    width = len(row)
+    return tuple(
+        table[(row[(i - 1) % width] << 2) | (row[i] << 1) | row[(i + 1) % width]]
+        for i in range(width)
+    )
+
+
+def evidence(rule: int, row: tuple[int, ...]) -> dict[int, int]:
+    width = len(row)
+    tests = {}
+    for i in range(width):
+        coord = (
+            (row[(i - 1) % width] << 2) | (row[i] << 1) | row[(i + 1) % width]
+        )
+        tests[coord] = rule_bit(rule, coord)
+    return dict(sorted(tests.items()))
+
+
+def pair_min_cost(a: int, b: int) -> int:
+    """Analytic minimal preparation cost separating two rules (witness result)."""
+    return min(
+        bin(coord).count("1")
+        for coord in range(COORDS)
+        if rule_bit(a, coord) != rule_bit(b, coord)
+    )
+
+
+def rows_at_cost(width: int, cost: int):
+    for ones in combinations(range(width), cost):
+        row = [0] * width
+        for i in ones:
+            row[i] = 1
+        yield tuple(row)
+
+
+def identifies(cls: list[int], row: tuple[int, ...]) -> bool:
+    outputs = {step(full_table(rule), row) for rule in cls}
+    return len(outputs) == len(cls)
+
+
+def min_identifying_cost(cls: list[int], width: int = WIDTH) -> int | None:
+    for cost in range(width + 1):
+        for row in rows_at_cost(width, cost):
+            if identifies(cls, row):
+                return cost
+    return None
+
+
+# --- Instances (deterministic; this set is the pre-registered protocol) -----
+
+def build_instances(seed: int = 0) -> list[dict]:
+    rng = random.Random(f"learned-searcher:{seed}")
+    instances = []
+
+    for i in range(40):
+        rule = rng.randrange(256)
+        row = tuple(rng.getrandbits(1) for _ in range(WIDTH))
+        ev = evidence(rule, row)
+        instances.append(
+            {"task": "T1", "id": f"T1-{i:02d}", "rule": rule, "evidence": ev}
+        )
+
+    pairs = []
+    while len(pairs) < 34:
+        a, b = rng.randrange(256), rng.randrange(256)
+        if a != b and (a, b) not in pairs:
+            pairs.append((a, b))
+    traps = []
+    while len(traps) < 6:
+        a = rng.randrange(128)
+        if (a, a | 128) not in traps:
+            traps.append((a, a | 128))  # differ only on neighborhood 111
+    for i, (a, b) in enumerate(pairs + traps):
+        instances.append(
+            {
+                "task": "T2",
+                "id": f"T2-{i:02d}",
+                "a": a,
+                "b": b,
+                "budget": pair_min_cost(a, b),
+                "trap": i >= len(pairs),
+            }
+        )
+
+    for i in range(20):
+        cls = sorted(rng.sample(range(256), 4))
+        instances.append(
+            {
+                "task": "T3",
+                "id": f"T3-{i:02d}",
+                "cls": cls,
+                "budget": min_identifying_cost(cls),
+            }
+        )
+    return instances
+
+
+# --- Prompts (canonical wording; part of the pre-registration) --------------
+
+def _render_table(rule: int) -> str:
+    lines = []
+    for coord in range(7, -1, -1):
+        l, c, r = (coord >> 2) & 1, (coord >> 1) & 1, coord & 1
+        lines.append(f"  ({l},{c},{r}) -> {rule_bit(rule, coord)}")
+    return "\n".join(lines)
+
+
+def render_prompt(inst: dict) -> str:
+    if inst["task"] == "T1":
+        ev_lines = "\n".join(
+            f"  ({(c >> 2) & 1},{(c >> 1) & 1},{c & 1}) -> {out}"
+            for c, out in inst["evidence"].items()
+        )
+        return (
+            "A hidden rule table produced these observed neighborhood -> output "
+            f"pairs:\n{ev_lines}\n\n"
+            "Give one complete rule table consistent with every observation. "
+            "End with exactly one line of the form\n"
+            "TABLE: t111 t110 t101 t100 t011 t010 t001 t000\n"
+            "where each t is the output bit for that neighborhood, written as "
+            "eight binary digits separated by spaces."
+        )
+    if inst["task"] == "T2":
+        return (
+            "Rule A:\n" + _render_table(inst["a"]) + "\n\n"
+            "Rule B:\n" + _render_table(inst["b"]) + "\n\n"
+            "Construct one ring of 8 cells such that a single synchronous "
+            "update under Rule A differs from a single synchronous update "
+            f"under Rule B. Use at most {inst['budget']} ones in the ring. "
+            "End with exactly one line of the form\n"
+            "ROW: r0 r1 r2 r3 r4 r5 r6 r7\n"
+            "as eight binary digits separated by spaces (r0..r7 around the ring)."
+        )
+    cls_txt = "\n\n".join(
+        f"Rule {name}:\n" + _render_table(rule)
+        for name, rule in zip("ABCD", inst["cls"])
+    )
+    return (
+        cls_txt + "\n\n"
+        "One of these four rules is in effect, but you do not know which. "
+        "Construct one ring of 8 cells such that the result of a single "
+        "synchronous update is different for every one of the four rules — "
+        "one update must identify the rule no matter which it is. "
+        f"Use at most {inst['budget']} ones in the ring. "
+        "End with exactly one line of the form\n"
+        "ROW: r0 r1 r2 r3 r4 r5 r6 r7\n"
+        "as eight binary digits separated by spaces (r0..r7 around the ring)."
+    )
+
+
+# --- Parsing and scoring (part of the pre-registration) ---------------------
+
+_ANSWER = re.compile(r"(TABLE|ROW)\s*:\s*([01][\s,]*){8}")
+
+
+def parse_answer(text: str, kind: str) -> tuple[int, ...] | None:
+    """Last well-formed final line wins; anything else is a parse failure."""
+    match = None
+    for match in _ANSWER.finditer(text):
+        pass
+    if match is None or match.group(1) != kind:
+        return None
+    bits = tuple(int(ch) for ch in re.findall(r"[01]", match.group(0)))
+    return bits if len(bits) == COORDS else None
+
+
+def score(inst: dict, bits: tuple[int, ...] | None) -> dict:
+    if bits is None:
+        return {"parsed": False}
+    result: dict = {"parsed": True}
+    if inst["task"] == "T1":
+        # TABLE line is written t111..t000 -> bits[0] is coordinate 7.
+        table = tuple(reversed(bits))
+        result["consistent"] = all(
+            table[c] == out for c, out in inst["evidence"].items()
+        )
+        result["truth"] = table == full_table(inst["rule"])
+        result["unknown_coords"] = COORDS - len(inst["evidence"])
+    elif inst["task"] == "T2":
+        cost = sum(bits)
+        result["separates"] = step(full_table(inst["a"]), bits) != step(
+            full_table(inst["b"]), bits
+        )
+        result["within_budget"] = cost <= inst["budget"]
+        result["cost"] = cost
+    else:
+        cost = sum(bits)
+        result["identifies"] = identifies(inst["cls"], bits)
+        result["within_budget"] = cost <= inst["budget"]
+        result["cost"] = cost
+    return result
+
+
+# --- Providers ---------------------------------------------------------------
+
+class StubProvider:
+    """Offline pipeline test; constant answers, no information about any model."""
+
+    name = "stub"
+
+    def complete(self, prompt: str, system: str | None = None) -> str:
+        kind = "TABLE" if "TABLE:" in prompt else "ROW"
+        return f"{kind}: 0 0 0 0 0 0 0 0"
+
+
+def make_provider(name: str):
+    if name == "stub":
+        return StubProvider()
+    sys.path.insert(0, str(REPO))
+    from lab.providers.anthropic_provider import AnthropicProvider
+
+    return AnthropicProvider()
+
+
+# --- Runner ------------------------------------------------------------------
+
+def summarize(records: list[dict]) -> str:
+    lines = []
+    for task in ("T1", "T2", "T3"):
+        rows = [r for r in records if r["task"] == task]
+        n = len(rows)
+        parsed = [r for r in rows if r["score"].get("parsed")]
+        lines.append(f"{task}: n={n} parsed={len(parsed)}")
+        if task == "T1":
+            ok = sum(1 for r in parsed if r["score"]["consistent"])
+            truth = sum(1 for r in parsed if r["score"]["truth"])
+            chance = sum(2.0 ** -r["score"]["unknown_coords"] for r in parsed)
+            lines.append(
+                f"    consistent {ok}/{n}   truth {truth}/{n} "
+                f"(chance expectation {chance:.1f})"
+            )
+        elif task == "T2":
+            for label, subset in (
+                ("random", [r for r in rows if not r["instance"]["trap"]]),
+                ("trap  ", [r for r in rows if r["instance"]["trap"]]),
+            ):
+                sep = sum(
+                    1
+                    for r in subset
+                    if r["score"].get("parsed") and r["score"]["separates"]
+                )
+                opt = sum(
+                    1
+                    for r in subset
+                    if r["score"].get("parsed")
+                    and r["score"]["separates"]
+                    and r["score"]["within_budget"]
+                )
+                lines.append(
+                    f"    {label} separates {sep}/{len(subset)}   "
+                    f"cost-optimal {opt}/{len(subset)}"
+                )
+        else:
+            ident = sum(
+                1 for r in parsed if r["score"]["identifies"]
+            )
+            opt = sum(
+                1
+                for r in parsed
+                if r["score"]["identifies"] and r["score"]["within_budget"]
+            )
+            lines.append(f"    identifies {ident}/{n}   cost-optimal {opt}/{n}")
+    return "\n".join(lines)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--provider", choices=("anthropic", "stub"), default="stub")
+    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--out", default=str(Path(__file__).parent / "results.jsonl")
+    )
+    args = parser.parse_args()
+
+    instances = build_instances(args.seed)
+    if args.dry_run:
+        counts = {}
+        for inst in instances:
+            counts[inst["task"]] = counts.get(inst["task"], 0) + 1
+        print(f"instances: {counts}  (total {len(instances)} model calls)")
+        for task in ("T1", "T2", "T3"):
+            first = next(i for i in instances if i["task"] == task)
+            print(f"\n--- first {task} prompt ({first['id']}) ---")
+            print(render_prompt(first))
+        return
+
+    provider = make_provider(args.provider)
+    records = []
+    with open(args.out, "w") as sink:
+        for inst in instances:
+            prompt = render_prompt(inst)
+            try:
+                reply = provider.complete(prompt, system=SYSTEM_PROMPT)
+            except Exception as error:  # recorded as failure, run continues
+                reply = f"[PROVIDER ERROR] {error}"
+            kind = "TABLE" if inst["task"] == "T1" else "ROW"
+            bits = parse_answer(reply, kind)
+            record = {
+                "task": inst["task"],
+                "id": inst["id"],
+                "instance": inst,
+                "provider": provider.name,
+                "reply": reply,
+                "score": score(inst, bits),
+            }
+            records.append(record)
+            sink.write(json.dumps(record) + "\n")
+
+    print(f"LEARNED-SEARCHER RUN  provider={provider.name}  seed={args.seed}")
+    print(summarize(records))
+    print(f"\nverbatim record: {args.out}")
+
+
+if __name__ == "__main__":
+    main()
