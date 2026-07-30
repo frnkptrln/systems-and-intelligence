@@ -85,6 +85,7 @@ More executable work:
 - [Lenia](simulation-models/emergent-dynamics/lenia/README.md) — continuous cellular automata
 - [Reaction–Diffusion](simulation-models/emergent-dynamics/reaction-diffusion/README.md) — pattern formation from local chemistry
 - [Nested Emergence](simulation-models/social-computation/nested-emergence-demo/README.md) — coupled dynamics across scales
+- [Referee Benchmark](lab/benchmarks/recursive-workbench/README.md) — when does a self-revising loop actually improve, exactly measured
 - [Agentic Identity Suite](lab/AGENTIC_README.md) — experimental tests for persistence, binding, and availability
 
 ## What lives where
