@@ -26,8 +26,8 @@ retired that move: a transition kernel, proposal process, program, policy, and
 historical mechanism are different typed objects. A trace can constrain a
 declared model family without uniquely recovering any of them.
 
-The Day 2 material does not justify restoring the old foundation. It does
-strengthen a narrower diagnosis:
+The independently checked Day 2 sources do not justify restoring the old
+foundation. They do strengthen a narrower diagnosis:
 
 > **Working thesis.** Expressed competence is a property of a declared process
 > in a declared coupling, under constraints, history, tasks, tests, and an
