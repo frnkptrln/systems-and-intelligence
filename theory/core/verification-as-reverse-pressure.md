@@ -21,7 +21,7 @@ A verifier is often pictured as a terminal gate:
 
 $$
 \text{candidate}\longrightarrow
-\{\text{accept},\text{reject}\}.
+\lbrace\text{accept},\text{reject}\rbrace.
 $$
 
 In a research loop, the useful output is richer:
@@ -59,7 +59,7 @@ $$
 and let the retained history be
 
 $$
-H_t=\{(o_i,a_i,o_{i+1})\}_{i<t}.
+H_t=\langle(o_i,a_i,o_{i+1})\rangle_{i=0}^{t-1}.
 $$
 
 For a declared equivalence relation $\sim_{\mathcal Q}$, define replay fit:

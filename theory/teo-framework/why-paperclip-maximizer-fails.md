@@ -46,7 +46,7 @@ and cumulative overshoot by
 
 $$
 \dot\Omega(t)
-= \max\{0,\dot S(t)-D_{\max}\}.
+= \max\lbrace0,\dot S(t)-D_{\max}\rbrace.
 $$
 
 Substrate health declines after the declared tolerance $S_{\max}$ is exceeded. If the

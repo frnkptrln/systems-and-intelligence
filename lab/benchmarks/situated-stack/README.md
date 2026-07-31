@@ -28,8 +28,8 @@ at    -> stay
 right -> step-right
 ```
 
-The world is the finite line $\{-2,-1,0,1,2\}$. The task family contains all
-12 ordered start–target pairs with target in $\{-1,0,1\}$ and start different
+The world is the finite line $\lbrace-2,-1,0,1,2\rbrace$. The task family contains all
+12 ordered start–target pairs with target in $\lbrace-1,0,1\rbrace$ and start different
 from target. An episode has at most four actions. Success means ending at the
 external task target.
 

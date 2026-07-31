@@ -9,8 +9,8 @@ The documentation is read in two places with different renderers:
 Both accept ``$...$`` for inline mathematics and ``$$...$$`` for display
 mathematics, but GitHub can reinterpret malformed display blocks as ordinary
 Markdown. In particular, a bare ``=`` inside an unrecognised block becomes a
-Setext heading. GitHub also rejects ``\\operatorname`` and does not reliably
-preserve escaped braces after ``\\left`` or ``\\right``. This validator keeps the
+Setext heading. GitHub also rejects ``\\operatorname`` and strips raw ``\\{`` and
+``\\}`` escapes before the math renderer sees them. This validator keeps the
 shared subset explicit.
 
 Usage:
@@ -49,7 +49,7 @@ LATEX_COMMAND_RE = re.compile(
     r')\b'
 )
 GITHUB_OPERATORNAME_RE = re.compile(r'(?<!\\)\\operatorname\*?')
-GITHUB_ESCAPED_DELIMITER_RE = re.compile(r'(?<!\\)\\(?:left|right)\\[{}]')
+GITHUB_ESCAPED_BRACE_RE = re.compile(r'(?<!\\)\\[{}]')
 
 
 @dataclass(frozen=True)
@@ -171,10 +171,10 @@ def expression_problems(expression: str) -> list[str]:
         problems.append(
             r'GitHub rejects \operatorname; use a portable \mathrm or \mathop form'
         )
-    if GITHUB_ESCAPED_DELIMITER_RE.search(expression):
+    if GITHUB_ESCAPED_BRACE_RE.search(expression):
         problems.append(
-            r'GitHub does not reliably render \left\{ or \right\}; '
-            r'use \left\lbrace and \right\rbrace'
+            r'GitHub strips raw \{ and \} escapes before math rendering; '
+            r'use \lbrace and \rbrace'
         )
     return problems
 

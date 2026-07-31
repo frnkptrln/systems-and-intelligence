@@ -523,7 +523,7 @@ For task $\tau$, let $J_\tau(\pi)$ be the expected return or negative risk of po
 committal representation of competence is the **task profile**
 
 $$
-\mathcal J(\pi)=\{J_\tau(\pi):\tau\in\mathcal T\}.
+\mathcal J(\pi)=\lbrace J_\tau(\pi):\tau\in\mathcal T\rbrace.
 $$
 
 A scalar intelligence score requires a weighting $w$ over tasks,

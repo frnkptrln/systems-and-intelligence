@@ -110,14 +110,14 @@ The Thermodynamics of Emergent Orchestration (TEO) couples four established form
 
 ### 2.1 State Variables
 
-Consider a system of $N$ agents indexed by $i \in \{1, \ldots, N\}$. The state of agent $i$ at time $t$ is described by:
+Consider a system of $N$ agents indexed by $i \in \lbrace1, \ldots, N\rbrace$. The state of agent $i$ at time $t$ is described by:
 
 - A **resource share** $x_i(t) \in [0, 1]$ representing the fraction of total system resources controlled by agent $i$ (compute, capital, attention, or any conserved quantity). The shares form a probability simplex: $\sum_{i=1}^N x_i(t) = 1$ for all $t$.
 - A **value orientation** $\theta_i(t) \in [0, 2\pi)$ representing the direction of agent $i$'s utility vector projected onto the unit circle.
 
 An additional scalar **substrate-health** variable $H(t) \in [0, 1]$ tracks the integrity of the dissipative substrate hosting the dynamics; $H(0) = 1$ by convention.
 
-The communication topology is fixed by an adjacency matrix $A \in \{0, 1\}^{N \times N}$ with $A_{ij} = 1$ iff agent $j$'s value orientation enters agent $i$'s dynamics. We assume $A$ is symmetric and that the underlying graph is connected.
+The communication topology is fixed by an adjacency matrix $A \in \lbrace0, 1\rbrace^{N \times N}$ with $A_{ij} = 1$ iff agent $j$'s value orientation enters agent $i$'s dynamics. We assume $A$ is symmetric and that the underlying graph is connected.
 
 ### 2.2 The Replicator Equation (Resource Dynamics)
 
@@ -243,7 +243,7 @@ This section formalises the central claim: the conjunction $\gamma > 0$, $K > K_
 
 ### 3.1 The Viable Region and Robust Viability
 
-Let $\Sigma$ denote the state space of the TEO system: the simplex $\{\mathbf{x} \in \mathbb{R}^N_{\geq 0} : \sum_i x_i = 1\}$ combined with the $N$-torus $[0, 2\pi)^N$ for value orientations, augmented by the substrate-health variable $H \in [0, 1]$ (equivalently the accumulated overshoot $\Omega$ via Equation 6b).
+Let $\Sigma$ denote the state space of the TEO system: the simplex $\lbrace\mathbf{x} \in \mathbb{R}^N_{\geq 0} : \sum_i x_i = 1\rbrace$ combined with the $N$-torus $[0, 2\pi)^N$ for value orientations, augmented by the substrate-health variable $H \in [0, 1]$ (equivalently the accumulated overshoot $\Omega$ via Equation 6b).
 
 We define the **viable region** $V \subset \Sigma$ by the conditions:
 
@@ -363,7 +363,7 @@ m_S = S_{\max} - \Omega(t),
 $$
 
 $$
-M(\mathbf{x}, \boldsymbol{\theta}, H) := \min\{ m_x, \, m_r, \, m_S \}.
+M(\mathbf{x}, \boldsymbol{\theta}, H) := \min\lbrace m_x, \, m_r, \, m_S \rbrace.
 $$
 
 Each $m_\bullet$ measures the signed distance to one boundary of $V$; $M$ is positive on the interior of $V$, vanishes on the boundary $\partial V$, and is negative outside. $M$ is **not** a Lyapunov function — $r(t)$ is not generally monotone, and $m_S$ only decreases under accumulated stress — so we make no monotonicity claim. $M$ is a *viability margin*: it tracks how close the trajectory is to violating the nearest constraint. Whether a monotone modification (a true Lyapunov function on the coupled system) exists is open; a smooth approximation $M_\beta = -\tfrac{1}{\beta}\log\sum_\bullet e^{-\beta m_\bullet}$ to the minimum may be more tractable for such an analysis.
@@ -376,7 +376,7 @@ The asymmetry between necessity (Theorem 1) and sufficiency (Conjecture 1) is me
 
 Three observations follow:
 
-1. By Theorem 1, **the viable corridor $\mathcal{C}$ is contained in the region $\{\gamma > 0,\ K > K_c,\ \Omega(t) < S_{\max}\ \forall t\}$** (necessity). Sufficiency is conjectured to require the strictly stronger $\gamma > \gamma_c$ (Conjecture 1), so $\mathcal{C}$ is in general a *proper* subset of this region. Under the model's assumptions, parameter values outside the necessity region cannot support robust viability. These are **necessary model conditions** — not topological invariants of physical reality, but conditions the dynamical system requires under (1'), all-to-all coupling, and the substrate phenomenology of (6) [`[FORMAL]`, conditional on assumptions].
+1. By Theorem 1, **the viable corridor $\mathcal{C}$ is contained in the region $\lbrace\gamma > 0,\ K > K_c,\ \Omega(t) < S_{\max}\ \forall t\rbrace$** (necessity). Sufficiency is conjectured to require the strictly stronger $\gamma > \gamma_c$ (Conjecture 1), so $\mathcal{C}$ is in general a *proper* subset of this region. Under the model's assumptions, parameter values outside the necessity region cannot support robust viability. These are **necessary model conditions** — not topological invariants of physical reality, but conditions the dynamical system requires under (1'), all-to-all coupling, and the substrate phenomenology of (6) [`[FORMAL]`, conditional on assumptions].
 
 2. The corridor is, in our schematic visualisation (Figure 1), narrow in the three-dimensional parameter space. Whether the corridor's measure (under any reasonable parameterisation) is actually small for systems of interest is an empirical question discussed in §5.
 
@@ -538,7 +538,7 @@ The theorem of §3 is conditional on several modeling choices, each tagged `[MOD
 
 - **Sufficiency is unproven.** Conjecture 1 is exactly that. We have not constructed $\gamma_c$, even for the all-to-all large-$N$ case. If sufficiency fails — if no $\gamma$, however large, keeps an open set in $V$ under the coupled dynamics — then the corridor as a *non-empty* region is in question, though the necessity result (the corridor is *contained* in the three-constraint region) is unaffected.
 
-- **The viability margin is not a Lyapunov function.** §3.4 is explicit about this. We offer $M = \min\{m_x, m_r, m_S\}$ as a diagnostic, not a stability certificate. A genuine Lyapunov construction remains open.
+- **The viability margin is not a Lyapunov function.** §3.4 is explicit about this. We offer $M = \min\lbrace m_x, m_r, m_S\rbrace$ as a diagnostic, not a stability certificate. A genuine Lyapunov construction remains open.
 
 - **The dissipation proxy (5) is not derived.** It is motivated by Landauer-type limits but is a phenomenological activity-dissipation model, not a theorem about the entropy cost of the specific computations agents perform.
 

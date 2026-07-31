@@ -77,11 +77,21 @@ def test_rejects_github_blocked_operatorname_macro(tmp_path):
     assert expression_count == 2
 
 
-def test_rejects_github_unsafe_escaped_brace_delimiters(tmp_path):
+def test_rejects_github_unsafe_plain_escaped_braces(tmp_path):
+    problems, expression_count = scan(
+        tmp_path,
+        '$$\nS = \\{x : x > 0\\}\n$$\n',
+    )
+
+    assert any(r'\lbrace' in message and r'\rbrace' in message for message in problems)
+    assert expression_count == 1
+
+
+def test_rejects_github_unsafe_sized_escaped_braces(tmp_path):
     problems, expression_count = scan(
         tmp_path,
         '$$\nS = \\left\\{x : x > 0\\right\\}\n$$\n',
     )
 
-    assert any(r'\left\lbrace' in message for message in problems)
+    assert any(r'\lbrace' in message and r'\rbrace' in message for message in problems)
     assert expression_count == 1
