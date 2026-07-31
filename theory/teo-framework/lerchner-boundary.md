@@ -17,7 +17,7 @@ measurements do not by themselves settle phenomenal experience or metaphysical i
 
 For a specified task, let
 
-$$C = \{c_1, \ldots, c_n\}$$
+$$C = \lbrace c_1, \ldots, c_n\rbrace$$
 
 be a declared set of components such as a task goal, a safety constraint, a role constraint, and a
 value-like preference. Let $O_t \subseteq C$ contain the components for which a causal intervention

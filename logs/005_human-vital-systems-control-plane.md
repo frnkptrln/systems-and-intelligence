@@ -27,7 +27,7 @@ This converts alignment from a purely informational problem into an outcome-leve
 
 ## 2. Operational Constraint, Without Pseudo-Precision
 
-Define a dashboard of minimum human-vital indicators $V = \{v_1, \dots, v_n\}$. The exact list must be chosen democratically and revised under audit, but a minimal set should cover:
+Define a dashboard of minimum human-vital indicators $V = \lbrace v_1, \dots, v_n\rbrace$. The exact list must be chosen democratically and revised under audit, but a minimal set should cover:
 
 - severe deprivation and food insecurity,
 - preventable mortality and care access,

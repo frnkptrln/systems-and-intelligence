@@ -42,7 +42,7 @@ $$\frac{d\theta_i}{dt} = H\left[\omega_i + \frac{K}{N} \sum_{j=1}^{N} A_{ij} \si
 (At full substrate health $H = 1$ this is the standard Kuramoto model, so the critical-coupling analysis below is unaffected.) Where:
 - $\omega_i$: The intrinsic "natural frequency" of agent $i$ (its inherent bias or personality).
 - $K > 0$: The global coupling strength (culture, discourse, shared media).
-- $A_{ij} \in \{0, 1\}$: The adjacency matrix of the communication network.
+- $A_{ij} \in \lbrace0, 1\rbrace$: The adjacency matrix of the communication network.
 
 **Interpretation:** Under the frequency distribution, topology, coupling convention, and
 limit assumed in the paper, a Kuramoto synchronization transition occurs near $K_c$.

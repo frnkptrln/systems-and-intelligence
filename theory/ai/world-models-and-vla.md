@@ -63,7 +63,7 @@ veto.
 For a recorded history
 
 $$
-H_t=\{(o_i,a_i,o_{i+1})\}_{i<t},
+H_t=\langle(o_i,a_i,o_{i+1})\rangle_{i=0}^{t-1},
 $$
 
 an executable transition hypothesis $M_t$ passes replay under test family

@@ -62,7 +62,7 @@ The multiplicative form means a zero in any dimension collapses this selected sc
 
 **Informal:** How coherently an agent's self-representation changes over time.
 
-**Operational definition:** Given a sequence of embedding vectors $\{v_1, v_2, \ldots, v_n\}$ from `get_self_representation()`:
+**Operational definition:** Given a sequence of embedding vectors $\lbrace v_1, v_2, \ldots, v_n\rbrace$ from `get_self_representation()`:
 - $\Delta_i = v_{i+1} - v_i$ (change vectors)
 - `mean_delta` $= \frac{1}{n-1}\sum |\Delta_i|$ (average magnitude of change)
 - `variance` $= \text{Var}(|\Delta_i|)$ (stability of change rate)
@@ -178,7 +178,7 @@ This is formalized by Heinz von Foerster's second-order cybernetics: the observe
 
 **Informal:** How much of an agent's identity is simultaneously operative during action selection.
 
-**Operational definition:** Let an agent's identity be described by $n$ governing components (goals, safety constraints, role parameters, value orientation). At each compute step $\Delta t$, the **operative set** $\mathcal{O}(t) \subseteq \{g, s, \rho, \theta\}$ is the subset of components that causally influence the agent's output:
+**Operational definition:** Let an agent's identity be described by $n$ governing components (goals, safety constraints, role parameters, value orientation). At each compute step $\Delta t$, the **operative set** $\mathcal{O}(t) \subseteq \lbrace g, s, \rho, \theta\rbrace$ is the subset of components that causally influence the agent's output:
 
 $$\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}, \qquad \overline{\text{IP}} = \frac{1}{T} \sum_{t=1}^{T} \text{IP}(t)$$
 

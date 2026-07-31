@@ -136,25 +136,32 @@ only relative to that declaration.
 
 ## 4. Situated competence is a feedback system
 
-The first diagram separates causal access from observation. The lens determines
-which trace differences count as competence and which differences replay must
-preserve. The verifier can then exert reverse pressure on constraints and
-selection.
+The following mapping separates causal access from observation. The lens
+determines which trace differences count as competence and which differences
+replay must preserve. The verifier can then exert reverse pressure on
+constraints and selection.
 
-```mermaid
-flowchart TD
-    P["Declared possibility space"] --> G["Typed process or generator"]
-    G --> C["Admissible trajectories under constraints"]
-    C --> B["Embodied world coupling"]
-    B --> I["Interaction history"]
-    I --> S["Policy or selector"]
-    S --> O["Observed competence"]
-    L["Observer lens"] -. "defines equivalence" .-> O
-    L -. "sets replay tolerance" .-> Q["Verifier"]
-    I --> Q
-    Q -- "counterexample" --> C
-    Q -- "revision pressure" --> S
-```
+<!-- Native Markdown is intentional: GitHub's mobile Mermaid controls obscure dense diagrams. -->
+
+**Forward path**
+
+1. Declared possibility space
+2. Typed process or generator
+3. Admissible trajectories under constraints
+4. Embodied world coupling
+5. Interaction history
+6. Policy or selector
+7. Observed competence
+
+**Feedback paths**
+
+| Relationship | Effect |
+|:---|:---|
+| Observer lens → observed competence | defines the reported equivalence |
+| Observer lens → verifier | sets replay tolerance |
+| Interaction history → verifier | supplies retained evidence |
+| Verifier → admissible trajectories | returns counterexamples to the constraints |
+| Verifier → policy or selector | applies revision pressure |
 
 The arrows are dependencies, not a claim that cognition always develops in
 this order. In particular, selection and embodiment can alter the next
@@ -342,7 +349,7 @@ $$
 For a recorded history
 
 $$
-H_t=\{(o_i,a_i,o_{i+1})\}_{i<t},
+H_t=\langle(o_i,a_i,o_{i+1})\rangle_{i=0}^{t-1},
 $$
 
 replay under test family $\mathcal Q$ requires
@@ -372,16 +379,20 @@ assumptions, and awkward library integration. A proof can be correct under a
 poor interface. Failed proofs and ugly successful proofs can both provide
 evidence about definitions and specifications.
 
-```mermaid
-flowchart TD
-    D["Definition, model, or specification"] --> C["Generated consequences"]
-    C --> V["Proof or replay"]
-    V -- "counterexample or missing obligation" --> R["Revision"]
-    R --> S["Simplification or refactoring"]
-    S --> D
-    V -- "passes declared tests" --> A["Versioned proof or regression corpus"]
-    A -. "future obligations" .-> V
-```
+<!-- Native Markdown is intentional: GitHub's mobile Mermaid controls obscure dense diagrams. -->
+
+The correction loop begins with one forward path:
+
+1. Definition, model, or specification
+2. Generated consequences
+3. Proof or replay
+
+The verifier then produces one of two retained responses:
+
+| Result | Reverse pressure |
+|:---|:---|
+| counterexample or missing obligation | revision → simplification or refactoring → update the definition, model, or specification |
+| passes declared tests | add the result to a versioned proof or regression corpus; the retained corpus supplies future obligations to proof or replay |
 
 The detailed bridge is [Verification as Reverse Pressure](verification-as-reverse-pressure.md).
 “Proof is backpropagation” is not adopted: no differentiable correspondence is

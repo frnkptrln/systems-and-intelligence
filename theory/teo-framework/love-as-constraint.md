@@ -70,7 +70,7 @@ $$
 One model of accumulated overshoot is
 
 $$
-\dot\Omega(t)=\max\{0,\dot S(t)-D_{\max}\},
+\dot\Omega(t)=\max\lbrace0,\dot S(t)-D_{\max}\rbrace,
 \qquad
 \Omega(t)<S_{\max}.
 $$
@@ -84,11 +84,11 @@ and crossing an instantaneous threshold need not imply immediate failure.
 
 The identity branch asks whether the constraints claimed by an agent remain jointly
 operative when it commits to an action. For a declared set of components
-$\mathcal C=\{c_1,\ldots,c_n\}$, one simple diagnostic is
+$\mathcal C=\lbrace c_1,\ldots,c_n\rbrace$, one simple diagnostic is
 
 $$
 \mathrm{IP}(t)
-= \frac{|\{c_k\in\mathcal C:c_k\text{ is consulted at }t\}|}{n}.
+= \frac{|\lbrace c_k\in\mathcal C:c_k\text{ is consulted at }t\rbrace|}{n}.
 $$
 
 Consultation alone is insufficient. A system can read every constraint and still choose an
