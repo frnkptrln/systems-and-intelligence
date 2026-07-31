@@ -366,7 +366,7 @@ research process, as bounded in
 
 ## 8. Simulation, instantiation, and the mapmaker problem
 
-Day 1 exposed a real disagreement rather than a consensus.
+The cited Day 1 sources expose a real disagreement rather than a consensus.
 
 | Position | Direction of argument | Unresolved weakness |
 |:---|:---|:---|
@@ -468,8 +468,8 @@ consequence of the situated-stack formalism.
 
 ## 12. An organizing hypothesis, with gaps exposed
 
-The conference material and existing repository work suggest the following
-chain:
+The cited papers, author manuscript, official recording, and existing
+repository work suggest the following chain:
 
 1. a boundary individuates selected internal and external states;
 2. viability marks some trajectories as compatible with persistence;
@@ -566,12 +566,19 @@ invalidation. They should not be called consciousness tests.
 
 ## Source note
 
-The private automatic transcript of AGI-26 Day 1, originally named
-`Eingefügter Text.txt`, was used to locate arguments, disagreements, and
-candidate connections. It contains misspellings, repetitions, and malformed
-terms and is not treated as a publication. Names, paper titles, and published
-claims below were checked against primary or official sources where available.
-The synthesis, criticisms, tuple $\Sigma$, capability notation
+An automatic transcript supplied as intake material for AGI-26 Day 1 was used
+only as a discovery index for names, disagreements, and candidate connections.
+It is incomplete, contains transcription errors, and cannot recover
+slide-dependent definitions, figures, demonstrations, or unspoken qualifiers.
+No slide deck or other presenter-supplied presentation artifact was available
+for this integration. Neither presence nor absence in the transcript is
+treated as evidence, and the transcript is not treated as a publication.
+
+No scientific claim on this page depends on that transcript. External claims
+retained as support are tied below to proceedings papers, primary papers, an
+author manuscript, or the official Day 1 recording. Anything not independently
+anchored is treated only as a talk attribution, open lead, or repository
+construction. The synthesis, criticisms, tuple $\Sigma$, capability notation
 $J_{\ell,\tau}(\Sigma)$, benchmark, and “Mapmaker Problem” are repository
 constructions rather than conference results.
 
