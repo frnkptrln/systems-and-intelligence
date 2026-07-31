@@ -1,16 +1,26 @@
 ---
 title: AGI-26 Day 2 Source and Integration Map
 date: 2026-07-30
-status: source-verified intake ledger
+status: primary-source audit and integration ledger
 ---
 
 # AGI-26 Day 2 Source and Integration Map
 
 **Purpose:** Preserve the source audit, integration decisions, and claim status
 behind [Competence, Constraint, and Verification](../../theory/core/competence-constraint-and-verification.md).
-The automatic transcript was used to identify talks and research leads only.
-Scientific claims below cite papers, proceedings, official project
-repositories, or author pages—not the transcript.
+
+**Input boundary:** An automatic transcript supplied for Day 2 was used only
+as a discovery index for names, topics, and possible research leads. It is
+incomplete, may mistranscribe speech, and cannot recover slide content,
+figures, demonstrations, or qualifiers that were not spoken. No slide deck or
+equivalent presenter-supplied presentation artifact was available to this
+audit. Neither presence nor absence in the transcript is evidence.
+
+**Independence rule:** A scientific claim is retained only when it remains
+supported after removing the transcript: by a paper, proceedings chapter,
+official repository, author or project page, or an explicitly cited official
+recording. Otherwise it remains an intake lead, is marked unverified, and is
+not load-bearing in repository synthesis.
 
 Broader external anchors for the repository's pre-existing concepts remain in
 the [Related Work Map](related-work-map.md).
@@ -33,7 +43,7 @@ Conference, AGI 2026, San Francisco, July 27–30, 2026*, proceedings
 | identity under self-modification | invariance and test-relative identity | specializes and challenges | add projector audit; reject absolute impossibility reading |
 | categorical architecture comparison | [typed process-diagram structure](../../theory/core/mathematical-axioms.md#44-structure); graph-oriented architecture notes | potentially refines; partly duplicates | retain as research seed, no new category-theory foundation |
 | implication as algorithmic containment | Kolmogorov complexity; compression; simulation | mostly adjacent/rephrasing, with a formal theorem under assumptions | supporting context only |
-| process calculi with interaction, energy, history | coupled processes; mortality; bisimulation | relevant but insufficiently verified as a conference result | open seed only |
+| process calculi with interaction, energy, history | coupled processes; mortality; bisimulation | relevant but not verified from an independent public artifact | open seed only |
 | one-principle active-inference architecture | existing active-inference notes and simulations | largely duplicate at current evidence level | open implementation lead only |
 | reproducible AGI builds and protocol governance | provenance depth; referee boundary | supports engineering governance | link as a preliminary policy proposal |
 | PLN compilation to thermodynamic hardware | thermodynamic hardware manifesto; stochastic computation | narrow hardware result, no load-bearing synthesis role | exclude from central theory |
@@ -51,7 +61,7 @@ into the new synthesis.
 | **proposed hypothesis** | testable interpretation not established by the cited result |
 | **philosophical interpretation** | conceptual or metaphysical reading without a discriminating empirical result |
 | **preliminary result** | preprint, short paper, public-set result, or incompletely validated implementation |
-| **conference claim not independently verified** | present in the talk record but no adequate primary artifact was located |
+| **intake lead not independently verified** | surfaced in intake material, but no adequate primary or official artifact was located; not evidence |
 
 ## 3. Primary-source ledger
 
@@ -116,8 +126,8 @@ about universal developmental ordering or full human semantics remain
 | Urban (2026), [*130k Lines of Formal Topology in Two Weeks*](https://arxiv.org/abs/2601.03298) | long-running LLM–Megalodon feedback loop and large generated formalization | preliminary autoformalization report | supporting context |
 | Bryant, Huerta y Munive, Kaliszyk & Urban (2026), [*Munkres' General Topology Autoformalized in Isabelle/HOL*](https://arxiv.org/abs/2604.07455); [code](https://github.com/JUrban/isa_top_autoform1) | 806 checked results with zero `sorry`; qualitative audit finds weak definitions, redundancy, and integration problems | empirically documented formalization plus machine-checked corpus | integrated as proof/specification correction evidence |
 
-The dramatic talk phrasing about book length and elapsed time was replaced by
-the numbers and limitations in the papers.
+The dramatic phrasing surfaced in the intake material was replaced by the
+numbers and limitations in the papers.
 
 **Decision:** **integrated** through
 [Verification as Reverse Pressure](../../theory/core/verification-as-reverse-pressure.md).
@@ -163,9 +173,9 @@ official F1R3FLY white paper.
 The white paper proposes graph-structured lambda theories, bisimulation-
 preserving morphisms, reactive contexts, and generated behavioral logics. It
 is an official project document, not a peer-reviewed proceedings artifact.
-The Day 2 talk's broader energy, stochasticity, history-monad, and mortality
-claims were not located in a single independent formal publication during this
-audit.
+The broader energy, stochasticity, history-monad, and mortality cluster
+surfaced only as an intake lead. No presentation deck was available to this
+audit, and the claims were not located in a citable paper or repository.
 
 **Decision:** **retained as an open research seed**. Bisimulation is relevant
 to test-relative functional equivalence; no foundation change.
@@ -214,12 +224,13 @@ identity synthesis.
 **Decision:** **excluded as out of scope**; relevant only to the repository's
 explicitly speculative thermodynamic-hardware track.
 
-## 4. Conference claims not carried forward
+## 4. Unsupported intake leads not carried forward
 
 The following were not used as scientific premises:
 
-- exact spoken benchmark numbers not reproduced in a paper or official
-  artifact;
+- exact benchmark numbers not reproduced in a paper or official artifact;
+- slide-dependent claims, figures, or demonstrations absent from an
+  independently citable artifact;
 - the claim that random noise “contains” task solutions;
 - minimum adapter rank as an architecture-independent task complexity;
 - exact replay as proof of an accurate or general world model;
