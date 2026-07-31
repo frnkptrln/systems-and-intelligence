@@ -9,9 +9,9 @@ It is intended to:
 - identify where repository claims should be strengthened, softened, or tested;
 - provide concrete empirical next steps.
 
-The transcript-specific primary-source audit and inclusion decisions for the
-situated-competence extension are kept in the [AGI-26 Day 2 Source
-Map](agi-26-day-2-source-map.md).
+The AGI-26 Day 2 primary-source audit and inclusion decisions for the
+situated-competence extension are kept in the
+[AGI-26 Day 2 Source Map](agi-26-day-2-source-map.md).
 
 ## 2) Concept-to-literature matrix
 
