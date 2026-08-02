@@ -34,3 +34,19 @@ site/
 # Generated artifacts
 migrate.py
 .pytest_cache/
+
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+.netrc
+.pypirc
