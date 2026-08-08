@@ -248,6 +248,7 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.keys
+  - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.snippets
   - pymdownx.superfences:
