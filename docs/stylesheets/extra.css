@@ -42,38 +42,10 @@
   --md-typeset-mark-color: rgba(183, 243, 107, 0.22);
 }
 
-/* Light mode is the same palette printed on paper — same hues, inverted
-   lightness, accents darkened until they hold contrast on a bright ground. */
-[data-md-color-scheme="default"] {
-  --si-bg: #f3f2ec;
-  --si-raised: #fbfaf5;
-  --si-fg: #17190f;
-  --si-fg-soft: #4c4f45;
-  --si-fg-dim: #767a6d;
-  --si-line: #dedbd0;
-  --si-line-bright: #c6c3b6;
-  --si-green: #4a7016;
-  --si-blue: #2b6a7b;
-  --si-warm: #9a5a1f;
-  --si-link: #3f6410;
-
-  --md-default-bg-color: var(--si-bg);
-  --md-default-fg-color: var(--si-fg);
-  --md-default-fg-color--light: var(--si-fg-soft);
-  --md-default-fg-color--lighter: var(--si-fg-dim);
-  --md-default-fg-color--lightest: var(--si-line-bright);
-  --md-primary-fg-color: var(--si-bg);
-  --md-primary-bg-color: var(--si-fg);
-  --md-accent-fg-color: var(--si-green);
-  --md-typeset-a-color: var(--si-link);
-  --md-code-bg-color: #eae8de;
-  --md-code-fg-color: var(--si-fg-soft);
-  --md-typeset-mark-color: rgba(74, 112, 22, 0.16);
-}
-
 :root {
   --md-text-font: "Space Grotesk", system-ui, -apple-system, sans-serif;
   --md-code-font: "JetBrains Mono", ui-monospace, monospace;
+  color-scheme: dark;
 }
 
 /* --- Page ground ------------------------------------------------------- */
@@ -82,14 +54,6 @@ body {
   background:
     radial-gradient(circle at 84% 4%, rgba(134, 201, 216, 0.05), transparent 34rem),
     radial-gradient(circle at 6% 34%, rgba(183, 243, 107, 0.03), transparent 36rem),
-    var(--si-bg);
-  background-attachment: fixed;
-}
-
-[data-md-color-scheme="default"] body {
-  background:
-    radial-gradient(circle at 84% 4%, rgba(43, 106, 123, 0.05), transparent 34rem),
-    radial-gradient(circle at 6% 34%, rgba(74, 112, 22, 0.04), transparent 36rem),
     var(--si-bg);
   background-attachment: fixed;
 }
@@ -242,8 +206,7 @@ body {
 /* --- Header ------------------------------------------------------------ */
 
 /* Material pins the header to the primary colour through a selector that
-   carries the palette attribute; the scheme attribute matches its weight so
-   the header follows the foyer ground in both light and dark. */
+   carries the palette attribute; override it with the foyer's dark ground. */
 [data-md-color-scheme] .md-header {
   border-bottom: 1px solid var(--si-line);
   background: color-mix(in srgb, var(--si-bg) 88%, transparent);
