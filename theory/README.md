@@ -45,6 +45,7 @@ Structural claims about how local processes produce global behavior.
 - **[Black Swans and Downward Causation](emergence/black-swans-and-downward-causation.md)** — Tail models, network failure, and conditional early warning.
 - **[Grokking Phase Transition](emergence/grokking-phase-transition.md)** — Sudden generalization from memorization.
 - **[From Trace to Generator](emergence/trace-to-generator.md)** — Active reconstruction programme: infer typed candidate processes or equivalence classes from declared traces, evidence, interventions, and costs.
+- **[GameNGen: From Traces to an Interactive Surrogate](emergence/gamengen-interactive-surrogate.md)** — External case study separating source-mechanism recovery from policy-relative predictive and interactive equivalence.
 - **[Latent Competence and Constraint Release](emergence/latent-competence-and-constraint-release.md)** — Separates competence exposure, amplification, creation, and observer reinterpretation under controlled transformations.
 
 ## Identity & Cognition

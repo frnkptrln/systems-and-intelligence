@@ -54,6 +54,7 @@ exclude_docs: |
   !theory/core/the-witness-principle.md
   !theory/core/thermodynamics-of-orchestration.md
   !theory/emergence/from-action-to-culture.md
+  !theory/emergence/gamengen-interactive-surrogate.md
   !theory/emergence/local-causality-invisible-consequences.md
   !theory/emergence/scale-comparison-map.md
   !theory/emergence/trace-to-generator.md
@@ -106,6 +107,7 @@ nav:
           - "Optimization and Its Blindness": theory/optimization/optimization-and-its-blindness.md
       - "Emergence":
           - "From Trace to Generator": theory/emergence/trace-to-generator.md
+          - "GameNGen: Interactive Surrogate": theory/emergence/gamengen-interactive-surrogate.md
           - "From Action to Culture": theory/emergence/from-action-to-culture.md
           - "Legacy: Local Causality": theory/emergence/local-causality-invisible-consequences.md
           - "Across Scales": theory/emergence/scale-comparison-map.md
