@@ -112,3 +112,33 @@ def test_managed_file_accepts_frontmatter_review_metadata(tmp_path, monkeypatch)
 
     monkeypatch.setattr(audit, "FRESHNESS_MANAGED", {"managed.md"})
     assert find_missing_freshness_metadata(tmp_path) == []
+
+
+def test_managed_file_accepts_bold_markdown_metadata(tmp_path, monkeypatch):
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "managed.md",
+        "# Snapshot\n\n**Last reviewed:** 2026-08-08  \n"
+        "**Review trigger:** provider contract changes.\n",
+    )
+
+    import lab.tools.audit_repository_freshness as audit
+
+    monkeypatch.setattr(audit, "FRESHNESS_MANAGED", {"managed.md"})
+    assert find_missing_freshness_metadata(tmp_path) == []
+
+
+def test_managed_file_accepts_external_interface_review_label(tmp_path, monkeypatch):
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "managed.md",
+        "# Provider\n\n**External interface last reviewed:** 2026-08-08  \n"
+        "**Review trigger:** API behavior changes.\n",
+    )
+
+    import lab.tools.audit_repository_freshness as audit
+
+    monkeypatch.setattr(audit, "FRESHNESS_MANAGED", {"managed.md"})
+    assert find_missing_freshness_metadata(tmp_path) == []
