@@ -45,7 +45,8 @@ Defines the useful meta-level: the repo can be read as operator, iteration, form
 
 Defines how time-sensitive external claims, publication states, provider interfaces, copied counts,
 and other internally derived state are reviewed without erasing research history. The deterministic
-subset is checked by `lab/tools/audit_repository_freshness.py` in CI.
+subset is checked by [`lab/tools/audit_repository_freshness.py`](../lab/tools/audit_repository_freshness.py)
+in CI.
 
 ### [Speculative Writing Guidelines](repository-meta/speculative-writing-guidelines.md)
 
