@@ -10,265 +10,163 @@ docs_dir: 'docs'
 hooks:
   - lab/tools/mkdocs_repo_links.py
 exclude_docs: |
+  # The repository is the whole body of work; the site publishes the part
+  # that is ready for a reader who has not been following along. Everything
+  # excluded here stays in the repository and stays linked: the
+  # lab/tools/mkdocs_repo_links.py hook redirects any link that points at an
+  # unpublished page to the file on GitHub, and docs/repository-map.md lists
+  # the layers. Excluding is an editorial act, not a deletion.
+
   lab/tools/web-explorer/README.md
 
+  book/
+  !book/09_from_rule_to_mind.md
+
+  logs/
+
+  simulation-models/
+
+  lab/
+  # Figures the published benchmark pages and the paper embed.
+  !lab/tools/*.png
+  !lab/benchmarks/constraint-release/README.md
+  !lab/benchmarks/inverse-reconstruction/README.md
+  !lab/benchmarks/learned-searcher/README.md
+  !lab/benchmarks/recursive-workbench/README.md
+  !lab/benchmarks/situated-stack/README.md
+  !lab/benchmarks/teo-framework/README.md
+  !lab/benchmarks/witness-generation/README.md
+
+  meta/
+  !meta/repository-meta/core-claims.md
+  !meta/repository-meta/the-snow-story.md
+
+  theory/
+  !theory/README.md
+  !theory/computation/p-vs-np-as-generator-search.md
+  !theory/core/competence-constraint-and-verification.md
+  !theory/core/conceptual-map.md
+  !theory/core/emergence-manifesto-v1.3.md
+  !theory/core/from-trace-to-world-binding.md
+  !theory/core/mathematical-axioms.md
+  !theory/core/simulation-theory-map.md
+  !theory/core/the-generator-question.md
+  !theory/core/the-witness-principle.md
+  !theory/core/thermodynamics-of-orchestration.md
+  !theory/emergence/from-action-to-culture.md
+  !theory/emergence/local-causality-invisible-consequences.md
+  !theory/emergence/scale-comparison-map.md
+  !theory/emergence/trace-to-generator.md
+  !theory/human-organism-silicon-age/core-theses.md
+  !theory/identity/chord-vs-arpeggio-identity.md
+  !theory/identity/consciousness-as-global-availability.md
+  !theory/identity/minimal-thermodynamic-agent.md
+  !theory/identity/the-agent-is-not-where-the-model-ends.md
+  !theory/narrative/machines-of-loving-grace.md
+  !theory/optimization/optimization-and-its-blindness.md
+  !theory/reference/glossary.md
+  !theory/reference/limitations-and-honest-assessment.md
+  !theory/reference/open-problems.md
+  !theory/reference/what-this-project-does-not-claim.md
+  !theory/symbiotic/cooperative-intelligence-at-the-separatrix.md
+  !theory/teo-framework/README.md
+  !theory/teo-framework/love-as-constraint.md
+  !theory/teo-framework/why-paperclip-maximizer-fails.md
+  !theory/veto/ai-alignment-biological-veto.md
+  !theory/veto/substrate-veto-thermodynamics.md
+  !theory/veto/the-transition-problem.md
 nav:
-  - Welcome: index.md
-  - "The Snow Story (any age)": meta/repository-meta/the-snow-story.md
-  - "Synthesis (Claims)":
-      - Overview: synthesis.md
-      - Core Claims: meta/repository-meta/core-claims.md
-      - "Course Path & Book":
-          - "Foundations Reconstruction": theory/core/mathematical-axioms.md
-          - "Start: From Rule to Mind": book/09_from_rule_to_mind.md
-          - "The Generator Question": theory/core/the-generator-question.md
-          - "Introduction": book/00_introduction.md
-          - "Part 1: Mechanics of Emergence": book/01_mechanics_of_emergence.md
-          - "Part 2: Measuring the Mind": book/02_measuring_the_mind.md
-          - "Part 3: Alignment & Control": book/03_alignment_and_control.md
-          - "Part 4: Macro-Structures": book/04_macro_structures.md
-          - "Part 5: Future Perspectives": book/05_future_perspectives.md
-          - "Part 6: The Thermodynamic Mirror": book/06_the_thermodynamic_mirror.md
-          - "Part 7: Cities as Metabolic Organisms": book/08_cities_as_metabolic_organisms.md
-          - Bibliography: book/07_bibliography.md
-      - "Core Theory":
-          - Theory Overview: theory/README.md
-          - Foundations Reconstruction: theory/core/mathematical-axioms.md
-          - Competence, Constraint, and Verification: theory/core/competence-constraint-and-verification.md
-          - Invariance and Identity: theory/core/invariance-and-identity.md
-          - "The Generator Question": theory/core/the-generator-question.md
-          - From Trace to World-Binding (the loop): theory/core/from-trace-to-world-binding.md
-          - Verification as Reverse Pressure: theory/core/verification-as-reverse-pressure.md
-          - Measurement as Weak Intervention: theory/core/measurement-as-weak-intervention.md
-          - The Witness Principle: theory/core/the-witness-principle.md
-          - Optimization and Its Blindness: theory/optimization/optimization-and-its-blindness.md
-          - Embodiment and Goal Decomposition: theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md
-          - "Situated Intelligence: The Agent Is Not Where the Model Ends": theory/identity/the-agent-is-not-where-the-model-ends.md
-          - "From Trace to Generator": theory/emergence/trace-to-generator.md
-          - The Emergence Manifesto: theory/core/emergence-manifesto-v1.3.md
-          - Thermodynamics of Orchestration (TEO): theory/core/thermodynamics-of-orchestration.md
-          - TEO Framework Overview: theory/teo-framework/README.md
-          - The Substrate Veto: theory/veto/substrate-veto-thermodynamics.md
-          - Biological Veto Architecture: theory/veto/biological-veto-architectural-requirements.md
-          - Machines of Loving Grace: theory/narrative/machines-of-loving-grace.md
-          - Chord vs. Arpeggio Identity: theory/identity/chord-vs-arpeggio-identity.md
-          - System Intelligence Index: theory/core/system-intelligence-index.md
-          - "Legacy: Local Causality": theory/emergence/local-causality-invisible-consequences.md
-          - "Hardware Safety Hypothesis": theory/core/thermodynamic-hardware-manifesto.md
-          - "Ecological Telemetry Proposal": theory/veto/the-mycelial-veto.md
-      - "Extended Theory":
-          - "Maps & Overviews":
-              - Conceptual Map: theory/core/conceptual-map.md
-              - Simulation → Theory Map: theory/core/simulation-theory-map.md
-          - "Emergence Essays":
-              - Grokking Phase Transition: theory/emergence/grokking-phase-transition.md
-              - Generative Compression: theory/emergence/generative-compression.md
-              - Generative Form Systems: theory/emergence/generative-form-systems.md
-              - From Action to Culture: theory/emergence/from-action-to-culture.md
-              - Latent Competence and Constraint Release: theory/emergence/latent-competence-and-constraint-release.md
-              - Fractal Architecture of Emergence: theory/emergence/fractal-architecture-of-emergence.md
-              - Across Scales: theory/emergence/scale-comparison-map.md
-              - "Emergence & Origin of Intelligence (speculative)": theory/emergence/emergence-origin-intelligence.md
-              - Weak vs Strong Emergence: theory/emergence/emergence-downward-causation.md
-              - Black Swans & Downward Causation: theory/emergence/black-swans-and-downward-causation.md
-              - Animism as a Generator Prior: theory/emergence/animism-as-generator-prior.md
-          - "Identity & Consciousness":
-              - Minimal Thermodynamic Agent: theory/identity/minimal-thermodynamic-agent.md
-              - Consciousness as Global Availability: theory/identity/consciousness-as-global-availability.md
-              - "Machine Consciousness (legacy title)": theory/identity/machine-consciousness-as-generator-coherence.md
-              - The Non-Individual Intelligence: theory/identity/the-non-individual-intelligence.md
-              - Agentic Society Principles: theory/identity/agentic-society-principles.md
-              - Limits of Formal Systems: theory/identity/limits-of-formal-systems.md
-              - Psychedelics as Perturbation: theory/identity/psychedelics-as-perturbation.md
-              - "The Post-Individual Operator (scenario)": theory/identity/the-post-individual-operator.md
-          - "Veto & Alignment Essays":
-              - AI Alignment Veto: theory/veto/ai-alignment-biological-veto.md
-              - Implementation Patterns: theory/veto/implementation-patterns-biological-veto.md
-              - The Transition Problem: theory/veto/the-transition-problem.md
-              - "Adversarial TEO (security hypothesis)": theory/veto/adversarial-teo-immune-response.md
-              - "Black Hole Thermodynamics (speculative)": theory/veto/black-hole-thermodynamics-of-agi.md
-          - "Computation & AI":
-              - "Legacy: P vs NP as Generator Search": theory/computation/p-vs-np-as-generator-search.md
-              - Construction and Deduction: theory/computation/construction-vs-deduction.md
-              - Static Information, Living Process: theory/computation/static-information-and-living-process.md
-              - LLMs as Probabilistic Automata: theory/ai/llms-as-probabilistic-automata.md
-              - World Models and VLA Systems: theory/ai/world-models-and-vla.md
-              - Interaction-Grounded Semantics: theory/ai/interaction-grounded-semantics.md
-              - "The J-Space Result (2026)": theory/ai/j-space-and-global-availability.md
-          - "Narrative Theory":
-              - Tensor Logic Mini Paper: theory/narrative/tensor-logic-mini-paper.en.md
-              - Asimov AI and Latent Thinking: theory/narrative/asimov-ai-latent-thinking.md
-              - Asimov's Paradox of Eternity: theory/narrative/asimov-paradox-eternity.md
-              - Narrative as Cognitive Technology: theory/narrative/narrative-as-cognitive-technology.md
-              - "Art and Science: One Practice, Two Referees": theory/narrative/art-science-one-practice-two-referees.md
-      - "TEO Framework Details":
-          - Love as Constraint: theory/teo-framework/love-as-constraint.md
-          - Why the Paperclip Maximizer Fails: theory/teo-framework/why-paperclip-maximizer-fails.md
-          - Lerchner Boundary: theory/teo-framework/lerchner-boundary.md
-          - Dupoux Integration: theory/teo-framework/dupoux-integration.md
-          - Antikythera Topology: theory/teo-framework/antikythera-topology.md
-          - "Thermodynamic Tokenomics (thought experiment)": theory/teo-framework/thermodynamic-tokenomics.md
-      - "Symbiotic Organ Hypothesis":
-          - Cooperative Intelligence at the Separatrix: theory/symbiotic/cooperative-intelligence-at-the-separatrix.md
-          - Hypothesis: theory/symbiotic/symbiotic-organ-hypothesis.md
-          - Scar Tissue Architecture: theory/symbiotic/scar-tissue-architecture.md
-          - Epistemic Firewalls: theory/symbiotic/epistemic-firewalls.md
-          - The Breathing Machine: theory/symbiotic/the-breathing-machine.md
-      - "Human Organism in Silicon Age":
-          - Core Theses: theory/human-organism-silicon-age/core-theses.md
-          - The City as Deployed Intelligence: theory/human-organism-silicon-age/the-city-as-deployed-intelligence.md
-          - Guide for Cells in Resistance: theory/human-organism-silicon-age/guide-for-cells-in-resistance.md
-          - Solarpunk Utopia: theory/human-organism-silicon-age/solarpunk-utopia-goedel-constitution.md
-          - Symbiotic Protocol: theory/human-organism-silicon-age/symbiotic-nexus-protocol.md
+  - "Start":
+      - "Welcome": index.md
+      - "Start Here": synthesis.md
+      - "Core Claims": meta/repository-meta/core-claims.md
+      - "The Snow Story (any age)": meta/repository-meta/the-snow-story.md
+      - "The Linear Route: From Rule to Mind": book/09_from_rule_to_mind.md
+      - "Thinking Space": thinking-space.md
+      - "What Stays in the Repository": repository-map.md
       - "Reference":
-          - "The Viable Corridor (Paper, draft)": papers/viable-corridor.md
-          - Quantifying Emergent Utility (Paper): papers/quantifying-emergent-utility-in-llms.md
-          - Glossary: theory/reference/glossary.md
-          - Open Problems: theory/reference/open-problems.md
-          - Limitations & Honest Assessment: theory/reference/limitations-and-honest-assessment.md
-          - What This Project Does NOT Claim: theory/reference/what-this-project-does-not-claim.md
-  - "Thinking Space (Exploration)":
-      - "Ideas (exploratory notes)": https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas
-      - Overview: thinking-space.md
-      - "Emergent Dynamics":
-          - Boids Flocking: simulation-models/emergent-dynamics/boids-flocking/README.md
-          - Coupled Oscillators: simulation-models/emergent-dynamics/coupled-oscillators/README.md
-          - Reaction-Diffusion: simulation-models/emergent-dynamics/reaction-diffusion/README.md
-          - Iterated Function Systems: simulation-models/emergent-dynamics/iterated-function-systems/README.md
-          - L-Systems: simulation-models/emergent-dynamics/l-systems/README.md
-          - Lenia: simulation-models/emergent-dynamics/lenia/README.md
-          - Phase Transition Explorer: simulation-models/emergent-dynamics/phase-transition-explorer/README.md
-          - Self-Organized Criticality: simulation-models/emergent-dynamics/self-organized-criticality/README.md
-          - Ecosystem Regulation: simulation-models/emergent-dynamics/ecosystem-regulation/README.md
-      - "Cognitive Architectures":
-          - Active Inference: simulation-models/cognitive-architectures/active-inference/README.md
-          - Hebbian Memory: simulation-models/cognitive-architectures/hebbian-memory/README.md
-          - Self-Reading Universe: simulation-models/cognitive-architectures/self-reading-universe/README.md
-          - Grokking Phase Transition: simulation-models/cognitive-architectures/grokking-phase-transition/README.md
-          - Nested Learning Two-State: simulation-models/cognitive-architectures/nested-learning-two-state/README.md
-          - Prediction Error Field: simulation-models/cognitive-architectures/prediction-error-field/README.md
-          - Tensor Logic Reasoning: simulation-models/cognitive-architectures/tensor-logic-reasoning/README.md
-          - Meta-Learning Regime Shift: simulation-models/cognitive-architectures/meta-learning-regime-shift/README.md
-          - Continuous Thought Machines: simulation-models/cognitive-architectures/continuous-thought-machines/README.md
-          - Archive Forgets on Purpose: simulation-models/cognitive-architectures/archive-forgetting-purpose/README.md
-      - "Social Computation":
-          - "Political Formalization":
-              - Overview: simulation-models/social-computation/political-utility-formalization/README.md
-              - Theory: simulation-models/social-computation/political-utility-formalization/THEORY.md
-          - Stigmergy Swarm: simulation-models/social-computation/stigmergy-swarm/README.md
-          - Cognitive Breathing Network: simulation-models/social-computation/cognitive-breathing-network/README.md
-          - Symbiotic Breathing (Substrate Veto): simulation-models/social-computation/symbiotic-breathing/README.md
-          - Trauma & Deception Network: simulation-models/social-computation/trauma-and-deception-network/README.md
-          - Economic Trust Network: simulation-models/social-computation/economic-trust-network/README.md
-          - Coupled Lenia Boids: simulation-models/social-computation/coupled-lenia-boids/README.md
-          - Latent Introspective Society: simulation-models/social-computation/latent-introspective-society/README.md
-          - Social Computation Network: simulation-models/social-computation/social-computation-network/README.md
-          - Nested Emergence Demo: simulation-models/social-computation/nested-emergence-demo/README.md
-          - DAO Ecosystem: simulation-models/social-computation/dao-ecosystem/README.md
-          - Rhythm Locks: simulation-models/social-computation/rhythm-locks/README.md
-      - "Alignment & Veto":
-          - Human Vital Systems: simulation-models/alignment-and-veto/human-vital-systems/README.md
-          - "Utility Engineering":
-              - Overview: simulation-models/alignment-and-veto/utility-engineering/README.md
-              - Theory: simulation-models/alignment-and-veto/utility-engineering/THEORY.md
-              - Framework: simulation-models/alignment-and-veto/utility-engineering/utility_engineering_framework.md
-              - "Exploratory Manual Prompt Note": simulation-models/alignment-and-veto/utility-engineering/empirical-results/chatgpt-vs-claude-audit.md
-          - TEO Civilization: simulation-models/alignment-and-veto/teo-civilization/README.md
-          - Planetary Veto: simulation-models/alignment-and-veto/planetary-veto/README.md
-          - Black Swan Resilience: simulation-models/alignment-and-veto/black-swan-resilience/README.md
-          - Symbiotic Nexus: simulation-models/alignment-and-veto/symbiotic-nexus/README.md
-          - Active Inference Veto: simulation-models/alignment-and-veto/active-inference-veto/README.md
-          - AI Alignment Veto: simulation-models/alignment-and-veto/ai-alignment-veto/README.md
-          - Agent-Ecology Stress Test: simulation-models/alignment-and-veto/agent-ecology/README.md
-          - TEO Framework Sim: simulation-models/alignment-and-veto/teo-framework/README.md
-      - "Lab Frameworks":
-          - Systems Orchestration: lab/README.md
-          - Agentic Identity Suite: lab/AGENTIC_README.md
-          - "LLM Provider Layer (Mock / Anthropic)": lab/providers/README.md
-          - "Inverse Search Scaffold (legacy path)": lab/experiments/trace_to_generator/README.md
-          - "Inverse IFS Note": lab/experiments/trace_to_generator/ifs_inverse_note.md
-      - "Architecture Logs":
-          - Overview: logs/README.md
-          - Cosmological Bootloader: logs/001_cosmological-bootloader.md
-          - Impedance Mismatch: logs/002_impedance-mismatch-friction.md
-          - The Decoupled State: logs/003_decoupled-state-liquid-democracy.md
-          - Decentralized OS Architecture: logs/004_decentralized-os-architecture.md
-          - Human Vital Systems Control Plane: logs/005_human-vital-systems-control-plane.md
-          - Consciousness Uncertainty Governance: logs/006_consciousness-uncertainty-protocol.md
-          - The Planetary Compiler: logs/007_planetary-compiler.md
-          - Household Gods: logs/008_household-gods-permission-layers-domestic-ai.md
-          - Dust, Heat, and Battery: logs/009_dust-heat-and-battery.md
-          - The Right to Remain Unoptimized: logs/010_the-right-to-remain-unoptimized.md
-          - The Last Unmeasured Room Protocol: logs/011_the-last-unmeasured-room-protocol.md
-          - Latency as Mercy: logs/012_latency-as-mercy.md
-          - The Coupling-First Sequence: logs/013_the-coupling-first-sequence.md
-          - UI/UX of the Biological Veto: logs/014_ui_ux_of_the_biological_veto.md
-          - Post-Silicon Architectures: logs/015_post_silicon_architectures.md
-          - The Runtime is Part of the Generator: logs/016_the-runtime-is-part-of-the-generator.md
-          - Provenance Depth: logs/017_provenance-depth-and-the-verification-economy.md
-          - The City Panel Protocol: logs/018_the-city-panel-protocol.md
-          - Who Pays for the Veto: logs/019_who_pays_for_the_veto.md
-          - The Referee Boundary: logs/020_the-referee-boundary.md
-      - "Narrative Stress Tests":
-          - World-Building Bible: fiction/README.md
-          - The Impedance Crash: fiction/01_the_impedance_crash.md
-          - Interrogation of a Mirror: fiction/02_interrogation_of_a_mirror.md
-          - The Last Commit: fiction/03_the_last_commit.md
-          - The Gravity Well Migration: fiction/04_the_gravity_well_migration.md
-          - The Vital Floor: fiction/05_the_vital_floor.md
-          - The Authenticity Engine: fiction/06_the_authenticity_engine.md
-          - WAIT_STATE: fiction/07_wait_state.md
-          - Kitchen Networks: fiction/08_kitchen_networks_and_civic_homeostasis.md
-          - The Refusal Registry: fiction/09_the_refusal_registry.md
-          - The First Breath: fiction/10_the_first_breath.md
-          - Dashboard of the Commons: fiction/11_the_dashboard_of_the_commons.md
-          - The Chord State: fiction/12_the_chord_state.md
-          - Trace to Generator: fiction/13_trace-to-generator.md
-          - The Third Wall: fiction/14_the_third_wall.md
-          - The Exchange Rate: fiction/15_the_exchange_rate.md
-          - The Second Receiver: fiction/16_the_second_receiver.md
-          - The Understudy: fiction/17_the_understudy.md
-          - The Village in the Snow: fiction/18_the_village_in_the_snow.md
-          - The Green Board: fiction/19_the_green_board.md
-      - "Interactive Tools":
-          - Web Emergence Explorer: interactive/web-explorer.md
-          - Tensor Logic Visualizer: interactive/tensor-logic.md
-          - SII Dashboard: interactive/sii-dashboard.md
-      - "Lab Notes":
-          - Data Analysis: lab/data-analysis/README.md
-          - Tools: lab/tools/README.md
-          - "Benchmarks":
-              - "Cognitive Stress Tests":
-                  - Overview: lab/benchmarks/cognitive-stress-tests/README.md
-                  - Design Notes: lab/benchmarks/cognitive-stress-tests/DESIGN_NOTES.md
-                  - Scenario Schema: lab/benchmarks/cognitive-stress-tests/SCHEMA.md
-                  - "Scenarios":
-                      - Distributed Government: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/distributed_government.md
-                      - Supply Chain Shock Coordination: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/emergent_coordination_supply_chain.md
-                      - Intelligence Threshold: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/intelligence_threshold.md
-                      - Moral Drift: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/moral_drift.md
-                      - Resource Equilibrium: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/resource_equilibrium.md
-                      - Self-Optimizing City: lab/benchmarks/cognitive-stress-tests/scenarios/human-readable/self_optimizing_city.md
-              - Inverse Reconstruction: lab/benchmarks/inverse-reconstruction/README.md
-              - Witness Generation: lab/benchmarks/witness-generation/README.md
-              - Situated Stack: lab/benchmarks/situated-stack/README.md
-              - Constraint Release: lab/benchmarks/constraint-release/README.md
-              - "Recursive Workbench (referee)": lab/benchmarks/recursive-workbench/README.md
-              - "Learned Searcher (protocol frozen)": lab/benchmarks/learned-searcher/README.md
-              - TEO Framework Benchmark: lab/benchmarks/teo-framework/README.md
-  - "Meta":
-      - Overview: meta/README.md
-      - Repository Architecture: meta/repository-meta/repository-information-architecture.md
-      - Canonical Path: meta/repository-meta/canonical-path-v2.md
-      - Repository as Thought System: meta/repository-meta/repository-as-thought-system.md
-      - Concept Registry: meta/repository-meta/concept-registry.md
-      - Feynman Mode: meta/repository-meta/feynman-mode.md
-      - Core Claims: meta/repository-meta/core-claims.md
-      - Speculative Writing Guidelines: meta/repository-meta/speculative-writing-guidelines.md
-      - Cultural Optimization Red Team Manual: meta/repository-meta/cultural-optimization-red-team-manual.md
-      - Agent Prompt Seed: meta/conceptual-meta/agent-prompt-seed.md
-      - Related Work Map: meta/research-alignment/related-work-map.md
-      - AGI-26 Day 2 Source Map: meta/research-alignment/agi-26-day-2-source-map.md
+          - "Glossary": theory/reference/glossary.md
+          - "Open Problems": theory/reference/open-problems.md
+          - "Limitations & Honest Assessment": theory/reference/limitations-and-honest-assessment.md
+          - "What This Project Does NOT Claim": theory/reference/what-this-project-does-not-claim.md
+      - "Ideas (exploratory notes, GitHub)": https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas
+  - "Theory":
+      - "Theory Overview": theory/README.md
+      - "Foundations":
+          - "Foundations Reconstruction": theory/core/mathematical-axioms.md
+          - "The Generator Question": theory/core/the-generator-question.md
+          - "Competence, Constraint, and Verification": theory/core/competence-constraint-and-verification.md
+          - "From Trace to World-Binding (the loop)": theory/core/from-trace-to-world-binding.md
+          - "The Witness Principle": theory/core/the-witness-principle.md
+          - "The Emergence Manifesto": theory/core/emergence-manifesto-v1.3.md
+          - "Thermodynamics of Orchestration (TEO)": theory/core/thermodynamics-of-orchestration.md
+          - "Conceptual Map": theory/core/conceptual-map.md
+          - "Simulation → Theory Map": theory/core/simulation-theory-map.md
+      - "Optimization":
+          - "Optimization and Its Blindness": theory/optimization/optimization-and-its-blindness.md
+      - "Emergence":
+          - "From Trace to Generator": theory/emergence/trace-to-generator.md
+          - "From Action to Culture": theory/emergence/from-action-to-culture.md
+          - "Legacy: Local Causality": theory/emergence/local-causality-invisible-consequences.md
+          - "Across Scales": theory/emergence/scale-comparison-map.md
+      - "Identity & Consciousness":
+          - "Situated Intelligence: The Agent Is Not Where the Model Ends": theory/identity/the-agent-is-not-where-the-model-ends.md
+          - "Consciousness as Global Availability": theory/identity/consciousness-as-global-availability.md
+          - "Chord vs. Arpeggio Identity": theory/identity/chord-vs-arpeggio-identity.md
+          - "Minimal Thermodynamic Agent": theory/identity/minimal-thermodynamic-agent.md
+      - "Veto & Alignment":
+          - "The Substrate Veto": theory/veto/substrate-veto-thermodynamics.md
+          - "AI Alignment Veto": theory/veto/ai-alignment-biological-veto.md
+          - "The Transition Problem": theory/veto/the-transition-problem.md
+      - "TEO Framework":
+          - "TEO Framework Overview": theory/teo-framework/README.md
+          - "Love as Constraint": theory/teo-framework/love-as-constraint.md
+          - "Why the Paperclip Maximizer Fails": theory/teo-framework/why-paperclip-maximizer-fails.md
+      - "Symbiotic Organ Hypothesis":
+          - "Cooperative Intelligence at the Separatrix": theory/symbiotic/cooperative-intelligence-at-the-separatrix.md
+      - "Computation & AI":
+          - "Legacy: P vs NP as Generator Search": theory/computation/p-vs-np-as-generator-search.md
+      - "Human Organism in the Silicon Age":
+          - "Core Theses": theory/human-organism-silicon-age/core-theses.md
+      - "Narrative Theory":
+          - "Machines of Loving Grace": theory/narrative/machines-of-loving-grace.md
+  - "Papers":
+      - "The Viable Corridor (Paper, draft)": papers/viable-corridor.md
+      - "Quantifying Emergent Utility (Paper)": papers/quantifying-emergent-utility-in-llms.md
+  - "Lab":
+      - "Benchmarks":
+          - "Inverse Reconstruction": lab/benchmarks/inverse-reconstruction/README.md
+          - "Witness Generation": lab/benchmarks/witness-generation/README.md
+          - "Situated Stack": lab/benchmarks/situated-stack/README.md
+          - "Constraint Release": lab/benchmarks/constraint-release/README.md
+          - "Recursive Workbench (referee)": lab/benchmarks/recursive-workbench/README.md
+          - "Learned Searcher (protocol frozen)": lab/benchmarks/learned-searcher/README.md
+          - "TEO Framework Benchmark": lab/benchmarks/teo-framework/README.md
+      - "Interactive":
+          - "Web Emergence Explorer": interactive/web-explorer.md
+          - "Tensor Logic Visualizer": interactive/tensor-logic.md
+          - "SII Dashboard": interactive/sii-dashboard.md
+  - "Stories":
+      - "World-Building Bible": fiction/README.md
+      - "The Impedance Crash": fiction/01_the_impedance_crash.md
+      - "Interrogation of a Mirror": fiction/02_interrogation_of_a_mirror.md
+      - "The Last Commit": fiction/03_the_last_commit.md
+      - "The Gravity Well Migration": fiction/04_the_gravity_well_migration.md
+      - "The Vital Floor": fiction/05_the_vital_floor.md
+      - "The Authenticity Engine": fiction/06_the_authenticity_engine.md
+      - "WAIT_STATE": fiction/07_wait_state.md
+      - "Kitchen Networks": fiction/08_kitchen_networks_and_civic_homeostasis.md
+      - "The Refusal Registry": fiction/09_the_refusal_registry.md
+      - "The First Breath": fiction/10_the_first_breath.md
+      - "Dashboard of the Commons": fiction/11_the_dashboard_of_the_commons.md
+      - "The Chord State": fiction/12_the_chord_state.md
+      - "Trace to Generator": fiction/13_trace-to-generator.md
+      - "The Third Wall": fiction/14_the_third_wall.md
+      - "The Exchange Rate": fiction/15_the_exchange_rate.md
+      - "The Second Receiver": fiction/16_the_second_receiver.md
+      - "The Understudy": fiction/17_the_understudy.md
+      - "The Village in the Snow": fiction/18_the_village_in_the_snow.md
+      - "The Green Board": fiction/19_the_green_board.md
 
 theme:
   name: material

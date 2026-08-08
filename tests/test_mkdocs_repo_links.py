@@ -36,6 +36,16 @@ class TestLayerListMatchesDocsTree(unittest.TestCase):
         self.assertEqual(set(hook.ROOT_LAYERS), symlinked)
 
 
+class _Files:
+    """Stand-in for the MkDocs file collection: only these paths are built."""
+
+    def __init__(self, published):
+        self._published = set(published)
+
+    def get_file_from_path(self, path):
+        return object() if path in self._published else None
+
+
 class TestRewriteBehavior(unittest.TestCase):
     def _run(self, markdown, src_path="index.md"):
         return hook.on_page_markdown(
@@ -63,6 +73,63 @@ class TestRewriteBehavior(unittest.TestCase):
         self.assertEqual(
             self._run(markdown, src_path="theory/README.md"), markdown
         )
+
+
+class TestUnpublishedRedirect(unittest.TestCase):
+    REPO_URL = "https://github.com/frnkptrln/systems-and-intelligence"
+    BLOB = REPO_URL + "/blob/main/"
+
+    def _run(self, markdown, src_path, published):
+        return hook.on_page_markdown(
+            markdown,
+            page=_Page(src_path),
+            config={"repo_url": self.REPO_URL},
+            files=_Files(published),
+        )
+
+    def test_published_targets_stay_relative(self):
+        markdown = "[x](conceptual-map.md)"
+        self.assertEqual(
+            self._run(markdown, "theory/core/a.md", {"theory/core/conceptual-map.md"}),
+            markdown,
+        )
+
+    def test_unpublished_targets_go_to_github(self):
+        self.assertEqual(
+            self._run("[x](conceptual-map.md)", "theory/core/a.md", set()),
+            f"[x]({self.BLOB}theory/core/conceptual-map.md)",
+        )
+
+    def test_anchors_survive_the_redirect(self):
+        self.assertEqual(
+            self._run("[x](../veto/b.md#section)", "theory/core/a.md", set()),
+            f"[x]({self.BLOB}theory/veto/b.md#section)",
+        )
+
+    def test_absolute_urls_are_left_alone(self):
+        markdown = "[x](https://example.com/a.md)"
+        self.assertEqual(self._run(markdown, "theory/core/a.md", set()), markdown)
+
+    def test_fenced_code_is_not_rewritten(self):
+        markdown = "```\n[x](gone.md)\n```"
+        self.assertEqual(self._run(markdown, "theory/core/a.md", set()), markdown)
+
+    def test_source_files_are_redirected_too(self):
+        self.assertEqual(
+            self._run("[x](../../lab/experiments/exp6.py)", "theory/core/a.md", set()),
+            f"[x]({self.BLOB}lab/experiments/exp6.py)",
+        )
+
+    def test_image_embeds_are_left_alone(self):
+        markdown = "![x](diagram.png)"
+        self.assertEqual(self._run(markdown, "theory/core/a.md", set()), markdown)
+
+    def test_missing_repo_url_disables_the_redirect(self):
+        markdown = "[x](gone.md)"
+        result = hook.on_page_markdown(
+            markdown, page=_Page("theory/core/a.md"), config={}, files=_Files(set())
+        )
+        self.assertEqual(result, markdown)
 
 
 if __name__ == "__main__":
