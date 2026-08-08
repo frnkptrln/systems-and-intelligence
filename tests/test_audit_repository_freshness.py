@@ -77,10 +77,39 @@ def test_novelty_language_is_review_candidate(tmp_path):
     )
 
 
+def test_retired_strong_language_is_review_candidate(tmp_path):
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "papers/current.md",
+        "The Chord Postulate predicts a phase transition at a critical IP_c.",
+    )
+
+    findings = find_review_candidates(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].path == "papers/current.md"
+    assert findings[0].message == (
+        'review retired strong formulation "Chord Postulate predicts a phase transition"'
+    )
+
+
 def test_history_lanes_excluded_from_novelty_warnings(tmp_path):
     seed_open_problems(tmp_path, 1)
     write(tmp_path, "ideas/001.md", "For the first time, the note tried this framing.")
     write(tmp_path, "fiction/001.md", "The first evidence arrived after midnight.")
+
+    assert find_review_candidates(tmp_path) == []
+
+
+def test_quarantined_legacy_paper_is_excluded_from_review_warnings(tmp_path, monkeypatch):
+    seed_open_problems(tmp_path, 1)
+    rel = "papers/quantifying-emergent-utility-in-llms.md"
+    write(
+        tmp_path,
+        rel,
+        "Recently, the Chord Postulate predicts a phase transition at a critical IP_c.",
+    )
 
     assert find_review_candidates(tmp_path) == []
 
