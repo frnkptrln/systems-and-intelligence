@@ -2,6 +2,7 @@
 title: Asimov's Paradox in the Age of AI
 date: 2026-03-07
 last_reviewed: 2026-08-08
+review_trigger: a major new introspection or reasoning-monitoring result changes the five-channel taxonomy
 status: working narrative synthesis
 ---
 
