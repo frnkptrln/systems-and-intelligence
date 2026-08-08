@@ -1,2 +1,10 @@
-{# Empty overrides file — extend later for custom partials #}
 {% extends "base.html" %}
+
+{#-
+  The section links are rendered inside the header row by
+  partials/header.html, so the standalone tab strip that base.html would
+  otherwise place below the header is suppressed here. Emptying the block
+  states that directly, rather than relying on the navigation.tabs.sticky
+  flag as a side effect.
+-#}
+{% block tabs %}{% endblock %}

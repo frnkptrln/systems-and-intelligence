@@ -1,465 +1,775 @@
 /* ============================================================
-   Systems & Intelligence — Premium Academic Theme
-   Dark observatory aesthetic with purple-blue gradient accents
+   Systems & Intelligence — the room behind the "thinking" door
+
+   The palette, type, and hairline geometry are taken from the foyer at
+   frnkptrln.github.io so that walking through that door does not feel
+   like landing on a different site. Green (#b7f36b) is the foyer's own
+   accent for the thinking door, so it is the accent here too.
+
+   Reading comes first: the foyer can afford display type and negative
+   space, a notebook of long essays cannot. Type is set at 16px with a
+   1.68 measure, and the display weights stay light rather than large.
    ============================================================ */
 
-/* --- Import refined fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
-/* --- Root Variables (Slate / Dark Mode) --- */
+/* --- Foyer tokens ------------------------------------------------------ */
+
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #0c0e14;
-  --md-primary-fg-color--light: #161b22;
-  --md-primary-fg-color--dark: #000000;
-  --md-primary-bg-color: #ffffff;
-  --md-primary-bg-color--light: #a0a4ac;
-  --md-accent-fg-color: #9c7cff;
-  --md-default-bg-color: #0c0e14;
-  --md-default-fg-color: #dcdde0;
-  --md-code-bg-color: #12151e;
-  --md-typeset-a-color: #b49aff;
-  --si-glow: rgba(156, 124, 255, 0.12);
-  --si-gradient-start: #7c4dff;
-  --si-gradient-end: #00b0ff;
-  --si-surface: #12151e;
-  --si-border: rgba(156, 124, 255, 0.15);
-  --si-header-bg: rgba(12, 14, 20, 0.85);
-  --si-header-text: #ffffff;
+  --si-bg: #0b0c0b;
+  --si-raised: #101210;
+  --si-fg: #e9e7df;
+  --si-fg-soft: #aaa9a2;
+  --si-fg-dim: #6f726c;
+  --si-line: #292c28;
+  --si-line-bright: #3b4039;
+  --si-green: #b7f36b;
+  --si-blue: #86c9d8;
+  --si-warm: #e4a576;
+  --si-link: #c9dfa4;
+
+  --md-default-bg-color: var(--si-bg);
+  --md-default-fg-color: var(--si-fg);
+  --md-default-fg-color--light: var(--si-fg-soft);
+  --md-default-fg-color--lighter: var(--si-fg-dim);
+  --md-default-fg-color--lightest: var(--si-line-bright);
+  --md-primary-fg-color: var(--si-bg);
+  --md-primary-bg-color: var(--si-fg);
+  --md-accent-fg-color: var(--si-green);
+  --md-typeset-a-color: var(--si-link);
+  --md-code-bg-color: #0f110f;
+  --md-code-fg-color: var(--si-fg-soft);
+  --md-typeset-mark-color: rgba(183, 243, 107, 0.22);
 }
 
-/* --- Root Variables (Light Mode) --- */
+/* Light mode is the same palette printed on paper — same hues, inverted
+   lightness, accents darkened until they hold contrast on a bright ground. */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color: #ffffff;
-  --md-primary-fg-color--light: #f5f5f5;
-  --md-primary-fg-color--dark: #e0e0e0;
-  --md-primary-bg-color: #202124;
-  --md-primary-bg-color--light: #5f6368;
-  --md-accent-fg-color: #5e35b1;
-  --md-default-bg-color: #f8f9fa;
-  --md-default-fg-color: #202124;
-  --md-typeset-a-color: #5e35b1;
-  --si-glow: rgba(94, 53, 177, 0.08);
-  --si-gradient-start: #5e35b1;
-  --si-gradient-end: #1565c0;
-  --si-surface: #ffffff;
-  --si-border: rgba(94, 53, 177, 0.15);
-  --si-header-bg: rgba(255, 255, 255, 0.9);
-  --si-header-text: #202124;
+  --si-bg: #f3f2ec;
+  --si-raised: #fbfaf5;
+  --si-fg: #17190f;
+  --si-fg-soft: #4c4f45;
+  --si-fg-dim: #767a6d;
+  --si-line: #dedbd0;
+  --si-line-bright: #c6c3b6;
+  --si-green: #4a7016;
+  --si-blue: #2b6a7b;
+  --si-warm: #9a5a1f;
+  --si-link: #3f6410;
+
+  --md-default-bg-color: var(--si-bg);
+  --md-default-fg-color: var(--si-fg);
+  --md-default-fg-color--light: var(--si-fg-soft);
+  --md-default-fg-color--lighter: var(--si-fg-dim);
+  --md-default-fg-color--lightest: var(--si-line-bright);
+  --md-primary-fg-color: var(--si-bg);
+  --md-primary-bg-color: var(--si-fg);
+  --md-accent-fg-color: var(--si-green);
+  --md-typeset-a-color: var(--si-link);
+  --md-code-bg-color: #eae8de;
+  --md-code-fg-color: var(--si-fg-soft);
+  --md-typeset-mark-color: rgba(74, 112, 22, 0.16);
 }
 
-/* --- Typography --- */
 :root {
-  --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --md-code-font: "JetBrains Mono", "Fira Code", monospace;
+  --md-text-font: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --md-code-font: "JetBrains Mono", ui-monospace, monospace;
 }
+
+/* --- Page ground ------------------------------------------------------- */
+
+body {
+  background:
+    radial-gradient(circle at 84% 4%, rgba(134, 201, 216, 0.05), transparent 34rem),
+    radial-gradient(circle at 6% 34%, rgba(183, 243, 107, 0.03), transparent 36rem),
+    var(--si-bg);
+  background-attachment: fixed;
+}
+
+[data-md-color-scheme="default"] body {
+  background:
+    radial-gradient(circle at 84% 4%, rgba(43, 106, 123, 0.05), transparent 34rem),
+    radial-gradient(circle at 6% 34%, rgba(74, 112, 22, 0.04), transparent 36rem),
+    var(--si-bg);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: var(--si-green);
+  color: var(--si-bg);
+}
+
+/* --- Reading measure --------------------------------------------------- */
+
+.md-grid {
+  max-width: 70rem;
+}
+
+/* Material gutters the content with horizontal *margins*; centring the
+   column with ``auto`` would drop them, so the gutter moves to padding. */
+.md-content__inner {
+  max-width: 45rem;
+  margin-inline: auto;
+  padding-inline: 0.8rem;
+  padding-bottom: 4rem;
+}
+
+/* --- Prose ------------------------------------------------------------- */
 
 .md-typeset {
-  font-size: 1.02rem;
-  line-height: 1.85;
-  letter-spacing: 0.005em;
+  font-size: 0.8rem;
+  line-height: 1.68;
+  letter-spacing: 0;
+  color: var(--si-fg-soft);
 }
 
-/* --- Headings with Outfit display font --- */
+.md-typeset p,
+.md-typeset li {
+  font-weight: 300;
+}
+
+.md-typeset strong {
+  color: var(--si-fg);
+  font-weight: 500;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  color: var(--si-fg);
+  font-family: var(--md-text-font);
+}
+
 .md-typeset h1 {
-  font-family: "Outfit", var(--md-text-font);
-  font-weight: 700;
-  font-size: 2.2rem;
-  letter-spacing: -0.03em;
-  background: linear-gradient(135deg, var(--si-gradient-start), var(--si-gradient-end));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  border-bottom: none;
-  padding-bottom: 0.2em;
-  margin-bottom: 1em;
+  margin-bottom: 1.4rem;
+  font-size: 2.05em;
+  font-weight: 300;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+  text-wrap: balance;
 }
 
 .md-typeset h2 {
-  font-family: "Outfit", var(--md-text-font);
-  font-weight: 600;
-  font-size: 1.55rem;
-  letter-spacing: -0.02em;
-  margin-top: 2.5em;
-  color: var(--md-default-fg-color);
+  margin-top: 3rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--si-line);
+  font-size: 1.4em;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
 }
 
 .md-typeset h3 {
-  font-family: "Outfit", var(--md-text-font);
+  margin-top: 2.2rem;
+  font-size: 1.05em;
   font-weight: 500;
-  font-size: 1.2rem;
-  opacity: 0.92;
+  letter-spacing: -0.01em;
 }
 
-/* --- Hero Banner (Landing page) --- */
-.md-typeset .hero-banner {
-  text-align: center;
-  padding: 4rem 2rem 3.5rem;
-  margin-bottom: 2.5rem;
-  background:
-    radial-gradient(ellipse at 30% 20%, rgba(124, 77, 255, 0.15), transparent 55%),
-    radial-gradient(ellipse at 70% 80%, rgba(0, 176, 255, 0.08), transparent 55%),
-    var(--si-surface);
-  border-radius: 16px;
-  border: 1px solid var(--si-border);
-  position: relative;
-  overflow: hidden;
+.md-typeset h4 {
+  font-size: 0.94em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
-.md-typeset .hero-banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237c4dff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.6;
-  pointer-events: none;
+/* Material derives the link colour from the primary palette, in a rule that
+   outranks a plain variable override — so the colour is set on the anchor. */
+.md-typeset a {
+  color: var(--si-link);
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  text-decoration-line: underline;
+  text-underline-offset: 0.18em;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
 }
 
-.md-typeset .hero-banner h2 {
-  font-family: "Outfit", var(--md-text-font);
-  font-weight: 800;
-  font-size: 2.4rem;
-  letter-spacing: -0.03em;
-  background: linear-gradient(135deg, var(--si-gradient-start), var(--si-gradient-end));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-top: 0;
-  margin-bottom: 0.3em;
+.md-typeset a:hover {
+  color: var(--si-green);
+  text-decoration-color: currentColor;
 }
 
-.md-typeset .hero-banner em {
-  font-size: 1.15rem;
-  font-weight: 300;
-  opacity: 0.8;
-  display: block;
-  margin-bottom: 0.5em;
-}
-
-.md-typeset .hero-banner strong {
+/* Many links now leave for GitHub, because the repository holds far more
+   than the site publishes. A reader should be able to see that coming
+   rather than discover it after the click, so anything pointing off-site
+   carries a mark. Buttons already announce themselves. */
+.md-typeset a[href^="http"]:not(.md-button):not([href*="frnkptrln.github.io/systems-and-intelligence"])::after {
+  content: "↗";
+  margin-left: 0.18em;
+  color: var(--si-fg-dim);
+  font-size: 0.76em;
   font-weight: 400;
-  opacity: 0.6;
-  font-size: 0.95rem;
+  text-decoration: none;
+  vertical-align: baseline;
 }
 
-/* --- Cards for navigation sections --- */
-.md-typeset .grid-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-  margin: 2rem 0;
+.md-typeset hr {
+  height: 1px;
+  margin: 3rem 0;
+  border: none;
+  background: var(--si-line);
 }
 
-.md-typeset .card {
-  background: var(--si-surface);
-  border: 1px solid var(--si-border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+.md-typeset blockquote {
+  padding: 0.1rem 0 0.1rem 1.3rem;
+  border-left: 1px solid var(--si-line-bright);
+  color: var(--si-fg-dim);
+  font-style: normal;
 }
 
-.md-typeset .card:hover {
-  border-color: var(--md-accent-fg-color);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(124, 77, 255, 0.08);
+/* --- Mono voice: labels, chrome, small print --------------------------- */
+
+.md-tabs__link,
+.md-typeset .admonition-title,
+.md-typeset summary,
+.md-typeset table:not([class]) th,
+.md-typeset .md-button,
+.md-typeset .eyebrow,
+.md-typeset .door-meta,
+.md-footer-meta,
+.md-nav__title {
+  font-family: var(--md-code-font);
 }
 
-.md-typeset .card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--si-gradient-start), var(--si-gradient-end));
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.md-typeset .eyebrow {
+  margin-bottom: 1.6rem;
+  color: var(--si-fg-dim);
+  font-size: 0.66em;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.md-typeset .card:hover::after {
+/* --- Header ------------------------------------------------------------ */
+
+/* Material pins the header to the primary colour through a selector that
+   carries the palette attribute; the scheme attribute matches its weight so
+   the header follows the foyer ground in both light and dark. */
+[data-md-color-scheme] .md-header {
+  border-bottom: 1px solid var(--si-line);
+  background: color-mix(in srgb, var(--si-bg) 88%, transparent);
+  box-shadow: none;
+  color: var(--si-fg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* One row: mark and name left, sections right, exactly like the foyer's
+   nav. The partial in docs/overrides/partials/header.html supplies the
+   markup; this gives it the foyer's proportions. */
+.md-header--single .md-header__inner {
+  min-height: 3.5rem;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* The title's topics are absolutely positioned, so the element has no
+   intrinsic width and can only be sized by growing. It therefore has to be
+   the flexible one — it takes the free space and pushes the sections hard
+   right, the way the foyer's nav links sit. Letting the sections grow
+   instead collapses the mark to nothing. */
+.md-header--single .md-header__title {
+  flex: 1 1 auto;
+  min-width: 4rem;
+  margin-left: 0.55rem;
+}
+
+.md-header__title {
+  font-family: var(--md-code-font);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+}
+
+.md-header__button {
+  color: var(--si-fg-soft);
+}
+
+.md-header__button.md-logo :is(img, svg) {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: var(--si-green);
+}
+
+.md-search__form {
+  border: 1px solid var(--si-line);
+  border-radius: 0;
+  background: var(--si-raised);
+  box-shadow: none;
+}
+
+.md-search__form:hover,
+[data-md-toggle="search"]:checked~.md-header .md-search__form {
+  background: var(--si-raised);
+  border-color: var(--si-line-bright);
+}
+
+.md-search__input {
+  font-size: 0.72rem;
+}
+
+.md-search__input::placeholder {
+  color: var(--si-fg-dim);
+}
+
+/* --- Tabs -------------------------------------------------------------- */
+
+/* The sections live inside the header row now, so the tab strip has no
+   ground, no border, and no width of its own. */
+[data-md-color-scheme] .md-tabs {
+  border-bottom: none;
+  background: transparent;
+  color: var(--si-fg);
+}
+
+.md-tabs--inline {
+  /* Material gives .md-tabs width:100%, which as a flex basis swallows the
+     whole row and starves the mark. In one row it sizes to its links. */
+  width: auto;
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  margin-inline: 1.2rem 0.4rem;
+  line-height: 1;
+  scrollbar-width: none;
+}
+
+.md-tabs--inline::-webkit-scrollbar {
+  display: none;
+}
+
+.md-tabs--inline .md-tabs__list {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  gap: clamp(0.7rem, 1.8vw, 1.6rem);
+  white-space: nowrap;
+}
+
+.md-tabs--inline .md-tabs__item {
+  height: auto;
+  padding: 0;
+}
+
+.md-tabs--inline .md-tabs__link {
+  margin: 0;
   opacity: 1;
+  transform: none;
 }
 
-.md-typeset .card h3 {
-  margin-top: 0;
-  font-size: 1.1rem;
+/* Below the tab breakpoint the drawer carries the sections instead. */
+@media screen and (max-width: 76.1875em) {
+  .md-tabs--inline {
+    display: none;
+  }
 }
 
-.md-typeset .card p {
-  font-size: 0.9rem;
-  opacity: 0.75;
-  line-height: 1.6;
+[data-md-color-scheme] .md-tabs__link {
+  color: var(--si-fg-dim);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  opacity: 1;
+  text-transform: lowercase;
+  transition: color 180ms ease;
 }
 
-/* --- Code Blocks --- */
+[data-md-color-scheme] .md-tabs__link:hover {
+  color: var(--si-fg);
+}
+
+/* Material marks the current tab on the list item, not the anchor. */
+[data-md-color-scheme] .md-tabs__item--active .md-tabs__link,
+[data-md-color-scheme] .md-tabs__link--active {
+  color: var(--si-green);
+}
+
+/* --- Sidebar navigation ------------------------------------------------ */
+
+.md-nav {
+  font-size: 0.66rem;
+}
+
+.md-nav__title {
+  background: transparent;
+  box-shadow: none;
+  color: var(--si-fg-dim);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+}
+
+.md-nav__link {
+  padding: 0.22em 0;
+  color: var(--si-fg-dim);
+  font-weight: 300;
+  transition: color 160ms ease;
+}
+
+.md-nav__link:hover,
+.md-nav__link:focus {
+  color: var(--si-fg);
+}
+
+.md-nav__item--active>.md-nav__link:not(.md-nav__container),
+.md-nav__link--active {
+  color: var(--si-green);
+  font-weight: 400;
+}
+
+/* Section labels read as structure, not as more links. Material gives the
+   sticky table-of-contents title an opaque backdrop; on the gradient ground
+   that reads as a stray filled bar, so it is cleared here. */
+.md-nav--secondary .md-nav__title[for="__toc"],
+.md-nav--secondary .md-nav__title {
+  background: transparent;
+  box-shadow: none;
+}
+
+.md-nav__item--nested>.md-nav__link {
+  color: var(--si-fg-soft);
+}
+
+/* Pages carry a ``status`` in their front matter, which Material renders as a
+   marker in the sidebar. Useful, but it should not compete with the label. */
+.md-nav__link .md-status {
+  opacity: 0.45;
+}
+
+.md-sidebar--secondary .md-nav__link {
+  border-left: 1px solid transparent;
+  padding-left: 0.7em;
+}
+
+.md-sidebar--secondary .md-nav__link--active {
+  border-left-color: var(--si-green);
+}
+
+/* --- Cards, admonitions, code: square and hairline --------------------- */
+
+.md-typeset :is(pre, code, .admonition, details, .tabbed-set>.tabbed-content, table:not([class])) {
+  border-radius: 0;
+}
+
 .md-typeset code {
-  border-radius: 5px;
-  padding: 0.2em 0.45em;
-  font-size: 0.87em;
-  background: var(--md-code-bg-color);
-}
-
-.md-typeset pre {
-  border-radius: 10px;
-  border: 1px solid var(--si-border);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.15em 0.4em;
+  border: 1px solid var(--si-line);
+  font-size: 0.85em;
+  font-weight: 400;
 }
 
 .md-typeset pre>code {
-  font-size: 0.87rem;
+  border: none;
+  font-size: 0.76rem;
+  line-height: 1.6;
 }
 
-/* --- Admonitions --- */
+.md-typeset pre {
+  border: 1px solid var(--si-line);
+  box-shadow: none;
+}
+
 .md-typeset .admonition,
 .md-typeset details {
-  border-radius: 10px;
-  border-left-width: 4px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-  background: var(--si-surface);
+  border: 1px solid var(--si-line);
+  border-left-width: 2px;
+  background: var(--si-raised);
+  box-shadow: none;
+  font-size: 0.76rem;
 }
 
 .md-typeset .admonition-title,
 .md-typeset summary {
-  font-family: "Outfit", var(--md-text-font);
-  font-weight: 600;
-}
-
-/* --- Math blocks --- */
-.md-typeset .MathJax {
-  font-size: 1.08em;
-}
-
-/* --- Navigation tabs (top bar) --- */
-.md-tabs {
   background: transparent;
-  /* Use header background instead */
-  color: var(--md-primary-bg-color);
-}
-
-.md-tabs__link {
-  font-family: "Outfit", var(--md-text-font);
+  font-size: 0.68rem;
   font-weight: 500;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  opacity: 0.7;
-  color: var(--md-primary-bg-color);
-  transition: opacity 0.2s ease, color 0.2s ease;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
 }
 
-.md-tabs__link--active,
-.md-tabs__link:hover {
-  opacity: 1;
-  color: var(--md-accent-fg-color);
+/* Material ships a different hue per admonition type. Collapse all of them
+   onto the three foyer accents, so a page of callouts still reads as one
+   palette. The selectors match Material's own specificity and win on order. */
+.md-typeset :is(.note, .abstract, .summary, .tldr, .info, .todo) {
+  --si-admonition: var(--si-blue);
 }
 
-/* --- Sidebar navigation --- */
-.md-nav__link {
-  font-size: 0.88rem;
-  letter-spacing: 0.005em;
-  border-radius: 4px;
-  padding: 0.3em 0.6em;
-  transition: all 0.15s ease;
+.md-typeset :is(.tip, .hint, .important, .success, .check, .done) {
+  --si-admonition: var(--si-green);
 }
 
-.md-nav__link:hover {
-  background: var(--si-glow);
+.md-typeset :is(.question, .help, .faq, .warning, .caution, .attention,
+  .failure, .fail, .missing, .danger, .error, .bug) {
+  --si-admonition: var(--si-warm);
 }
 
-.md-nav__item--active>.md-nav__link {
-  font-weight: 600;
-  color: var(--md-accent-fg-color);
+.md-typeset :is(.example, .quote, .cite) {
+  --si-admonition: var(--si-fg-dim);
 }
 
-/* --- Header (frosted glass) --- */
-.md-header {
-  background: var(--si-header-bg);
-  color: var(--si-header-text);
-  backdrop-filter: blur(12px) saturate(1.2);
-  -webkit-backdrop-filter: blur(12px) saturate(1.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid var(--si-border);
+/* ``[class]`` buys one point of specificity over Material's per-type rules
+   without having to repeat all twenty-odd type names a second time. */
+.md-typeset :is(.admonition, details)[class] {
+  border-color: var(--si-line);
+  border-left-color: var(--si-admonition, var(--si-line-bright));
 }
 
-.md-header[data-md-state="hidden"] {
-  transform: translateY(-100%);
+.md-typeset :is(.admonition, details)[class]>:is(.admonition-title, summary) {
+  background: transparent;
 }
 
-.md-header__button {
-  color: var(--si-header-text);
+.md-typeset :is(.admonition, details)[class]>:is(.admonition-title, summary)::before {
+  background-color: var(--si-admonition, var(--si-fg-dim));
 }
 
-.md-header__button.md-logo img,
-.md-header__button.md-logo svg {
-  fill: var(--si-header-text);
-}
+/* --- Tables ------------------------------------------------------------ */
 
-.md-header__title {
-  color: var(--si-header-text);
-  font-weight: 600;
-}
-
-[data-md-color-scheme="default"] .md-header {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-}
-
-/* --- Footer --- */
-.md-footer {
-  border-top: 1px solid var(--si-border);
-}
-
-.md-footer-meta {
-  background: var(--md-default-bg-color);
-}
-
-/* --- Content width & reading experience --- */
-.md-content__inner {
-  max-width: 58rem;
-}
-
-/* Responsive embed for Interactive Dashboard pages */
-.md-typeset iframe[src*="app.html"] {
-  width: 100% !important;
-  max-width: 1200px;
-  display: block;
-  margin: 2rem auto !important;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-}
-
-/* Allow the surrounding container to stretch safely without breaking flex boundaries */
-.md-grid {
-  max-width: 90%;
-}
-
-.md-content__inner {
-  max-width: 100%;
-}
-
-
-/* --- Buttons --- */
-.md-typeset .md-button {
-  border-radius: 8px;
-  font-family: "Outfit", var(--md-text-font);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  padding: 0.7em 1.6em;
-  transition: all 0.25s ease;
-}
-
-.md-typeset .md-button--primary {
-  background: linear-gradient(135deg, var(--si-gradient-start), var(--si-gradient-end));
-  border: none;
-  color: white;
-  box-shadow: 0 4px 16px rgba(124, 77, 255, 0.25);
-}
-
-.md-typeset .md-button--primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(124, 77, 255, 0.35);
-}
-
-.md-typeset .md-button:not(.md-button--primary) {
-  border: 1px solid var(--si-border);
-  background: var(--si-surface);
-  color: var(--md-typeset-a-color);
-}
-
-.md-typeset .md-button:not(.md-button--primary):hover {
-  border-color: var(--md-accent-fg-color);
-  background: var(--si-glow);
-  color: var(--md-accent-fg-color);
-}
-
-/* --- Smooth transitions --- */
-.md-nav__link,
-.md-tabs__link,
-a {
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-/* --- Blockquotes --- */
-.md-typeset blockquote {
-  border-left: 3px solid var(--md-accent-fg-color);
-  background: var(--si-glow);
-  border-radius: 0 8px 8px 0;
-  padding: 1em 1.4em;
-  margin: 1.5em 0;
-  font-style: italic;
-}
-
-.md-typeset blockquote p {
-  margin: 0;
-}
-
-/* --- Tables --- */
 .md-typeset table:not([class]) {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--si-border);
+  border: 1px solid var(--si-line);
+  box-shadow: none;
+  font-size: 0.74rem;
 }
 
 .md-typeset table:not([class]) th {
-  background: linear-gradient(135deg, rgba(124, 77, 255, 0.1), rgba(0, 176, 255, 0.05));
-  font-family: "Outfit", var(--md-text-font);
-  font-weight: 600;
+  border-bottom: 1px solid var(--si-line-bright);
+  background: transparent;
+  color: var(--si-fg-dim);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
-  padding: 0.9em 1em;
 }
 
 .md-typeset table:not([class]) td {
-  padding: 0.8em 1em;
-  border-bottom: 1px solid var(--si-border);
+  border-bottom: 1px solid var(--si-line);
 }
 
-.md-typeset table:not([class]) tr:hover td {
-  background: var(--si-glow);
+/* --- Buttons ----------------------------------------------------------- */
+
+.md-typeset .md-button {
+  padding: 0.62em 1.3em;
+  border: 1px solid var(--si-line-bright);
+  border-radius: 0;
+  color: var(--si-fg-soft);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
-/* --- Horizontal Rules --- */
-.md-typeset hr {
-  border: none;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--si-gradient-start), var(--si-gradient-end), transparent);
-  margin: 3em 0;
-  opacity: 0.4;
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  border-color: var(--si-green);
+  background: transparent;
+  color: var(--si-green);
 }
 
-/* --- Selection highlight --- */
-::selection {
-  background: rgba(124, 77, 255, 0.3);
+.md-typeset .md-button--primary {
+  border-color: var(--si-green);
+  background: var(--si-green);
+  color: var(--si-bg);
 }
 
-/* --- Tooltip / annotations --- */
-.md-annotation__index {
-  background: var(--md-accent-fg-color) !important;
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+  background: transparent;
+  color: var(--si-green);
 }
 
-/* --- Smooth page load --- */
-.md-content {
-  animation: fadeIn 0.3s ease;
+/* --- Doors: the index and thinking-space card grids -------------------- */
+
+.md-typeset :is(.doors, .grid-cards) {
+  display: grid;
+  gap: 1px;
+  margin: 2.5rem 0;
+  background: var(--si-line);
+  border: 1px solid var(--si-line);
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
+.md-typeset :is(.door, .card) {
+  --door-accent: var(--si-green);
+  position: relative;
+  padding: 1.6rem 1.5rem;
+  background: var(--si-bg);
+  transition: background 220ms ease;
+}
+
+.md-typeset :is(.door, .card)::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(150deg, color-mix(in srgb, var(--door-accent) 9%, transparent), transparent 45%);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.md-typeset :is(.door, .card):hover::before {
+  opacity: 1;
+}
+
+.md-typeset :is(.door, .card)>* {
+  position: relative;
+}
+
+.md-typeset :is(.door, .card) h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.98em;
+  font-weight: 500;
+}
+
+.md-typeset :is(.door, .card) p {
+  color: var(--si-fg-dim);
+  font-size: 0.9em;
+}
+
+.md-typeset :is(.door, .card) :is(p, ol, ul):last-child {
+  margin-bottom: 0;
+}
+
+.md-typeset .door-meta {
+  color: var(--si-fg-dim);
+  font-size: 0.62em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.md-typeset .door--blue {
+  --door-accent: var(--si-blue);
+}
+
+.md-typeset .door--warm {
+  --door-accent: var(--si-warm);
+}
+
+/* --- Landing hero ------------------------------------------------------ */
+
+.md-typeset .hero-banner {
+  padding: 1rem 0 3rem;
+  border-bottom: 1px solid var(--si-line);
+  margin-bottom: 3rem;
+}
+
+.md-typeset .hero-banner h1 {
+  margin: 0 0 1.4rem;
+  padding-top: 0;
+  border-top: none;
+  font-size: 2.5em;
+  font-weight: 300;
+  letter-spacing: -0.05em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.md-typeset .hero-banner p {
+  max-width: 34rem;
+  font-size: 0.98em;
+}
+
+.md-typeset .hero-banner em {
+  color: var(--si-fg-soft);
+  font-style: normal;
+}
+
+/* --- Footer ------------------------------------------------------------ */
+
+.md-footer {
+  background: transparent;
+  border-top: 1px solid var(--si-line);
+}
+
+.md-footer-meta {
+  background: transparent;
+  font-size: 0.62rem;
+}
+
+.md-footer__link {
+  opacity: 0.7;
+}
+
+.md-footer__title {
+  font-size: 0.74rem;
+  font-weight: 400;
+}
+
+/* --- Math -------------------------------------------------------------- */
+
+.md-typeset .katex {
+  font-size: 1.02em;
+}
+
+.md-typeset .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.4rem 0;
+}
+
+/* --- Embedded interactive tools ---------------------------------------- */
+
+.md-typeset iframe[src*="app.html"] {
+  display: block;
+  width: 100% !important;
+  margin: 2rem auto !important;
+  border: 1px solid var(--si-line);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Wide media may exceed the reading measure without widening the page. */
+.md-typeset :is(.mermaid, table:not([class])) {
+  overflow-x: auto;
+}
+
+/* --- Mobile ------------------------------------------------------------ */
+
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background: var(--si-raised);
+    color: var(--si-fg);
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .md-nav--primary .md-nav__link {
+    padding: 0.5em 0.6rem;
   }
 }
 
-/* --- Print improvements --- */
-@media print {
+@media screen and (max-width: 44.9375em) {
+  .md-typeset {
+    line-height: 1.62;
+  }
+
   .md-typeset h1 {
-    -webkit-text-fill-color: #333;
-    color: #333;
+    font-size: 1.72em;
+    letter-spacing: -0.035em;
+  }
+
+  .md-typeset h2 {
+    margin-top: 2.2rem;
+    font-size: 1.24em;
+  }
+
+  .md-typeset .hero-banner h1 {
+    font-size: 1.85em;
+  }
+
+  .md-content__inner {
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* --- Print ------------------------------------------------------------- */
+
+@media print {
+  .md-typeset :is(h1, h2, h3, h4) {
+    color: #000;
+  }
+
+  .md-typeset {
+    color: #222;
   }
 }

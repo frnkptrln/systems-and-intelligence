@@ -274,33 +274,34 @@ theme:
   name: material
   custom_dir: docs/overrides
   font:
-    text: Inter
+    # Matches the foyer at frnkptrln.github.io, so the notebook reads as the
+    # room behind that door rather than a separate site.
+    text: Space Grotesk
     code: JetBrains Mono
   icon:
     repo: fontawesome/brands/github
-    logo: material/brain
+    logo: material/square-outline
   palette:
-    # Palette toggle for dark mode (default)
+    # Palette toggle for dark mode (default) — the foyer's own values
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: deep purple
+      accent: lime
       toggle:
-        icon: material/brightness-4
+        icon: material/circle-outline
         name: Switch to light mode
 
-    # Palette toggle for light mode
+    # Palette toggle for light mode — the same palette on paper
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: deep purple
+      primary: black
+      accent: lime
       toggle:
-        icon: material/brightness-7
+        icon: material/circle-slice-8
         name: Switch to dark mode
   features:
     - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.prune
+    - navigation.indexes
     - navigation.path
     - navigation.top
     - navigation.instant
@@ -308,6 +309,7 @@ theme:
     - toc.follow
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
@@ -363,6 +365,9 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/frnkptrln
-      name: Frank Peterlein on GitHub
+      link: https://github.com/frnkptrln/systems-and-intelligence
+      name: The repository behind this site
+    - icon: material/door-open
+      link: https://frnkptrln.github.io/
+      name: Back to the foyer
   generator: false
