@@ -87,25 +87,30 @@ FRESHNESS_MANAGED = {
     "theory/ai/j-space-and-global-availability.md",
     "theory/ai/world-models-and-vla.md",
     "theory/emergence/emergence-origin-intelligence.md",
+    "theory/identity/consciousness-as-global-availability.md",
     "theory/narrative/asimov-ai-latent-thinking.md",
 }
 
+# Markdown authors commonly bold either the label alone (``**Label**:``) or
+# the label plus colon (``**Label:**``). Accept both, as well as plain text.
+_FIELD_COLON = r"(?::\*\*|\*\*:|:)"
+
 LAST_REVIEWED = re.compile(
-    r"(?:"
-    r"(?:\*\*)?Last reviewed(?:\*\*)?:\s*\d{4}-\d{2}-\d{2}"
-    r"|^last_reviewed:\s*\d{4}-\d{2}-\d{2}\s*$"
-    r")",
+    rf"(?:"
+    rf"(?:\*\*)?Last reviewed{_FIELD_COLON}\s*\d{{4}}-\d{{2}}-\d{{2}}"
+    rf"|^last_reviewed:\s*\d{{4}}-\d{{2}}-\d{{2}}\s*$"
+    rf")",
     re.I | re.MULTILINE,
 )
 EXTERNAL_LAST_REVIEWED = re.compile(
-    r"(?:\*\*)?External interface last reviewed(?:\*\*)?:\s*\d{4}-\d{2}-\d{2}",
+    rf"(?:\*\*)?External interface last reviewed{_FIELD_COLON}\s*\d{{4}}-\d{{2}}-\d{{2}}",
     re.I,
 )
 REVIEW_TRIGGER = re.compile(
-    r"(?:"
-    r"(?:\*\*)?Review trigger(?:\*\*)?:"
-    r"|^review_trigger:\s*\S.+$"
-    r")",
+    rf"(?:"
+    rf"(?:\*\*)?Review trigger{_FIELD_COLON}"
+    rf"|^review_trigger:\s*\S.+$"
+    rf")",
     re.I | re.MULTILINE,
 )
 
