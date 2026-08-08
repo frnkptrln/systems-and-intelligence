@@ -48,7 +48,7 @@ $$
 E=(S,A,O,T,V),
 $$
 
-where \(S\) is latent state, \(A\) actions, \(O\) observations, \(T(s_{t+1}\mid s_t,a_t)\) the state transition law, and \(V(o_t\mid s_t)\) the observation or rendering channel.
+where $S$ is latent state, $A$ actions, $O$ observations, $T(s_{t+1}\mid s_t,a_t)$ the state transition law, and $V(o_t\mid s_t)$ the observation or rendering channel.
 
 A classical game loop has the approximate causal form
 
@@ -78,13 +78,13 @@ The reconstruction target must therefore state which equivalence relation matter
 
 The GameNGen paper explicitly defines simulation quality relative to a policy, an initial-state distribution, episode lengths, and an observation distance. That is more important for this repository than the headline frame rate.
 
-Let \(\pi\) be the policy that chooses actions, \(\mu_0\) an initial-state distribution, \(H\) a horizon distribution, and \(d\) a distance on observations. A repository-style adequacy statement can be written schematically as
+Let $\pi$ be the policy that chooses actions, $\mu_0$ an initial-state distribution, $H$ a horizon distribution, and $d$ a distance on observations. A repository-style adequacy statement can be written schematically as
 
 $$
 \hat E \approx_{\pi,\mu_0,H,d,\varepsilon} E
 $$
 
-when rollouts from the learned simulator and the source environment remain within a declared tolerance \(\varepsilon\) under those tests.
+when rollouts from the learned simulator and the source environment remain within a declared tolerance $\varepsilon$ under those tests.
 
 This is deliberately weaker than
 
@@ -128,13 +128,7 @@ This means the observation is not merely an output to be rendered. It is also an
 A useful decomposition is therefore
 
 $$
-\text{effective predictive state}
-=
-\text{model parameters}
-+
-\text{recent trace}
-+
-\text{state re-encoded in the current observation}.
+\text{effective predictive state} = \text{model parameters} + \text{recent trace} + \text{state re-encoded in the current observation}.
 $$
 
 That does **not** mean the pixels constitute a complete Markov state. The model can fail when relevant information is neither visible nor contained in its short context. But it does show why "memory inside the network" is the wrong boundary for some functional questions.
