@@ -51,6 +51,8 @@ jobs:
         run: python lab/tools/validate_nav.py
       - name: Mathematical Markdown validation
         run: python lab/tools/validate_math.py
+      - name: Build the paper PDF
+        run: python lab/tools/build_paper_pdf.py
       - name: Strict documentation build
         run: mkdocs build --strict
       - name: KaTeX rendering validation

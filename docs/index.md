@@ -1,133 +1,126 @@
-# Systems & Intelligence
-
 <div class="hero-banner" markdown>
 
-## A Research Notebook on Processes, Identification, and Viability
+<p class="eyebrow">Systems &amp; Intelligence · a research notebook · Berlin · 2024–2026</p>
 
-*What follows from a process model, what evidence can identify, and how optimization remains survivable.*
+# Some traces have causes. Not all causes can be recovered.
 
-**Frank Peterlein** · Independent Research · 2024–2026
+*What follows from a process model, what evidence can identify, and how optimization stays survivable.* Frank Peterlein, independent research.
 
-[Start Here :material-compass:](synthesis.md){ .md-button .md-button--primary }
-[Source Repository :fontawesome-brands-github:](https://github.com/frnkptrln/systems-and-intelligence){ .md-button }
+[Start here :material-arrow-right:](synthesis.md){ .md-button .md-button--primary }
+[Source repository](https://github.com/frnkptrln/systems-and-intelligence){ .md-button }
 
 </div>
-
----
-
-## The Core Questions
- 
-!!! success "TL;DR"
-    This repository now begins with a foundational audit and then studies two bounded questions:
-
-    1. **Model identification:** How can an observer move from traces to useful candidate process models — through construction, world-coupling, intervention, and revision?
-    2. **Viability arc:** How can an optimizing system remain viable when growing capability loads several constraints at once?
-
-    The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) establishes the common process language and shows where extra assumptions enter. The first research question is folded into [From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md). The second is mapped in [Canonical Path v2](../meta/repository-meta/canonical-path-v2.md).
 
 !!! note "Epistemic status — read this first"
     This is a **research notebook**, not a theory of everything. The process foundation is established mathematics rather than a novel empirical theory. Identity remains test-relative; learning and intelligence require declared tasks; phenomenal consciousness is not derived. The inverse-reconstruction results are measured in small, controlled systems. The Viable Corridor necessity result is conditional on its model assumptions; **sufficiency is conjectured, not proved**; the civilizational mapping is **heuristic**, not measured; and the AI-specific predictions have not been tested on real agent ecologies. The explicit negative space is maintained at [What This Project Does NOT Claim](../theory/reference/what-this-project-does-not-claim.md).
 
-The measured core is the [inverse-reconstruction benchmark](../lab/benchmarks/inverse-reconstruction/README.md): known-family inversion, equivalence classes, intervention, family search, model exploitation, marked uncertainty, closed-loop revision, ensembles, and process composition. The Viability Arc is currently supported by formal results and two synthetic models; external calibration and real-agent tests remain open.
+## Two bounded questions
 
----
+The notebook begins with a foundational audit and then studies two questions:
 
-## Navigate the Research
+1. **Model identification** — how an observer moves from traces to useful candidate process models, through construction, world-coupling, intervention, and revision.
+2. **The viability arc** — how an optimizing system stays viable when growing capability loads several constraints at once.
 
-<div class="grid-cards" markdown>
+The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) establishes the common process language and shows where extra assumptions enter. The first question is folded into [From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md); the second is mapped in [Canonical Path v2](../meta/repository-meta/canonical-path-v2.md).
 
-<div class="card" markdown>
+The measured core is the [inverse-reconstruction benchmark](../lab/benchmarks/inverse-reconstruction/README.md): known-family inversion, equivalence classes, intervention, family search, model exploitation, marked uncertainty, closed-loop revision, ensembles, and process composition. The viability arc rests on formal results and two synthetic models; external calibration and real-agent tests remain open.
 
-### :material-compass: Recommended Reading Path
+## Six ways in
 
-New to this project? Start here for the most direct path through the core theory and proofs.
+Not a prescribed path. The same material, entered from different angles.
 
-1. **[Foundations Reconstruction](../theory/core/mathematical-axioms.md)** — Minimal primitives, axioms, derivations, counterexamples, and comparison with neighboring theories.
-2. **[From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md)** — The bounded model-identification loop.
-3. **[Inverse-Reconstruction Benchmark](../lab/benchmarks/inverse-reconstruction/README.md)** — The measured equivalence classes and intervention results.
-4. **[Emergence Manifesto](../theory/core/emergence-manifesto-v1.3.md)** — The earlier emergence claim set, read under the reconstructed foundation.
-5. **[Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md)** — The hinge into the viability arc.
-6. **[The Viable Corridor](../papers/viable-corridor.md)** — One conditional formal model.
-7. **[Canonical Path v2](../meta/repository-meta/canonical-path-v2.md)** — The full map and migration status.
+<div class="doors" markdown>
 
-</div>
+<div class="door" markdown>
 
-<div class="card" markdown>
+<p class="door-meta">01 / Theory</p>
 
-### :material-map-marker-path: Course Path
+### The argument
 
-A compact linear route through the current material. Earlier book chapters remain available as evolving synthesis, while this spine keeps the route aligned with the present repository.
+The reconstructed foundation first, then the formal and exploratory essays it constrains — emergence, identity, veto, computation.
 
-[Follow *From Rule to Mind* →](../book/09_from_rule_to_mind.md)
+[Enter the theory →](../theory/README.md)
 
 </div>
 
-<div class="card" markdown>
+<div class="door door--blue" markdown>
 
-### :material-flask: Core Theory
+<p class="door-meta">02 / The route</p>
 
-The reconstructed foundation first; then the formal and exploratory essays it now constrains.
+### One thing after another
 
-[Explore the foundation →](../theory/core/mathematical-axioms.md)
+A compact linear path for readers who want a sequence rather than a map. The earlier book chapters predate the foundations audit and stay in the repository.
 
-</div>
-
-<div class="card" markdown>
-
-### :material-code-braces: Simulations
-
-<p class="si-feature-description">Runnable simulations: Boids, Kuramoto, SOC, Lenia, IFS, L-systems, TEO Civilization, Identity Morphospace, and more.</p>
-
-[See where they touch the claims →](../theory/core/simulation-theory-map.md)
+[Start with *From Rule to Mind* →](../book/09_from_rule_to_mind.md)
 
 </div>
 
-<div class="card" markdown>
+<div class="door door--warm" markdown>
 
-### :material-chart-line: The Measured Core
+<p class="door-meta">03 / Papers</p>
 
-The inverse-reconstruction benchmark: the spine's asymmetry as curves. Equivalence classes counted and collapsed, the search wall, Occam's world-dependent payoff, the optimizer's curse, its cure — and the closed loop. Every claim runs in seconds.
+### The formal core
 
-[Run the benchmark →](../lab/benchmarks/inverse-reconstruction/README.md)
-
-</div>
-
-<div class="card" markdown>
-
-### :material-file-document: The Papers
-
-*The Viable Corridor* — the flagship formal synthesis (constraint architecture + capability loading; a **working draft**). Its empirical companion is *Quantifying Emergent Utility & Stability in Multi-Agent LLM Ecosystems*.
+*The Viable Corridor* — constraint architecture and capability loading, a working draft, available as PDF. Its empirical companion measures utility and stability in multi-agent LLM ecologies.
 
 [Read the Viable Corridor →](../papers/viable-corridor.md)
 
 </div>
 
-<div class="card" markdown>
+<div class="door" markdown>
 
-### :material-lightbulb-on-outline: Thinking Space
+<p class="door-meta">04 / Lab</p>
 
-Questions before concepts: encounters, contradictions, and unfinished probes may remain open
-without promising to become canonical claims.
+### What runs
 
-[Enter the Thinking Space →](thinking-space.md)
+The benchmark results behind the measured claims — every one reproducible in seconds. The simulations themselves (Boids, Kuramoto, SOC, Lenia, IFS, L-systems, TEO Civilization) live with their code in the repository.
 
-</div>
-
-<div class="card" markdown>
-
-### :material-book-open-page-variant: Sci-Fi Synthesis
-
-Narrative stress tests that make abstract theoretical constraints visible in lived, emotional scenarios.
-
-[Read the Fiction →](../fiction/README.md)
+[Run the benchmark →](../lab/benchmarks/inverse-reconstruction/README.md)
 
 </div>
 
+<div class="door door--warm" markdown>
+
+<p class="door-meta">05 / Stories</p>
+
+### Narrative stress tests
+
+Nineteen scenarios that put abstract constraints into lived situations, where they can be felt rather than only checked.
+
+[Read the fiction →](../fiction/README.md)
+
 </div>
 
----
+<div class="door door--blue" markdown>
 
-## What's Next
+<p class="door-meta">06 / Thinking space</p>
+
+### Unfinished questions
+
+Encounters, contradictions, and probes that stay open without promising to become canonical claims.
+
+[Enter the thinking space →](thinking-space.md)
+
+</div>
+
+</div>
+
+## The recommended reading path
+
+New to the project? This is the most direct route through the core theory and results.
+
+1. **[Foundations Reconstruction](../theory/core/mathematical-axioms.md)** — minimal primitives, axioms, derivations, counterexamples, and comparison with neighboring theories.
+2. **[From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md)** — the bounded model-identification loop.
+3. **[Inverse-Reconstruction Benchmark](../lab/benchmarks/inverse-reconstruction/README.md)** — the measured equivalence classes and intervention results.
+4. **[Emergence Manifesto](../theory/core/emergence-manifesto-v1.3.md)** — the earlier emergence claim set, read under the reconstructed foundation.
+5. **[Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md)** — the hinge into the viability arc.
+6. **[The Viable Corridor](../papers/viable-corridor.md)** — one conditional formal model, also available as a PDF.
+
+If you would rather start from a story than from an axiom, [The Snow Story](../meta/repository-meta/the-snow-story.md) carries the whole argument at any age.
+
+This site publishes about seventy pages. The repository behind it holds roughly three times that — simulation code, architecture logs, working notes, and essays that are not finished enough to ask anyone to read in order. [What stays in the repository](repository-map.md) says what is where, and why.
+
+## What's next
 
 !!! info "The framework is drafted, not closed. The next step is external contact, not deployment."
     The strongest current artifacts are controlled toy experiments and synthetic models. The next phase should test their boundaries against learned systems, external baselines, and critical review.
@@ -151,9 +144,7 @@ Narrative stress tests that make abstract theoretical constraints visible in liv
 
 If you want to contribute, the project is open for critical **review**, preregistered **experiments**, external **baselines**, and corrections to any claim that exceeds its evidence.
 
----
-
-## Quick Start
+## Run it yourself
 
 ```bash
 # Clone the repository
@@ -166,12 +157,10 @@ python simulation-models/alignment-and-veto/teo-civilization/teo_simulation.py
 # Run the Black Swan Resilience Simulation
 python simulation-models/alignment-and-veto/black-swan-resilience/black_swan_simulation.py
 
-# Serve this book locally
+# Serve this notebook locally
 pip install -r requirements-docs.txt
 mkdocs serve
 ```
 
----
-
-!!! tip "Living Document"
-    This repository is a *thought experiment* developed by Frank Peterlein in collaboration with AI. It is a space to capture, explore, and formalize ideas about emergent intelligence — kept going by nothing grander than curiosity. Feedback, corrections, and discussions are always welcome.
+!!! tip "Living document"
+    A thought experiment developed by Frank Peterlein in collaboration with AI — a space to capture, explore, and formalize ideas about emergent intelligence, kept going by nothing grander than curiosity. Feedback, corrections, and discussions are always welcome.

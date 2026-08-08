@@ -1,0 +1,82 @@
+{#-
+  One bar, not two.
+
+  The foyer at frnkptrln.github.io carries the mark on the left and the
+  section links on the right, on a single hairline row and nothing else.
+  Material's default stacks a title bar on top of a tab strip, which reads as
+  a different site the moment you walk through the door. So the section links
+  are pulled into the header row here.
+
+  The GitHub source widget is dropped with them: a repository path truncated
+  to an ellipsis, a star count, and a fork count are three pieces of metadata
+  competing with the navigation, and none of them is why anyone is reading.
+  The repository stays one click away from the footer.
+-#}
+{% import "partials/tabs-item.html" as item with context %}
+<header class="md-header md-header--single" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
+    <a
+      href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
+      title="{{ config.site_name | e }}"
+      class="md-header__button md-logo"
+      aria-label="{{ config.site_name }}"
+      data-md-component="logo"
+    >
+      {% include "partials/logo.html" %}
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      {% set icon = config.theme.icon.menu or "material/menu" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            {{ config.site_name }}
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            {% if page.meta and page.meta.title %}
+              {{ page.meta.title }}
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    {#- Sections, inline. No data-md-component="tabs": the scroll-driven
+        show/hide belongs to a strip that sits below the header, and this one
+        does not. -#}
+    {% if "navigation.tabs" in features %}
+      <nav class="md-tabs md-tabs--inline" aria-label="{{ lang.t('tabs') }}">
+        <ul class="md-tabs__list">
+          {% for nav_item in nav.items %}
+            {{ item.render(nav_item) }}
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+
+    {% if config.theme.palette %}
+      {% if not config.theme.palette is mapping %}
+        {% include "partials/palette.html" %}
+      {% endif %}
+    {% endif %}
+    {% if not config.theme.palette is mapping %}
+      {% include "partials/javascripts/palette.html" %}
+    {% endif %}
+    {% if "material/search" in config.plugins %}
+      {% set search = config.plugins["material/search"] | attr("config") %}
+      {% if search.enabled %}
+        <label class="md-header__button md-icon" for="__search">
+          {% set icon = config.theme.icon.search or "material/magnify" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </label>
+        {% include "partials/search.html" %}
+      {% endif %}
+    {% endif %}
+  </nav>
+</header>
