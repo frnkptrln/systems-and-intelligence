@@ -5,6 +5,7 @@ from lab.tools.audit_repository_freshness import (
     find_copied_count_errors,
     find_missing_freshness_metadata,
     find_relative_time_candidates,
+    find_review_candidates,
 )
 
 
@@ -57,6 +58,31 @@ def test_relative_time_is_warning_not_error_source(tmp_path):
         'review relative-time phrase "weeks old"',
         'review relative-time phrase "currently"',
     }
+
+
+def test_novelty_language_is_review_candidate(tmp_path):
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "meta/research-alignment/map.md",
+        "This is the first internal-inspection evidence for the proposed layer.",
+    )
+
+    findings = find_review_candidates(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].path == "meta/research-alignment/map.md"
+    assert findings[0].message == (
+        'review novelty claim "first internal-inspection evidence"'
+    )
+
+
+def test_history_lanes_excluded_from_novelty_warnings(tmp_path):
+    seed_open_problems(tmp_path, 1)
+    write(tmp_path, "ideas/001.md", "For the first time, the note tried this framing.")
+    write(tmp_path, "fiction/001.md", "The first evidence arrived after midnight.")
+
+    assert find_review_candidates(tmp_path) == []
 
 
 def test_managed_file_requires_review_date_and_trigger(tmp_path, monkeypatch):
