@@ -76,7 +76,7 @@ Essays with strong literary voice that bridge theory and fiction.
 
 - **[Machines of Loving Grace](narrative/machines-of-loving-grace.md)** — Constraint architecture as a form of care; synthesis essay, not theorem.
 - **[The Paradox of Metacognitive Consciousness](narrative/asimov-paradox-eternity.md)** — Consciousness without limitation as unbearable prison.
-- **[Asimov's Paradox in the Age of AI](narrative/asimov-ai-latent-thinking.md)** — Introspection vs. latent thinking.
+- **[Asimov's Paradox in the Age of AI](narrative/asimov-ai-latent-thinking.md)** — Self-models, interpretability, reasoning traces, and reflexive access; the old Anthropic/OpenAI dichotomy remains only as dated research history.
 - **[Tensor Logic Mini Paper](narrative/tensor-logic-mini-paper.en.md)** — Embedding-based relational reasoning.
 
 ## Reference
