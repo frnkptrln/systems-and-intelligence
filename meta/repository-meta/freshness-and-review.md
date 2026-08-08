@@ -3,7 +3,8 @@
 **Lane:** Repository Meta  
 **Status:** Working repository policy  
 **Created:** 2026-08-08  
-**Last reviewed:** 2026-08-08
+**Last reviewed:** 2026-08-08  
+**Review trigger:** the maintenance workflow itself misses a material stale claim or becomes too noisy to use.
 
 This repository is a living research notebook. That makes **staleness an epistemic failure mode**, not
 just a documentation problem. A statement can have been carefully sourced when written and still
@@ -142,7 +143,33 @@ Examples: an Asimov reading, a mathematical theorem, or a repository experiment 
 
 ---
 
-## 6. Preserve research history without letting it control the present
+## 6. Do not copy state that can be derived
+
+Freshness failures are not only external. A living repository also drifts when summaries copy facts
+that already have a canonical source.
+
+Avoid manually duplicating volatile internal state such as:
+
+- the number of open problems;
+- the latest benchmark version;
+- the current default model when a config file already defines it;
+- counts of files, experiments, claims, or simulations; and
+- status summaries that can be generated from a registry.
+
+Prefer a link to the canonical source. When a duplicated value is genuinely useful, make it
+machine-checkable.
+
+The first concrete failure was `book/05_future_perspectives.md`: it described itself as current while
+saying the repository had 13 open problems after the canonical registry had grown to 19. The fix was
+not to replace 13 with 19; it was to **remove the copied count**.
+
+`lab/tools/audit_repository_freshness.py` checks the deterministic subset of this problem. CI may
+reject internal contradictions it can derive from repository state. It only warns about external
+freshness candidates, because source truth cannot be inferred from text alone.
+
+---
+
+## 7. Preserve research history without letting it control the present
 
 When a claim ages badly, do not silently erase the earlier reasoning if it is useful research
 history.
@@ -162,7 +189,7 @@ to retrieve.
 
 ---
 
-## 7. Maintenance pass for a time-sensitive page
+## 8. Maintenance pass for a time-sensitive page
 
 When reviewing one page:
 
@@ -171,29 +198,31 @@ When reviewing one page:
 3. Replace relative recency language with absolute dates.
 4. Separate measured result from interpretation.
 5. Check whether the page's organizing contrast still exists.
-6. Inspect obvious downstream summaries and backlinks for the stale formulation.
-7. Record `Last reviewed` and a useful review trigger.
-8. If uncertainty remains, narrow or downgrade the claim instead of manufacturing freshness.
+6. Check whether a citation is still the correct primary source and publication state.
+7. Inspect obvious downstream summaries and backlinks for the stale formulation.
+8. Remove copied counts or versions when the canonical source can be linked instead.
+9. Record `Last reviewed` and a useful review trigger.
+10. If uncertainty remains, narrow or downgrade the claim instead of manufacturing freshness.
 
 A freshness pass is not a request to rewrite everything. The smallest correct change is preferred.
 
 ---
 
-## 8. First application: 2026-08-08
+## 9. First application: 2026-08-08
 
-This policy was introduced while reviewing the March 2026 narrative essay that opposed Anthropic's
-"visible introspection" to OpenAI's "latent thinking." By August 2026, Anthropic had published work
-on introspection adapters and workspace-like internal representations, while OpenAI had a substantial
-chain-of-thought monitorability programme. The durable distinction was therefore not between the two
-companies but between different observation and intervention channels.
+The first maintenance pass found several distinct failure modes:
 
-The revised essay now treats company research as dated evidence for a more stable taxonomy:
+- a March 2026 narrative essay had turned a temporary Anthropic/OpenAI research contrast into an
+  organizing philosophy;
+- the J-Space reading note used relative age language and a novelty claim that would decay with time;
+- the provider documentation generalized Claude Sonnet 5 API behavior to "current Claude models";
+- a current reader chapter copied an obsolete open-problem count and lagged two benchmark versions;
+- an emergence essay cited Agüera y Arcas under a non-primary title and compressed two sources into
+  a stronger opposition than either supported.
 
-- external mechanistic interpretability;
-- elicited introspective report;
-- reasoning traces;
-- causally effective self-models; and
-- reflexive intervention.
+These are different problems: external staleness, internal drift, citation drift, and epistemic
+drift. They should not be fixed with one mechanism.
 
-That is the intended maintenance pattern: **keep the question when it survives; replace the snapshot
-when it does not.**
+The intended pattern remains:
+
+> **Keep the question when it survives; replace the snapshot when it does not.**
