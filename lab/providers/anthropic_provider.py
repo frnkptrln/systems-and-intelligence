@@ -9,12 +9,12 @@ Behavior:
 
 - `complete()` calls `POST /v1/messages` with the configured model.
 - `embed()` falls back to the same deterministic hash-based embedding the
-  mock provider uses. Anthropic does not currently expose a public
-  embeddings endpoint; the suite's embedding-based metrics (Δ-Kohärenz,
-  self-representation) therefore use the mock embedder regardless of
-  completion provider. This is documented and intentional. When a real
-  embedding service is added, subclass this provider and override
-  `embed()`.
+  mock provider uses. As checked against Anthropic's platform documentation
+  on 2026-08-08, Anthropic does not offer a first-party embedding model; the
+  suite's embedding-based metrics (Δ-Kohärenz, self-representation) therefore
+  use the mock embedder regardless of completion provider. This is documented
+  and intentional. When a real embedding service is added, subclass this
+  provider and override `embed()`.
 
 Real mode requires the `ANTHROPIC_API_KEY` environment variable. The
 provider raises a clear error at construction time if the variable is
@@ -44,9 +44,12 @@ DEFAULT_TIMEOUT = 60
 class AnthropicProvider(LLMProvider):
     """Calls the Anthropic Messages API. Real mode.
 
-    Sampling parameters are deliberately not exposed or sent: current Claude
-    models reject them. If a run needs stylistic or behavioral variance, elicit
-    it in the prompt and record that prompt as part of the experiment.
+    Sampling parameters are deliberately not exposed or sent. The repository
+    default, Claude Sonnet 5, rejects non-default ``temperature``, ``top_p``,
+    and ``top_k`` values (Anthropic docs checked 2026-08-08). This is a
+    model-scoped API constraint, not a claim about every supported Claude
+    model. If a future experiment changes model or needs controlled variance,
+    its request contract must be reviewed and recorded with the run.
     """
 
     def __init__(
@@ -86,7 +89,7 @@ class AnthropicProvider(LLMProvider):
     def _build_request_body(
         self, prompt: str, system: str | None = None
     ) -> dict[str, object]:
-        """Build a Messages API body without unsupported sampling parameters."""
+        """Build a Messages API body without model-sensitive sampling parameters."""
         body: dict = {
             "model": self.model,
             "max_tokens": self.max_tokens,
@@ -136,7 +139,7 @@ class AnthropicProvider(LLMProvider):
         return "".join(parts)
 
     def embed(self, text: str) -> np.ndarray:
-        # See module docstring: Anthropic does not currently expose
-        # embeddings, so we fall back to the deterministic mock embedder.
-        # Override in a subclass when a real embedding service is added.
+        # See module docstring: no first-party Anthropic embedding model is
+        # exposed here, so we fall back to the deterministic mock embedder.
+        # Override in a subclass when a declared real embedding service is added.
         return self._fallback_embedder.embed(text)

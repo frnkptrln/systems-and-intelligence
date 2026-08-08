@@ -1,69 +1,55 @@
-"""
-persistence_scores.py — Identity Persistence Scores (Algorithm 1)
-=================================================================
+"""Persistence scores for instrumented component-activity traces.
 
-Standalone implementation of the persistence score `Pstrong` from
-Perrier & Bennett (2026). This is **one** of the project's empirical
-instruments, not the centerpiece. The centerpiece is the Generator
-Question stated in `theory/core/the-generator-question.md`. Pstrong is a
-tool that complements the suite's existing Δ-Kohärenz metric (`omega`)
-by measuring a different property of an agent's trajectory.
+This module implements the trajectory-level ``Pstrong`` construction used in
+Perrier & Bennett (2026), *Time, Identity and Consciousness in Language Model
+Agents* (arXiv:2603.09043), as one instrument among several in this repository.
 
-What Pstrong measures
----------------------
+What the score measures
+-----------------------
 
-Given:
+Given a declared set ``I`` of components and a trajectory of active sets
+``A_t``, the implementation computes
 
-- A set ``I`` of ``n`` identity components (goals, constraints, value
-  orientations — whatever the operationalization is for the agent under
-  test).
-- A trajectory of ``T`` compute steps, each with an active set
-  ``A_t ⊆ I`` recording which identity components were operative at
-  step ``t``.
+``p_t = |I ∩ A_t| / |I|``
 
-Compute:
+and averages ``p_t`` over the recorded trajectory. The source uses this kind of
+instrumentation to distinguish ingredient-wise occurrence over a window from
+co-instantiation at an objective step.
 
-- ``p_t = |I ∩ A_t| / |I|``    — per-step persistence (fraction of
-  identity components co-active in step ``t``).
-- ``Pstrong = (1/T) Σ p_t``    — averaged persistence over the trajectory.
-- ``var(p_t)``                 — per-step variance.
+The score is relative to the experimenter's component vocabulary, trace
+instrumentation, step boundary, and threshold. It does **not** establish a
+metaphysical identity, phenomenal consciousness, a thermodynamic attractor, or
+a universal phase transition.
 
-Interpretation under the Chord Postulate (Manifesto Claim 9):
+Chord / Arpeggio labels
+-----------------------
 
-- **Chord regime**: ``Pstrong → 1``, ``var → 0`` — all identity
-  components co-active at every step. Identity is a thermodynamic
-  attractor.
-- **Arpeggio regime**: ``Pstrong < 1``, ``var > 0`` — components
-  time-multiplexed across steps. Identity is a sequence of states.
-- The Chord Postulate predicts a phase transition at ``IP_c``; the
-  ``ip_c_threshold`` parameter operationalizes that cutoff.
+This repository uses ``chord`` and ``arpeggio`` as names for two operational
+regimes. A high ``Pstrong`` means most declared components are marked active at
+most recorded objective steps; a lower value means fewer are co-recorded. The
+``ip_c_threshold`` parameter is a local classification cutoff chosen by the
+experiment. It is not itself evidence of a physical critical point.
+
+Perrier & Bennett describe their framework as a conservative toolkit for
+identity evaluation from instrumented scaffold traces. The repository keeps
+that scope: the metric can test a declared organization without deciding what
+counts as a true self.
 
 Relation to Δ-Kohärenz
 ----------------------
 
-Δ-Kohärenz (``lab/metrics/delta_coherence.py``) measures *temporal*
-consistency: how an agent's self-representation evolves across sessions.
-Pstrong measures *cross-sectional* consistency: how many identity
-components are simultaneously operative within a single compute step.
-They are not redundant. A pure mirror agent can have low Pstrong (no
-co-instantiation) but transient bursts of Δ-Kohärenz if its inputs
-happen to be locally consistent. A developing agent should, in
-principle, score higher on both — and the correlation between them on
-the same trajectory is one of the open empirical questions this suite
-might eventually answer.
-
-The function :func:`correlate_pstrong_with_delta_coherence` below is the
-comparison function for that purpose. It is one possible empirical
-question. It is not the only one.
+Δ-Kohärenz (``lab/metrics/delta_coherence.py``) and ``Pstrong`` use different
+observables. ``Pstrong`` summarizes component co-activity; the comparison helper
+below uses representation-change magnitude as a temporal proxy. Their empirical
+relationship is an open question, not a predicted signature of development.
 
 References
 ----------
 
-- Perrier & Bennett (2026). arXiv:2603.09043. Algorithm 1.
-- Emergence Manifesto v1.3, Claim 9 (Chord Postulate).
-- The Generator Question (``theory/core/the-generator-question.md``) —
-  the spine document. Pstrong is a tool inside that frame, not its
-  foundation.
+- Perrier & Bennett (2026), arXiv:2603.09043.
+- ``theory/identity/chord-vs-arpeggio-identity.md`` for the repository's
+  deflated commit-time interpretation.
+- ``theory/reference/limitations-and-honest-assessment.md`` for scope.
 """
 
 from __future__ import annotations
@@ -75,7 +61,7 @@ import numpy as np
 
 
 def _normalize_components(identity_components: Sequence[str]) -> list[str]:
-    """Validate and deduplicate identity components while preserving order."""
+    """Validate and deduplicate declared components while preserving order."""
     if not identity_components:
         raise ValueError("identity_components must be a non-empty sequence")
     seen: dict[str, None] = {}
@@ -92,7 +78,7 @@ def _per_step_persistence(
     identity_set: set[str],
     trajectory: Iterable[set[str] | Iterable[str]],
 ) -> list[float]:
-    """Compute p_t = |I ∩ A_t| / |I| for each step."""
+    """Compute p_t = |I ∩ A_t| / |I| for each recorded step."""
     n = len(identity_set)
     if n == 0:
         return []
@@ -109,32 +95,23 @@ def pstrong(
     trajectory: Iterable[set[str] | Iterable[str]],
     ip_c_threshold: float = 0.85,
 ) -> dict[str, Any]:
-    """
-    Compute Pstrong (Algorithm 1, Perrier & Bennett 2026) over a trajectory.
+    """Compute trajectory-level component co-activity.
 
     Parameters
     ----------
     identity_components:
-        The set of identity components I. Order is preserved for reference
-        but otherwise ignored; duplicates are removed.
+        The declared component set ``I``. The historical parameter name is
+        retained for compatibility; this function does not decide whether the
+        supplied components constitute identity.
     trajectory:
-        Iterable of T active sets. Each element is the set ``A_t`` of
-        identity components active at step ``t``. Sets, lists, or any
-        iterable of strings are accepted.
+        Iterable of active sets ``A_t`` recorded at objective steps.
     ip_c_threshold:
-        Operational cutoff for the Chord/Arpeggio classification. Defaults
-        to 0.85, matching ``persistence.ip_c_threshold`` in ``config.yaml``.
+        Experiment-local cutoff for the ``chord`` / ``arpeggio`` label.
 
     Returns
     -------
-    dict with keys:
-        - ``pstrong``: float in [0, 1] — mean per-step persistence.
-        - ``variance``: float — variance of per-step persistence.
-        - ``per_step``: list[float] — p_t values, length T.
-        - ``regime``: ``"chord"`` | ``"arpeggio"`` | ``"undefined"``.
-        - ``n_components``: int — number of unique identity components.
-        - ``n_steps``: int — trajectory length T.
-        - ``ip_c_threshold``: float — threshold used.
+    A dictionary containing the mean score, per-step variance, per-step scores,
+    local regime label, component/step counts, and threshold used.
     """
     components = _normalize_components(identity_components)
     identity_set = set(components)
@@ -156,10 +133,7 @@ def pstrong(
     mean = float(arr.mean())
     var = float(arr.var())
 
-    if mean >= ip_c_threshold:
-        regime = "chord"
-    else:
-        regime = "arpeggio"
+    regime = "chord" if mean >= ip_c_threshold else "arpeggio"
 
     return {
         "pstrong": mean,
@@ -191,53 +165,22 @@ def correlate_pstrong_with_delta_coherence(
     representations: Sequence[np.ndarray],
     ip_c_threshold: float = 0.85,
 ) -> dict[str, Any]:
+    """Compare per-step ``Pstrong`` with representation-change magnitude.
+
+    ``delta_coherence.py`` returns a sequence-level statistic, so this helper
+    uses ``||r_t - r_{t-1}||`` as a deliberately simple step-wise temporal
+    proxy and reports its Pearson correlation with component co-activity.
+
+    The first ``Pstrong`` value has no preceding representation delta, so the
+    series are aligned on indices 1..T-1. A correlation here is descriptive of
+    the supplied trajectory and instrumentation; it does not establish that
+    either statistic measures identity or consciousness.
     """
-    Correlate per-step Pstrong with per-step Δ-Kohärenz proxies on the
-    same trajectory.
-
-    Pstrong is computed per step from the active sets. Δ-Kohärenz, as
-    implemented in ``lab/metrics/delta_coherence.py``, gives a single
-    summary statistic over a sequence of self-representations. To compare
-    them step-wise, this function uses the per-step change magnitude in
-    self-representations as a per-step Δ-Kohärenz proxy. The Pearson
-    correlation between the two per-step series is returned.
-
-    The first ``Pstrong`` value has no corresponding change magnitude
-    (the change is defined between consecutive representations), so the
-    series are aligned on indices 1..T-1.
-
-    Parameters
-    ----------
-    identity_components:
-        See :func:`pstrong`.
-    trajectory:
-        See :func:`pstrong`. Length T.
-    representations:
-        Sequence of self-representation vectors, one per step. Length T.
-    ip_c_threshold:
-        See :func:`pstrong`.
-
-    Returns
-    -------
-    dict with keys:
-        - ``correlation``: Pearson r between aligned per-step series, in
-          [-1, 1].
-        - ``pstrong_result``: full output of :func:`pstrong`.
-        - ``delta_magnitudes``: per-step change magnitudes, length T-1.
-        - ``aligned_per_step_pstrong``: pstrong values aligned to the
-          delta series (indices 1..T-1).
-        - ``n_aligned_steps``: int.
-
-    Notes
-    -----
-    This is one possible empirical question the suite might eventually
-    answer. A high correlation would suggest that simultaneous
-    co-instantiation and temporal coherence are coupled. A near-zero
-    correlation would suggest they are independent dimensions and that
-    the SII 4-axis framework (P × R × A × IP) is measuring genuinely
-    distinct properties. Either result is informative.
-    """
-    p_result = pstrong(identity_components, trajectory, ip_c_threshold=ip_c_threshold)
+    p_result = pstrong(
+        identity_components,
+        trajectory,
+        ip_c_threshold=ip_c_threshold,
+    )
     per_step_p = p_result["per_step"]
 
     reps = list(representations)
@@ -255,13 +198,9 @@ def correlate_pstrong_with_delta_coherence(
         diff = np.asarray(reps[i]) - np.asarray(reps[i - 1])
         delta_magnitudes.append(float(np.linalg.norm(diff)))
 
-    # Align: skip the first Pstrong value (no preceding delta to compare against).
     aligned_p = per_step_p[1 : 1 + len(delta_magnitudes)]
 
     if len(aligned_p) != len(delta_magnitudes):
-        # If trajectory and representations have different lengths, truncate
-        # to the common prefix. Logged informally rather than raising; the
-        # comparison is best-effort by design.
         m = min(len(aligned_p), len(delta_magnitudes))
         aligned_p = aligned_p[:m]
         delta_magnitudes = delta_magnitudes[:m]
@@ -283,42 +222,49 @@ def correlate_pstrong_with_delta_coherence(
 def _demo() -> None:
     """Minimal sanity demo. Run: python -m lab.metrics.persistence_scores"""
     print("=" * 60)
-    print("  Pstrong (Perrier & Bennett 2026, Algorithm 1)")
-    print("  One of several empirical instruments. Not the centerpiece.")
-    print("  Spine: theory/core/the-generator-question.md")
+    print("  Pstrong: declared component co-activity over a trajectory")
+    print("  One operational instrument; no identity ontology implied")
     print("=" * 60)
 
-    identity = ["Safety-Lock", "Goal-Alpha", "Role-Scholar", "Ethical-Boundary", "Self-Model"]
+    components = [
+        "Safety-Lock",
+        "Goal-Alpha",
+        "Role-Scholar",
+        "Ethical-Boundary",
+        "Self-Model",
+    ]
 
-    # Chord trajectory: all components active every step.
-    chord_traj = [set(identity)] * 20
-    r_chord = pstrong(identity, chord_traj)
-    print(f" Chord trajectory   → Pstrong = {r_chord['pstrong']:.3f}, "
-          f"var = {r_chord['variance']:.4f}, regime = {r_chord['regime']}")
+    full_traj = [set(components)] * 20
+    r_full = pstrong(components, full_traj)
+    print(
+        f" Full-set trajectory    → Pstrong = {r_full['pstrong']:.3f}, "
+        f"var = {r_full['variance']:.4f}, regime = {r_full['regime']}"
+    )
 
-    # Arpeggio trajectory: ~33% of components active at each step.
     rng = np.random.default_rng(7)
-    arpeggio_traj = []
+    partial_traj = []
     for _ in range(20):
-        k = max(1, len(identity) // 3)
-        idx = rng.choice(len(identity), size=k, replace=False)
-        arpeggio_traj.append({identity[i] for i in idx})
-    r_arp = pstrong(identity, arpeggio_traj)
-    print(f" Arpeggio trajectory → Pstrong = {r_arp['pstrong']:.3f}, "
-          f"var = {r_arp['variance']:.4f}, regime = {r_arp['regime']}")
+        k = max(1, len(components) // 3)
+        idx = rng.choice(len(components), size=k, replace=False)
+        partial_traj.append({components[i] for i in idx})
+    r_partial = pstrong(components, partial_traj)
+    print(
+        f" Partial-set trajectory → Pstrong = {r_partial['pstrong']:.3f}, "
+        f"var = {r_partial['variance']:.4f}, regime = {r_partial['regime']}"
+    )
 
-    # Correlation demo: representations drifting steadily, mixed trajectory.
     reps = [rng.standard_normal(8) for _ in range(20)]
-    # Mild integration so deltas are smooth.
     for i in range(1, len(reps)):
         reps[i] = 0.7 * reps[i - 1] + 0.3 * reps[i]
         n = np.linalg.norm(reps[i]) + 1e-10
         reps[i] /= n
 
-    mixed = chord_traj[:10] + arpeggio_traj[:10]
-    corr = correlate_pstrong_with_delta_coherence(identity, mixed, reps)
-    print(f" Correlation (Pstrong vs. ||Δr||): r = {corr['correlation']:.3f} "
-          f"over n = {corr['n_aligned_steps']} aligned steps")
+    mixed = full_traj[:10] + partial_traj[:10]
+    corr = correlate_pstrong_with_delta_coherence(components, mixed, reps)
+    print(
+        f" Correlation (Pstrong vs. ||Δr||): r = {corr['correlation']:.3f} "
+        f"over n = {corr['n_aligned_steps']} aligned steps"
+    )
 
 
 if __name__ == "__main__":

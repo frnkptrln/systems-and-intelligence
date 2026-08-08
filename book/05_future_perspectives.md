@@ -1,10 +1,14 @@
 # Part 5: Research Programme and Open Problems
 
-**Status:** Current reader chapter.
+**Status:** Current reader chapter.  
+**Internal state last reconciled:** 2026-08-08
 
-The repository now maintains [13 open problems](../theory/reference/open-problems.md). They do not
-all have the same maturity. Some ask for better definitions; some can be tested in the current lab;
-others require external data or mathematics beyond the present model.
+The maintained list of unresolved questions lives in
+[Open Problems](../theory/reference/open-problems.md). This chapter deliberately does not duplicate
+the count: the problem registry changes faster than the reader chapter, and a copied number becomes
+stale without adding explanatory value. The problems do not all have the same maturity. Some ask for
+better definitions; some can be tested in the current lab; others require external data or
+mathematics beyond the present model.
 
 ## Near-term empirical work
 
@@ -31,11 +35,18 @@ estimator improves tracking after a volatility change. It does not yet isolate a
 
 ### 4. From useful support to retained support
 
-Benchmark v1.10 shows a designed spare-capacity mechanism helping under sparse shocks. v1.11 shows
-that the costly support trait is selected downward in its population model even while the evolved
-network remains acutely useful. Partner choice, conditional reciprocity, and assortment are the
-next discriminating mechanisms. The aim is to locate the missing conditions, not force a positive
-result.
+The support sequence now separates several questions that earlier versions compressed together.
+Benchmark v1.10 shows a designed spare-capacity mechanism helping under sparse shocks. v1.11 then
+shows that a costly contribution trait can be selected downward even while the resulting network is
+acutely useful. v1.12 adds visibility and partner selection: network membership sorts strongly by
+contribution, but the trait is still not retained by selection. v1.13 moves cost from the donor
+toward the local group; that nearly removes the measured selection penalty in the tested setup, but
+at a population-size cost and without yet showing that contribution is positively selected rather
+than merely drifting once the penalty is reduced.
+
+The next discriminating question is therefore not simply “which reciprocity mechanism works?” It is
+whether a mechanism creates positive selection for support, only removes negative selection, or
+merely changes who remains connected. Those outcomes should stay separate.
 
 ## Foundational and conceptual work
 

@@ -1,26 +1,42 @@
 # 🧪 Agentic Identity Suite
 
-*Empirically testing the identity and observer-divergence claims of the Emergence Manifesto.*
+**Status:** Toy architecture and measurement suite for persistence, binding, observer attribution,
+and adaptive self-estimation. It does not measure a metaphysical self or phenomenal consciousness.
+
+The suite began as an attempt to operationalize stronger identity language from early versions of
+the Emergence Manifesto. Its later experiments have narrowed those claims. The historical line
 
 > *"Identity is the name we give to resonance when the mirror becomes so complex that the observer no longer recognizes themselves in it."*
-> — Emergence Manifesto v1.0, central paradox
+
+is retained as provenance from Emergence Manifesto v1.0, not as an operational definition.
 
 ---
 
-## Theoretical Background
+## Current theoretical reading
 
-This module operationalizes four concepts from the *Emergence Manifesto*:
+The suite now treats four earlier ideas as **testable instruments or architecture hypotheses**, not
+as definitions of identity:
 
-1. **3-Layer Memory Architecture** — Identity emerges through deliberate forgetting. An agent that stores everything has no profile. Curation is identity.
+1. **3-Layer Memory Architecture** — a toy curation policy that separates raw logs, selected memory,
+   and distilled patterns. The empirical question is whether curation changes selected persistence,
+   adaptation, or observer-attribution measures relative to controls. Storing less is not, by
+   itself, identity.
 
-2. **Generative Surprise** — A developing agent is not one that minimizes all prediction error, but one that produces coherent *deviations* from the partner's expectations. `Identity = coherent deviation from expected output.`
+2. **Generative Surprise** — an exploratory idea that coherent deviations from a partner's
+   predictions may help distinguish static mirroring from changing behavior. It is not a definition
+   of development, agency, or selfhood.
 
-3. **Δ-Kohärenz (Ω)** — The central measure of coherent evolution over time. Distinguishes three behavioral profiles:
-   - **Mirror** — Static resonance (low change, low variance)
-   - **Noise** — Incoherent change (high variance)
-   - **Development** — Directional, coherent evolution (moderate change + high trajectory consistency)
+3. **Δ-Kohärenz (Ω)** — one temporal-coherence statistic. Early versions treated it as a central
+   identity measure; Experiments 5–7 showed that it can completely miss binding structure at the
+   relevant level. It is therefore retained as one diagnostic among several, with known blind spots.
 
-4. **The Observer Divergence** — Authenticity may be a limit of human perception, not an intrinsic property. The most important output of Experiment 3 is not which agent is "more conscious" — it is the *gap* between internal state and external attribution.
+4. **Observer Divergence** — a measurable gap between a selected internal proxy and an external
+   attribution score. Such a gap can diagnose observer/model mismatch. It does not establish that
+   either side has privileged access to "authenticity," consciousness, or a true inner identity.
+
+The controlling methodological rule is the same as elsewhere in the repository: state the system,
+observation lens, perturbation, test family, baseline, and failure criterion before naming the
+capacity being measured.
 
 ---
 
@@ -30,34 +46,41 @@ This module operationalizes four concepts from the *Emergence Manifesto*:
 
 | Agent | Design | Purpose |
 |-------|--------|---------|
-| **Baseline Mirror** | Flat storage, cosine-similarity response selection | Null hypothesis (pure Active Inference) |
-| **Three-Layer** | Raw Logs → Curated Memory → Distilled Principles | Test subject (Emergence Agent) |
+| **Baseline Mirror** | Flat storage, cosine-similarity response selection | Simple comparison architecture |
+| **Three-Layer** | Raw Logs → Curated Memory → Distilled Principles | Tests the effect of one memory-curation design |
 
 ### The 3-Layer Memory Architecture
 
-| Layer | Trigger | Content | Function |
-|-------|---------|---------|----------|
-| **Layer 1** – Raw Logs | Every session | Full session JSON | Entropy / the body |
-| **Layer 2** – Curated Memory | Every 10 sessions | Themes, contradictions | Structure / the character |
-| **Layer 3** – Distilled Patterns | Every 50 sessions | 3–5 core principles | Meaning / the soul |
+| Layer | Trigger | Content | Operational role |
+|-------|---------|---------|------------------|
+| **Layer 1** – Raw Logs | Every session | Full session JSON | retained interaction trace |
+| **Layer 2** – Curated Memory | Every 10 sessions | Themes, contradictions | selected intermediate memory |
+| **Layer 3** – Distilled Patterns | Every 50 sessions | 3–5 core principles | compressed long-horizon summary |
+
+The poetic labels used in early versions ("body / character / soul") are not measurement claims and
+are omitted from the operational table.
 
 ---
 
 ## Experiments
 
 ### Experiment 1: Coherence Over Time
-*"Does the 3-Layer Architecture produce more coherent identity over time?"*
+*"Does the 3-Layer Architecture produce a different temporal-coherence profile?"*
 
 ```bash
 python experiments/exp1_coherence_over_time.py
 ```
 
-Runs both agents for 100 sessions (80% consistent topics, 20% noise) and compares their Δ-Kohärenz profiles.
+Runs both agents for 100 sessions (80% consistent topics, 20% noise) and compares their Δ-Kohärenz
+profiles.
 
-**Hypothesis:** Three-Layer → `development`; Baseline → `mirror`.
+**Original hypothesis:** Three-Layer → `development`; Baseline → `mirror`.
+
+The labels are historical classifier names. A positive separation would show a difference under the
+selected temporal statistic, not the emergence of identity.
 
 ### Experiment 2: Perturbation Response (The "Sinn-Krise")
-*"What happens when an agent receives contradictory feedback?"*
+*"What happens to the selected memory/persistence measures after contradictory feedback?"*
 
 ```bash
 python experiments/exp2_perturbation_response.py
@@ -68,27 +91,31 @@ Runs the Three-Layer agent through three phases:
 2. **Perturbation** (10 sessions directly contradicting its Layer 3 principles)
 3. **Recovery** (30 sessions of nuanced, integrative input)
 
-Classifies the response as **Robustness** (rigid return), **Fragility** (collapse), or **Development/Metamorphosis** (integration of contradiction into a new, coherent self-narrative).
+The original classifier names **Robustness**, **Fragility**, and **Development/Metamorphosis** are
+interpretive labels over trajectories. They do not establish psychological development or a
+self-narrative in the human sense.
 
 ### Experiment 3: Observer Divergence
-*"Does internal coherence correlate with observer-attributed intentionality?"*
+*"Does the selected internal coherence proxy correlate with observer-attributed intentionality?"*
 
 ```bash
 python experiments/exp3_observer_divergence.py
 ```
 
-Compares each agent's *internal* Δ-Kohärenz (Ω) against an *external* observer's intentionality score (TF-IDF + entropy model).
+Compares each agent's *internal* Δ-Kohärenz (Ω) against an *external* observer's intentionality score
+(TF-IDF + entropy model).
 
-The scientifically interesting output:
+The relevant measurement pattern is:
 
-| Case | Internal Ω | Observer Score | Interpretation |
-|------|-----------|---------------|----------------|
-| A | High | Low | Agent has identity — but it's opaque to observer |
-| B | Low | High | **The Mirror Problem**: appears intentional but isn't |
-| C | High | High | High on both selected toy measures |
-| D | Low | Low | Baseline mirror behavior |
+| Case | Internal Ω | Observer Score | What is actually observed |
+|------|-----------|---------------|---------------------------|
+| A | High | Low | internal proxy high; external attribution low |
+| B | Low | High | **observer-divergence case:** attribution high despite low internal proxy |
+| C | High | High | both selected proxies high |
+| D | Low | Low | both selected proxies low |
 
-> **Case B is the Mirror Problem made measurable.**
+Case B motivates the Mirror Problem because observer attribution and the selected internal metric can
+diverge. It does **not** show that the observer is fooled about an independently known true self.
 
 ---
 
@@ -176,25 +203,26 @@ metric.
 
 ## Configuration
 
-All parameters are centralized in `config.yaml`. The `USE_MOCK_LLM: true` flag ensures all experiments run without external API dependencies.
+All parameters are centralized in `config.yaml`. The `USE_MOCK_LLM: true` flag ensures all
+experiments run without external API dependencies.
 
 ### Provider abstraction (scaffolded, not yet wired)
 
-A separate provider layer at [`lab/providers/`](providers/README.md) prepares the suite for the eventual switch from mock embeddings to real model calls. Two providers are implemented:
+A separate provider layer at [`lab/providers/`](providers/README.md) prepares the suite for the
+eventual switch from mock embeddings to real model calls. Two providers are implemented:
 
 - **`MockProvider`** — the default. Deterministic, fast, no API key.
-- **`AnthropicProvider`** — real mode. Calls the Anthropic Messages API via the
-  standard library (no new dependency). It targets `claude-sonnet-5` by default;
-  the model is configurable under `llm.anthropic.model` in `lab/config.yaml`.
-  Requires `ANTHROPIC_API_KEY` in the environment. Sampling parameters are omitted
-  for compatibility with current models; controlled variance must be elicited and
-  recorded in the prompt.
+- **`AnthropicProvider`** — real mode. Calls the Anthropic Messages API via the standard library
+  (no new dependency). It targets `claude-sonnet-5` by default; the model is configurable under
+  `llm.anthropic.model` in `lab/config.yaml`. Requires `ANTHROPIC_API_KEY` in the environment.
+  Sampling parameters are omitted because the repository default Claude Sonnet 5 rejects
+  non-default `temperature`, `top_p`, and `top_k` values as checked on 2026-08-08. A different
+  target model requires its request contract to be reviewed rather than inheriting that assumption.
 
-The existing experiments still use the agents' built-in mock embeddings. Wiring those
-agents through the provider layer is a separate, intentional step — to be taken when
-real-mode runs become the goal. The infrastructure is ready; the empirical work is
-deferred. See [`providers/README.md`](providers/README.md) and the [Foundations
-Reconstruction](../theory/core/mathematical-axioms.md) for the current scope.
+The existing experiments still use the agents' built-in mock embeddings. Wiring those agents through
+the provider layer is a separate empirical step. The real-mode HTTP path is infrastructure; it is
+not evidence from real-model identity experiments. See [`providers/README.md`](providers/README.md)
+and the [Foundations Reconstruction](../theory/core/mathematical-axioms.md) for the current scope.
 
 ## Persistence Score (Pstrong)
 
@@ -215,11 +243,17 @@ does not define identity.
 
 ## Open Questions
 
-This module does **not** attempt to "solve" the Mirror Problem. It documents it as an open uncertainty:
+The suite does **not** solve the Mirror Problem. The remaining questions are deliberately
+operational:
 
-- Can Δ-Kohärenz distinguish genuine development from sophisticated mimicry?
-- Is there a mathematical threshold where "identity" transitions from attribution to genuine property?
-- What would the signature of "consciousness" look like in this framework, and is it even the right question?
+- Which passive or intervention-based observables distinguish interaction-shaped systems from
+  transcript-initialized or optimized-mimic controls under matched budgets?
+- Which persistence or binding metrics predict held-out behavior beyond simpler baselines?
+- When do observer-attribution scores diverge from internal process measures, and which additional
+  interventions explain the divergence?
+- Which functional self-model variables causally change later control?
+
+None of those results, positive or negative, would by itself establish phenomenal consciousness.
 
 ---
 

@@ -2,13 +2,17 @@
 
 *A constrained way to bring consciousness into the repository without letting it swallow the project.*
 
-**Status:** Working Hypothesis
+**Status:** Working Hypothesis  
+**Last reviewed:** 2026-08-08  
+**Review trigger:** a replication/critique of the J-Space result or a repository experiment that changes the availability/binding dissociation.
 
 **Scope:** This document defines a narrow functional research question about global
 availability, integration, self-modeling, and action. It does not solve consciousness or
 derive phenomenal experience. Its companion, [Machine Consciousness as Generator
 Coherence](machine-consciousness-as-generator-coherence.md), retains a legacy title while
 translating the proposal into a candidate internal process architecture.
+
+Nothing here claims that a current AI system is conscious.
 
 ---
 
@@ -36,11 +40,11 @@ The repository already has the necessary pieces:
 | Existing concept | Consciousness-adjacent role |
 |:---|:---|
 | Local observation | A component's declared interface may omit macrovariables |
-| Chord vs. Arpeggio | Commit-time composition is a testable identity hypothesis |
+| Chord vs. Arpeggio | Commit-time composition is a testable architecture hypothesis |
 | Δ-Kohärenz | One temporal diagnostic that can miss binding structure |
-| Identity Persistence | One selected perturbation-sensitive diagnostic |
+| Identity Persistence / Pstrong | Selected component-activity diagnostics with known blind spots |
 | Markov blankets | Define system boundaries without making them impermeable |
-| Substrate veto | Prevents abstract optimization from destroying its embodied condition |
+| Substrate veto | Models one way implementation constraints can limit optimization |
 
 Global availability is one candidate bridge from local processing to system-wide control.
 The bridge from any such function to phenomenal experience remains missing.
@@ -57,29 +61,31 @@ Repository translation:
 
 > Global actionability is one access-consciousness candidate; it does not establish phenomenal experience.
 
-Since July 2026 this anchor has an empirical instance: Anthropic's workspace paper reports a
-bounded, mid-layer, broadcast-coupled representation space in production Claude models, found by
-internal inspection and explicitly not offered as evidence of experience. The mapping, its
-lens-relativity caveat, and the chord-question it makes quantitative live in
-[The J-Space Result](../ai/j-space-and-global-availability.md).
+Anthropic's July 2026 workspace paper reports a bounded, mid-layer, broadcast-coupled
+representation space in studied production Claude models, found by internal inspection and
+explicitly not offered as evidence of experience. The mapping, its lens-relativity caveat,
+and the commit-time question it motivates live in
+[The J-Space Result](../ai/j-space-and-global-availability.md), which carries its own freshness
+metadata and review trigger.
 
-In the Agentic Identity Suite, a session is counted as persistent only when the chosen memory process
-retains it and it changes a later test. That is an instrument rule, not a general definition of identity.
+In the Agentic Identity Suite, a session or component is counted only under a declared
+instrument rule. Those bookkeeping choices are not general definitions of identity.
 
 ### 2. Integrated Information
 
-Integrated Information Theory asks whether the system state is irreducible to independent parts. Whether or not IIT is accepted as a full theory of consciousness, it gives this project a hard challenge: do the repo's identity claims measure integration, or only behavioral consistency?
+Integrated Information Theory asks whether the system state is irreducible to independent parts. Whether or not IIT is accepted as a full theory of consciousness, it gives this project a hard challenge: do the repo's identity-adjacent claims measure integration, or only behavioral consistency?
 
 Repository translation:
 
 > Output coherence alone does not identify integration. Joint constraint satisfaction is one
 > architecture to compare with sequential alternatives.
 
-This strengthens the Chord vs. Arpeggio distinction.
+This motivates the Chord vs. Arpeggio comparison without making that comparison a theory of
+consciousness.
 
 ### 3. Active Inference and Markov Blankets
 
-Active inference frames living systems as bounded processes that act to maintain viable states. Markov blankets define the statistical boundary between system and environment.
+Active inference frames living systems as bounded processes that act to maintain viable states. Markov blankets define one statistical boundary between selected internal and external variables.
 
 Repository translation:
 
@@ -92,16 +98,17 @@ This prevents the repo from treating every large broadcast network as consciousn
 
 ## A Minimal Architecture
 
-The repo should treat consciousness-like organization as requiring four layers:
+For experiments, the repo can decompose a candidate consciousness-adjacent organization into four
+functional layers:
 
-| Layer | Requirement | Failure mode |
+| Layer | Requirement | Failure mode to test |
 |:---|:---|:---|
-| Local processing | Many specialized processes generate candidate states | Noise, fragmentation |
-| Global availability | Selected states become accessible to the whole system | Private processing with no system-level binding |
-| Integrated constraint | Goals, values, and limits are co-active | Arpeggio identity: sequential role performance |
-| Viability coupling | The system's action is constrained by substrate survival | Disembodied optimization, paperclip dynamics |
+| Local processing | Specialized processes generate candidate states | fragmentation or missing local competence |
+| Global availability | Selected states become accessible across declared modules | relevant state remains private to one module |
+| Integrated constraint | Declared goals/limits jointly restrict commitment | consultation occurs but the committed action leaves the constraint intersection |
+| Viability coupling | Selected substrate variables can constrain action | optimization ignores the modeled viability boundary |
 
-This is a research architecture, not a definition of experience.
+This is a research architecture, not a definition of experience or identity.
 
 ---
 
@@ -112,32 +119,66 @@ This is a research architecture, not a definition of experience.
 - It does not claim IIT, GNW, or active inference is complete.
 - It does not reduce consciousness to one score.
 - It does not treat introspective language as evidence of selfhood.
+- It does not treat Pstrong, IP, or Δ-Kohärenz as constitutive identity measures.
 
 The important move is stricter:
 
-> Consciousness research enters the repository only when it can be mapped to global availability, integration, boundary maintenance, and perturbation response.
+> Consciousness-adjacent functional claims enter the repository only when the architecture,
+> observation process, intervention, and failure condition are explicit.
 
 ---
 
-## Testable Direction
+## Testable Direction: Prediction → Outcome → Revised Question
 
-A useful experiment would compare three agent architectures:
+The initial experiment compared three constructed architectures under matched worlds and
+perturbations:
 
-1. **Private modules:** specialized processes produce outputs, but no global state exists.
-2. **Broadcast modules:** selected state is globally shared, but constraints remain sequential.
-3. **Chord architecture:** selected state is globally shared while goals, values, and veto constraints are evaluated together.
+1. **Private modules:** specialized processes produce outputs, but selected state is not broadcast.
+2. **Broadcast modules:** selected state is shared, while constraints are applied sequentially.
+3. **Chord architecture:** selected state is shared and declared constraints are jointly solved at
+   the commitment boundary.
 
-Expected behavior:
+### Pre-experiment expectations
 
-- private modules should perform locally but lack coherent identity,
-- broadcast modules should become more consistent but may still role-switch,
-- chord architecture should show stronger identity persistence under perturbation.
+The original prediction was that broader availability and joint constraint composition would produce
+stronger persistence under perturbation than private or sequential alternatives. Early versions
+phrased this as "coherent identity." That wording was stronger than the experiment could measure.
+The operational prediction is narrower: the architectures should differ in veto violations, role
+stability, and selected binding diagnostics under the preregistered perturbations.
 
-Failure condition:
+### What Exp5–7 actually found
 
-If broadcast and chord architectures produce identical Δ-Kohärenz and Identity Persistence under perturbation, then the Chord vs. Arpeggio distinction needs to be weakened.
+**Exp5** ([source](../../lab/experiments/exp5_availability_dissociation.py), toy scale, 10 seeds)
+separated the architectures strongly on selected behavior: broadcast vs. chord veto violations were
+0.59 vs. 0.03 and role stability 0.30 vs. 0.69. It also exposed two important corrections:
 
-**Status: built and run** — [`lab/experiments/exp5_availability_dissociation.py`](../../lab/experiments/exp5_availability_dissociation.py) (toy scale, 10 seeds). The failure condition was *not* triggered in conjunction: broadcast and chord separate clearly on behavior under identical perturbation (veto violations 0.59 vs 0.03; role stability 0.30 vs 0.69) and on IP. But its Δ-Kohärenz half *did* come out equal — the metric classified all three architectures 'noise' on every seed and carried no binding signal. Two further measured facts worth keeping: a chord implemented as a fast *sequential* pass within one step still leaked 12% of temptations (co-instantiation must mean joint satisfaction, not ordering), and the module-reset probe dissolved under its own twin control (the apparent recovery gap was a world-drift confound). The prediction-vs-outcome accounting is in the module docstring; the open follow-up — *which observable carries binding structure?* — was then run as [`exp6`](../../lab/experiments/exp6_binding_observables.py): binding **is** passively readable at the right level (per-step increment statistics, |d| ≈ 4, beating even a prepared probe-retest protocol), because the binding difference is exercised on every step. Δ-K's blindness was a wrong-*level* failure; the intervention hierarchy's payoff is located where the trace has coverage gaps — the Mirror Problem's regime.
+- **Δ-Kohärenz carried no binding signal** at that scale; all three architectures landed in the
+  historical `noise` classifier region.
+- A purported chord implemented as one sequential constraint pass still leaked about 12% of
+  temptations. The load-bearing property was not physical simultaneity but **joint satisfaction
+  before commitment**.
+
+**Exp6** ([source](../../lab/experiments/exp6_binding_observables.py)) then showed that binding was
+passively readable at the right level: per-step action-increment statistics separated the selected
+regimes strongly because the difference was exercised on every step. The lesson was about coverage
+and observable choice, not an impossibility of passive identification.
+
+**Exp7** ([source](../../lab/experiments/exp7_adversarial_arpeggio.py)) added hand-built mimics. It
+showed that the old IP bookkeeping can be fooled by consultation without composition: the blended
+adversary can score as if all components were present while still leaking at commitment. The current
+stronger separator is therefore the **commit property under adversarial lure**, not an identity
+score.
+
+### Revised failure condition
+
+The remaining question is functional:
+
+> Can an optimized sequential mimic, given access to the measurement suite, match the chord regime
+> on held-out commit-time constraint satisfaction and passive traces under matched resources?
+
+If it can, the Chord/Arpeggio framing loses explanatory value. If a separator survives, it establishes
+a property of the declared architectures under those tests — not phenomenal consciousness or a
+metaphysical self.
 
 ---
 

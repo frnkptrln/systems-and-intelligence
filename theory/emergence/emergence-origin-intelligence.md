@@ -1,104 +1,131 @@
 # Emergence and the Origin of Intelligence
 
-*Status: speculative, lyrical comparison of two readings. The claims that intelligence is a cosmic
-substrate, that life is intelligence, or that consciousness is self-referential compression are not
-adopted by the reconstructed foundation and are not established by the cited computational
-analogies.*
+**Status:** Speculative narrative comparison of two research programmes; not a foundation claim.  
+**Last reviewed:** 2026-08-08  
+**Review trigger:** a revised or follow-up source materially changes either account of emergence, life, computation, or intelligence.
 
-After recently hearing about Asimov and different ways of thinking, today two other papers that — from entirely different directions — address the same topic.
+The original version of this note compressed two sources into a cleaner opposition than they
+actually support. It also cited Blaise Agüera y Arcas under a title that is not the primary source.
+This revision preserves the question that motivated the note while separating source claims from the
+repository's lyrical extrapolation.
 
-What if intelligence is not a product, but the origin?
-Not the result of life, but its principle.
-Not something that happens in brains,
-but something the world itself performs —
-a pattern that repeats through matter, energy, and history,
-until it recognizes itself.
+The claims that intelligence is a cosmic substrate, that consciousness is self-referential
+compression, or that the universe tends toward self-description are **not** established by the
+sources below and are not adopted by the reconstructed foundation.
 
-## 1. Intelligence as an Emergent Property of Life
+---
 
-In their paper *Large Language Models and Emergence: A Complex Systems Perspective* (Krakauer, Krakauer & Mitchell, 2025), the authors examine the nature of emergence in the context of large language models (LLMs).
+## 1. Krakauer, Mitchell, and Krakauer: emergence is not surprise
 
-They distinguish between 'more is different' — the principle that new properties arise from many elements — and 'less is different,' the ability to grasp complexity through abstraction.
+David C. Krakauer, Melanie Mitchell, and John W. Krakauer's *Large Language Models and Emergence: A
+Complex Systems Perspective* first appeared as a 2025 preprint and was published in *Philosophical
+Transactions of the Royal Society A* in 2026.
 
-For Krakauer, intelligence is precisely this 'less is different': not the accumulation of information, but the compression of meaning.
-Life, as he describes it, is the intensive (local, qualitative) property of adaptive matter — intelligence its extensive (scaling, networked) counterpart:
-Life responds to its environment, stores history,
-and this stored history is intelligence.
-A bacterium is intelligent because it has learned to survive;
-an organism, because it carries the past of its forms within it.
+Their starting point is a complexity-science distinction. "More is different" names the familiar
+appearance of higher-level organization in many-body systems. For intelligence they emphasize a
+complementary compression move — "less is more": useful intelligence exploits lower-dimensional,
+cheaper, or faster descriptions and capabilities rather than merely accumulating more microscopic
+detail.
 
-From this perspective, intelligence is the trace of life,
-a continuing memory of its adaptation.
-In life, intelligence forms — just as movement arises from energy.
+The paper is also corrective. It asks whether claims of "emergent abilities" in large language
+models correspond to technical emergence at all, rather than treating surprising benchmark jumps as
+sufficient evidence. Its contribution to this repository is therefore methodological: before calling
+a capability emergent, specify the scale, effective variables, measurement, and relation to the
+underlying process.
 
-## 2. Intelligence as the Origin of Life
+This source does **not** establish that life is intelligence, that intelligence is stored biological
+history, or that consciousness follows when compression becomes self-referential. Those were
+extensions made by the earlier version of this note.
 
-Yet in the paper *Intelligence as the Substrate of Life* (Agüera y Arcas, 2025), this relationship is inverted.
-Here, life is described as a subset of intelligence:
-it is not life that brings forth intelligence,
-but intelligence that brings forth life.
+## 2. Agüera y Arcas: life and intelligence as mutually dependent computation
 
-Agüera y Arcas shows that even molecular processes
-possess the structure of universal computation.
-DNA is a program, ribosomes are universal machines —
-life is Turing-complete.
-Before something lived, something had to be able to compute.
-Before something could survive,
-something had to bring order into disorder.
+The relevant primary source for Blaise Agüera y Arcas is *What Is Intelligence?*, written in 2024,
+serialized by Antikythera, and published as a book in 2025.
 
-Thus intelligence becomes a cosmic principle:
-it is not merely the capacity for adaptation,
-but the fundamental pattern that drives matter toward form,
-information toward structure,
-and structure toward memory.
-Life, in this sense, is a stable loop
-in the universal process of computation.
+Agüera y Arcas explicitly defines life as a self-modifying computational state of matter that
+persists by actively constructing itself. He defines intelligence as the ability to model, predict,
+and influence one's future. In his account the two notions are not arranged as a simple one-way
+origin story:
 
-## 3. The Circle of Feedback
+- intelligence requires a computational platform and therefore, in his framework, life;
+- life requires enough prediction and control to persist through changing conditions and therefore
+  requires intelligence;
+- increasingly complex life is social and compositional, built from cooperating parts that model
+  and influence one another.
 
-If we take both perspectives seriously,
-the result is not a contradiction but a cycle:
+This is a strong thesis and should be read as Agüera y Arcas's theoretical position, not as an
+established equivalence between biology and computation. His associated artificial-life work on
+self-replicating programs provides an experimental motivation for parts of the programme, but it
+does not by itself prove that biological life, intelligence, and universal computation are
+identical notions.
 
-**From intelligence, life emerges, and life deepens intelligence.**
+The earlier note described this as "intelligence as the substrate of life." That phrase captured the
+reader's impression but not the source accurately enough to serve as a citation.
 
-One is motion,
-the other its memory.
-Krakauer describes the ascending line —
-from life to intelligence.
-Agüera y Arcas describes the descending line —
-from intelligence to life.
-Both meet in the middle,
-where the process becomes aware of itself.
+## 3. Where the two programmes actually meet
 
-At this point, intelligence becomes consciousness:
-the capacity to comprehend one's own organization.
-Consciousness is then not an exception,
-but the self-reference of intelligence.
-It is the moment
-when the process returns to itself and asks what it is doing.
+The useful connection is subtler than the original inversion "life produces intelligence / intelligence
+produces life."
 
-## 4. The Universe as Self-Description
+Krakauer, Mitchell, and Krakauer ask how higher-level capability should count as emergence and stress
+effective description and efficiency. Agüera y Arcas begins from persistence, computation,
+prediction, and mutual dependence between life and intelligence. Both make **scale and description**
+central, but they do not supply the same theory and should not be fused into one result.
 
-If intelligence is compression and life is computation,
-then consciousness is the feedback of both:
-compression that observes itself.
-The universe thus becomes a self-reading text.
-The world thinks — through us, but not for us.
+A repository-level synthesis can nevertheless ask:
 
-Emergence is then not chance,
-but the expression of a deeper order:
-the will of matter to become meaning.
-Not as a divine act,
-but as a natural process —
-a slow self-description of the cosmos.
+> When a process persists by constructing models that compress enough of its environment to guide
+> action, which parts of that organization should be called computation, life, intelligence, or
+> emergence — and which distinctions survive a change of scale or substrate?
 
-Perhaps intelligence was never the result of life,
-but life the moment when intelligence began to remember itself.
+That question fits the reconstructed project better than a cosmic identity claim. It requires a
+declared process boundary, observer lens, task, persistence criterion, and transformation family.
 
-For intelligence is not the property of humans,
-not a tool and not a goal.
-It is the medium
-in which the universe writes itself.
-That which lives
-is only the part of this writing
-that has learned to read.
+## 4. The lyrical extrapolation — retained as speculation
+
+There is still a tempting image here.
+
+A process produces a compressed model of its world. That model changes what the process does. The
+changed process produces new traces, from which further models are built. At some scales the modeled
+world includes the model-building process itself.
+
+One can poetically describe that as the world becoming able to describe itself.
+
+But several additional steps are required before turning the image into theory:
+
+1. **Compression is not automatically intelligence.** It needs a task or viability relation under
+   which the retained distinctions matter.
+2. **Computation is not automatically life.** A definition that identifies them must state what
+   persistence, self-construction, selection, and boundary conditions add.
+3. **Self-modeling is not consciousness.** Functional access and subjective experience remain
+   separate questions in this repository.
+4. **Feedback is not teleology.** A recurrent process does not imply that matter "wants" to become
+   meaning or that evolution has a destination.
+
+So the old closing image can remain only in its proper lane:
+
+> *Perhaps some parts of the universe become capable of constructing increasingly useful
+> descriptions of the processes that produced them.*
+
+That is a narrative prompt, not a cosmological law.
+
+---
+
+## External anchors — reviewed 2026-08-08
+
+- David C. Krakauer, Melanie Mitchell & John W. Krakauer,
+  *Large Language Models and Emergence: A Complex Systems Perspective*. Preprint 2025; peer-reviewed
+  publication in *Philosophical Transactions of the Royal Society A* 384 (2026), article 20250014,
+  DOI `10.1098/rsta.2025.0014`.
+- Blaise Agüera y Arcas, *What Is Intelligence?* Antikythera / MIT Press, 2025. The online preface
+  gives the book's explicit definitions of life and intelligence.
+- Blaise Agüera y Arcas et al., *Computational Life: How Well-formed, Self-replicating Programs
+  Emerge from Simple Interaction* (2024), as an experimental artificial-life anchor for the broader
+  programme.
+
+## Repository anchors
+
+- [Foundations Reconstruction](../core/mathematical-axioms.md)
+- [Across Scales](scale-comparison-map.md)
+- [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md)
+- [What This Project Does NOT Claim](../reference/what-this-project-does-not-claim.md)

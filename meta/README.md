@@ -14,6 +14,7 @@ This folder has two lanes so we don't mix conceptual reflection with repository 
 | `conceptual-meta/agent-prompt-seed.md` | Conceptual Meta | Exploratory prompt artifact for autonomous identity seeding. |
 | `repository-meta/repository-information-architecture.md` | Repository Meta | Canonical placement rules and lane-splitting logic for the whole repo. |
 | `repository-meta/repository-as-thought-system.md` | Repository Meta | Meta-orientation: how the repo's own structure can be read without becoming self-referential noise. |
+| `repository-meta/freshness-and-review.md` | Repository Meta | Freshness policy for changing external claims and internally derived state, with CI-backed drift checks. |
 | `repository-meta/speculative-writing-guidelines.md` | Repository Meta | Speculative writing conventions (placement, labeling, continuity, style baseline). |
 | `repository-meta/cultural-optimization-red-team-manual.md` | Repository Meta | Guardrails against Goodhart pressure in cultural optimization systems. |
 | `repository-meta/core-claims.md` | Repository Meta | Minimal testable claim set with artifact links and failure conditions. |
@@ -39,6 +40,13 @@ Defines where new artifacts should live and how the repository keeps a coherent 
 ### [Repository as Thought System](repository-meta/repository-as-thought-system.md)
 
 Defines the useful meta-level: the repo can be read as operator, iteration, form, boundary, and return path, but only to improve navigation and prevent drift.
+
+### [Freshness and Review](repository-meta/freshness-and-review.md)
+
+Defines how time-sensitive external claims, publication states, provider interfaces, copied counts,
+and other internally derived state are reviewed without erasing research history. The deterministic
+subset is checked by [`lab/tools/audit_repository_freshness.py`](../lab/tools/audit_repository_freshness.py)
+in CI.
 
 ### [Speculative Writing Guidelines](repository-meta/speculative-writing-guidelines.md)
 

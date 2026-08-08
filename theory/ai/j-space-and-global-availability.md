@@ -1,6 +1,9 @@
 # The J-Space Result: Global Availability Measured in Production Models
 
-**Status:** Reading note and external-anchor mapping — no new result of this repository.
+**Status:** Reading note and external-anchor mapping — no new result of this repository.  
+**Published:** 2026-07-06  
+**Last reviewed:** 2026-08-08  
+**Review trigger:** independent replication or failed replication, a materially different lens-family result, or a follow-up that changes the workspace interpretation.
 
 **Scope:** Maps Anthropic's July 2026 workspace paper onto this repository's global-availability
 layer. The paper is evidence about the functional organization of specific production language
@@ -8,10 +11,11 @@ models. It is not evidence about consciousness, and this note does not use it as
 
 **Epistemic note:** The primary source is Gurnee, Sofroniew, Pearce et al.,
 [*Verbalizable Representations Form a Global Workspace in Language Models*](https://transformer-circuits.pub/2026/workspace)
-(Anthropic, July 2026), measured on Claude Sonnet 4.5, Haiku 4.5, Opus 4.5, and in parts Opus 4.6.
-Everything below that is not attributed to that paper is this repository's interpretation, tagged
-accordingly. The result is weeks old and unreplicated outside its lab; every use of it here
-inherits that provisionality.
+(Anthropic, published 2026-07-06), measured on Claude Sonnet 4.5, Haiku 4.5, Opus 4.5, and in parts
+Opus 4.6. Everything below that is not attributed to that paper is this repository's interpretation,
+tagged accordingly. The result is recent enough that every use of it here should remain provisional;
+this note records the source date and review date rather than relying on relative phrases such as
+"weeks old."
 
 **Repository anchors:** [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md),
 [Foundations Reconstruction §4.6 and §7](../core/mathematical-axioms.md),
@@ -48,8 +52,8 @@ vectors. Their findings, in their vocabulary:
 One provenance observation in passing, since this repository keeps a
 [verification-economy log](../../logs/017_provenance-depth-and-the-verification-economy.md):
 the term "J-Space" traveled from a technical definition to press coverage to an encyclopedia
-article within days of publication. The concept's public shape is already partly
-press-generated; this note deliberately anchors on the primary source only.
+article within days of publication. The concept's public shape was therefore partly press-generated
+almost immediately; this note deliberately anchors on the primary source.
 
 ## Why this repository cares
 
@@ -60,8 +64,8 @@ one core claim since before this paper existed:
 > self-model and constraints, and let the result alter later action. This describes a functional
 > profile, not an amount of subjective experience.
 
-The paper reports that production language models exhibit the first half of that profile, found
-by internal inspection rather than behavioral testing. The mapping, term by term
+The paper reports that production language models exhibit the availability half of that profile,
+found by internal inspection rather than behavioral testing. The mapping, term by term
 `[HYPOTHESIZED]`:
 
 | Paper | This repository |
@@ -76,9 +80,9 @@ Two disciplines happen to match exactly. The paper's "we take no position" on ex
 [non-claim #8](../reference/what-this-project-does-not-claim.md) in other words. And the paper's
 method is the move this repository's
 [consciousness nodes](../identity/machine-consciousness-as-generator-coherence.md) argued was
-required: behavior underdetermines internal organization, so the question must be answered by
-inspecting structure, not by interrogating fluency. That an interpretability team with weight
-access did exactly this is methodological progress independent of how the specific result ages.
+required: behavior underdetermines internal organization, so the question should be investigated by
+inspecting structure rather than inferred from fluent self-report. That an interpretability team
+with weight access did this is methodological progress independent of how the specific result ages.
 
 ## What the result is relative to
 
@@ -99,12 +103,12 @@ exactly the kind of question the paper's own limitations section leaves open.
 ## The question it makes quantitative
 
 [Open Problem 10](../reference/open-problems.md#open-problem-10-the-global-availability-question)
-ends with: real language models remain untested, and a solution requires internal-state access.
-This paper is that step for the availability half. What it does not answer is the repository's
-sharper half — the **Chord vs. Arpeggio** question: at the moment of commitment, are goals,
-world-state, self-model, and veto constraints *jointly* operative, or do they rotate through?
+now separates two questions: whether selected internal states become broadly available, and whether
+goals, world-state, self-model, and veto constraints remain *jointly* operative at commitment. This
+paper supplies evidence relevant to the first question in the studied models. It does not settle the
+second.
 
-The paper makes this question quantitative for the first time `[HYPOTHESIZED]`:
+The result makes one version of the **Chord vs. Arpeggio** question quantitative `[HYPOTHESIZED]`:
 
 > If the workspace holds at most ~25 simultaneously active vectors, then co-instantiation has a
 > budget. The chord question becomes: do constraint representations occupy workspace slots
@@ -112,9 +116,10 @@ The paper makes this question quantitative for the first time `[HYPOTHESIZED]`:
 > exactly the fast sequential pass that [exp5](../../lab/experiments/exp5_availability_dissociation.py)
 > measured leaking 12% of temptations in the toy?
 
-The paper's own gap report points the same way: broadcast is feedforward, not recurrent. A
-workspace that cannot re-enter is structurally closer to an arpeggio than a chord. Whether that
-matters behaviorally is measurable, and the toy version already exists.
+The paper's own gap report points in the same direction without deciding it: broadcast is
+feedforward, not recurrent. A feedforward workspace is structurally compatible with sequential
+processing, but that does not by itself imply an arpeggio-style commitment failure. Whether the
+reported organization matters behaviorally at commitment is a separate measurement problem.
 
 ## Testable follow-ups
 
@@ -123,8 +128,8 @@ matters behaviorally is measurable, and the toy version already exists.
    average linearized effect of internal state on future output — is a second passive readout of
    the same type. Applying it to exp5's private/broadcast/chord architectures asks: does it
    separate them, and does it agree with exp6's observable? Agreement would say the toy
-   instruments measure something lens-independent; disagreement would locate lens-relativity at
-   toy scale, where it can be dissected.
+   instruments measure something lens-robust in that setup; disagreement would locate
+   lens-relativity at toy scale, where it can be dissected.
 2. **Constraint occupancy at commitment** (outside this repository's reach, inside a lab with
    weight access): sample workspace contents at action-commitment steps and test whether
    constraint vectors co-occur with plan vectors or alternate with them.
@@ -136,7 +141,7 @@ matters behaviorally is measurable, and the toy version already exists.
 - The mapping table degenerating into synonym-trading — if no prediction ever differs because of
   it, it is decoration and should be deleted.
 - Any use of this note, inside or outside the repository, as support for "language models are
-  conscious." Both the paper and this repository state the opposite of that inference.
+  conscious." Both the paper and this repository reject that inference.
 
 ---
 
