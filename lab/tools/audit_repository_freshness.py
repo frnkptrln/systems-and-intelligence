@@ -72,12 +72,24 @@ FRESHNESS_MANAGED = {
     "theory/narrative/asimov-ai-latent-thinking.md",
 }
 
-LAST_REVIEWED = re.compile(r"(?:\*\*)?Last reviewed(?:\*\*)?:\s*\d{4}-\d{2}-\d{2}", re.I)
+LAST_REVIEWED = re.compile(
+    r"(?:"
+    r"(?:\*\*)?Last reviewed(?:\*\*)?:\s*\d{4}-\d{2}-\d{2}"
+    r"|^last_reviewed:\s*\d{4}-\d{2}-\d{2}\s*$"
+    r")",
+    re.I | re.MULTILINE,
+)
 EXTERNAL_LAST_REVIEWED = re.compile(
     r"(?:\*\*)?External interface last reviewed(?:\*\*)?:\s*\d{4}-\d{2}-\d{2}",
     re.I,
 )
-REVIEW_TRIGGER = re.compile(r"(?:\*\*)?Review trigger(?:\*\*)?:", re.I)
+REVIEW_TRIGGER = re.compile(
+    r"(?:"
+    r"(?:\*\*)?Review trigger(?:\*\*)?:"
+    r"|^review_trigger:\s*\S.+$"
+    r")",
+    re.I | re.MULTILINE,
+)
 
 
 @dataclass(frozen=True)
