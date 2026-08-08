@@ -6,8 +6,8 @@ This tool deliberately separates two classes of maintenance:
 1. **Deterministic internal drift** can be checked in CI. Example: a reader page
    says the repository has 13 open problems while the canonical registry has 19.
 2. **External freshness** cannot be inferred from repository text alone. The tool
-   only surfaces review candidates such as relative recency language or current
-   vendor/model claims; a human or research agent must check primary sources.
+   only surfaces review candidates such as relative recency language or novelty
+   claims; a human or research agent must check primary sources.
 
 Usage:
     python lab/tools/audit_repository_freshness.py
@@ -52,14 +52,30 @@ RELATIVE_RECENCY = re.compile(
     re.I,
 )
 
-# Dated exploratory/history lanes may use relative language without pretending
-# to describe the present. They are not part of the warning scan.
-RELATIVE_TIME_EXCLUDED_PREFIXES = (
+# Novelty/superlative language can be perfectly correct when written and decay
+# without any local edit. The audit therefore surfaces it for review rather
+# than treating it as an error.
+NOVELTY_LANGUAGE = re.compile(
+    r"\b(?:"
+    r"for the first time"
+    r"|first\s+(?:internal[- ]inspection\s+)?evidence"
+    r"|first\s+(?:reported\s+)?demonstration"
+    r"|first\s+(?:known\s+)?result"
+    r"|first\s+(?:known\s+)?example"
+    r"|only\s+(?:known\s+)?(?:method|result|example|system)"
+    r")\b",
+    re.I,
+)
+
+# Dated exploratory/history lanes may use relative language or rhetorical
+# superlatives without pretending to describe the present. They are not part
+# of the warning scan.
+REVIEW_EXCLUDED_PREFIXES = (
     "fiction/",
     "ideas/",
     "logs/",
 )
-RELATIVE_TIME_EXCLUDED_FILES = {
+REVIEW_EXCLUDED_FILES = {
     "meta/repository-meta/freshness-and-review.md",
 }
 
@@ -69,6 +85,8 @@ RELATIVE_TIME_EXCLUDED_FILES = {
 FRESHNESS_MANAGED = {
     "lab/providers/README.md",
     "theory/ai/j-space-and-global-availability.md",
+    "theory/ai/world-models-and-vla.md",
+    "theory/emergence/emergence-origin-intelligence.md",
     "theory/narrative/asimov-ai-latent-thinking.md",
 }
 
@@ -165,13 +183,15 @@ def find_missing_freshness_metadata(repo: Path = REPO) -> list[Finding]:
     return findings
 
 
-def find_relative_time_candidates(repo: Path = REPO) -> list[Finding]:
+def review_excluded(rel: str) -> bool:
+    return rel in REVIEW_EXCLUDED_FILES or rel.startswith(REVIEW_EXCLUDED_PREFIXES)
+
+
+def find_review_candidates(repo: Path = REPO) -> list[Finding]:
     findings: list[Finding] = []
     for path in markdown_files(repo):
         rel = path.relative_to(repo).as_posix()
-        if rel in RELATIVE_TIME_EXCLUDED_FILES:
-            continue
-        if rel.startswith(RELATIVE_TIME_EXCLUDED_PREFIXES):
+        if review_excluded(rel):
             continue
         text = read_text(path)
         for match in RELATIVE_RECENCY.finditer(text):
@@ -182,13 +202,26 @@ def find_relative_time_candidates(repo: Path = REPO) -> list[Finding]:
                     f'review relative-time phrase "{match.group(0)}"',
                 )
             )
+        for match in NOVELTY_LANGUAGE.finditer(text):
+            findings.append(
+                Finding(
+                    rel,
+                    line_number(text, match.start()),
+                    f'review novelty claim "{match.group(0)}"',
+                )
+            )
     return findings
+
+
+# Backward-compatible name for tests and callers created with the first audit.
+def find_relative_time_candidates(repo: Path = REPO) -> list[Finding]:
+    return [f for f in find_review_candidates(repo) if "relative-time" in f.message]
 
 
 def run_audit(repo: Path = REPO) -> tuple[list[Finding], list[Finding]]:
     errors = find_copied_count_errors(repo)
     errors.extend(find_missing_freshness_metadata(repo))
-    warnings = find_relative_time_candidates(repo)
+    warnings = find_review_candidates(repo)
     return errors, warnings
 
 
@@ -218,7 +251,7 @@ def main() -> int:
         print("\nNo deterministic freshness/integrity errors found.")
     if warnings:
         print(
-            "Relative-time findings are review candidates only; external truth must be "
+            "Review findings are candidates only; external truth and novelty must be "
             "checked against dated primary sources."
         )
 
