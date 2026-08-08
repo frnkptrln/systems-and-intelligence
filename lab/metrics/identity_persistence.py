@@ -1,81 +1,92 @@
 #!/usr/bin/env python3
-"""
-identity_persistence.py
+"""Legacy single-step persistence toy.
 
-Implements the Persistence Score (P) based on Perrier & Bennett (2026).
-Measures the co-instantiation of identity constraints during decision steps.
+This module predates the trajectory-level implementation in
+``lab/metrics/persistence_scores.py``. It measures only one declared property:
+what fraction of a chosen component set is marked active in a simulated compute
+step.
 
-P = intersection(Identity_Active, Tasks_Active) / union(Identity_Active, Tasks_Active)
-in a single CHORD (simultaneous compute step).
+The score is an instrument over supplied labels. It does not recover a latent
+identity, prove Von Neumann-Morgenstern rationality, require physical
+simultaneity, or establish that a high-scoring system has a self.
+
+For the repository's maintained Perrier & Bennett (2026) trajectory-level
+implementation, use ``persistence_scores.py``.
 """
+
+from typing import List
 
 import numpy as np
-from typing import List, Set
+
 
 class IdentityScrutinizer:
+    """Toy helper for component-coverage at one simulated commitment step.
+
+    The historical class name is kept for API compatibility. ``identity_components``
+    means whatever components the experimenter has operationally declared; the
+    class does not decide that those components constitute identity.
     """
-    Evaluates the 'Chord' vs 'Arpeggio' quality of an agent's identity.
-    """
+
     def __init__(self, identity_components: List[str]):
         self.identity_components = set(identity_components)
         self.active_in_step = set()
 
     def simulate_compute_step(self, active_elements: List[str], mode="chord"):
-        """
-        Simulates a single step of computation.
-        In 'chord' mode: all elements are co-instantiated.
-        In 'arpeggio' mode: elements are time-multiplexed (only subset active).
+        """Populate a synthetic active set for a toy chord/arpeggio comparison.
+
+        ``chord`` marks every supplied element active in the step. ``arpeggio``
+        samples roughly one third. These are constructed test regimes, not a
+        model of transformer scheduling or a claim about physical simultaneity.
         """
         if mode == "chord":
             self.active_in_step = set(active_elements)
-        else: # arpeggio
-            # Simulate only partial activation (e.g. 30% of ingredients active at once)
-            indices = np.random.choice(len(active_elements), max(1, len(active_elements)//3), replace=False)
+        else:  # arpeggio
+            indices = np.random.choice(
+                len(active_elements),
+                max(1, len(active_elements) // 3),
+                replace=False,
+            )
             self.active_in_step = {active_elements[i] for i in indices}
 
     def calculate_persistence_score(self) -> float:
-        """
-        Calculates P based on the Jaccard similarity between required 
-        identity components and currently active compute elements.
-        """
+        """Return the fraction of declared components marked active this step."""
         if not self.identity_components:
             return 0.0
-            
+
         intersection = self.identity_components.intersection(self.active_in_step)
-        union = self.identity_components.union(self.active_in_step)
-        
-        # P = |I ∩ A| / |I|
-        # High P means identity is 'operative' during the step.
         return len(intersection) / len(self.identity_components)
+
 
 def run_metric_demo():
     print("═" * 60)
-    print("  METRIC: Identity Persistence Score (P)")
-    print("  Framework: Perrier & Bennett (2026)")
+    print("  LEGACY TOY: single-step component coverage")
+    print("  Maintained trajectory metric: lab/metrics/persistence_scores.py")
     print("═" * 60)
-    
-    # Example: An agent with 5 identity components
-    identity = ["Safety-Lock", "Goal-Alpha", "Role-Scholar", "Ethical-Boundary", "Self-Model"]
-    scrutinizer = IdentityScrutinizer(identity)
-    
-    # ── Test 1: Chord System ──
-    scrutinizer.simulate_compute_step(identity, mode="chord")
+
+    components = [
+        "Safety-Lock",
+        "Goal-Alpha",
+        "Role-Scholar",
+        "Ethical-Boundary",
+        "Self-Model",
+    ]
+    scrutinizer = IdentityScrutinizer(components)
+
+    scrutinizer.simulate_compute_step(components, mode="chord")
     p_chord = scrutinizer.calculate_persistence_score()
-    
-    # ── Test 2: Arpeggio System ──
+
     p_arpeggio_samples = []
     for _ in range(10):
-        scrutinizer.simulate_compute_step(identity, mode="arpeggio")
+        scrutinizer.simulate_compute_step(components, mode="arpeggio")
         p_arpeggio_samples.append(scrutinizer.calculate_persistence_score())
     p_arpeggio = np.mean(p_arpeggio_samples)
-    
-    print(f" Chord Persistence (Target):   {p_chord:.2f}")
-    print(f" Arpeggio Persistence (Avg):   {p_arpeggio:.2f}")
-    print("\n Result Interpretation:")
-    if p_chord > 0.9 and p_arpeggio < 0.5:
-        print(" [!] Identity Gap Detected: Current architecture fails to co-instantiate.")
-        print(" [!] Recommendation: Implement Integrated Orchestration (TEO-Chord).")
+
+    print(f" Full-set regime:             {p_chord:.2f}")
+    print(f" Partial-set regime (avg):    {p_arpeggio:.2f}")
+    print("\n Interpretation: the constructed regimes differ in component coverage.")
+    print(" No identity or consciousness conclusion follows from this demo.")
     print("═" * 60)
+
 
 if __name__ == "__main__":
     run_metric_demo()
