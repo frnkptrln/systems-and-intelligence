@@ -40,6 +40,12 @@ target_length: "12–15 pages typeset"
 **Frank Peterlein** · Independent Researcher, Berlin
 *Correspondence: [GitHub Issues / frnkptrln](https://github.com/frnkptrln/systems-and-intelligence/issues)*
 
+[Download as PDF :material-file-download-outline:](viable-corridor.pdf){ .md-button }
+
+The PDF is regenerated from this page's source on every deployment, so it never
+lags behind the draft. Section numbers, figures, and the revision history below
+are identical in both forms.
+
 ---
 
 > **Status:** working draft, version 0.8.

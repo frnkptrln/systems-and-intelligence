@@ -28,6 +28,10 @@ jobs:
         run: python lab/tools/validate_nav.py
       - name: Mathematical Markdown validation
         run: python lab/tools/validate_math.py
+      # Built before the site so MkDocs picks the PDF up as a page asset and
+      # the download link on the paper always resolves to a current file.
+      - name: Build the paper PDF
+        run: python lab/tools/build_paper_pdf.py
       - run: mkdocs build --strict
       - name: KaTeX rendering validation
         run: node lab/tools/validate_katex.js site

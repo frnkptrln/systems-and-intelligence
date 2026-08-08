@@ -31,6 +31,10 @@ Thumbs.db
 
 site/
 
+# Paper PDFs are build artifacts: CI regenerates them from the Markdown
+# source before every docs build, so a committed copy could only be stale.
+papers/*.pdf
+
 # Generated artifacts
 migrate.py
 .pytest_cache/
