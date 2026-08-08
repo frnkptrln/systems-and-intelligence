@@ -181,24 +181,12 @@ theme:
   icon:
     repo: fontawesome/brands/github
     logo: material/square-outline
+  # The notebook is the room behind the homepage's thinking door. Keep that
+  # room dark in every system theme instead of offering a second visual mode.
   palette:
-    # Palette toggle for dark mode (default) — the foyer's own values
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
-      accent: lime
-      toggle:
-        icon: material/circle-outline
-        name: Switch to light mode
-
-    # Palette toggle for light mode — the same palette on paper
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: black
-      accent: lime
-      toggle:
-        icon: material/circle-slice-8
-        name: Switch to dark mode
+    scheme: slate
+    primary: black
+    accent: lime
   features:
     - navigation.tabs
     - navigation.indexes
