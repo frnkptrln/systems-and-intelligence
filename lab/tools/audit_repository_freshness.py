@@ -5,16 +5,17 @@ This tool deliberately separates two classes of maintenance:
 
 1. **Deterministic internal drift** can be checked in CI. Example: a reader page
    says the repository has 13 open problems while the canonical registry has 19.
-2. **External freshness** cannot be inferred from repository text alone. The tool
-   only surfaces review candidates such as relative recency language or novelty
-   claims; a human or research agent must check primary sources.
+2. **External or semantic freshness** cannot be inferred from repository text
+   alone. The tool surfaces review candidates such as relative recency language,
+   novelty claims, or explicitly retired strong formulations; a human or
+   research agent must decide whether the source/claim still holds.
 
 Usage:
     python lab/tools/audit_repository_freshness.py
     python lab/tools/audit_repository_freshness.py --strict
 
 ``--strict`` exits non-zero for deterministic errors. Review candidates remain
-warnings because CI cannot know whether an external claim is still true.
+warnings because CI cannot know whether an external or conceptual claim is true.
 """
 
 from __future__ import annotations
@@ -67,6 +68,18 @@ NOVELTY_LANGUAGE = re.compile(
     re.I,
 )
 
+# A tiny explicit list of formulations that later repository work has already
+# weakened or retired. These are warnings rather than automatic rewrites: an
+# occurrence can be historical, quoted, or part of an argument under review.
+RETIRED_STRONG_LANGUAGE = (
+    re.compile(r"Chord Postulate predicts a phase transition", re.I),
+    re.compile(r"Identity is a thermodynamic attractor", re.I),
+    re.compile(
+        r"(?:Δ-Kohärenz|Delta Coherence|omega|Ω).{0,80}proxy for Identity Persistence",
+        re.I,
+    ),
+)
+
 # Dated exploratory/history lanes may use relative language or rhetorical
 # superlatives without pretending to describe the present. They are not part
 # of the warning scan.
@@ -77,6 +90,9 @@ REVIEW_EXCLUDED_PREFIXES = (
 )
 REVIEW_EXCLUDED_FILES = {
     "meta/repository-meta/freshness-and-review.md",
+    # Explicitly quarantined as an early unrecalibrated synthesis. Its old
+    # vendor/model language is provenance, not a changing-present claim.
+    "papers/quantifying-emergent-utility-in-llms.md",
 }
 
 # Files whose argument materially depends on a changing external interface or
@@ -215,6 +231,15 @@ def find_review_candidates(repo: Path = REPO) -> list[Finding]:
                     f'review novelty claim "{match.group(0)}"',
                 )
             )
+        for pattern in RETIRED_STRONG_LANGUAGE:
+            for match in pattern.finditer(text):
+                findings.append(
+                    Finding(
+                        rel,
+                        line_number(text, match.start()),
+                        f'review retired strong formulation "{match.group(0)}"',
+                    )
+                )
     return findings
 
 
@@ -256,8 +281,8 @@ def main() -> int:
         print("\nNo deterministic freshness/integrity errors found.")
     if warnings:
         print(
-            "Review findings are candidates only; external truth and novelty must be "
-            "checked against dated primary sources."
+            "Review findings are candidates only; external truth, novelty, and semantic scope "
+            "must be checked against dated primary sources and the current repository theory."
         )
 
     return 1 if args.strict and errors else 0
