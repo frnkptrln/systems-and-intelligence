@@ -40,6 +40,15 @@ The benchmark demonstrates examples inside selected finite families. It does not
 that construction is generally cheap, that search is generally hard, or that every
 intervention uniquely identifies a real process.
 
+The [GameNGen case study](../emergence/gamengen-interactive-surrogate.md) adds a useful
+external contrast. There the learned object is not a recovered copy of DOOM's explicit program
+state, transition logic, and renderer, but an action-conditioned observation process that is
+adequate under selected rollout tests. Its training corpus is policy-selected, and some state is
+re-presented through the rendered observation itself. The case therefore separates
+**source-mechanism recovery** from **predictive or interactive surrogate construction** and gives
+another reason to declare the policy, horizon, observation channel, intervention family, and
+equivalence relation before calling a reconstruction successful.
+
 The [Witness Principle](the-witness-principle.md) isolates one constructive operator
 inside the loop. Instead of receiving an intervention from outside, an observer takes the
 remaining candidate class, a query language, and a cost budget as input and constructs a
@@ -135,10 +144,11 @@ The loop should be abandoned or split if:
 1. [Foundations Reconstruction](mathematical-axioms.md)
 2. [The Witness Principle](the-witness-principle.md)
 3. [Inverse-Reconstruction Benchmark](../../lab/benchmarks/inverse-reconstruction/README.md)
-4. [Witness-Generation Benchmark](../../lab/benchmarks/witness-generation/README.md)
-5. [Measurement as Weak Intervention](measurement-as-weak-intervention.md)
-6. [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md)
-7. [Optimization and Its Blindness](../optimization/optimization-and-its-blindness.md)
-8. [The Viable Corridor](../../papers/viable-corridor.md)
-9. [Competence, Constraint, and Verification](competence-constraint-and-verification.md)
-10. [Verification as Reverse Pressure](verification-as-reverse-pressure.md)
+4. [GameNGen: From Traces to an Interactive Surrogate](../emergence/gamengen-interactive-surrogate.md)
+5. [Witness-Generation Benchmark](../../lab/benchmarks/witness-generation/README.md)
+6. [Measurement as Weak Intervention](measurement-as-weak-intervention.md)
+7. [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md)
+8. [Optimization and Its Blindness](../optimization/optimization-and-its-blindness.md)
+9. [The Viable Corridor](../../papers/viable-corridor.md)
+10. [Competence, Constraint, and Verification](competence-constraint-and-verification.md)
+11. [Verification as Reverse Pressure](verification-as-reverse-pressure.md)
