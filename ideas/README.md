@@ -25,6 +25,8 @@ Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title kee
 
 ## Notes
 
+- [Representation Changes Reconstruction Difficulty](2026-08-09-representation-changes-reconstruction-difficulty.md) — representational grounding as a possible separation between identifiability and search accessibility
+- [Mechanism as a Reconstruction Target](2026-08-09-mechanism-as-reconstruction-target.md) — asks what extra intervention-transfer burden a mechanistic world model should satisfy
 - [Embodiment and the Non-Invariant Decomposition of Goals](2026-07-29-embodiment-and-the-non-invariant-decomposition-of-goals.md) — paper-specific research note; durable [effective-goal-space model](../theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md)
 - [The Graph Is a Materialized Prompt](2026-07-24-the-graph-is-a-materialized-prompt.md)
 - [Self-Improvement Needs a Referee](2026-07-24-self-improvement-needs-a-referee.md)
