@@ -185,6 +185,14 @@ amplification, partial observability, missing coverage, unknown family, out-of-f
 misspecification, intervention
 access, and the cost of representing uncertainty honestly.
 
+**Decision-relevance constraint:** Recoverable class size and downstream decision sufficiency must
+be reported separately. [Decision-Relevant Identifiability](../core/decision-relevant-identifiability.md)
+shows the exact finite reason: a large remaining class can have zero task regret when all members
+support the same action, while a two-model class can remain decision-critical. Likewise, a query can
+reduce more entropy and more candidate models while having lower decision value than a smaller
+query aimed at the action boundary. Identification, information gain, regret reduction, and
+viability value are therefore separate objectives unless a declared assumption makes them coincide.
+
 **Status (v1.13, partial but measured):**
 
 - **v0:** known-family recovery is cheap in favorable conditions; noise and partial observability degrade it.
@@ -200,7 +208,7 @@ access, and the cost of representing uncertainty honestly.
 
 **Open remainder:** learned searchers and program synthesizers under matched budgets; the time-order-free IFS testbed; external SINDy/PySR baselines; re-simulation divergence; separating selection from drift in the v1.13 pool arm via a within-group cost gradient; whether network exclusion is a stable outcome or a reservoir that returns when the network weakens; endogenous resource production; and the measurement question v1.12 raised, since on/off deltas and drift-from-start disagree for rules that reward a trait independently of the transfer.
 
-**What a solution would look like:** Not one universal reconstructor, but a set of bounded results stating the family, evidence, query access, cost, recoverable equivalence class, and failure region. Learned systems must be compared against the exact toy floor rather than judged by persuasive outputs.
+**What a solution would look like:** Not one universal reconstructor, but a set of bounded results stating the family, evidence, query access, cost, recoverable equivalence class, downstream decision criterion, and failure region. Learned systems must be compared against the exact toy floor rather than judged by persuasive outputs.
 
 ---
 
