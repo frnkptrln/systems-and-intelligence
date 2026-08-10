@@ -99,6 +99,13 @@ with the tuple read lexicographically. Other applications may replace this objec
 with information gain, downstream value, risk, or experiment duration. Those choices are
 not interchangeable and must be reported.
 
+The companion note [Decision-Relevant Identifiability](decision-relevant-identifiability.md)
+makes that non-interchangeability explicit. Candidate-class reduction and information gain
+can prefer a query that resolves nuisance distinctions while a lower-information query
+changes the justified action. Witness construction should therefore state whether it is
+optimizing identification, information, downstream regret, value of information, or a
+viability/safety criterion.
+
 ## Coverage–distinction duality
 
 There is one exact result beneath the broader hypothesis.
@@ -396,5 +403,6 @@ not add a third research spine.
 1. [From Trace to World-Binding](from-trace-to-world-binding.md)
 2. [Measurement as Weak Intervention](measurement-as-weak-intervention.md)
 3. [Witness-Generation Benchmark](../../lab/benchmarks/witness-generation/README.md)
-4. [World Models and VLA](../ai/world-models-and-vla.md)
-5. [Open Problem 14: Learned Witness Construction](../reference/open-problems.md#open-problem-14-learned-witness-construction)
+4. [Decision-Relevant Identifiability](decision-relevant-identifiability.md)
+5. [World Models and VLA](../ai/world-models-and-vla.md)
+6. [Open Problem 14: Learned Witness Construction](../reference/open-problems.md#open-problem-14-learned-witness-construction)
