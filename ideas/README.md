@@ -25,6 +25,8 @@ Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title kee
 
 ## Notes
 
+- [A Research Loop Can Become Its Own Environment](2026-08-10-research-loop-becomes-environment.md) — asks how cumulative research can preserve continuity without treating internal recurrence as new evidence
+- [The Teacher Is Part of the Environment](2026-08-10-teacher-is-part-of-the-environment.md) — distinguishes supervision as measurement from supervision as coupling
 - [Representation Changes Reconstruction Difficulty](2026-08-09-representation-changes-reconstruction-difficulty.md) — representational grounding as a possible separation between identifiability and search accessibility
 - [Mechanism as a Reconstruction Target](2026-08-09-mechanism-as-reconstruction-target.md) — asks what extra intervention-transfer burden a mechanistic world model should satisfy
 - [Embodiment and the Non-Invariant Decomposition of Goals](2026-07-29-embodiment-and-the-non-invariant-decomposition-of-goals.md) — paper-specific research note; durable [effective-goal-space model](../theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md)
