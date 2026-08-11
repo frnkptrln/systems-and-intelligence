@@ -128,8 +128,7 @@ $$
 Define the **decision-regret radius** of the class by
 
 $$
-\rho_D(B)
-=
+\rho_D(B)=
 \min_{a\in A}
 \max_{\theta\in B}
 \left[V_\theta^*-V_\theta(a)\right].
@@ -231,7 +230,7 @@ possible in every block, so the best achievable decision value is unchanged. Its
 information is
 
 $$
-\operatorname{VOI}_D(Q_N)=0.
+\mathrm{VOI}_D(Q_N)=0.
 $$
 
 ### Query D — identify the decision boundary
@@ -246,7 +245,7 @@ The posterior class remains size four, larger than under Query N. But the correc
 known. In the symmetric unit-reward example, expected decision value rises from $1/2$ to 1:
 
 $$
-\operatorname{VOI}_D(Q_D)=\frac12.
+\mathrm{VOI}_D(Q_D)=\frac12.
 $$
 
 Therefore a query can have **more information gain, produce a smaller candidate class, and still be
