@@ -372,7 +372,9 @@ history, environment, task, or evaluator.
 Karl Friston's formulation that systems minimize prediction error (surprisal) through two coupled mechanisms: Perception (changing beliefs to match the world) and Action (changing the world to match beliefs).
 
 **What it supports (in the toy model):**
-Goal-seeking-like behavior can arise from a simple setup where an agent minimizes a variational-free-energy-like objective under a strong prior. The script illustrates this via simple gradient descent on a simplified proxy for Variational Free Energy ($F$); it is not a proof that all real agents (biological or artificial) implement Active Inference as formulated.
+Goal-seeking-like behavior can arise from a simple setup where an agent minimizes a variational-free-energy-like objective under a strong prior. The script illustrates this via simple gradient descent on a simplified proxy for Variational Free Energy ($F$).
+
+**What it does NOT show:** That any real agent, biological or artificial, implements Active Inference as formulated. The objective here is a simplified proxy, not a derived free energy, and a single strong prior is doing much of the work.
 
 ---
 
