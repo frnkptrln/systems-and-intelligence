@@ -151,3 +151,4 @@ ANTHROPIC_API_KEY=... python learned_searcher.py --provider anthropic
 - [Witness benchmark](../witness-generation/README.md) — the exact frontier and the trap construction
 - [Inverse-reconstruction v1.2](../inverse-reconstruction/README.md) — why T1 truth recovery is capped at chance, and what the selection prior means
 - [Referee workbench](../recursive-workbench/README.md) — where a learned proposer would slot in next
+- [`trace-to-generator-small`](../../experiments/trace_to_generator_small/README.md) — the complementary trained-from-scratch sequence-model track; it uses synthetic scalar dynamics rather than zero-shot language-model prompting

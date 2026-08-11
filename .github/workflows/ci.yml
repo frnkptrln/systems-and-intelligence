@@ -34,8 +34,8 @@ jobs:
       - run: pip install --index-url https://download.pytorch.org/whl/cpu -r requirements-ml.txt
       - name: Require PyTorch
         run: python -c "import torch; print(torch.__version__)"
-      - name: CTM neuron-level model tests
-        run: pytest tests/test_ctm_nlm.py -q
+      - name: Optional PyTorch model tests
+        run: pytest tests/test_ctm_nlm.py tests/test_trace_to_generator_small.py -q
 
   docs:
     runs-on: ubuntu-latest

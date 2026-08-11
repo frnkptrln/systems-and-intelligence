@@ -334,3 +334,4 @@ Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
 - [Open Problems](../../../theory/reference/open-problems.md) — Open Problem 11 (bounded inverse reconstruction).
 - [Related Work Map](../../../meta/research-alignment/related-work-map.md) — SINDy / system identification / program induction anchors.
 - [`lab/experiments/trace_to_generator/`](../../experiments/trace_to_generator/README.md) — the earlier inverse-prompting scaffold.
+- [`trace-to-generator-small`](../../experiments/trace_to_generator_small/README.md) — a compact learned sequence model trained from scratch on controlled synthetic traces; implementation ready, no research run yet.
