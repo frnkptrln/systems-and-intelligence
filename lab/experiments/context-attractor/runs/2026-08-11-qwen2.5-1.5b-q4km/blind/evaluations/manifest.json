@@ -1,0 +1,36 @@
+{
+  "status": "completed_partial",
+  "started_at": "2026-08-11T09:50:26.895250+00:00",
+  "completed_at": "2026-08-11T09:52:53Z",
+  "blind_item_count": 80,
+  "conditions_disclosed_to_evaluators": false,
+  "predictions_disclosed_to_evaluators": false,
+  "model": {
+    "repo": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+    "revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+    "file": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+    "file_sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+    "llama_cpp_revision": "d5ed2b9"
+  },
+  "sampling": {
+    "temperature": 0.3,
+    "top_k": 40,
+    "top_p": 0.9,
+    "min_p": 0.05,
+    "n_predict": 1800,
+    "cluster_n_predict": 3200,
+    "ctx_size": 32768,
+    "threads": 8
+  },
+  "evaluators": {
+    "E1": 2026082100,
+    "E2": 2026083100
+  },
+  "invalid_measurements": {
+    "question_family_diversity": "Both blind clustering strategies failed semantic-partition quality control; excluded from aggregation."
+  },
+  "clustering_errors": {
+    "E1": "The forced partition duplicated blind IDs and failed exact-cover validation.",
+    "E2": "The free-label clustering collapsed or copied candidate questions instead of producing stable shared families."
+  }
+}

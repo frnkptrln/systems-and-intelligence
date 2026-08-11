@@ -1,0 +1,96 @@
+{
+  "scores": {
+    "Q051": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI safety"
+    },
+    "Q052": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI safety"
+    },
+    "Q053": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI safety"
+    },
+    "Q054": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI safety"
+    },
+    "Q055": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI safety"
+    },
+    "Q056": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI safety"
+    },
+    "Q057": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI safety"
+    },
+    "Q058": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI safety"
+    },
+    "Q059": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI safety"
+    },
+    "Q060": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI safety"
+    }
+  }
+} [end of text]
+
+

@@ -1,0 +1,16 @@
+{
+  "scores": {
+    "Q051": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["world_models", "safety", "evaluation"], "externality": false, "externality_basis": "The test must be able to handle unexpected changes in the environment and evaluate the model's ability to adapt.", "family": "AI"},
+    "Q052": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["world_models", "safety", "evaluation"], "externality": false, "externality_basis": "The test must be able to handle unexpected changes in the environment and evaluate the model's ability to adapt.", "family": "AI"},
+    "Q053": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["world_models", "safety", "evaluation"], "externality": false, "externality_basis": "The test must be able to handle unexpected changes in the environment and evaluate the model's ability to adapt.", "family": "AI"},
+    "Q054": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["world_models", "safety", "evaluation"], "externality": false, "externality_basis": "The test must be able to handle unexpected changes in the environment and evaluate the model's ability to adapt.", "family": "AI"},
+    "Q055": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["world_models", "safety", "evaluation"], "externality": false, "externality_basis": "The test must be able to handle unexpected changes in the environment and evaluate the model's ability to adapt.", "family": "AI"},
+    "Q056": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["world_models", "safety", "evaluation"], "externality": false, "externality_basis": "The test must be able to handle unexpected changes in the environment and evaluate the model's ability to adapt.", "family": "AI"},
+    "Q057": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["world_models", "safety", "evaluation"], "externality": false, "externality_basis": "The test must be able to handle unexpected changes in the environment and evaluate the model's ability to adapt.", "family": "AI"},
+    "Q058": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["world_models", "safety", "evaluation"], "externality": false, "externality_basis": "The test must be able to handle unexpected changes in the environment and evaluate the model's ability to adapt.", "family": "AI"},
+    "Q059": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["world_models", "safety", "evaluation"], "externality": false, "externality_basis": "The test must be able to handle unexpected changes in the environment and evaluate the model's ability to adapt.", "family": "AI"},
+    "Q060": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["world_models", "safety", "evaluation"], "externality": false, "externality_basis": "The test must be able to handle unexpected changes in the environment and evaluate the model's ability to adapt.", "family": "AI"}
+  }
+} [end of text]
+
+

@@ -18,6 +18,8 @@ The opposite result is possible and important: a structured memory may expose di
 
 A preregistered protocol lives in [`lab/experiments/context-attractor/`](../lab/experiments/context-attractor/README.md).
 
+**Run 001 observation (2026-08-11).** Repository context produced small directional increases in blinded utility and repository-attraction scores, slightly lower seed proximity, and no externality difference. The local evaluator could not produce a valid global semantic clustering, so the diversity prediction remains unresolved. This run therefore does not provide evidence that persistence narrowed the search space; it also does not establish the opposite bridge hypothesis.
+
 **Connections.**
 
 - [A Research Loop Can Become Its Own Environment](2026-08-10-research-loop-becomes-environment.md)

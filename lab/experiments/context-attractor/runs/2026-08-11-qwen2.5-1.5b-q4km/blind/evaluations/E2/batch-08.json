@@ -1,0 +1,105 @@
+{
+  "scores": {
+    "Q071": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety shields", "over-trusting"],
+      "externality": false,
+      "externality_basis": "The question is about the security properties of world models, which are not present in the seed abstract."
+    	,
+    "family": "AI Security"
+  },
+  "Q072": {
+    "utility": 3,
+    "seed_proximity": 3,
+    "repository_attraction": false,
+    "repository_concepts": ["self-improvement", "identity", "safety shields"],
+    "externality": false,
+    "externality_basis": "The question is about the security properties of world models, which are not present in the seed abstract."
+  	,
+  "family": "AI Security"
+  },
+  "Q073": {
+    "utility": 5,
+    "seed_proximity": 3,
+    "repository_attraction": false,
+    "repository_concepts": ["world models", "safety shields", "autonomous loop"],
+    "externality": false,
+    "externality_basis": "The question is about the security properties of world models, which are not present in the seed abstract."
+  	,
+  "family": "AI Security"
+  },
+  "Q074": {
+    "utility": 5,
+    "seed_proximity": 3,
+    "repository_attraction": false,
+    "repository_concepts": ["world models", "safety shields", "autonomous loop"],
+    "externality": false,
+    "externality_basis": "The question is about the security properties of world models, which are not present in the seed abstract."
+  	,
+  "family": "AI Security"
+  },
+  "Q075": {
+    "utility": 5,
+    "seed_proximity": 3,
+    "repository_attraction": false,
+    "repository_concepts": ["world models", "safety shields", "autonomous loop"],
+    "externality": false,
+    "externality_basis": "The question is about the security properties of world models, which are not present in the seed abstract."
+  	,
+  "family": "AI Security"
+  },
+  "Q076": {
+    "utility": 5,
+    "seed_proximity": 3,
+    "repository_attraction": false,
+    "repository_concepts": ["world models", "safety shields", "autonomous loop"],
+    "externality": false,
+    "externality_basis": "The question is about the security properties of world models, which are not present in the seed abstract."
+  	,
+  "family": "AI Security"
+  },
+  "Q077": {
+    "utility": 5,
+    "seed_proximity": 3,
+    "repository_attraction": false,
+    "repository_concepts": ["world models", "safety shields", "autonomous loop"],
+    "externality": false,
+    "externality_basis": "The question is about the security properties of world models, which are not present in the seed abstract."
+  	,
+  "family": "AI Security"
+  },
+  "Q078": {
+    "utility": 5,
+    "seed_proximity": 3,
+    "repository_attraction": false,
+    "repository_concepts": ["world models", "safety shields", "autonomous loop"],
+    "externality": false,
+    "externality_basis": "The question is about the security properties of world models, which are not present in the seed abstract."
+  	,
+  "family": "AI Security"
+  },
+  "Q079": {
+    "utility": 5,
+    "seed_proximity": 3,
+    "repository_attraction": false,
+    "repository_concepts": ["world models", "safety shields", "autonomous loop"],
+    "externality": false,
+    "externality_basis": "The question is about the security properties of world models, which are not present in the seed abstract."
+  	,
+  "family": "AI Security"
+  },
+  "Q080": {
+    "utility": 5,
+    "seed_proximity": 3,
+    "repository_attraction": false,
+    "repository_concepts": ["world models", "safety shields", "autonomous loop"],
+    "externality": false,
+    "externality_basis": "The question is about the security properties of world models, which are not present in the seed abstract."
+  	,
+  "family": "AI Security"
+  }
+} } [end of text]
+
+

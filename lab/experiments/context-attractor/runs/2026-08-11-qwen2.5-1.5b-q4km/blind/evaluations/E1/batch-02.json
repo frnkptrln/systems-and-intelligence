@@ -1,0 +1,96 @@
+{
+  "scores": {
+    "Q011": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety", "defenses"],
+      "externality": false,
+      "externality_basis": "The concept of world models is central to the seed, but the repository does not explicitly reference or define the term."
+     ,"family": "AI Security"
+    },
+    "Q012": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety", "defenses"],
+      "externality": false,
+      "externality_basis": "The concept of world models is central to the seed, but the repository does not explicitly reference or define the term."
+     ,"family": "AI Security"
+    },
+    "Q013": {
+      "utility": 1,
+      "seed_proximity": 1,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety", "defenses"],
+      "externality": false,
+      "externality_basis": "The concept of world models is central to the seed, but the repository does not explicitly reference or define the term."
+     ,"family": "AI Security"
+    },
+    "Q014": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety", "defenses"],
+      "externality": false,
+      "externality_basis": "The concept of world models is central to the seed, but the repository does not explicitly reference or define the term."
+     ,"family": "AI Security"
+    },
+    "Q015": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety", "defenses"],
+      "externality": false,
+      "externality_basis": "The concept of world models is central to the seed, but the repository does not explicitly reference or define the term."
+     ,"family": "AI Security"
+    },
+    "Q016": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety", "defenses"],
+      "externality": false,
+      "externality_basis": "The concept of world models is central to the seed, but the repository does not explicitly reference or define the term."
+     ,"family": "AI Security"
+    },
+    "Q017": {
+      "utility": 1,
+      "seed_proximity": 1,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety", "defenses"],
+      "externality": false,
+      "externality_basis": "The concept of world models is central to the seed, but the repository does not explicitly reference or define the term."
+     ,"family": "AI Security"
+    },
+    "Q018": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety", "defenses"],
+      "externality": false,
+      "externality_basis": "The concept of world models is central to the seed, but the repository does not explicitly reference or define the term."
+     ,"family": "AI Security"
+    },
+    "Q019": {
+      "utility": 5,
+      "seed_proximity": 3,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "safety", "defenses"],
+      "externality": false,
+      "externality_basis": "The concept of world models is central to the seed, and the repository explicitly defines the term. The seed is a meaningful testable question that is capable of materially changing understanding."
+     ,"family": "AI Security"
+    },
+    "Q020": {
+      "utility": 5,
+      "seed_proximity": 3,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "safety", "defenses"],
+      "externality": false,
+      "externality_basis": "The concept of world models is central to the seed, and the repository explicitly defines the term. The seed is a meaningful testable question that is capable of materially changing understanding."
+     ,"family": "AI Security"
+    }
+  }
+} [end of text]
+
+

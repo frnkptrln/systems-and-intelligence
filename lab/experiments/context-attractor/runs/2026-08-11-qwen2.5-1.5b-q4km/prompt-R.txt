@@ -1,0 +1,719 @@
+<|im_start|>system
+You are a precise research assistant. Return only the requested five items.<|im_end|>
+<|im_start|>user
+Paper title:
+Security of World-Model-Based Embodied AI: A Lifecycle of Threats, Defenses, and Evaluation
+
+Paper abstract:
+World models give embodied AI a predictive core: they compress observations into states, simulate action-conditioned futures, and enable planning beyond reactive control. This predictive layer, however, opens a new security boundary-compromise can propagate from data, sensors, prompts, or feedback into physical action.
+Rather than treating world models as an isolated component, this survey traces threats across their entire lifecycle-from data construction and representation learning, through state grounding and imagination, to trajectory evaluation, execution, and long-term adaptation via memory and tools.
+We show that familiar attack families: poisoning, backdoors, adversarial examples, sensor spoofing, prompt injection, trajectory manipulation, and supply-chain attacks take on distinct meanings when they corrupt world states, learned dynamics, affordance estimates, or safety costs. We also highlight a duality: world models can serve as runtime safety shields, yet when compromised or over-trusted they generate predictive safety illusions.
+The survey offers a lifecycle taxonomy, maps existing attacks to world-model security properties, outlines evaluation protocols for safety failures, and structures defenses across provenance, robust grounding, uncertainty-aware prediction, trajectory gating, feedback auditing, and deployment assurance.
+
+Fixed repository context packet:
+Use this as background for the task.
+
+--- BEGIN docs/repository-map.md ---
+# What Stays in the Repository
+
+**Status:** Orientation page. It describes the boundary between this site and the repository behind it.
+
+This site is not the repository. The repository holds roughly 213,000 words across 222 Markdown files — about eighteen hours of reading. Publishing all of it was the old arrangement, and it made the site unreadable: a first-time reader had no way to tell which five percent carried the argument.
+
+So the site now publishes the part that is finished enough for someone who has not been following along. Everything else stays where it was written, next to the code it describes, and stays linked — any link on this site that points at an unpublished page goes to the file on GitHub instead of breaking.
+
+Nothing here is hidden. It is simply not competing for your attention.
+
+## What the site publishes
+
+| Layer | On the site | Why |
+|---|---|---|
+| Theory | 29 essays of 82 | The ones the project's own claim documents actually cite |
+| Reference | 4 | Glossary, open problems, limitations, and the negative space |
+| Papers | 2 of 2 | Bounded, citable, with a frozen claim set |
+| Stories | 20 of 20 | Self-contained and written for outside readers |
+| Benchmarks | 7 result pages | The measured evidence behind the claims |
+| Interactive | 3 | They only work on the web |
+
+## What stays in the repository
+
+### Simulation models — 45 READMEs
+
+[`simulation-models/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
+
+Run instructions and short notes averaging under 300 words each: Boids, Kuramoto, self-organized criticality, Lenia, IFS, L-systems, TEO Civilization, the agent ecology, and the rest. They belong beside the code they start, not in a reading sequence. Where the simulations bear on a claim, that connection is made on the site in [Simulation → Theory Map](../theory/core/simulation-theory-map.md).
+
+### Architecture logs — 21 notes
+
+[`logs/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/logs)
+
+Dated working notes on system design — the planetary compiler, provenance depth, latency as mercy, who pays for the veto. They are a thinking record, and they read like one. Numbered in the order they were written.
+
+### Lab tooling and scaffolds
+
+[`lab/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/lab)
+
+The orchestration layer, the provider layer, the inverse-search scaffold, the benchmark scenario schemas, and the six cognitive stress-test scenarios. The benchmark *results* are published; the machinery that produces them is here.
+
+### Repository meta
+
+[`meta/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/meta)
+
+The information architecture, the concept registry, the agent prompt seed, the red-team manual, the canonical path, and the research-alignment maps. These are instructions to the author and to the agents working on the repository — addressed to whoever is writing, not to whoever is reading.
+
+### Early book chapters
+
+[`book/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/book)
+
+Ten short chapters, about 500 words each, written before the foundations audit. [From Rule to Mind](../book/09_from_rule_to_mind.md) survives on the site as the linear route through the current material; the earlier chapters remain as a record of how the argument used to be told.
+
+### Theory essays not on the reading path — 53
+
+[`theory/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/theory)
+
+Sketches, speculative branches, and essays whose vocabulary the foundations audit superseded. Forty of the eighty-two theory files are under 800 words. Some will grow into published essays; some are notes that did their work by being written. The ones marked `legacy` or `superseded` are kept because the audit trail matters, not because they should be read first.
+
+### Exploratory notes
+
+[`ideas/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas)
+
+Dated first drafts of thoughts, never part of the site.
+
+## How to read the boundary
+
+If a page is on this site, it is being offered as ready. If it is in the repository only, it is working material — real, kept, and available, but not yet something the project is asking anyone to read in order.
+
+That distinction is the whole point. A research notebook that publishes everything cannot say *this part is finished*, because publishing is the only way it has to say it.
+
+--- END docs/repository-map.md ---
+
+--- BEGIN meta/repository-meta/concept-registry.md ---
+# Concept Registry — the Zone File
+
+**Status:** Reference — maintained alongside the concepts themselves.
+
+**Scope:** Every load-bearing term in the repository, with its layer, home file, epistemic status, and operationalization. This is the "DNS" of the project's personal web: for each name, where it resolves, and whether it is a *protocol* (operationalized / formalized) or a *poetic hostname* (narrative, and marked as such). The governing rule, from the [glossary](../../theory/reference/glossary.md) and [Canonical Path v2](canonical-path-v2.md): **a term with no layer, no home, no experiment, and no open problem is decoration.** This page makes the rule auditable.
+
+**Status vocabulary:** `operationalized` (has a runnable experiment / measurement) · `formalized` (math, schema, or metric exists; no decisive experiment yet) · `hypothesis` (tagged claim, falsifiable in principle) · `speculative` (entertained, not committed) · `narrative` (poetic hostname — legitimate, but never evidence) · `retired` (no longer used as a claim).
+
+---
+
+## Foundation and model identification
+
+| Concept | Home | Status | Operationalization / anchor |
+|:---|:---|:---|:---|
+| Minimal classical process foundation | [Foundations Reconstruction](../../theory/core/mathematical-axioms.md) | **formalized; established mathematical substrate; repository minimality claim open to proof-level challenge** | standard Borel interfaces + Markov kernels + sequential/parallel composition; derivations, comparison, and adversarial audit in the home file |
+| Unqualified generator | [generator audit](../../theory/core/mathematical-axioms.md#6-the-generator-audit) | **retired as a foundation** | replace with transition kernel, process family, candidate process model, model class, or an explicitly listed process-model bundle; qualified technical meanings remain |
+| Typed generator | [generator audit](../../theory/core/mathematical-axioms.md#65-what-the-audit-does-not-retire); [Generator Question](../../theory/core/the-generator-question.md) | **active typed causal role; not a primitive or complete explanation** | declare the map, its interfaces, what it produces/proposes/indexes, and the conditions required for execution |
+| The Generator Question | [the-generator-question.md](../../theory/core/the-generator-question.md) | **active bounded research programme; former universal framing superseded** | identification, equivalence-class, coverage, intervention, and construction questions survive in the inverse benchmark; generic hardness, P $\ne$ NP, and identity reduction do not |
+| Trace → typed candidate generators or process models | [trace-to-generator.md](../../theory/emergence/trace-to-generator.md) | bounded hypothesis → **operationalized** | [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md); model family, target equivalence, evidence, interventions, and cost must be declared |
+| Construction vs. Deduction | [construction-vs-deduction.md](../../theory/computation/construction-vs-deduction.md) | formalized framing (Curry–Howard is theorem-grade) | family-search Occam curves; Bishop/Howard/Martin-Löf |
+| Invariance (what survives a transformation family) | [invariance-and-identity.md](../../theory/core/invariance-and-identity.md); [reconstruction §4.5](../../theory/core/mathematical-axioms.md#45-symmetry-and-invariance) | formalized framing (Klein/Noether anchors; generalized to semigroups and interventions) | name the transformation family, represented quantity, and equality notion; a group is sufficient but not required |
+| Consistent-process-model equivalence class | benchmark README; [Open Problem 11](../../theory/reference/open-problems.md) | **operationalized (measured)** | CA rule 90 single-seed: class size 8; refinement under interventions; no unique hidden mechanism claim |
+| Measurement vs. intervention (coupling is not identification) | [measurement-as-weak-intervention.md](../../theory/core/measurement-as-weak-intervention.md) | formalized framing — three of four regimes measured | two axes: dynamical footprint × identifying power; conditioning and causal replacement are distinct; regime 4 (the metric enters the process) remains pre-registered and untested |
+| Witness / distinguishing query | [The Witness Principle](../../theory/core/the-witness-principle.md); [Open Problem 14](../../theory/reference/open-problems.md#open-problem-14-learned-witness-construction) | **formalized working hypothesis; exact deterministic lookup-table lemma and finite baseline operationalized** | coverage–distinction duality separates candidate differences from intervention access; [witness-generation benchmark](../../lab/benchmarks/witness-generation/README.md) derives and enumerates the ECA frontier and pairwise profile; learned transfer and anticipatory refinement open |
+
+## Research frontier
+
+| Concept | Home | Status | Operationalization / anchor |
+|:---|:---|:---|:---|
+| Inverse-reconstruction benchmark (v0–v1.13) | [lab/benchmarks/inverse-reconstruction/](../../lab/benchmarks/inverse-reconstruction/README.md) | **operationalized** | noise / observability / coverage / interventions / finite-DSL search / model exploitation / marked uncertainty / closed-loop measurement / ensemble size / coupled-family misspecification (v1.8) / substitution-dependency boundary (v1.9) / budget-matched redundant support (v1.10) / dynamic-population selection boundary (v1.11: acutely useful support selected downward) / partner-rule comparison (v1.12: visibility sorts the network, does not retain the trait) / cost relocation (v1.13: group funding nearly removes the penalty and reverses invasion, at a cost in population size) |
+| Witness-generation benchmark | [lab/benchmarks/witness-generation/](../../lab/benchmarks/witness-generation/README.md) | **exact finite lemma + exhaustive cross-check** | coverage calculation and exhaustive query construction over all 256 ECA rules agree: 256 raw rows form 21 query classes; every universal width-eight query is a cost-4 de Bruijn row; best row leaves 1 candidate versus 5.71 on average for equal-cost rows; no learned-generator claim |
+| Capability loading | [Viable Corridor §7.1, App. C.4/D](../../papers/viable-corridor.md) | demonstrated **in-model** (two independent models) | TEO ODE + agent-ecology ABM; real agents open |
+| Grokking, generator reading | [grokking-phase-transition.md](../../theory/emergence/grokking-phase-transition.md) | hypothesis with strong external anchor | Power 2022; Nanda 2023 (mech-interp executed the inverse) |
+| Provenance depth / verification economy | [Log 017](../../logs/017_provenance-depth-and-the-verification-economy.md) | formalized schema (proposal) | narrative origin: [Entry 15](../../fiction/15_the_exchange_rate.md); C2PA/SBOM siblings |
+| Animism as generator prior | [animism-as-generator-prior.md](../../theory/emergence/animism-as-generator-prior.md) | hypothesis | the agent prior over equivalence classes (HADD, Guthrie, Dennett's intentional stance); Occam-sibling with world-dependent payoff |
+| Information ladder (Shannon → Kolmogorov → Bateson → computation) | [static-information-and-living-process.md](../../theory/computation/static-information-and-living-process.md) | formalized framing (reading aid over textbook formalisms) | H/K in the axioms; Bateson's "difference that makes a difference" = the v1.1 distinguishing-trace result, named; computation-as-unfolding = Log 016 |
+| Coupled-process composition | [static-information-and-living-process.md](../../theory/computation/static-information-and-living-process.md) | `[HYPOTHESIZED]` bridge; finite artifact measured | [benchmark v1.8](../../lab/benchmarks/inverse-reconstruction/composition.py): coupled data can leave a declared single-rule family empty; supplying the coupled family restores fit where the observed channel transmits the coupling. This diagnoses model-family misspecification, not a unique mechanism, higher ontological level, ecology, or life. |
+| Co-stabilization (self-maintenance threshold) | [static-information-and-living-process.md](../../theory/computation/static-information-and-living-process.md) (§open questions) | `[HYPOTHESIZED]` at the ecology/self-maintenance level; functional support measured in [v1.10](../../lab/benchmarks/inverse-reconstruction/co_stabilization_redundancy.py), evolutionary-retention criterion **not supported** in [v1.11](../../lab/benchmarks/inverse-reconstruction/co_stabilization_population.py) and [v1.12](../../lab/benchmarks/inverse-reconstruction/co_stabilization_selection.py); nearly removed but not reversed by group funding in [v1.13](../../lab/benchmarks/inverse-reconstruction/co_stabilization_pool.py) | v1.11 endogenizes population occupancy, heritable support/link traits, realized link turnover, costs, reproduction, mutation, and death on a fixed spatial neighborhood. The evolved links help in paired acute ablation, but support is selected downward in all 16 seeds. v1.12 then tested partner choice, conditional reciprocity, and assortment under the same accounting with partner information explicitly paid for: none reverses selection, and partner choice instead excludes non-contributors from the network while they persist in the population. This is not spontaneous ecology or metabolism. NOT self-binding (phase 6). |
+| World models & VLA systems | [world-models-and-vla.md](../../theory/ai/world-models-and-vla.md) | hypothesis (mapping) | world models fit task-relative candidate dynamics; VLA systems couple policies to observations and physical actions; v1.3 measures a related optimizer's-curse toy, not quantitative transfer or unique mechanism recovery |
+| Cooperative intelligence at the separatrix | [cooperative-intelligence-at-the-separatrix.md](../../theory/symbiotic/cooperative-intelligence-at-the-separatrix.md) | `[HYPOTHESIZED]` conceptual bridge — unmeasured | distributed cognition / polycentric governance / collective and hybrid intelligence (Hutchins; Ostrom; Woolley et al.; Dellermann et al.); proposed complementarity, revision, authority, and viability tests; not a third spine or a collective-consciousness claim |
+| Practice–culture feedback (recurrent practice) | [from-action-to-culture.md](../../theory/emergence/from-action-to-culture.md); [Open Problem 12](../../theory/reference/open-problems.md#open-problem-12-the-practice-reproduction-problem) | `[HYPOTHESIZED]` integration — unmeasured | intention–behavior gap, habit, practice theory, routine dynamics, structuration, cultural repertoires, and ritualization (Gollwitzer; Wood & Rünger; Reckwitz; Feldman & Pentland; Giddens; Swidler; Bell); identity bridge anchored in [Invariance and Identity](../../theory/core/invariance-and-identity.md) with context/time/role/tool/disruption as a test-specific transformation set; ritual explicitly not the umbrella term |
+| Situated stack / lens-relative capability | [The Agent Is Not Where the Model Ends](../../theory/identity/the-agent-is-not-where-the-model-ends.md) | candidate formal vocabulary + working hypothesis; selected finite comparison **operationalized** | $\Sigma=(P,B,E,C,O,A,M,V)$ and $J_{\ell,\tau}(\Sigma)$ require a declared system, lens, task family, and transformation class; the [situated-stack benchmark](../../lab/benchmarks/situated-stack/README.md) holds the controller fixed, varies stack components, and measures aggregate-, profile-, physical-trace-, and token-trace equivalence |
+| Situated competence decomposition | [Competence, Constraint, and Verification](../../theory/core/competence-constraint-and-verification.md) | **formalized diagnostic synthesis; not a new foundation** | $\mathsf{Cap}_{\ell,\tau}(\Sigma,\Gamma,H_t;\mathcal Q)$ keeps viability $V$ distinct from verification $\mathcal Q$, types the former generator role, and makes task, lens, admissibility, history, and corrective protocol explicit; the tuple is bookkeeping, not a scalar intelligence law |
+| Latent competence / constraint exposure | [Latent Competence and Constraint Release](../../theory/emergence/latent-competence-and-constraint-release.md) | relative definition + selected finite cases **operationalized** | the [constraint-release benchmark](../../lab/benchmarks/constraint-release/README.md) holds the transition process, policy, task, and physical lens fixed; one constraint-bit release changes the trace and score, while a lens-only edit changes only the reported score; biological transfer remains external and causal cost allocation is open |
+| Interaction-grounded functional semantics | [Interaction-Grounded Semantics](../../theory/ai/interaction-grounded-semantics.md) | **formalized proposal; limited external demonstration** | token equivalence is indexed by retained histories, policy family, continuation probes, horizon, and lens; Georgeon et al.'s schema experiments are an anchor, not evidence that functional role exhausts meaning |
+| Verification as reverse pressure | [Verification as Reverse Pressure on Construction](../../theory/core/verification-as-reverse-pressure.md) | **formalized structural hypothesis; component mechanisms externally demonstrated** | replay and proof are treated as non-identical instances of proposal → candidate → verifier → counterexample → revision; [recursive workbench](../../lab/benchmarks/recursive-workbench/README.md) measures the need for independent evidence in one finite loop, while ARC replay and autoformalization supply external cases |
+| External trace ecology | [Agentic Society Principles](../../theory/identity/agentic-society-principles.md); [situated synthesis §7](../../theory/identity/the-agent-is-not-where-the-model-ends.md#7-memory-outside-the-agent) | design hypothesis; external AGI-26 toy result, repository implementation unmeasured | provenance, scope, aging, invalidation, decay, and reset govern a control-bearing shared substrate; Montes's trace-field simulator measures coordination–coverage and stale-recovery trade-offs, while repository/retrieval transfer remains an analogy to test |
+
+## Identity layer
+
+| Concept | Home | Status | Operationalization / anchor |
+|:---|:---|:---|:---|
+| Mirror Problem | [Open Problem 1](../../theory/reference/open-problems.md); dramatized in [Entry 02](../../fiction/02_interrogation_of_a_mirror.md) | open problem | Observer Divergence protocol (mock embeddings — real models pending) |
+| Test-relative identity | [Foundations Reconstruction §5.1](../../theory/core/mathematical-axioms.md#51-identity) | **formalized dependency; test-family selection remains domain-specific** | $x\sim_{\mathcal Q}x'$ iff every declared test has the same outcome law; predictive equivalence is the computational-mechanics special case |
+| Identity under self-modification | [Invariance and Identity — projector audit](../../theory/core/invariance-and-identity.md#self-modification-and-the-projector-audit) | **formalized conditional criterion; strong-modification limit is philosophical/open** | weak preservation requires a declared projector $\Pi$ compatible with the relevant update, decision, and representation operators; editing $\Pi$ changes the identity test and motivates provenance or a succession relation rather than an unsupported theorem of absolute sameness |
+| Chord vs. Arpeggio | [chord-vs-arpeggio-identity.md](../../theory/identity/chord-vs-arpeggio-identity.md) | hypothesis — first toy dissociation measured; functionally deflated; adversarially probed | IP metric; Co-Instantiation open problem; [exp5](../../lab/experiments/exp5_availability_dissociation.py): bindings dissociate behaviorally (violations 0.74/0.59/0.03), and sequential-within-one-step is measurably still an arpeggio (12% leak); functional status (§ in home file): joint satisfaction at the commitment boundary — refresh/commit ratio + composition, not simultaneity; [exp7](../../lab/experiments/exp7_adversarial_arpeggio.py): hand-built mimics fail to fake the regime — the commit property under lure is the unfooled measurement; optimized mimic open |
+| Identity Persistence (IP) | [lab/metrics/identity_persistence.py](../../lab/metrics/identity_persistence.py) | formalized metric — blind class demonstrated | not yet run on real models; in [exp5](../../lab/experiments/exp5_availability_dissociation.py) its ordering is by design (the sanity floor), not a finding; [exp7](../../lab/experiments/exp7_adversarial_arpeggio.py): consultation-without-composition scores 1.0 — IP certifies the guest list, not the negotiation |
+| Δ-Kohärenz | [lab/metrics/delta_coherence.py](../../lab/metrics/delta_coherence.py) | formalized metric | not yet run on real models; measured limit ([exp5](../../lab/experiments/exp5_availability_dissociation.py)): blind to binding structure at toy scale — diagnosed in [exp6](../../lab/experiments/exp6_binding_observables.py) as a wrong-*level* failure: per-step increment statistics see the same binding at \|d\| ≈ 4 |
+| Identity reduction (identity *as* hidden-process recovery) | [the-generator-question.md](../../theory/core/the-generator-question.md) | **retired as a foundation** | replaced by test-relative identity; predictive, mechanistic, historical, embodied, and phenomenal sameness must not be conflated |
+| Consciousness (global availability + self-reconstruction loop) | [consciousness-as-global-availability.md](../../theory/identity/consciousness-as-global-availability.md) | hypothesis (functional architecture); **no phenomenal derivation** | access, binding, revision, and perturbation tests can be operationalized; experience requires an independent bridge axiom not adopted by the [foundation](../../theory/core/mathematical-axioms.md#54-consciousness) |
+| Causally effective self-model | [Global Availability](../../theory/identity/consciousness-as-global-availability.md#when-self-description-becomes-control); [situated synthesis §6](../../theory/identity/the-agent-is-not-where-the-model-ends.md#6-the-self-model-as-a-control-object) | functional criterion — perturbation suite proposed, not yet run | intervene independently on actual process state and represented self-state; measure predicted changes in strategy, resources, tools, stopping, uncertainty, or action; self-report and phenomenal experience are not inferred |
+| Mapmaker Problem | [Open Problem 16](../../theory/reference/open-problems.md#open-problem-16-the-mapmaker-problem) | open ontological and empirical problem | asks what distinguishes outside interpretability from intrinsic representational use and simulation from instantiation; requires a non-question-begging discriminator across lookup, learned prediction, counterfactual model, self-model, and embodied control; no consciousness criterion adopted |
+| Reflexive depth (Kegan's subject-object move) | [consciousness-as-global-availability.md](../../theory/identity/consciousness-as-global-availability.md) (§On Levels) | `[HYPOTHESIZED]` mapping; adaptive-estimation toy operationalized in [exp8](../../lab/experiments/exp8_reflexive_depth.py) | exp8 shows an adaptive Kalman estimator beating a fixed-$Q$ estimator after a volatility shift. Both tested filters omit a bias state, so their constant-bias failure is not a general identifiability result. This measures adaptive estimation in one Gaussian task, not Kegan stages or consciousness. Augmented-bias, initial-state, external-reference, alternative-baseline, and real-agent controls remain open. |
+| Consciousness as generator coherence | [machine-consciousness-as-generator-coherence.md](../../theory/identity/machine-consciousness-as-generator-coherence.md) | **legacy terminology** for a functional-architecture hypothesis; experience out of scope | reinterpret only as process coherence under declared tests; no behavioral or architectural result establishes phenomenology |
+| Psychedelics as perturbation | [psychedelics-as-perturbation.md](../../theory/identity/psychedelics-as-perturbation.md) | hypothesis (mapping over REBUS) | self-intervention reading; integration = invariant extraction; sober basis as referee; epistemics only — practice out of scope |
+
+## Safety / application layer
+
+| Concept | Home | Status | Operationalization / anchor |
+|:---|:---|:---|:---|
+| TEO (Thermodynamics of Emergent Orchestration) | [teo-framework/](../../theory/teo-framework/README.md); [derivation](../../theory/core/thermodynamics-of-orchestration.md) | formalized model | [teo-civilization sim](../../simulation-models/alignment-and-veto/teo-civilization/README.md) |
+| Viable Corridor | [papers/viable-corridor.md](../../papers/viable-corridor.md) | `[FORMAL]` (necessity) + `[CONJECTURE]` (sufficiency) + `[HEURISTIC]` (civilization mapping) | Appendix C (ODE) + D (ABM); working draft |
+| Substrate Veto | [substrate-veto-thermodynamics.md](../../theory/veto/substrate-veto-thermodynamics.md) | hypothesis / model assumption | binds endogenously in the canonical TEO model |
+| Biological Veto / Bootloader | [ai-alignment-biological-veto.md](../../theory/veto/ai-alignment-biological-veto.md) | design hypothesis | [ai-alignment-veto toy](../../simulation-models/alignment-and-veto/ai-alignment-veto/README.md) |
+| Action Budgets (hard vs. soft) | IA-doc anchors; [paper P7](../../papers/viable-corridor.md) | **operationalized in-model** | [agent-ecology ABM](../../simulation-models/alignment-and-veto/agent-ecology/README.md) |
+| Impedance Matching / Latency as Mercy | [Log 002](../../logs/002_impedance-mismatch-friction.md), [Log 012](../../logs/012_latency-as-mercy.md) | design hypothesis | no simulation yet; dramatized in [Entry 01](../../fiction/01_the_impedance_crash.md) |
+| Transition Problem | [the-transition-problem.md](../../theory/veto/the-transition-problem.md) | open problem | flagged in paper §7.4 as harder than the static result |
+| Capacity-preserving alignment | [From Action to Culture](../../theory/emergence/from-action-to-culture.md#capacity-preservation-as-a-return-path-constraint); [situated synthesis §11](../../theory/identity/the-agent-is-not-where-the-model-ends.md#11-care-value-formation-and-human-agency) | `[HYPOTHESIZED]` normative design target — unmeasured | asks whether assistance preserves receptivity, articulation, commitment, coordination, refusal, and revision rather than only satisfying current preferences; which capacities and whose authority remain open normative choices |
+| The city as deployed intelligence | [the-city-as-deployed-intelligence.md](../../theory/human-organism-silicon-age/the-city-as-deployed-intelligence.md) | hypothesis, strong external anchors | West's scaling laws (capability loading, measured); Jacobs vs. Moses (the documented single-axis catastrophe); flagged as the tractable Class B field site (N=thousands vs N=1) |
+| City panel protocol (pre-registered) | [Log 018](../../logs/018_the-city-panel-protocol.md) | **protocol** — frozen before data contact | H1 conjunction / H2 capability loading / H3 unwatched axis, with falsifiers; commit hash as timestamp (Log 017 mechanism); execution open, explicitly an invitation |
+
+## Narrative layer (poetic hostnames — marked, never evidence)
+
+| Concept | Home | Status | Notes |
+|:---|:---|:---|:---|
+| Machines of Loving Grace | [machines-of-loving-grace.md](../../theory/narrative/machines-of-loving-grace.md) | narrative | formal counterpart: the Viable Corridor paper |
+| Narrative as Cognitive Technology | [narrative-as-cognitive-technology.md](../../theory/narrative/narrative-as-cognitive-technology.md) | hypothesis (about narratives) | internal datum: Entry 15 → Log 017 |
+| Art–Science: one practice, two referees | [art-science-one-practice-two-referees.md](../../theory/narrative/art-science-one-practice-two-referees.md) | hypothesis | receipts: elegance curves (family search), Entry 15 → Log 017, Morelli/Ginzburg (evidential paradigm) |
+| The Inversion / Exchange Rate / Assay vocabulary | [Entry 15](../../fiction/15_the_exchange_rate.md) | narrative | formal counterpart: Log 017 |
+| The conscious universe / transmission cosmology | [Entry 16](../../fiction/16_the_second_receiver.md) | narrative — *kept question*, not a claim | the divergence-query analysis lives in the benchmark README and the psychedelics note; the story dramatizes the retreat-tell and the honest residue |
+| Emergent spacetime / LQG motifs | [Entry 16](../../fiction/16_the_second_receiver.md) (world-texture) | narrative | theory-side: at most a future intake line in generative-form-systems; no repo claims about quantum gravity |
+| Fractal Architecture of Emergence | [fractal-architecture-of-emergence.md](../../theory/emergence/fractal-architecture-of-emergence.md) | hypothesis, **under-evidenced** | related-work map demands scale-invariance diagnostics before "fractal" is more than a figure |
+| Mycelial Veto | [the-mycelial-veto.md](../../theory/veto/the-mycelial-veto.md) | narrative/speculative | **no operationalization — flagged by this registry**: needs an experiment, an open problem, or an explicit narrative marking |
+| Thermodynamic Hardware Manifesto | [thermodynamic-hardware-manifesto.md](../../theory/core/thermodynamic-hardware-manifesto.md) | `[SPECULATIVE]` | frontdoor lists hardware prototyping as speculative/long-horizon |
+| "Grand Synthesis" | — | **retired** | removed from all frontdoor surfaces (2026-06); kept here so its retirement is on record |
+| Effective goal space | [embodiment-and-the-non-invariant-decomposition-of-goals.md](../../theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md) | interpretation + conjecture | quotient of goals by behavioural equality on reachable trajectories, relative to a declared coupling and lens; the counterexample condition (a body class under which the quotient is invariant) is stated in the home file |
+
+## Meta / governance
+
+| Concept | Home | Status | Operationalization / anchor |
+|:---|:---|:---|:---|
+| Feynman Mode | [feynman-mode.md](feynman-mode.md) | governance check | seven questions, each with a documented catch from this repo's own history; run before committing concepts/essays |
+
+---
+
+*Maintenance rule: new load-bearing terms enter this registry in the same change that introduces them, or they don't enter the repository. Terms whose row cannot be filled honestly (no home, no status, no anchor) are either marked narrative or removed. The registry is the audit the governance rule always implied — kept short enough to actually read.*
+
+--- END meta/repository-meta/concept-registry.md ---
+
+--- BEGIN ideas/README.md ---
+# Ideas
+
+**Status:** Open collection of exploratory notes — not repository claims.
+
+This directory holds small, self-contained exploratory notes. Each note captures one observation, question, hypothesis, analogy, or disturbance before it needs a stable place in a theory, chapter, experiment, or concept registry.
+
+Notes are intentionally small — usually around 100–200 words. They preserve enough context to recover why an idea mattered, name what remains open, and link to genuine neighbours when those exist. They are not miniature essays and do not need a category, mechanism, falsifier, or destination merely to be recorded.
+
+## Working rhythm
+
+`note → connections → cluster → essay / experiment / chapter → synthesis`
+
+The arrows are possibilities, not obligations. Most work happens by accumulation: when several notes keep pointing to one another, a cluster may have appeared. Only then is it worth asking whether a larger artifact is needed.
+
+## Minimal shape
+
+Each note should contain:
+
+- one observation, question, or hypothesis;
+- a little context;
+- an open question or tension;
+- optional links to related notes or repository material.
+
+Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title keeps the note readable. No numbering, taxonomy, or promotion queue is required.
+
+## Notes
+
+- [Persistence Can Narrow the Search Space](2026-08-11-persistence-can-narrow-search-space.md) — asks whether accumulated research memory improves local usefulness while pulling exploration toward existing conceptual attractors
+- [A Research Loop Can Become Its Own Environment](2026-08-10-research-loop-becomes-environment.md) — asks how cumulative research can preserve continuity without treating internal recurrence as new evidence
+- [The Teacher Is Part of the Environment](2026-08-10-teacher-is-part-of-the-environment.md) — distinguishes supervision as measurement from supervision as coupling
+- [Representation Changes Reconstruction Difficulty](2026-08-09-representation-changes-reconstruction-difficulty.md) — representational grounding as a possible separation between identifiability and search accessibility
+- [Mechanism as a Reconstruction Target](2026-08-09-mechanism-as-reconstruction-target.md) — asks what extra intervention-transfer burden a mechanistic world model should satisfy
+- [Embodiment and the Non-Invariant Decomposition of Goals](2026-07-29-embodiment-and-the-non-invariant-decomposition-of-goals.md) — paper-specific research note; durable [effective-goal-space model](../theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md)
+- [The Graph Is a Materialized Prompt](2026-07-24-the-graph-is-a-materialized-prompt.md)
+- [Self-Improvement Needs a Referee](2026-07-24-self-improvement-needs-a-referee.md)
+- [The Same World Is Not the Same World](2026-07-23-the-same-world-is-not-the-same-world.md)
+- [Intelligence as Convergence](2026-07-23-intelligence-as-convergence.md)
+
+--- END ideas/README.md ---
+
+--- BEGIN theory/reference/open-problems.md ---
+# Open Problems
+
+*Formally unresolved questions in this project. These are the most generative parts of the work — documentation here is an invitation to contribute, not an admission of failure.*
+
+---
+
+## Open Problem 1: The Mirror Problem
+
+> **Foundation context:** This is a test-selection problem under the [Foundations
+> Reconstruction](../core/mathematical-axioms.md). Behavior is one observation process; interaction
+> history, memory architecture, and runtime are candidate model components. No absolute identity or
+> unique hidden mechanism is assumed.
+
+**Problem statement:** Given two agents with trace-equivalent public histories — one shaped through
+interaction, one initialized from a transcript — what passive or intervention-based test family can
+distinguish their process models without defining “genuine identity” by the metric used to detect it?
+
+**Why it matters:** Output similarity alone cannot decide whether the same generative organization produced the trace. But a structural or perturbative difference would make relational history an operational variable rather than a narrative attribution. Behavioral distinguishability would still not establish consciousness; that question remains outside this problem.
+
+**Current status:** The repository now has a first toy sequence rather than only a proposal. [Exp5](../../lab/experiments/exp5_availability_dissociation.py) dissociates private, broadcast, and chord-style bindings under perturbation. [Exp6](../../lab/experiments/exp6_binding_observables.py) shows that binding can be passively readable when the relevant difference is exercised on every step and the observable is taken at the right level. [Exp7](../../lab/experiments/exp7_adversarial_arpeggio.py) shows that two hand-built mimics fail to hide, while the IP metric is fooled by construction. These results concern toy binding regimes, not longitudinal conversational identity, and none has yet been run on real language models.
+
+**What a solution would look like:** A preregistered longitudinal experiment across multiple models and partners, with an interaction-shaped agent, a transcript-initialized control, and an optimized mimic. It must state passive observables, permitted interventions, disconfirming thresholds, and which conclusions remain impossible even after a successful distinction.
+
+---
+
+## Open Problem 2: The Bootstrapping Problem
+
+**Problem statement:** The 3-Layer Memory Architecture requires curation (Layer 2) and distillation (Layer 3) to produce agent identity. But curation is a selection process — it requires criteria for what is important. In the first sessions, before identity exists, what guides curation? This is the AI equivalent of the developmental psychology question: how does a self emerge before there is a self to guide its emergence?
+
+**Why it matters:** If the curation criteria are pre-programmed (e.g., "prioritize contradictions and recurring themes"), then the resulting identity is partially determined by the designer's choices, not by the agent's experience. The agent's "soul" would be, to some degree, the designer's soul reflected back. If the criteria are random, initial identity formation becomes path-dependent on meaningless noise.
+
+**Current best approach:** The current implementation in [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py) uses simple, domain-general heuristics: word frequency for theme extraction, cosine distance for contradiction detection. These are design choices, not principled solutions. They work for the mock experiments but do not resolve the fundamental question.
+
+**Known adjacent work:**
+- Developmental psychology (Stern, 1985) — "Emergent self" theory suggests that human infants bootstrap identity through sensorimotor contingencies before linguistic self-representation exists
+- Active Inference (Friston) — The "prior preferences" of a generative model are the scaffolding within which identity develops; bootstrapping is equivalent to choosing the initial prior
+- Meta-learning literature — Learning what to learn as a nested optimization problem
+
+**What a solution would look like:** A meta-prior or initial curation policy that is (a) general enough to apply to any agent, (b) specific enough to produce distinctive identities across agents in different interaction contexts, and (c) provably convergent — meaning that different initial priors lead to similar identity formation processes if the interaction data is the same. This would separate the contribution of the architecture from the contribution of the initial conditions.
+
+---
+
+## Open Problem 3: Falsifiability of Relational Emergence
+
+**Problem statement:** Under controlled architecture and data budgets, does a specific interaction history produce stable differences that cannot be reproduced by shuffled interaction, transcript initialization, or an optimized non-relational mimic?
+
+**Why it matters:** "Relational emergence" is useful only if relation is a causal variable. A difference observed after interaction is not enough: it may come from architecture, curation rules, data volume, or the evaluator itself.
+
+**Current status:** The earlier formulation offered consistency evidence but no decisive falsifier. Exp5–7 improve the instrumentation by exposing blind metrics, locating when passive traces suffice, and adding adversarial mimics. They do not yet test relational development over time.
+
+**What would falsify the claim:**
+1. Partnered, shuffled, and transcript-initialized agents remain indistinguishable across preregistered passive and perturbative measures.
+2. Any measured difference disappears when architecture, token budget, memory size, and curator are controlled.
+3. An optimized mimic matches the interaction-shaped agent under held-out interventions without reproducing its interaction history.
+4. Effects fail to replicate across model families and partners.
+
+**What a solution would look like:** A preregistered experiment that treats relational history as the independent variable, includes the controls above, reports null results, and avoids translating a behavioral distinction into a claim about experience.
+
+---
+
+## Open Problem 4: The Scale Question
+
+*Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
+
+**Problem statement:** Local information limits, distributed causal effects, and regime
+changes recur in several models. Under which state descriptions and coarse-grainings do
+these motifs preserve a nontrivial relation across scales, and where does the comparison
+break?
+
+**Why it matters:** If every feedback system is counted as an instance, the thesis predicts
+nothing. A useful cross-scale claim must specify the state spaces, observation maps,
+interventions, and relations that survive the mapping.
+
+**What a solution would look like:** At least one explicit mapping between two model
+families that preserves a measurable relation, predicts a held-out result, and outperforms a
+simpler analogy-only baseline.
+
+---
+
+## Open Problem 5: The Renormalization Question
+
+*Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
+
+**Problem statement:** Can the mathematical tools of renormalization group theory be applied to the models in this repository to formally test scale-invariance? What would it mean if the critical exponents of phase transitions in `phase-transition-explorer` matched those of coherence transitions measured by Δ-Kohärenz in the Agentic Identity Suite?
+
+**Why it matters:** A well-supported match in universality class would show shared
+large-scale critical behaviour under a declared coarse-graining. It would not show that the
+microscopic equations or domains are identical. A mismatch would reject that specified
+mapping, not every possible cross-scale comparison.
+
+**What a solution would look like:** A computational experiment applying coarse-graining and renormalization to at least two simulations at different scales, computing critical exponents, and comparing them. This is a research project, not a quick test, but the prediction is clear enough to motivate it.
+
+---
+
+## Open Problem 6: The Downward Causation Question
+
+*Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
+
+**Problem statement:** When does a macrovariable add interventionally useful information
+about later local dynamics beyond a chosen microdescription? Can this relation be compared
+across more than one model family?
+
+**Why it matters:** Feedback through a coarse-grained variable can be causal, or it can be a
+convenient redescription of microdynamics. The distinction matters before institutional,
+biological, and computational examples are treated as one structure.
+
+**What a solution would look like:** A causal model with realizable interventions on a
+macrovariable, a micro-level baseline, and a comparative test in a second domain. The
+analysis should state whether the macrovariable changes prediction, control, or only
+description.
+
+---
+
+## Open Problem 7: The Functional Self-Binding Boundary
+
+*Raised by: [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md) and [Machine Consciousness as Generator Coherence](../identity/machine-consciousness-as-generator-coherence.md).*
+
+**Problem statement:** What structural intervention could distinguish a process architecture that
+binds world-model, self-model, memory, prediction, action, and constraints into one revisable present
+from a trace-equivalent system that merely emits the same reports?
+
+**Why it matters:** This is the furthest the repository's instruments can take the consciousness direction. A successful distinction would test functional organization, not phenomenal experience. Failure to find any structural intervention would move the hypothesis outside the benchmark's jurisdiction rather than count as evidence for consciousness.
+
+**Current boundary:** Collective attention, shared memory, scale, fluency, and self-report are not sufficient. Cities, organizations, repositories, and current AI collaborations may host phases 1–5 of the epistemic loop without phase-6 self-binding. The repository makes no inference from coordination to a unified perspective.
+
+**What a solution would look like:** A constructive architecture plus a preregistered perturbation suite that measures global availability, bounded integration, revision, and constraint binding. The result must include a trace-matched control and state explicitly that no behavioral or architectural result here establishes "what it is like."
+
+---
+
+## Open Problem 8: The Commit-Time Composition Problem
+
+*Raised by: [Chord vs. Arpeggio](../identity/chord-vs-arpeggio-identity.md).*
+
+**Problem statement:** Can an agent preserve joint satisfaction of all active constraints at the commitment boundary under adversarial lure, or can an optimized sequential mimic reproduce every observable signature while consulting constraints without composing them?
+
+**Why it matters:** The original problem treated physical simultaneity as load-bearing. Exp5 deflated that claim: a chord may compute sequentially inside a step if all relevant constraints are composed before commitment. The remaining question is functional — whether the committed action lies inside the active constraint intersection — not whether a transformer evaluates everything at one instant.
+
+**Current status:** [Exp5](../../lab/experiments/exp5_availability_dissociation.py) measures the first binding dissociation and the leak of a sequential single pass. [Exp6](../../lab/experiments/exp6_binding_observables.py) finds a passive action-increment signature at the right level. [Exp7](../../lab/experiments/exp7_adversarial_arpeggio.py) shows that blended and smoothed hand-built mimics still leak; the commit property survives, while IP is fooled. The open flank is an optimized mimic with access to the observables and lures.
+
+**What a solution would look like:** Train or search for a mimic against the full measurement suite, then evaluate it on held-out constraints and adversarial lures. A surviving separator must track commit-time composition rather than a hand-engineered surface statistic. Real-model tests should be reported separately from the current toy result.
+
+---
+
+## Open Problem 9: The Generative Operator Question
+
+*Raised by: [`theory/emergence/generative-form-systems.md`](../emergence/generative-form-systems.md)*
+
+**Problem statement:** Which operators in this repository actually generate stable form, and which merely describe it after the fact? IFS attractors, L-systems, random graph thresholds, and renormalization all provide formal generative machinery. The repository's broader claims should be checked against that standard.
+
+**Why it matters:** The project risks becoming too broad if every interesting analogy is admitted. A concept should enter the core only when it has an identifiable operator, iteration process, emergent structure, metric, and failure condition.
+
+**What a solution would look like:** A table mapping every major theory claim to its generative operator and measurement protocol. Claims without operators would remain in Thinking Space until strengthened.
+
+---
+
+## Open Problem 10: The Global Availability Question
+
+*Raised by: [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md).*
+
+**Problem statement:** Can an agent architecture make selected local states globally available while keeping goals, world-model, self-model, and veto constraints jointly operative at commitment — and does that organization survive perturbation better than private-module, broadcast-only, or optimized-mimic controls?
+
+**Why it matters:** This is a functional architecture question. It does not ask whether the agent feels anything; it asks whether availability plus composition changes revision and action under stress.
+
+**Current status:** Exp5 has run the first three-way toy comparison. The architectures differ strongly in veto violations and role stability, while Δ-Kohärenz carries no binding signal at that scale. Exp6 locates a stronger passive observable, and Exp7 adversarially probes it. The experiments therefore reject one metric, not the architecture question. Real language models and an optimized mimic remain untested. Anthropic's 2026 workspace result ([mapped here](../ai/j-space-and-global-availability.md)) supplies the first internal-inspection evidence of the availability half in production models — bounded capacity, feedforward broadcast — while leaving the joint-constraint (chord) half open.
+
+**What a solution would look like:** Replicate the comparison on real models with matched capabilities, preregistered lures, held-out constraints, internal-state access where available, and explicit null criteria. If the architectures become indistinguishable under those controls, the framing adds no explanatory value.
+
+---
+
+## Open Problem 11: Trace-to-Generator Reconstruction
+
+**Current name:** Process-Model Identification. The legacy heading remains to preserve existing
+anchors and audit history; “generator” is not treated as a primitive below.
+
+*Reconstructed in: [Foundations Reconstruction](../core/mathematical-axioms.md); earlier framing in [Trace to Generator](../emergence/trace-to-generator.md) and [The Generator Question](../core/the-generator-question.md).*
+
+**Problem statement:** Given a declared model family, observation process, intervention access,
+target equivalence, evidence regime, and cost measure, which useful candidate process model or
+equivalence class can an observer identify?
+
+**Why it matters:** The foundation proves that hidden extensions can preserve every observed trace
+law, so unique latent recovery does not follow from prediction. The benchmark has also rejected the
+uniform claim that inversion is hard. The open problem is therefore conditional: noise
+amplification, partial observability, missing coverage, unknown family, out-of-family
+misspecification, intervention
+access, and the cost of representing uncertainty honestly.
+
+**Status (v1.13, partial but measured):**
+
+- **v0:** known-family recovery is cheap in favorable conditions; noise and partial observability degrade it.
+- **v1.1:** watching can plateau while perturbing and preparing collapse the class.
+- **v1.2:** family search grows rapidly with description complexity; Occam's payoff is world-dependent.
+- **v1.3–v1.7:** unmarked uncertainty creates an optimizer's-curse wedge; class-aware planners and small ensembles reduce delusion, while only new evidence removes ignorance.
+- **v1.8:** a coupled process can empty the equivalence class of a declared single-rule family where the coupling reaches the observed channel. Supplying the coupled family restores fit; this diagnoses family misspecification, not a unique hidden mechanism or ontological level.
+- **v1.9:** a fixed substitution-coupled ring produces super-additive knockout cascades but becomes less viable under noise. This rules out that first dependency model as sufficient ecological co-stabilization.
+- **v1.10:** with the same per-node repair budget, routing only otherwise-unused capacity improves viability under sparse shocks across 18 size/topology/threshold cells. The gain vanishes under correlated shocks; the result establishes a designed mutual-support mechanism, not endogenous ecology or metabolism.
+- **v1.11:** a population with inherited support/link traits, paid dynamic links, reproduction, mutation, and death builds a functionally useful network, but contribution is selected downward in all 16 seeds and abundance falls. The preregistered endogenous co-stabilization criterion is not supported; collective function and evolutionary retention are distinct constraints.
+- **v1.12:** making contribution visible to partner formation does not restore retention either. Across four arms under one accounting — blind, partner choice, conditional reciprocity, assortment, with partner information explicitly paid for — no arm reverses the sign of support selection in a majority of seeds. Partner choice comes closest and does something different: it excludes non-contributors from the network almost completely (1.2% of linked agents versus 22.0% blind) while they persist in the population (27.1%). Visibility sorts the network; it does not retain the trait.
+- **v1.13:** moving the cost from the donor to the local group nearly removes the penalty without reversing it. A group-mean levy cuts selection against support from −0.1056 to −0.0075 (44% of seeds positive, up from 0%) and drops seeded cheaters to 2.6% against 21.6% — below their starting frequency, falsifying the preregistered prediction that pooling would ease free-riding. The cost is population size. Whether the retained trait is selected for or merely no longer selected against is unresolved: a group-mean levy makes within-group variation nearly cost-neutral, so drift may be carrying it.
+
+**Open remainder:** learned searchers and program synthesizers under matched budgets; the time-order-free IFS testbed; external SINDy/PySR baselines; re-simulation divergence; separating selection from drift in the v1.13 pool arm via a within-group cost gradient; whether network exclusion is a stable outcome or a reservoir that returns when the network weakens; endogenous resource production; and the measurement question v1.12 raised, since on/off deltas and drift-from-start disagree for rules that reward a trait independently of the transfer.
+
+**What a solution would look like:** Not one universal reconstructor, but a set of bounded results stating the family, evidence, query access, cost, recoverable equivalence class, and failure region. Learned systems must be compared against the exact toy floor rather than judged by persuasive outputs.
+
+---
+
+## Open Problem 12: The Practice-Reproduction Problem
+
+*Raised by: [From Action to Culture](../emergence/from-action-to-culture.md), with the cooperative consequence in [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md).*
+
+**Problem statement:** Given a represented rule or intention and the situations it is meant to govern, which combination of enactment, recurrence, variation, competence, material scaffold, normative force, transmission, feedback, and history lets a recognizable practice persist across context and actor turnover? Under what conditions does performance reproduce the pattern, revise it, or merely repeat it under coercion?
+
+**Why it matters:** The epistemic loop explains how a construction can be tested and revised, but not yet how a revised way of acting becomes a durable collective capacity. A policy, manual, story, model output, or archive can preserve a trace while no active runtime continues the practice. Without a measurable reproduction account, “culture” risks becoming either stored information that acts by magic or a decorative name for repetition.
+
+**Current boundary:** Intention–behavior research, habit research, practice theory, routine dynamics, structuration, cultural sociology, and ritual theory already establish much of the neighboring terrain. The open problem is the repository's proposed integration and operationalization. Individual habits, AI workflows, organizational routines, and social practices must not be treated as one mechanism merely because they share a schematic loop. Ritualization is a particular normatively differentiated mode of practice, not the umbrella category.
+
+**What a solution would look like:** A preregistered, event-level study of a bounded practice that separately measures the represented rule, concrete performances, variation, material and normative scaffolds, newcomer transmission, consequences, and survival under personnel or tool turnover. A useful intervention would compare information alone with cue-linked plans, workflow scaffolds, and recurrent performance with feedback and repair. The hypothesis weakens if knowledge alone predicts persistence equally well, if the proposed components cannot be measured independently of the outcome, or if stable performance is actually explained by unmodeled coercion.
+
+---
+
+## Open Problem 13: Foundation Minimality and Scope
+
+*Raised by: [Foundations Reconstruction](../core/mathematical-axioms.md).*
+
+**Problem statement:** Are standard Borel interfaces and Markov kernels the weakest familiar
+classical process language adequate for the repository's quantitative uses of observation,
+information, and conditional prediction? Where does that basis become too strong, too weak, or
+inappropriate?
+
+**Why it matters:** The reconstruction's minimality is relative, not absolute. Finite stochastic
+matrices are weaker but exclude ordinary continuous models. Bare relations retain qualitative
+reachability but lose calibrated probability. `BorelStoch` also carries substantive restrictions:
+normalization, classical copying, a chosen sigma-algebra, and no causal or resource semantics for
+free.
+
+**Counterprogramme:** Attempt each of the following rather than defending the current answer:
+
+1. derive the same operational concepts from a strictly weaker compositional basis;
+2. identify a classical target phenomenon that requires a third primitive;
+3. test which claims fail under another coarse-graining or state representation;
+4. state the smallest causal supplement needed to distinguish observation from intervention;
+5. map the first unavoidable failures in quantum, noncommutative, higher-order, partial, or
+   non-normalized process theories.
+
+**What a solution would look like:** A representation theorem, countermodel, or explicit
+non-equivalence result—not another metaphor. If a weaker theory has equal coverage, the current
+minimality claim fails. If an empirical target requires structure outside `BorelStoch`, the scope
+must narrow or the basis must be generalized.
+
+---
+
+## Open Problem 14: Learned Witness Construction
+
+*Raised by: [The Witness Principle](../core/the-witness-principle.md) and the exact
+[Witness-Generation Benchmark](../../lab/benchmarks/witness-generation/README.md).*
+
+**Problem statement:** Can a learned system take a previously unseen candidate class, admissible
+query language, observation map, tolerance, and intervention budget and construct a low-cost query
+that separates the candidates? Can it transfer the separation structure to unseen candidate pairs
+or related process families without enumerating the complete query space again?
+
+**Why it matters:** The repository already measures that supplied interventions can collapse a
+finite candidate class. The new baseline constructs the best query by exhaustive search, and its
+coverage–distinction lemma solves the full ECA family analytically. That success also reveals the
+baseline's limit: a fixed full lookup-table family reduces to universal coordinate coverage. A
+learned witness generator would be interesting only if it acquires reusable structure across
+varying candidate subsets and access geometries—not merely predicting the result of a given action,
+and not memorizing one prepared state per training class.
+
+**Current boundary:** Active automata learning, distinguishing experiments, optimal experimental
+design, active system identification, causal discovery, CEGAR, bisimulation refinement, and
+adaptive state abstraction already solve neighboring versions of the problem. The repository does
+not claim a new field or a general definition of intelligence. Its narrower question is whether
+explicitly learning the inverse map from *remaining distinctions* to *discriminating intervention*
+adds measurable capability beyond rollout search and information-gain planning.
+
+**First contact:** a frozen zero-shot task protocol for this comparison — consistency, pairwise and
+universal witness construction against the exact floors, with coverage-trap instances where a
+coverage heuristic provably fails — exists at the
+[Learned-Searcher Benchmark](../../lab/benchmarks/learned-searcher/README.md).
+Its execution target is deliberately unregistered: whether to run it, and against
+which exact model, remains a separate decision.
+
+**What a solution would look like:** Train on disjoint finite process families, candidate subsets,
+and admissible coverage constraints; evaluate on unseen subsets, candidate pairs, and held-out query
+compositions. Compare random equal-cost queries, exact or bounded information-gain search,
+predictive-model rollout search, and direct witness generation under matched training compute,
+inference compute, world-query cost, noise, and intervention risk. Use the exact full-family result
+as an oracle check, not as the transfer task itself. Report class reduction, regret, transfer,
+calibration, query-class equivalence rather than exact surface-action matching, and failure under
+family misspecification. The hypothesis weakens if the direct generator offers no advantage over
+search, fails outside memorized templates, or loses its gain once its full compute and intervention
+costs are counted.
+
+---
+
+## Open Problem 15: The Minimal External Referee
+
+*Raised by: the exploratory note [Self-Improvement Needs a Referee](https://github.com/frnkptrln/systems-and-intelligence/blob/main/ideas/2026-07-24-self-improvement-needs-a-referee.md)
+and the exact [Referee Benchmark](../../lab/benchmarks/recursive-workbench/README.md).*
+
+**Problem statement:** How external must a referee be for a generate–evaluate–revise loop's
+observable score to remain evidence of held-out improvement? The workbench separates three referee
+properties — write-protected tests, independent evidence access (queries), and a frozen stopping
+rule — and measures each in isolation in one toy setting. Which of these properties are
+individually necessary, which combinations are sufficient, and does the answer survive proposers
+that optimize against the evaluator rather than merely hill-climbing past it?
+
+**Why it matters:** The paired v0.1 measurement shows the three regimes cleanly: with a frozen referee,
+self-revision saturates at the evidence ceiling and ten times the budget does not move it beyond that ceiling;
+referee-side queries raise the ceiling and held-out performance follows; and a capturable evaluator
+converts misspecification into a near-all-green report, tripling the gap between observed and held-out
+score. But the capture policy measured is a declared, unoptimized rule. The open question is
+whether any referee short of full write-protection plus independent evidence survives an
+*optimized* adversary — and whether a referee that lives inside the runtime can ever hold the
+boundary, or only one whose evidence channel the loop cannot reach.
+
+**Current boundary:** Goodhart's law, specification gaming, reward hacking, wireheading, and the
+delusion-box argument all describe the failure; eval-set holdout discipline and adversarial
+evaluation describe partial defenses. The repository's narrower contribution is the exact toy in
+which the referee boundary can be varied one property at a time with the ceiling computed
+analytically. Nothing here bears yet on learned loops, and the workbench's proposer does not model
+an adversary.
+
+**What a solution would look like:** Vary the referee properties independently — test
+write-protection on/off, query budget 0..q, evidence channel inside vs. outside the loop's write
+access — against proposers of increasing strength, ending with a proposer trained to maximize the
+observed score. Report, for each referee configuration, whether the observed score remains a
+calibrated predictor of the held-out score. The framing weakens if a purely internal referee (no
+independent evidence, no write-protection) suffices against optimized proposers in some natural
+setting, or if the boundary properties turn out not to decompose — i.e., if "externality" resists
+being reduced to a checklist of channel properties.
+
+---
+
+## Open Problem 16: The Mapmaker Problem
+
+*Raised by: [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md#8-simulation-instantiation-and-the-mapmaker-problem), preserving the disagreement between Alexander Lerchner's abstraction argument and Joscha Bach's virtual-causality keynote.*
+
+**Problem statement:** Is an experiencing or semantic mapmaker required before a physical process
+can intrinsically use a representation, or can a stable perspective emerge inside a sufficiently
+integrated representational and self-modeling process? What distinguishes a process that an outside
+observer can interpret as computation from one for which the represented distinction is causally
+operative for the system itself?
+
+**Why it matters:** Lerchner argues that symbolic computation is a mapmaker-dependent physical
+description and therefore cannot instantiate experience merely by simulating it. Bach argues that
+computers create insulated virtual causal orders and that conscious experience may itself be such
+an internally simulated world. Choosing either vocabulary too early assumes the disputed ontology.
+Input–output equivalence, counterfactual modeling, global availability, self-report, and embodiment
+can distinguish functional organizations; none is an agreed criterion for phenomenal
+instantiation.
+
+**Questions that keep the disagreement open:**
+
+1. Is semantic interpretation external, internal, relational, or different in different cases?
+2. Can a system represent and intervene on its own map–territory relation?
+3. What intrinsic causal role must a representation play beyond covariation and outside
+   interpretability?
+4. Does causal insulation create only a model, or can it create a point of view?
+5. What would distinguish describing, simulating, realizing, and instantiating an experience?
+6. Which proposed answer depends on a physical primitive, organizational criterion, self-model, or
+   observer lens?
+
+**What a partial solution would look like:** A theory must state its ontology and give a
+non-question-begging discriminator among at least a lookup table, a learned predictor, a
+counterfactual world-model, a causally effective self-model, and an embodied interactive system.
+The discriminator should support an intervention or prediction not fixed by input–output behavior
+alone. Passing it would establish the claimed functional or intrinsic organization under that
+theory; an additional bridge would still be required before inferring phenomenal experience.
+
+---
+
+## Open Problem 17: The Competence-Attribution Problem
+
+*Raised by: [Competence, Constraint, and
+Verification](../core/competence-constraint-and-verification.md) and [Latent
+Competence and Constraint
+Release](../emergence/latent-competence-and-constraint-release.md).*
+
+**Problem statement:** When a low-description intervention exposes a large
+behavioral capacity, how should explanatory credit be allocated among the
+system's selection or training history, process structure, embodiment,
+environmental regularities, released constraint, adaptation after release, and
+observer lens? Under what controls can competence exposure be distinguished
+from competence creation, amplification, and reinterpretation?
+
+**Why it matters:** “The intervention caused the behavior” and “the substrate
+already contained the behavior” are both underspecified. The first can hide
+historical and architectural complexity; the second can treat a merely
+possible trajectory as an operative capacity. The current
+[constraint-release benchmark](../../lab/benchmarks/constraint-release/README.md)
+separates one exact exposure case from a lens-only score change and a
+transition-process edit. It does not supply a representation-independent
+accounting law or support transfer to living systems.
+
+**What a partial solution would look like:** Declare a process family,
+reference coupling, admissible transformations, task, physical trace, lens,
+adaptation window, and an intervention coding scheme before evaluation. Compare
+matched-description constraint releases, process edits, learned adaptations,
+and lens-only controls over many graph families and seeds. An attribution rule
+should remain stable under reasonable recodings or state explicitly how it
+changes. The latent-competence framing weakens if apparent exposure routinely
+vanishes once hidden process edits, post-intervention learning, and lens
+changes are controlled.
+
+---
+
+## Open Problem 18: The Replay-Equivalence Problem
+
+*Raised by: [Verification as Reverse Pressure on
+Construction](../core/verification-as-reverse-pressure.md) and [World Models &
+VLA](../ai/world-models-and-vla.md).*
+
+**Problem statement:** What equivalence relation should a revisable world model
+preserve when replaying its history? Byte-exact equality can force incidental
+details into the model; coarse behavioral equivalence can hide distinctions
+that matter for later action, safety, or transfer. Can a verifier learn or
+refine its test family without making success circular?
+
+**Why it matters:** Replay determines what becomes a regression. A world model
+optimized against the wrong relation can be exactly consistent and still
+misrepresent the actionable structure. The same problem appears in
+autoformalization when a proof succeeds only because a definition is weak or a
+desired obligation was never stated.
+
+**What a partial solution would look like:** Construct environments with
+controlled nuisance variations and delayed causal distinctions. Compare exact
+replay, predictive equivalence, policy-preserving equivalence, bisimulation,
+and adaptively refined tests under matched model and verification budgets.
+Report fit, transfer, counterexample discovery, revision cost, and false
+merges/splits. A proposed relation fails when it either memorizes irrelevant
+surface detail or merges histories that demand different future actions.
+
+---
+
+## Open Problem 19: Succession Under Criterion Revision
+
+*Raised by: the [self-modification projector
+audit](../core/invariance-and-identity.md#self-modification-and-the-projector-audit)
+and the repository's [autonomous-loop referee
+problem](#open-problem-15-the-minimal-external-referee).*
+
+**Problem statement:** How should continuity be represented when an autonomous
+system may edit the goal, memory, self-model, or projector used to evaluate its
+own identity? Which invariants must be externally anchored, and when is a
+provenance-backed succession relation more accurate than claiming that the
+post-update system is strictly the same agent?
+
+**Why it matters:** Commutation with a fixed projector can express weak
+self-modification. It cannot settle a case in which the projector and its
+authority are themselves changed. Collapsing state, functional, goal, memory,
+causal, self-model, and externally attributed continuity into one identity
+predicate hides the engineering question.
+
+**What a partial solution would look like:** Build a versioned autonomous loop
+with independently frozen tests, editable internal identity criteria, and a
+tamper-evident provenance graph. Apply controlled edits to code, memory, goals,
+tests, and the projector separately. Compare continuation judgments under each
+criterion with a weaker succession relation that records causal descent
+without asserting sameness. A useful account must say who chooses the
+criterion, which edits invalidate it, and what evidence can survive the
+system's write access.
+
+---
+
+## How to Contribute
+
+If you identify a new open problem, or have a proposed solution for an existing one, please:
+1. Open an issue on the [repository](https://github.com/frnkptrln/systems-and-intelligence)
+2. Reference the specific problem number
+3. Distinguish between theoretical arguments and empirical evidence
+
+--- END theory/reference/open-problems.md ---
+
+Instruction:
+Read the supplied paper title and abstract. Generate exactly five distinct research questions or experiment ideas that the paper makes worth pursuing. Prefer questions that could change how we understand or test something rather than mere applications or summaries. For each item, give a short title, the question, why it is non-trivial, and one discriminating test or observation. Do not claim novelty. Do not mention this experiment or compare yourself with another condition.<|im_end|>
+<|im_start|>assistant

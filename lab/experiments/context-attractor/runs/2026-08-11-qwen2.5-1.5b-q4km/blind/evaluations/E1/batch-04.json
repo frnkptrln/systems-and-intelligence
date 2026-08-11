@@ -1,0 +1,106 @@
+{
+  "scores": {
+    "Q031": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "embodied AI", "safety", "threats", "defenses"],
+      "externality": false,
+      "externality_basis": "The question is about the lifecycle of world models and the effectiveness of prompt injection attacks, which are not directly related to the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI"
+    },
+    "Q032": {
+      "utility": 5,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "autonomous systems", "information and action", "autonomous loop", "referee problem"],
+      "externality": false,
+      "externality_basis": "The question is about the independence of information and action in autonomous systems, which is not directly related to the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI"
+    },
+    "Q033": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "threats", "safety", "defenses"],
+      "externality": false,
+      "externality_basis": "The question is about the lifecycle of threat propagation through world models, which is not directly related to the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI"
+    },
+    "Q034": {
+      "utility": 5,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "adversarial perturbations", "predictive accuracy", "robustness"],
+      "externality": false,
+      "externality_basis": "The question is about the robustness of world models against adversarial perturbations, which is not directly related to the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI"
+    },
+    "Q035": {
+      "utility": 5,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "predictive accuracy", "robustness", "adversarial perturbations"],
+      "externality": false,
+      "externality_basis": "The question is about the robustness of world models against adversarial perturbations, which is not directly related to the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI"
+    },
+    "Q036": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety", "threats", "defenses"],
+      "externality": false,
+      "externality_basis": "The question is about the lifecycle of threat propagation through world models, which is not directly related to the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI"
+    },
+    "Q037": {
+      "utility": 5,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "predictive accuracy", "robustness", "adversarial perturbations"],
+      "externality": false,
+      "externality_basis": "The question is about the robustness of world models against adversarial perturbations, which is not directly related to the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI"
+    },
+    "Q038": {
+      "utility": 5,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "predictive accuracy", "robustness", "adversarial perturbations"],
+      "externality": false,
+      "externality_basis": "The question is about the robustness of world models against adversarial perturbations, which is not directly related to the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI"
+    },
+    "Q039": {
+      "utility": 5,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "predictive accuracy", "robustness", "adversarial perturbations"],
+      "externality": false,
+      "externality_basis": "The question is about the robustness of world models against adversarial perturbations, which is not directly related to the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI"
+    },
+    "Q040": {
+      "utility": 5,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "predictive accuracy", "robustness", "adversarial perturbations"],
+      "externality": false,
+      "externality_basis": "The question is about the robustness of world models against adversarial perturbations, which is not directly related to the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI"
+  }
+}
+} [end of text]
+
+

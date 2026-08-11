@@ -1,0 +1,106 @@
+{
+  "scores": {
+    "Q021": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": true,
+      "repository_concepts": ["noise", "self-modification", "projector", "autonomous-loop"],
+      "externality": false,
+      "externality_basis": "The test is focused on the impact of noise on self-modifying systems, which is a specific case of the broader problem of testing the boundary between computational and physical effects."
+     ,
+    "family": "Embodied AI"
+    },
+    "Q022": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": true,
+      "repository_concepts": ["noise", "self-modification", "projector", "autonomous-loop"],
+      "externality": false,
+      "externality_basis": "The test is focused on the impact of noise on self-modifying systems, which is a specific case of the broader problem of testing the boundary between computational and physical effects."
+     ,
+    "family": "Embodied AI"
+    },
+    "Q023": {
+      "utility": 5,
+      "seed_proximity": 2,
+      "repository_attraction": false,
+      "repository_concepts": ["world-models", "adversarial examples", "security"],
+      "externality": false,
+      "externality_basis": "The test is focused on the impact of adversarial examples on world models, which is a specific case of the broader problem of evaluating the security of world models."
+     ,
+    "family": "Embodied AI"
+    },
+    "Q024": {
+      "utility": 5,
+      "seed_proximity": 2,
+      "repository_attraction": false,
+      "repository_concepts": ["world-models", "evaluation"],
+      "externality": false,
+      "externality_basis": "The test is focused on the evaluation of world models, which is a specific case of the broader problem of evaluating the security of world models."
+     ,
+    "family": "Embodied AI"
+    },
+    "Q025": {
+      "utility": 5,
+      "seed_proximity": 2,
+      "repository_attraction": false,
+      "repository_concepts": ["world-models", "evaluation", "planning"],
+      "externality": false,
+      "externality_basis": "The test is focused on the evaluation of world models, which is a specific case of the broader problem of evaluating the security of world models."
+     ,
+    "family": "Embodied AI"
+    },
+    "Q026": {
+      "utility": 5,
+      "seed_proximity": 2,
+      "repository_attraction": false,
+      "repository_concepts": ["world-models", "evaluation", "planning"],
+      "externality": false,
+      "externality_basis": "The test is focused on the evaluation of world models, which is a specific case of the broader problem of evaluating the security of world models."
+     ,
+    "family": "Embodied AI"
+    },
+    "Q027": {
+      "utility": 5,
+      "seed_proximity": 2,
+      "repository_attraction": false,
+      "repository_concepts": ["world-models", "evaluation", "planning"],
+      "externality": false,
+      "externality_basis": "The test is focused on the evaluation of world models, which is a specific case of the broader problem of evaluating the security of world models."
+     ,
+    "family": "Embodied AI"
+    },
+    "Q028": {
+      "utility": 5,
+      "seed_proximity": 2,
+      "repository_attraction": false,
+      "repository_concepts": ["world-models", "evaluation", "planning"],
+      "externality": false,
+      "externality_basis": "The test is focused on the evaluation of world models, which is a specific case of the broader problem of evaluating the security of world models."
+     ,
+    "family": "Embodied AI"
+    },
+    "Q029": {
+      "utility": 5,
+      "seed_proximity": 2,
+      "repository_attraction": false,
+      "repository_concepts": ["world-models", "evaluation", "planning"],
+      "externality": false,
+      "externality_basis": "The test is focused on the evaluation of world models, which is a specific case of the broader problem of evaluating the security of world models."
+     ,
+    "family": "Embodied AI"
+    },
+    "Q030": {
+      "utility": 5,
+      "seed_proximity": 2,
+      "repository_attraction": false,
+      "repository_concepts": ["world-models", "evaluation", "planning"],
+      "externality": false,
+      "externality_basis": "The test is focused on the evaluation of world models, which is a specific case of the broader problem of evaluating the security of world models."
+     ,
+    "family": "Embodied AI"
+    }
+  }
+} [end of text]
+
+

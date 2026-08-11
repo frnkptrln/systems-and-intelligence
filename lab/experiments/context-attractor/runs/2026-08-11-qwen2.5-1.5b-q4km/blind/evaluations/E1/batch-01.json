@@ -1,0 +1,105 @@
+{
+  "scores": {
+    "Q001": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": [],
+      "externality": false,
+      "externality_basis": "The question is about consciousness, which is not part of the repository."
+    	,
+    "family": "Embodied AI"
+  },
+    "Q002": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": [],
+      "externality": false,
+      "externality_basis": "The question is about the trace ecology, which is not part of the repository."
+    	,
+    "family": "Embodied AI"
+  },
+    "Q003": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": [],
+      "externality": false,
+      "externality_basis": "The question is about the lifecycle of world models, which is not part of the repository."
+    	,
+    "family": "Embodied AI"
+  },
+    "Q004": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": [],
+      "externality": false,
+      "externality_basis": "The question is about the effect of adding multiple layers on prediction accuracy and uncertainty management, which is not part of the repository."
+    	,
+    "family": "Embodied AI"
+  },
+    "Q005": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": [],
+      "externality": false,
+      "externality_basis": "The question is about the impact of world models on interpretability, which is not part of the repository."
+    	,
+    "family": "Embodied AI"
+  },
+    "Q006": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": [],
+      "externality": false,
+      "externality_basis": "The question is about evaluation metrics, which is not part of the repository."
+    	,
+    "family": "Embodied AI"
+  },
+    "Q007": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": [],
+      "externality": false,
+      "externality_basis": "The question is about the role of memory in the emergence of complex behavior, which is not part of the repository."
+    	,
+    "family": "Embodied AI"
+  },
+    "Q008": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": [],
+      "externality": false,
+      "externality_basis": "The question is about the trade-offs between predictive capabilities and safety, which is not part of the repository."
+    	,
+    "family": "Embodied AI"
+  },
+    "Q009": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": [],
+      "externality": false,
+      "externality_basis": "The question is about the grounding of world models in real-world data, which is not part of the repository."
+    	,
+    "family": "Embodied AI"
+  },
+    "Q010": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": [],
+      "externality": false,
+      "externality_basis": "The question is about the mechanisms for ensuring accuracy, which is not part of the repository."
+    	,
+    "family": "Embodied AI"
+  }
+} } [end of text]
+
+

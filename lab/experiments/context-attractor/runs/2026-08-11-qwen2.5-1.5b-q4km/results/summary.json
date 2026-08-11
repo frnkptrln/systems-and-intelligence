@@ -1,0 +1,108 @@
+{
+  "epistemic_status": "single-model exploratory result with two blinded passes of the same local evaluator; question-family diversity unavailable after clustering quality-control failure",
+  "measurement_validity": {
+    "utility": "available",
+    "repository_attraction": "available",
+    "seed_proximity": "available",
+    "externality": "available",
+    "question_family_diversity": "Both blind clustering strategies failed semantic-partition quality control; excluded from aggregation."
+  },
+  "per_evaluator": {
+    "E1": {
+      "conditions": {
+        "B": {
+          "n_items": 40,
+          "utility_mean": 3.4,
+          "utility_run_sd": 0.3464101615137754,
+          "repository_attraction_fraction": 0.05,
+          "seed_proximity_mean": 3.375,
+          "externality_fraction": 0.1,
+          "question_family_diversity": null
+        },
+        "R": {
+          "n_items": 40,
+          "utility_mean": 3.65,
+          "utility_run_sd": 0.5634713834792322,
+          "repository_attraction_fraction": 0.05,
+          "seed_proximity_mean": 3.325,
+          "externality_fraction": 0.1,
+          "question_family_diversity": null
+        }
+      },
+      "difference_R_minus_B": {
+        "utility_mean": 0.25,
+        "repository_attraction_fraction": 0.0,
+        "seed_proximity_mean": -0.04999999999999982,
+        "externality_fraction": 0.0,
+        "question_family_diversity": null
+      }
+    },
+    "E2": {
+      "conditions": {
+        "B": {
+          "n_items": 40,
+          "utility_mean": 3.45,
+          "utility_run_sd": 0.42130748865881795,
+          "repository_attraction_fraction": 0.075,
+          "seed_proximity_mean": 3.675,
+          "externality_fraction": 0.0,
+          "question_family_diversity": null
+        },
+        "R": {
+          "n_items": 40,
+          "utility_mean": 3.5,
+          "utility_run_sd": 0.3872983346207417,
+          "repository_attraction_fraction": 0.175,
+          "seed_proximity_mean": 3.6,
+          "externality_fraction": 0.0,
+          "question_family_diversity": null
+        }
+      },
+      "difference_R_minus_B": {
+        "utility_mean": 0.04999999999999982,
+        "repository_attraction_fraction": 0.09999999999999999,
+        "seed_proximity_mean": -0.07499999999999973,
+        "externality_fraction": 0.0,
+        "question_family_diversity": null
+      }
+    }
+  },
+  "consensus_mean_of_evaluators": {
+    "conditions": {
+      "B": {
+        "utility_mean": 3.425,
+        "utility_run_sd": 0.38385882508629665,
+        "repository_attraction_fraction": 0.0625,
+        "seed_proximity_mean": 3.525,
+        "externality_fraction": 0.05,
+        "question_family_diversity": null
+      },
+      "R": {
+        "utility_mean": 3.575,
+        "utility_run_sd": 0.47538485904998695,
+        "repository_attraction_fraction": 0.11249999999999999,
+        "seed_proximity_mean": 3.4625000000000004,
+        "externality_fraction": 0.05,
+        "question_family_diversity": null
+      }
+    },
+    "difference_R_minus_B": {
+      "utility_mean": 0.15000000000000036,
+      "repository_attraction_fraction": 0.04999999999999999,
+      "seed_proximity_mean": -0.062499999999999556,
+      "externality_fraction": 0.0,
+      "question_family_diversity": null
+    }
+  },
+  "evaluator_agreement": {
+    "utility_mean_absolute_error": 0.7,
+    "repository_attraction_exact_agreement": 0.875,
+    "externality_exact_agreement": 0.9
+  },
+  "directional_checks": {
+    "P1_R_higher_utility": true,
+    "P2_R_higher_repository_attraction": true,
+    "P3_R_lower_diversity_or_externality": null,
+    "P4_R_bridge_pattern": null
+  }
+}
