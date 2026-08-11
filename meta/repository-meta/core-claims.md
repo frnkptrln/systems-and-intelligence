@@ -58,9 +58,8 @@ robustness over a simpler resource budget under matched tests.
 - *speculative design note* — [Decentralized OS Architecture](../../logs/004_decentralized-os-architecture.md)
 
 **Current status:** the weakest evidential base in this set. All three artifacts are `[SPECULATIVE]`
-architecture logs; none is runnable and nothing here is measured. The claim currently rests on an
-Ashby's-law argument in temporal form plus one cited external episode (high-frequency-trading flash
-crashes). Log 002 names its own promotion condition — latency budgets formalized as measurable
+architecture logs; none is runnable and nothing here is measured. The claim rests on an Ashby's-law
+argument in temporal form plus one cited external episode (high-frequency-trading flash crashes). Log 002 names its own promotion condition — latency budgets formalized as measurable
 regulator-capacity constraints — and that work has not been done.
 
 **Failure condition:** If a shared human-AI governance layer can preserve legitimate human review while operating at silicon-speed delegation and proposal volume, the impedance claim is weakened.

@@ -375,3 +375,14 @@ def test_quote_spanning_lines_does_not_swallow_later_uses(tmp_path):
 
     assert len(findings) == 1
     assert findings[0].line == 2
+
+
+def test_story_count_excludes_the_fiction_index(tmp_path):
+    """The index page in fiction/ is not a story."""
+    from lab.tools.audit_repository_freshness import story_count
+
+    write(tmp_path, "fiction/README.md", "index")
+    write(tmp_path, "fiction/01_a.md", "story")
+    write(tmp_path, "fiction/02_b.md", "story")
+
+    assert story_count(tmp_path) == 2

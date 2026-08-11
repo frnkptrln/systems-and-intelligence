@@ -251,6 +251,11 @@ def _theory_counts(repo: Path = REPO) -> tuple[int, int]:
     return sum(1 for page in published if page.startswith("theory/")), total
 
 
+def story_count(repo: Path = REPO) -> int:
+    """Stories in ``fiction/``, excluding the index page."""
+    return sum(1 for p in (repo / "fiction").glob("*.md") if p.name != "README.md")
+
+
 def published_theory_count(repo: Path = REPO) -> int:
     return _theory_counts(repo)[0]
 
@@ -286,6 +291,15 @@ DERIVED_COUNTS: tuple[DerivedCount, ...] = (
         re.compile(r"\|\s*Theory\s*\|\s*[\d,]+ essays of ([\d,]+)\s*\|"),
         theory_file_count,
         "theory files that exist",
+    ),
+    # This one drifted apart across two pages before it was guarded:
+    # repository-map.md counted the fiction index as a story and said 20 while
+    # docs/index.md said nineteen. Both now resolve to the same computed value.
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"\|\s*Stories\s*\|\s*([\d,]+) of [\d,]+\s*\|"),
+        story_count,
+        "published stories",
     ),
 )
 
