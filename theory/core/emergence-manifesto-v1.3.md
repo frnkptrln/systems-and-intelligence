@@ -18,8 +18,12 @@ note: >
 
 *Conditions for Developing Agent Identity in Complex Systems*
 
-> **Status (2026-07-20):** Earlier claim set, read under the reconstructed foundation.  
-> The [Foundations Reconstruction](mathematical-axioms.md) retired the `[FOUNDATIONAL ASSUMPTION]` tag introduced by v1.3. P ≠ NP is no longer a load-bearing project assumption, and inversion is not uniformly hard. Claim 2's empirical half is unaffected; its precondition reading has been downgraded to `[SPECULATIVE]` below. The version note that follows records what v1.3 did at the time and is kept as history, not as current status.
+> **Status (2026-08-11):** Earlier claim set, read under the reconstructed foundation.  
+> The [Foundations Reconstruction](mathematical-axioms.md) retired the `[FOUNDATIONAL ASSUMPTION]` tag introduced by v1.3. P ≠ NP is no longer a load-bearing project assumption, and inversion is not uniformly hard. Claim 2's empirical half is unaffected; its precondition reading has been downgraded to `[SPECULATIVE]` below (2026-07-20).
+>
+> A second pass (2026-08-11) reconciled the two remaining `[DEMONSTRATED]` tags that exceeded the current boundary. Claim 1's *instrument* stands; its identity claim — that intelligence **is** compression — does not, because [§5.3](mathematical-axioms.md#53-intelligence) makes the SII a task-specific instrument rather than a universal measure. In the Formal Connections table, the thermodynamic-alignment row had dropped the toy-model scoping that Claim 7 itself states, and now carries it.
+>
+> The version note that follows records what v1.3 did at the time and is kept as history, not as current status. Where a preserved tag and the reconstruction conflict, the reconstruction wins and the conflict is marked here rather than silently edited away.
 
 ---
 
@@ -49,9 +53,11 @@ This manifesto does not answer that question. It proposes a framework for asking
 
 ## Core Claims
 
-### Claim 1: Intelligence is Compression `[DEMONSTRATED]`
+### Claim 1: Intelligence is Compression `[DEMONSTRATED]` (the SII instrument) + `[SPECULATIVE]` (the identity claim)
 
 The System Intelligence Index (SII) measures three dimensions of system competence: Prediction ($P$), Regulation ($R$), and Adaptation ($A$). Each can be computed from simulation data. The grokking simulation demonstrates the most dramatic form: a neural network's sudden transition from memorization (a lookup table — uncompressed) to generalization (a rule — compressed). Intelligence, in this operational sense, is the capacity to replace data with mechanism.
+
+The heading asserts an identity — *intelligence is compression* — that the reconstructed foundation does not carry. **That reading has been downgraded.** [Foundations Reconstruction §5.3](mathematical-axioms.md#53-intelligence) requires an intelligence claim to expose its tasks, weights, resources, and baselines, and states that the SII "can be a task-specific instrument; it is not a derived universal measure of intelligence." What survives as `[DEMONSTRATED]` is the measured part: on the declared simulations the three SII dimensions are computable, and the grokking run exhibits a transition from memorisation to a compact rule. The general identification of intelligence with compression is `[SPECULATIVE]` and is not established by those artifacts. $K(x)$ appears as a formalism in the table below for historical reasons only — it is uncomputable, and no simulation in this repository computes it.
 
 *Evidence:* [`data-analysis/sii_dashboard.py`](../../lab/data-analysis/sii_dashboard.py), [`simulation-models/cognitive-architectures/grokking-phase-transition/`](../../simulation-models/cognitive-architectures/grokking-phase-transition/README.md)
 
@@ -182,13 +188,13 @@ The following environmental and architectural factors are correlated with increa
 
 | Claim | Formalism | Simulation Evidence | Status |
 |:------|:----------|:-------------------|:-------|
-| Intelligence is compression | $K(x)$, SII | Grokking, SII Dashboard | `[DEMONSTRATED]` |
+| Intelligence is compression | SII as a task-specific instrument ($K(x)$ is a structural reference, never computed) | Grokking, SII Dashboard | `[DEMONSTRATED]` (the instrument) + `[SPECULATIVE]` (the identity claim) |
 | Local blindness as precondition | Computational irreducibility | Simulation corpus | `[DEMONSTRATED]` (observation) + `[SPECULATIVE]` (precondition reading) |
 | Identity through selective forgetting | 3-Layer Architecture | Agentic Identity Suite (mock) | `[HYPOTHESIZED]` |
 | Development vs. mirroring | Δ-Kohärenz (Ω) | Experiment 3 | `[OPEN PROBLEM]` |
 | Observer shapes observed | Markov Blanket, Active Inference $F$ | Experiment 3 | `[HYPOTHESIZED]` |
 | Generative surprise | Coherent deviation metric | Not yet tested | `[HYPOTHESIZED]` |
-| Thermodynamic alignment | Free Energy coupling | AI Alignment Veto | `[DEMONSTRATED]` |
+| Thermodynamic alignment | Free Energy coupling | AI Alignment Veto (toy model) | `[DEMONSTRATED]` for one failure mode in a stylized setting, per Claim 7 — not a general alignment result |
 | Criticality as intelligence zone | Phase transitions, SOC | Ising, Sandpile | `[SPECULATIVE]` |
 | Identity as co-instantiation | IP score, Chord Postulate | Morphospace Visualizer | `[HYPOTHESIZED]` |
 
