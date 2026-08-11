@@ -40,7 +40,7 @@ Structural claims about how local processes produce global behavior.
 - **[Generative Form Systems](emergence/generative-form-systems.md)** — Barnsley, IFS, L-systems, Erdős-Rényi thresholds, and renormalization as one disciplined bridge.
 - **[Across Scales](emergence/scale-comparison-map.md)** — Scale comparison from functions and cells to consciousness, institutions, black holes, and the repository itself.
 - **[Emergence & Downward Causation](emergence/emergence-downward-causation.md)** — Weak vs. strong emergence, epistemic humility.
-- **[Emergence and the Origin of Intelligence](emergence/emergence-origin-intelligence.md)** — The feedback loop between life and intelligence.
+- **[Emergence and the Origin of Intelligence](emergence/emergence-origin-intelligence.md)** — Reviewed comparison of Krakauer–Mitchell–Krakauer and Agüera y Arcas; keeps the cosmic self-description reading explicitly speculative rather than source-derived.
 - **[Local Causality and Invisible Consequences](emergence/local-causality-invisible-consequences.md)** — An earlier synthesis of recurring local/global motifs.
 - **[Black Swans and Downward Causation](emergence/black-swans-and-downward-causation.md)** — Tail models, network failure, and conditional early warning.
 - **[Grokking Phase Transition](emergence/grokking-phase-transition.md)** — Sudden generalization from memorization.
@@ -77,7 +77,7 @@ Essays with strong literary voice that bridge theory and fiction.
 
 - **[Machines of Loving Grace](narrative/machines-of-loving-grace.md)** — Constraint architecture as a form of care; synthesis essay, not theorem.
 - **[The Paradox of Metacognitive Consciousness](narrative/asimov-paradox-eternity.md)** — Consciousness without limitation as unbearable prison.
-- **[Asimov's Paradox in the Age of AI](narrative/asimov-ai-latent-thinking.md)** — Introspection vs. latent thinking.
+- **[Asimov's Paradox in the Age of AI](narrative/asimov-ai-latent-thinking.md)** — Separates external interpretability, elicited introspection, reasoning traces, causal self-models, and reflexive intervention; the original Anthropic/OpenAI symmetry is preserved only as dated research history.
 - **[Tensor Logic Mini Paper](narrative/tensor-logic-mini-paper.en.md)** — Embedding-based relational reasoning.
 
 ## Reference

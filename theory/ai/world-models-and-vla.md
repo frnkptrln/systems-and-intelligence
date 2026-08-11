@@ -1,7 +1,9 @@
 # World Models and VLA Systems: A Process-Model Mapping
 
 **Status:** Hypothesis-generating mapping, not a survey, capability forecast, or claim that robotics
-implements the repository's former generator spine.
+implements the repository's former generator spine.  
+**Last reviewed:** 2026-08-08  
+**Review trigger:** a materially different ARC-AGI-3 attribution result, held-out/private-set evidence, or a world-model/VLA study that changes the replay or intervention mapping.
 
 ## Scope
 
@@ -81,14 +83,15 @@ abstraction while hiding a causal or safety-relevant difference. Passing the
 retained history establishes consistency with those tests, not truth,
 mechanism identity, or held-out transfer.
 
-Rodionov's 2026 ARC-AGI-3 work provides a concrete coding-agent loop with
-textual and executable world models, simplification, and replay. The later
-ablation is the controlling evidence: executable representation was not
-uniformly better than text; stronger model and reasoning settings had the most
-robust effect; and the full verification treatment led the four main settings
-while using substantially more resources. Private or otherwise held-out
-performance remained untested. The useful result here is therefore the
-revisable-model architecture, not a benchmark headline.
+Rodionov's 2026 ARC-AGI-3 sequence provides a concrete coding-agent loop with textual and executable
+world models, simplification, and replay. The July 2026 attribution study is the controlling result
+for this note: executable representation was not uniformly better than text; stronger base models
+and greater reasoning effort had the most robust effect; simplification helped in three of four main
+settings; and the full verification treatment ranked first in all four while consuming substantially
+more resources. Exploratory GPT-5.6 Sol follow-ups saturated the public set, but the author explicitly
+notes that the model postdates those games and that held-out/private performance remains untested.
+The useful result here is therefore the revisable-model and verification architecture, not a public
+benchmark headline.
 
 Replay also feeds backward. A mismatch can identify a wrong transition,
 missing object, over-coarse state, or bad interface and thereby revise the
@@ -117,6 +120,14 @@ models or VLA systems requires matched experiments on those systems.
 No robotics timeline, mechanism-identification claim, or quantitative transfer follows. The mapping
 fails if its vocabulary does not improve preregistration, baseline selection, or failure prediction
 beyond the fields' existing concepts.
+
+## External anchors — reviewed 2026-08-08
+
+- Sergey Rodionov (2026), *Executable World Models for ARC-AGI-3 in the Era of Coding Agents*,
+  arXiv:2605.05138 — the initial executable-world-model agent.
+- Sergey Rodionov (2026), *Do Coding Agents Need Executable World Models, Simplification, and
+  Verification to Solve ARC-AGI-3?*, arXiv:2607.15439 — the later component-attribution study that
+  controls the interpretation above.
 
 Related anchors include Dyna, learned world models, model-based reinforcement learning, causal
 confusion in imitation learning, and VLA research. The [Related Work

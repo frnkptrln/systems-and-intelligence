@@ -1,12 +1,17 @@
 # Providers — Mock and Real
 
-Scaffolding for the Agentic Identity Suite's eventual switch from mock to real LLM runs. This is **infrastructure**, not a live experiment. The existing experiments still use the agents' built-in mock embeddings by design.
+**Status:** Infrastructure documentation, not a live experiment.  
+**External interface last reviewed:** 2026-08-08  
+**Review trigger:** Anthropic changes the default target model, Messages API contract, sampling behavior, or first-party embedding support.
+
+Scaffolding for the Agentic Identity Suite's eventual switch from mock to real LLM runs. The
+existing experiments still use the agents' built-in mock embeddings by design.
 
 ## What's here
 
 - `base.py` — Abstract `LLMProvider` interface. Every provider implements `complete(prompt, system=None)` and `embed(text)`.
 - `mock_provider.py` — Default. Deterministic, fast, no API key required.
-- `anthropic_provider.py` — Real mode. Calls `POST /v1/messages` via `urllib` (no new dependency). Default model: `claude-sonnet-5`.
+- `anthropic_provider.py` — Real mode. Calls `POST /v1/messages` via `urllib` (no new dependency). Repository default model: `claude-sonnet-5`.
 - `factory.py` — `load_config()` and `get_provider(cfg)`. Mock is the default; setting `llm.provider: anthropic` switches to real mode.
 
 ## Why this layer exists
@@ -19,7 +24,9 @@ sufficient for unit-testing the suite's architecture, but not for claims about r
 identity. See the [Foundations
 Reconstruction](../../theory/core/mathematical-axioms.md) for the current scope.
 
-This provider layer is the seam between the suite's mock-based architecture and its future empirical work. Nothing in the existing experiments has been changed; the suite still runs in mock mode by default.
+This provider layer is the seam between the suite's mock-based architecture and its future empirical
+work. Nothing in the existing experiments has been changed; the suite still runs in mock mode by
+default.
 
 ## Running real mode
 
@@ -34,18 +41,35 @@ This provider layer is the seam between the suite's mock-based architecture and 
      anthropic:
        model: claude-sonnet-5
    ```
-3. Wire the provider into whichever experiment will be updated. The agents are not currently wired through the provider — that is a deliberate next step to be done when Frank decides to take it.
+3. Wire the provider into whichever experiment will be updated. The agents are not yet routed
+   through the provider; that remains an explicit empirical step rather than an implied capability.
 
-Current Claude models reject sampling parameters, so the provider does not send
-`temperature`, `top_p`, or `top_k`. Experiments that need behavioral variance must
-elicit it through a recorded prompt rather than an untracked sampling setting.
+### Sampling behavior of the repository default
+
+As checked against Anthropic's Claude Platform documentation on 2026-08-08, **Claude Sonnet 5**
+rejects non-default `temperature`, `top_p`, and `top_k` values. The provider therefore omits all
+three. This statement is scoped to the configured model/API behavior rather than generalized to
+"current Claude models," because older supported model families can have different compatibility
+rules.
+
+Experiments that need behavioral variance should either use an explicitly supported mechanism or
+elicit variation through a recorded protocol. In either case, the exact model ID and request
+configuration belong in the experiment artifact.
 
 ## Embeddings note
 
-The Anthropic API does not currently expose a public embeddings endpoint. `AnthropicProvider.embed()` therefore falls back to the same deterministic hash-based embedding the mock provider uses. The Δ-Kohärenz metric and self-representations work uniformly across providers. When a real embedding service is added (sentence-transformers, OpenAI embeddings, Cohere, etc.), subclass `AnthropicProvider` and override `embed()`. No caller will need to change.
+As checked on 2026-08-08, Anthropic's own platform documentation states that Anthropic does not
+offer a first-party embedding model and points users to external embedding providers such as Voyage
+AI. `AnthropicProvider.embed()` therefore falls back to the same deterministic hash-based embedding
+the mock provider uses.
+
+That fallback keeps the interface uniform, but it is **not a real-model embedding measurement**.
+Any experiment claiming semantic geometry of a production model must replace the fallback with a
+declared embedding provider and record that provider/model as part of the measurement apparatus.
 
 ## Status
 
 - `[DEMONSTRATED]` — Mock provider runs deterministically; covered by the existing suite.
-- `[INFRASTRUCTURE READY]` — Real-mode HTTP path is implemented and import-clean. Not yet wired into the existing experiments.
-- `[OPEN PROBLEM]` — Whether real-mode Δ-Kohärenz separates trace-memorizers from generator-approximators at statistically significant levels.
+- `[INFRASTRUCTURE READY]` — Real-mode Messages API path is implemented and import-clean. Not yet wired into the existing experiments.
+- `[MEASUREMENT LIMIT]` — `embed()` remains a deterministic fallback and must not be described as an Anthropic embedding.
+- `[OPEN PROBLEM]` — Whether real-mode identity/coherence instruments separate trace-memorizers from generator-approximators under a preregistered protocol.
