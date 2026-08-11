@@ -471,10 +471,10 @@ error, evasion, decentralized actors, and distributional constraints?
 ## Identity Morphospace & TEO Framework → Chord vs. Arpeggio
 
 **Tools:** [`tools/morphospace_visualizer.py`](../../lab/tools/morphospace_visualizer.py), [`theory/teo-framework/`](../teo-framework/README.md)
-**Demonstrates:** The Identity Persistence (IP) score plotted in a 2D morphospace (Persistence vs. Coherence), showing trajectories of agents under varying stress. The TEO Framework sub-documents derive IP formally from the coupled Replicator-Kuramoto-Entropy ODE system.
+**Demonstrates:** A hand-constructed, repository-local 2D visualization of fractional component coverage versus coherence under synthetic stress. This is not Perrier & Bennett's three-axis `Coh`/`Avail=Pweak`/`Bind=Pstrong` morphospace, and the TEO equations do not derive the local score.
 **Supports claim in:** [`theory/chord-vs-arpeggio-identity.md`](../identity/chord-vs-arpeggio-identity.md) (Chord/Arpeggio distinction); [`theory/emergence-manifesto-v1.3.md`](emergence-manifesto-v1.3.md) Claim 9 (Identity as co-instantiation); [`theory/thermodynamics-of-orchestration.md`](thermodynamics-of-orchestration.md) §8 (Identity Persistence in TEO).
-**What it shows:** That agents under stress can be classified into Chord (high P, high C — identity maintained) and Arpeggio (flickering P, decaying C — identity fragmented) regimes. The TEO framework predicts this as a bifurcation analogous to the Kuramoto critical coupling.
-**What it does NOT show:** That IP is measurable from real LLM internals. The morphospace currently uses simulated trajectories. Bridging IP to actual model activations is an open challenge.
+**What it shows:** Only how selected synthetic trajectories look in that two-axis coordinate system. It illustrates a proposed diagnostic; it does not measure a bifurcation or classify an actual agent's identity.
+**What it does NOT show:** That component coverage or either paper score is measurable from real LLM internals, that high values imply a self, or that Kuramoto critical coupling transfers to agent architecture. Bridging the declared components to validated causal interventions remains open.
 **Open question:** [Open Problem 8 — The Commit-Time Composition Problem](../reference/open-problems.md#open-problem-8-the-commit-time-composition-problem): does the committed action lie inside the intersection of the active constraints, or can a sequential mimic reproduce every observable while merely consulting them? (The earlier "Co-Instantiation" framing, which required physical simultaneity, was deflated by exp5.)
 
 ---

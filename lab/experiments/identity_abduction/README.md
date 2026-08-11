@@ -38,7 +38,7 @@ retypes it.
 ## Wolfram verification
 
 The same quantities were evaluated independently with Wolfram Language on
-2026-08-09. That transcript is kept as provenance: a second implementation, in
+2026-08-11. That transcript is kept as provenance: a second implementation, in
 another system, of the claim the module now checks.
 
 ```wl
@@ -73,8 +73,8 @@ d = {
   "spectrumCycle6" -> Sort[Eigenvalues[a]],
   "spectrumTwoTriangles" -> Sort[Eigenvalues[d]],
   "negativeConnectednessDiffers" -> {
-    MatrixPower[a,5][[1,4]] > 0,
-    MatrixPower[d,5][[1,4]] > 0
+    ConnectedGraphQ[AdjacencyGraph[a]],
+    ConnectedGraphQ[AdjacencyGraph[d]]
   }
 |>
 ```

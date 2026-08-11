@@ -1,7 +1,7 @@
 """Lock the identity-abduction sanity check to the result its README records.
 
 The README carries a Wolfram Language transcript evaluated independently on
-2026-08-09. These assertions are that transcript, so the two implementations
+2026-08-11. These assertions are that transcript, so the two implementations
 have to keep agreeing.
 """
 
@@ -12,8 +12,8 @@ from lab.experiments.identity_abduction.identity_checks import (
     PERMUTATION,
     TWO_TRIANGLES,
     degree_sequence,
+    is_connected,
     permutation_matrix,
-    reaches,
     relabel,
     run_checks,
     spectrum,
@@ -68,8 +68,15 @@ def test_witness_survives_any_permutation():
 
 
 def test_connectivity_separates_where_the_degree_sequence_cannot():
-    assert reaches(CYCLE_6, 0, 3) is True
-    assert reaches(TWO_TRIANGLES, 0, 3) is False
+    assert is_connected(CYCLE_6) is True
+    assert is_connected(TWO_TRIANGLES) is False
+
+
+def test_connectedness_rejects_non_square_or_directed_inputs():
+    with np.testing.assert_raises_regex(ValueError, "square matrix"):
+        is_connected(np.ones((2, 3), dtype=int))
+    with np.testing.assert_raises_regex(ValueError, "undirected"):
+        is_connected(np.array([[0, 1], [0, 0]], dtype=int))
 
 
 def test_readme_permutation_is_the_one_the_module_uses():

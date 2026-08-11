@@ -102,8 +102,8 @@ This repository and its theoretical framework draw upon established literature i
 *(Formalizes emergent utility in AI systems. Extended in this project's Utility Engineering simulation.)*
 
 **Perrier, E. & Bennett, M. T. (2026).**
-*Time, Identity and Consciousness in Language Model Agents.* arXiv:2603.09043.
-*(Instantiates Stack Theory's Arpeggio and Chord postulates for language-model agents and derives the Identity Persistence score $\text{IP}$ used as the 4th SII dimension, plus the identity morphospace; its Algorithm 1 is reimplemented in `lab/metrics/persistence_scores.py`. See the [glossary](../theory/reference/glossary.md#chord-postulate-arpeggio-postulate). M. T. Bennett is also the author of Stack Theory and of the orthogonality work the repository cites elsewhere, so these are not independent anchors.)*
+*Time, Identity and Consciousness in Language Model Agents.* Proceedings of the AAAI Symposium Series, 8(1), 322–328. https://doi.org/10.1609/aaaiss.v8i1.42561 (arXiv:2603.09043).
+*(Instantiates Stack Theory's Arpeggio and Chord postulates for language-model agents, defines the windowed $P_{\mathrm{weak}}$ and $P_{\mathrm{strong}}$ scores, and plots a three-axis morphospace of coherence, availability, and binding. The window logic is implemented in `lab/metrics/persistence_scores.py`. The repository's older fractional-coverage score, fourth SII factor, and two-axis plot are local instruments rather than outputs of this paper. See the [glossary](../theory/reference/glossary.md#chord-postulate-arpeggio-postulate). M. T. Bennett is also the author of Stack Theory and of the orthogonality work the repository cites elsewhere, so these are not independent anchors.)*
 
 **Peterlein, F. (2025).**
 *Systems & Intelligence: An Open Thesis.* GitHub Repository.

@@ -174,22 +174,41 @@ This is formalized by Heinz von Foerster's second-order cybernetics: the observe
 
 ---
 
-## Identity Persistence (IP)
+## Identity Persistence (IP; repository-local coverage score)
 
 **Informal:** How much of an agent's identity is simultaneously operative during action selection.
 
-**Operational definition:** Let an agent's identity be described by $n$ governing components (goals, safety constraints, role parameters, value orientation). At each compute step $\Delta t$, the **operative set** $\mathcal{O}(t) \subseteq \lbrace g, s, \rho, \theta\rbrace$ is the subset of components that causally influence the agent's output:
+**Operational definition:** Let an agent's identity be described by $n$ declared governing components (goals, safety constraints, role parameters, value orientation). At each compute step $\Delta t$, the **operative set** $\mathcal{O}(t) \subseteq \lbrace g, s, \rho, \theta\rbrace$ is the subset of components whose causal influence crosses the experiment's detection threshold:
 
 $$\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}, \qquad \overline{\text{IP}} = \frac{1}{T} \sum_{t=1}^{T} \text{IP}(t)$$
 
-| Score | Regime | Interpretation |
-|-------|--------|----------------|
-| IP → 1 | **Chord** | All identity components co-instantiated — unified self |
-| IP → 0 | **Arpeggio** | Components time-multiplexed — simulated self |
+| Score | Literal reading |
+|-------|-----------------|
+| IP → 1 | All declared components are detected at most selected steps |
+| IP → 0 | Few or none of the declared components are detected |
+
+This fractional average is the repository's local component-coverage score. It is **not**
+Perrier & Bennett's `Pstrong`: high coverage alone does not distinguish joint composition from a
+system that merely consults every component.
+
+For declared ingredients $I$, active sets $F_u$, and layer-time evaluation indices $T$, the paper
+maps $t$ to the inclusive objective-step window $W_{\Delta,s}(t)=\lbrace st,\ldots,st+\Delta\rbrace$ and
+defines:
+
+$$
+P_{\mathrm{weak}} = \frac{1}{|T|}\sum_{t\in T}
+\mathbf{1}\!\left[I \subseteq \bigcup_{u\in W_{\Delta,s}(t)}F_u\right], \qquad
+P_{\mathrm{strong}} = \frac{1}{|T|}\sum_{t\in T}
+\mathbf{1}\!\left[\exists u\in W_{\Delta,s}(t): I \subseteq F_u\right].
+$$
+
+Its three-axis morphospace uses coherence, availability ($P_{\mathrm{weak}}$), and binding
+($P_{\mathrm{strong}}$). [`persistence_scores.py`](../../lab/metrics/persistence_scores.py)
+implements this weak/strong window logic separately from component coverage.
 
 **Notation:** IP is used throughout this repository to distinguish Identity Persistence from P (Predictive Power) in the SII framework. The extended SII formula is: $\text{SII} = P \times R \times A \times \text{IP}$.
 
-**What it is NOT:** Not a consciousness score. A high IP indicates structural co-instantiation of governing constraints, not subjective experience. A thermostat has IP = 1 for its single governing variable; we do not attribute selfhood to thermostats.
+**What it is NOT:** Not a consciousness, selfhood, or composition score. A high local IP means the selected detector found many declared components; it does not establish how their effects were combined. A thermostat can score 1 for its single governing variable without acquiring selfhood.
 
 **Where it appears:** [`theory/teo-framework/lerchner-boundary.md`](../teo-framework/lerchner-boundary.md), [`data-analysis/sii_dashboard.py`](../../lab/data-analysis/sii_dashboard.py), [`tools/morphospace_visualizer.py`](../../lab/tools/morphospace_visualizer.py)
 
@@ -199,7 +218,7 @@ $$\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}, \qquad \overline{\text{IP}} = \frac
 
 **Informal:** Whether an agent's identity components sound simultaneously (Chord) or sequentially (Arpeggio).
 
-**Provenance:** The Arpeggio and Chord postulates are **Stack Theory's** (Michael Timothy Bennett), instantiated for language-model agents by [Perrier & Bennett (2026)](https://arxiv.org/abs/2603.09043), *Time, Identity and Consciousness in Language Model Agents*, which applies Stack Theory's temporal gap to scaffold trajectories and derives two computable persistence scores. The identity morphospace is theirs as well. What this repository adds is the Exp5–7 measurements and the commit-time deflation below — not the terms.
+**Provenance:** The Arpeggio and Chord postulates are **Stack Theory's** (Michael Timothy Bennett), instantiated for language-model agents by [Perrier & Bennett (2026)](https://arxiv.org/abs/2603.09043), *Time, Identity and Consciousness in Language Model Agents*, which applies Stack Theory's temporal gap to scaffold trajectories and derives two computable persistence scores. Their identity morphospace is the three-axis `Coh`/`Avail`/`Bind` construction above. The repository's fractional IP and two-axis IP×coherence plot are local adaptations. What this repository adds is the Exp5–7 measurements and the commit-time deflation below — not the terms.
 
 **Operational definition:** For selected agent tasks, goals, constraints, and values may be more robust when they remain jointly operative during action selection. A Chord score records that stipulated co-activity; it does not establish "true" identity.
 

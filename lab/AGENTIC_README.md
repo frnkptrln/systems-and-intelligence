@@ -229,22 +229,31 @@ the provider layer is a separate empirical step. The real-mode HTTP path is infr
 not evidence from real-model identity experiments. See [`providers/README.md`](providers/README.md)
 and the [Foundations Reconstruction](../theory/core/mathematical-axioms.md) for the current scope.
 
-## Persistence Score (Pstrong)
+## Windowed Persistence and Component Coverage
 
-A standalone implementation of Algorithm 1 from Perrier & Bennett (2026) is available at [`lab/metrics/persistence_scores.py`](metrics/persistence_scores.py). It computes:
+[`lab/metrics/persistence_scores.py`](metrics/persistence_scores.py) keeps two instruments separate:
 
-- `Pstrong` — averaged simultaneous co-instantiation of identity components across a trajectory.
-- Per-step persistence variance.
-- Regime classification (Chord / Arpeggio) using the `ip_c_threshold` from `config.yaml`.
+- `persistence_scores` implements Perrier & Bennett's `u0 = stride × t`, `u0…u0+horizon` window
+  logic. `Pweak` is the fraction of evaluation windows in which every declared ingredient occurs
+  somewhere; `Pstrong` is the fraction containing at least one objective step where all
+  ingredients are co-instantiated.
+- `component_coverage` computes the repository's older per-step fraction
+  $|I\cap F_u|/|I|$, its variance, and a local Chord/Arpeggio label using
+  `ip_c_threshold`. This is **not** `Pstrong`.
 
-A comparison function, `correlate_pstrong_with_delta_coherence`, returns the Pearson correlation between per-step Pstrong and per-step Δ-Kohärenz proxies on the same trajectory. This is **one possible empirical question** the suite might eventually answer, not the only one — whether simultaneous co-instantiation and temporal coherence are coupled is currently open.
+The distinction matters: the trace `[{a}, {b}]` has mean component coverage $0.5$ and, in a
+two-step window, `Pweak = 1` but `Pstrong = 0`. Tests preserve that counterexample.
+
+`correlate_component_coverage_with_delta_coherence` compares per-step coverage with
+representation-change magnitudes. The latter are only a temporal proxy because Δ-Kohärenz itself
+is sequence-level. The historical, misnamed function remains as a compatibility alias; new work
+should not describe fractional coverage as per-step `Pstrong`.
 
 ```bash
-python -m lab.metrics.persistence_scores  # minimal sanity demo
+python lab/metrics/persistence_scores.py  # minimal sanity demo
 ```
 
-Pstrong is one instrument among several. It operationalizes one declared test family; it
-does not define identity.
+These are instruments over declared traces and windows. Neither defines identity.
 
 ## Open Questions
 

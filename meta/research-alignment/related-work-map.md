@@ -78,13 +78,15 @@ overlap — the co-author read as a different person from the Stack Theory autho
 2026-08-11.
 
 The Arpeggio and Chord postulates are **Stack Theory's**, instantiated for language-model agents by
-that paper, which also supplies the two persistence scores and the identity morphospace. The
-repository's own contribution is the Exp5–7 measurement and the commit-time deflation — joint
+that paper, which also supplies the two persistence scores and a three-axis identity morphospace.
+The repository's fractional coverage score and two-axis plot are local adaptations; its substantive
+contribution is the Exp5–7 measurement and the commit-time deflation — joint
 satisfaction at the commitment boundary rather than physical simultaneity. See the
 [glossary](../../theory/reference/glossary.md#chord-postulate-arpeggio-postulate).
 
-This tightens the dependency rather than loosening it: the identity vocabulary, its metric, and its
-visualisation all come from the same pairing the note above describes.
+This tightens the dependency rather than loosening it: the borrowed identity vocabulary and the
+paper's windowed metrics come from the same pairing. The repository's adaptations must therefore
+be evaluated as adaptations, not counted as independent confirmation.
 
 ## 3) Initial external anchors
 

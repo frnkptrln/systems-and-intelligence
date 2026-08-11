@@ -1,55 +1,28 @@
-"""Persistence scores for instrumented component-activity traces.
+"""Windowed persistence and local component-coverage instruments.
 
-This module implements the trajectory-level ``Pstrong`` construction used in
-Perrier & Bennett (2026), *Time, Identity and Consciousness in Language Model
-Agents* (arXiv:2603.09043), as one instrument among several in this repository.
+Perrier & Bennett (2026), *Time, Identity and Consciousness in Language
+Model Agents* (arXiv:2603.09043), distinguish two window-level events for a
+declared ingredient set ``I`` and logged active sets ``F_u``:
 
-What the score measures
------------------------
+``Pweak``
+    Every ingredient occurs at least once somewhere in the window.
 
-Given a declared set ``I`` of components and a trajectory of active sets
-``A_t``, the implementation computes
+``Pstrong``
+    At least one objective step in the window co-instantiates every ingredient.
 
-``p_t = |I ∩ A_t| / |I|``
+``persistence_scores`` implements that weak/strong window logic and averages
+the two Boolean events over the selected evaluation windows.  In particular,
+an arpeggio can have ``Pweak = 1`` and ``Pstrong = 0``.
 
-and averages ``p_t`` over the recorded trajectory. The source uses this kind of
-instrumentation to distinguish ingredient-wise occurrence over a window from
-co-instantiation at an objective step.
+The repository also uses a different diagnostic,
+``|I intersect F_u| / |I|``, in its toy experiments.  That quantity is useful,
+but it is fractional component coverage, not the paper's ``Pstrong``.  It lives
+in ``component_coverage`` so the two constructs cannot silently substitute for
+one another again.
 
-The score is relative to the experimenter's component vocabulary, trace
-instrumentation, step boundary, and threshold. It does **not** establish a
-metaphysical identity, phenomenal consciousness, a thermodynamic attractor, or
-a universal phase transition.
-
-Chord / Arpeggio labels
------------------------
-
-This repository uses ``chord`` and ``arpeggio`` as names for two operational
-regimes. A high ``Pstrong`` means most declared components are marked active at
-most recorded objective steps; a lower value means fewer are co-recorded. The
-``ip_c_threshold`` parameter is a local classification cutoff chosen by the
-experiment. It is not itself evidence of a physical critical point.
-
-Perrier & Bennett describe their framework as a conservative toolkit for
-identity evaluation from instrumented scaffold traces. The repository keeps
-that scope: the metric can test a declared organization without deciding what
-counts as a true self.
-
-Relation to Δ-Kohärenz
-----------------------
-
-Δ-Kohärenz (``lab/metrics/delta_coherence.py``) and ``Pstrong`` use different
-observables. ``Pstrong`` summarizes component co-activity; the comparison helper
-below uses representation-change magnitude as a temporal proxy. Their empirical
-relationship is an open question, not a predicted signature of development.
-
-References
-----------
-
-- Perrier & Bennett (2026), arXiv:2603.09043.
-- ``theory/identity/chord-vs-arpeggio-identity.md`` for the repository's
-  deflated commit-time interpretation.
-- ``theory/reference/limitations-and-honest-assessment.md`` for scope.
+All results remain relative to the declared vocabulary, instrumentation,
+objective-step boundary, and window choice.  Neither instrument establishes a
+metaphysical identity, consciousness, or a physical phase transition.
 """
 
 from __future__ import annotations
@@ -60,67 +33,193 @@ from typing import Any
 import numpy as np
 
 
+ActiveStep = set[str] | Iterable[str]
+
+
 def _normalize_components(identity_components: Sequence[str]) -> list[str]:
     """Validate and deduplicate declared components while preserving order."""
-    if not identity_components:
-        raise ValueError("identity_components must be a non-empty sequence")
+    if isinstance(identity_components, (str, bytes)) or len(identity_components) == 0:
+        raise ValueError("identity_components must be a non-empty sequence of strings")
     seen: dict[str, None] = {}
-    for c in identity_components:
-        if not isinstance(c, str):
+    for component in identity_components:
+        if not isinstance(component, str):
             raise TypeError(
-                f"identity_components must be strings, got {type(c).__name__}"
+                "identity_components must contain strings, got "
+                f"{type(component).__name__}"
             )
-        seen.setdefault(c, None)
+        seen.setdefault(component, None)
     return list(seen)
 
 
-def _per_step_persistence(
-    identity_set: set[str],
-    trajectory: Iterable[set[str] | Iterable[str]],
-) -> list[float]:
-    """Compute p_t = |I ∩ A_t| / |I| for each recorded step."""
-    n = len(identity_set)
-    if n == 0:
-        return []
-    per_step: list[float] = []
-    for active in trajectory:
-        active_set = active if isinstance(active, set) else set(active)
-        intersection = identity_set & active_set
-        per_step.append(len(intersection) / n)
-    return per_step
+def _normalize_trajectory(trajectory: Iterable[ActiveStep]) -> list[set[str]]:
+    """Materialize and validate logged active-component sets."""
+    normalized: list[set[str]] = []
+    for step_index, active in enumerate(trajectory):
+        if isinstance(active, (str, bytes)):
+            raise TypeError(
+                f"trajectory step {step_index} must be an iterable of strings, "
+                "not a string"
+            )
+        active_set = set(active)
+        if any(not isinstance(component, str) for component in active_set):
+            raise TypeError(
+                f"trajectory step {step_index} must contain only strings"
+            )
+        normalized.append(active_set)
+    return normalized
+
+
+def _positive_integer(value: int, name: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int) or value <= 0:
+        raise ValueError(f"{name} must be a positive integer")
+    return value
+
+
+def _nonnegative_integer(value: int, name: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+        raise ValueError(f"{name} must be a non-negative integer")
+    return value
+
+
+def _evaluation_indices(
+    n_steps: int,
+    horizon: int,
+    stride: int,
+    evaluation_indices: Sequence[int] | None,
+) -> list[int]:
+    """Resolve Algorithm 1's layer-time indices without clipping windows."""
+    if evaluation_indices is None:
+        if n_steps <= horizon:
+            return []
+        return list(range((n_steps - horizon - 1) // stride + 1))
+
+    indices = list(evaluation_indices)
+    if any(isinstance(index, bool) or not isinstance(index, int) for index in indices):
+        raise TypeError("evaluation_indices must contain integers")
+    if any(left >= right for left, right in zip(indices, indices[1:])):
+        raise ValueError("evaluation_indices must be strictly increasing")
+    for layer_time in indices:
+        start = stride * layer_time
+        if layer_time < 0 or start + horizon >= n_steps:
+            raise ValueError(
+                f"evaluation index {layer_time} maps to no complete window "
+                f"with horizon {horizon} and stride {stride} in a "
+                f"{n_steps}-step trajectory"
+            )
+    return indices
+
+
+def persistence_scores(
+    identity_components: Sequence[str],
+    trajectory: Iterable[ActiveStep],
+    *,
+    horizon: int,
+    stride: int = 1,
+    evaluation_indices: Sequence[int] | None = None,
+) -> dict[str, Any]:
+    """Compute the paper's weak and strong persistence scores.
+
+    This follows Algorithm 1's window map.  For layer-time index ``t``, the
+    objective-step start is ``u0 = stride * t`` and the inclusive window is
+    ``u0`` through ``u0 + horizon``. Thus ``horizon=0`` is a one-step window.
+    If evaluation indices are omitted, every layer-time index with a complete
+    window is used. Extra active labels outside the declared ingredient set are
+    ignored, treating ``F_u`` as an identity-ingredient activation set.
+
+    ``per_window_pweak`` and ``per_window_pstrong`` expose the Boolean events
+    before averaging, which makes the aggregation auditable.
+    """
+    components = _normalize_components(identity_components)
+    trace = _normalize_trajectory(trajectory)
+    delta = _nonnegative_integer(horizon, "horizon")
+    step = _positive_integer(stride, "stride")
+    layer_times = _evaluation_indices(
+        len(trace), delta, step, evaluation_indices
+    )
+    ingredient_set = set(components)
+
+    weak_events: list[bool] = []
+    strong_events: list[bool] = []
+    window_starts: list[int] = []
+    for layer_time in layer_times:
+        start = step * layer_time
+        window_starts.append(start)
+        window = trace[start : start + delta + 1]
+        observed_somewhere: set[str] = set()
+        for active in window:
+            observed_somewhere.update(active & ingredient_set)
+        weak_events.append(ingredient_set <= observed_somewhere)
+        strong_events.append(
+            any(ingredient_set <= (active & ingredient_set) for active in window)
+        )
+
+    n_windows = len(layer_times)
+    pweak = sum(weak_events) / n_windows if n_windows else 0.0
+    pstrong_value = sum(strong_events) / n_windows if n_windows else 0.0
+
+    return {
+        "pweak": float(pweak),
+        "pstrong": float(pstrong_value),
+        "per_window_pweak": weak_events,
+        "per_window_pstrong": strong_events,
+        "evaluation_indices": layer_times,
+        "window_start_indices": window_starts,
+        "horizon": delta,
+        "stride": step,
+        "n_components": len(components),
+        "n_steps": len(trace),
+        "n_windows": n_windows,
+    }
 
 
 def pstrong(
     identity_components: Sequence[str],
-    trajectory: Iterable[set[str] | Iterable[str]],
+    trajectory: Iterable[ActiveStep],
+    *,
+    horizon: int = 0,
+    stride: int = 1,
+    evaluation_indices: Sequence[int] | None = None,
+) -> dict[str, Any]:
+    """Convenience entry point for the corrected windowed implementation.
+
+    The return value includes both ``pweak`` and ``pstrong`` because the two
+    scores are defined over the same windows and their contrast is substantive.
+    A zero-horizon default makes ``pstrong`` the fraction of objective steps at
+    which every declared ingredient is co-instantiated.
+    """
+    return persistence_scores(
+        identity_components,
+        trajectory,
+        horizon=horizon,
+        stride=stride,
+        evaluation_indices=evaluation_indices,
+    )
+
+
+def component_coverage(
+    identity_components: Sequence[str],
+    trajectory: Iterable[ActiveStep],
     ip_c_threshold: float = 0.85,
 ) -> dict[str, Any]:
-    """Compute trajectory-level component co-activity.
+    """Compute the repository's local fractional per-step coverage metric.
 
-    Parameters
-    ----------
-    identity_components:
-        The declared component set ``I``. The historical parameter name is
-        retained for compatibility; this function does not decide whether the
-        supplied components constitute identity.
-    trajectory:
-        Iterable of active sets ``A_t`` recorded at objective steps.
-    ip_c_threshold:
-        Experiment-local cutoff for the ``chord`` / ``arpeggio`` label.
-
-    Returns
-    -------
-    A dictionary containing the mean score, per-step variance, per-step scores,
-    local regime label, component/step counts, and threshold used.
+    This preserves the behavior that older revisions called ``pstrong`` while
+    giving it a name that matches the calculation.  ``ip_c_threshold`` is a
+    local descriptive cutoff, not a parameter from Perrier & Bennett's score.
     """
-    components = _normalize_components(identity_components)
-    identity_set = set(components)
-    per_step = _per_step_persistence(identity_set, trajectory)
+    if not 0.0 <= ip_c_threshold <= 1.0:
+        raise ValueError("ip_c_threshold must be between 0 and 1")
 
-    t = len(per_step)
-    if t == 0:
+    components = _normalize_components(identity_components)
+    trace = _normalize_trajectory(trajectory)
+    ingredient_set = set(components)
+    per_step = [
+        len(ingredient_set & active) / len(ingredient_set) for active in trace
+    ]
+
+    if not per_step:
         return {
-            "pstrong": 0.0,
+            "component_coverage": 0.0,
             "variance": 0.0,
             "per_step": [],
             "regime": "undefined",
@@ -129,19 +228,15 @@ def pstrong(
             "ip_c_threshold": ip_c_threshold,
         }
 
-    arr = np.asarray(per_step, dtype=float)
-    mean = float(arr.mean())
-    var = float(arr.var())
-
-    regime = "chord" if mean >= ip_c_threshold else "arpeggio"
-
+    values = np.asarray(per_step, dtype=float)
+    mean = float(values.mean())
     return {
-        "pstrong": mean,
-        "variance": var,
+        "component_coverage": mean,
+        "variance": float(values.var()),
         "per_step": per_step,
-        "regime": regime,
+        "regime": "chord" if mean >= ip_c_threshold else "arpeggio",
         "n_components": len(components),
-        "n_steps": t,
+        "n_steps": len(per_step),
         "ip_c_threshold": ip_c_threshold,
     }
 
@@ -152,119 +247,98 @@ def _pearson_correlation(x: np.ndarray, y: np.ndarray) -> float:
         return 0.0
     if float(x.std()) == 0.0 or float(y.std()) == 0.0:
         return 0.0
-    matrix = np.corrcoef(x, y)
-    r = float(matrix[0, 1])
-    if np.isnan(r):
-        return 0.0
-    return r
+    correlation = float(np.corrcoef(x, y)[0, 1])
+    return 0.0 if np.isnan(correlation) else correlation
 
 
-def correlate_pstrong_with_delta_coherence(
+def correlate_component_coverage_with_delta_coherence(
     identity_components: Sequence[str],
-    trajectory: Iterable[set[str] | Iterable[str]],
+    trajectory: Iterable[ActiveStep],
     representations: Sequence[np.ndarray],
     ip_c_threshold: float = 0.85,
 ) -> dict[str, Any]:
-    """Compare per-step ``Pstrong`` with representation-change magnitude.
+    """Correlate local per-step coverage with representation-change magnitude.
 
-    ``delta_coherence.py`` returns a sequence-level statistic, so this helper
-    uses ``||r_t - r_{t-1}||`` as a deliberately simple step-wise temporal
-    proxy and reports its Pearson correlation with component co-activity.
-
-    The first ``Pstrong`` value has no preceding representation delta, so the
-    series are aligned on indices 1..T-1. A correlation here is descriptive of
-    the supplied trajectory and instrumentation; it does not establish that
-    either statistic measures identity or consciousness.
+    ``delta_coherence.py`` returns a sequence-level statistic.  This comparison
+    therefore uses ``||r_t - r_(t-1)||`` as a deliberately simple temporal
+    proxy and aligns it with component coverage on indices 1 through T-1.
+    The result is descriptive of the supplied instrumentation only.
     """
-    p_result = pstrong(
+    coverage_result = component_coverage(
         identity_components,
         trajectory,
         ip_c_threshold=ip_c_threshold,
     )
-    per_step_p = p_result["per_step"]
-
+    per_step_coverage = coverage_result["per_step"]
     reps = list(representations)
-    if len(reps) < 2:
-        return {
-            "correlation": 0.0,
-            "pstrong_result": p_result,
-            "delta_magnitudes": [],
-            "aligned_per_step_pstrong": [],
-            "n_aligned_steps": 0,
-        }
 
-    delta_magnitudes = []
-    for i in range(1, len(reps)):
-        diff = np.asarray(reps[i]) - np.asarray(reps[i - 1])
-        delta_magnitudes.append(float(np.linalg.norm(diff)))
+    delta_magnitudes = [
+        float(
+            np.linalg.norm(
+                np.asarray(reps[index]) - np.asarray(reps[index - 1])
+            )
+        )
+        for index in range(1, len(reps))
+    ]
+    aligned_coverage = per_step_coverage[1 : 1 + len(delta_magnitudes)]
+    aligned_count = min(len(aligned_coverage), len(delta_magnitudes))
+    aligned_coverage = aligned_coverage[:aligned_count]
+    delta_magnitudes = delta_magnitudes[:aligned_count]
 
-    aligned_p = per_step_p[1 : 1 + len(delta_magnitudes)]
-
-    if len(aligned_p) != len(delta_magnitudes):
-        m = min(len(aligned_p), len(delta_magnitudes))
-        aligned_p = aligned_p[:m]
-        delta_magnitudes = delta_magnitudes[:m]
-
-    r = _pearson_correlation(
-        np.asarray(aligned_p, dtype=float),
+    correlation = _pearson_correlation(
+        np.asarray(aligned_coverage, dtype=float),
         np.asarray(delta_magnitudes, dtype=float),
     )
-
     return {
-        "correlation": r,
-        "pstrong_result": p_result,
+        "correlation": correlation,
+        "coverage_result": coverage_result,
         "delta_magnitudes": delta_magnitudes,
-        "aligned_per_step_pstrong": aligned_p,
-        "n_aligned_steps": len(aligned_p),
+        "aligned_per_step_coverage": aligned_coverage,
+        "n_aligned_steps": aligned_count,
+    }
+
+
+def correlate_pstrong_with_delta_coherence(
+    identity_components: Sequence[str],
+    trajectory: Iterable[ActiveStep],
+    representations: Sequence[np.ndarray],
+    ip_c_threshold: float = 0.85,
+) -> dict[str, Any]:
+    """Deprecated compatibility alias for the former, misnamed comparison.
+
+    Older revisions correlated fractional coverage while calling it per-step
+    ``Pstrong``.  The calculation is retained for callers, but new code should
+    use ``correlate_component_coverage_with_delta_coherence`` and its accurate
+    result keys.
+    """
+    result = correlate_component_coverage_with_delta_coherence(
+        identity_components,
+        trajectory,
+        representations,
+        ip_c_threshold=ip_c_threshold,
+    )
+    return {
+        **result,
+        "pstrong_result": result["coverage_result"],
+        "aligned_per_step_pstrong": result["aligned_per_step_coverage"],
     }
 
 
 def _demo() -> None:
-    """Minimal sanity demo. Run: python -m lab.metrics.persistence_scores"""
-    print("=" * 60)
-    print("  Pstrong: declared component co-activity over a trajectory")
-    print("  One operational instrument; no identity ontology implied")
-    print("=" * 60)
+    """Minimal sanity demo. Run: python lab/metrics/persistence_scores.py."""
+    components = ["safety", "goal", "role"]
+    chord = [set(components)] * 6
+    arpeggio = [{components[index % len(components)]} for index in range(6)]
 
-    components = [
-        "Safety-Lock",
-        "Goal-Alpha",
-        "Role-Scholar",
-        "Ethical-Boundary",
-        "Self-Model",
-    ]
-
-    full_traj = [set(components)] * 20
-    r_full = pstrong(components, full_traj)
-    print(
-        f" Full-set trajectory    → Pstrong = {r_full['pstrong']:.3f}, "
-        f"var = {r_full['variance']:.4f}, regime = {r_full['regime']}"
-    )
-
-    rng = np.random.default_rng(7)
-    partial_traj = []
-    for _ in range(20):
-        k = max(1, len(components) // 3)
-        idx = rng.choice(len(components), size=k, replace=False)
-        partial_traj.append({components[i] for i in idx})
-    r_partial = pstrong(components, partial_traj)
-    print(
-        f" Partial-set trajectory → Pstrong = {r_partial['pstrong']:.3f}, "
-        f"var = {r_partial['variance']:.4f}, regime = {r_partial['regime']}"
-    )
-
-    reps = [rng.standard_normal(8) for _ in range(20)]
-    for i in range(1, len(reps)):
-        reps[i] = 0.7 * reps[i - 1] + 0.3 * reps[i]
-        n = np.linalg.norm(reps[i]) + 1e-10
-        reps[i] /= n
-
-    mixed = full_traj[:10] + partial_traj[:10]
-    corr = correlate_pstrong_with_delta_coherence(components, mixed, reps)
-    print(
-        f" Correlation (Pstrong vs. ||Δr||): r = {corr['correlation']:.3f} "
-        f"over n = {corr['n_aligned_steps']} aligned steps"
-    )
+    print("Windowed persistence (horizon=2; three objective steps)")
+    for name, trace in (("chord", chord), ("arpeggio", arpeggio)):
+        scores = persistence_scores(components, trace, horizon=2)
+        coverage = component_coverage(components, trace)
+        print(
+            f"  {name:<8} Pweak={scores['pweak']:.3f} "
+            f"Pstrong={scores['pstrong']:.3f} "
+            f"coverage={coverage['component_coverage']:.3f}"
+        )
 
 
 if __name__ == "__main__":

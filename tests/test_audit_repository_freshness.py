@@ -15,6 +15,8 @@ from lab.tools.audit_repository_freshness import (
     find_missing_freshness_metadata,
     find_relative_time_candidates,
     find_review_candidates,
+    published_story_count,
+    story_count,
 )
 
 
@@ -185,8 +187,10 @@ def test_managed_file_accepts_external_interface_review_label(tmp_path, monkeypa
 # --- derived counts copied into prose ---------------------------------------
 
 
-def guard(compute, pattern=r"roughly ([\d,]+) words") -> DerivedCount:
-    return DerivedCount("docs/page.md", re.compile(pattern), compute, "widget count")
+def guard(compute, pattern=r"roughly ([\d,]+) words", tolerance=0.0) -> DerivedCount:
+    return DerivedCount(
+        "docs/page.md", re.compile(pattern), compute, "widget count", tolerance
+    )
 
 
 def use_guard(monkeypatch, claim: DerivedCount) -> None:
@@ -197,14 +201,14 @@ def use_guard(monkeypatch, claim: DerivedCount) -> None:
 
 def test_derived_count_accepts_value_inside_tolerance(tmp_path, monkeypatch):
     write(tmp_path, "docs/page.md", "It holds roughly 100 words.")
-    use_guard(monkeypatch, guard(lambda repo: 105))
+    use_guard(monkeypatch, guard(lambda repo: 105, tolerance=0.10))
 
     assert find_derived_count_errors(tmp_path) == []
 
 
 def test_derived_count_flags_value_outside_tolerance(tmp_path, monkeypatch):
     write(tmp_path, "docs/page.md", "It holds roughly 100 words.")
-    use_guard(monkeypatch, guard(lambda repo: 130))
+    use_guard(monkeypatch, guard(lambda repo: 130, tolerance=0.10))
 
     findings = find_derived_count_errors(tmp_path)
 
@@ -216,9 +220,19 @@ def test_derived_count_flags_value_outside_tolerance(tmp_path, monkeypatch):
 
 def test_derived_count_reads_thousands_separators(tmp_path, monkeypatch):
     write(tmp_path, "docs/page.md", "It holds roughly 244,000 words.")
-    use_guard(monkeypatch, guard(lambda repo: 244_444))
+    use_guard(monkeypatch, guard(lambda repo: 244_444, tolerance=0.10))
 
     assert find_derived_count_errors(tmp_path) == []
+
+
+def test_exact_derived_count_flags_one_item_drift(tmp_path, monkeypatch):
+    write(tmp_path, "docs/page.md", "It holds roughly 20 words.")
+    use_guard(monkeypatch, guard(lambda repo: 19))
+
+    findings = find_derived_count_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert "expected an exact match" in findings[0].message
 
 
 def test_reworded_claim_does_not_silently_unguard_the_number(tmp_path, monkeypatch):
@@ -362,6 +376,20 @@ def test_quoted_novelty_claim_is_not_flagged(tmp_path):
     assert find_review_candidates(tmp_path) == []
 
 
+def test_quoted_novelty_claim_without_metalinguistic_cue_is_flagged(tmp_path):
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "meta/research-alignment/map.md",
+        'This is the "first evidence" of the effect.\n',
+    )
+
+    findings = find_review_candidates(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].message == 'review novelty claim "first evidence"'
+
+
 def test_quote_spanning_lines_does_not_swallow_later_uses(tmp_path):
     """Quote matching is per line, so an unclosed quote cannot mask a page."""
     seed_open_problems(tmp_path, 1)
@@ -379,10 +407,17 @@ def test_quote_spanning_lines_does_not_swallow_later_uses(tmp_path):
 
 def test_story_count_excludes_the_fiction_index(tmp_path):
     """The index page in fiction/ is not a story."""
-    from lab.tools.audit_repository_freshness import story_count
-
     write(tmp_path, "fiction/README.md", "index")
     write(tmp_path, "fiction/01_a.md", "story")
     write(tmp_path, "fiction/02_b.md", "story")
+    write(
+        tmp_path,
+        "mkdocs.yml",
+        "docs_dir: .\n"
+        "exclude_docs: |\n"
+        "  fiction/\n"
+        "  !fiction/01_a.md\n",
+    )
 
     assert story_count(tmp_path) == 2
+    assert published_story_count(tmp_path) == 1

@@ -16,7 +16,7 @@ Nothing here is hidden. It is simply not competing for your attention.
 | Reference | 4 | Glossary, open problems, limitations, and the negative space |
 | Papers | 2 of 2 | Bounded, citable, with a frozen claim set |
 | Stories | 19 of 19 | Self-contained and written for outside readers |
-| Benchmarks | 7 result pages | The measured evidence behind the claims |
+| Benchmarks | 6 result pages | The measured evidence behind the claims |
 | Interactive | 3 | They only work on the web |
 
 ## What stays in the repository

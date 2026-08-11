@@ -50,14 +50,9 @@ OPEN_PROBLEM_COUNT_PATTERNS = (
     re.compile(r"\b(?:maintains|contains|tracks|lists)\s+(\d+)\s+open problems\b", re.I),
 )
 
-# Reader-facing pages describe the corpus by its size and by how much of it the
-# site publishes. Those magnitudes are recomputable, so they belong to the
-# deterministic lane — but they move on ordinary work, and a check that fires on
-# every prose edit would train the author to ignore it. The tolerance below is
-# what separates "the corpus grew" from "the page stopped describing it": a 10%
-# band absorbs normal growth and still catches the multi-week drift this guard
-# was written for.
-CORPUS_TOLERANCE = 0.10
+# Only explicitly approximate prose gets a tolerance. Counts presented as
+# integers (pages, files, stories) are exact and must fail on one-item drift.
+APPROXIMATE_CORPUS_TOLERANCE = 0.10
 
 BENCHMARK_README = Path("lab/benchmarks/inverse-reconstruction/README.md")
 
@@ -214,6 +209,7 @@ class DerivedCount:
     pattern: re.Pattern
     compute: Callable[[Path], int]
     label: str
+    tolerance: float = 0.0
 
 
 def _validate_nav():
@@ -240,20 +236,44 @@ def corpus_markdown_file_count(repo: Path = REPO) -> int:
     return len(markdown_files(repo))
 
 
-def _theory_counts(repo: Path = REPO) -> tuple[int, int]:
-    """Return (theory pages the site publishes, theory pages that exist)."""
+def _published_pages(repo: Path = REPO) -> set[str]:
     nav = _validate_nav()
     config = nav.load_config(repo / "mkdocs.yml")
     patterns = nav.exclude_patterns(config.get("exclude_docs"))
     docs_dir = repo / config.get("docs_dir", "docs")
-    published = nav.markdown_pages(docs_dir, patterns)
+    return nav.markdown_pages(docs_dir, patterns)
+
+
+def _theory_counts(repo: Path = REPO) -> tuple[int, int]:
+    """Return (theory pages the site publishes, theory pages that exist)."""
+    published = _published_pages(repo)
     total = len(list((repo / "theory").rglob("*.md")))
     return sum(1 for page in published if page.startswith("theory/")), total
 
 
+def _story_counts(repo: Path = REPO) -> tuple[int, int]:
+    """Return (published stories, story files), excluding fiction indexes."""
+    published = _published_pages(repo)
+    published_stories = sum(
+        1
+        for page in published
+        if page.startswith("fiction/") and Path(page).name != "README.md"
+    )
+    total = story_count(repo)
+    return published_stories, total
+
+
 def story_count(repo: Path = REPO) -> int:
-    """Stories in ``fiction/``, excluding the index page."""
-    return sum(1 for p in (repo / "fiction").glob("*.md") if p.name != "README.md")
+    """Story files in ``fiction/``, excluding index pages."""
+    return sum(
+        1
+        for path in (repo / "fiction").rglob("*.md")
+        if path.name != "README.md"
+    )
+
+
+def published_story_count(repo: Path = REPO) -> int:
+    return _story_counts(repo)[0]
 
 
 def published_theory_count(repo: Path = REPO) -> int:
@@ -262,6 +282,15 @@ def published_theory_count(repo: Path = REPO) -> int:
 
 def theory_file_count(repo: Path = REPO) -> int:
     return _theory_counts(repo)[1]
+
+
+def published_benchmark_count(repo: Path = REPO) -> int:
+    """Reader-facing benchmark result pages selected by ``exclude_docs``."""
+    return sum(
+        1
+        for page in _published_pages(repo)
+        if page.startswith("lab/benchmarks/") and Path(page).name == "README.md"
+    )
 
 
 # Every entry is a magnitude a reader is asked to trust. Adding a claim here is
@@ -273,6 +302,7 @@ DERIVED_COUNTS: tuple[DerivedCount, ...] = (
         re.compile(r"roughly ([\d,]+) words"),
         corpus_word_count,
         "corpus word count",
+        APPROXIMATE_CORPUS_TOLERANCE,
     ),
     DerivedCount(
         "docs/repository-map.md",
@@ -292,14 +322,23 @@ DERIVED_COUNTS: tuple[DerivedCount, ...] = (
         theory_file_count,
         "theory files that exist",
     ),
-    # This one drifted apart across two pages before it was guarded:
-    # repository-map.md counted the fiction index as a story and said 20 while
-    # docs/index.md said nineteen. Both now resolve to the same computed value.
     DerivedCount(
         "docs/repository-map.md",
         re.compile(r"\|\s*Stories\s*\|\s*([\d,]+) of [\d,]+\s*\|"),
-        story_count,
+        published_story_count,
         "published stories",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"\|\s*Stories\s*\|\s*[\d,]+ of ([\d,]+)\s*\|"),
+        story_count,
+        "story files that exist",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"\|\s*Benchmarks\s*\|\s*([\d,]+) result pages\s*\|"),
+        published_benchmark_count,
+        "published benchmark result pages",
     ),
 )
 
@@ -308,6 +347,8 @@ def find_derived_count_errors(repo: Path = REPO) -> list[Finding]:
     """Compare recomputable magnitudes against the numbers written into prose."""
     findings: list[Finding] = []
     for claim in DERIVED_COUNTS:
+        if not 0.0 <= claim.tolerance <= 1.0:
+            raise ValueError(f"invalid tolerance for {claim.label}: {claim.tolerance}")
         path = repo / claim.path
         if not path.exists():
             findings.append(
@@ -328,13 +369,21 @@ def find_derived_count_errors(repo: Path = REPO) -> list[Finding]:
             continue
         stated = int(match.group(1).replace(",", ""))
         actual = claim.compute(repo)
-        if actual and abs(stated - actual) / actual > CORPUS_TOLERANCE:
+        relative_error = (
+            abs(stated - actual) / actual if actual else float(stated != actual)
+        )
+        if relative_error > claim.tolerance:
+            expectation = (
+                f"outside the {claim.tolerance:.0%} band"
+                if claim.tolerance
+                else "expected an exact match"
+            )
             findings.append(
                 Finding(
                     claim.path,
                     line_number(text, match.start()),
                     f"stated {claim.label} is {stated:,}; repository has "
-                    f"{actual:,} (outside the {CORPUS_TOLERANCE:.0%} band)",
+                    f"{actual:,} ({expectation})",
                 )
             )
     return findings
@@ -393,22 +442,36 @@ def review_excluded(rel: str) -> bool:
 
 
 QUOTED_SPAN = re.compile(r"\"[^\"\n]*\"|“[^”\n]*”")
+METALINGUISTIC_CUE = re.compile(
+    r"\b(?:"
+    r"avoid(?:s|ed|ing)?"
+    r"|challeng(?:e|es|ed|ing)"
+    r"|flag(?:s|ged|ging)?"
+    r"|wording"
+    r"|phrases?"
+    r"|terms?"
+    r"|formulations?"
+    r"|quoted?"
+    r")\b",
+    re.I,
+)
 
 
 def quoted_mention(text: str, start: int) -> bool:
-    """True when the match sits inside quotation marks on its own line.
+    """True for a quoted, explicitly metalinguistic mention on its own line.
 
-    A page that writes: *this note records the source date rather than relying
-    on relative phrases such as "weeks old"* is demonstrating the phrase, not
-    using it. Flagging the demonstration is worse than missing it — the warning
-    lane only works while every entry in it is worth a look, and a standing
-    false positive is what teaches a reader to skim past the real one.
+    Quotation marks alone do not make a claim inert: *this is the "first
+    evidence"* is still a novelty claim. Suppression therefore also requires a
+    cue such as ``avoid``, ``phrase``, or ``wording`` on that line.
     """
     line_start = text.rfind("\n", 0, start) + 1
     line_end = text.find("\n", start)
     line = text[line_start : line_end if line_end != -1 else len(text)]
     offset = start - line_start
-    return any(span.start() < offset < span.end() for span in QUOTED_SPAN.finditer(line))
+    inside_quote = any(
+        span.start() < offset < span.end() for span in QUOTED_SPAN.finditer(line)
+    )
+    return inside_quote and bool(METALINGUISTIC_CUE.search(line))
 
 
 def find_review_candidates(repo: Path = REPO) -> list[Finding]:

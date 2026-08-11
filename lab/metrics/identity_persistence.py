@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Legacy single-step persistence toy.
 
-This module predates the trajectory-level implementation in
+This module predates the maintained metrics in
 ``lab/metrics/persistence_scores.py``. It measures only one declared property:
 what fraction of a chosen component set is marked active in a simulated compute
 step.
@@ -10,8 +10,9 @@ The score is an instrument over supplied labels. It does not recover a latent
 identity, prove Von Neumann-Morgenstern rationality, require physical
 simultaneity, or establish that a high-scoring system has a self.
 
-For the repository's maintained Perrier & Bennett (2026) trajectory-level
-implementation, use ``persistence_scores.py``.
+For the maintained version of this fractional diagnostic, use
+``component_coverage``. For Perrier & Bennett's distinct windowed
+``Pweak``/``Pstrong`` logic, use ``persistence_scores`` in the same module.
 """
 
 from typing import List
@@ -60,7 +61,7 @@ class IdentityScrutinizer:
 def run_metric_demo():
     print("═" * 60)
     print("  LEGACY TOY: single-step component coverage")
-    print("  Maintained trajectory metric: lab/metrics/persistence_scores.py")
+    print("  Maintained coverage metric: lab/metrics/persistence_scores.py")
     print("═" * 60)
 
     components = [

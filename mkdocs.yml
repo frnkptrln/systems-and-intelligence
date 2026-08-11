@@ -34,7 +34,6 @@ exclude_docs: |
   !lab/benchmarks/learned-searcher/README.md
   !lab/benchmarks/recursive-workbench/README.md
   !lab/benchmarks/situated-stack/README.md
-  !lab/benchmarks/teo-framework/README.md
   !lab/benchmarks/witness-generation/README.md
 
   meta/
@@ -143,7 +142,6 @@ nav:
           - "Constraint Release": lab/benchmarks/constraint-release/README.md
           - "Recursive Workbench (referee)": lab/benchmarks/recursive-workbench/README.md
           - "Learned Searcher (protocol frozen)": lab/benchmarks/learned-searcher/README.md
-          - "TEO Framework Benchmark": lab/benchmarks/teo-framework/README.md
       - "Interactive":
           - "Web Emergence Explorer": interactive/web-explorer.md
           - "Tensor Logic Visualizer": interactive/tensor-logic.md

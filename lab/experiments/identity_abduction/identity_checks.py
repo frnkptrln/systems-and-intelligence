@@ -7,8 +7,7 @@ shared weak invariant, and an explicit equivalence witness.
 ``README.md`` records an independent Wolfram Language evaluation of exactly
 these quantities. That transcript is provenance — a second implementation, in
 another system, of the same claim. This module is the executable side, so the
-recorded result is checked on every CI run instead of only when someone opens a
-notebook and retypes it.
+recorded result is checked on every CI run.
 
 Usage:
     python -m lab.experiments.identity_abduction.identity_checks
@@ -76,6 +75,33 @@ def reaches(adjacency: np.ndarray, source: int, target: int, steps: int = 5) -> 
     return bool(np.linalg.matrix_power(adjacency, steps)[source, target] > 0)
 
 
+def is_connected(adjacency: np.ndarray) -> bool:
+    """Return whether a non-empty undirected adjacency matrix is connected.
+
+    Connectedness requires every vertex to be reachable, not merely one
+    selected pair through a walk of one selected length.  The explicit graph
+    traversal keeps this check independent of optional graph libraries.
+    """
+    matrix = np.asarray(adjacency)
+    if matrix.ndim != 2 or matrix.shape[0] != matrix.shape[1]:
+        raise ValueError("adjacency must be a square matrix")
+    if matrix.shape[0] == 0:
+        raise ValueError("adjacency must contain at least one vertex")
+    if not np.array_equal(matrix, matrix.T):
+        raise ValueError("is_connected expects an undirected adjacency matrix")
+
+    visited = {0}
+    frontier = [0]
+    while frontier:
+        vertex = frontier.pop()
+        for neighbor in np.flatnonzero(matrix[vertex]):
+            index = int(neighbor)
+            if index not in visited:
+                visited.add(index)
+                frontier.append(index)
+    return len(visited) == matrix.shape[0]
+
+
 def run_checks() -> dict[str, object]:
     """Reproduce every quantity in the README's recorded result block."""
     a = CYCLE_6
@@ -95,7 +121,7 @@ def run_checks() -> dict[str, object]:
         "negativeSpectrumEqual": bool(np.allclose(spectrum(a), spectrum(d))),
         "spectrumCycle6": spectrum(a),
         "spectrumTwoTriangles": spectrum(d),
-        "negativeConnectednessDiffers": (reaches(a, 0, 3), reaches(d, 0, 3)),
+        "negativeConnectednessDiffers": (is_connected(a), is_connected(d)),
     }
 
 

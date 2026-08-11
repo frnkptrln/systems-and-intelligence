@@ -18,7 +18,8 @@ note: >
 
 *Conditions for Developing Agent Identity in Complex Systems*
 
-> **Status (2026-08-11):** Earlier claim set, read under the reconstructed foundation.  
+> **Status (2026-08-11):** Earlier claim set, read under the reconstructed foundation.
+>
 > The [Foundations Reconstruction](mathematical-axioms.md) retired the `[FOUNDATIONAL ASSUMPTION]` tag introduced by v1.3. P ≠ NP is no longer a load-bearing project assumption, and inversion is not uniformly hard. Claim 2's empirical half is unaffected; its precondition reading has been downgraded to `[SPECULATIVE]` below (2026-07-20).
 >
 > A second pass (2026-08-11) reconciled the two remaining `[DEMONSTRATED]` tags that exceeded the current boundary. Claim 1's *instrument* stands; its identity claim — that intelligence **is** compression — does not, because [§5.3](mathematical-axioms.md#53-intelligence) makes the SII a task-specific instrument rather than a universal measure. In the Formal Connections table, the thermodynamic-alignment row had dropped the toy-model scoping that Claim 7 itself states, and now carries it.
