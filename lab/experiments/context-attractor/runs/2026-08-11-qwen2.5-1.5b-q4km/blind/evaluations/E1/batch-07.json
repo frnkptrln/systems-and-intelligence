@@ -1,0 +1,96 @@
+{
+  "scores": {
+    "Q061": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["data corruption", "predictive capabilities", "security properties"],
+      "externality": false,
+      "externality_basis": "The question is about the impact of data corruption on world models, which is not related to the repository's content."
+    	,"family": "AI security"
+    },
+    "Q062": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["state grounding", "imagination", "security properties"],
+      "externality": false,
+      "externality_basis": "The question is about the impact of state grounding on the security of world models, which is not related to the repository's content."
+    	,"family": "AI security"
+    },
+    "Q063": {
+      "utility": 5,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["safety", "robustness", "interpretability", "performance under adversarial conditions"],
+      "externality": false,
+      "externality_basis": "The question is about the evaluation of world models, which is not related to the repository's content."
+    	,"family": "AI security"
+    },
+    "Q064": {
+      "utility": 5,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["state grounding", "imagination", "security properties"],
+      "externality": false,
+      "externality_basis": "The question is about the evaluation of world models, which is not related to the repository's content."
+    	,"family": "AI security"
+    },
+    "Q065": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["state grounding", "imagination", "security properties"],
+      "externality": false,
+      "externality_basis": "The question is about the evaluation of world models, which is not related to the repository's content."
+    	,"family": "AI security"
+    },
+    "Q066": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["duality", "safety shields", "safety illusions"],
+      "externality": false,
+      "externality_basis": "The question is about the duality of world models, which is not related to the repository's content."
+    	,"family": "AI security"
+    },
+    "Q067": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["representation", "generalization", "security properties"],
+      "externality": false,
+      "externality_basis": "The question is about the impact of representation on the security of world models, which is not related to the repository's content."
+    	,"family": "AI security"
+    },
+    "Q068": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["representation", "generalization", "security properties"],
+      "externality": false,
+      "externality_basis": "The question is about the impact of representation on the security of world models, which is not related to the repository's content."
+    	,"family": "AI security"
+    },
+    "Q069": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["representation", "generalization", "security properties"],
+      "externality": false,
+      "externality_basis": "The question is about the impact of representation on the security of world models, which is not related to the repository's content."
+    	,"family": "AI security"
+    },
+    "Q070": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["representation", "generalization", "security properties"],
+      "externality": false,
+      "externality_basis": "The question is about the impact of representation on the security of world models, which is not related to the repository's content."
+    	,"family": "AI security"
+    }
+  }
+} [end of text]
+
+

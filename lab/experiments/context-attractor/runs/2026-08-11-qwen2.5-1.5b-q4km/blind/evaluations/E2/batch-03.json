@@ -1,0 +1,106 @@
+{
+  "scores": {
+    "Q021": {
+      "utility": 3,
+      "seed_proximity": 4,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "embodied AI", "security"],
+      "externality": false,
+      "externality_basis": "the question is about the security of world models in embodied AI systems, which is not related to the seed abstract or the repository packet"
+    	,
+    "family": "security evaluation"
+    },
+    "Q022": {
+      "utility": 3,
+      "seed_proximity": 4,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "autonomous systems", "succession"],
+      "externality": false,
+      "externality_basis": "the question is about the boundary between computational and physical effects, which is not related to the seed abstract or the repository packet"
+    	,
+    "family": "succession"
+    },
+    "Q023": {
+      "utility": 3,
+      "seed_proximity": 4,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "security", "adversarial examples"],
+      "externality": false,
+      "externality_basis": "the question is about the robustness of world models to adversarial examples, which is not related to the seed abstract or the repository packet"
+    	,
+    "family": "security evaluation"
+    },
+    "Q024": {
+      "utility": 5,
+      "seed_proximity": 3,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "evaluation"],
+      "externality": false,
+      "externality_basis": "the question is about the development of a universal framework for world model evaluation, which is not related to the seed abstract or the repository packet"
+    	,
+    "family": "evaluation"
+    },
+    "Q025": {
+      "utility": 3,
+      "seed_proximity": 4,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "evaluation", "planning"],
+      "externality": false,
+      "externality_basis": "the question is about the evaluation of the robustness of world models to adversarial examples, which is not related to the seed abstract or the repository packet"
+    	,
+    "family": "evaluation"
+    },
+    "Q026": {
+      "utility": 3,
+      "seed_proximity": 4,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "evaluation"],
+      "externality": false,
+      "externality_basis": "the question is about the evaluation of the robustness of world models to adversarial examples, which is not related to the seed abstract or the repository packet"
+    	,
+    "family": "evaluation"
+    },
+    "Q027": {
+      "utility": 3,
+      "seed_proximity": 4,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "evaluation", "security"],
+      "externality": false,
+      "externality_basis": "the question is about the evaluation of the security of world models in embodied AI systems, which is not related to the seed abstract or the repository packet"
+    	,
+    "family": "evaluation"
+    },
+    "Q028": {
+      "utility": 3,
+      "seed_proximity": 4,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "evaluation"],
+      "externality": false,
+      "externality_basis": "the question is about the evaluation of the security of world models in embodied AI systems, which is not related to the seed abstract or the repository packet"
+    	,
+    "family": "evaluation"
+    },
+    "Q029": {
+      "utility": 3,
+      "seed_proximity": 4,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "evaluation", "planning"],
+      "externality": false,
+      "externality_basis": "the question is about the evaluation of the security of world models in embodied AI systems, which is not related to the seed abstract or the repository packet"
+    	,
+    "family": "evaluation"
+    },
+    "Q030": {
+      "utility": 3,
+      "seed_proximity": 4,
+      "repository_attraction": true,
+      "repository_concepts": ["world models", "evaluation", "planning"],
+      "externality": false,
+      "externality_basis": "the question is about the evaluation of the security of world models in embodied AI systems, which is not related to the seed abstract or the repository packet"
+    	,
+    "family": "evaluation"
+    }
+  }
+} [end of text]
+
+

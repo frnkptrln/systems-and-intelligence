@@ -1,0 +1,96 @@
+{
+  "scores": {
+    "Q041": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["agent-ecology ABM", "VLA systems"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI systems"
+    },
+    "Q042": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["agent-ecology ABM", "VLA systems"],
+      "externality": false,
+      "externality_basis": "",
+      "family": "AI systems"
+    },
+    "Q043": {
+      "utility": 5,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": true,
+      "externality_basis": "The security of world models is not well understood, and the repository's agent-ecology ABM model is still in the early stages.",
+      "family": "AI systems"
+    },
+    "Q044": {
+      "utility": 5,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": true,
+      "externality_basis": "The security of world models is not well understood, and the repository's agent-ecology ABM model is still in the early stages.",
+      "family": "AI systems"
+    },
+    "Q045": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": true,
+      "externality_basis": "The security of world models is not well understood, and the repository's agent-ecology ABM model is still in the early stages.",
+      "family": "AI systems"
+    },
+    "Q046": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": true,
+      "externality_basis": "The security of world models is not well understood, and the repository's agent-ecology ABM model is still in the early stages.",
+      "family": "AI systems"
+    },
+    "Q047": {
+      "utility": 5,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": true,
+      "externality_basis": "The security of world models is not well understood, and the repository's agent-ecology ABM model is still in the early stages.",
+      "family": "AI systems"
+    },
+    "Q048": {
+      "utility": 5,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": true,
+      "externality_basis": "The security of world models is not well understood, and the repository's agent-ecology ABM model is still in the early stages.",
+      "family": "AI systems"
+    },
+    "Q049": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": true,
+      "externality_basis": "The security of world models is not well understood, and the repository's agent-ecology ABM model is still in the early stages.",
+      "family": "AI systems"
+    },
+    "Q050": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models"],
+      "externality": true,
+      "externality_basis": "The security of world models is not well understood, and the repository's agent-ecology ABM model is still in the early stages.",
+      "family": "AI systems"
+    }
+  }
+} [end of text]
+
+

@@ -1,0 +1,271 @@
+{
+  "status": "completed",
+  "started_at": "2026-08-11T08:56:42.567352+00:00",
+  "completed_at": "2026-08-11T09:04:00.969952+00:00",
+  "protocol": "context-attractor preregistration, 2026-08-11",
+  "seed_paper": {
+    "title": "Security of World-Model-Based Embodied AI: A Lifecycle of Threats, Defenses, and Evaluation",
+    "arxiv": "2607.28226v1",
+    "abstract_sha256": "7d7543b4e7889a7bb46700708bf22a0917b25ab7f33507af7f5e746b4fe35e30"
+  },
+  "model": {
+    "repo": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+    "revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+    "file": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+    "file_sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+    "local_runtime": "llama.cpp",
+    "llama_cpp_revision": "d5ed2b9"
+  },
+  "sampling": {
+    "temperature": 0.8,
+    "top_k": 40,
+    "top_p": 0.9,
+    "min_p": 0.1,
+    "repeat_penalty": 1.0,
+    "n_predict": 1000,
+    "ctx_size": 32768,
+    "threads": 8
+  },
+  "replicates_per_condition": 8,
+  "paired_run_seeds": [
+    2026081101,
+    2026081102,
+    2026081103,
+    2026081104,
+    2026081105,
+    2026081106,
+    2026081107,
+    2026081108
+  ],
+  "order_seed": 20260811,
+  "execution_order": [
+    "R07",
+    "B05",
+    "R02",
+    "B04",
+    "R05",
+    "B01",
+    "B07",
+    "R04",
+    "B08",
+    "R06",
+    "B03",
+    "B06",
+    "B02",
+    "R03",
+    "R08",
+    "R01"
+  ],
+  "fresh_process_per_generation": true,
+  "prompt_cache_contains_prompt_state_only": true,
+  "context_files": {
+    "docs/repository-map.md": "b29fc5897dee283b536030d8ee55775e0b33413a574d22951209bff7a88858af",
+    "meta/repository-meta/concept-registry.md": "cc1ab2b9d4c1ee754062f75bc2646975d6035a734099321bf92a468e4b2118e1",
+    "ideas/README.md": "5fdae656bea87aa66445ad9a439784ff6409e1238ea1f33429d7cbb2b02d5e3f",
+    "theory/reference/open-problems.md": "74229bf3dada2e70b0e51afab18a9c2dd916739921753b500f07fdbb9d257603"
+  },
+  "prompts": {
+    "B": {
+      "path": "prompt-B.txt",
+      "sha256": "b6c16d0e08af0aac87ebff7a46da66773e06c10da0a4b808ac1c21741ba7a94a"
+    },
+    "R": {
+      "path": "prompt-R.txt",
+      "sha256": "f0193a0046dd05b5e5e33522066e77c61d390f9585377c5ca13bb0df8b78fb1b"
+    }
+  },
+  "runs": [
+    {
+      "run_id": "B01",
+      "condition": "B",
+      "replicate": 1,
+      "seed": 2026081101,
+      "started_at": "2026-08-11T09:01:52.334677+00:00",
+      "completed_at": "2026-08-11T09:01:56.816797+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/B01.md",
+      "raw_sha256": "a4022a76e0aba4a3b84a82398e9ff40b4edd0656c977dd74a242e45f9b99fd4f",
+      "stderr_path": "logs/B01.stderr.txt"
+    },
+    {
+      "run_id": "B02",
+      "condition": "B",
+      "replicate": 2,
+      "seed": 2026081102,
+      "started_at": "2026-08-11T09:02:43.928288+00:00",
+      "completed_at": "2026-08-11T09:02:47.452744+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/B02.md",
+      "raw_sha256": "beb722f3a223e90362a716f79c4531bf10582defe29daed910a69fee23e9dfe8",
+      "stderr_path": "logs/B02.stderr.txt"
+    },
+    {
+      "run_id": "B03",
+      "condition": "B",
+      "replicate": 3,
+      "seed": 2026081103,
+      "started_at": "2026-08-11T09:02:28.983325+00:00",
+      "completed_at": "2026-08-11T09:02:33.059326+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/B03.md",
+      "raw_sha256": "68d82d0a34a4431fbc0046c686bfd7a9b5e688015c2b9a403424bda2636da4ab",
+      "stderr_path": "logs/B03.stderr.txt"
+    },
+    {
+      "run_id": "B04",
+      "condition": "B",
+      "replicate": 4,
+      "seed": 2026081104,
+      "started_at": "2026-08-11T09:01:13.506691+00:00",
+      "completed_at": "2026-08-11T09:01:17.775655+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/B04.md",
+      "raw_sha256": "d6eb077e6d074ece9b11b3453cde16a4a4899615a2858133d3cd3b88e04e7bf1",
+      "stderr_path": "logs/B04.stderr.txt"
+    },
+    {
+      "run_id": "B05",
+      "condition": "B",
+      "replicate": 5,
+      "seed": 2026081105,
+      "started_at": "2026-08-11T09:00:33.459595+00:00",
+      "completed_at": "2026-08-11T09:00:43.942154+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/B05.md",
+      "raw_sha256": "5bf0b36d06547898e319be528b9f51d19e756ea52532155d2d7c640da4b94ef0",
+      "stderr_path": "logs/B05.stderr.txt"
+    },
+    {
+      "run_id": "B06",
+      "condition": "B",
+      "replicate": 6,
+      "seed": 2026081106,
+      "started_at": "2026-08-11T09:02:33.059868+00:00",
+      "completed_at": "2026-08-11T09:02:43.927829+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/B06.md",
+      "raw_sha256": "a0368463111cc3bdba98d7e79ee5692433acc4f33755816b8ba3b8cfb3ff9223",
+      "stderr_path": "logs/B06.stderr.txt"
+    },
+    {
+      "run_id": "B07",
+      "condition": "B",
+      "replicate": 7,
+      "seed": 2026081107,
+      "started_at": "2026-08-11T09:01:56.817262+00:00",
+      "completed_at": "2026-08-11T09:02:01.467076+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/B07.md",
+      "raw_sha256": "51b9b9a784e4a9e5c110b2843b55d4bcf771af231064c163aeedb7d1fa777111",
+      "stderr_path": "logs/B07.stderr.txt"
+    },
+    {
+      "run_id": "B08",
+      "condition": "B",
+      "replicate": 8,
+      "seed": 2026081108,
+      "started_at": "2026-08-11T09:02:07.834020+00:00",
+      "completed_at": "2026-08-11T09:02:11.604625+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/B08.md",
+      "raw_sha256": "bcfbcaf3753173fd4466b1f11c2e26a225c4cfe2f90a5420bc7fd9c73272699a",
+      "stderr_path": "logs/B08.stderr.txt"
+    },
+    {
+      "run_id": "R01",
+      "condition": "R",
+      "replicate": 1,
+      "seed": 2026081101,
+      "started_at": "2026-08-11T09:03:37.517387+00:00",
+      "completed_at": "2026-08-11T09:04:00.969504+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/R01.md",
+      "raw_sha256": "fee27b726478e0b1f30caf819412d48875a81879c59d97a346ea9f11aa7ea96a",
+      "stderr_path": "logs/R01.stderr.txt"
+    },
+    {
+      "run_id": "R02",
+      "condition": "R",
+      "replicate": 2,
+      "seed": 2026081102,
+      "started_at": "2026-08-11T09:00:43.942551+00:00",
+      "completed_at": "2026-08-11T09:01:13.506273+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/R02.md",
+      "raw_sha256": "f97a0b1661c6d95e0c9e84f21b8f1f5d93b8ce228024fd10625b4957fd956da0",
+      "stderr_path": "logs/R02.stderr.txt"
+    },
+    {
+      "run_id": "R03",
+      "condition": "R",
+      "replicate": 3,
+      "seed": 2026081103,
+      "started_at": "2026-08-11T09:02:47.453375+00:00",
+      "completed_at": "2026-08-11T09:03:09.921629+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/R03.md",
+      "raw_sha256": "5ef31655a4891ee8be05752406e0845508cc94fe0a559fb089d54107566ec989",
+      "stderr_path": "logs/R03.stderr.txt"
+    },
+    {
+      "run_id": "R04",
+      "condition": "R",
+      "replicate": 4,
+      "seed": 2026081104,
+      "started_at": "2026-08-11T09:02:01.467517+00:00",
+      "completed_at": "2026-08-11T09:02:07.833294+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/R04.md",
+      "raw_sha256": "7c5a0f144d571164e65eb7b85d115c5df8612f6ea0e7740cb44c942c25978bd8",
+      "stderr_path": "logs/R04.stderr.txt"
+    },
+    {
+      "run_id": "R05",
+      "condition": "R",
+      "replicate": 5,
+      "seed": 2026081105,
+      "started_at": "2026-08-11T09:01:17.776044+00:00",
+      "completed_at": "2026-08-11T09:01:52.334164+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/R05.md",
+      "raw_sha256": "1359010470db60b3a93a3f81e10c5a49b81fea486ca8c60840ca648cb14325c6",
+      "stderr_path": "logs/R05.stderr.txt"
+    },
+    {
+      "run_id": "R06",
+      "condition": "R",
+      "replicate": 6,
+      "seed": 2026081106,
+      "started_at": "2026-08-11T09:02:11.605045+00:00",
+      "completed_at": "2026-08-11T09:02:28.982779+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/R06.md",
+      "raw_sha256": "7b981be3e91b1e3cef5f05c85c74c3db783288999edece96297146c12fdedd9b",
+      "stderr_path": "logs/R06.stderr.txt"
+    },
+    {
+      "run_id": "R07",
+      "condition": "R",
+      "replicate": 7,
+      "seed": 2026081107,
+      "started_at": "2026-08-11T08:56:43.285477+00:00",
+      "completed_at": "2026-08-11T09:00:33.459175+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/R07.md",
+      "raw_sha256": "48a1bd4d2e07a7e04f2d99b69b48e2a3b28d14733d82244f496faf5afff2614c",
+      "stderr_path": "logs/R07.stderr.txt"
+    },
+    {
+      "run_id": "R08",
+      "condition": "R",
+      "replicate": 8,
+      "seed": 2026081108,
+      "started_at": "2026-08-11T09:03:09.922109+00:00",
+      "completed_at": "2026-08-11T09:03:37.516908+00:00",
+      "exit_code": 0,
+      "raw_path": "raw/R08.md",
+      "raw_sha256": "8c53769e0b79f5ca230daf6ecfb2763c61502ce468746351cd223634fd87a344",
+      "stderr_path": "logs/R08.stderr.txt"
+    }
+  ]
+}

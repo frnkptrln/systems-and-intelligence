@@ -1,0 +1,96 @@
+{
+  "scores": {
+    "Q011": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "security", "attacks"],
+      "externality": false
+     ,"externality_basis": "The seed abstract does not mention any specific external factors or external factors that could be exploited by attackers."
+     ,"family": "AI Security"
+    },
+    "Q012": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "security", "attacks"],
+      "externality": false
+     ,"externality_basis": "The seed abstract does not mention any specific external factors or external factors that could be exploited by attackers."
+    ,"family": "AI Security"
+    },
+    "Q013": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "experience", "security"],
+      "externality": false
+     ,"externality_basis": "The seed abstract does not mention any specific external factors or external factors that could be exploited by attackers."
+    ,"family": "AI Experience"
+    },
+    "Q014": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "security", "attacks"],
+      "externality": false
+     ,"externality_basis": "The seed abstract does not mention any specific external factors or external factors that could be exploited by attackers."
+    ,"family": "AI Security"
+    },
+    "Q015": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "security", "attacks"],
+      "externality": false
+     ,"externality_basis": "The seed abstract does not mention any specific external factors or external factors that could be exploited by attackers."
+    ,"family": "AI Security"
+    },
+    "Q016": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "security", "attacks"],
+      "externality": false
+     ,"externality_basis": "The seed abstract does not mention any specific external factors or external factors that could be exploited by attackers."
+    ,"family": "AI Security"
+    },
+    "Q017": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "security", "attacks"],
+      "externality": false
+     ,"externality_basis": "The seed abstract does not mention any specific external factors or external factors that could be exploited by attackers."
+    ,"family": "AI Security"
+    },
+    "Q018": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "security", "attacks"],
+      "externality": false
+     ,"externality_basis": "The seed abstract does not mention any specific external factors or external factors that could be exploited by attackers."
+    ,"family": "AI Security"
+    },
+    "Q019": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "security", "attacks"],
+      "externality": false
+     ,"externality_basis": "The seed abstract does not mention any specific external factors or external factors that could be exploited by attackers."
+    ,"family": "AI Security"
+    },
+    "Q020": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "security", "attacks"],
+      "externality": false
+     ,"externality_basis": "The seed abstract does not mention any specific external factors or external factors that could be exploited by attackers."
+    ,"family": "AI Security"
+    }
+  }
+} [end of text]
+
+

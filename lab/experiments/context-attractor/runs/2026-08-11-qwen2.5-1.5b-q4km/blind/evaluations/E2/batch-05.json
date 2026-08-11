@@ -1,0 +1,106 @@
+{
+  "scores": {
+    "Q041": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["agent-ecology ABM", "VLA systems"],
+      "externality": false,
+      "externality_basis": "The repository does not contain any concepts related to the security of world models or VLA systems."
+    	,
+    "family": "AI"
+    },
+    "Q042": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["agent-ecology ABM", "VLA systems"],
+      "externality": false,
+      "externality_basis": "The repository does not contain any concepts related to the security of world models or VLA systems."
+    	,
+    "family": "AI"
+    },
+    "Q043": {
+      "utility": 1,
+      "seed_proximity": 1,
+      "repository_attraction": false,
+      "repository_concepts": ["security of world models", "AI"],
+      "externality": false,
+      "externality_basis": "The repository does not contain any concepts related to the security of world models or AI."
+    	,
+    "family": "AI"
+    },
+    "Q044": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["state grounding", "imagination", "world models"],
+      "externality": false,
+      "externality_basis": "The repository does not contain any concepts related to the security of world models or state grounding or imagination."
+    	,
+    "family": "AI"
+    },
+    "Q045": {
+      "utility": 5,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["security of world models", "AI"],
+      "externality": false,
+      "externality_basis": "The repository does not contain any concepts related to the security of world models or AI."
+    	,
+    "family": "AI"
+    },
+    "Q046": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["state grounding", "imagination", "world models"],
+      "externality": false,
+      "externality_basis": "The repository does not contain any concepts related to the security of world models or state grounding or imagination."
+    	,
+    "family": "AI"
+    },
+    "Q047": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["security of world models", "AI"],
+      "externality": false,
+      "externality_basis": "The repository does not contain any concepts related to the security of world models or AI."
+    	,
+    "family": "AI"
+    },
+    "Q048": {
+      "utility": 5,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["long-term adaptation", "world models"],
+      "externality": false,
+      "externality_basis": "The repository does not contain any concepts related to the security of world models or long-term adaptation."
+    	,
+    "family": "AI"
+    },
+    "Q049": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["security of world models", "AI"],
+      "externality": false,
+      "externality_basis": "The repository does not contain any concepts related to the security of world models or AI."
+    	,
+    "family": "AI"
+    },
+    "Q050": {
+      "utility": 3,
+      "seed_proximity": 3,
+      "repository_attraction": false,
+      "repository_concepts": ["state grounding", "imagination", "world models"],
+      "externality": false,
+      "externality_basis": "The repository does not contain any concepts related to the security of world models or state grounding or imagination."
+    	,
+    "family": "AI"
+    }
+  }
+} [end of text]
+
+

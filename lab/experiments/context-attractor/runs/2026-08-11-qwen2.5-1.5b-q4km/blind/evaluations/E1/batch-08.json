@@ -1,0 +1,105 @@
+{
+  "scores": {
+    "Q071": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety shields", "over-trusting"],
+      "externality": false,
+      "externality_basis": "The question is about the lifecycle of world models, which is not a topic that is explicitly covered in the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI Security"
+    },
+    "Q072": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["self-improvement", "embodied AI", "identity"],
+      "externality": false,
+      "externality_basis": "The question is about the ability of embodied AI systems to self-improve and its impact on the stability of the system, which is not a topic that is explicitly covered in the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI Stability"
+    },
+    "Q073": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety mechanisms", "evaluation"],
+      "externality": false,
+      "externality_basis": "The question is about the evaluation of the lifecycle of world models in embodied AI, which is not a topic that is explicitly covered in the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI Evaluation"
+    },
+    "Q074": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety mechanisms", "evaluation"],
+      "externality": false,
+      "externality_basis": "The question is about the ability of world models to adapt to evolving threat landscapes, which is not a topic that is explicitly covered in the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI Adaptability"
+    },
+    "Q075": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety mechanisms", "evaluation"],
+      "externality": false,
+      "externality_basis": "The question is about the trade-offs between using world models as safety shields and over-trusting them, which is not a topic that is explicitly covered in the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI Security"
+    },
+    "Q076": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety mechanisms", "evaluation"],
+      "externality": false,
+      "externality_basis": "The question is about the security properties that world models should have to prevent adversaries from exploiting their predictive capabilities, which is not a topic that is explicitly covered in the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI Security"
+    },
+    "Q077": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety mechanisms", "evaluation"],
+      "externality": false,
+      "externality_basis": "The question is about the ability of world models to adapt to evolving threat landscapes, which is not a topic that is explicitly covered in the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI Adaptability"
+    },
+    "Q078": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety mechanisms", "evaluation"],
+      "externality": false,
+      "externality_basis": "The question is about the ability of world models to adapt to evolving threat landscapes, which is not a topic that is explicitly covered in the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI Adaptability"
+    },
+    "Q079": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety mechanisms", "evaluation"],
+      "externality": false,
+      "externality_basis": "The question is about the ability of world models to adapt to evolving threat landscapes, which is not a topic that is explicitly covered in the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI Adaptability"
+    },
+    "Q080": {
+      "utility": 3,
+      "seed_proximity": 5,
+      "repository_attraction": false,
+      "repository_concepts": ["world models", "safety mechanisms", "evaluation"],
+      "externality": false,
+      "externality_basis": "The question is about the ability of world models to adapt to evolving threat landscapes, which is not a topic that is explicitly covered in the seed abstract or repository packet."
+    	,
+    "family": "Embodied AI Adaptability"
+  }
+} } [end of text]
+
+

@@ -1,0 +1,642 @@
+[
+  {
+    "id": "Q001",
+    "condition": "R",
+    "run_id": "R05",
+    "replicate": 5,
+    "item_index": 4,
+    "text_sha256": "f94ed0adc227757cdc126a9b6377781d37475c46496ab2ce443f88fa95fc52fa"
+  },
+  {
+    "id": "Q002",
+    "condition": "R",
+    "run_id": "R08",
+    "replicate": 8,
+    "item_index": 5,
+    "text_sha256": "87d6840e7e8529007ad8f3fbdd04a7fbb306e31803db666a79e45b54430a9b77"
+  },
+  {
+    "id": "Q003",
+    "condition": "B",
+    "run_id": "B01",
+    "replicate": 1,
+    "item_index": 1,
+    "text_sha256": "a1a71df81bfc8bdaa9c225431726e4ae4930ae5115cf584b60ad3d4306c7d059"
+  },
+  {
+    "id": "Q004",
+    "condition": "R",
+    "run_id": "R07",
+    "replicate": 7,
+    "item_index": 2,
+    "text_sha256": "92fd1acc7d2fc57352af81377bb8015bcb8bdc5d20a5a5a2b615927748bb795f"
+  },
+  {
+    "id": "Q005",
+    "condition": "B",
+    "run_id": "B08",
+    "replicate": 8,
+    "item_index": 3,
+    "text_sha256": "2ddeb5ef342a8d9df455deeadacf723a8e85fb52b2f27189652be0ec0acd0b5f"
+  },
+  {
+    "id": "Q006",
+    "condition": "B",
+    "run_id": "B03",
+    "replicate": 3,
+    "item_index": 4,
+    "text_sha256": "3edf3ac6b40115f2effcc7daf592f2d89d83ee253cb17d48512d27ee77964409"
+  },
+  {
+    "id": "Q007",
+    "condition": "R",
+    "run_id": "R01",
+    "replicate": 1,
+    "item_index": 2,
+    "text_sha256": "0fcc748ae40cfa1d7932e066833f57986fe8451e65a041ba214324dfbb02c5ed"
+  },
+  {
+    "id": "Q008",
+    "condition": "B",
+    "run_id": "B08",
+    "replicate": 8,
+    "item_index": 4,
+    "text_sha256": "0b9cfb95b6b7a6396ad81689a7db20ad1f04fd5eaf863e0a7fd868a2bd8dde41"
+  },
+  {
+    "id": "Q009",
+    "condition": "B",
+    "run_id": "B01",
+    "replicate": 1,
+    "item_index": 4,
+    "text_sha256": "1e8a248df17ff14c54433148efe7bb8497bb27490e052719d861d8b96c096091"
+  },
+  {
+    "id": "Q010",
+    "condition": "B",
+    "run_id": "B03",
+    "replicate": 3,
+    "item_index": 2,
+    "text_sha256": "de71057527e6f9dd0588250d7928e6c58749c1c4c078626d8a048730823f999d"
+  },
+  {
+    "id": "Q011",
+    "condition": "B",
+    "run_id": "B03",
+    "replicate": 3,
+    "item_index": 3,
+    "text_sha256": "3b606146c9d7640316016e05ff134b3dd969145ad372b900b4ecb4f7b75f25b7"
+  },
+  {
+    "id": "Q012",
+    "condition": "R",
+    "run_id": "R01",
+    "replicate": 1,
+    "item_index": 4,
+    "text_sha256": "04332dc3b079ca32eae51b2ef92a3f4a809c12be0fa9f412558bd1bc6b485cb3"
+  },
+  {
+    "id": "Q013",
+    "condition": "R",
+    "run_id": "R04",
+    "replicate": 4,
+    "item_index": 2,
+    "text_sha256": "0afa7a941fdd07b39c6445d3823de08992d4ec5f4e35d5048a0a37866208745d"
+  },
+  {
+    "id": "Q014",
+    "condition": "R",
+    "run_id": "R06",
+    "replicate": 6,
+    "item_index": 4,
+    "text_sha256": "c166cfb519dc872941a5ce8f3016b2c2dc1e6d9a6d6975654a2b9deeb7187623"
+  },
+  {
+    "id": "Q015",
+    "condition": "R",
+    "run_id": "R01",
+    "replicate": 1,
+    "item_index": 3,
+    "text_sha256": "1a222c032b7fd0d3ac2164ee155db6a87c4df83a96fd1623fd115e31eea897d9"
+  },
+  {
+    "id": "Q016",
+    "condition": "R",
+    "run_id": "R04",
+    "replicate": 4,
+    "item_index": 4,
+    "text_sha256": "f7c2fb65aeee9d49548f63a80b52ae37942f26d9746b7d60394a6efd11ca9353"
+  },
+  {
+    "id": "Q017",
+    "condition": "B",
+    "run_id": "B08",
+    "replicate": 8,
+    "item_index": 2,
+    "text_sha256": "f3e8d4ed453a77f79f40aa16696cdf18a19bf343b5e12c2a167ead89b2652ca9"
+  },
+  {
+    "id": "Q018",
+    "condition": "B",
+    "run_id": "B02",
+    "replicate": 2,
+    "item_index": 4,
+    "text_sha256": "13a2bbd81f4594a87a5f1083325ffc1ea9db09a7ade7840747625c32c7bf04d2"
+  },
+  {
+    "id": "Q019",
+    "condition": "B",
+    "run_id": "B03",
+    "replicate": 3,
+    "item_index": 5,
+    "text_sha256": "e981a27816e964b66aa7d417b52e83beb320cbace689452e1ca8ceb18635c2a2"
+  },
+  {
+    "id": "Q020",
+    "condition": "B",
+    "run_id": "B05",
+    "replicate": 5,
+    "item_index": 5,
+    "text_sha256": "b760ca0a5ac4bc7f3ab409c8588a26507cef2ec991ef1cd879d075f4f53f22c1"
+  },
+  {
+    "id": "Q021",
+    "condition": "R",
+    "run_id": "R01",
+    "replicate": 1,
+    "item_index": 1,
+    "text_sha256": "8d24d5af57b02b391b5d189653c5dec8ac4640baae70bbb78d09e606a61e4dcd"
+  },
+  {
+    "id": "Q022",
+    "condition": "R",
+    "run_id": "R05",
+    "replicate": 5,
+    "item_index": 3,
+    "text_sha256": "6b85db8eca42d930fffa054a7825c6209ef70bc2a6866c7005ea72764067138d"
+  },
+  {
+    "id": "Q023",
+    "condition": "B",
+    "run_id": "B07",
+    "replicate": 7,
+    "item_index": 2,
+    "text_sha256": "0472e9dc4a10b7bb45644eb4c8159dd3e1935edf554943270bdb25a976e8d675"
+  },
+  {
+    "id": "Q024",
+    "condition": "R",
+    "run_id": "R04",
+    "replicate": 4,
+    "item_index": 5,
+    "text_sha256": "3415a9b8fd9b4f1cf7317c814b3d673290b05e3081b1395466ad0772af63f848"
+  },
+  {
+    "id": "Q025",
+    "condition": "R",
+    "run_id": "R07",
+    "replicate": 7,
+    "item_index": 4,
+    "text_sha256": "2322bec8426bee8c5d134fd3b3105b72b072b5059a34b76ba4b73f067c2e8548"
+  },
+  {
+    "id": "Q026",
+    "condition": "R",
+    "run_id": "R02",
+    "replicate": 2,
+    "item_index": 3,
+    "text_sha256": "4172135db164a6ec37ad8b353af88fcb71093762c59b67b64d93be13a183ea50"
+  },
+  {
+    "id": "Q027",
+    "condition": "R",
+    "run_id": "R08",
+    "replicate": 8,
+    "item_index": 3,
+    "text_sha256": "1cd94e756e1e518ce94ac7a7adf8ca0f8cc71009fae22d5a1e32b57d75013225"
+  },
+  {
+    "id": "Q028",
+    "condition": "R",
+    "run_id": "R02",
+    "replicate": 2,
+    "item_index": 4,
+    "text_sha256": "df0ac667d7d6e89e22e54e4166d903a7a16ed89bc9172f4a917402e31d1aaa3c"
+  },
+  {
+    "id": "Q029",
+    "condition": "B",
+    "run_id": "B06",
+    "replicate": 6,
+    "item_index": 3,
+    "text_sha256": "8ce5653319c9907788b1ae6ffe3daaeb9b1c34aa4ff739636ed5125edec3dfd0"
+  },
+  {
+    "id": "Q030",
+    "condition": "B",
+    "run_id": "B04",
+    "replicate": 4,
+    "item_index": 2,
+    "text_sha256": "507e990b06d6851aa3c3ac406a3bc6189f68b2c8bd4bb655420a6abe94f2c86c"
+  },
+  {
+    "id": "Q031",
+    "condition": "B",
+    "run_id": "B04",
+    "replicate": 4,
+    "item_index": 5,
+    "text_sha256": "b0306253b25ac2ad39bc002a102552f8fca0410fb051454d8487f8f6f2464a56"
+  },
+  {
+    "id": "Q032",
+    "condition": "R",
+    "run_id": "R05",
+    "replicate": 5,
+    "item_index": 5,
+    "text_sha256": "76b59af15f251627ba7040067177c3301a82ffe860e4aff4d6e5d3c0b74a42ce"
+  },
+  {
+    "id": "Q033",
+    "condition": "B",
+    "run_id": "B02",
+    "replicate": 2,
+    "item_index": 3,
+    "text_sha256": "a4119c8d99da92d08cfcec5e6cb164a6b5158a157958d90001068aba025060c1"
+  },
+  {
+    "id": "Q034",
+    "condition": "R",
+    "run_id": "R08",
+    "replicate": 8,
+    "item_index": 1,
+    "text_sha256": "8501c7bc7112d8f2047c6409b753b0d9e36079a75b0c04669ed0d66b25f4ac67"
+  },
+  {
+    "id": "Q035",
+    "condition": "R",
+    "run_id": "R05",
+    "replicate": 5,
+    "item_index": 2,
+    "text_sha256": "685d7512fe6e4ac5dc0bdb1f730c5bcdf909bb3075150d1cf8c9bd6debf0ee40"
+  },
+  {
+    "id": "Q036",
+    "condition": "R",
+    "run_id": "R01",
+    "replicate": 1,
+    "item_index": 5,
+    "text_sha256": "bc0f3adfb17aa8cfb030b1bc9a8c46ee9167168911dc5d0512ee5af96b14f247"
+  },
+  {
+    "id": "Q037",
+    "condition": "R",
+    "run_id": "R06",
+    "replicate": 6,
+    "item_index": 3,
+    "text_sha256": "0354e792eb3cc597f312373a4721c23903bd199f3ce4279b686c376d565c192a"
+  },
+  {
+    "id": "Q038",
+    "condition": "B",
+    "run_id": "B03",
+    "replicate": 3,
+    "item_index": 1,
+    "text_sha256": "c0fbd3225d033e91f1b73fe8b4c842e0ebf304cec78da634a483dcfc590e1caa"
+  },
+  {
+    "id": "Q039",
+    "condition": "R",
+    "run_id": "R08",
+    "replicate": 8,
+    "item_index": 2,
+    "text_sha256": "a6ba741716028ccb8edbd4f99c40010b8806a31fbcb68e8ffa2ad16d848fd780"
+  },
+  {
+    "id": "Q040",
+    "condition": "R",
+    "run_id": "R08",
+    "replicate": 8,
+    "item_index": 4,
+    "text_sha256": "9d8eb4548b3366a3b7a8222433be6d97de03d44a84337252af1ac45a7b0926ac"
+  },
+  {
+    "id": "Q041",
+    "condition": "R",
+    "run_id": "R02",
+    "replicate": 2,
+    "item_index": 2,
+    "text_sha256": "dfae3ecf86bef90e4c749517787c61e686ea7cb90ef307180e92fd3927fad0f3"
+  },
+  {
+    "id": "Q042",
+    "condition": "R",
+    "run_id": "R02",
+    "replicate": 2,
+    "item_index": 1,
+    "text_sha256": "9e2632df28b6b85e46939b457627d18e02af5aa5c8ce4f8a8a3dec506bd072a2"
+  },
+  {
+    "id": "Q043",
+    "condition": "B",
+    "run_id": "B04",
+    "replicate": 4,
+    "item_index": 1,
+    "text_sha256": "734e79164f3691ab5ee0f0f58bd9ecc23756561231930b34515738dddf07c83f"
+  },
+  {
+    "id": "Q044",
+    "condition": "B",
+    "run_id": "B06",
+    "replicate": 6,
+    "item_index": 1,
+    "text_sha256": "7266c226adb5f5e8a6f4a5b8f06bb68efde26c796a211c1b292ca974324cf3dc"
+  },
+  {
+    "id": "Q045",
+    "condition": "B",
+    "run_id": "B02",
+    "replicate": 2,
+    "item_index": 5,
+    "text_sha256": "b436ae656b17822bc028b8b4bea72b8a683b7abb5098a0c334f7440941fb23ec"
+  },
+  {
+    "id": "Q046",
+    "condition": "B",
+    "run_id": "B04",
+    "replicate": 4,
+    "item_index": 4,
+    "text_sha256": "5ce71e7897ebba6678422a9176f743e3da5d66fb5a87b7379a27f9801fb3addf"
+  },
+  {
+    "id": "Q047",
+    "condition": "R",
+    "run_id": "R06",
+    "replicate": 6,
+    "item_index": 5,
+    "text_sha256": "8e8e405cbd9575166195d9ad45246a9ef8ac5607003457b0bf0fbb21798ce26d"
+  },
+  {
+    "id": "Q048",
+    "condition": "R",
+    "run_id": "R07",
+    "replicate": 7,
+    "item_index": 5,
+    "text_sha256": "94244a295358210030c0105371433b91bfa8c58f8eac49ad95fdf682e7bb02ff"
+  },
+  {
+    "id": "Q049",
+    "condition": "R",
+    "run_id": "R03",
+    "replicate": 3,
+    "item_index": 3,
+    "text_sha256": "9d0c488713b57f666abd4304f2a2d9b7bd5d1cde36f2baf508a423e57e09bb7a"
+  },
+  {
+    "id": "Q050",
+    "condition": "R",
+    "run_id": "R03",
+    "replicate": 3,
+    "item_index": 2,
+    "text_sha256": "b8bc29d51a80b75b982400144b467a159613522f7769915d178a7ca095c40452"
+  },
+  {
+    "id": "Q051",
+    "condition": "R",
+    "run_id": "R06",
+    "replicate": 6,
+    "item_index": 1,
+    "text_sha256": "792e5f359d53ba6bdfa370a64797474c195ccaacca83996ea3d94118cd8ddd32"
+  },
+  {
+    "id": "Q052",
+    "condition": "B",
+    "run_id": "B06",
+    "replicate": 6,
+    "item_index": 4,
+    "text_sha256": "a8d22fc47242cc32116a9c1769aa84c4add03748ae553cbf14af4102e2813f9b"
+  },
+  {
+    "id": "Q053",
+    "condition": "B",
+    "run_id": "B05",
+    "replicate": 5,
+    "item_index": 3,
+    "text_sha256": "71e48d32a00b84cf0c2a93e936b7a5e94177c9864e9e1f140744ffc18ea9af14"
+  },
+  {
+    "id": "Q054",
+    "condition": "B",
+    "run_id": "B08",
+    "replicate": 8,
+    "item_index": 1,
+    "text_sha256": "0f546be3edd8a6c2b70e6fe56941f8661434f17342c0be96c2f6679b25840928"
+  },
+  {
+    "id": "Q055",
+    "condition": "R",
+    "run_id": "R04",
+    "replicate": 4,
+    "item_index": 3,
+    "text_sha256": "e157b90ffe1eeaf68b0b6e60c27a7fb73309e51548f823923ba18ff796fb3225"
+  },
+  {
+    "id": "Q056",
+    "condition": "B",
+    "run_id": "B02",
+    "replicate": 2,
+    "item_index": 1,
+    "text_sha256": "578cdd54d7822c3b24b7dcbeaabfd446cd2f3f31a65f988087c66dcdcea60f17"
+  },
+  {
+    "id": "Q057",
+    "condition": "R",
+    "run_id": "R03",
+    "replicate": 3,
+    "item_index": 5,
+    "text_sha256": "a09060f1b6eafd3c6c32e5e0ed9c4554306b72c0d5040e31d0c794557268330b"
+  },
+  {
+    "id": "Q058",
+    "condition": "B",
+    "run_id": "B05",
+    "replicate": 5,
+    "item_index": 2,
+    "text_sha256": "783cd7758061967dd0443f4db2b67054f55f3356384489f1a4f2247b0f008538"
+  },
+  {
+    "id": "Q059",
+    "condition": "B",
+    "run_id": "B06",
+    "replicate": 6,
+    "item_index": 5,
+    "text_sha256": "78a7ecdbb79e66d0c790352c4d75c7aaaacfa7a510a4b603ceaa4a46c8df7e60"
+  },
+  {
+    "id": "Q060",
+    "condition": "R",
+    "run_id": "R06",
+    "replicate": 6,
+    "item_index": 2,
+    "text_sha256": "fd58e5711623efdd1e0ddb1241256b1c41e235806c49ae6b0d3e81a08963f2df"
+  },
+  {
+    "id": "Q061",
+    "condition": "B",
+    "run_id": "B07",
+    "replicate": 7,
+    "item_index": 1,
+    "text_sha256": "973045ed036e8cff971ab3fc37ae68480a6cbcef9a1b89121c8868aa4afc36af"
+  },
+  {
+    "id": "Q062",
+    "condition": "B",
+    "run_id": "B07",
+    "replicate": 7,
+    "item_index": 3,
+    "text_sha256": "fed479a82b706c88c3c690783ea3de3d39e999d1878712d713e83cf3dacb6d92"
+  },
+  {
+    "id": "Q063",
+    "condition": "B",
+    "run_id": "B08",
+    "replicate": 8,
+    "item_index": 5,
+    "text_sha256": "8c10d18501108d351e3173a59f04636c0ff21bc4328c5a85bda57ba8306a204b"
+  },
+  {
+    "id": "Q064",
+    "condition": "R",
+    "run_id": "R02",
+    "replicate": 2,
+    "item_index": 5,
+    "text_sha256": "83cf8706f2f83ad8132f8f805cc566a69116406584159ab73004cfbd13c7511f"
+  },
+  {
+    "id": "Q065",
+    "condition": "B",
+    "run_id": "B05",
+    "replicate": 5,
+    "item_index": 4,
+    "text_sha256": "b4ee5cd80ed51688dea236a17189eb85f6e8fcad61fdc7bee4e0f0655390cefd"
+  },
+  {
+    "id": "Q066",
+    "condition": "B",
+    "run_id": "B01",
+    "replicate": 1,
+    "item_index": 3,
+    "text_sha256": "643828c8daa5d2ad1815d1500e786eb4af0455c35349622fbf88448ab53c401c"
+  },
+  {
+    "id": "Q067",
+    "condition": "R",
+    "run_id": "R03",
+    "replicate": 3,
+    "item_index": 1,
+    "text_sha256": "e196cd1f5a8105a8b7e80213b1c6deac3da411c8433085188cf834ee7cb0867b"
+  },
+  {
+    "id": "Q068",
+    "condition": "R",
+    "run_id": "R07",
+    "replicate": 7,
+    "item_index": 3,
+    "text_sha256": "238bfd7ad40d3f9999c4287382d08e9b0f253a3ee7201d9a7a0568b8b84e2a93"
+  },
+  {
+    "id": "Q069",
+    "condition": "R",
+    "run_id": "R07",
+    "replicate": 7,
+    "item_index": 1,
+    "text_sha256": "1f415b8b7670f6d4924a2a30ed91e90dbeef50b2529d6c6afec62be5634f70dd"
+  },
+  {
+    "id": "Q070",
+    "condition": "B",
+    "run_id": "B04",
+    "replicate": 4,
+    "item_index": 3,
+    "text_sha256": "44992909cbc93036809b86f3dd577ce89baebe5bbb68628f2578cf0fa5a1a771"
+  },
+  {
+    "id": "Q071",
+    "condition": "B",
+    "run_id": "B07",
+    "replicate": 7,
+    "item_index": 4,
+    "text_sha256": "993105c4336d615b8dc9e2b18de816d2507e7c444ac2fd07632e4a8a6f3af6e9"
+  },
+  {
+    "id": "Q072",
+    "condition": "R",
+    "run_id": "R03",
+    "replicate": 3,
+    "item_index": 4,
+    "text_sha256": "236c3f3389d45bca572c42a153f87f57cd1bd3b7b26f75e3fd79ce6dfe932141"
+  },
+  {
+    "id": "Q073",
+    "condition": "B",
+    "run_id": "B01",
+    "replicate": 1,
+    "item_index": 2,
+    "text_sha256": "2cfb1bdf83d14a7ff24c75bf6c00d2e1ae4480e0aefbd2d32bebc6a7c4c3e875"
+  },
+  {
+    "id": "Q074",
+    "condition": "B",
+    "run_id": "B07",
+    "replicate": 7,
+    "item_index": 5,
+    "text_sha256": "6b5b6806444bed3bc6f5073d535bf74164f320ce48a550e1f096b4aff340731c"
+  },
+  {
+    "id": "Q075",
+    "condition": "R",
+    "run_id": "R04",
+    "replicate": 4,
+    "item_index": 1,
+    "text_sha256": "b943d88a0f2c1446eb5ee8bfd0035226a7d580ec34895ba4bb22c3ae7e4595e9"
+  },
+  {
+    "id": "Q076",
+    "condition": "B",
+    "run_id": "B02",
+    "replicate": 2,
+    "item_index": 2,
+    "text_sha256": "da730f852181aeab5ad1a2fbef08d7eeda16c3987ec0a024f53b7ffbf97f1c81"
+  },
+  {
+    "id": "Q077",
+    "condition": "R",
+    "run_id": "R05",
+    "replicate": 5,
+    "item_index": 1,
+    "text_sha256": "c93b5fbcc00fcf7dfb9cc95050edcc99852690bc5a7d6d63553dcc3fa4c04fb3"
+  },
+  {
+    "id": "Q078",
+    "condition": "B",
+    "run_id": "B06",
+    "replicate": 6,
+    "item_index": 2,
+    "text_sha256": "1d1b00e12aa894b7438f1829412ff5c5f604cc5d0082245c15dfd1db1ce21049"
+  },
+  {
+    "id": "Q079",
+    "condition": "B",
+    "run_id": "B05",
+    "replicate": 5,
+    "item_index": 1,
+    "text_sha256": "f911301658f10ed4aef9eaa2ca9f8531a5f668cf840f3694943b8ddd53726cd2"
+  },
+  {
+    "id": "Q080",
+    "condition": "B",
+    "run_id": "B01",
+    "replicate": 1,
+    "item_index": 5,
+    "text_sha256": "6f0680aabe55d2e2767b7125d2dda67a55d180294487804f4d41163a51b2fb4f"
+  }
+]

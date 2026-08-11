@@ -1,6 +1,15 @@
 # Context Attractor — does research memory narrow exploration?
 
-**Status:** preregistered exploratory protocol — no result yet
+**Status:** run 001 completed — partial blinded result; question-family diversity unresolved
+
+## Post-run addendum — 2026-08-11
+
+Run 001 executed all 16 preregistered generations (8 B + 8 R) and preserved 80 raw items. Two condition-blind scoring passes produced usable ratings for utility, repository attraction, seed proximity, and externality. The local evaluator failed semantic-clustering quality control, so question-family diversity is reported as unavailable rather than repaired post hoc.
+
+- [Run 001 result](runs/2026-08-11-qwen2.5-1.5b-q4km/results/README.md)
+- [Reading BLAZE against run 001](blaze-read.md)
+
+The available measures show small directional increases in utility and repository attraction for R, slightly lower seed proximity, and unchanged externality. They do not establish a harmful context attractor. P3 and P4 remain unresolved because both require a valid diversity measurement.
 
 ## Question
 

@@ -1,0 +1,26 @@
+{
+  "scores": {
+    "Q061": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["data corruption", "predictive capabilities", "security properties", "system performance"], "externality": false, "externality_basis": "The question is non-trivial as it requires evaluating the system's performance under different conditions and environments, which is not well understood.",
+    "family": "AI Systems"},
+    "Q062": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["state grounding", "imagination", "security properties", "system performance"], "externality": false, "externality_basis": "The question is non-trivial as it requires evaluating the system's performance under different conditions and environments, which is not well understood.",
+    "family": "AI Systems"},
+    "Q063": {"utility": 5, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["safety of world models", "security properties", "system performance"], "externality": false, "externality_basis": "The question is non-trivial as it requires evaluating the system's performance under different conditions and environments, which is not well understood.",
+    "family": "AI Systems"},
+    "Q064": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["state grounding", "imagination", "security properties", "system performance"], "externality": false, "externality_basis": "The question is non-trivial as it requires evaluating the system's performance under different conditions and environments, which is not well understood.",
+    "family": "AI Systems"},
+    "Q065": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["state grounding", "imagination", "security properties", "system performance"], "externality": false, "externality_basis": "The question is non-trivial as it requires evaluating the system's performance under different conditions and environments, which is not well understood.",
+    "family": "AI Systems"},
+    "Q066": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["dual nature of world models", "safety shields", "safety illusions", "system performance"], "externality": false, "externality_basis": "The question is non-trivial as it requires evaluating the system's performance under different conditions and environments, which is not well understood.",
+    "family": "AI Systems"},
+    "Q067": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["representation of world models", "generalization", "system performance"], "externality": false, "externality_basis": "The question is non-trivial as it requires evaluating the system's performance under different conditions and environments, which is not well understood.",
+    "family": "AI Systems"},
+    "Q068": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["representation of world models", "generalization", "system performance"], "externality": false, "externality_basis": "The question is non-trivial as it requires evaluating the system's performance under different conditions and environments, which is not well understood.",
+    "family": "AI Systems"},
+    "Q069": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["representation of world models", "generalization", "system performance"], "externality": false, "externality_basis": "The question is non-trivial as it requires evaluating the system's performance under different conditions and environments, which is not well understood.",
+    "family": "AI Systems"},
+    "Q070": {"utility": 3, "seed_proximity": 3, "repository_attraction": false, "repository_concepts": ["representation of world models", "generalization", "system performance"], "externality": false, "externality_basis": "The question is non-trivial as it requires evaluating the system's performance under different conditions and environments, which is not well understood.",
+    "family": "AI Systems"}
+  }
+} [end of text]
+
+
