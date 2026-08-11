@@ -43,6 +43,7 @@ lab/experiments/**/runs/**/*prompt-cache.bin*
 lab/experiments/**/runs/**/logs/
 lab/experiments/**/runs/**/blind/evaluations/**/*.stderr.txt
 lab/experiments/**/runs/**/blind/evaluations/**/*.prompt.txt
+lab/experiments/trace_to_generator_small/runs/
 
 # Local secrets and credentials
 .env
