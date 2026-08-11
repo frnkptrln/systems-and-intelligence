@@ -142,9 +142,12 @@ One episode of successful cooperation is not yet a durable capacity. [From Actio
 
 That cultural return path also complicates alignment. A system can satisfy represented preferences
 while weakening the human capacities through which later concerns and commitments are formed.
-“Capacity-preserving alignment” is the resulting hypothesis: evaluate whether assistance preserves
-receptivity, articulation, commitment, coordination, refusal, and revision. Which capacities and
-whose authority remain normative questions; the process formalism does not answer them.
+“Capacity-preserving alignment” is the resulting hypothesis: evaluate whether assistance leaves
+people able to notice, formulate, choose, commit, refuse, and coordinate without the system taking
+ownership of the process. The external anchor is narrower — Rousse's AGI-26 analysis names
+receptivity, articulation, commitment, and coordination — and the wider list is the repository's own
+extension. Which capacities, whose authority, and when delegation is justified remain normative
+questions; the process formalism does not answer them.
 
 ## 6. What is established — and what remains open
 

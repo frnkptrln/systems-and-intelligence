@@ -114,12 +114,14 @@ The specific non-claims, each with the place where the boundary is stated:
     [Latent Competence and Constraint Release](../emergence/latent-competence-and-constraint-release.md);
     [constraint-release benchmark](../../lab/benchmarks/constraint-release/README.md).
 
-19. **We do not claim the process formalism can decide which human capacities matter or whose
-    authority counts.** Capacity-preserving alignment is a hypothesis about what to evaluate — whether
-    assistance preserves receptivity, articulation, commitment, coordination, refusal, and revision.
-    Selecting the capacities and assigning the authority are normative questions that this
-    repository's process language does not answer and must not be read as answering.
-    [From Action to Culture](../emergence/from-action-to-culture.md).
+19. **We do not claim the process formalism can decide which human capacities matter, whose
+    authority counts, or when delegation is justified.** Capacity-preserving alignment is a
+    hypothesis about what to evaluate: whether a system leaves people able to notice, formulate,
+    choose, commit, refuse, and coordinate without taking ownership of the process. The external
+    anchor is narrower — Rousse's AGI-26 analysis treats receptivity, articulation, commitment, and
+    coordination as cultivable capacities of care — and the repository's wider list is its own
+    extension, not that paper's. All three normative questions remain open and are not answered by
+    the process language. [From Action to Culture](../emergence/from-action-to-culture.md).
 
 ---
 
