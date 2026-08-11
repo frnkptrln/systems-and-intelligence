@@ -1,8 +1,17 @@
+import re
 from pathlib import Path
 
+import pytest
+
 from lab.tools.audit_repository_freshness import (
+    DerivedCount,
+    canonical_benchmark_version,
     canonical_open_problem_count,
+    corpus_markdown_file_count,
+    corpus_word_count,
+    find_benchmark_range_errors,
     find_copied_count_errors,
+    find_derived_count_errors,
     find_missing_freshness_metadata,
     find_relative_time_candidates,
     find_review_candidates,
@@ -171,3 +180,134 @@ def test_managed_file_accepts_external_interface_review_label(tmp_path, monkeypa
 
     monkeypatch.setattr(audit, "FRESHNESS_MANAGED", {"managed.md"})
     assert find_missing_freshness_metadata(tmp_path) == []
+
+
+# --- derived counts copied into prose ---------------------------------------
+
+
+def guard(compute, pattern=r"roughly ([\d,]+) words") -> DerivedCount:
+    return DerivedCount("docs/page.md", re.compile(pattern), compute, "widget count")
+
+
+def use_guard(monkeypatch, claim: DerivedCount) -> None:
+    import lab.tools.audit_repository_freshness as audit
+
+    monkeypatch.setattr(audit, "DERIVED_COUNTS", (claim,))
+
+
+def test_derived_count_accepts_value_inside_tolerance(tmp_path, monkeypatch):
+    write(tmp_path, "docs/page.md", "It holds roughly 100 words.")
+    use_guard(monkeypatch, guard(lambda repo: 105))
+
+    assert find_derived_count_errors(tmp_path) == []
+
+
+def test_derived_count_flags_value_outside_tolerance(tmp_path, monkeypatch):
+    write(tmp_path, "docs/page.md", "It holds roughly 100 words.")
+    use_guard(monkeypatch, guard(lambda repo: 130))
+
+    findings = find_derived_count_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].path == "docs/page.md"
+    assert "stated widget count is 100" in findings[0].message
+    assert "repository has 130" in findings[0].message
+
+
+def test_derived_count_reads_thousands_separators(tmp_path, monkeypatch):
+    write(tmp_path, "docs/page.md", "It holds roughly 244,000 words.")
+    use_guard(monkeypatch, guard(lambda repo: 244_444))
+
+    assert find_derived_count_errors(tmp_path) == []
+
+
+def test_reworded_claim_does_not_silently_unguard_the_number(tmp_path, monkeypatch):
+    """Dropping the guarded phrasing must be reported, not quietly accepted."""
+    write(tmp_path, "docs/page.md", "It holds a great many words.")
+    use_guard(monkeypatch, guard(lambda repo: 130))
+
+    findings = find_derived_count_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert "guard pattern" in findings[0].message
+
+
+def test_missing_page_carrying_a_guarded_count_is_an_error(tmp_path, monkeypatch):
+    use_guard(monkeypatch, guard(lambda repo: 130))
+
+    findings = find_derived_count_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert "is missing" in findings[0].message
+
+
+def test_corpus_counts_measure_the_markdown_tree(tmp_path):
+    write(tmp_path, "theory/a.md", "one two three")
+    write(tmp_path, "logs/b.md", "four five")
+    write(tmp_path, "lab/tool.py", "ignored source file")
+
+    assert corpus_word_count(tmp_path) == 5
+    assert corpus_markdown_file_count(tmp_path) == 2
+
+
+# --- benchmark version range ------------------------------------------------
+
+
+def seed_benchmark(repo: Path, version: int = 13) -> None:
+    write(
+        repo,
+        "lab/benchmarks/inverse-reconstruction/README.md",
+        f"# Inverse-Reconstruction Benchmark (v0-v1.{version}) - Trace to Candidates",
+    )
+
+
+def test_canonical_benchmark_version_comes_from_its_own_title(tmp_path):
+    seed_benchmark(tmp_path, 13)
+    assert canonical_benchmark_version(tmp_path) == 13
+
+
+def test_stale_benchmark_range_is_an_error(tmp_path):
+    seed_benchmark(tmp_path, 13)
+    write(tmp_path, "theory/core/conceptual-map.md", "| instrument | benchmark v0-v1.8 |")
+
+    findings = find_benchmark_range_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].path == "theory/core/conceptual-map.md"
+    assert "the benchmark is at v1.13" in findings[0].message
+
+
+def test_matching_benchmark_range_passes(tmp_path):
+    seed_benchmark(tmp_path, 13)
+    write(tmp_path, "meta/registry.md", "Inverse-reconstruction benchmark (v0-v1.13)")
+
+    assert find_benchmark_range_errors(tmp_path) == []
+
+
+def test_en_dash_range_is_matched(tmp_path):
+    seed_benchmark(tmp_path, 13)
+    write(tmp_path, "meta/registry.md", "benchmark v0–v1.9 is the instrument")
+
+    findings = find_benchmark_range_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert "v0-v1.9" in findings[0].message
+
+
+def test_naming_one_past_version_is_history_not_drift(tmp_path):
+    """A bare ``v1.9`` reports a result and must never be rewritten."""
+    seed_benchmark(tmp_path, 13)
+    write(
+        tmp_path,
+        "theory/core/note.md",
+        "v1.9 ruled out that dependency model; v1.11 selected support downward.",
+    )
+
+    assert find_benchmark_range_errors(tmp_path) == []
+
+
+def test_benchmark_readme_without_a_range_is_reported(tmp_path):
+    write(tmp_path, "lab/benchmarks/inverse-reconstruction/README.md", "# Benchmark")
+
+    with pytest.raises(ValueError):
+        canonical_benchmark_version(tmp_path)

@@ -21,10 +21,12 @@ warnings because CI cannot know whether an external or conceptual claim is true.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import os
 import re
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Callable
 
 
 REPO = Path(__file__).resolve().parents[2]
@@ -47,6 +49,22 @@ OPEN_PROBLEM_COUNT_PATTERNS = (
     re.compile(r"\b(?:maintains|contains|tracks|lists)\s+\[(\d+)\s+open problems\]", re.I),
     re.compile(r"\b(?:maintains|contains|tracks|lists)\s+(\d+)\s+open problems\b", re.I),
 )
+
+# Reader-facing pages describe the corpus by its size and by how much of it the
+# site publishes. Those magnitudes are recomputable, so they belong to the
+# deterministic lane — but they move on ordinary work, and a check that fires on
+# every prose edit would train the author to ignore it. The tolerance below is
+# what separates "the corpus grew" from "the page stopped describing it": a 10%
+# band absorbs normal growth and still catches the multi-week drift this guard
+# was written for.
+CORPUS_TOLERANCE = 0.10
+
+BENCHMARK_README = Path("lab/benchmarks/inverse-reconstruction/README.md")
+
+# ``v0–v1.13`` in a title or registry row is a currency claim about the whole
+# benchmark. A bare ``v1.9`` naming one result is history and must not be
+# touched, so only the range form is matched.
+BENCHMARK_RANGE = re.compile(r"v0[–-]v1\.(\d+)")
 
 RELATIVE_RECENCY = re.compile(
     r"\b(today|currently|recently|weeks? old|the latest|latest work|state of the art)\b",
@@ -188,6 +206,158 @@ def find_copied_count_errors(repo: Path = REPO) -> list[Finding]:
     return findings
 
 
+@dataclass(frozen=True)
+class DerivedCount:
+    """A number copied into prose that can be recomputed from the repository."""
+
+    path: str
+    pattern: re.Pattern
+    compute: Callable[[Path], int]
+    label: str
+
+
+def _validate_nav():
+    """Load the navigation validator by file path.
+
+    ``audit_repository_freshness`` runs both as a script (CI) and as an imported
+    package module (tests), and those two modes disagree about what is on
+    ``sys.path``. Loading by path sidesteps that instead of duplicating the
+    ``exclude_docs`` matching rules, which are the part that must not drift.
+    """
+    spec = importlib.util.spec_from_file_location(
+        "_audit_validate_nav", Path(__file__).with_name("validate_nav.py")
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def corpus_word_count(repo: Path = REPO) -> int:
+    return sum(len(read_text(path).split()) for path in markdown_files(repo))
+
+
+def corpus_markdown_file_count(repo: Path = REPO) -> int:
+    return len(markdown_files(repo))
+
+
+def _theory_counts(repo: Path = REPO) -> tuple[int, int]:
+    """Return (theory pages the site publishes, theory pages that exist)."""
+    nav = _validate_nav()
+    config = nav.load_config(repo / "mkdocs.yml")
+    patterns = nav.exclude_patterns(config.get("exclude_docs"))
+    docs_dir = repo / config.get("docs_dir", "docs")
+    published = nav.markdown_pages(docs_dir, patterns)
+    total = len(list((repo / "theory").rglob("*.md")))
+    return sum(1 for page in published if page.startswith("theory/")), total
+
+
+def published_theory_count(repo: Path = REPO) -> int:
+    return _theory_counts(repo)[0]
+
+
+def theory_file_count(repo: Path = REPO) -> int:
+    return _theory_counts(repo)[1]
+
+
+# Every entry is a magnitude a reader is asked to trust. Adding a claim here is
+# what keeps it honest; rewording the sentence out from under its pattern is
+# reported rather than silently unguarding the number.
+DERIVED_COUNTS: tuple[DerivedCount, ...] = (
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"roughly ([\d,]+) words"),
+        corpus_word_count,
+        "corpus word count",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"across ([\d,]+) Markdown files"),
+        corpus_markdown_file_count,
+        "corpus Markdown file count",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"\|\s*Theory\s*\|\s*([\d,]+) essays of [\d,]+\s*\|"),
+        published_theory_count,
+        "published theory essays",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"\|\s*Theory\s*\|\s*[\d,]+ essays of ([\d,]+)\s*\|"),
+        theory_file_count,
+        "theory files that exist",
+    ),
+)
+
+
+def find_derived_count_errors(repo: Path = REPO) -> list[Finding]:
+    """Compare recomputable magnitudes against the numbers written into prose."""
+    findings: list[Finding] = []
+    for claim in DERIVED_COUNTS:
+        path = repo / claim.path
+        if not path.exists():
+            findings.append(
+                Finding(claim.path, 1, f"page carrying the {claim.label} is missing")
+            )
+            continue
+        text = read_text(path)
+        match = claim.pattern.search(text)
+        if match is None:
+            findings.append(
+                Finding(
+                    claim.path,
+                    1,
+                    f"no {claim.label} claim matches its guard pattern; "
+                    "restore the wording or update DERIVED_COUNTS",
+                )
+            )
+            continue
+        stated = int(match.group(1).replace(",", ""))
+        actual = claim.compute(repo)
+        if actual and abs(stated - actual) / actual > CORPUS_TOLERANCE:
+            findings.append(
+                Finding(
+                    claim.path,
+                    line_number(text, match.start()),
+                    f"stated {claim.label} is {stated:,}; repository has "
+                    f"{actual:,} (outside the {CORPUS_TOLERANCE:.0%} band)",
+                )
+            )
+    return findings
+
+
+def canonical_benchmark_version(repo: Path = REPO) -> int:
+    """Highest inverse-reconstruction benchmark version, from its own title."""
+    text = read_text(repo / BENCHMARK_README)
+    match = BENCHMARK_RANGE.search(text)
+    if match is None:
+        raise ValueError(f"No 'v0-v1.N' range found in {BENCHMARK_README}")
+    return int(match.group(1))
+
+
+def find_benchmark_range_errors(repo: Path = REPO) -> list[Finding]:
+    """Flag pages that state a stale span for the whole benchmark."""
+    canonical = canonical_benchmark_version(repo)
+    findings: list[Finding] = []
+    for path in markdown_files(repo):
+        rel = path.relative_to(repo).as_posix()
+        if Path(rel) == BENCHMARK_README:
+            continue
+        text = read_text(path)
+        for match in BENCHMARK_RANGE.finditer(text):
+            stated = int(match.group(1))
+            if stated != canonical:
+                findings.append(
+                    Finding(
+                        rel,
+                        line_number(text, match.start()),
+                        f"states benchmark range v0-v1.{stated}; the benchmark "
+                        f"is at v1.{canonical}",
+                    )
+                )
+    return findings
+
+
 def find_missing_freshness_metadata(repo: Path = REPO) -> list[Finding]:
     findings: list[Finding] = []
     for rel in sorted(FRESHNESS_MANAGED):
@@ -250,6 +420,8 @@ def find_relative_time_candidates(repo: Path = REPO) -> list[Finding]:
 
 def run_audit(repo: Path = REPO) -> tuple[list[Finding], list[Finding]]:
     errors = find_copied_count_errors(repo)
+    errors.extend(find_derived_count_errors(repo))
+    errors.extend(find_benchmark_range_errors(repo))
     errors.extend(find_missing_freshness_metadata(repo))
     warnings = find_review_candidates(repo)
     return errors, warnings
@@ -274,6 +446,11 @@ def main() -> int:
 
     errors, warnings = run_audit(REPO)
     print(f"Canonical open problems: {canonical_open_problem_count(REPO)}")
+    print(f"Canonical benchmark version: v1.{canonical_benchmark_version(REPO)}")
+    print(
+        f"Corpus: {corpus_word_count(REPO):,} words across "
+        f"{corpus_markdown_file_count(REPO):,} Markdown files"
+    )
     print_findings("ERROR", errors)
     print_findings("REVIEW", warnings)
 

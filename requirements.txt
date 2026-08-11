@@ -1,7 +1,12 @@
 # Core ML & Simulation
-numpy>=1.24
-matplotlib>=3.7
-scipy>=1.10
-networkx>=3.0
-scikit-learn>=1.2
-PyYAML>=6.0
+#
+# Every entry carries an upper bound. CI installs from these files on every run
+# and the docs job also deploys, so an unannounced upstream major release would
+# otherwise land straight in a green-to-red build with no change of our own.
+# Raising a ceiling is a deliberate edit; drifting past one is not.
+numpy>=1.24,<3
+matplotlib>=3.7,<4
+scipy>=1.10,<2
+networkx>=3.0,<4
+scikit-learn>=1.2,<2
+PyYAML>=6.0,<7

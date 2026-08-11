@@ -3,6 +3,11 @@
 **Status:** Toy architecture and measurement suite for persistence, binding, observer attribution,
 and adaptive self-estimation. It does not measure a metaphysical self or phenomenal consciousness.
 
+The Exp5–7 numbers quoted below are held by `tests/test_agentic_headlines.py`, which re-runs each
+experiment at its documented seed count and asserts the published rates, effect sizes, and orderings
+inside tolerance bands. If a change moves one of them, CI fails and the prose has to be re-measured
+rather than left standing.
+
 The suite began as an attempt to operationalize stronger identity language from early versions of
 the Emergence Manifesto. Its later experiments have narrowed those claims. The historical line
 

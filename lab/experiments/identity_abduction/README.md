@@ -24,9 +24,22 @@ B = P . A . Transpose[P]
 
 For an adversarial decoy, let `D` be two disconnected triangles. `A` and `D` have the same degree sequence — every vertex has degree 2 — so that weak invariant cannot distinguish them. Stronger checks reject the identity claim: their spectra differ, and one graph is connected while the other is not.
 
+## Run it
+
+```bash
+python -m lab.experiments.identity_abduction.identity_checks
+```
+
+[`identity_checks.py`](identity_checks.py) computes every quantity below, and
+`tests/test_identity_abduction.py` asserts the recorded values, so the result
+block in this file is checked on each CI run rather than only when someone
+retypes it.
+
 ## Wolfram verification
 
-The following was evaluated independently with Wolfram Language on 2026-08-09:
+The same quantities were evaluated independently with Wolfram Language on
+2026-08-09. That transcript is kept as provenance: a second implementation, in
+another system, of the claim the module now checks.
 
 ```wl
 a = {
