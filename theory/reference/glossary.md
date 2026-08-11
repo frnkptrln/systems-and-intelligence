@@ -199,7 +199,9 @@ $$\text{IP}(t) = \frac{|\mathcal{O}(t)|}{n}, \qquad \overline{\text{IP}} = \frac
 
 **Informal:** Whether an agent's identity components sound simultaneously (Chord) or sequentially (Arpeggio).
 
-**Operational definition:** The Chord Postulate is a repository hypothesis: for selected agent tasks, goals, constraints, and values may be more robust when they remain jointly operative during action selection. A Chord score records that stipulated co-activity; it does not establish "true" identity.
+**Provenance:** The Arpeggio and Chord postulates are **Stack Theory's** (Michael Timothy Bennett), instantiated for language-model agents by [Perrier & Bennett (2026)](https://arxiv.org/abs/2603.09043), *Time, Identity and Consciousness in Language Model Agents*, which applies Stack Theory's temporal gap to scaffold trajectories and derives two computable persistence scores. The identity morphospace is theirs as well. What this repository adds is the Exp5–7 measurements and the commit-time deflation below — not the terms.
+
+**Operational definition:** For selected agent tasks, goals, constraints, and values may be more robust when they remain jointly operative during action selection. A Chord score records that stipulated co-activity; it does not establish "true" identity.
 
 The Arpeggio Postulate states that most current agent architectures are structurally limited to sequential processing of identity components: safety is checked at $t_1$, goals are pursued at $t_2$, values are verified at $t_3$. From the outside, the agent appears stable because it can *talk about* its identity; but no single compute step integrates all components.
 

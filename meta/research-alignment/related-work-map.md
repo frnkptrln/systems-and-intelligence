@@ -77,9 +77,14 @@ The bibliography previously listed the joint paper under a wrong title and initi
 overlap — the co-author read as a different person from the Stack Theory author. Corrected
 2026-08-11.
 
-The Chord vs. Arpeggio distinction is this repository's own and is **not** from that paper; what
-the paper supplies is the persistence score. See the
+The Arpeggio and Chord postulates are **Stack Theory's**, instantiated for language-model agents by
+that paper, which also supplies the two persistence scores and the identity morphospace. The
+repository's own contribution is the Exp5–7 measurement and the commit-time deflation — joint
+satisfaction at the commitment boundary rather than physical simultaneity. See the
 [glossary](../../theory/reference/glossary.md#chord-postulate-arpeggio-postulate).
+
+This tightens the dependency rather than loosening it: the identity vocabulary, its metric, and its
+visualisation all come from the same pairing the note above describes.
 
 ## 3) Initial external anchors
 

@@ -623,7 +623,7 @@ The difficulty is that the structures produced *by* a non-viable trajectory tend
 
 ### 7.5 Identity Persistence as a Possible Fourth Dimension (Future Work)
 
-The TEO state vector can be extended with a per-agent *identity-persistence* score $\mathrm{IP}_i$, built on the measurable persistence score of Perrier and Bennett (2026), recording whether the governance components of agent $i$ are jointly in force when the agent commits an action — the repository's *Chord* state.
+The TEO state vector can be extended with a per-agent *identity-persistence* score $\mathrm{IP}_i$, built on the measurable persistence score of Perrier and Bennett (2026), recording whether the governance components of agent $i$ are jointly in force when the agent commits an action — the *Chord* state of Stack Theory, which that paper instantiates for language-model agents.
 
 Two calibrations matter here, both from work postdating the first draft of this section. First, the operative property is **joint satisfaction at the commitment boundary**, not physical simultaneity: the repository's Exp5–7 measure a toy dissociation in which a "chord" implemented as a sequential single pass still leaks, because pulls applied after a veto push the action back across the forbidden plane. The relevant quantity is a ratio of constraint-refresh period to action-commitment period, together with composition — not co-activity in one compute step. Second, we do **not** claim that a sharp $\mathrm{IP}_c$ exists. The Lerchner boundary is a *proposed* threshold, and the Kuramoto transition is an **analogy inside selected TEO models, not a derivation**; whether any sharp threshold exists is an open empirical question.
 

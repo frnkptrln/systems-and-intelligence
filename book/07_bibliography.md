@@ -103,7 +103,7 @@ This repository and its theoretical framework draw upon established literature i
 
 **Perrier, E. & Bennett, M. T. (2026).**
 *Time, Identity and Consciousness in Language Model Agents.* arXiv:2603.09043.
-*(Source of the Identity Persistence score $\text{IP}$ used as the 4th SII dimension; its Algorithm 1 is reimplemented in `lab/metrics/persistence_scores.py`. The Chord vs. Arpeggio distinction is this repository's own — see the [glossary](../theory/reference/glossary.md#chord-postulate-arpeggio-postulate). Note that M. T. Bennett is also the author of the Stack Theory and orthogonality work the repository cites elsewhere; these are not independent anchors.)*
+*(Instantiates Stack Theory's Arpeggio and Chord postulates for language-model agents and derives the Identity Persistence score $\text{IP}$ used as the 4th SII dimension, plus the identity morphospace; its Algorithm 1 is reimplemented in `lab/metrics/persistence_scores.py`. See the [glossary](../theory/reference/glossary.md#chord-postulate-arpeggio-postulate). M. T. Bennett is also the author of Stack Theory and of the orthogonality work the repository cites elsewhere, so these are not independent anchors.)*
 
 **Peterlein, F. (2025).**
 *Systems & Intelligence: An Open Thesis.* GitHub Repository.
