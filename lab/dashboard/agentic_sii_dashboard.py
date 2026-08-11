@@ -6,8 +6,9 @@ has been corrected. It plots four quantities labelled P, R, A, and Δ-Kohärenz
 
 Ω is **not** used as a proxy for Identity Persistence (IP). Experiments 5–7 show
 that Ω can miss binding structure entirely while commit-time and component-
-activity measures separate the constructed regimes. The maintained IP/Pstrong
-instruments live in ``lab/metrics/persistence_scores.py``.
+activity measures separate the constructed regimes. The maintained windowed
+Pweak/Pstrong and distinct component-coverage instruments live in
+``lab/metrics/persistence_scores.py``.
 
 Likewise, P/R/A below are local dashboard proxies defined by this function; they
 are not a universal decomposition or calibrated measure of intelligence.

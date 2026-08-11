@@ -113,7 +113,7 @@ Under the paper's stated assumptions, this system makes model-internal predictio
 
 ## 8. Identity Persistence: The Chord vs. Arpeggio
 
-Following Perrier & Bennett (2026), we define the **Identity Persistence $\text{IP}$** of an agent (see [glossary](../reference/glossary.md) and [lerchner-boundary.md](../teo-framework/lerchner-boundary.md) for the formal definition). 
+Using Stack Theory's Chord/Arpeggio vocabulary as instantiated by Perrier & Bennett (2026), the repository defines a local fractional **Identity Persistence $\text{IP}$** instrument (see [glossary](../reference/glossary.md) and [lerchner-boundary.md](../teo-framework/lerchner-boundary.md)). This local average is distinct from the paper's windowed `Pweak` and `Pstrong` scores.
 
 The identity branch hypothesizes that selected goals and constraints should jointly affect
 a commitment under perturbation.

@@ -40,10 +40,12 @@ target_length: "12–15 pages typeset"
 **Frank Peterlein** · Independent Researcher, Berlin
 *Correspondence: [GitHub Issues / frnkptrln](https://github.com/frnkptrln/systems-and-intelligence/issues)*
 
-[Download as PDF :material-file-download-outline:](viable-corridor.pdf){ .md-button }
+[Download as PDF :material-file-download-outline:](https://frnkptrln.github.io/systems-and-intelligence/papers/viable-corridor.pdf){ .md-button }
 
-The PDF is regenerated from this page's source on every deployment, so it never
-lags behind the draft. Section numbers, figures, and the revision history below
+The PDF is a build artifact, not a committed file: it is regenerated from this
+page's source on every deployment, so it never lags behind the draft. The link
+above therefore points at the deployed copy and resolves whether you are reading
+this page on the site or in the repository. Section numbers, figures, and the revision history below
 are identical in both forms.
 
 ---
@@ -621,7 +623,11 @@ The difficulty is that the structures produced *by* a non-viable trajectory tend
 
 ### 7.5 Identity Persistence as a Possible Fourth Dimension (Future Work)
 
-The TEO state vector can be extended with a per-agent *identity-persistence* score $\mathrm{IP}_i$ measuring whether the governance components of agent $i$ are simultaneously operative during action selection — the *Chord* state of Perrier and Bennett (2026). The Chord Postulate predicts a phase transition at a critical $\mathrm{IP}_c$. We do *not* claim that the IP dimension is orthogonal to the three constraints — intra-agent architecture can plausibly affect effective $f_i$, $K$, and $\gamma$. A coupled treatment of IP and the three-constraint theorem is left to future work; the present paper deliberately restricts attention to the inter-agent dynamics.
+The TEO state vector could be extended with a per-agent persistence diagnostic. Perrier and Bennett (2026) supply windowed availability (`Pweak`) and co-instantiation (`Pstrong`) scores for the Chord/Arpeggio distinction from Stack Theory. The repository separately proposes a causal, commit-time $\mathrm{IP}_i$ adaptation that asks whether agent $i$'s declared governance components jointly constrain the committed action. That adaptation is future work here; it is not identical to either paper score.
+
+Two calibrations matter here, both from work postdating the first draft of this section. First, the operative property is **joint satisfaction at the commitment boundary**, not physical simultaneity: the repository's Exp5–7 measure a toy dissociation in which a "chord" implemented as a sequential single pass still leaks, because pulls applied after a veto push the action back across the forbidden plane. The relevant quantity is a ratio of constraint-refresh period to action-commitment period, together with composition — not co-activity in one compute step. Second, we do **not** claim that a sharp $\mathrm{IP}_c$ exists. The Lerchner boundary is a *proposed* threshold, and the Kuramoto transition is an **analogy inside selected TEO models, not a derivation**; whether any sharp threshold exists is an open empirical question.
+
+We also do *not* claim that the IP dimension is orthogonal to the three constraints — intra-agent architecture can plausibly affect effective $f_i$, $K$, and $\gamma$. A coupled treatment of IP and the three-constraint theorem is left to future work; the present paper deliberately restricts attention to the inter-agent dynamics.
 
 ### 7.6 Relationship to the Companion Paper
 
@@ -752,7 +758,7 @@ Appendix C tests the constraints *inside* the TEO ODE (Class A). That cannot, on
 - Mazeika, M., et al. (2025). *Utility Engineering: Analyzing and Controlling Emergent Value Systems in AIs.* Preprint.
 - Mirollo, R. E., & Strogatz, S. H. (1991). *Stability of Incoherence in a Population of Coupled Oscillators.* Journal of Statistical Physics, 63(3–4), 613–635.
 - NOAA Global Monitoring Laboratory. (2024). *Trends in Atmospheric Carbon Dioxide.* https://gml.noaa.gov/ccgg/trends/
-- Perrier, E., & Bennett, C. (2026). *Identity Persistence in Autonomous Agents: The Chord Postulate.* Working Paper.
+- Perrier, E., & Bennett, M. T. (2026). *Time, Identity and Consciousness in Language Model Agents.* Proceedings of the AAAI Symposium Series, 8(1), 322–328. https://doi.org/10.1609/aaaiss.v8i1.42561 (arXiv:2603.09043).
 - Peterlein, F. (2026). *The Transition Problem.* In *Systems & Intelligence: An Open Thesis* (online repository).
 - Pew Research Center. (2014–2022). *Political Polarization in the American Public; Partisanship and Political Animosity.* Pew Research Center reports.
 - Philippon, T. (2019). *The Great Reversal: How America Gave Up on Free Markets.* Harvard University Press.

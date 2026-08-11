@@ -95,6 +95,34 @@ The specific non-claims, each with the place where the boundary is stated:
     domain review needed to stabilize its broader claims. [Narrative as Cognitive
     Technology](../narrative/narrative-as-cognitive-technology.md); [Log 017](../../logs/017_provenance-depth-and-the-verification-economy.md).
 
+17. **We do not claim a universal boundary for where an agent ends, or that capability factors
+    invariantly into controller and body.** The situated-stack result is a finite existence
+    demonstration in both directions: one policy scores from 0 to 1 as sensors, actuators, body,
+    environment, and goal interface vary, while a coordinated sensor–actuator mirror preserves every
+    physical trace. That argues for declaring the equivalence relation and the observer lens, not
+    that embodiment defeats every capability invariant. Equal aggregate scores can still hide
+    different traces. [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md);
+    [situated-stack benchmark](../../lab/benchmarks/situated-stack/README.md).
+
+18. **We do not claim that releasing a constraint reveals a pre-existing latent competence.** In the
+    exact finite system, releasing one blocked edge and editing only the observer lens both move a
+    competence score from zero to one, and only the release changes physical traces. This is an
+    identification control that separates behavioral exposure from lens reinterpretation in one toy —
+    not evidence that a surprising capacity was already present, and not a general method for
+    attributing capability outside finite systems.
+    [Competence, Constraint, and Verification](../core/competence-constraint-and-verification.md);
+    [Latent Competence and Constraint Release](../emergence/latent-competence-and-constraint-release.md);
+    [constraint-release benchmark](../../lab/benchmarks/constraint-release/README.md).
+
+19. **We do not claim the process formalism can decide which human capacities matter, whose
+    authority counts, or when delegation is justified.** Capacity-preserving alignment is a
+    hypothesis about what to evaluate: whether a system leaves people able to notice, formulate,
+    choose, commit, refuse, and coordinate without taking ownership of the process. The external
+    anchor is narrower — Rousse's AGI-26 analysis treats receptivity, articulation, commitment, and
+    coordination as cultivable capacities of care — and the repository's wider list is its own
+    extension, not that paper's. All three normative questions remain open and are not answered by
+    the process language. [From Action to Culture](../emergence/from-action-to-culture.md).
+
 ---
 
 *The pattern behind this page: the repository's credibility strategy is not to claim more, but to make what is claimed checkable — status tags on claims, external anchors on concepts, "what it does NOT show" on simulations, and this page on the whole. If the positive documents ever drift above these lines, this page wins.*

@@ -1,3 +1,18 @@
+"""SUPERSEDED — kept as research history, not as a working test.
+
+Despite the filename this script does not test an entropy budget:
+
+1. `fitness` is computed each step and never used; there is no replicator term.
+2. Resources are renormalized to sum to 1, so every entry is far below `D_max`
+   and the clip never binds. The "constrained" arm is unconstrained.
+3. The "unconstrained" arm differs only by added Gaussian noise, which can also
+   drive entries negative.
+
+The working implementation is
+`simulation-models/alignment-and-veto/teo-civilization/teo_simulation.py`, which
+the Viable Corridor paper uses for Appendix C. See README.md in this directory.
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 

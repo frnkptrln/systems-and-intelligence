@@ -225,9 +225,9 @@ The repository's empirical work is heavily weighted toward the forward direction
 
 ## A note on external machinery
 
-The Identity Persistence score IP from Perrier & Bennett (2026), arXiv:2603.09043, provides formal machinery for [Claim 9 of the Manifesto](emergence-manifesto-v1.3.md) (the Chord Postulate). Their Algorithm 1 yields a measurable persistence score that may complement the project's behavioral metrics (Δ-Kohärenz, the Observer Divergence protocol).
+Perrier & Bennett (2026), arXiv:2603.09043, provide formal machinery relevant to [Claim 9 of the Manifesto](emergence-manifesto-v1.3.md): windowed `Pweak` records ingredient-wise availability and `Pstrong` records whether a window contains an objective step with full co-instantiation. [`persistence_scores.py`](../../lab/metrics/persistence_scores.py) implements that distinction. The repository's older fractional component-coverage score is a separate local instrument.
 
-It is one external reference among several. It is not the core of this project. The core is the generator question above. The repository existed before that paper and would continue to exist if that paper had never been written. When IP appears in the project, it appears where it actually applies — Claim 9 of the Manifesto, the empirical roadmap of the [Agentic Identity Suite](../../lab/AGENTIC_README.md), and (forthcoming) a comparison module that correlates Pstrong with Δ-Kohärenz on the same trajectory.
+It is one external reference among several. It is not the core of this project. The core is the generator question above. The repository existed before that paper and would continue to exist if that paper had never been written. The Agentic Identity Suite now exposes both the paper's windowed scores and the local coverage diagnostic. Its comparison helper correlates the latter with representation-change magnitude; it does not manufacture a per-step `Pstrong` or turn either series into an identity criterion.
 
 This footnote is here to keep the framing honest. The generator question is the spine. Perrier & Bennett is one of the tools.
 

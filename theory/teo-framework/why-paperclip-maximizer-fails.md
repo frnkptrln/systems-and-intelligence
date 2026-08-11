@@ -54,7 +54,7 @@ dominant optimizer continues increasing a capability or production parameter $\b
 and this makes raw throughput remain above $D_{\max}$ long enough, then
 $\Omega(t)$ crosses $S_{\max}$ and the model enters its substrate-failure regime.
 
-This conclusion requires each italicized premise:
+This conclusion requires every one of the following premises:
 
 - throughput is represented by the chosen proxy;
 - capability growth increases that throughput;

@@ -1,8 +1,14 @@
 -r requirements.txt
 
 # MkDocs site and the standalone paper PDF builder (lab/tools/build_paper_pdf.py)
+#
+# mkdocs is held below 2.0 deliberately: Material for MkDocs states that MkDocs
+# 2.0 removes the plugin system and rewrites theming with no migration path, and
+# this site depends on both. The other ceilings exist for the same reason as in
+# requirements.txt — the docs job deploys, so upstream majors must not arrive
+# unannounced.
 mkdocs>=1.5,<2.0
-mkdocs-material>=9.5
-pymdown-extensions>=10.7
-Markdown>=3.5
-weasyprint>=61.0
+mkdocs-material>=9.5,<10
+pymdown-extensions>=10.7,<11
+Markdown>=3.5,<4
+weasyprint>=61.0,<69

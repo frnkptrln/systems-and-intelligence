@@ -2,6 +2,14 @@
 
 *Status: functional architecture hypothesis. The terms do not identify consciousness or a "true self."*
 
+> **Provenance.** The Arpeggio and Chord postulates come from **Stack Theory** (Michael Timothy
+> Bennett). [Perrier & Bennett (2026)](https://arxiv.org/abs/2603.09043) instantiate them for
+> language-model agents, applying Stack Theory's temporal gap to scaffold trajectories to separate
+> ingredient-wise occurrence within an evaluation window from co-instantiation at a single
+> objective step, and derive two computable persistence scores plus a three-axis identity
+> morphospace. This page is the repository's *use* of that vocabulary: what is added here is the Exp5–7
+> measurement of it and the commit-time deflation in §Functional Status.
+
 ---
 
 ## 🎹 The Musical Metaphor
@@ -22,16 +30,23 @@ iterative or sequential solver can qualify if it computes the joint feasible set
 
 ---
 
-## 📐 The Identity Morphospace
+## 📐 Two Morphospaces, Not One
 
-We plot agents on a map of **Identity Persistence ($\text{IP}$)** vs. **Coherence ($C$)**:
+Perrier & Bennett's morphospace has three axes: coherence (`Coh`), availability
+(`Avail = Pweak`), and binding (`Bind = Pstrong`). The weak/strong split is what lets the map place
+an arpeggio with all ingredients available but never co-instantiated.
 
-- **Identity Persistence ($\text{IP}$)**: How many declared components have detectable causal influence during a task? (See [glossary](../reference/glossary.md) §Identity Persistence)
-- **Coherence ($C$)**: A specified consistency statistic for the selected test.
+The repository's older visualizer instead draws a **local two-axis map** of fractional component
+coverage ($\overline{\text{IP}}$) against a selected coherence statistic ($C$). That plot is an
+adaptation, not the paper's morphospace:
 
-Low values can reveal failures of the declared components under stress. They do not establish the
-presence or absence of a stable self, and high values can be fooled by consultation without joint
-satisfaction.
+- **Local component coverage ($\overline{\text{IP}}$):** the mean fraction of declared components
+  with detected causal influence at a selected step;
+- **Coherence ($C$):** a specified consistency statistic for the selected test.
+
+Low values can reveal failures of the declared instrumentation under stress. They do not establish
+the presence or absence of a stable self. High coverage can also be fooled by consultation without
+joint satisfaction, which is exactly the Exp7 failure case.
 
 ---
 

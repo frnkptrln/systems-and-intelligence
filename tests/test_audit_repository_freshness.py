@@ -1,11 +1,22 @@
+import re
 from pathlib import Path
 
+import pytest
+
 from lab.tools.audit_repository_freshness import (
+    DerivedCount,
+    canonical_benchmark_version,
     canonical_open_problem_count,
+    corpus_markdown_file_count,
+    corpus_word_count,
+    find_benchmark_range_errors,
     find_copied_count_errors,
+    find_derived_count_errors,
     find_missing_freshness_metadata,
     find_relative_time_candidates,
     find_review_candidates,
+    published_story_count,
+    story_count,
 )
 
 
@@ -171,3 +182,242 @@ def test_managed_file_accepts_external_interface_review_label(tmp_path, monkeypa
 
     monkeypatch.setattr(audit, "FRESHNESS_MANAGED", {"managed.md"})
     assert find_missing_freshness_metadata(tmp_path) == []
+
+
+# --- derived counts copied into prose ---------------------------------------
+
+
+def guard(compute, pattern=r"roughly ([\d,]+) words", tolerance=0.0) -> DerivedCount:
+    return DerivedCount(
+        "docs/page.md", re.compile(pattern), compute, "widget count", tolerance
+    )
+
+
+def use_guard(monkeypatch, claim: DerivedCount) -> None:
+    import lab.tools.audit_repository_freshness as audit
+
+    monkeypatch.setattr(audit, "DERIVED_COUNTS", (claim,))
+
+
+def test_derived_count_accepts_value_inside_tolerance(tmp_path, monkeypatch):
+    write(tmp_path, "docs/page.md", "It holds roughly 100 words.")
+    use_guard(monkeypatch, guard(lambda repo: 105, tolerance=0.10))
+
+    assert find_derived_count_errors(tmp_path) == []
+
+
+def test_derived_count_flags_value_outside_tolerance(tmp_path, monkeypatch):
+    write(tmp_path, "docs/page.md", "It holds roughly 100 words.")
+    use_guard(monkeypatch, guard(lambda repo: 130, tolerance=0.10))
+
+    findings = find_derived_count_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].path == "docs/page.md"
+    assert "stated widget count is 100" in findings[0].message
+    assert "repository has 130" in findings[0].message
+
+
+def test_derived_count_reads_thousands_separators(tmp_path, monkeypatch):
+    write(tmp_path, "docs/page.md", "It holds roughly 244,000 words.")
+    use_guard(monkeypatch, guard(lambda repo: 244_444, tolerance=0.10))
+
+    assert find_derived_count_errors(tmp_path) == []
+
+
+def test_exact_derived_count_flags_one_item_drift(tmp_path, monkeypatch):
+    write(tmp_path, "docs/page.md", "It holds roughly 20 words.")
+    use_guard(monkeypatch, guard(lambda repo: 19))
+
+    findings = find_derived_count_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert "expected an exact match" in findings[0].message
+
+
+def test_reworded_claim_does_not_silently_unguard_the_number(tmp_path, monkeypatch):
+    """Dropping the guarded phrasing must be reported, not quietly accepted."""
+    write(tmp_path, "docs/page.md", "It holds a great many words.")
+    use_guard(monkeypatch, guard(lambda repo: 130))
+
+    findings = find_derived_count_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert "guard pattern" in findings[0].message
+
+
+def test_missing_page_carrying_a_guarded_count_is_an_error(tmp_path, monkeypatch):
+    use_guard(monkeypatch, guard(lambda repo: 130))
+
+    findings = find_derived_count_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert "is missing" in findings[0].message
+
+
+def test_corpus_counts_measure_the_markdown_tree(tmp_path):
+    write(tmp_path, "theory/a.md", "one two three")
+    write(tmp_path, "logs/b.md", "four five")
+    write(tmp_path, "lab/tool.py", "ignored source file")
+
+    assert corpus_word_count(tmp_path) == 5
+    assert corpus_markdown_file_count(tmp_path) == 2
+
+
+# --- benchmark version range ------------------------------------------------
+
+
+def seed_benchmark(repo: Path, version: int = 13) -> None:
+    write(
+        repo,
+        "lab/benchmarks/inverse-reconstruction/README.md",
+        f"# Inverse-Reconstruction Benchmark (v0-v1.{version}) - Trace to Candidates",
+    )
+
+
+def test_canonical_benchmark_version_comes_from_its_own_title(tmp_path):
+    seed_benchmark(tmp_path, 13)
+    assert canonical_benchmark_version(tmp_path) == 13
+
+
+def test_stale_benchmark_range_is_an_error(tmp_path):
+    seed_benchmark(tmp_path, 13)
+    write(tmp_path, "theory/core/conceptual-map.md", "| instrument | benchmark v0-v1.8 |")
+
+    findings = find_benchmark_range_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].path == "theory/core/conceptual-map.md"
+    assert "the benchmark is at v1.13" in findings[0].message
+
+
+def test_matching_benchmark_range_passes(tmp_path):
+    seed_benchmark(tmp_path, 13)
+    write(tmp_path, "meta/registry.md", "Inverse-reconstruction benchmark (v0-v1.13)")
+
+    assert find_benchmark_range_errors(tmp_path) == []
+
+
+def test_en_dash_range_is_matched(tmp_path):
+    seed_benchmark(tmp_path, 13)
+    write(tmp_path, "meta/registry.md", "benchmark v0–v1.9 is the instrument")
+
+    findings = find_benchmark_range_errors(tmp_path)
+
+    assert len(findings) == 1
+    assert "v0-v1.9" in findings[0].message
+
+
+def test_naming_one_past_version_is_history_not_drift(tmp_path):
+    """A bare ``v1.9`` reports a result and must never be rewritten."""
+    seed_benchmark(tmp_path, 13)
+    write(
+        tmp_path,
+        "theory/core/note.md",
+        "v1.9 ruled out that dependency model; v1.11 selected support downward.",
+    )
+
+    assert find_benchmark_range_errors(tmp_path) == []
+
+
+def test_benchmark_readme_without_a_range_is_reported(tmp_path):
+    write(tmp_path, "lab/benchmarks/inverse-reconstruction/README.md", "# Benchmark")
+
+    with pytest.raises(ValueError):
+        canonical_benchmark_version(tmp_path)
+
+
+# --- quoted mentions are demonstrations, not claims ---------------------------
+
+
+def test_quoted_relative_time_phrase_is_not_flagged(tmp_path):
+    """A page explaining that it avoids a phrase must not be flagged for it."""
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "theory/ai/note.md",
+        "This note records the source date rather than relying on relative "
+        'phrases such as "weeks old."\n',
+    )
+
+    assert find_review_candidates(tmp_path) == []
+
+
+def test_curly_quoted_mention_is_not_flagged(tmp_path):
+    seed_open_problems(tmp_path, 1)
+    write(tmp_path, "theory/ai/note.md", "Avoid “currently” in reader pages.\n")
+
+    assert find_review_candidates(tmp_path) == []
+
+
+def test_unquoted_use_on_a_line_with_quotes_is_still_flagged(tmp_path):
+    """Quoting something else on the line must not grant blanket immunity."""
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "theory/ai/note.md",
+        'The suite is called "the Agentic Identity Suite" and currently runs on toys.\n',
+    )
+
+    findings = find_review_candidates(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].message == 'review relative-time phrase "currently"'
+
+
+def test_quoted_novelty_claim_is_not_flagged(tmp_path):
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "meta/research-alignment/map.md",
+        'Reviewers should challenge any "first evidence" wording in the draft.\n',
+    )
+
+    assert find_review_candidates(tmp_path) == []
+
+
+def test_quoted_novelty_claim_without_metalinguistic_cue_is_flagged(tmp_path):
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "meta/research-alignment/map.md",
+        'This is the "first evidence" of the effect.\n',
+    )
+
+    findings = find_review_candidates(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].message == 'review novelty claim "first evidence"'
+
+
+def test_quote_spanning_lines_does_not_swallow_later_uses(tmp_path):
+    """Quote matching is per line, so an unclosed quote cannot mask a page."""
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "theory/ai/note.md",
+        'An opening " quote mark on this line.\nThe suite currently runs on toys.\n',
+    )
+
+    findings = find_review_candidates(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].line == 2
+
+
+def test_story_count_excludes_the_fiction_index(tmp_path):
+    """The index page in fiction/ is not a story."""
+    write(tmp_path, "fiction/README.md", "index")
+    write(tmp_path, "fiction/01_a.md", "story")
+    write(tmp_path, "fiction/02_b.md", "story")
+    write(
+        tmp_path,
+        "mkdocs.yml",
+        "docs_dir: .\n"
+        "exclude_docs: |\n"
+        "  fiction/\n"
+        "  !fiction/01_a.md\n",
+    )
+
+    assert story_count(tmp_path) == 2
+    assert published_story_count(tmp_path) == 1

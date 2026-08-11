@@ -118,7 +118,7 @@ New to the project? This is the most direct route through the core theory and re
 
 If you would rather start from a story than from an axiom, [The Snow Story](../meta/repository-meta/the-snow-story.md) carries the whole argument at any age.
 
-This site publishes about seventy pages. The repository behind it holds roughly three times that — simulation code, architecture logs, working notes, and essays that are not finished enough to ask anyone to read in order. [What stays in the repository](repository-map.md) says what is where, and why.
+This site publishes about seventy pages. The repository behind it holds more than three times that — simulation code, architecture logs, working notes, and essays that are not finished enough to ask anyone to read in order. [What stays in the repository](repository-map.md) says what is where, and why.
 
 ## What's next
 

@@ -42,7 +42,7 @@ The repository already has the necessary pieces:
 | Local observation | A component's declared interface may omit macrovariables |
 | Chord vs. Arpeggio | Commit-time composition is a testable architecture hypothesis |
 | Δ-Kohärenz | One temporal diagnostic that can miss binding structure |
-| Identity Persistence / Pstrong | Selected component-activity diagnostics with known blind spots |
+| Component coverage / Pweak / Pstrong | Distinct component-activity diagnostics with known blind spots |
 | Markov blankets | Define system boundaries without making them impermeable |
 | Substrate veto | Models one way implementation constraints can limit optimization |
 
@@ -119,7 +119,7 @@ This is a research architecture, not a definition of experience or identity.
 - It does not claim IIT, GNW, or active inference is complete.
 - It does not reduce consciousness to one score.
 - It does not treat introspective language as evidence of selfhood.
-- It does not treat Pstrong, IP, or Δ-Kohärenz as constitutive identity measures.
+- It does not treat Pweak, Pstrong, local IP, or Δ-Kohärenz as constitutive identity measures.
 
 The important move is stricter:
 

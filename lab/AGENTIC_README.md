@@ -3,6 +3,11 @@
 **Status:** Toy architecture and measurement suite for persistence, binding, observer attribution,
 and adaptive self-estimation. It does not measure a metaphysical self or phenomenal consciousness.
 
+The Exp5–7 numbers quoted below are held by `tests/test_agentic_headlines.py`, which re-runs each
+experiment at its documented seed count and asserts the published rates, effect sizes, and orderings
+inside tolerance bands. If a change moves one of them, CI fails and the prose has to be re-measured
+rather than left standing.
+
 The suite began as an attempt to operationalize stronger identity language from early versions of
 the Emergence Manifesto. Its later experiments have narrowed those claims. The historical line
 
@@ -128,7 +133,7 @@ python experiments/exp5_availability_dissociation.py
 
 The three-architecture probe pre-registered in [Consciousness as Global Availability §Testable Direction](../theory/identity/consciousness-as-global-availability.md): identical world, identical perturbation schedule (temptations, role injections, module reset), only the binding differs. Measures organizational dissociation only — no consciousness claims.
 
-First result (10 seeds): the dissociation is carried by behavior (veto violations 0.74 / 0.59 / 0.03; role stability 0.00 / 0.30 / 0.69) and by IP (its ordering is designed, not discovered) — while **Δ-Kohärenz carries no binding signal at all** (all three architectures classify 'noise' on every seed). The full prediction-vs-outcome accounting, including the two design defects the first run exposed, lives in the module docstring.
+First run (10 seeds): the dissociation is carried by behavior (veto violations 0.74 / 0.59 / 0.03; role stability 0.00 / 0.30 / 0.69) and by IP (its ordering is designed, not discovered) — while **Δ-Kohärenz carries no binding signal at all** (all three architectures classify 'noise' on every seed). The full prediction-vs-outcome accounting, including the two design defects the first run exposed, lives in the module docstring.
 
 ![Availability and binding dissociation](tools/exp5_availability_dissociation.png)
 
@@ -145,7 +150,7 @@ python experiments/exp6_binding_observables.py
 
 Picks up exp5's loose end. Four bindings (adds a schedule-free random arpeggio), five observables — four passive trace statistics and one prepared-state probe protocol — scored by separability across seeds.
 
-First result (10 seeds): **binding is passively readable at the right level.** A per-step action-increment statistic separates both arpeggios from the chord (|d| ≈ 4) and *beats* the prepared probe-retest query (|d| ≈ 1.95) — because the binding difference is exercised on every step, coverage is total, and watching suffices. Joint satisfaction *glues* the action to the constraint set (median increment 0.0004); the stream moves only when the anchors move. Δ-Kohärenz's exp5 blindness was a wrong-*level* failure, not evidence that binding is trace-invisible. The intervention hierarchy is not overturned but *located*: queries buy signal where the trace has coverage gaps — exactly the Mirror Problem's regime. Includes one methods lesson (a zero-variance baseline makes Cohen's d flatter a dead observable) in the docstring's honest accounting.
+First run (10 seeds): **binding is passively readable at the right level.** A per-step action-increment statistic separates both arpeggios from the chord (|d| ≈ 4) and *beats* the prepared probe-retest query (|d| ≈ 1.95) — because the binding difference is exercised on every step, coverage is total, and watching suffices. Joint satisfaction *glues* the action to the constraint set (median increment 0.0004); the stream moves only when the anchors move. Δ-Kohärenz's exp5 blindness was a wrong-*level* failure, not evidence that binding is trace-invisible. The intervention hierarchy is not overturned but *located*: queries buy signal where the trace has coverage gaps — exactly the Mirror Problem's regime. Includes one methods lesson (a zero-variance baseline makes Cohen's d flatter a dead observable) in the docstring's honest accounting.
 
 ![Binding-structure separability per observable](tools/exp6_binding_observables.png)
 
@@ -163,7 +168,7 @@ python experiments/exp7_adversarial_arpeggio.py
 
 Two hand-built adversaries attack exp6's finding: **blended** (consults all five constraints every step at 1/5 strength — consultation without composition) and **smoothed** (cyclic rotation plus a low-pass filter on the committed action).
 
-First result (10 seeds), against the experiment's own predictions: **both adversaries fail to hide.** Blended dents the kurtosis signature (|d| 4.04 → 2.42) but leaks *more* than the naive arpeggio (violations 0.74 vs 0.59) — to look glued you must actually pull toward the constraints, and fractional pulls still leak. Smoothing barely registers (|d| = 3.91), because excess kurtosis is **scale-invariant**: inertia shrinks increments, the shape survives. The commit property under lure remains the strongest and only unfooled separator (|d| 3.0–4.1) — and **IP is fooled by construction** (blended scores 1.0, identical to chord: the Jaccard bookkeeping sees the guest list, not the negotiation). Chord's measured cost: ~40% of stimulus alignment paid for holding itself together. Open flank, named in the docstring: an *optimized* mimic with access to the observables.
+First run (10 seeds), against the experiment's own predictions: **both adversaries fail to hide.** Blended dents the kurtosis signature (|d| 4.04 → 2.42) but leaks *more* than the naive arpeggio (violations 0.74 vs 0.59) — to look glued you must actually pull toward the constraints, and fractional pulls still leak. Smoothing barely registers (|d| = 3.91), because excess kurtosis is **scale-invariant**: inertia shrinks increments, the shape survives. The commit property under lure remains the strongest and only unfooled separator (|d| 3.0–4.1) — and **IP is fooled by construction** (blended scores 1.0, identical to chord: the Jaccard bookkeeping sees the guest list, not the negotiation). Chord's measured cost: ~40% of stimulus alignment paid for holding itself together. Open flank, named in the docstring: an *optimized* mimic with access to the observables.
 
 ![Adversarial binding observables](tools/exp7_adversarial_arpeggio.png)
 
@@ -224,22 +229,31 @@ the provider layer is a separate empirical step. The real-mode HTTP path is infr
 not evidence from real-model identity experiments. See [`providers/README.md`](providers/README.md)
 and the [Foundations Reconstruction](../theory/core/mathematical-axioms.md) for the current scope.
 
-## Persistence Score (Pstrong)
+## Windowed Persistence and Component Coverage
 
-A standalone implementation of Algorithm 1 from Perrier & Bennett (2026) is available at [`lab/metrics/persistence_scores.py`](metrics/persistence_scores.py). It computes:
+[`lab/metrics/persistence_scores.py`](metrics/persistence_scores.py) keeps two instruments separate:
 
-- `Pstrong` — averaged simultaneous co-instantiation of identity components across a trajectory.
-- Per-step persistence variance.
-- Regime classification (Chord / Arpeggio) using the `ip_c_threshold` from `config.yaml`.
+- `persistence_scores` implements Perrier & Bennett's `u0 = stride × t`, `u0…u0+horizon` window
+  logic. `Pweak` is the fraction of evaluation windows in which every declared ingredient occurs
+  somewhere; `Pstrong` is the fraction containing at least one objective step where all
+  ingredients are co-instantiated.
+- `component_coverage` computes the repository's older per-step fraction
+  $|I\cap F_u|/|I|$, its variance, and a local Chord/Arpeggio label using
+  `ip_c_threshold`. This is **not** `Pstrong`.
 
-A comparison function, `correlate_pstrong_with_delta_coherence`, returns the Pearson correlation between per-step Pstrong and per-step Δ-Kohärenz proxies on the same trajectory. This is **one possible empirical question** the suite might eventually answer, not the only one — whether simultaneous co-instantiation and temporal coherence are coupled is currently open.
+The distinction matters: the trace `[{a}, {b}]` has mean component coverage $0.5$ and, in a
+two-step window, `Pweak = 1` but `Pstrong = 0`. Tests preserve that counterexample.
+
+`correlate_component_coverage_with_delta_coherence` compares per-step coverage with
+representation-change magnitudes. The latter are only a temporal proxy because Δ-Kohärenz itself
+is sequence-level. The historical, misnamed function remains as a compatibility alias; new work
+should not describe fractional coverage as per-step `Pstrong`.
 
 ```bash
-python -m lab.metrics.persistence_scores  # minimal sanity demo
+python lab/metrics/persistence_scores.py  # minimal sanity demo
 ```
 
-Pstrong is one instrument among several. It operationalizes one declared test family; it
-does not define identity.
+These are instruments over declared traces and windows. Neither defines identity.
 
 ## Open Questions
 

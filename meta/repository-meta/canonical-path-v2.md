@@ -1,7 +1,7 @@
 ---
 title: "Canonical Path v2.1 — After the Foundations Reconstruction"
 date: "2026-05-29"
-updated: "2026-07-30"
+updated: "2026-08-11"
 status: "Working Note — foundation migrated, terminology migration ongoing"
 scope: >
   A repository-level navigation pass that places the minimal process foundation before the
@@ -34,7 +34,7 @@ the foundation.
 
 After the foundation, two research arcs remain:
 
-- **Model identification** (the *epistemic* arc): under declared model families, evidence, intervention access, target equivalence, and cost measures, which candidate process models can an observer distinguish? Its phases are folded into [From Trace to World-Binding](../../theory/core/from-trace-to-world-binding.md) and measured in the inverse-reconstruction benchmark.
+- **Model identification** (the *epistemic* arc): under declared model families, evidence, intervention access, target equivalence, and cost measures, which candidate process models can an observer distinguish? Its phases are folded into [From Trace to World-Binding](../../theory/core/from-trace-to-world-binding.md). Its measured homes are now several: the [inverse-reconstruction benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) for identification under noise, coverage, and intervention; [witness-generation](../../lab/benchmarks/witness-generation/README.md) for the exact query frontier; [situated-stack](../../lab/benchmarks/situated-stack/README.md) and [constraint-release](../../lab/benchmarks/constraint-release/README.md) for the situated boundary; [recursive-workbench](../../lab/benchmarks/recursive-workbench/README.md) for self-revising loops; and [learned-searcher](../../lab/benchmarks/learned-searcher/README.md) for learned versus exact search.
 - **The Viability Arc** (the *dynamical* spine, this document): *what happens to an emergent optimizing system over time, and what does it take to keep it alive?* This runs **emergence → optimization → constraint architecture → survivability** and terminates in the Viable Corridor paper.
 
 They share a compositional process language, not a universal law. One asks what evidence identifies;
@@ -46,10 +46,11 @@ This document maps their relationship and then follows the second.
 **How the layers stack.** Not everything is equally central, and the concepts should not compete for the throne. The working hierarchy:
 
 1. **Foundation** — [Foundations Reconstruction](../../theory/core/mathematical-axioms.md): standard Borel interfaces, Markov kernels, composition, derivations, supplements, and limits.
-2. **Research frontier** — [inverse reconstruction](../../lab/benchmarks/inverse-reconstruction/README.md): bounded model identification under noise, observability, coverage, family search, and interventions.
-3. **Identity layer** — Mirror Problem, Chord/Arpeggio, IP, Δ-Kohärenz: competing test families and metrics for persistence. No absolute or generator-recovery identity is assumed. Consciousness is a separate boundary: functional architecture can be tested; experience is not derived ([home](../../theory/identity/consciousness-as-global-availability.md)).
-4. **Safety / application layer** — TEO, [the Viable Corridor](../../papers/viable-corridor.md), the veto cluster: what happens when optimization pressure outruns the modeled constraints.
-5. **Narrative layer** — fiction, manifestos, logs: stress tests and concept generators, never evidence.
+2. **Research frontier** — [inverse reconstruction](../../lab/benchmarks/inverse-reconstruction/README.md) and the instruments listed above: bounded model identification under noise, observability, coverage, family search, and interventions, plus the exact query frontier and the learned-versus-exact comparison.
+3. **Situated boundary** — [The Agent Is Not Where the Model Ends](../../theory/identity/the-agent-is-not-where-the-model-ends.md), [Competence, Constraint, and Verification](../../theory/core/competence-constraint-and-verification.md): capability is evaluated over a declared process–body–interface–environment–memory coupling, under constraints, interaction history, tasks, and an observer lens. No universal agent boundary and no invariant capability factorization is assumed ([situated-stack](../../lab/benchmarks/situated-stack/README.md), [constraint-release](../../lab/benchmarks/constraint-release/README.md)).
+4. **Identity layer** — Mirror Problem, Chord/Arpeggio, IP, Δ-Kohärenz: competing test families and metrics for persistence. No absolute or generator-recovery identity is assumed. Consciousness is a separate boundary: functional architecture can be tested; experience is not derived ([home](../../theory/identity/consciousness-as-global-availability.md)).
+5. **Safety / application layer** — TEO, [the Viable Corridor](../../papers/viable-corridor.md), the veto cluster: what happens when optimization pressure outruns the modeled constraints.
+6. **Narrative layer** — fiction, manifestos, logs: stress tests and concept generators, never evidence.
 
 A concept that fits none of these layers, and has no home file, experiment, or open problem, is not
 part of the canonical claim structure. It may remain an explicitly unclassified seed in the

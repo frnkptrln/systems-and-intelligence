@@ -1,5 +1,12 @@
 # Bibliography
 
+> **Status (2026-08-11):** pre-audit annotations, corrected where they exceeded the current
+> boundary. Four entries claimed more than the repository does — that "love" is a theorem, that the
+> paperclip trajectory follows from first principles, that planetary boundaries supply a biospheric
+> $D_{\max}$, and the superseded instantaneous substrate condition. Each now states the conditional
+> form and links its home document. Where an annotation here and a home document disagree, the home
+> document wins.
+
 This repository and its theoretical framework draw upon established literature in complex systems, physics, neuroscience, economics, and artificial intelligence. The synthesis of these ideas — the "Fractal Architecture of Emergence," "Love as Constraint," and "Systemic Utility Engineering" — is original to this project.
 
 ---
@@ -12,7 +19,7 @@ This repository and its theoretical framework draw upon established literature i
 
 **Bostrom, N. (2014).**
 *Superintelligence: Paths, Dangers, Strategies.* Oxford University Press.
-*(The paperclip maximizer thought experiment formalized. The TEO framework derives its failure trajectory from first principles.)*
+*(The paperclip maximizer thought experiment. TEO models one failure trajectory for it — conditionally, under five named premises about throughput, capability growth, self-throttling, and the damage law, not from first principles. See [Why the Paperclip Maximizer Fails](../theory/teo-framework/why-paperclip-maximizer-fails.md).)*
 
 **Chan, B. W. C. (2019).**
 *Lenia: Biology of Artificial Life.* Complex Systems, 28(3), 251–286.
@@ -56,7 +63,7 @@ This repository and its theoretical framework draw upon established literature i
 
 **Rockström, J. et al. (2009).**
 *A safe operating space for humanity.* Nature, 461(7263), 472–475.
-*(Defines planetary boundaries — the biospheric $D_{\max}$ in the Substrate Veto formalization.)*
+*(Defines planetary boundaries, which TEO uses as a **proxy** for substrate stress. There is no single established scalar $D_{\max}$ for the biosphere — climate, biodiversity, water, land, toxic load, and social viability have different dynamics and cannot be collapsed without a normative aggregation rule. See [The Substrate Veto](../theory/veto/substrate-veto-thermodynamics.md).)*
 
 **Taylor, P. D., & Jonker, L. B. (1978).**
 *Evolutionary stable strategies and game dynamics.* Mathematical Biosciences, 40(1–2), 145–156.
@@ -80,11 +87,11 @@ This repository and its theoretical framework draw upon established literature i
 
 **Amodei, D. (2024).**
 *Machines of Loving Grace.* Anthropic Essay.
-*(Vision of AI-augmented human flourishing. The TEO framework derives that "love" is a theorem — the only survivable constraint structure.)*
+*(Vision of AI-augmented human flourishing. TEO reads the phrase as a conjunction of viability constraints. Calling that bundle "love" is normative framing, **not** a theorem — see [Limitations](../theory/reference/limitations-and-honest-assessment.md) and [Love as Constraint](../theory/teo-framework/love-as-constraint.md).)*
 
 **Brautigan, R. (1967).**
 *All Watched Over by Machines of Loving Grace.* Communication Company.
-*(The poem that gave the concept its name. In TEO terms: a Machine of Loving Grace is one satisfying $\gamma > 0$, $K > K_c$, $dS/dt < D_{\max}$.)*
+*(The poem that gave the concept its name. In TEO terms: a machine whose parameters lie inside the viable corridor — $\gamma > \gamma_c$, $K > K_c$, and bounded **accumulated** overshoot $\Omega(t) < S_{\max}$. The instantaneous form $dS/dt < D_{\max}$ was the pre-v0.3 wording and is superseded: momentary overshoot is survivable, integrated overshoot is not.)*
 
 **Domingos, P. (2025).**
 *Tensor Logic.* Preprint.
@@ -94,9 +101,9 @@ This repository and its theoretical framework draw upon established literature i
 *Utility Engineering.* Preprint.
 *(Formalizes emergent utility in AI systems. Extended in this project's Utility Engineering simulation.)*
 
-**Perrier, E. & Bennett, C. (2026).**
-*Identity Persistence in Autonomous Agents: The Chord Postulate.* (Working Paper).
-*(Introduces the Chord vs. Arpeggio distinction and the Identity Persistence score $\text{IP}$, the 4th SII dimension.)*
+**Perrier, E. & Bennett, M. T. (2026).**
+*Time, Identity and Consciousness in Language Model Agents.* Proceedings of the AAAI Symposium Series, 8(1), 322–328. https://doi.org/10.1609/aaaiss.v8i1.42561 (arXiv:2603.09043).
+*(Instantiates Stack Theory's Arpeggio and Chord postulates for language-model agents, defines the windowed $P_{\mathrm{weak}}$ and $P_{\mathrm{strong}}$ scores, and plots a three-axis morphospace of coherence, availability, and binding. The window logic is implemented in `lab/metrics/persistence_scores.py`. The repository's older fractional-coverage score, fourth SII factor, and two-axis plot are local instruments rather than outputs of this paper. See the [glossary](../theory/reference/glossary.md#chord-postulate-arpeggio-postulate). M. T. Bennett is also the author of Stack Theory and of the orthogonality work the repository cites elsewhere, so these are not independent anchors.)*
 
 **Peterlein, F. (2025).**
 *Systems & Intelligence: An Open Thesis.* GitHub Repository.

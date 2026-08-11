@@ -30,9 +30,14 @@ veto, and no universal ecological scalar $D_{\max}$ has been established.
 
 **Artifacts:**
 
-- [Substrate Veto Theory](../../theory/veto/substrate-veto-thermodynamics.md)
-- [AI Alignment Veto Simulation](../../simulation-models/alignment-and-veto/ai-alignment-veto/README.md)
-- [Symbiotic Breathing Simulation](../../simulation-models/social-computation/symbiotic-breathing/README.md)
+- *argument* — [Substrate Veto Theory](../../theory/veto/substrate-veto-thermodynamics.md)
+- *runnable toy* — [AI Alignment Veto Simulation](../../simulation-models/alignment-and-veto/ai-alignment-veto/README.md)
+- *runnable toy* — [Symbiotic Breathing Simulation](../../simulation-models/social-computation/symbiotic-breathing/README.md)
+
+**Current status:** two runnable toy models, no measurement outside them. Both put the coupling
+into the equations rather than deriving it: the veto simulation stipulates a substrate-stress
+penalty, and the breathing model compares two declared compute schedules. No universal ecological
+scalar $D_{\max}$ has been established, and neither toy shows the coupling is unbreakable.
 
 **Failure condition:** The design claim is weakened if the controller bypasses or manipulates the
 constraint, exports harm to an unmeasured substrate, fails before enforcement acts, or gains no
@@ -48,9 +53,14 @@ robustness over a simpler resource budget under matched tests.
 
 **Artifacts:**
 
-- [Impedance Mismatch Log](../../logs/002_impedance-mismatch-friction.md)
-- [Decoupled State Log](../../logs/003_decoupled-state-liquid-democracy.md)
-- [Decentralized OS Architecture](../../logs/004_decentralized-os-architecture.md)
+- *speculative design note* — [Impedance Mismatch Log](../../logs/002_impedance-mismatch-friction.md)
+- *speculative design note* — [Decoupled State Log](../../logs/003_decoupled-state-liquid-democracy.md)
+- *speculative design note* — [Decentralized OS Architecture](../../logs/004_decentralized-os-architecture.md)
+
+**Current status:** the weakest evidential base in this set. All three artifacts are `[SPECULATIVE]`
+architecture logs; none is runnable and nothing here is measured. The claim rests on an Ashby's-law
+argument in temporal form plus one cited external episode (high-frequency-trading flash crashes). Log 002 names its own promotion condition — latency budgets formalized as measurable
+regulator-capacity constraints — and that work has not been done.
 
 **Failure condition:** If a shared human-AI governance layer can preserve legitimate human review while operating at silicon-speed delegation and proposal volume, the impedance claim is weakened.
 
@@ -64,9 +74,9 @@ robustness over a simpler resource budget under matched tests.
 
 **Artifacts:**
 
-- [Chord vs. Arpeggio Identity](../../theory/identity/chord-vs-arpeggio-identity.md)
-- [Agentic Identity Suite](../../lab/AGENTIC_README.md)
-- [Open Problems](../../theory/reference/open-problems.md)
+- *argument* — [Chord vs. Arpeggio Identity](../../theory/identity/chord-vs-arpeggio-identity.md)
+- *measured (toy scale)* — [Agentic Identity Suite](../../lab/AGENTIC_README.md)
+- *open questions* — [Open Problems](../../theory/reference/open-problems.md)
 
 **Current status:** Exp5–7 measure a first toy dissociation, locate a passive binding signature, and show that two hand-built mimics still leak. They also expose blind metrics: Δ-Kohärenz misses the binding at one level, and IP can be fooled by consultation without composition.
 
@@ -82,9 +92,14 @@ robustness over a simpler resource budget under matched tests.
 
 **Artifacts:**
 
-- [Human Vital Systems Control Plane](../../logs/005_human-vital-systems-control-plane.md)
-- [Human Vital Systems Simulation](../../simulation-models/alignment-and-veto/human-vital-systems/README.md)
-- [The Vital Floor](../../fiction/05_the_vital_floor.md)
+- *speculative design note* — [Human Vital Systems Control Plane](../../logs/005_human-vital-systems-control-plane.md)
+- *runnable toy* — [Human Vital Systems Simulation](../../simulation-models/alignment-and-veto/human-vital-systems/README.md)
+- *narrative origin, not evidence* — [The Vital Floor](../../fiction/05_the_vital_floor.md)
+
+**Current status:** one runnable toy compares two planners under a shared shock sequence and
+operationalizes the log. The fiction entry is where the framing came from and carries no evidential
+weight — see [What This Project Does NOT Claim §16](../../theory/reference/what-this-project-does-not-claim.md).
+Nothing here is calibrated against a real vital system.
 
 **Failure condition:** If vital-floor governance does not reduce red-line violations compared with naive efficiency optimization, or reduces them only by hiding harm in unmeasured indicators, the architecture claim is weakened.
 
@@ -96,5 +111,13 @@ Every new synthesis claim should add:
 
 1. a precise statement,
 2. a non-obvious implication,
-3. at least one artifact link,
-4. a failure condition.
+3. at least one artifact link, **each marked with its evidential kind** — *measured*, *runnable
+   toy*, *argument*, *speculative design note*, *open questions*, or *narrative origin, not
+   evidence*,
+4. a current-status line saying what the artifacts actually establish,
+5. a failure condition.
+
+Rule 3 exists because an unmarked list flattens the distinction the rest of the repository works to
+keep. A `[SPECULATIVE]` architecture log, an executable simulation, and a short story are all
+legitimate artifacts and are not the same evidence. Reading the bullets should be enough to tell
+them apart; clicking through should not be required.
