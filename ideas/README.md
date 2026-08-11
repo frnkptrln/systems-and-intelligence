@@ -25,6 +25,7 @@ Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title kee
 
 ## Notes
 
+- [Persistence Can Narrow the Search Space](2026-08-11-persistence-can-narrow-search-space.md) — asks whether accumulated research memory improves local usefulness while pulling exploration toward existing conceptual attractors
 - [A Research Loop Can Become Its Own Environment](2026-08-10-research-loop-becomes-environment.md) — asks how cumulative research can preserve continuity without treating internal recurrence as new evidence
 - [The Teacher Is Part of the Environment](2026-08-10-teacher-is-part-of-the-environment.md) — distinguishes supervision as measurement from supervision as coupling
 - [Representation Changes Reconstruction Difficulty](2026-08-09-representation-changes-reconstruction-difficulty.md) — representational grounding as a possible separation between identifiability and search accessibility
