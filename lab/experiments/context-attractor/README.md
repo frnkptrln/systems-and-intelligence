@@ -68,7 +68,7 @@ Do not hand-select extra theory pages for this seed. The point is persistent rep
 
 Run **8 independent generations per condition** with the same model/version and sampling settings, interleaving conditions in randomized order where the interface permits it. Preserve raw outputs unchanged.
 
-The first comparison is within one model. Cross-model replication is a later experiment and must not be mixed into the first result.
+The first comparison is within one model. Cross-model replication is a later experiment and must not be mixed into the first run.
 
 ## Preregistered measurements
 

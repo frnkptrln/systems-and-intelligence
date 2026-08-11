@@ -378,6 +378,25 @@ def review_excluded(rel: str) -> bool:
     return rel in REVIEW_EXCLUDED_FILES or rel.startswith(REVIEW_EXCLUDED_PREFIXES)
 
 
+QUOTED_SPAN = re.compile(r"\"[^\"\n]*\"|“[^”\n]*”")
+
+
+def quoted_mention(text: str, start: int) -> bool:
+    """True when the match sits inside quotation marks on its own line.
+
+    A page that writes: *this note records the source date rather than relying
+    on relative phrases such as "weeks old"* is demonstrating the phrase, not
+    using it. Flagging the demonstration is worse than missing it — the warning
+    lane only works while every entry in it is worth a look, and a standing
+    false positive is what teaches a reader to skim past the real one.
+    """
+    line_start = text.rfind("\n", 0, start) + 1
+    line_end = text.find("\n", start)
+    line = text[line_start : line_end if line_end != -1 else len(text)]
+    offset = start - line_start
+    return any(span.start() < offset < span.end() for span in QUOTED_SPAN.finditer(line))
+
+
 def find_review_candidates(repo: Path = REPO) -> list[Finding]:
     findings: list[Finding] = []
     for path in markdown_files(repo):
@@ -386,6 +405,8 @@ def find_review_candidates(repo: Path = REPO) -> list[Finding]:
             continue
         text = read_text(path)
         for match in RELATIVE_RECENCY.finditer(text):
+            if quoted_mention(text, match.start()):
+                continue
             findings.append(
                 Finding(
                     rel,
@@ -394,6 +415,8 @@ def find_review_candidates(repo: Path = REPO) -> list[Finding]:
                 )
             )
         for match in NOVELTY_LANGUAGE.finditer(text):
+            if quoted_mention(text, match.start()):
+                continue
             findings.append(
                 Finding(
                     rel,

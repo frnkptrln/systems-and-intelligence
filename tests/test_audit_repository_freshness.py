@@ -311,3 +311,67 @@ def test_benchmark_readme_without_a_range_is_reported(tmp_path):
 
     with pytest.raises(ValueError):
         canonical_benchmark_version(tmp_path)
+
+
+# --- quoted mentions are demonstrations, not claims ---------------------------
+
+
+def test_quoted_relative_time_phrase_is_not_flagged(tmp_path):
+    """A page explaining that it avoids a phrase must not be flagged for it."""
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "theory/ai/note.md",
+        "This note records the source date rather than relying on relative "
+        'phrases such as "weeks old."\n',
+    )
+
+    assert find_review_candidates(tmp_path) == []
+
+
+def test_curly_quoted_mention_is_not_flagged(tmp_path):
+    seed_open_problems(tmp_path, 1)
+    write(tmp_path, "theory/ai/note.md", "Avoid “currently” in reader pages.\n")
+
+    assert find_review_candidates(tmp_path) == []
+
+
+def test_unquoted_use_on_a_line_with_quotes_is_still_flagged(tmp_path):
+    """Quoting something else on the line must not grant blanket immunity."""
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "theory/ai/note.md",
+        'The suite is called "the Agentic Identity Suite" and currently runs on toys.\n',
+    )
+
+    findings = find_review_candidates(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].message == 'review relative-time phrase "currently"'
+
+
+def test_quoted_novelty_claim_is_not_flagged(tmp_path):
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "meta/research-alignment/map.md",
+        'Reviewers should challenge any "first evidence" wording in the draft.\n',
+    )
+
+    assert find_review_candidates(tmp_path) == []
+
+
+def test_quote_spanning_lines_does_not_swallow_later_uses(tmp_path):
+    """Quote matching is per line, so an unclosed quote cannot mask a page."""
+    seed_open_problems(tmp_path, 1)
+    write(
+        tmp_path,
+        "theory/ai/note.md",
+        'An opening " quote mark on this line.\nThe suite currently runs on toys.\n',
+    )
+
+    findings = find_review_candidates(tmp_path)
+
+    assert len(findings) == 1
+    assert findings[0].line == 2
