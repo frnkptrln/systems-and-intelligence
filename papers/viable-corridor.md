@@ -758,7 +758,7 @@ Appendix C tests the constraints *inside* the TEO ODE (Class A). That cannot, on
 - Mazeika, M., et al. (2025). *Utility Engineering: Analyzing and Controlling Emergent Value Systems in AIs.* Preprint.
 - Mirollo, R. E., & Strogatz, S. H. (1991). *Stability of Incoherence in a Population of Coupled Oscillators.* Journal of Statistical Physics, 63(3–4), 613–635.
 - NOAA Global Monitoring Laboratory. (2024). *Trends in Atmospheric Carbon Dioxide.* https://gml.noaa.gov/ccgg/trends/
-- Perrier, E., & Bennett, C. (2026). *Identity Persistence in Autonomous Agents: The Chord Postulate.* arXiv:2603.09043.
+- Perrier, E., & Bennett, M. T. (2026). *Time, Identity and Consciousness in Language Model Agents.* arXiv:2603.09043.
 - Peterlein, F. (2026). *The Transition Problem.* In *Systems & Intelligence: An Open Thesis* (online repository).
 - Pew Research Center. (2014–2022). *Political Polarization in the American Public; Partisanship and Political Animosity.* Pew Research Center reports.
 - Philippon, T. (2019). *The Great Reversal: How America Gave Up on Free Markets.* Harvard University Press.

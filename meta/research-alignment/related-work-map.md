@@ -58,6 +58,29 @@ situated-competence extension are kept in the
 | Weakness principle & the self hierarchy (Stack Theory) | `lab/benchmarks/inverse-reconstruction/README.md` (Exp-1 counterpart); also `theory/core/measurement-as-weak-intervention.md`, `theory/computation/construction-vs-deduction.md`, `lab/metrics/identity_persistence.py` | Bennett (2023c) *The Optimal Choice of Hypothesis Is the Weakest, Not the Shortest*; Bennett (2026) *No Selves, No Consciousness* (AAAI SSS); Meulemans et al. (2025) *EUPI*; Schelling (1960); Grice (1957) | **Strong independent convergence:** Bennett reaches structurally parallel results by the repo's own method — necessity proofs + randomised Monte-Carlo. Thm 2 (an internal *do-vs-see tag* is unavoidable for causal learning) is the measurement note's core distinction proved as a necessity condition; Exp 2's info-seeking probing is divergence-query logic collapsing a decoder equivalence class; Thm 5 (a binding move restricts the future self) is Identity Persistence / Log-017 commit authority. **Caveat:** weakness-optimality *under a uniform extension prior* is partly definitional; the load-bearing claim is representation-invariance — extension count `w(ℓ)=\|E_ℓ\|` is encoding-free where description length (MDL/AIXI) is not. Bennett explicitly disclaims sufficiency for phenomenology (matches the repo's `[SPECULATIVE]` line on experience). | The **cost side** of Bennett's prescription: `family_search` measured that *simplicity* selection is world-dependent (chance on uniform worlds), and v1.3 measured the optimizer's-curse wedge from committing to one class member — both are the penalty for *not* holding the weakest hypothesis (the uncollapsed class). His proof and our measurements are two faces of one result; three-way convergence with EUPI at the level of formal frameworks. | A weakness selector failing to beat Occam on the CA testbed's held-out neighbourhoods, or collapsing to the same choice — the convergence would be superficial. | **Done (benchmark v1.4, `weakness_selector.py`)**: all three pre-stated predictions confirmed — commitment efficiency +2.7→+1.0 (simple world), 0.00±0.03 (uniform; analytic prediction hit to two decimals), < −7 (complex, Laplace-floored); on complex worlds the elegant guess is worse than a coin at every coverage and lies outside the world's support 100% of the time at k ≤ 5. **Also done (benchmark v1.5, `wmax_planner.py`)**: marking the guesses *eliminates* the v1.3 wedge (wmean wedge ≈ 0 at every class size, vs .085 committed at u=5) and cuts real-reward regret 35–60%; the exact pessimist (wmin) is never disappointed but pays *more* real reward than the committed baseline from u ≥ 3 — worst-case discipline is a safety instrument, not free. **Both follow-ups also done**: v1.6 closed loop (acting is measuring — dense regimes collapse the class in one round; the risky prediction that the argmax explores its own delusions faster than a random policy was *falsified*: optimization is not curiosity, the selection-not-navigation null extends to the closed loop) and v1.7 ensemble sweep (52% of the wedge gone by K=4, 87% by K=16; regret floor is genuine ignorance — ensembles cure delusion, not ignorance). Remaining open: learned world models with correlated ensembles (real-model question; API budget). |
 | Viable Corridor / capability loading | `papers/viable-corridor.md` | Aubin (1991) *Viability Theory*; Rockström et al. (2009) / Richardson et al. (2023); Bostrom (2014); Omohundro (2008) *Basic AI Drives* | **Support:** viability theory supplies the formal frame (open-set invariance); the instrumental-convergence literature matches the capability-loading mechanism. **Challenge:** no external work yet validates the specific three-constraint conjunction or the capability-loading result outside this repo's two models. | Capability as a *shared driver* loading several constraints at once, demonstrated in two structurally independent in-repo models; single-axis insufficiency. | External replication failing; or real agent ecologies in which single-axis interventions suffice at high capability. | P7/P8 on real LLM agent populations (the companion-paper programme). |
 
+## 2b) A note on anchor independence
+
+Several rows above cite Elija Perrier and Michael Timothy Bennett, and they appear in the matrix
+as separate lines of external support: Perrier on self-modification and the projector criterion,
+Bennett on the weakness principle and Stack Theory, and Perrier & Bennett (2026),
+*Time, Identity and Consciousness in Language Model Agents* (arXiv:2603.09043), as the source of
+the Identity Persistence score.
+
+These are not independent anchors. They are two researchers who also publish together, and the
+identity/consciousness cluster in this repository leans on them heavily. That concentration is
+worth stating plainly: agreement between these sources is weaker evidence than agreement between
+unrelated groups would be, and a critique that lands against their shared framing lands against
+several repository rows at once.
+
+The bibliography previously listed the joint paper under a wrong title and initial
+("Bennett, C.", *Identity Persistence in Autonomous Agents: The Chord Postulate*), which hid the
+overlap — the co-author read as a different person from the Stack Theory author. Corrected
+2026-08-11.
+
+The Chord vs. Arpeggio distinction is this repository's own and is **not** from that paper; what
+the paper supplies is the persistence score. See the
+[glossary](../../theory/reference/glossary.md#chord-postulate-arpeggio-postulate).
+
 ## 3) Initial external anchors
 
 Foundation anchors (added with the reconstruction):
