@@ -25,6 +25,7 @@ Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title kee
 
 ## Notes
 
+- [Extended Competence May Be Constructed at Runtime](2026-08-12-extended-competence-may-be-constructed-at-runtime.md) — asks whether long-horizon competence belongs to a fixed local policy or is constructed by model-external state, verification, and recovery
 - [Persistence Can Narrow the Search Space](2026-08-11-persistence-can-narrow-search-space.md) — asks whether accumulated research memory improves local usefulness while pulling exploration toward existing conceptual attractors
 - [A Research Loop Can Become Its Own Environment](2026-08-10-research-loop-becomes-environment.md) — asks how cumulative research can preserve continuity without treating internal recurrence as new evidence
 - [The Teacher Is Part of the Environment](2026-08-10-teacher-is-part-of-the-environment.md) — distinguishes supervision as measurement from supervision as coupling
