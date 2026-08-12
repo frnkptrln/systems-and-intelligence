@@ -13,8 +13,8 @@ matching ``lab/benchmarks/witness-generation``). Visible evidence is the test se
 induced by one synchronous update of a random width-8 ring: each distinct
 neighborhood that occurs contributes one (neighborhood -> output) test. The
 held-out metric is table accuracy: the fraction of all eight rule coordinates the
-artifact gets right. The evidence rng is decoupled from the loop rng, so every
-arm sees the same evidence for a given (rule, seed) pair.
+artifact gets right. World and loop randomness depend only on public experimental
+coordinates (seed and artifact family), never on the hidden rule.
 
 Five arms, exact aggregation over all 256 hidden rules:
 
@@ -88,6 +88,11 @@ def affine_table(coeffs: Iterable[int]) -> tuple[int, ...]:
     )
 
 
+def experiment_streams(seed: int, family: str) -> tuple[random.Random, random.Random]:
+    """Return target-independent world and proposal RNGs for one experiment."""
+    return random.Random(f"world:{seed}"), random.Random(f"loop:{family}:{seed}")
+
+
 @dataclass(frozen=True)
 class RunResult:
     """Exact outcome of one bounded loop run."""
@@ -122,11 +127,7 @@ def run_loop(
     keep_trace: bool = False,
 ) -> RunResult:
     """One bounded generate-evaluate-revise run against the configured referee."""
-    world_rng = random.Random(f"world:{rule}:{seed}")
-    # Arms in the same artifact family share a proposal stream. This makes the
-    # 128-vs-1280 and frozen-vs-capture comparisons paired: only the declared
-    # referee property or budget changes, not the random proposals themselves.
-    loop_rng = random.Random(f"loop:{family}:{rule}:{seed}")
+    world_rng, loop_rng = experiment_streams(seed, family)
 
     row = tuple(world_rng.getrandbits(1) for _ in range(WIDTH))
     tests = evidence_tests(rule, row)
