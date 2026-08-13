@@ -343,7 +343,7 @@ being reduced to a checklist of channel properties.
 
 ## Open Problem 16: The Mapmaker Problem
 
-*Raised by: [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md#8-simulation-instantiation-and-the-mapmaker-problem), preserving the disagreement between Alexander Lerchner's abstraction argument and Joscha Bach's virtual-causality keynote.*
+*Raised by: [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md#8-simulation-instantiation-and-the-mapmaker-problem), contrasting Alexander Lerchner's abstraction argument with a computational-functionalist virtual-causality counterposition.*
 
 **Problem statement:** Is an experiencing or semantic mapmaker required before a physical process
 can intrinsically use a representation, or can a stable perspective emerge inside a sufficiently
@@ -352,9 +352,10 @@ observer can interpret as computation from one for which the represented distinc
 operative for the system itself?
 
 **Why it matters:** Lerchner argues that symbolic computation is a mapmaker-dependent physical
-description and therefore cannot instantiate experience merely by simulating it. Bach argues that
-computers create insulated virtual causal orders and that conscious experience may itself be such
-an internally simulated world. Choosing either vocabulary too early assumes the disputed ontology.
+description and therefore cannot instantiate experience merely by simulating it. The counterposition
+holds that computers can create insulated virtual causal orders and that conscious experience may
+be realized within such an internally simulated world. Choosing either vocabulary too early
+assumes the disputed ontology.
 Input–output equivalence, counterfactual modeling, global availability, self-report, and embodiment
 can distinguish functional organizations; none is an agreed criterion for phenomenal
 instantiation.
