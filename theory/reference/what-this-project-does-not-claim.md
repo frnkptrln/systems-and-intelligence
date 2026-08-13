@@ -118,10 +118,12 @@ The specific non-claims, each with the place where the boundary is stated:
     authority counts, or when delegation is justified.** Capacity-preserving alignment is a
     hypothesis about what to evaluate: whether a system leaves people able to notice, formulate,
     choose, commit, refuse, and coordinate without taking ownership of the process. The external
-    anchor is narrower — Rousse's AGI-26 analysis treats receptivity, articulation, commitment, and
-    coordination as cultivable capacities of care — and the repository's wider list is its own
-    extension, not that paper's. All three normative questions remain open and are not answered by
-    the process language. [From Action to Culture](../emergence/from-action-to-culture.md).
+    anchor is narrower — Rousse's
+    [2026 analysis](https://doi.org/10.1007/978-3-032-33195-3_16) treats receptivity,
+    articulation, commitment, and coordination as cultivable capacities of care — and the
+    repository's wider list is its own extension, not that paper's. All three normative questions
+    remain open and are not answered by the process language.
+    [From Action to Culture](../emergence/from-action-to-culture.md).
 
 ---
 

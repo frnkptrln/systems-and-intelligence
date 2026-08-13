@@ -156,8 +156,9 @@ viability arc:         which reproduced constraints keep the system correctable
 
 An alignment system can satisfy represented preferences while weakening the practices through which
 people notice concerns, articulate values, make commitments, and coordinate action. Rousse's
-AGI-26 analysis treats **receptivity, articulation, commitment, and coordination** as cultivable
-capacities of care rather than items in a preference list.
+[2026 analysis](https://doi.org/10.1007/978-3-032-33195-3_16) treats
+**receptivity, articulation, commitment, and coordination** as cultivable capacities of care rather
+than items in a preference list.
 
 The repository consequence is a generator claim: preserving a value trace is not equivalent to
 preserving the capacities that generate, contest, enact, and revise future values. Assistance can

@@ -27,10 +27,10 @@ group mind.
 
 Positive feedback and persistence create a trade-off. Slow decay can preserve
 useful paths and also preserve an obsolete attractor after the world changes;
-fast decay can improve adaptation while discarding coordination work. The
-AGI-26 [trace-field study](https://doi.org/10.1007/978-3-032-33195-3_7)
-measures that trade-off in a separate bounded simulator. This repository's
-model has not yet reproduced that result.
+fast decay can improve adaptation while discarding coordination work.
+Montes's 2026 [trace-field study](https://doi.org/10.1007/978-3-032-33195-3_7)
+measures that trade-off in a separate bounded simulator. This repository's model
+has not yet reproduced that result.
 
 ---
 

@@ -6,10 +6,11 @@ status: working formalization over preliminary evidence
 
 # Interaction-Grounded Semantics
 
-**Status:** Working formalization over a published AGI-26 proof-of-concept and
-earlier enactive-decision-process work. It defines functional interchangeability
-inside declared interaction tests, not meaning in every linguistic,
-phenomenological, or social sense.
+**Status:** Working formalization over Georgeon, Marrel, and Cook's
+[published 2026 proof-of-concept](https://doi.org/10.1007/978-3-032-33010-9_16)
+and earlier enactive-decision-process work. It defines functional
+interchangeability inside declared interaction tests, not meaning in every
+linguistic, phenomenological, or social sense.
 
 **Why this page exists:** The repository treated observation as a process and
 measurement as intervention, but did not yet formalize the claim that a signal
@@ -160,7 +161,7 @@ measure whether the declared future roles remain invariant.
 
 ## 5. What has been demonstrated
 
-Georgeon, Marrel, and Cook's 2026 conference paper reports an agent whose
+Georgeon, Marrel, and Cook's 2026 paper reports an agent whose
 experience is a stream of sensorimotor-loop tokens. A schema mechanism learns
 token sequences and assigns pragmatic roles according to their place in the
 stream; the authors analyze a small Transformer's attention matrix as evidence
@@ -179,11 +180,11 @@ structure. It does not yet demonstrate:
 - convergence on a shared semantics across agents.
 
 The earlier EMDP and artificial-enactive-inference papers provide a clearer
-formal basis for action-dependent interaction tokens than the short conference
-paper alone.
+formal basis for action-dependent interaction tokens than the short 2026 paper
+alone.
 
 Primary sources and the official implementation are in the
-[Day 2 Source Map](../../meta/research-alignment/agi-26-day-2-source-map.md#interaction-grounded-semantics).
+[claim-level source audit](../../meta/research-alignment/agi-26-day-2-source-map.md#interaction-grounded-semantics).
 
 ## 6. Developmental ordering as a hypothesis
 

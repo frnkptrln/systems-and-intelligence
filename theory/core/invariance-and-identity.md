@@ -114,9 +114,9 @@ of continuity. The [Recursive Workbench](../../lab/benchmarks/recursive-workbenc
 already supplies the finite warning: evaluator capture can improve the report
 while leaving held-out performance unchanged.
 
-The full integration and primary-source qualification are in
+The full argument and primary-source qualification are in
 [Competence, Constraint, and Verification](competence-constraint-and-verification.md#9-identity-under-modification)
-and the [Day 2 Source Map](../../meta/research-alignment/agi-26-day-2-source-map.md#identity-and-self-modification).
+and the [source and integration ledger](../../meta/research-alignment/agi-26-day-2-source-map.md#identity-and-self-modification).
 
 ## Open threads
 

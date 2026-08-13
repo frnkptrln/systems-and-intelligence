@@ -531,12 +531,13 @@ Two existing instruments already cover adjacent claims:
 - [Recursive Workbench](../../lab/benchmarks/recursive-workbench/README.md) —
   self-modification under a frozen external referee.
 
-The Day 2 synthesis extends rather than replaces this stack. It treats
-constraints as operators on reachable trajectories, separates behavioral
-exposure from observer reinterpretation, adds interaction-history semantics,
-and asks how replay or proof revises the process that generated a claim. See
+The companion
 [Competence, Constraint, and Verification](../core/competence-constraint-and-verification.md)
-and the exact
+analysis extends rather than replaces this stack. It treats constraints as
+operators on reachable trajectories, separates behavioral exposure from
+observer reinterpretation, adds interaction-history semantics, and asks how
+replay or proof revises the process that generated a claim. The corresponding
+exact case is the
 [Constraint-Release Benchmark](../../lab/benchmarks/constraint-release/README.md).
 
 The next unimplemented experiments should be causal rather than rhetorical:
@@ -576,6 +577,10 @@ No slide deck or other presenter-supplied presentation artifact was available
 for this integration. Neither presence nor absence in the transcript is
 treated as evidence, and the transcript is not treated as a publication.
 
+Conference chronology is preserved only in this provenance note. The argument
+above names concepts or citable sources directly; it does not use “Day 1” or
+“Day 2” as an explanatory category.
+
 No scientific claim on this page depends on that transcript. External claims
 retained as support are tied below to proceedings papers, primary papers, or an
 author manuscript. Anything not independently anchored is treated only as an
@@ -583,6 +588,16 @@ open lead or repository construction. The synthesis, criticisms, tuple
 $\Sigma$, capability notation $J_{\ell,\tau}(\Sigma)$, benchmark, “Mapmaker
 Problem,” and computational-functionalist counterposition are repository
 constructions rather than conference results.
+
+### Conference provenance
+
+- AGI Society, [*AGI-26 Conference, Day 1: Keynotes and Paper
+  Presentations*](https://www.youtube.com/watch?v=qRA1DoMCCSc), official
+  conference recording. The recording and automatic transcript surfaced the
+  Friston/active-inference and Bach/virtual-causality leads. Active-inference
+  claims are anchored below in published papers; the virtual-causality contrast
+  remains an explicitly labeled repository counterposition, not a verified
+  summary of Bach's keynote.
 
 ### Paper anchors
 

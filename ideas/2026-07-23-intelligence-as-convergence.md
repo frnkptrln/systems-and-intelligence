@@ -14,12 +14,13 @@ This would not mean that every intelligence approaches one worldview. Convergenc
 
 **Open question.** Which similarities are imposed by the world, which by shared tasks and training regimes, and which by the observer's comparison method? A useful probe would vary substrate and learning history while holding only selected problem constraints stable.
 
-The Day 2 integration sharpens the warning: convergence can be produced by a
-shared bottleneck, selector, verifier, or coarse lens. Similar scores therefore
-do not establish a shared internal structure. A convergence claim should
-transport the task and lens, compare interaction histories, and test whether
-the proposed invariant survives constraint release rather than merely becoming
-visible under the same evaluator.
+The [situated-competence analysis](../theory/core/competence-constraint-and-verification.md)
+sharpens the warning: convergence can be produced by a shared bottleneck,
+selector, verifier, or coarse lens. Similar scores therefore do not establish a
+shared internal structure. A convergence claim should transport the task and
+lens, compare interaction histories, and test whether the proposed invariant
+survives constraint release rather than merely becoming visible under the same
+evaluator.
 
 **Connections.**
 
