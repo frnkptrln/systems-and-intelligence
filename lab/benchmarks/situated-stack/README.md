@@ -7,11 +7,11 @@
 ## Why this exists
 
 The repository treats intelligence as relative to a task family, an
-observation/action interface, resources, and an evaluator. The AGI-26 synthesis
+observation/action interface, resources, and an evaluator.
 [The Agent Is Not Where the Model Ends](../../../theory/identity/the-agent-is-not-where-the-model-ends.md)
-sharpens the resulting implementation question: if the controller is held
-fixed while its sensor, actuator, body, environment, or goal interface changes,
-which capability comparison survives?
+sharpens the resulting implementation question: if the controller is held fixed
+while its sensor, actuator, body, environment, or goal interface changes, which
+capability comparison survives?
 
 This benchmark makes that question finite. It does not search for a universal
 measure of intelligence and cannot prove that no body-independent invariant

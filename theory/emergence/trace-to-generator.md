@@ -35,7 +35,7 @@
 > observational equivalence remain active; the universal definitions of intelligence and generic
 > forward/inverse asymmetry are historical hypotheses, not current foundations.
 >
-> The Day 2 integration adds a complementary audit: even a fixed typed process
+> A complementary audit adds a second limitation: even a fixed typed process
 > does not determine expressed competence without constraints, embodiment,
 > selection, interaction history, tasks, and a lens. See
 > [Competence, Constraint, and Verification](../core/competence-constraint-and-verification.md).

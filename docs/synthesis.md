@@ -144,9 +144,10 @@ That cultural return path also complicates alignment. A system can satisfy repre
 while weakening the human capacities through which later concerns and commitments are formed.
 “Capacity-preserving alignment” is the resulting hypothesis: evaluate whether assistance leaves
 people able to notice, formulate, choose, commit, refuse, and coordinate without the system taking
-ownership of the process. The external anchor is narrower — Rousse's AGI-26 analysis names
-receptivity, articulation, commitment, and coordination — and the wider list is the repository's own
-extension. Which capacities, whose authority, and when delegation is justified remain normative
+ownership of the process. The external anchor is narrower — Rousse's
+[2026 analysis](https://doi.org/10.1007/978-3-032-33195-3_16) names receptivity,
+articulation, commitment, and coordination — and the wider list is the repository's own extension.
+Which capacities, whose authority, and when delegation is justified remain normative
 questions; the process formalism does not answer them.
 
 ## 6. What is established — and what remains open

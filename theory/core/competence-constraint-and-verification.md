@@ -14,9 +14,11 @@ and sourced; analogies are not identities.
 capacity becomes visible after a small change in constraint, embodiment,
 selector, interaction history, or verification protocol?
 
-This page integrates the strongest source-verified threads prompted by AGI-26
-Day 2. It is not a conference summary. The claim ledger and bibliographic
-decisions are in the [Day 2 Source and Integration Map](../../meta/research-alignment/agi-26-day-2-source-map.md).
+This page integrates source-verified work on competence under constraint,
+interaction-grounded semantics, verification, and identity under revision. It
+is not a conference summary. The provenance ledger and bibliographic decisions
+are recorded in the
+[AGI-26 Day 2 Source and Integration Map](../../meta/research-alignment/agi-26-day-2-source-map.md).
 
 ## 1. Audit result: the generator is not enough
 
@@ -26,8 +28,8 @@ retired that move: a transition kernel, proposal process, program, policy, and
 historical mechanism are different typed objects. A trace can constrain a
 declared model family without uniquely recovering any of them.
 
-The independently checked Day 2 sources do not justify restoring the old
-foundation. They do strengthen a narrower diagnosis:
+The independent source audit does not justify restoring the old foundation. It
+does strengthen a narrower diagnosis:
 
 > **Working thesis.** Expressed competence is a property of a declared process
 > in a declared coupling, under constraints, history, tasks, tests, and an
@@ -305,10 +307,11 @@ i_t=I(a_t,s_t,s_{t+1}),
 $$
 
 the event includes what the agent attempted and the feedback that followed.
-Georgeon, Marrel, and Cook's AGI-26 paper reports a small schema-learning
-experiment over such sensorimotor-loop tokens. The reported evidence concerns
-learned sequence roles and attention structure, not a general theory of
-meaning.
+Georgeon, Marrel, and Cook's
+[2026 paper](https://doi.org/10.1007/978-3-032-33010-9_16) reports a small
+schema-learning experiment over such sensorimotor-loop tokens. The reported
+evidence concerns learned sequence roles and attention structure, not a general
+theory of meaning.
 
 The focused note [Interaction-Grounded Semantics](../ai/interaction-grounded-semantics.md)
 defines a conservative claim:

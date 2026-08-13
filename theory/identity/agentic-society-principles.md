@@ -59,7 +59,7 @@ The trace ecology needs explicit governance:
 - treat summaries as revisable indexes, not irreversible truth.
 
 The failure can be substrate-level. Every local agent may follow its declared objective while a
-shared retrieval layer keeps presenting an obsolete attractor. The AGI-26
+shared retrieval layer keeps presenting an obsolete attractor. Montes's 2026
 [trace-field simulation](https://doi.org/10.1007/978-3-032-33195-3_7) is one bounded toy:
 persistent traces improve selected coordination outcomes, but stale traces delay recovery after the
 world changes; decay and targeted reset alter that recovery without modifying every agent.

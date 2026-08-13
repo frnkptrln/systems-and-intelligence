@@ -242,7 +242,8 @@ holding the verbal description fixed; a complementary false-belief intervention 
 description while holding the process state fixed. Strategy and resource allocation should track
 the causally available state if the self-model participates in control.
 
-The full test family and its connection to the AGI-26 metacognition work are in
+The full test family and its relation to Laird and colleagues' Common Model
+proposal and Bergmann's functional-consciousness proposal are in
 [The Agent Is Not Where the Model Ends](the-agent-is-not-where-the-model-ends.md#6-the-self-model-as-a-control-object).
 Passing such a test would establish functional metacognition under the declared intervention, not
 accurate introspection, sentience, or phenomenal consciousness.

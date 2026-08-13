@@ -30,14 +30,14 @@ embodied system. How strong is that claim?
 
 ## What Bennett supports
 
-Bennett's AGI-26 paper targets the third reading in a narrower form. Software has
-no realised behaviour without an interpreter, body, and environment. In AIXI,
-changing the reference universal Turing machine changes the agent's inductive
-bias and can reverse performance rankings. More generally, the same controller
-can succeed through one body and fail through another, while the same realised
-behaviour can satisfy one goal and violate another. Realised success is therefore
-a relation among controller, embodiment, environment, task, and evaluator—not an
-intrinsic software quantity.
+Bennett's [2026 paper](https://doi.org/10.1007/978-3-032-33010-9_5) targets the
+third reading in a narrower form. Software has no realised behaviour without an
+interpreter, body, and environment. In AIXI, changing the reference universal
+Turing machine changes the agent's inductive bias and can reverse performance
+rankings. More generally, the same controller can succeed through one body and
+fail through another, while the same realised behaviour can satisfy one goal
+and violate another. Realised success is therefore a relation among controller,
+embodiment, environment, task, and evaluator—not an intrinsic software quantity.
 
 This challenges a **body-independent factorisation of realised success** into a
 software-only intelligence coordinate and an independently attached goal
@@ -54,7 +54,7 @@ remain useful abstractions.
 
 ## Orthogonality claims need a domain
 
-The conference discussion makes three further theses worth separating:
+That implementation critique motivates three further theses worth separating:
 
 | Thesis | Scope | Status after Bennett's challenge |
 |:---|:---|:---|

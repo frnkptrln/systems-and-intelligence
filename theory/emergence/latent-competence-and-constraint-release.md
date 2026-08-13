@@ -126,7 +126,7 @@ under unusual couplings; they do not by themselves locate all explanatory
 information or prove a shared cognitive mechanism.
 
 Primary sources and claim-level qualifications are listed in the
-[Day 2 Source Map](../../meta/research-alignment/agi-26-day-2-source-map.md#latent-competence-and-diverse-cognition).
+[source and integration ledger](../../meta/research-alignment/agi-26-day-2-source-map.md#latent-competence-and-diverse-cognition).
 
 ## 5. Relations to existing concepts
 
