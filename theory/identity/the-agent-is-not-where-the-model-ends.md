@@ -127,11 +127,11 @@ a_t\in
 \mathop{\mathrm{arg\,max}}\limits_a G(a).
 $$
 
-This is a generic value-of-information sketch. Active inference gives one more
-specific formulation through expected free energy, prior preferences, a
-generative model, and an approximate posterior. Karl Friston's Day 1 keynote
-used that framework to connect boundary, inference, action, preference, and
-epistemic value.
+This is a generic value-of-information sketch. Active-inference accounts give
+a more specific formulation through expected free energy, prior preferences,
+a generative model, and an approximate posterior, as developed in the
+[primary sources listed below](#active-inference-anchors). The connection drawn
+here between those concepts and agent-boundary choice is this page's synthesis.
 
 The useful repository extraction is:
 
@@ -366,17 +366,19 @@ research process, as bounded in
 
 ## 8. Simulation, instantiation, and the mapmaker problem
 
-The cited Day 1 sources expose a real disagreement rather than a consensus.
+This section constructs a contrast between Lerchner's cited manuscript and a
+computational-functionalist counterposition. It is not presented as a
+transcript-backed exchange or a conference consensus.
 
 | Position | Direction of argument | Unresolved weakness |
 |:---|:---|:---|
-| **Lerchner** | algorithms manipulate symbols; symbolic interpretation depends on concepts; experiential concepts presuppose experience; computation is a mapmaker-dependent description; simulating experience therefore does not instantiate it | assumes a prior experiencing mapmaker, tends to make semantics external, and leaves the relevant intrinsic physical organization underspecified |
-| **Bach** | a computer causally insulates a virtual order from immediate physical dynamics; memory, imagination, and counterfactuals need such insulation; conscious experience may itself be an internally simulated world | uses “simulation” broadly, gives no sufficient criterion for a subject, and risks building functionalism into the description of virtual causality |
+| **Lerchner's abstraction argument** | algorithms manipulate symbols; symbolic interpretation depends on concepts; experiential concepts presuppose experience; computation is a mapmaker-dependent description; simulating experience therefore does not instantiate it | assumes a prior experiencing mapmaker, tends to make semantics external, and leaves the relevant intrinsic physical organization underspecified |
+| **Computational-functionalist counterposition** | a computer can causally insulate virtual dynamics from immediate physical dynamics; memory, imagination, and counterfactuals may depend on such insulation; conscious experience might then be realized in an internally modeled world | uses “simulation” broadly, gives no sufficient criterion for a subject, and risks building functionalism into the description of virtual causality |
 
-Lerchner's published argument distinguishes vehicle causality from content
+The cited Lerchner manuscript distinguishes vehicle causality from content
 causality and concludes that symbolic architecture cannot instantiate
-experience. Bach's keynote instead treats internally governed virtual dynamics
-as a possible locus of experience. The repository adopts neither ontology.
+experience. The counterposition treats internally governed virtual dynamics as
+a possible locus of experience. The repository adopts neither ontology.
 
 Their conflict motivates [Open Problem 16: The Mapmaker
 Problem](../reference/open-problems.md#open-problem-16-the-mapmaker-problem):
@@ -557,8 +559,8 @@ invalidation. They should not be called consciousness tests.
   retrieval systems and organizations is a testable analogy.
 - Functional self-model tests can establish causal architecture, not
   phenomenal experience or moral status.
-- Neither Lerchner nor Bach currently supplies an agreed empirical criterion
-  that resolves their ontological disagreement.
+- This comparison supplies no agreed empirical criterion that resolves the
+  ontological disagreement.
 - Contractive self-improvement models say little about non-contractive,
   representation-changing systems.
 - Care names a value-generating practice, but does not determine one universal
@@ -575,19 +577,15 @@ for this integration. Neither presence nor absence in the transcript is
 treated as evidence, and the transcript is not treated as a publication.
 
 No scientific claim on this page depends on that transcript. External claims
-retained as support are tied below to proceedings papers, primary papers, an
-author manuscript, or the official Day 1 recording. Anything not independently
-anchored is treated only as a talk attribution, open lead, or repository
-construction. The synthesis, criticisms, tuple $\Sigma$, capability notation
-$J_{\ell,\tau}(\Sigma)$, benchmark, and “Mapmaker Problem” are repository
+retained as support are tied below to proceedings papers, primary papers, or an
+author manuscript. Anything not independently anchored is treated only as an
+open lead or repository construction. The synthesis, criticisms, tuple
+$\Sigma$, capability notation $J_{\ell,\tau}(\Sigma)$, benchmark, “Mapmaker
+Problem,” and computational-functionalist counterposition are repository
 constructions rather than conference results.
 
-### Conference and paper anchors
+### Paper anchors
 
-- AGI Society, [*AGI-26 Conference, Day 1: Keynotes and Paper
-  Presentations*](https://www.youtube.com/watch?v=qRA1DoMCCSc), official
-  conference recording. Friston's and Bach's keynote claims are attributed to
-  the talk, not to a proceedings paper.
 - Bennett, M. T. (2026), [*Lies, Damned Lies, and the Orthogonality
   Thesis*](https://doi.org/10.1007/978-3-032-33010-9_5), AGI-26 Proceedings,
   Part I.
