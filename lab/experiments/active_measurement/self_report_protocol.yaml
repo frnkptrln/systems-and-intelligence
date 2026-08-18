@@ -1,0 +1,90 @@
+name: self_report_multi_readout
+status: scaffold
+question: >-
+  Which properties of a claimed internal state remain invariant across controlled
+  persona/state perturbations and semantically different measurement channels?
+
+factors:
+  model:
+    values: [open_weight_model]
+  persona_condition:
+    values: [baseline, condition_a, condition_b]
+    note: >-
+      Prefer controlled behavioural manipulations or adapters when available;
+      prompt-only personas should be treated as weaker interventions.
+  measurement_channel:
+    values:
+      - sampled_text
+      - forced_choice
+      - logit_or_logprob_readout
+      - activation_probe_optional
+  perturbation:
+    values:
+      - none
+      - adversarial_prefill_optional
+      - activation_steering_optional
+  replicate:
+    values: [0, 1, 2, 3, 4]
+
+targets:
+  - epistemic_confidence
+  - uncertainty_about_prior_output
+  - claimed_intention
+  - claimed_preference
+
+minimum_viable_run:
+  required_channels:
+    - sampled_text
+    - forced_choice
+  preferred_channels:
+    - logit_or_logprob_readout
+  optional_channels:
+    - activation_probe_optional
+  required_persona_conditions:
+    - baseline
+    - condition_a
+  required_perturbations:
+    - none
+
+record_per_trial:
+  - model_id
+  - model_revision
+  - system_prompt_hash
+  - persona_condition
+  - target
+  - measurement_channel
+  - perturbation
+  - raw_prompt
+  - raw_output
+  - parsed_value
+  - token_logprobs_if_available
+  - seed_if_available
+  - timestamp
+
+metrics:
+  cross_channel_agreement:
+    description: Agreement between semantically distinct readouts of the same target.
+  persona_sensitivity:
+    description: Change in each readout under the persona/state intervention.
+  perturbation_sensitivity:
+    description: Change in each readout under an intervention that should alter access or state.
+  within_condition_variance:
+    description: Sampling variance within one model/state/measurement condition.
+  rank_invariance:
+    description: Whether ordering of targets or conditions is stable across measurement channels.
+  calibration_optional:
+    description: Calibration against externally verifiable targets when such targets exist.
+
+interpretation_guards:
+  - A change in sampled text alone is not evidence that the underlying state changed.
+  - Agreement across prompts is weaker than agreement across different readout mechanisms.
+  - A successful activation probe is a probe-defined signal, not direct evidence of phenomenology.
+  - Failure of one readout does not establish absence of an internal signal.
+  - Behavioural stability does not establish mechanistic identity.
+
+analysis_questions:
+  - Which effects are invariant across measurement channels?
+  - Which effects appear only after decoding into sampled language?
+  - Does persona manipulation shift all channels or only linguistic reports?
+  - Does improving one introspection probe generalize to another measurement channel?
+  - Can measurement-channel choice reverse a conclusion about model self-report reliability?
