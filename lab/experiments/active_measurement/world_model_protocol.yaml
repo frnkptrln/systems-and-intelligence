@@ -1,0 +1,116 @@
+name: world_model_runtime_embodiment_grid
+status: scaffold
+question: >-
+  Which apparent policy or world-model differences remain after integration
+  boundaries are standardized, and which survive changes in runtime,
+  action representation, and embodiment?
+
+interfaces:
+  observation:
+    requirement: Same schema and preprocessing within a comparison block.
+  action_command:
+    requirement: Record the policy-facing action representation explicitly.
+  realized_motion:
+    requirement: Record or reconstruct robot motion separately from the command when possible.
+  predicted_consequence:
+    requirement: Preserve the model's predicted future or state delta when the architecture exposes it.
+  observed_consequence:
+    requirement: Preserve simulator/debug/real outcome separately from model prediction.
+
+factors:
+  policy:
+    values: [demo_policy, policy_a, policy_b]
+  runtime_regime:
+    values:
+      - stateless
+      - external_task_state
+      - external_task_state_with_recovery
+  action_representation:
+    values:
+      - native_joint_or_control
+      - spatial_or_grounded_optional
+  embodiment:
+    values:
+      - training_or_reference
+      - shifted_embodiment_optional
+  evaluation_environment:
+    values:
+      - xpolicylab_debug
+      - simulator_optional
+      - hardware_optional
+
+minimum_viable_run:
+  environment: xpolicylab_debug
+  policies:
+    - demo_policy
+    - one_real_policy
+  runtime_regimes:
+    - stateless
+    - external_task_state
+  embodiment: training_or_reference
+  note: >-
+    The first run is for boundary validation, logging, and comparability. It is
+    not intended to establish robotics performance without a simulator or robot.
+
+record_per_step:
+  - episode_id
+  - timestep
+  - policy_id
+  - policy_revision
+  - runtime_regime
+  - embodiment_id
+  - observation
+  - action_command
+  - realized_motion_if_available
+  - predicted_consequence_if_available
+  - observed_consequence_if_available
+  - task_state_if_external
+  - verification_signal_if_available
+  - recovery_event
+
+metrics:
+  task_success:
+    description: Full-task or subtask success where the environment provides a valid task outcome.
+  action_fidelity:
+    description: Agreement between commanded and realized motion, separated from environment response.
+  world_action_consistency:
+    description: >-
+      Whether the executed action is compatible with the future/state change the
+      same model predicts or implies. Applicable only when both outputs exist.
+  consequence_prediction_error:
+    description: Error between predicted and observed decision-relevant consequence.
+  policy_ranking_stability:
+    description: Whether policy ordering is preserved across runtime or environment changes.
+  cross_embodiment_transfer:
+    description: Performance retained under embodiment shift after controlling for task relation.
+  recovery_value:
+    description: Improvement attributable to evidence-driven recovery over external task state alone.
+  runtime_contribution:
+    description: Difference between the same local policy under different runtime regimes.
+
+factorization_tests:
+  learn_everything:
+    description: Model command-to-future transition end to end.
+  factor_known_motion:
+    description: >-
+      Treat command-to-realized-motion as explicit/known where possible and learn
+      only the residual environmental response.
+  comparison_question: >-
+    Does factoring known embodiment/controller structure improve transfer or
+    merely move modelling error into a fixed interface?
+
+interpretation_guards:
+  - Visual rollout quality is not a substitute for action fidelity or closed-loop reliability.
+  - Shared representation does not guarantee world-action consistency.
+  - Cross-embodiment failure may reflect action representation rather than absence of physical knowledge.
+  - Debug-mode success validates interfaces, not physical competence.
+  - Runtime gains should not automatically be attributed to the base model.
+  - A fixed kinematic or controller model is an assumption that must itself be checked.
+
+analysis_questions:
+  - Which performance differences disappear after standardizing observation/action boundaries?
+  - How much competence is added by external task state and recovery?
+  - Do world-model predictions preserve policy rankings that later hold in simulation or hardware?
+  - Does world-action consistency fail before task success fails?
+  - Does a spatially grounded action representation improve transfer to a shifted embodiment?
+  - Is residual learning more transferable than learning the entire command-to-future generator?
