@@ -124,6 +124,36 @@ class TestEvaluatorCaptureInflatesOnlyTheReport(unittest.TestCase):
         self.assertGreater(gap_capture, 2 * gap_frozen)
 
 
+class TestRunLoopDrawsCarryNoTargetInformation(unittest.TestCase):
+    """Guard the information boundary through run_loop itself.
+
+    These checks observe only the public trace and result of run_loop, never
+    the stream helper, so they fail — rather than error — against any
+    implementation whose world or proposal randomness sees the hidden rule.
+    """
+
+    PROBE_RULES = (0, 3, 45, 110, 254)
+
+    def test_proposal_slots_are_identical_across_hidden_rules(self):
+        for seed in range(SEEDS):
+            for arm in ("full-frozen", "affine-frozen"):
+                streams = {
+                    tuple(_proposal_slots(rule, seed, arm))
+                    for rule in self.PROBE_RULES
+                }
+                self.assertEqual(len(streams), 1)
+
+    def test_evidence_mask_size_is_identical_across_hidden_rules(self):
+        for seed in range(SEEDS):
+            sizes = {
+                rb.run_loop(
+                    rule, seed, arm="full-frozen", **rb.ARMS["full-frozen"]
+                ).tests_final
+                for rule in self.PROBE_RULES
+            }
+            self.assertEqual(len(sizes), 1)
+
+
 class TestTraceIsComplete(unittest.TestCase):
     def test_trace_records_every_proposal_and_evaluator_edit(self):
         result = rb.run_loop(
