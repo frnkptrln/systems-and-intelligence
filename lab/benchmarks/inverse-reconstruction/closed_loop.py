@@ -206,17 +206,20 @@ DENSE = dict(W=60, T=6, k=3, n_candidates=60, density=0.5, H=8)
 SPARSE = dict(W=24, T=2, k=1, n_candidates=24, density=0.12, H=16)
 
 
-def run_suite(settings: dict, n_rules: int = 12, n_eps: int = 12,
+def run_suite(settings: dict, n_rules: int = 12, n_settings: int = 144,
               seed: int = 0) -> dict:
+    # Episode settings (initial mask, guess, start row, candidate draws) are
+    # indexed by their own counter and crossed with every rule, so no draw is
+    # keyed to a rule's loop position. n_settings=144 preserves the
+    # pre-crossing count of distinct settings.
     H = settings["H"]
     rng = np.random.default_rng(seed)
     rules = rng.integers(1, 255, size=n_rules)
     acc = {a: {"gap": [], "u": [], "reward": []} for a in AGENTS}
-    s = 0
-    for rule in rules:
-        for e in range(n_eps):
-            s += 1
-            r = episode(int(rule), seed=seed * 100000 + s, **settings)
+    for setting in range(n_settings):
+        eseed = seed * 100000 + setting + 1
+        for rule in rules:
+            r = episode(int(rule), seed=eseed, **settings)
             for a in AGENTS:
                 if r[a]["gap"]:
                     acc[a]["gap"].append(r[a]["gap"])

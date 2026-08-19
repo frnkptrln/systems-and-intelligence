@@ -151,8 +151,10 @@ def episode(true_rule: int, u: int, W: int = 60, T: int = 12, k: int = 4,
 PLANNERS = ("committed", "wmean", "wmin")
 
 
-def run_suite(us=(0, 1, 2, 3, 4, 5), n_rules: int = 14, n_masks: int = 3,
-              n_eps: int = 5, seed: int = 0) -> dict:
+def run_suite(us=(0, 1, 2, 3, 4, 5), n_rules: int = 14, n_settings: int = 210,
+              seed: int = 0) -> dict:
+    # Settings are indexed independently and crossed with every rule (see
+    # model_exploitation.run_suite); SEs are taken across settings.
     rng = np.random.default_rng(seed)
     rules = rng.integers(1, 255, size=n_rules)
     out: dict = {"u": list(us)}
@@ -161,16 +163,16 @@ def run_suite(us=(0, 1, 2, 3, 4, 5), n_rules: int = 14, n_masks: int = 3,
                   "regret": [], "regret_se": []}
     for u in us:
         acc = {p: {"w": [], "g": [], "r": []} for p in PLANNERS}
-        s = 0
-        for rule in rules:
-            for m in range(n_masks):
-                for e in range(n_eps):
-                    s += 1
-                    r = episode(int(rule), u, seed=seed * 100000 + s)
-                    for p in PLANNERS:
-                        acc[p]["w"].append(r[p]["gap_chosen"] - r[p]["gap_cand"])
-                        acc[p]["g"].append(r[p]["gap_chosen"])
-                        acc[p]["r"].append(r["oracle_real"] - r[p]["real"])
+        for setting in range(n_settings):
+            eseed = seed * 100000 + setting + 1
+            block = [episode(int(rule), u, seed=eseed) for rule in rules]
+            for p in PLANNERS:
+                acc[p]["w"].append(np.mean(
+                    [r[p]["gap_chosen"] - r[p]["gap_cand"] for r in block]))
+                acc[p]["g"].append(np.mean(
+                    [r[p]["gap_chosen"] for r in block]))
+                acc[p]["r"].append(np.mean(
+                    [r["oracle_real"] - r[p]["real"] for r in block]))
         for p in PLANNERS:
             w = np.array(acc[p]["w"])
             reg = np.array(acc[p]["r"])

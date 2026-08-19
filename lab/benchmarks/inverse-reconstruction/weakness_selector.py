@@ -118,14 +118,21 @@ def run_weakness_suite(best: dict[int, int], n_masks: int = 40,
         for k in ks:
             u = 8 - k
             hits_s, hits_b, wr_s, wr_b, wr_c, sup = [], [], [], [], [], []
-            for rule in support:
-                for _ in range(n_masks):
-                    pats = rng.choice(8, size=k, replace=False)
-                    mask = 0
-                    for p in pats:
-                        mask |= (1 << int(p))
-                    unseen = np.array([p for p in range(8)
-                                       if not (mask >> p) & 1])
+            # Masks are drawn from their own stream index and crossed with
+            # every support rule, so no mask is keyed to a rule's loop
+            # position; len(support) * n_masks preserves the pre-crossing
+            # count of distinct masks per (world, k).
+            settings = []
+            for _ in range(len(support) * n_masks):
+                pats = rng.choice(8, size=k, replace=False)
+                mask = 0
+                for p in pats:
+                    mask |= (1 << int(p))
+                settings.append(mask)
+            for mask in settings:
+                unseen = np.array([p for p in range(8)
+                                   if not (mask >> p) & 1])
+                for rule in support:
                     cls = (TABLES & mask) == (rule & mask)
                     # simpmax: canonical minimal-size consistent table (= v1.2)
                     cls_idx = TABLES[cls]

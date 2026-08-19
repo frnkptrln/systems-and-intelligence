@@ -88,7 +88,7 @@ language-relative description length, not general Kolmogorov complexity.
   rule 90 (size 3) appears within ≤36 candidates; rule 30 (size 5) within ≤771; rule 110 (size 8)
   within ≤116,232; size-10 targets within ≤4.2M. That is a measured property of this DSL and
   enumerator, not a P-vs-NP result or a lower bound for other search algorithms.
-- **(B) Elegance as a prior — and whom it serves.** Under partial coverage the searcher returns the *minimal consistent* formula (Occam). Measured: over **simple** targets (size ≤ 4) Occam hits 22%→100% as coverage grows; over a **uniform** world (all 256 rules) it equals 1/class-size — *exactly chance*; over **complex** targets (size ≥ 7) it sits at **0%** until coverage is nearly total, because it deterministically picks the simple impostor. Elegance finds elegant worlds, is chance on uniform ones, and systematically misses complex ones. For rules 90 and 0, the most elegant consistent rule happens to be the true one.
+- **(B) Elegance as a prior — and whom it serves.** Under partial coverage the searcher returns the *minimal consistent* formula (Occam). Measured: over **simple** targets (size ≤ 4) Occam hits 21%→100% as coverage grows; over a **uniform** world (all 256 rules) it equals 1/class-size — *exactly chance*, and under the crossed mask design (each mask evaluated against all 256 rules) this is an identity, not a sampled estimate; over **complex** targets (size ≥ 7) it sits at **0%** until coverage is nearly total, because it deterministically picks the simple impostor. Elegance finds elegant worlds, is chance on uniform ones, and systematically misses complex ones. For rules 90 and 0, the most elegant consistent rule happens to be the true one.
 
 ![Finite DSL family search](../../tools/inverse_benchmark_family_search.png)
 
@@ -100,7 +100,7 @@ This refines the claim in [Construction vs. Deduction](../../../theory/computati
 
 [`model_exploitation.py`](model_exploitation.py) answers the question flagged in [World Models and VLA](../../../theory/ai/world-models-and-vla.md): **does model exploitation track equivalence-class size?** Setup: the agent's world model is a CA rule table with $u$ neighborhoods never observed (class size exactly $2^u$), filled with a fixed guess — *one class member, treated as fact*. The agent plans (argmax over 150 candidate interventions, imagined under its model) and executes in reality.
 
-- **The selection decomposition.** Across *all* candidates, the gap (imagined − real) averages ≈ 0 at every $u$ — the guesses are wrong but **unbiased**. The **chosen** plan's gap is positive, and the wedge between the two curves — the **optimizer's curse** (Smith & Winkler, 2006), isolated — grows **monotonically** with class size: $0 \to 0.042 \to 0.049 \to 0.066 \to 0.078 \to 0.085$. Model exploitation is the equivalence class, priced by an argmax. At $u = 0$ both gaps vanish by construction: the model *is* the world.
+- **The selection decomposition.** Across *all* candidates, the gap (imagined − real) averages ≈ 0 at every $u$ — the guesses are wrong but **unbiased**. The **chosen** plan's gap is positive, and the wedge between the two curves — the **optimizer's curse** (Smith & Winkler, 2006), isolated — grows **monotonically** with class size: $0 \to 0.034 \to 0.053 \to 0.068 \to 0.076 \to 0.081$ (crossed design, 2026-08-19: settings are indexed independently and each is run against every sampled rule; SEs are across settings). Model exploitation is the equivalence class, priced by an argmax. At $u = 0$ both gaps vanish by construction: the model *is* the world.
 - **The honest null (a prediction revised mid-experiment).** Run 1 predicted "divergence-seeking" — that the chosen plan would *visit* unseen neighborhoods more than the average candidate. **It does not**: usage is statistically identical at every $u$. The refinement matters: the optimizer does not steer *into* the model's fantasy regions; at equal exposure it *selects the fantasies that pay*. Exploitation is selection over guess-outcomes, not navigation toward guess-territory — in this open-loop setting; whether closed-loop agents learn to navigate toward exploitable regions is open.
 
 ![Model exploitation and equivalence-class size](../../tools/inverse_benchmark_model_exploitation.png)
@@ -121,8 +121,8 @@ rule asserting exactly the observed neighborhoods—the uncollapsed equivalence 
 shortest is v1.2's Occam pick. The experiment prices uncertainty held open against the odds paid by
 committing to one member.
 
-- **The exchange rate between the currencies is the world bias, measured.** Efficiency: **+2.7 → +1.0** on the simple world (committing is profitable compression); **0.00 ± 0.03** on the uniform world — the analytic prediction (hit = $2^{-u}$, so committing buys *exactly nothing*) confirmed to two decimals; **strongly negative** on the complex world (Laplace-floored below −7 with zero measured hits at $k \le 5$; −3.7 / −1.2 at $k = 6/7$).
-- **Worse than a coin, systematically.** On the complex world the elegant guess loses to admitted ignorance at every coverage (1.28 vs 1.00 wrong unseen bits at $k=6$; 0.78 vs 0.49 at $k=7$) — anti-correlated with complex truths, not merely uninformed. And at $k \le 5$ the pick lies **outside the world's support 100% of the time**: elegance there does not miss, it asserts rules the sampled world cannot contain.
+- **The exchange rate between the currencies is the world bias, measured.** Efficiency: **+2.75 → +1.00** on the simple world (committing is profitable compression); **0.00 exactly** on the uniform world — under the crossed mask design the analytic prediction (hit = $2^{-u}$, so committing buys *exactly nothing*) is an identity, not a sampled confirmation; **strongly negative** on the complex world (Laplace-floored below −14 with zero measured hits at $k \le 5$; −3.6 / −1.2 at $k = 6/7$).
+- **Worse than a coin, systematically.** On the complex world the elegant guess loses to admitted ignorance at every coverage (1.28 vs 1.00 wrong unseen bits at $k=6$; 0.79 vs 0.50 at $k=7$) — anti-correlated with complex truths, not merely uninformed. And at $k \le 5$ the pick lies **outside the world's support 100% of the time**: elegance there does not miss, it asserts rules the sampled world cannot contain.
 - **Reading.** Holding the class has 0 regret by construction; the measured content is the size and sign of the commitment gaps plus the support-violation rate. This closes a loop with v1.3: the exploiting planner consumes committed-but-unmarked guesses, while wmax refuses that commitment at selection time.
 
 ![Weakness vs simplicity](../../tools/inverse_benchmark_weakness.png)
@@ -132,11 +132,11 @@ committing to one member.
 [`wmax_planner.py`](wmax_planner.py) closes the v1.3/v1.4 pair: what happens when **the planner itself holds the class** — when the guessed bits are marked as guesses at planning time? Four planners on the *same* episodes (paired): **committed** (v1.3's baseline, guess as fact), **wmean** (score = class-average imagined reward — the ensemble cure, exact), **wmin** (score = class-minimum — the pessimism cure, exact; corridor-flavored: viability, not optimality), **oracle** (true rule, reference). One vectorized rollout per candidate over all $2^u$ members yields every score *and* the real outcome, since the truth is a class member.
 
 - **Within the declared uniform class, the wedge is the unmarked commitment.** Committed replicates
-  v1.3 exactly. The exact class mean has a statistically zero wedge at every $u$ (.002–.005 ± .003).
+  v1.3 exactly. The exact class mean has a statistically zero wedge at every $u$ (.002–.004 ± .0006).
   This follows from the uniform-class setup; it is not a theorem about arbitrary uncertainty
   representations.
-- **And it pays:** wmean's real-reward regret vs the oracle is **35–60% below** committed's at every $u > 0$ (.014 vs .035 at $u{=}1$; .055 vs .073 at $u{=}5$). Marking guesses is not just epistemically honest — it wins in achieved reward, as Bayes-optimality says it must; the measurement is the size.
-- **The surprise is the pessimist.** wmin is never disappointed (chosen gap $\le 0$ pointwise, down to $-0.30$ at $u{=}5$ — by construction, the truth is in the class) but pays for it in reality: **more regret than the committed gambler** from $u \ge 3$ (.070 vs .057; .080 vs .073 at $u{=}5$). In this setting, guaranteed-never-overpromising costs more real reward than delusional optimism. For the corridor vocabulary that is a sharp note-to-self: worst-case discipline is a *safety* instrument, and it is not free — matching model-based RL's folklore that overdone pessimism underperforms.
+- **And it pays:** wmean's real-reward regret vs the oracle is **27–52% below** committed's at every $u > 0$ (.015 vs .032 at $u{=}1$; .052 vs .072 at $u{=}5$). Marking guesses is not just epistemically honest — it wins in achieved reward, as Bayes-optimality says it must; the measurement is the size.
+- **The surprise is the pessimist.** wmin is never disappointed (chosen gap $\le 0$ pointwise, down to $-0.31$ at $u{=}5$ — by construction, the truth is in the class) but pays for it in reality: **more regret than the committed gambler** from $u \ge 3$ (.065 vs .061; .079 vs .072 at $u{=}5$). In this setting, guaranteed-never-overpromising costs more real reward than delusional optimism. For the corridor vocabulary that is a sharp note-to-self: worst-case discipline is a *safety* instrument, and it is not free — matching model-based RL's folklore that overdone pessimism underperforms.
 - **Honest scope:** open-loop toy, exact enumerable class. Industrially the class is *not* enumerable — ensembles approximate wmean, pessimism penalties approximate wmin — which is why "mark what the traces actually determine" ([Measurement as Weak Intervention](../../../theory/core/measurement-as-weak-intervention.md)) is an architecture requirement, not a free lunch.
 
 ![Marking the guesses](../../tools/inverse_benchmark_wmax_planner.png)
@@ -145,8 +145,8 @@ committing to one member.
 
 [`closed_loop.py`](closed_loop.py) closes the loop the open-loop pair left open: agents that replan over $H$ rounds on a persistent world, where **every executed plan is an intervention whether intended or not** — execution drives the world through neighborhoods, and reality answers with their true bits. The measurement note's regime hierarchy, running by itself. Agents: oracle, frozen-committed (v1.3 forever), updating-committed, updating-wmean, and a random-policy baseline; updating agents harvest what execution reveals.
 
-- **In dense worlds, acting measures everything at once.** At the original settings one executed plan exercises all 8 neighborhoods almost surely: $u\!:\ 5 \to 0$ in a single round for every updating agent. The frozen agent's gap persists at v1.3 levels round after round; the updating agents' gap is zero from round 2 on. Cumulative regret orders exactly as predicted: wmean (.11) < committed (.20) < frozen (.84) < random (1.12).
-- **The risky prediction died, honestly.** P3 predicted the curse funds its own cure — that the argmax, preferring plans that lean on flattering guesses, would collapse the class *faster* than a random policy. **Falsified** (in the sparse regime built to resolve it): the argmax collapses the class marginally *slower* than random flailing (residual $u$ after 16 rounds: 0.26 vs 0.18). Optimization is not curiosity — the argmax settles into reward-good orbits that re-use known neighborhoods. v1.3's null (selection, not navigation) extends to the closed loop and gains an anti-exploration corollary.
+- **In dense worlds, acting measures everything at once.** At the original settings one executed plan exercises all 8 neighborhoods almost surely: $u\!:\ 5 \to 0$ in a single round for every updating agent. The frozen agent's gap persists at v1.3 levels round after round; the updating agents' gap is zero from round 2 on. Cumulative regret orders exactly as predicted: wmean (.13) < committed (.20) < frozen (.89) < random (1.12).
+- **The risky prediction died, honestly.** P3 predicted the curse funds its own cure — that the argmax, preferring plans that lean on flattering guesses, would collapse the class *faster* than a random policy. **Falsified** (in the sparse regime built to resolve it): the argmax buys no measurement advantage — residual $u$ after 16 rounds is statistically indistinguishable from random flailing (0.19 vs 0.21 under the crossed design). Optimization is not curiosity, but neither is it anti-curiosity: v1.3's null (selection, not navigation) extends to the closed loop. *(Revised 2026-08-19: the first run reported the argmax marginally slower than random, 0.26 vs 0.18, and read an anti-exploration corollary into it; that ordering does not survive the crossed design, in which episode settings are no longer keyed to a rule's loop position. The corollary is withdrawn.)*
 - **Two endogenous echoes:** a residual $u \approx 0.2$ persists for every agent — neighborhoods the dynamics never produce, v1.1's frozen exception appearing on its own (only a prepared state would reveal them). And the random agent finishes with the *best model and the worst reward* (regret 1.12): free measurement without optimization is not a strategy either.
 
 ![Acting is measuring](../../tools/inverse_benchmark_closed_loop.png)
@@ -155,8 +155,8 @@ committing to one member.
 
 [`ensemble_size.py`](ensemble_size.py) measures the honest toy version of the industrial gap: the class is not enumerable in practice — an ensemble holds $K$ sampled hypotheses, not $2^u$. At $u = 5$ (class $N = 32$), the planner scores by the mean of $K$ distinct sampled members; $K{=}1$ is a committed planner, $K{=}32$ recovers v1.5's exact wmean. Same episodes for every $K$, perfectly paired.
 
-- **Honesty is cheap:** the curse wedge dies early and monotonically — $.082 \to .059 \to .040 \to .031 \to .011 \to .006$; **52% of the wedge is gone by $K{=}4$**, 87% by $K{=}16$. A handful of hypotheses buys most of the self-deception away.
-- **Knowledge is not:** real-reward regret falls only modestly ($.073 \to .057$, endpoints matching v1.5's committed/wmean values — another cross-check). The floor is genuine ignorance, and no ensemble size removes it: **ensembles cure delusion, not ignorance; only queries (v1.1, v1.6) cure ignorance.**
+- **Honesty is cheap:** the curse wedge dies early and monotonically — $.078 \to .060 \to .040 \to .022 \to .010 \to .002$; **48% of the wedge is gone by $K{=}4$**, 87% by $K{=}16$. A handful of hypotheses buys most of the self-deception away.
+- **Knowledge is not:** real-reward regret falls only modestly ($.071 \to .052$, endpoints matching v1.5's committed/wmean values at $u{=}5$ — another cross-check). The floor is genuine ignorance, and no ensemble size removes it: **ensembles cure delusion, not ignorance; only queries (v1.1, v1.6) cure ignorance.**
 - **Honest scope:** uniform sampling from an exact class is the ensemble's *best case* — real ensembles are correlated (shared architecture, shared data) and buy less variance reduction. These curves are the upper bound on $K$-member honesty.
 
 ![Ensemble size](../../tools/inverse_benchmark_ensemble_size.png)
@@ -316,6 +316,18 @@ python co_stabilization_pool.py --save     # also write the pool figure
 ```
 
 Requires `numpy`, `matplotlib` only (repo `requirements.txt`).
+
+**Design note (2026-08-19).** The v1.2–v1.7 suites index their experimental
+settings — coverage masks, guesses, start rows, candidate draws — by dedicated
+setting counters and run **every setting against every rule**; standard errors
+are taken across settings. Previously each rule drew its own settings from its
+position in the iteration order, which keys the draws to the target's loop
+coordinate — the same error class as the recursive-workbench's fixed RNG leak,
+one level up. The crossing changed no direction except one: v1.6's
+anti-exploration corollary did not survive it and is withdrawn in place. Two
+uniform-world results (v1.2's elegance-is-chance, v1.4's
+committing-buys-nothing) became identities. Headline claims are guarded by
+`tests/test_benchmark_v1_headlines.py` at small declared crossed grids.
 
 ## Current roadmap (open)
 
