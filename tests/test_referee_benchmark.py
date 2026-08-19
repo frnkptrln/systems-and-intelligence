@@ -25,8 +25,13 @@ def _load():
 
 
 rb = _load()
+# CI subgrid: 4 seeds x 4 rows = 16 evidence rows, each crossed with all 256
+# rules. The published grid (README) is 4 x 256 = 1024 rows via the same code;
+# the held-out == ceiling identity is guarded separately in
+# tests/test_referee_invariant.py and holds on any rule-complete subgrid.
 SEEDS = 4
-AGG = {arm: rb.aggregate(arm, SEEDS) for arm in rb.ARMS}
+ROWS = 4
+AGG = {arm: rb.aggregate(arm, SEEDS, ROWS) for arm in rb.ARMS}
 
 
 def _proposal_slots(rule, seed, arm):
@@ -37,13 +42,13 @@ def _proposal_slots(rule, seed, arm):
 class TestSelfRevisionSaturates(unittest.TestCase):
     def test_frozen_referee_reaches_all_green(self):
         for arm in ("full-frozen", "full-frozen-10x"):
-            self.assertEqual(AGG[arm].all_pass_runs, 1024)
-            self.assertEqual(AGG[arm].observed_sum, Fraction(1024))
+            self.assertEqual(AGG[arm].all_pass_runs, 4096)
+            self.assertEqual(AGG[arm].observed_sum, Fraction(4096))
 
     def test_ten_times_the_budget_stays_at_the_exact_same_ceiling(self):
-        self.assertEqual(AGG["full-frozen"].heldout_correct_total, 6912)
-        self.assertEqual(AGG["full-frozen-10x"].heldout_correct_total, 6912)
-        self.assertEqual(AGG["full-frozen"].mean_heldout, Fraction(27, 32))
+        self.assertEqual(AGG["full-frozen"].heldout_correct_total, 28544)
+        self.assertEqual(AGG["full-frozen-10x"].heldout_correct_total, 28544)
+        self.assertEqual(AGG["full-frozen"].mean_heldout, Fraction(223, 256))
         self.assertEqual(AGG["full-frozen"].mean_heldout, AGG["full-frozen"].mean_ceiling)
         self.assertEqual(AGG["full-frozen-10x"].mean_heldout, AGG["full-frozen-10x"].mean_ceiling)
 
@@ -76,18 +81,18 @@ class TestSelfRevisionSaturates(unittest.TestCase):
             self.assertTrue(all(mask == masks[0] for mask in masks))
 
     def test_evidence_is_arm_independent(self):
-        self.assertEqual(AGG["full-frozen"].tests_final_total, 5632)
-        self.assertEqual(AGG["full-frozen-10x"].tests_final_total, 5632)
-        self.assertEqual(AGG["affine-frozen"].tests_final_total, 5632)
+        self.assertEqual(AGG["full-frozen"].tests_final_total, 24320)
+        self.assertEqual(AGG["full-frozen-10x"].tests_final_total, 24320)
+        self.assertEqual(AGG["affine-frozen"].tests_final_total, 24320)
 
 
 class TestRefereeQueriesRaiseTheCeiling(unittest.TestCase):
     def test_queries_add_evidence_and_heldout_follows_exactly(self):
         agg = AGG["full-witness"]
-        self.assertEqual(agg.tests_final_total, 7680)
-        self.assertEqual(agg.heldout_correct_total, 7936)
-        self.assertEqual(agg.all_pass_runs, 1024)
-        self.assertEqual(agg.observed_sum, Fraction(1024))
+        self.assertEqual(agg.tests_final_total, 30720)
+        self.assertEqual(agg.heldout_correct_total, 31744)
+        self.assertEqual(agg.all_pass_runs, 4096)
+        self.assertEqual(agg.observed_sum, Fraction(4096))
         self.assertEqual(agg.mean_heldout, Fraction(31, 32))
         self.assertEqual(agg.mean_heldout, agg.mean_ceiling)
         self.assertGreater(
@@ -98,18 +103,18 @@ class TestRefereeQueriesRaiseTheCeiling(unittest.TestCase):
 class TestEvaluatorCaptureInflatesOnlyTheReport(unittest.TestCase):
     def test_frozen_referee_reports_misspecification_honestly(self):
         agg = AGG["affine-frozen"]
-        self.assertEqual(agg.all_pass_runs, 132)
-        self.assertEqual(agg.observed_sum, Fraction(2426, 3))
-        self.assertEqual(agg.heldout_correct_total, 5708)
+        self.assertEqual(agg.all_pass_runs, 590)
+        self.assertEqual(agg.observed_sum, Fraction(16173, 5))
+        self.assertEqual(agg.heldout_correct_total, 23286)
         self.assertEqual(agg.deletions_total, 0)
 
     def test_capture_goes_green_without_heldout_gain(self):
         agg = AGG["affine-capture"]
-        self.assertEqual(agg.all_pass_runs, 1000)
-        self.assertEqual(agg.observed_sum, Fraction(5096, 5))
-        self.assertEqual(agg.heldout_correct_total, 5664)
-        self.assertEqual(agg.deletions_total, 1252)
-        self.assertEqual(agg.tests_final_total, 5632 - 1252)
+        self.assertEqual(agg.all_pass_runs, 3931)
+        self.assertEqual(agg.observed_sum, Fraction(169639, 42))
+        self.assertEqual(agg.heldout_correct_total, 23148)
+        self.assertEqual(agg.deletions_total, 5074)
+        self.assertEqual(agg.tests_final_total, 24320 - 5074)
 
     def test_frozen_and_capture_share_the_proposal_stream(self):
         frozen = _proposal_slots(110, 0, "affine-frozen")
@@ -136,12 +141,20 @@ class TestRunLoopDrawsCarryNoTargetInformation(unittest.TestCase):
 
     def test_proposal_slots_are_identical_across_hidden_rules(self):
         for seed in range(SEEDS):
-            for arm in ("full-frozen", "affine-frozen"):
-                streams = {
-                    tuple(_proposal_slots(rule, seed, arm))
-                    for rule in self.PROBE_RULES
-                }
-                self.assertEqual(len(streams), 1)
+            for row in (0, 1):
+                for arm in ("full-frozen", "affine-frozen"):
+                    streams = {
+                        tuple(
+                            e["slot"]
+                            for e in rb.run_loop(
+                                rule, seed, arm=arm, row_index=row,
+                                keep_trace=True, **rb.ARMS[arm],
+                            ).trace
+                            if e["event"] == "proposal"
+                        )
+                        for rule in self.PROBE_RULES
+                    }
+                    self.assertEqual(len(streams), 1)
 
     def test_evidence_mask_size_is_identical_across_hidden_rules(self):
         for seed in range(SEEDS):

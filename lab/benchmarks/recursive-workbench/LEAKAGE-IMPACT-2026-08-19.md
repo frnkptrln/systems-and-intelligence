@@ -42,6 +42,18 @@ the README and test file in that PR carry post-fix numbers. Remaining work is
 editorial — update the two stale prose citations above where they live. They are
 marked here rather than silently edited.
 
+## Postscript (v0.2, same day)
+
+PR #53's recomputed numbers were produced on a 4-row grid (all 256 rules
+sharing one row per seed) — rule-independent but with collapsed row coverage.
+v0.2 restores coverage without reintroducing per-rule randomness: rows indexed
+by `(seed, row)` from `world:{seed}:{row}`, 4 × 256 = 1,024 distinct rows, each
+crossed with all 256 rules. The published table therefore supersedes both the
+leak-era numbers **and** PR #53's 4-row values; prose corrections should quote
+the v0.2 grid with row count and dispersion. The held-out ≡ ceiling identity is
+now a standing CI invariant (`tests/test_referee_invariant.py`), so a
+recurrence of this leak class fails CI as an exact inequality.
+
 ## What remains valid
 
 - All three qualitative regime statements (saturation at the evidence ceiling,

@@ -18,6 +18,8 @@ jobs:
       - run: pip install -r requirements-dev.txt
       - name: Unit tests + benchmark headline regression
         run: pytest tests/ -q
+      - name: Held-out == ceiling invariant (target-conditioning detector)
+        run: pytest tests/test_referee_invariant.py -q
       - name: Internal link validation
         run: python lab/tools/validate_links.py
       - name: Repository freshness and internal-drift audit
