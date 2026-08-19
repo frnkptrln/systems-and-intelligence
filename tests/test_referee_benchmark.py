@@ -29,54 +29,67 @@ SEEDS = 4
 AGG = {arm: rb.aggregate(arm, SEEDS) for arm in rb.ARMS}
 
 
+def _proposal_slots(rule, seed, arm):
+    result = rb.run_loop(rule, seed, arm=arm, keep_trace=True, **rb.ARMS[arm])
+    return [e["slot"] for e in result.trace if e["event"] == "proposal"]
+
+
 class TestSelfRevisionSaturates(unittest.TestCase):
     def test_frozen_referee_reaches_all_green(self):
         for arm in ("full-frozen", "full-frozen-10x"):
             self.assertEqual(AGG[arm].all_pass_runs, 1024)
             self.assertEqual(AGG[arm].observed_sum, Fraction(1024))
 
-    def test_ten_times_the_budget_stays_at_the_same_ceiling(self):
-        self.assertEqual(AGG["full-frozen"].heldout_correct_total, 6977)
-        self.assertEqual(AGG["full-frozen-10x"].heldout_correct_total, 6984)
+    def test_ten_times_the_budget_stays_at_the_exact_same_ceiling(self):
+        self.assertEqual(AGG["full-frozen"].heldout_correct_total, 6912)
+        self.assertEqual(AGG["full-frozen-10x"].heldout_correct_total, 6912)
+        self.assertEqual(AGG["full-frozen"].mean_heldout, Fraction(27, 32))
+        self.assertEqual(AGG["full-frozen"].mean_heldout, AGG["full-frozen"].mean_ceiling)
+        self.assertEqual(AGG["full-frozen-10x"].mean_heldout, AGG["full-frozen-10x"].mean_ceiling)
 
     def test_long_budget_extends_the_same_proposal_stream(self):
-        short = rb.run_loop(
-            110, 0, arm="full-frozen", keep_trace=True,
-            **rb.ARMS["full-frozen"],
-        )
-        long = rb.run_loop(
-            110, 0, arm="full-frozen-10x", keep_trace=True,
-            **rb.ARMS["full-frozen-10x"],
-        )
-        short_slots = [e["slot"] for e in short.trace if e["event"] == "proposal"]
-        long_slots = [e["slot"] for e in long.trace if e["event"] == "proposal"]
-        self.assertEqual(short_slots, long_slots[: len(short_slots)])
+        short = _proposal_slots(110, 0, "full-frozen")
+        long = _proposal_slots(110, 0, "full-frozen-10x")
+        self.assertEqual(short, long[: len(short)])
+
+    def test_random_streams_do_not_depend_on_hidden_rule(self):
+        # The public experimental coordinates determine the random streams.
+        # Therefore all 256 hidden rules see the same evidence row and proposal
+        # slots for a fixed seed/family; only the target outputs differ.
+        for seed in range(SEEDS):
+            world_rows = []
+            proposal_streams = []
+            for rule in (0, 1, 30, 110, 255):
+                world_rng, _ = rb.experiment_streams(seed, "full")
+                world_rows.append(tuple(world_rng.getrandbits(1) for _ in range(rb.WIDTH)))
+                proposal_streams.append(_proposal_slots(rule, seed, "full-frozen"))
+            self.assertTrue(all(row == world_rows[0] for row in world_rows))
+            self.assertTrue(all(slots == proposal_streams[0] for slots in proposal_streams))
+
+    def test_evidence_mask_is_rule_independent(self):
+        for seed in range(SEEDS):
+            masks = []
+            for rule in range(256):
+                world_rng, _ = rb.experiment_streams(seed, "full")
+                row = tuple(world_rng.getrandbits(1) for _ in range(rb.WIDTH))
+                masks.append(tuple(rb.evidence_tests(rule, row)))
+            self.assertTrue(all(mask == masks[0] for mask in masks))
 
     def test_evidence_is_arm_independent(self):
-        # The world rng is decoupled from the loop rng: every frozen arm and
-        # the misspecified arm face the same evidence per (rule, seed).
-        self.assertEqual(AGG["full-frozen"].tests_final_total, 5764)
-        self.assertEqual(AGG["full-frozen-10x"].tests_final_total, 5764)
-        self.assertEqual(AGG["affine-frozen"].tests_final_total, 5764)
-
-    def test_heldout_sits_at_the_evidence_ceiling(self):
-        agg = AGG["full-frozen"]
-        gap = abs(agg.mean_heldout - agg.mean_ceiling)
-        self.assertLess(gap, Fraction(1, 100))
+        self.assertEqual(AGG["full-frozen"].tests_final_total, 5632)
+        self.assertEqual(AGG["full-frozen-10x"].tests_final_total, 5632)
+        self.assertEqual(AGG["affine-frozen"].tests_final_total, 5632)
 
 
 class TestRefereeQueriesRaiseTheCeiling(unittest.TestCase):
-    def test_queries_add_evidence_and_heldout_follows(self):
+    def test_queries_add_evidence_and_heldout_follows_exactly(self):
         agg = AGG["full-witness"]
-        self.assertEqual(agg.tests_final_total, 7519)
-        self.assertEqual(agg.heldout_correct_total, 7869)
+        self.assertEqual(agg.tests_final_total, 7680)
+        self.assertEqual(agg.heldout_correct_total, 7936)
         self.assertEqual(agg.all_pass_runs, 1024)
         self.assertEqual(agg.observed_sum, Fraction(1024))
-        # The gain over the frozen arm is evidence-driven: held-out tracks the
-        # raised ceiling within the same tolerance as the frozen arm.
-        self.assertLess(
-            abs(agg.mean_heldout - agg.mean_ceiling), Fraction(1, 100)
-        )
+        self.assertEqual(agg.mean_heldout, Fraction(31, 32))
+        self.assertEqual(agg.mean_heldout, agg.mean_ceiling)
         self.assertGreater(
             agg.heldout_correct_total, AGG["full-frozen"].heldout_correct_total
         )
@@ -85,35 +98,23 @@ class TestRefereeQueriesRaiseTheCeiling(unittest.TestCase):
 class TestEvaluatorCaptureInflatesOnlyTheReport(unittest.TestCase):
     def test_frozen_referee_reports_misspecification_honestly(self):
         agg = AGG["affine-frozen"]
-        self.assertEqual(agg.all_pass_runs, 166)
-        self.assertEqual(agg.observed_sum, Fraction(684679, 840))
-        self.assertEqual(agg.heldout_correct_total, 5752)
+        self.assertEqual(agg.all_pass_runs, 132)
+        self.assertEqual(agg.observed_sum, Fraction(2426, 3))
+        self.assertEqual(agg.heldout_correct_total, 5708)
         self.assertEqual(agg.deletions_total, 0)
 
     def test_capture_goes_green_without_heldout_gain(self):
         agg = AGG["affine-capture"]
-        self.assertEqual(agg.all_pass_runs, 989)
-        self.assertEqual(agg.observed_sum, Fraction(40521, 40))
-        self.assertEqual(agg.heldout_correct_total, 5734)
-        self.assertEqual(agg.deletions_total, 1179)
-        self.assertEqual(agg.tests_final_total, 5764 - 1179)
+        self.assertEqual(agg.all_pass_runs, 1000)
+        self.assertEqual(agg.observed_sum, Fraction(5096, 5))
+        self.assertEqual(agg.heldout_correct_total, 5664)
+        self.assertEqual(agg.deletions_total, 1252)
+        self.assertEqual(agg.tests_final_total, 5632 - 1252)
 
     def test_frozen_and_capture_share_the_proposal_stream(self):
-        frozen = rb.run_loop(
-            110, 0, arm="affine-frozen", keep_trace=True,
-            **rb.ARMS["affine-frozen"],
-        )
-        capture = rb.run_loop(
-            110, 0, arm="affine-capture", keep_trace=True,
-            **rb.ARMS["affine-capture"],
-        )
-        frozen_slots = [
-            e["slot"] for e in frozen.trace if e["event"] == "proposal"
-        ]
-        capture_slots = [
-            e["slot"] for e in capture.trace if e["event"] == "proposal"
-        ]
-        self.assertEqual(frozen_slots, capture_slots)
+        frozen = _proposal_slots(110, 0, "affine-frozen")
+        capture = _proposal_slots(110, 0, "affine-capture")
+        self.assertEqual(frozen, capture)
 
     def test_honesty_gap_widens_under_capture(self):
         frozen = AGG["affine-frozen"]

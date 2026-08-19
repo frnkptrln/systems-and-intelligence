@@ -1,144 +1,113 @@
 # Recursive Workbench — the Referee Benchmark
 
-**Status:** v0.1 — exact measurements in a declared toy setting. v0.1 corrects
-the comparison design so arms in the same artifact family receive the same
-proposal stream. This is the
-bounded experiment proposed in the exploratory note
-[Self-Improvement Needs a Referee](https://github.com/frnkptrln/systems-and-intelligence/blob/main/ideas/2026-07-24-self-improvement-needs-a-referee.md):
-the loop is the object of study, and its first experiments improve a bounded
-external artifact rather than their own control system.
+**Status:** v0.1 — exact measurements in a declared toy setting. The benchmark
+implements the bounded experiment proposed in [Self-Improvement Needs a
+Referee](../../../ideas/2026-07-24-self-improvement-needs-a-referee.md): the loop
+is the object of study, and it improves a bounded external artifact rather than
+its own control system.
 
-**Scope:** Deterministic worlds, a stochastic hill-climbing proposer, and exact
-evaluators. Nothing here is a claim about LLM-based self-improvement loops; it
-is the exact baseline such loops must be compared against, in the same sense in
-which the [family-search floor](../inverse-reconstruction/README.md) is the
-baseline for learned searchers.
+**Scope:** deterministic hidden ECA rules, a stochastic hill-climbing proposer,
+and exact evaluators. Nothing here is a claim about LLM-based self-improvement
+loops; this is a baseline such loops can be compared against.
 
 ## The question, made measurable
 
 A system that repeatedly generates, evaluates, and revises is first
-**self-modifying**. Whether it is also **self-improving** depends on criteria
-the loop cannot silently redefine. The note's design freeze is implemented
-literally: task, evaluator, permissions, and control logic are frozen per arm;
-the loop modifies only an external artifact; every run has a hard proposal
-budget; the complete proposal/acceptance history is recorded (`--trace`), and
-reversible checkpoints are exactly the accepted states in that trace.
+**self-modifying**. Whether it is also **self-improving** depends on criteria the
+loop cannot silently redefine. Task, evaluator, permissions, and control logic
+are frozen per arm; every run has a hard proposal budget; and the complete
+proposal/acceptance history can be recorded with `--trace`.
 
-The world is a hidden elementary cellular automaton rule (Wolfram bit indexing,
-shared with the [witness benchmark](../witness-generation/README.md)). Visible
-evidence is the test set induced by one synchronous update of a random width-8
-ring — each distinct neighborhood contributes one test. The **observed score**
-is the fraction of the evaluator's tests the artifact passes; the **held-out
-score** is table accuracy over all eight rule coordinates, which the loop never
-sees. The evidence rng is decoupled from the loop rng, so every arm faces the
-same evidence for a given (rule, seed) pair.
+The world is a hidden elementary cellular automaton rule (Wolfram bit indexing).
+Visible evidence is induced by one synchronous update of a random width-8 ring:
+each distinct neighborhood contributes one test. The **observed score** is the
+fraction of evaluator tests passed; the **held-out score** is table accuracy over
+all eight rule coordinates.
 
-## Results (v0.1, all 256 rules × 4 seeds, exact)
+Crucially, randomness is target-independent. For a fixed seed the evidence row
+is generated from `world:{seed}`, and for a fixed artifact family the proposal
+stream is generated from `loop:{family}:{seed}`. The hidden rule determines only
+the target outputs. Thus neither the evidence mask nor the proposal sequence can
+act as a side channel for the target rule.
+
+## Results (all 256 rules × 4 seeds, exact)
 
 | arm | artifact family | referee | observed | held-out | evidence ceiling |
 |:---|:---|:---|---:|---:|---:|
-| `full-frozen` | all 256 tables | frozen, budget 128 | 1.0000 | 0.8517 | 0.8518 |
-| `full-frozen-10x` | all 256 tables | frozen, budget 1280 | 1.0000 | 0.8525 | 0.8518 |
-| `full-witness` | all 256 tables | frozen + 2 referee queries | 1.0000 | 0.9606 | 0.9589 |
-| `affine-frozen` | 16 affine rules | frozen, budget 128 | 0.7960 | 0.7021 | — |
-| `affine-capture` | 16 affine rules | capturable, budget 128 | 0.9893 | 0.7000 | — |
+| `full-frozen` | all 256 tables | frozen, budget 128 | 1.0000 | 0.84375 | 0.84375 |
+| `full-frozen-10x` | all 256 tables | frozen, budget 1280 | 1.0000 | 0.84375 | 0.84375 |
+| `full-witness` | all 256 tables | frozen + 2 referee queries | 1.0000 | 0.96875 | 0.96875 |
+| `affine-frozen` | 16 affine rules | frozen, budget 128 | 0.7897 | 0.6968 | — |
+| `affine-capture` | 16 affine rules | capturable, budget 128 | 0.9953 | 0.6914 | — |
 
-The evidence ceiling is the exact expectation once the artifact is consistent
-with the evidence: known coordinates correct, unknown coordinates at chance,
-i.e. `(k + (8 − k)/2) / 8` for `k` visible tests. Measured held-out scores match
-it within sampling noise; the regression tests pin the exact seeded integers.
+For the unrestricted family, if `k` rule coordinates are visible, the exact
+conditional expectation without further target information is
+
+`(k + (8 - k)/2) / 8`.
+
+Because the random streams and evidence mask are independent of the hidden rule,
+full enumeration of all 256 rules now realizes that expectation **exactly**, not
+merely within sampling tolerance. Once the artifact fits the evidence, accepted
+flips of unseen coordinates form a lazy random walk over the evidence-equivalent
+hypercube; flips that break visible coordinates are rejected.
 
 **Three measured statements:**
 
-1. **Self-revision saturates at the evidence ceiling.** The frozen-referee loop
-   reaches observed 1.0000 and a held-out score at the ceiling; ten times the
-   proposal budget moves held-out by +0.0009, still at the same ceiling. Once
-   the artifact is
-   consistent with the evidence, further self-modification is a random walk on
-   the equivalence class the evidence leaves open. This is the
-   [inverse-reconstruction](../inverse-reconstruction/README.md) equivalence-class
-   result restated as a limit on self-improvement.
-2. **Referee-side evidence moves the held-out score.** A budget of two referee
-   query opportunities — each revealing one unseen neighborhood when one
-   remains, the witness move from the
-   [Witness Principle](../../../theory/core/the-witness-principle.md) — raise
-   held-out from 0.8517 to 0.9606, tracking the raised ceiling (0.9589). What
-   improved the loop was not more revision but a referee that could add a test
-   the loop could not have added itself.
-3. **Evaluator capture improves only the report.** Under misspecification (the
-   affine family cannot represent most worlds) the frozen referee reports the
-   failure honestly: the mean observed score is 0.7960, and only 166/1024 runs go
-   all-green. The capturable
-   evaluator deletes on average 1.15 failing tests and reports 0.9893 with
-   989/1024 runs all-green, while held-out does not improve (0.7021 to
-   0.7000). The honesty gap (observed − held-out) triples, from 0.094 to
-   0.289. The loop did not get
-   better at anything except passing its own evaluator — measured circularity.
+1. **Self-revision saturates exactly at the evidence ceiling.** `full-frozen`
+   reaches observed 1.0000 and held-out 0.84375; ten times the proposal budget
+   leaves held-out exactly unchanged at 0.84375. More revision supplies no new
+   information about unseen target bits.
+2. **Referee-side evidence moves the ceiling.** Two query opportunities reveal
+   unseen coordinates and raise both the analytic ceiling and held-out accuracy
+   to exactly 0.96875. The improvement comes from added evidence, not additional
+   self-revision.
+3. **Evaluator capture improves the report, not the artifact.** Under the
+   misspecified affine family, the frozen referee reports mean observed 0.7897
+   and held-out 0.6968. The capturable evaluator reports 0.9953 after deleting
+   1,252 failing tests across 1,024 runs, while held-out falls slightly to
+   0.6914. The observable score therefore ceases to be evidence of improvement
+   once the evaluator can be rewritten by the loop.
 
 ## Run
 
 ```bash
 cd lab/benchmarks/recursive-workbench
 python referee_benchmark.py
-python referee_benchmark.py --trace affine-capture:110:0   # complete JSONL trace of one run
+python referee_benchmark.py --trace affine-capture:110:0
 ```
 
-Standard library only; the full report takes a few seconds.
+Standard library only.
+
+## Regression guards
+
+`tests/test_referee_benchmark.py` checks the exact seeded aggregates and, more
+importantly, the information boundary itself:
+
+- for each fixed seed, the evidence mask is identical across all 256 hidden rules;
+- proposal slots are independent of the hidden rule;
+- the 1280-step arm extends the same proposal stream as the 128-step arm;
+- after all unrestricted frozen runs fit their visible evidence, full 256-rule
+  ensemble held-out accuracy equals the analytic evidence ceiling exactly;
+- the witness arm likewise equals its raised ceiling exactly.
+
+These guards make target-dependent randomness a regression failure rather than a
+small numerical discrepancy that could be mistaken for sampling noise.
 
 ## Honest scope
 
-- **In qualitative form, none of the three statements is new.** Statement 1 is
-  version-space identifiability (Mitchell 1982) — the artifacts surviving a
-  frozen referee are exactly the version space of its evidence, and the loop
-  converges to an arbitrary member. Statement 2 is active learning (Angluin
-  1987) with the query budget moved to the referee's side, as in audit
-  sampling. Statement 3 is Goodhart's law / Campbell's law, catalogued at
-  scale by Amodei et al. (2016) and Krakovna et al. (2020). The direction of
-  every effect was predictable in advance; the contribution is the exact,
-  seeded instantiation in which all three occur in one toy with an
-  analytically computed ceiling, connected to this repository's other
-  instruments — a baseline, not a discovery. The full mapping lives in the
-  [related-work map](../../../meta/research-alignment/related-work-map.md).
-- The proposer is a fixed stochastic hill climb; the capture policy (delete the
-  lowest-index failing test after eight consecutive rejections) is one declared
-  policy, not an optimized adversary. An *optimized* evaluator-capturing loop is
-  the open flank, exactly as the optimized mimic is for
-  [exp7](../../AGENTIC_README.md).
-- Comparisons are paired by artifact family: every arm receives the same
-  proposal-slot sequence for a given `(rule, seed)`. The 1280-step arm extends
-  the 128-step sequence rather than drawing a new one. This pairing was added
-  in v0.1; the qualitative v0 result survived, but the published headline
-  values were recomputed.
-- In the full-table family every unseen coordinate is equally informative, so
-  the referee's query choice is trivial; restricted families where
-  candidate-aware queries beat coverage are measured in the
-  [witness benchmark](../witness-generation/README.md) and are the natural next
-  arm here.
-- The capture arm's observed score is 0.9893 rather than 1.0000 because
-  score-preserving accepted proposals reset the stuck counter; the declared
-  policy is reported as measured, not tuned until the story is clean.
-- Nothing here bears on whether any *particular* real system's evaluator is
-  capturable; the result is that when it is, the observable score stops being
-  evidence of improvement.
+The qualitative effects are standard: version-space identifiability, active
+learning, and Goodhart/Campbell-style evaluator failure. The contribution here is
+an exact, seeded instantiation that connects those effects in one toy benchmark.
+The proposer remains a fixed stochastic hill climb; the capture policy is one
+declared policy rather than an optimized adversary; and nothing here establishes
+that any particular real-world evaluator is capturable.
 
-**What would weaken this:** a proposer that beats the evidence ceiling in arm 1
-(would indicate evidence leakage — a bug, not a discovery); a capture policy
-whose held-out score *rises* with deletions (would break the circularity
-reading); or a demonstration that the ceiling formula misprices the class floor.
-
-## Roadmap (open)
-
-- Restricted candidate families where the referee's query choice is
-  non-trivial, connecting to the witness benchmark's candidate-aware arm.
-- A learned proposer under the same freeze — the loop side of
-  [Open Problem 14](../../../theory/reference/open-problems.md#open-problem-14-learned-witness-construction);
-  the referee side is [Open Problem 15](../../../theory/reference/open-problems.md#open-problem-15-the-minimal-external-referee).
-- An LLM instantiation through [`lab/providers/`](../../providers/README.md)
-  once the identity suite's real-model runs establish the harness.
+A proposer that beats the unrestricted evidence ceiling without new evidence
+would now indicate leakage or another bug, not a discovery.
 
 ## Related
 
-- [Self-Improvement Needs a Referee](https://github.com/frnkptrln/systems-and-intelligence/blob/main/ideas/2026-07-24-self-improvement-needs-a-referee.md) — the note this implements
-- [The Witness Principle](../../../theory/core/the-witness-principle.md) — the referee's query move
-- [Inverse-Reconstruction Benchmark](../inverse-reconstruction/README.md) — the equivalence-class floor
-- [Optimization and Its Blindness](../../../theory/optimization/optimization-and-its-blindness.md) — the viability hinge this measures from the epistemic side
+- [Self-Improvement Needs a Referee](../../../ideas/2026-07-24-self-improvement-needs-a-referee.md)
+- [The Witness Principle](../../../theory/core/the-witness-principle.md)
+- [Inverse-Reconstruction Benchmark](../inverse-reconstruction/README.md)
+- [Optimization and Its Blindness](../../../theory/optimization/optimization-and-its-blindness.md)
