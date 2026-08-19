@@ -27,8 +27,8 @@ as leak-free; they are not evidence that the loop beat its evidence.
 |:---|:---|:---|
 | `README.md` (this directory) | results table and inline numbers: 0.8517, 0.8525, 0.9606, 0.9589, 0.8518, 0.7960, 0.9893, 0.7021, 0.7000, 166/1024, 989/1024, 1.15 deletions, gap 0.094 → 0.289 | recomputed in PR #53 |
 | `tests/test_referee_benchmark.py` | pinned integers: 6977, 6984, 5764, 7519, 7869, 166, 684679/840, 5752, 989, 40521/40, 5734, 1179 | recomputed in PR #53 |
-| `logs/020_the-referee-boundary.md` (report paragraph) | "the report went from 0.80 to 0.99"; "tripled" | **stale, marked here** — post-fix: 0.79 → 1.00 (0.9953); gap ratio 3.3, "tripled" survives |
-| `fiction/19_the_green_board.md`, `fiction/README.md` (source pointers) | "observed 0.99, held-out 0.70, measured" | **stale, marked here** — post-fix: observed 0.9953, held-out 0.6914 |
+| `logs/020_the-referee-boundary.md` (report paragraph) | "the report went from 0.80 to 0.99"; "tripled" | **corrected 2026-08-19** with v0.2 grid values (0.7996 ± 0.0476 → 0.9910 ± 0.0181; gap ×3.0; "tripled" survives), old figures left in place, marked |
+| `fiction/19_the_green_board.md`, `fiction/README.md` (source pointers) | "observed 0.99, held-out 0.70, measured" | **corrected 2026-08-19** with v0.2 grid values (0.9910 ± 0.0181 / 0.7006 ± 0.0350), provenance noted inline |
 | `ideas/2026-07-24-self-improvement-needs-a-referee.md` (workbench paragraph) | qualitative: "measures the three regimes exactly", "tripled observed-vs-held-out gap" | survives; re-derived from post-fix numbers |
 | `meta/research-alignment/related-work-map.md` (referee-boundary row) | qualitative: "10x budget does not move performance beyond it", "measured tripling" | survives; post-fix the 10x claim is exact equality (6912 = 6912) |
 
