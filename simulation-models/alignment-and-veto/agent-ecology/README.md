@@ -20,9 +20,10 @@ paper (§2, §5.3). This file only *operationalises* them in an independent
 setting, with each modelling choice tagged in the docstring.
 
 > **Honest scope.** This is a synthetic ABM, not a test on real AI agents. It
-> broadens the synthetic evidence for P7/P8; the Class C claim
-> about **real** agent ecologies (LLMs) remains open and is the companion
-> paper's subject (`papers/quantifying-emergent-utility-in-llms.md`).
+> broadens the synthetic evidence for P7/P8; the Class C claim about **real**
+> agent ecologies (LLMs) remains open. A real-agent test is future work and is
+> deliberately not tied to any existing document
+> (see `papers/viable-corridor.md` v1.0, §7.2).
 
 ## The model (one step)
 

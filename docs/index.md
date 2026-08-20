@@ -61,7 +61,7 @@ A compact linear path for readers who want a sequence rather than a map. The ear
 
 ### The formal core
 
-*The Viable Corridor* — constraint architecture and capability loading, a working draft, available as PDF. Its empirical companion measures utility and stability in multi-agent LLM ecologies.
+*The Viable Corridor* — constraint architecture and capability loading, v1.0 submission version, available as PDF. The real-agent test of its Class C predictions is future work; the earlier utility-and-stability synthesis is kept as an archived historical statement.
 
 [Read the Viable Corridor →](../papers/viable-corridor.md)
 

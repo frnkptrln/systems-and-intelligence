@@ -4,19 +4,23 @@
 *Independent Researcher*  
 *Correspondence: [GitHub Issues / frnkptrln](https://github.com/frnkptrln/systems-and-intelligence/issues)*
 
-> **Status — early synthesis document, not re-calibrated.** This paper predates
-> the repository's current epistemic line (the trust pass that produced
+> **Status — ARCHIVED (2026-08-20): historical early synthesis, not citation-ready.**
+> This paper predates the repository's current epistemic line (the trust pass
+> that produced
 > [What This Project Does NOT Claim](../theory/reference/what-this-project-does-not-claim.md)
 > and the status-tag discipline) and its prose has **not** been brought down to
 > that line: it states as framework what the repo now tags as `[HYPOTHESIZED]`
 > or `[SPECULATIVE]`, and its empirical sections describe instruments (SII,
-> C-Score, triad audits) that have so far run on mock or synthetic data only —
-> not on real agent ecologies. The current theoretical synthesis is
-> [The Viable Corridor](viable-corridor.md); per its frontmatter, *this*
-> document is slated for revision as the empirical companion once the
-> [Agentic Identity Suite](../lab/AGENTIC_README.md) runs in real mode. It is
-> kept in place as the project's early statement — read the NOT-claims page
-> first, and treat quantitative language here as proposal, not result.
+> C-Score, triad audits) that only ever ran on mock or synthetic data — not on
+> real agent ecologies. It is therefore **outside the `papers/` citation-ready
+> lane**: kept in place, unrevised, as the project's early statement — not as a
+> publishable or citable synthesis, and with no revision promised.
+> **It is not the empirical companion of any current paper.** The current
+> theoretical synthesis is [The Viable Corridor](viable-corridor.md) (v1.0),
+> which deliberately names no existing document as its empirical counterpart;
+> the real-agent test of its Class C predictions is future work, and this
+> document is not that test. Read the NOT-claims page first, and treat all
+> quantitative language here as proposal, not result.
 
 ## Abstract
 Current methodologies in Artificial Intelligence alignment rely on localized interventions such as Reinforcement Learning from Human Feedback (RLHF) and static system prompts. However, as Large Language Models (LLMs) scale into autonomous, multi-agent continuous dynamical systems, optimizing for localized token prediction results in instrumental convergence toward power and resource acquisition.

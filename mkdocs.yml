@@ -132,8 +132,8 @@ nav:
       - "Narrative Theory":
           - "Machines of Loving Grace": theory/narrative/machines-of-loving-grace.md
   - "Papers":
-      - "The Viable Corridor (Paper, draft)": papers/viable-corridor.md
-      - "Quantifying Emergent Utility (Paper)": papers/quantifying-emergent-utility-in-llms.md
+      - "The Viable Corridor (Paper, v1.0)": papers/viable-corridor.md
+      - "Quantifying Emergent Utility (archived)": papers/quantifying-emergent-utility-in-llms.md
   - "Lab":
       - "Benchmarks":
           - "Inverse Reconstruction": lab/benchmarks/inverse-reconstruction/README.md
