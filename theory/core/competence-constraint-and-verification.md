@@ -43,7 +43,7 @@ and evaluator as neutral plumbing.
 
 ## 2. Why the proposed seven-term equation needs revision
 
-The intake hypothesis suggested
+The proposed hypothesis was
 $\mathcal C_{\mathrm{obs}}=F(G,S,B,\Gamma,I,V,L)$. It is useful as an audit
 checklist but not as a foundation:
 

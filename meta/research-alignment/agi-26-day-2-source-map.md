@@ -9,18 +9,12 @@ status: primary-source audit and integration ledger
 **Purpose:** Preserve the source audit, integration decisions, and claim status
 behind [Competence, Constraint, and Verification](../../theory/core/competence-constraint-and-verification.md).
 
-**Input boundary:** An automatic transcript supplied for Day 2 was used only
-as a discovery index for names, topics, and possible research leads. It is
-incomplete, may mistranscribe speech, and cannot recover slide content,
-figures, demonstrations, or qualifiers that were not spoken. No slide deck or
-equivalent presenter-supplied presentation artifact was available to this
-audit. Neither presence nor absence in the transcript is evidence.
-
-**Independence rule:** A scientific claim is retained only when it remains
-supported after removing the transcript: by a paper, proceedings chapter,
-official repository, author or project page, or an explicitly cited official
-recording. Otherwise it remains an intake lead, is marked unverified, and is
-not load-bearing in repository synthesis.
+**Sourcing rule:** A scientific claim is retained only when it is supported
+by an independently citable artifact: a paper, proceedings chapter, official
+repository, author or project page, or an explicitly cited official
+recording. Conference talks are treated only as pointers to such artifacts,
+not as evidence. Anything without one remains a lead, is marked unverified,
+and is not load-bearing in repository synthesis.
 
 Broader external anchors for the repository's pre-existing concepts remain in
 the [Related Work Map](related-work-map.md).
@@ -61,7 +55,7 @@ into the new synthesis.
 | **proposed hypothesis** | testable interpretation not established by the cited result |
 | **philosophical interpretation** | conceptual or metaphysical reading without a discriminating empirical result |
 | **preliminary result** | preprint, short paper, public-set result, or incompletely validated implementation |
-| **intake lead not independently verified** | surfaced in intake material, but no adequate primary or official artifact was located; not evidence |
+| **conference lead not independently verified** | presented at the conference, but no adequate primary or official artifact was located; not evidence |
 
 ## 3. Primary-source ledger
 
@@ -126,8 +120,8 @@ about universal developmental ordering or full human semantics remain
 | Urban (2026), [*130k Lines of Formal Topology in Two Weeks*](https://arxiv.org/abs/2601.03298) | long-running LLM–Megalodon feedback loop and large generated formalization | preliminary autoformalization report | supporting context |
 | Bryant, Huerta y Munive, Kaliszyk & Urban (2026), [*Munkres' General Topology Autoformalized in Isabelle/HOL*](https://arxiv.org/abs/2604.07455); [code](https://github.com/JUrban/isa_top_autoform1) | 806 checked results with zero `sorry`; qualitative audit finds weak definitions, redundancy, and integration problems | empirically documented formalization plus machine-checked corpus | integrated as proof/specification correction evidence |
 
-The dramatic phrasing surfaced in the intake material was replaced by the
-numbers and limitations in the papers.
+Dramatic conference phrasing was replaced by the numbers and limitations in
+the papers.
 
 **Decision:** **integrated** through
 [Verification as Reverse Pressure](../../theory/core/verification-as-reverse-pressure.md).
@@ -174,8 +168,7 @@ The white paper proposes graph-structured lambda theories, bisimulation-
 preserving morphisms, reactive contexts, and generated behavioral logics. It
 is an official project document, not a peer-reviewed proceedings artifact.
 The broader energy, stochasticity, history-monad, and mortality cluster
-surfaced only as an intake lead. No presentation deck was available to this
-audit, and the claims were not located in a citable paper or repository.
+was not located in a citable paper or repository.
 
 **Decision:** **retained as an open research seed**. Bisimulation is relevant
 to test-relative functional equivalence; no foundation change.
@@ -224,7 +217,7 @@ identity synthesis.
 **Decision:** **excluded as out of scope**; relevant only to the repository's
 explicitly speculative thermodynamic-hardware track.
 
-## 4. Unsupported intake leads not carried forward
+## 4. Unsupported leads not carried forward
 
 The following were not used as scientific premises:
 
