@@ -287,7 +287,7 @@ collapse into self-approval.
 ## Sources and related work
 
 Primary-source status is recorded in the
-[claim-level source ledger](../../meta/research-alignment/agi-26-day-2-source-map.md#world-models-proof-and-recursive-correction).
+[claim-level source ledger](../../meta/research-alignment/related-work-map.md#world-models-proof-and-recursive-correction).
 
 - [Competence, Constraint, and Verification](competence-constraint-and-verification.md)
 - [Construction and Deduction](../computation/construction-vs-deduction.md)

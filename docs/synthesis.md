@@ -183,7 +183,7 @@ The repository deliberately mixes simulations, formal arguments, working hypothe
 4. [Canonical Path v2](../meta/repository-meta/canonical-path-v2.md) — the Viability Arc and current migration map.
 5. [The Viable Corridor](../papers/viable-corridor.md) — necessity result, sufficiency conjecture, synthetic evidence, and limitations.
 6. [Core Claims](../meta/repository-meta/core-claims.md) — the maintained small claim set.
-7. [AGI-26 Day 2 Source Map](../meta/research-alignment/agi-26-day-2-source-map.md) — primary-source ledger and inclusion/exclusion decisions for the situated-competence extension.
+7. [Related Work Map](../meta/research-alignment/related-work-map.md) — concept-to-literature matrix and the AGI-26 primary-source ledger with inclusion/exclusion decisions for the situated-competence extension.
 
 ### Follow a broader path
 

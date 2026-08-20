@@ -116,7 +116,7 @@ while leaving held-out performance unchanged.
 
 The full argument and primary-source qualification are in
 [Competence, Constraint, and Verification](competence-constraint-and-verification.md#9-identity-under-modification)
-and the [source and integration ledger](../../meta/research-alignment/agi-26-day-2-source-map.md#identity-and-self-modification).
+and the [source and integration ledger](../../meta/research-alignment/related-work-map.md#identity-and-self-modification).
 
 ## Open threads
 
