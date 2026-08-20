@@ -30,8 +30,10 @@ representative:
 
 * Separability: 16 of the 64 grid cells verified on 2026-08-20 (the full
   8x8 grid had 0 mismatches in both the analytic and the axiswise variant
-  of the decoupled prediction). The 16 cells are two values per axis on
-  each side of the analytic thresholds, *including* the boundary-adjacent
+  of the decoupled prediction; the canonical full run is
+  simulation-models/alignment-and-veto/teo-civilization/
+  separability_grid.py). The 16 cells are two values per axis on each
+  side of the analytic thresholds, *including* the boundary-adjacent
   grid points (gamma 0.429/0.643 around gamma_c = 0.495; K 1.143/1.714
   around K_c = 1.596), so all four quadrants and the hardest cells are
   covered.
@@ -49,6 +51,7 @@ Full-run manifest (measured 2026-08-20)
 ---------------------------------------
     cd simulation-models/alignment-and-veto/teo-civilization
     python teo_simulation.py --save        # all Appendix-C figures; 355 s wall
+    python separability_grid.py            # full 8x8 C.4 separability grid; ~40 s wall
     cd ../agent-ecology
     python agent_budget_sim.py --save      # Appendix-D figure; 114 s wall
 
@@ -57,14 +60,13 @@ draw; `run()` draws initial conditions with seed+1); the ABM given
 `frequencies(seed0=0)`, i.e. per-run seeds 0..199. Both scripts use
 np.random.default_rng throughout; no global RNG state.
 
-Known prose drift (marked 2026-08-20, deliberately NOT adopted here):
-Appendix C.4 quotes the second boundary crossing (substrate demand
-eta*phibar_0 = D_max) "near delta ~ 1.4"; the current code and the
-*committed* Figure C4 (lab/tools/teo_p8_capability.png, unchanged since
-the figure was generated) both put it at ~1.05. The band below pins what
-the code produces and guards the claim that survives (two crossings,
-concentration first); the prose number awaits an explicit decision. Do not
-widen or move that band to make it match the prose.
+Prose drift, resolved: Appendix C.4 originally quoted the second boundary
+crossing (substrate demand eta*phibar_0 = D_max) "near delta ~ 1.4",
+while the code and the *committed* Figure C4
+(lab/tools/teo_p8_capability.png, unchanged since the figure was
+generated) both put it at ~1.05. Corrected in paper v0.9 (2026-08-20)
+with a revision-log entry; the band below now matches code, figure, and
+prose alike.
 """
 
 import importlib.util
@@ -211,9 +213,9 @@ class TestAppendixC4Capability(unittest.TestCase):
         """One capability axis, two crossings: max_x crosses x_crit first
         (~0.89), then demand crosses the operating D_max=1.5 (~1.05).
 
-        NOTE (2026-08-20): the C.4 prose quotes the second crossing "near
-        delta ~ 1.4"; code and the committed Figure C4 both give ~1.05.
-        See the module docstring — do not move this band to fit the prose.
+        NOTE (2026-08-20): the C.4 prose originally quoted the second
+        crossing "near delta ~ 1.4"; corrected to ~1.05 in paper v0.9 —
+        code, committed Figure C4, and prose now agree (module docstring).
         """
         p = teo.Params()
         D_op = 1.5
