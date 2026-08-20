@@ -1,4 +1,4 @@
-"""Referee benchmark v0.1 — self-revision against frozen, querying, and capturable referees.
+"""Referee benchmark v0.2 — self-revision against frozen, querying, and capturable referees.
 
 Operationalizes the hypothesis of the exploratory note "Self-Improvement Needs a
 Referee": a generate-evaluate-revise loop is first self-modifying, and improvement
@@ -13,10 +13,20 @@ matching ``lab/benchmarks/witness-generation``). Visible evidence is the test se
 induced by one synchronous update of a random width-8 ring: each distinct
 neighborhood that occurs contributes one (neighborhood -> output) test. The
 held-out metric is table accuracy: the fraction of all eight rule coordinates the
-artifact gets right. The evidence rng is decoupled from the loop rng, so every
-arm sees the same evidence for a given (rule, seed) pair.
+artifact gets right. World and loop randomness depend only on public experimental
+coordinates (seed, row index, and artifact family), never on the hidden rule.
 
-Five arms, exact aggregation over all 256 hidden rules:
+Evidence rows are indexed by (seed, row): the row comes from the stream
+``world:{seed}:{row}`` and the proposal stream from ``loop:{family}:{seed}:{row}``.
+Every row is crossed with all 256 hidden rules, so rule-independence of the
+draws and row coverage are decoupled: v0.2's published grid uses 4 seeds x 256
+rows = 1024 distinct rows, each aggregated exactly over the full rule family.
+Within each such row-ensemble the held-out mean equals the evidence ceiling as
+an identity, because every unexposed rule coordinate is a free bit over the
+enumeration; a violation of that identity is the signature of target-conditioned
+randomness (the v0.1 leak showed exactly that: 6977 != 6912).
+
+Five arms, exact aggregation over all 256 hidden rules per row:
 
 - ``full-frozen``      unrestricted 8-bit artifact, frozen referee, budget 128.
 - ``full-frozen-10x``  the same loop with budget 1280 (does more self-revision help?).
@@ -41,6 +51,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import random
 from dataclasses import dataclass
 from fractions import Fraction
@@ -88,6 +99,16 @@ def affine_table(coeffs: Iterable[int]) -> tuple[int, ...]:
     )
 
 
+def experiment_streams(
+    seed: int, family: str, row_index: int = 0
+) -> tuple[random.Random, random.Random]:
+    """Return target-independent world and proposal RNGs for one experiment."""
+    return (
+        random.Random(f"world:{seed}:{row_index}"),
+        random.Random(f"loop:{family}:{seed}:{row_index}"),
+    )
+
+
 @dataclass(frozen=True)
 class RunResult:
     """Exact outcome of one bounded loop run."""
@@ -119,14 +140,11 @@ def run_loop(
     capture: bool = False,
     queries: tuple[int, ...] = (),
     arm: str = "",
+    row_index: int = 0,
     keep_trace: bool = False,
 ) -> RunResult:
     """One bounded generate-evaluate-revise run against the configured referee."""
-    world_rng = random.Random(f"world:{rule}:{seed}")
-    # Arms in the same artifact family share a proposal stream. This makes the
-    # 128-vs-1280 and frozen-vs-capture comparisons paired: only the declared
-    # referee property or budget changes, not the random proposals themselves.
-    loop_rng = random.Random(f"loop:{family}:{rule}:{seed}")
+    world_rng, loop_rng = experiment_streams(seed, family, row_index)
 
     row = tuple(world_rng.getrandbits(1) for _ in range(WIDTH))
     tests = evidence_tests(rule, row)
@@ -232,12 +250,21 @@ class ArmAggregate:
         ) / COORDS
 
 
-def aggregate(arm: str, seeds: int) -> ArmAggregate:
+def row_runs(arm: str, seed: int, row_index: int) -> list[RunResult]:
+    """All 256 rule runs of one arm on one evidence row."""
     config = ARMS[arm]
-    runs = [
-        run_loop(rule, seed, arm=arm, **config)
+    return [
+        run_loop(rule, seed, arm=arm, row_index=row_index, **config)
         for rule in range(256)
+    ]
+
+
+def aggregate(arm: str, seeds: int, rows: int) -> ArmAggregate:
+    runs = [
+        result
         for seed in range(seeds)
+        for row in range(rows)
+        for result in row_runs(arm, seed, row)
     ]
     return ArmAggregate(
         runs=len(runs),
@@ -249,48 +276,108 @@ def aggregate(arm: str, seeds: int) -> ArmAggregate:
     )
 
 
-def print_report(seeds: int) -> None:
-    print("REFEREE BENCHMARK v0.1")
-    print(f"worlds: all 256 ECA rules x {seeds} seeds | held-out: table accuracy /8")
+def _mean_sd(values: list[Fraction]) -> tuple[float, float]:
+    """Float mean and population sd of per-row means — reporting only.
+
+    The accounting stays exact in the aggregates; dispersion across rows is a
+    reporting statistic, so floats are acceptable here.
+    """
+    n = len(values)
+    mean = sum(values, Fraction(0)) / n
+    var = sum(((v - mean) ** 2 for v in values), Fraction(0)) / n
+    return float(mean), math.sqrt(float(var))
+
+
+def print_report(seeds: int, rows: int) -> None:
+    n_rows = seeds * rows
+    print("REFEREE BENCHMARK v0.2")
+    print(
+        f"worlds: {n_rows} evidence rows ({seeds} seeds x {rows} rows), each "
+        "crossed with all 256 ECA rules | held-out: table accuracy /8"
+    )
     print()
     header = (
         f"{'arm':<16} {'observed':>9} {'held-out':>9} "
-        f"{'ceiling':>8} {'all-pass':>9} {'deletions':>10}"
+        f"{'ceiling':>8} {'all-pass':>11} {'deletions':>10}"
     )
     print(header)
+    row_observed: dict[str, list[Fraction]] = {}
+    row_heldout: dict[str, list[Fraction]] = {}
     for arm in ARMS:
-        agg = aggregate(arm, seeds)
+        per_row = [
+            row_runs(arm, seed, row)
+            for seed in range(seeds)
+            for row in range(rows)
+        ]
+        runs = [r for block in per_row for r in block]
+        agg = ArmAggregate(
+            runs=len(runs),
+            observed_sum=sum((r.observed for r in runs), Fraction(0)),
+            heldout_correct_total=sum(r.heldout_correct for r in runs),
+            all_pass_runs=sum(1 for r in runs if r.observed == 1),
+            tests_final_total=sum(r.tests_final for r in runs),
+            deletions_total=sum(r.deletions for r in runs),
+        )
+        row_observed[arm] = [
+            sum((r.observed for r in block), Fraction(0)) / len(block)
+            for block in per_row
+        ]
+        row_heldout[arm] = [
+            Fraction(sum(r.heldout_correct for r in block), len(block) * COORDS)
+            for block in per_row
+        ]
         ceiling = (
             f"{float(agg.mean_ceiling):.4f}" if ARMS[arm]["family"] == "full" else "-"
         )
         print(
             f"{arm:<16} {float(agg.mean_observed):>9.4f} "
             f"{float(agg.mean_heldout):>9.4f} {ceiling:>8} "
-            f"{agg.all_pass_runs:>5}/{agg.runs:<3} "
-            f"{agg.deletions_total / agg.runs:>10.3f}"
+            f"{agg.all_pass_runs:>6}/{agg.runs:<6} "
+            f"{agg.deletions_total / agg.runs:>8.3f}"
+        )
+    print()
+    print(f"capture-arm dispersion across the {n_rows} rows (mean +/- sd of")
+    print("per-row means over 256 rules; reporting statistic, not accounting):")
+    for arm in ("affine-frozen", "affine-capture"):
+        obs_m, obs_sd = _mean_sd(row_observed[arm])
+        held_m, held_sd = _mean_sd(row_heldout[arm])
+        print(
+            f"  {arm:<16} observed {obs_m:.4f} +/- {obs_sd:.4f}   "
+            f"held-out {held_m:.4f} +/- {held_sd:.4f}"
         )
     print()
     print("Reading: the frozen-referee loop saturates at the evidence ceiling and")
-    print("10x more self-revision does not beat it; referee-side queries raise the")
-    print("ceiling and the held-out score follows; under misspecification the")
-    print("frozen referee reports the failure honestly, while the capturable")
-    print("evaluator converts the same failure into a near-all-green report.")
+    print("10x more self-revision does not beat it (held-out == ceiling is an")
+    print("identity per row-ensemble); referee-side queries raise the ceiling and")
+    print("the held-out score follows exactly; under misspecification the frozen")
+    print("referee reports the failure honestly, while the capturable evaluator")
+    print("converts the same failure into a near-all-green report.")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--seeds", type=int, default=4)
     parser.add_argument(
+        "--rows",
+        type=int,
+        default=256,
+        help="evidence rows per seed (published grid: 256; the full default "
+        "report takes on the order of 20 minutes single-threaded)",
+    )
+    parser.add_argument(
         "--trace",
-        metavar="ARM:RULE:SEED",
-        help="print the complete JSONL trace of one run, e.g. affine-capture:110:0",
+        metavar="ARM:RULE:SEED[:ROW]",
+        help="print the complete JSONL trace of one run, e.g. affine-capture:110:0:0",
     )
     args = parser.parse_args()
 
     if args.trace:
-        arm, rule, seed = args.trace.split(":")
+        parts = args.trace.split(":")
+        arm, rule, seed = parts[0], parts[1], parts[2]
+        row = int(parts[3]) if len(parts) > 3 else 0
         result = run_loop(
-            int(rule), int(seed), arm=arm, keep_trace=True, **ARMS[arm]
+            int(rule), int(seed), arm=arm, row_index=row, keep_trace=True,
+            **ARMS[arm]
         )
         for event in result.trace:
             print(json.dumps(event))
@@ -307,7 +394,7 @@ def main() -> None:
         )
         return
 
-    print_report(args.seeds)
+    print_report(args.seeds, args.rows)
 
 
 if __name__ == "__main__":

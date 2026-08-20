@@ -92,20 +92,19 @@ def episode(true_rule: int, W: int = 60, T: int = 12, k: int = 4,
     return out
 
 
-def run_suite(n_rules: int = 14, n_masks: int = 3, n_eps: int = 5,
+def run_suite(n_rules: int = 14, n_settings: int = 210,
               seed: int = 0) -> dict:
+    # Settings are indexed independently and crossed with every rule (see
+    # model_exploitation.run_suite); SEs are taken across settings.
     rng = np.random.default_rng(seed)
     rules = rng.integers(1, 255, size=n_rules)
     acc = {K: {"w": [], "r": []} for K in KS}
-    s = 0
-    for rule in rules:
-        for m in range(n_masks):
-            for e in range(n_eps):
-                s += 1
-                r = episode(int(rule), seed=seed * 100000 + s)
-                for K in KS:
-                    acc[K]["w"].append(r[K]["wedge"])
-                    acc[K]["r"].append(r[K]["regret"])
+    for setting in range(n_settings):
+        eseed = seed * 100000 + setting + 1
+        block = [episode(int(rule), seed=eseed) for rule in rules]
+        for K in KS:
+            acc[K]["w"].append(np.mean([r[K]["wedge"] for r in block]))
+            acc[K]["r"].append(np.mean([r[K]["regret"] for r in block]))
     out = {"K": list(KS), "wedge": [], "wedge_se": [], "regret": [],
            "regret_se": []}
     for K in KS:

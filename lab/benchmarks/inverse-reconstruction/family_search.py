@@ -150,13 +150,24 @@ def run_occam_suite(best: dict[int, int], n_masks: int = 40,
            "class": [], "n_simple": len(simple), "n_complex": len(complx)}
     for k in ks:
         hits, hits_s, hits_c, classes = [], [], [], []
-        for rule in range(256):
-            for _ in range(n_masks):
-                pats = rng.choice(8, size=k, replace=False)
-                mask = 0
-                for p in pats:
-                    mask |= (1 << int(p))
-                pick, ties, ccount = occam_pick(rule, mask, best)
+        # Masks are drawn from their own stream index and crossed with all
+        # 256 rules, so no mask is keyed to a rule's loop position;
+        # 256 * n_masks preserves the pre-crossing count of distinct masks.
+        masks = []
+        for _ in range(256 * n_masks):
+            pats = rng.choice(8, size=k, replace=False)
+            mask = 0
+            for p in pats:
+                mask |= (1 << int(p))
+            masks.append(mask)
+        for mask in masks:
+            picks: dict[int, tuple[int, int]] = {}
+            for rule in range(256):
+                cid = rule & mask
+                if cid not in picks:
+                    pick_c, _, ccount_c = occam_pick(cid, mask, best)
+                    picks[cid] = (pick_c, ccount_c)
+                pick, ccount = picks[cid]
                 hit = (pick == rule)
                 hits.append(hit)
                 classes.append(ccount)

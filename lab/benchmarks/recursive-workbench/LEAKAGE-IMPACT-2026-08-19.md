@@ -1,0 +1,69 @@
+# Target-Leakage Impact Note — RNG seeding, fixed in PR #53
+
+**Status:** blast-radius record for the target-leakage fix; not a results page.
+**Last reviewed:** 2026-08-19
+**Review trigger:** any further change to how `run_loop` constructs its random streams.
+
+## The defect
+
+From the benchmark's first commit (`a51bcc5`, 2026-07-30) through v0.1, `run_loop`
+seeded both streams with the hidden rule —
+`world:{rule}:{seed}` and `loop:{family}:{rule}:{seed}` — so the evidence row
+(and with it the visible-test mask) and the proposal-slot sequence were
+deterministic functions of the target. Every number this benchmark ever
+published was produced under that seeding; there is no unaffected earlier
+version. PR #53 reseeds both streams from public coordinates only
+(`world:{seed}`, `loop:{family}:{seed}`).
+
+Measured severity: the leak was structural, not exploited. The pre-fix
+`full-frozen` held-out total (6977/8192 = 0.8517) matches the ceiling of its own
+rule-conditioned evidence masks (0.8518) to within one coordinate in 8192. The
+pre-fix numbers describe a target-conditioned ensemble that nothing can certify
+as leak-free; they are not evidence that the loop beat its evidence.
+
+## Affected results (produced from the leaky paths, 2026-07-30 → PR #53)
+
+| Where | What | Disposition |
+|:---|:---|:---|
+| `README.md` (this directory) | results table and inline numbers: 0.8517, 0.8525, 0.9606, 0.9589, 0.8518, 0.7960, 0.9893, 0.7021, 0.7000, 166/1024, 989/1024, 1.15 deletions, gap 0.094 → 0.289 | recomputed in PR #53 |
+| `tests/test_referee_benchmark.py` | pinned integers: 6977, 6984, 5764, 7519, 7869, 166, 684679/840, 5752, 989, 40521/40, 5734, 1179 | recomputed in PR #53 |
+| `logs/020_the-referee-boundary.md` (report paragraph) | "the report went from 0.80 to 0.99"; "tripled" | **corrected 2026-08-19** with v0.2 grid values (0.7996 ± 0.0476 → 0.9910 ± 0.0181; gap ×3.0; "tripled" survives), old figures left in place, marked |
+| `fiction/19_the_green_board.md`, `fiction/README.md` (source pointers) | "observed 0.99, held-out 0.70, measured" | **corrected 2026-08-19** with v0.2 grid values (0.9910 ± 0.0181 / 0.7006 ± 0.0350), provenance noted inline |
+| `ideas/2026-07-24-self-improvement-needs-a-referee.md` (workbench paragraph) | qualitative: "measures the three regimes exactly", "tripled observed-vs-held-out gap" | survives; re-derived from post-fix numbers |
+| `meta/research-alignment/related-work-map.md` (referee-boundary row) | qualitative: "10x budget does not move performance beyond it", "measured tripling" | survives; post-fix the 10x claim is exact equality (6912 = 6912) |
+
+No CSV, figure, or other result file was ever generated for this benchmark; the
+directory has only ever contained `README.md` and `referee_benchmark.py`.
+
+## What must be recomputed
+
+Nothing beyond what PR #53 already recomputes: the benchmark runs in seconds and
+the README and test file in that PR carry post-fix numbers. Remaining work is
+editorial — update the two stale prose citations above where they live. They are
+marked here rather than silently edited.
+
+## Postscript (v0.2, same day)
+
+PR #53's recomputed numbers were produced on a 4-row grid (all 256 rules
+sharing one row per seed) — rule-independent but with collapsed row coverage.
+v0.2 restores coverage without reintroducing per-rule randomness: rows indexed
+by `(seed, row)` from `world:{seed}:{row}`, 4 × 256 = 1,024 distinct rows, each
+crossed with all 256 rules. The published table therefore supersedes both the
+leak-era numbers **and** PR #53's 4-row values; prose corrections should quote
+the v0.2 grid with row count and dispersion. The held-out ≡ ceiling identity is
+now a standing CI invariant (`tests/test_referee_invariant.py`), so a
+recurrence of this leak class fails CI as an exact inequality.
+
+## What remains valid
+
+- All three qualitative regime statements (saturation at the evidence ceiling,
+  referee queries raise the ceiling and held-out follows, capture inflates only
+  the report). Directions unchanged; post-fix the first two hold exactly.
+- Everything outside `referee_benchmark.py`. No other module imports it
+  (`git grep referee_benchmark` returns only its test). The other instruments
+  draw their randomness independently: `witness-generation` uses no randomness
+  at all (exact enumeration via `itertools`; the word "seed" does not occur in
+  `witness_benchmark.py`), and the seeded experiments
+  (`inverse-reconstruction`, `learned-searcher`, `constraint-release`,
+  `context-attractor`) construct their own generators from their own seed
+  material.
