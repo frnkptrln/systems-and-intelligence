@@ -11,10 +11,10 @@ behind [Competence, Constraint, and Verification](../../theory/core/competence-c
 
 **Sourcing rule:** A scientific claim is retained only when it is supported
 by an independently citable artifact: a paper, proceedings chapter, official
-repository, author or project page, or an explicitly cited official
-recording. Conference talks are treated only as pointers to such artifacts,
-not as evidence. Anything without one remains a lead, is marked unverified,
-and is not load-bearing in repository synthesis.
+repository, or author or project page. Conference talks and recordings are
+treated only as pointers to such artifacts, not as evidence. Anything without
+one remains a lead, is marked unverified, and is not load-bearing in
+repository synthesis.
 
 Broader external anchors for the repository's pre-existing concepts remain in
 the [Related Work Map](related-work-map.md).

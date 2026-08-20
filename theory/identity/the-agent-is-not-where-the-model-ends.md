@@ -470,8 +470,8 @@ consequence of the situated-stack formalism.
 
 ## 12. An organizing hypothesis, with gaps exposed
 
-The cited papers, author manuscript, official recording, and existing
-repository work suggest the following chain:
+The cited papers, author manuscript, and existing repository work suggest the
+following chain:
 
 1. a boundary individuates selected internal and external states;
 2. viability marks some trajectories as compatible with persistence;
@@ -575,16 +575,6 @@ is treated only as an open lead or repository construction. The synthesis,
 criticisms, tuple $\Sigma$, capability notation $J_{\ell,\tau}(\Sigma)$,
 benchmark, “Mapmaker Problem,” and computational-functionalist counterposition
 are repository constructions rather than conference results.
-
-### Conference provenance
-
-- AGI Society, [*AGI-26 Conference, Day 1: Keynotes and Paper
-  Presentations*](https://www.youtube.com/watch?v=qRA1DoMCCSc), official
-  conference recording, which surfaced the
-  Friston/active-inference and Bach/virtual-causality leads. Active-inference
-  claims are anchored below in published papers; the virtual-causality contrast
-  remains an explicitly labeled repository counterposition, not a verified
-  summary of Bach's keynote.
 
 ### Paper anchors
 
