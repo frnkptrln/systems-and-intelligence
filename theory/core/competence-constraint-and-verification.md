@@ -18,7 +18,7 @@ This page integrates source-verified work on competence under constraint,
 interaction-grounded semantics, verification, and identity under revision. It
 is not a conference summary. The provenance ledger and bibliographic decisions
 are recorded in the
-[AGI-26 Day 2 Source and Integration Map](../../meta/research-alignment/agi-26-day-2-source-map.md).
+[Related Work Map](../../meta/research-alignment/related-work-map.md#7-source-audit-and-integration-ledger).
 
 ## 1. Audit result: the generator is not enough
 
@@ -43,7 +43,7 @@ and evaluator as neutral plumbing.
 
 ## 2. Why the proposed seven-term equation needs revision
 
-The intake hypothesis suggested
+The proposed hypothesis was
 $\mathcal C_{\mathrm{obs}}=F(G,S,B,\Gamma,I,V,L)$. It is useful as an audit
 checklist but not as a foundation:
 

@@ -367,8 +367,8 @@ research process, as bounded in
 ## 8. Simulation, instantiation, and the mapmaker problem
 
 This section constructs a contrast between Lerchner's cited manuscript and a
-computational-functionalist counterposition. It is not presented as a
-transcript-backed exchange or a conference consensus.
+computational-functionalist counterposition. It is not presented as a record
+of an actual exchange or a conference consensus.
 
 | Position | Direction of argument | Unresolved weakness |
 |:---|:---|:---|
@@ -470,8 +470,8 @@ consequence of the situated-stack formalism.
 
 ## 12. An organizing hypothesis, with gaps exposed
 
-The cited papers, author manuscript, official recording, and existing
-repository work suggest the following chain:
+The cited papers, author manuscript, and existing repository work suggest the
+following chain:
 
 1. a boundary individuates selected internal and external states;
 2. viability marks some trajectories as compatible with persistence;
@@ -569,35 +569,12 @@ invalidation. They should not be called consciousness tests.
 
 ## Source note
 
-An automatic transcript supplied as intake material for AGI-26 Day 1 was used
-only as a discovery index for names, disagreements, and candidate connections.
-It is incomplete, contains transcription errors, and cannot recover
-slide-dependent definitions, figures, demonstrations, or unspoken qualifiers.
-No slide deck or other presenter-supplied presentation artifact was available
-for this integration. Neither presence nor absence in the transcript is
-treated as evidence, and the transcript is not treated as a publication.
-
-Conference chronology is preserved only in this provenance note. The argument
-above names concepts or citable sources directly; it does not use “Day 1” or
-“Day 2” as an explanatory category.
-
-No scientific claim on this page depends on that transcript. External claims
-retained as support are tied below to proceedings papers, primary papers, or an
-author manuscript. Anything not independently anchored is treated only as an
-open lead or repository construction. The synthesis, criticisms, tuple
-$\Sigma$, capability notation $J_{\ell,\tau}(\Sigma)$, benchmark, “Mapmaker
-Problem,” and computational-functionalist counterposition are repository
-constructions rather than conference results.
-
-### Conference provenance
-
-- AGI Society, [*AGI-26 Conference, Day 1: Keynotes and Paper
-  Presentations*](https://www.youtube.com/watch?v=qRA1DoMCCSc), official
-  conference recording. The recording and automatic transcript surfaced the
-  Friston/active-inference and Bach/virtual-causality leads. Active-inference
-  claims are anchored below in published papers; the virtual-causality contrast
-  remains an explicitly labeled repository counterposition, not a verified
-  summary of Bach's keynote.
+External claims retained as support are tied below to proceedings papers,
+primary papers, or an author manuscript. Anything not independently anchored
+is treated only as an open lead or repository construction. The synthesis,
+criticisms, tuple $\Sigma$, capability notation $J_{\ell,\tau}(\Sigma)$,
+benchmark, “Mapmaker Problem,” and computational-functionalist counterposition
+are repository constructions rather than conference results.
 
 ### Paper anchors
 

@@ -184,7 +184,7 @@ formal basis for action-dependent interaction tokens than the short 2026 paper
 alone.
 
 Primary sources and the official implementation are in the
-[claim-level source audit](../../meta/research-alignment/agi-26-day-2-source-map.md#interaction-grounded-semantics).
+[claim-level source audit](../../meta/research-alignment/related-work-map.md#interaction-grounded-semantics).
 
 ## 6. Developmental ordering as a hypothesis
 
