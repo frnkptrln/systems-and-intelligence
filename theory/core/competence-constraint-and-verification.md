@@ -18,7 +18,7 @@ This page integrates source-verified work on competence under constraint,
 interaction-grounded semantics, verification, and identity under revision. It
 is not a conference summary. The provenance ledger and bibliographic decisions
 are recorded in the
-[Related Work Map](../../meta/research-alignment/related-work-map.md#7-agi-26-source-audit-and-integration-ledger).
+[Related Work Map](../../meta/research-alignment/related-work-map.md#7-source-audit-and-integration-ledger).
 
 ## 1. Audit result: the generator is not enough
 

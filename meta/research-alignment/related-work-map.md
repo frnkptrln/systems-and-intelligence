@@ -9,9 +9,9 @@ It is intended to:
 - identify where repository claims should be strengthened, softened, or tested;
 - provide concrete empirical next steps.
 
-The AGI-26 primary-source audit and inclusion decisions for the
+The primary-source audit and inclusion decisions for the
 situated-competence extension are kept in
-[section 7](#7-agi-26-source-audit-and-integration-ledger) below.
+[section 7](#7-source-audit-and-integration-ledger) below.
 
 ## 2) Concept-to-literature matrix
 
@@ -171,12 +171,11 @@ Use this legend when revising repository claims:
 ### Claims that now look more promising
 - Memory-tiered agents with explicit utility/control instrumentation and human oversight pathways appear empirically tractable and high-value for near-term testing.
 
-## 7) AGI-26 source audit and integration ledger
+## 7) Source audit and integration ledger
 
 This section preserves the source audit, integration decisions, and claim
 status behind
-[Competence, Constraint, and Verification](../../theory/core/competence-constraint-and-verification.md)
-(audit of 2026-07-30, formerly a standalone file).
+[Competence, Constraint, and Verification](../../theory/core/competence-constraint-and-verification.md).
 
 **Sourcing rule:** A scientific claim is retained only when it is supported
 by an independently citable artifact: a paper, proceedings chapter, official
@@ -192,7 +191,7 @@ Conference, AGI 2026, San Francisco, July 27–30, 2026*, proceedings
 
 ### Integration map
 
-| AGI-26 idea | Existing repository concept | Relationship | Required action |
+| Idea | Existing repository concept | Relationship | Required action |
 |:---|:---|:---|:---|
 | diverse cognition under unusual bodies and constraints | situated stack; embodiment; emergence; invariance | supports and refines | define latent competence; add trace/lens controls |
 | Platonic-space ingress | speculative emergence and narrative layer | philosophical interpretation, not empirical consequence | exclude from working science; retain as explicitly speculative source |
