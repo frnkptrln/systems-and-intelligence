@@ -33,6 +33,7 @@ REPO = Path(__file__).resolve().parents[2]
 SKIP_DIRS = {
     ".git",
     ".venv",
+    "venv",
     "site",
     "__pycache__",
     ".pytest_cache",
