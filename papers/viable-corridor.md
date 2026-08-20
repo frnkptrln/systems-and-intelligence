@@ -146,8 +146,7 @@ The communication topology is fixed by an adjacency matrix $A \in \lbrace0, 1\rb
 Resource shares evolve according to a regulated replicator equation:
 
 $$
-\frac{dx_i}{dt} = x_i \bigl( f_i(\mathbf{x}) - \bar{\phi}(\mathbf{x}) \bigr) + \mathcal{H}_i(\mathbf{x}),
-\tag{1}
+\frac{dx_i}{dt} = x_i \bigl( f_i(\mathbf{x}) - \bar{\phi}(\mathbf{x}) \bigr) + \mathcal{H}_i(\mathbf{x}), \qquad \text{(1)}
 $$
 
 where $f_i : [0,1]^N \to \mathbb{R}_{\geq 0}$ is the fitness of agent $i$, $\bar{\phi}(\mathbf{x}) = \sum_j x_j f_j(\mathbf{x})$ is the population-average fitness, and $\mathcal{H}_i$ is a homeostatic brake defined in §2.4. With $\mathcal{H}_i \equiv 0$, Equation (1) reduces to the standard replicator equation of Taylor and Jonker (1978).
@@ -155,8 +154,7 @@ where $f_i : [0,1]^N \to \mathbb{R}_{\geq 0}$ is the fitness of agent $i$, $\bar
 For the theorem of §3 we adopt a **strict-dominance** assumption on $f_i^{(0)}$ (the substrate-unmodified fitness from §2.5). There exists an agent index $i^\ast$ and a constant $\delta > 0$ such that, for all $j \neq i^\ast$ and all $\mathbf{x}$ on the simplex,
 
 $$
-f_{i^\ast}^{(0)}(\mathbf{x}) - f_j^{(0)}(\mathbf{x}) \geq \delta.
-\tag{1'}
+f_{i^\ast}^{(0)}(\mathbf{x}) - f_j^{(0)}(\mathbf{x}) \geq \delta. \qquad \text{(1')}
 $$
 
 [`[MODEL ASSUMPTION]`]. This is stronger than a $\beta$-dominance condition alone and is the operational form of *instrumental convergence* (Omohundro, 2008; Bostrom, 2014): agent $i^\ast$ has a structural fitness advantage over every other agent at every state of the system. Whether real social and economic systems exhibit such strict dominance is an empirical question (cf. Piketty, 2014, on power-law concentration in resource flows); we treat it here as a model assumption used in §3.
@@ -166,8 +164,7 @@ $$
 Value orientations evolve under substrate-modulated coupled-oscillator dynamics:
 
 $$
-\frac{d\theta_i}{dt} = H \left[ \omega_i + \frac{K}{N} \sum_{j=1}^N A_{ij} \sin(\theta_j - \theta_i) \right],
-\tag{2}
+\frac{d\theta_i}{dt} = H \left[ \omega_i + \frac{K}{N} \sum_{j=1}^N A_{ij} \sin(\theta_j - \theta_i) \right], \qquad \text{(2)}
 $$
 
 where $\omega_i$ is agent $i$'s intrinsic frequency (its bias toward a particular value orientation), $K \geq 0$ is the global coupling strength (interpretable as discursive bandwidth, shared media saturation, or institutional integration), $A_{ij}$ is the topology of §2.1, and $H \in [0,1]$ is the substrate-health variable of §2.5. The prefactor $H$ ensures that value dynamics, like resource dynamics, halt when the substrate collapses ($H \to 0$). At full substrate health ($H = 1$), Equation (2) is the standard Kuramoto (1975) model on a network, so the critical-coupling analysis below is unaffected.
@@ -175,8 +172,7 @@ where $\omega_i$ is agent $i$'s intrinsic frequency (its bias toward a particula
 The collective coherence of value orientations is measured by the order parameter:
 
 $$
-r(t) \, e^{i \psi(t)} = \frac{1}{N} \sum_{j=1}^N e^{i \theta_j(t)},
-\tag{3}
+r(t) \, e^{i \psi(t)} = \frac{1}{N} \sum_{j=1}^N e^{i \theta_j(t)}, \qquad \text{(3)}
 $$
 
 with $r(t) \in [0, 1]$: $r \to 1$ indicates full synchronization (consensus), $r \to 0$ indicates phase-uniform incoherence (loss of any global phase). For natural frequencies drawn i.i.d.\ from a symmetric unimodal density $g(\omega)$ with $g(0) > 0$ and sufficient regularity, the all-to-all model at $H=1$ exhibits a critical coupling threshold $K_c$ below which no macroscopic coherent branch is stable (Kuramoto, 1975; Strogatz, 2000; Acebrón et al., 2005). For the Lorentzian density $g(\omega) = (\Delta/\pi)/(\omega^2 + \Delta^2)$ (which is heavy-tailed and has no finite variance, but is the standard analytically tractable case), $K_c = 2\Delta$.
@@ -191,8 +187,7 @@ The brake $\mathcal{H}_i$ in Equation (1) must satisfy two requirements: it must
 with $1/N < x_{\text{reg}} < x_{\text{crit}} < 1$. The separation $x_{\text{reg}} < x_{\text{crit}}$ is essential: if the brake activated only at $x_{\text{crit}}$, it would engage exactly at the failure boundary — too late to keep an above-threshold trajectory inside $V$. The brake is:
 
 $$
-\mathcal{H}_i(\mathbf{x}) = -\gamma \cdot \max\bigl(0, \, x_i - x_{\text{reg}}\bigr) + \frac{\gamma}{N} \sum_{j=1}^N \max\bigl(0, \, x_j - x_{\text{reg}}\bigr),
-\tag{4}
+\mathcal{H}_i(\mathbf{x}) = -\gamma \cdot \max\bigl(0, \, x_i - x_{\text{reg}}\bigr) + \frac{\gamma}{N} \sum_{j=1}^N \max\bigl(0, \, x_j - x_{\text{reg}}\bigr), \qquad \text{(4)}
 $$
 
 where $\gamma \geq 0$ is the regulatory strength. The first term penalises any agent whose share exceeds $x_{\text{reg}}$; the second term redistributes the aggregate penalty uniformly across all agents. By construction $\sum_i \mathcal{H}_i(\mathbf{x}) = 0$, so the simplex is preserved.
@@ -206,8 +201,7 @@ Two caveats [`[MODEL ASSUMPTION]`]. First, uniform redistribution means that an 
 Computation produces entropy; Landauer (1961) gives a lower bound on the heat dissipated by irreversible bit erasure. Equation (5) is **not** a generalised Landauer bound. It is a **phenomenological dissipation proxy** motivated by Landauer-type physical limits: we assume that the rate of entropy production by agent $i$ scales with its resource share and its *raw* activity level $f_i^{(0)}$ [`[MODEL ASSUMPTION]`]:
 
 $$
-\frac{dS_{\text{sys}}}{dt} = \sum_{i=1}^N \eta_i \, x_i \, f_i^{(0)}(\mathbf{x}),
-\tag{5}
+\frac{dS_{\text{sys}}}{dt} = \sum_{i=1}^N \eta_i \, x_i \, f_i^{(0)}(\mathbf{x}), \qquad \text{(5)}
 $$
 
 where $\eta_i > 0$ is agent $i$'s entropy coefficient and $f_i^{(0)}$ is the substrate-unmodified fitness of §2.2. Note that the dissipation is driven by the **raw** throughput $f_i^{(0)}$, not by the health-coupled *effective* fitness $f_i = H f_i^{(0)}$ that drives the competitive dynamics (the $f_i$ of Eq (1), defined in (5') below); the entropy an agent produces is set by what it does, not by how degraded the substrate already is. The consequences of this asymmetry are the subject of the substrate-coupling paragraph below and of §6.1.
@@ -215,8 +209,7 @@ where $\eta_i > 0$ is agent $i$'s entropy coefficient and $f_i^{(0)}$ is the sub
 The substrate hosting the dynamics has a finite *instantaneous* dissipation capacity $D_{\max} > 0$ and a finite *cumulative* reservoir $S_{\max} > 0$. We track the **accumulated overshoot**
 
 $$
-\Omega(t) := \int_0^t \bigl( \dot{S}_{\text{sys}}(s) - D_{\max} \bigr)_+ \, ds,
-\tag{6a}
+\Omega(t) := \int_0^t \bigl( \dot{S}_{\text{sys}}(s) - D_{\max} \bigr)_+ \, ds, \qquad \text{(6a)}
 $$
 
 the integrated excess of entropy production over the instantaneous ceiling. The substrate-health variable $H(t) \in [0, 1]$ then evolves as
@@ -224,8 +217,7 @@ the integrated excess of entropy production over the instantaneous ceiling. The 
 $$
 H(t) = \max\!\left( 0, \, 1 - \frac{\Omega(t)}{S_{\max}} \right),
 \qquad\text{equivalently}\qquad
-\frac{dH}{dt} = -\frac{1}{S_{\max}} \, \bigl( \dot{S}_{\text{sys}} - D_{\max} \bigr)_+ \ \text{while } H > 0,
-\tag{6b}
+\frac{dH}{dt} = -\frac{1}{S_{\max}} \, \bigl( \dot{S}_{\text{sys}} - D_{\max} \bigr)_+ \ \text{while } H > 0, \qquad \text{(6b)}
 $$
 
 with $H(0) = 1$. Equation (6b) is phenomenological [`[MODEL ASSUMPTION]`]: a *momentary* overshoot of $D_{\max}$ degrades the substrate only by a finite increment; *sustained or repeated* overshoot accumulating to $\Omega = S_{\max}$ drives $H$ to zero. This distinction — instantaneous ceiling $D_{\max}$ versus cumulative reservoir $S_{\max}$ — matters for the viability conditions in §3.1.
@@ -233,8 +225,7 @@ with $H(0) = 1$. Equation (6b) is phenomenological [`[MODEL ASSUMPTION]`]: a *mo
 **Substrate coupling.** We close the loop by making the *competitive dynamics* — but not the dissipation — depend on substrate health. The **effective fitness** that drives the replicator (1) is
 
 $$
-f_i(\mathbf{x}, H) = H \cdot f_i^{(0)}(\mathbf{x}),
-\tag{5'}
+f_i(\mathbf{x}, H) = H \cdot f_i^{(0)}(\mathbf{x}), \qquad \text{(5')}
 $$
 
 and the same prefactor $H$ multiplies the value-coupling term in (2). As $H \to 0$, the effective fitness and the value coupling vanish, so the replicator drift and the Kuramoto dynamics freeze at the state reached at substrate collapse; without this coupling the dynamics would remain formally defined at $H = 0$, contradicting the physical meaning of collapse.
@@ -288,8 +279,7 @@ This is the standard open-set / positive-invariance notion of viability (Aubin, 
 In the parameter space $(\gamma, K, D_{\max}) \in \mathbb{R}^3_{\geq 0}$ — with the reservoir $S_{\max} > 0$ carried as a fixed transient-tolerance parameter, not a corridor coordinate — define the **viable corridor** $\mathcal{C}$ as the set of parameter triples admitting robust viability:
 
 $$
-\mathcal{C} = \left\lbrace(\gamma, K, D_{\max}) : (\gamma, K, D_{\max}, S_{\max}) \text{ admits robust viability as defined in Section 3.1}\right\rbrace.
-\tag{7}
+\mathcal{C} = \left\lbrace(\gamma, K, D_{\max}) : (\gamma, K, D_{\max}, S_{\max}) \text{ admits robust viability as defined in Section 3.1}\right\rbrace. \qquad \text{(7)}
 $$
 
 The choice of third coordinate follows the model's own substrate analysis (rate-form remark, §3.3): under *sustained* overshoot the veto is reached for **any** finite $S_{\max}$, and under the rate condition $\eta\bar\phi_0 \leq D_{\max}$ for **none** — so the long-time substrate coordinate is the ceiling $D_{\max}$ relative to throughput, and $S_{\max}$ governs only how long a transient excursion can be absorbed. The central necessity claim is that $\gamma > 0$, $K > K_c$, and the substrate condition $\Omega(t) < S_{\max}\ \forall t$ — whose long-time content is exactly the rate condition — are **necessary boundary conditions** on $\mathcal{C}$: $\mathcal{C}$ is contained in the region they define. Necessity is proved in Theorem 1. Sufficiency — which, as Conjecture 1 argues, requires the *strengthened* resource condition $\gamma > \gamma_c$ rather than merely $\gamma > 0$ — is open.
@@ -303,8 +293,7 @@ Before stating the theorem, we declare its epistemic role. Each lemma is an appl
 **Theorem 1 (Necessity of the three constraints).** *Consider the TEO system (Equations 1, 1', 2, 3, 4, 5, 5', 6) with the strict-dominance fitness assumption (1') applied to $f_i^{(0)}$, frequencies drawn i.i.d.\ from a symmetric unimodal density $g(\omega)$ with $g(0) > 0$, and the substrate coupling (5') and (2). A parameter configuration $(\gamma, K, D_{\max}, S_{\max})$ admits robust viability (§3.1) only if all three of the following hold:*
 
 $$
-\gamma > 0 \ \text{(finite-$N$, Lemma 1)}, \quad K > K_c \ \text{($N \to \infty$, Lemma 2)}, \quad \Omega(t) < S_{\max} \ \forall t \ \text{(finite-$N$, Lemma 3)}.
-\tag{8}
+\gamma > 0 \ \text{(finite-$N$, Lemma 1)}, \quad K > K_c \ \text{($N \to \infty$, Lemma 2)}, \quad \Omega(t) < S_{\max} \ \forall t \ \text{(finite-$N$, Lemma 3)}. \qquad \text{(8)}
 $$
 
 The proof is the conjunction of three lemmas, each establishing one failure mode under the negation of one condition. Because robust viability requires (V1), (V2), and (V3b) to hold simultaneously, the violation of any single condition suffices to rule it out.
@@ -358,8 +347,7 @@ $$
 A leading-order **boundary-balance estimate** makes the dependence explicit. Consider a trajectory at the failure boundary, $x_{i^\ast} = x_{\text{crit}}$, with the other shares below $x_{\text{reg}}$. The replicator drives the dominant share outward at rate $\dot{x}_{i^\ast}^{\text{drift}} \approx x_{\text{crit}}(1 - x_{\text{crit}})\,\delta$ (from the bound in Lemma 1), while the brake (4) pulls it inward at rate $\approx \gamma\,(x_{\text{crit}} - x_{\text{reg}})$ (the redistribution term contributes at $O(1/N)$ and is dropped). The vector field points inward — keeping the trajectory off the boundary — when the brake dominates, giving
 
 $$
-\gamma_c \;\approx\; \frac{x_{\text{crit}}\,(1 - x_{\text{crit}})\,\delta}{x_{\text{crit}} - x_{\text{reg}}}.
-\tag{9}
+\gamma_c \;\approx\; \frac{x_{\text{crit}}\,(1 - x_{\text{crit}})\,\delta}{x_{\text{crit}} - x_{\text{reg}}}. \qquad \text{(9)}
 $$
 
 [`[HEURISTIC]`]. Estimate (9) is a leading-order balance, not a proof of Conjecture 1: it ignores the redistribution back-reaction, finite-$N$ corrections, and the coupled $H$ dynamics. But it predicts the qualitative dependence — $\gamma_c$ grows with the dominance margin $\delta$ and shrinks as the regulatory gap $x_{\text{crit}} - x_{\text{reg}}$ widens — and Appendix C confirms it numerically: the in-corridor transition in $\max_i x_i$ crosses $x_{\text{crit}}$ at the $\gamma_c$ that (9) predicts (to within the sweep resolution).
