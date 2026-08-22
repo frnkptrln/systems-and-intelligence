@@ -1,8 +1,13 @@
 import json
 from collections import defaultdict
 from pathlib import Path
+import sys
 
 import pytest
+
+
+REPO = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO))
 
 from lab.experiments.active_identifiability.causal_witness import (
     best_cost_adjusted_intervention,
@@ -23,7 +28,7 @@ from lab.experiments.active_identifiability.study_design import (
 
 
 REFERENCE_PATH = (
-    Path(__file__).resolve().parents[1]
+    REPO
     / "lab"
     / "experiments"
     / "active_identifiability"
