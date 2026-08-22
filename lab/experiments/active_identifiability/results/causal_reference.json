@@ -1,0 +1,49 @@
+{
+  "cost_adjusted": {
+    "best_utility_bits": 0.19979896769893957,
+    "best_x": 2.5504190055558973,
+    "domain": [
+      0.0,
+      3.0
+    ],
+    "lambda": 0.05
+  },
+  "interventions": [
+    {
+      "expected_posterior_entropy_bits": 0.9603158676757726,
+      "information_gain_bits": 0.03968413232422744,
+      "x": 0.0
+    },
+    {
+      "expected_posterior_entropy_bits": 0.8599545967680714,
+      "information_gain_bits": 0.1400454032319286,
+      "x": 1.0
+    },
+    {
+      "expected_posterior_entropy_bits": 0.620038836162059,
+      "information_gain_bits": 0.379961163837941,
+      "x": 2.0
+    },
+    {
+      "expected_posterior_entropy_bits": 0.3661646211317078,
+      "information_gain_bits": 0.6338353788682922,
+      "x": 3.0
+    }
+  ],
+  "observational_covariance": [
+    [
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      2.0
+    ]
+  ],
+  "observationally_equivalent": true,
+  "posterior_examples_for_do_x_3": {
+    "y_0": 0.01546749164079088,
+    "y_3": 0.9306407359374401,
+    "y_minus_1": 0.0006087910904098035
+  }
+}

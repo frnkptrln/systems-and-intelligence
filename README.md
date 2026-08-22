@@ -104,6 +104,7 @@ More executable work:
 - [Referee Benchmark](lab/benchmarks/recursive-workbench/README.md) — when does a self-revising loop actually improve, exactly measured
 - [Situated-Stack Benchmark](lab/benchmarks/situated-stack/README.md) — one controller under changed sensors, actuators, bodies, environments, goals, and observer lenses
 - [Constraint-Release Benchmark](lab/benchmarks/constraint-release/README.md) — separates behavioral exposure from a lens-only score increase under a fixed seeded substrate
+- [Active Identifiability](lab/experiments/active_identifiability/README.md) — an exact causal witness plus an offline multi-readout study design; no model calls are authorized
 - [Agentic Identity Suite](lab/AGENTIC_README.md) — experimental tests for persistence, binding, and availability
 
 ## What lives where
