@@ -11,6 +11,7 @@
 - the-generator-question.md
 - invariance-and-identity.md
 - ../../lab/benchmarks/inverse-reconstruction/README.md
+- ../../lab/experiments/active_identifiability/README.md
 - ../ai/world-models-and-vla.md
 - ../identity/the-agent-is-not-where-the-model-ends.md
 - ../human-organism-silicon-age/the-city-as-deployed-intelligence.md
@@ -101,3 +102,13 @@ produces the same score increase and changes every task trace. The comparison
 operationalizes the distinction between behavioral exposure and lens
 reinterpretation developed in
 [Latent Competence and Constraint Release](../emergence/latent-competence-and-constraint-release.md).
+
+It also has a bounded model-readout test. The
+[Active Identifiability experiment](../../lab/experiments/active_identifiability/README.md)
+keeps an exact causal witness separate from an offline self-report protocol. The
+latter imports controls from the external
+[*Triage × Persona Measurement Audit*](https://github.com/frnkptrln/triage-persona-measurement-audit):
+neutral wording, paired option reversal, non-coercive parsing, and schema
+compatibility become experimental factors or gates. That audit shows that an
+interface can dominate what becomes observable; it does not identify a latent
+persona, and the follow-up does not treat logits as unmediated access to one.
