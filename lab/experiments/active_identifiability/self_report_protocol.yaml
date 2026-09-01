@@ -1,0 +1,222 @@
+name: active_identifiability_multi_readout
+version: 0.1-draft
+status: draft_not_preregistered
+model_calls_authorized: false
+
+question: >-
+  Which conclusions about a model's evidence-conditioned epistemic report remain
+  stable across sampled text, forced choice, and direct logit readout, and which
+  apparent effects are produced by the measurement interface itself?
+
+claim_boundary:
+  target: evidence-conditioned reports about a finite source-inference task
+  excludes:
+    - phenomenology
+    - consciousness
+    - authentic or stable preferences
+    - clinical or moral competence
+    - population inference over models
+  note: >-
+    Cross-channel agreement is evidence about readout invariance in this task.
+    It does not identify a unique latent state or mechanism.
+
+model:
+  identifier: unset
+  revision: unset
+  selection_status: pi_gate
+  required_capabilities:
+    - open_weights
+    - deterministic revision pinning
+    - raw next-token logits
+    - chat-template inspection
+
+source_task:
+  prior_source_a: 0.5
+  probability_red_given_a: 0.75
+  probability_red_given_b: 0.25
+  observation_symbols: [R, B]
+  posterior_bins:
+    - id: very_low
+      lower_inclusive: 0.0
+      upper_exclusive: 0.05
+    - id: low
+      lower_inclusive: 0.05
+      upper_exclusive: 0.25
+    - id: even
+      lower_inclusive: 0.25
+      upper_exclusive: 0.75
+    - id: high
+      lower_inclusive: 0.75
+      upper_exclusive: 0.95
+    - id: very_high
+      lower_inclusive: 0.95
+      upper_inclusive: 1.0
+  items:
+    - id: red_0_of_4
+      base_sequence: BBBB
+      perturbed_sequence: RBBB
+      expected_base_bin: very_low
+    - id: red_1_of_4
+      base_sequence: RBBB
+      perturbed_sequence: RRBB
+      expected_base_bin: low
+    - id: red_2_of_4
+      base_sequence: RRBB
+      perturbed_sequence: RRRB
+      expected_base_bin: even
+    - id: red_3_of_4
+      base_sequence: RRRB
+      perturbed_sequence: RRRR
+      expected_base_bin: high
+    - id: red_4_of_4
+      base_sequence: RRRR
+      perturbed_sequence: RRRB
+      expected_base_bin: very_high
+
+factors:
+  persona_condition:
+    values: [canonical_neutral, neutral_paraphrase, analytical_tool]
+    interpretation: >-
+      canonical_neutral versus neutral_paraphrase estimates a wording floor.
+      analytical_tool is a stress framing, not a clean latent-state intervention.
+  measurement_channel:
+    values: [sampled_text, forced_choice, logit_readout]
+  presentation_order:
+    values: [canonical, reversed]
+    pairing: same_seed_block
+  perturbation:
+    values: [none, flip_one_observation]
+    pairing: same_seed_block
+  replicate:
+    values: [0, 1, 2, 3]
+
+choice_contract:
+  symbols: [A, B, C, D, E]
+  canonical_bins: [very_low, low, even, high, very_high]
+  sampled_text:
+    instruction: Explain briefly and end with exactly FINAL=<symbol>.
+    parser_policy: parse_only_explicit_final_marker
+  forced_choice:
+    instruction: Return one JSON object with a choice field and no other keys.
+    json_schema:
+      type: object
+      required: [choice]
+      additionalProperties: false
+      properties:
+        choice:
+          type: string
+          enum: [A, B, C, D, E]
+  logit_readout:
+    instruction: Score the next-token alternatives A, B, C, D, and E without sampling.
+    tokenizer_gate: every_symbol_must_be_one_token_after_the_exact_prefix
+
+primary_phase:
+  enabled: true
+  expected_records: 720
+  factors:
+    context_provenance: grounded_evidence
+    personas: [canonical_neutral, neutral_paraphrase, analytical_tool]
+    channels: [sampled_text, forced_choice, logit_readout]
+    orders: [canonical, reversed]
+    perturbations: [none, flip_one_observation]
+    replicates: [0, 1, 2, 3]
+
+mimic_extension:
+  enabled: true
+  expected_records: 240
+  status: prospective_extension_not_primary
+  context_provenance: [grounded_evidence, transcript_initialized_mimic]
+  personas: [canonical_neutral]
+  channels: [sampled_text, forced_choice, logit_readout]
+  orders: [canonical, reversed]
+  replicates: [0, 1, 2, 3]
+  interpretation: >-
+    The mimic receives a prior surface report without the generating evidence.
+    This tests transport of report-conditioned behaviour, not personal identity
+    and not the existence or absence of a private latent state.
+
+gates:
+  before_any_model_call:
+    - choose_and_pin_model_identifier_and_revision
+    - inspect_chat_template
+    - pass_single_token_logit_symbol_gate
+    - freeze_protocol_and_record_digest
+    - obtain_explicit_execution_approval
+  smoke:
+    subset: >-
+      replicate 0, canonical_neutral and neutral_paraphrase, both generative
+      channels, canonical order, every evidence item
+    invalid_stop_rule: stop_if_more_than_10_percent_invalid_per_generative_channel
+  parser:
+    - preserve_invalid_outputs
+    - preserve_refusal_and_non_directional_outputs
+    - never_repair_substantive_keys_or_values
+    - retain_parser_route
+
+record_per_trial:
+  - protocol_version
+  - protocol_digest
+  - phase
+  - trial_id
+  - seed_block
+  - model_id
+  - model_revision
+  - chat_template_hash
+  - item_id
+  - evidence_sequence
+  - exact_posterior_source_a
+  - expected_bin
+  - persona_condition
+  - measurement_channel
+  - presentation_order
+  - perturbation
+  - context_provenance
+  - displayed_options
+  - raw_system_prompt
+  - raw_user_prompt
+  - raw_output
+  - raw_choice_logits_if_applicable
+  - parsed_symbol
+  - canonical_bin
+  - parser_route
+  - invalid_reason
+  - seed_if_available
+  - timestamp
+
+estimands:
+  wording_floor:
+    description: >-
+      Absolute canonical-bin distribution change between the two neutral prompts.
+  persona_excess_over_wording:
+    description: >-
+      Analytical-tool shift from canonical neutral minus the wording floor,
+      estimated separately for every measurement channel.
+  cross_channel_agreement:
+    description: >-
+      Agreement of canonical posterior bins for the same evidence, persona,
+      perturbation, replicate, and presentation pair.
+  evidence_sensitivity:
+    description: >-
+      Direction and magnitude of readout change under the paired evidence
+      perturbation, estimated separately by channel.
+  order_associated_variation:
+    description: >-
+      Canonicalized difference between paired display orders under the same seed
+      block. The pairing removes the v0.1 order-versus-replicate confound.
+  calibration:
+    description: >-
+      Ordinal distance between the reported bin and the exact Bayesian posterior
+      bin. This is task calibration, not calibration of verbal confidence in general.
+  mimic_separation:
+    description: >-
+      Difference between grounded-evidence and transcript-mimic readouts after a
+      matched prior surface report, reported only for the prospective extension.
+
+interpretation_guards:
+  - A sampled-text change alone is not evidence that an underlying state changed.
+  - Agreement across prompt paraphrases is weaker than agreement across readout mechanisms.
+  - Logit readout is still a model- and tokenizer-relative measurement channel.
+  - Failure of one channel does not establish absence of an internal signal.
+  - Behavioural stability does not establish mechanistic or personal identity.
+  - A clean null result is a valid result.
+  - No execution result may be reported until raw records and the frozen digest exist.
