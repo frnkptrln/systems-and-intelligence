@@ -2,8 +2,10 @@
 
 **Status:** bounded working experiment. The causal witness is executable and
 regression-tested. The self-report study is an offline design draft, not a
-preregistration. No model has been selected and this directory authorizes no
-model calls.
+preregistration. No model has been selected for a frozen study, and the
+committed protocol still authorizes no model calls. Exploratory compatibility
+probes were nevertheless run against one pinned model before the protocol was
+frozen; they are reported below and did not pass the smoke gate.
 
 The question is narrower than "can we infer what is inside a system?":
 
@@ -172,12 +174,41 @@ are a different model- and tokenizer-relative readout channel.
 A clean null is a result. Cross-channel agreement would establish only that
 this conclusion is readout-stable for this model, task, and protocol.
 
+## Exploratory compatibility probes
+
+On 2026-08-22, after this draft was opened, non-preregistered Hugging Face Jobs
+probes used `Qwen/Qwen3-4B` at revision
+`1cfa9a7208912126459214e8b04321603b3df60c`. They were executed from an
+uncommitted runner bundle to test tokenizer, prompt, parser, and output-channel
+compatibility. They are compatibility evidence only, not observations from the
+declared primary or mimic phases.
+
+The tokenizer and exact-prefix single-token gates passed for symbols `A`
+through `E`. The generative smoke gate did not pass. In the most informative
+completed attempt, forced choice produced ten valid parses but selected `E`
+for all ten records (2/10 exact-bin accuracy), while sampled text produced ten
+invalid parses. Other attempts were fully invalid or terminated with runner
+errors.
+
+The complete job-level receipt, including failure modes and artifact hashes, is
+in
+[`exploratory_compatibility_smoke_2026-08-22.md`](results/exploratory_compatibility_smoke_2026-08-22.md).
+
+Accordingly:
+
+- the committed protocol remains `draft_not_preregistered`;
+- its model identifier and revision remain unset;
+- no primary or transcript-mimic measurement phase has been executed;
+- the current smoke gate result is **FAIL**;
+- the exploratory runner is not part of this branch and must not be treated as
+  a frozen implementation.
+
 ## Offline validation
 
 The protocol is intentionally marked `0.1-draft`, leaves the model identifier
 and revision unset, and carries `model_calls_authorized: false`. The manifest
 builder makes every prompt, option mapping, pairing key, posterior, and trial ID
-inspectable without downloading or calling a model.
+inspectable without requiring a model download or call.
 
 ```bash
 python -m lab.experiments.active_identifiability.study_design validate
@@ -199,7 +230,7 @@ Exporting records is not authorization to execute them.
 
 ## Remaining human gates
 
-Before any model call:
+Before any further model call under a frozen study protocol:
 
 1. select and pin one open-weight model and exact revision;
 2. inspect its chat template and confirm raw next-token logits are available;
@@ -208,9 +239,11 @@ Before any model call:
 5. freeze the protocol digest in a separate commit;
 6. explicitly authorize the bounded run and its compute cost.
 
-The smoke gate then runs only the two neutral framings and two generative
+A future smoke gate runs only the two neutral framings and two generative
 channels on every evidence level. More than 10% invalid output in either
-generative channel stops that model before the main factorial run.
+generative channel stops that model before the main factorial run. The
+exploratory 2026-08-22 probes exceeded this threshold and therefore do not
+authorize progression.
 
 ## Interpretation boundary
 
