@@ -41,7 +41,7 @@ Under an invertible re-encoding the received trace is exactly the trace of anoth
 
 No direction is predicted for the mean search cost under lossy encodings; it is reported.
 
-**Disclosure.** A smoke run of the declared CI subgrid (1 seed, every eighth rule, both initial conditions, noise 0 and 0.1) was made on 2026-09-02 while the code was being written, before this README was committed. It showed P1 holding in every run of the subgrid, a nonzero size shift under `complement` and none under `reflect`, and contradictions under the lossy encodings. The predictions above are therefore not blind as to direction; the full-grid numbers were not inspected. The smoke record is `results/smoke-2026-09-02.md`.
+**Disclosure.** A smoke run of the declared CI subgrid (1 seed, every eighth rule, both initial conditions, noise 0 and 0.1) was made on 2026-09-02 while the code was being written, before this README was committed. It showed P1 holding in every run of the subgrid, a nonzero size shift under `complement` and none under `reflect`, and contradictions under the lossy encodings. The predictions above are therefore not blind as to direction; the full-grid numbers were not inspected. The smoke record is `results/smoke-2026-09-02.md`. *(Correction, added with the results commit on 2026-09-02: the smoke run covered all 256 rules of one seed at all three noise levels, as the smoke record states, not only the CI subgrid; the sentence above is left as declared.)*
 
 ## Failure condition
 
