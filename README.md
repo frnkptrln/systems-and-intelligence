@@ -117,10 +117,10 @@ More executable work:
 | [`theory/`](theory/README.md) | Formal and semi-formal arguments, maps, and reference material |
 | [`lab/`](lab/README.md) | Benchmarks, metrics, reusable tools, and experimental infrastructure |
 | [`simulation-models/`](theory/core/simulation-theory-map.md) | Executable toy systems grouped by research theme |
-| [`papers/`](papers/viable-corridor.md) | Tighter working drafts intended for external criticism |
-| [`book/`](book/09_from_rule_to_mind.md) | A longer, evolving reading path |
+| [`papers/`](papers/viable-corridor.md) | One frozen v1.0 submission draft awaiting external review; one archived early synthesis |
+| [`book/`](book/09_from_rule_to_mind.md) | Ten short chapters; chapter 09 is the site's compact linear route, the earlier ones are kept as a record |
 | [`fiction/`](fiction/README.md) and [`logs/`](logs/README.md) | Narrative stress tests and applied architecture notes, not evidence |
-| [`meta/`](meta/README.md) | Project architecture, epistemic rules, registries, and open problems |
+| [`meta/`](meta/README.md) | Project architecture, epistemic rules, the claim registers, and the research-alignment map |
 
 The site publishes a curated subset of the repository with its own navigation; [What Stays in the Repository](docs/repository-map.md) lists the full inventory. The repository's [information architecture](meta/repository-meta/repository-information-architecture.md) explains how new material moves between these layers.
 

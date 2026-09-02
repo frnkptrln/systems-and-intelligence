@@ -32,6 +32,7 @@ Repository Meta is a maintainer decision; the table below labels it by directory
 | `repository-meta/identification-claims.md` | Repository Meta | Claim register for the model-identification arc, proposed 2026-09-02. |
 | `research-alignment/related-work-map.md` | Research Alignment (directory) | Concept-to-literature matrix with support/challenge, weakening conditions, and next tests. |
 | `research-alignment/leads/README.md` | Research Alignment (directory) | The lane for externally sourced leads: one file per month, append-only, never writes outside itself. |
+| `research-alignment/leads/2026-09.md` | Research Alignment (directory) | Month file of the leads lane, append-only; further month files follow the same pattern and are exempt from the corpus counts. |
 | `research-alignment/lead-intake-task.md` | Research Alignment (directory) | Instruction text for a scheduled paper-watch run; nothing scheduled as of 2026-09-02. |
 
 If a future file does not clearly fit one lane, add a one-line "Lane:" declaration at the top of that file.
@@ -78,7 +79,7 @@ Lightweight conventions for placing and labeling speculative fiction/theory so n
 
 A practical anti-pattern and review ritual guide for authenticity/care optimization systems.
 
-### [Canonical Path v2](repository-meta/canonical-path-v2.md)
+### [Canonical Path v2.1](repository-meta/canonical-path-v2.md)
 
 Working Note — foundation migrated, terminology migration ongoing. The present canonical path: foundation, then the two research arcs, then the Viability Arc station by station.
 

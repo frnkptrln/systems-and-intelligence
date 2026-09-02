@@ -158,7 +158,7 @@ The honest frontier — what the arc has *not* closed.
 - Validating P7/P8 on **real** AI-agent systems (the Appendix D evidence is synthetic). Companion paper.
 - Genuine overshoot-collapse dynamics (delays, endogenous $D_{\max}(t)$) vs. the current rate-threshold self-arrest. Paper §6.4.
 - Whether the Viable Corridor should remain in this repo or become a spin-off. (Governance open problem.)
-- See also [`theory/reference/open-problems.md`](../../theory/reference/open-problems.md) for the project-wide list (Mirror Problem, Co-Instantiation, Trace-to-Generator reconstruction).
+- See also [`theory/reference/open-problems.md`](../../theory/reference/open-problems.md) for the project-wide list (Mirror Problem, Commit-Time Composition (Problem 8), Trace-to-Generator reconstruction).
 
 ---
 

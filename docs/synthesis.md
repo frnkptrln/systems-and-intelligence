@@ -180,7 +180,7 @@ The repository deliberately mixes simulations, formal arguments, working hypothe
 1. [Foundations Reconstruction](../theory/core/mathematical-axioms.md) — primitives, axioms, dependencies, counterexamples, and neighboring theories.
 2. [Inverse-Reconstruction Benchmark](../lab/benchmarks/inverse-reconstruction/README.md) — the measured core, including failed predictions and scope limits.
 3. [The Generator Question](../theory/core/the-generator-question.md) — the active organizing question and an auditable record of its superseded universal formulation.
-4. [Canonical Path v2](../meta/repository-meta/canonical-path-v2.md) — the Viability Arc and current migration map.
+4. [Canonical Path v2.1](../meta/repository-meta/canonical-path-v2.md) — the Viability Arc and current migration map.
 5. [The Viable Corridor](../papers/viable-corridor.md) — necessity result, sufficiency conjecture, synthetic evidence, and limitations.
 6. [Core Claims](../meta/repository-meta/core-claims.md) — the maintained small claim set for the viability arc and identity branch.
 7. [Identification Claims](../meta/repository-meta/identification-claims.md) — the register for the model-identification arc: four claims and one candidate, each with artifacts by evidential kind and a failure condition.

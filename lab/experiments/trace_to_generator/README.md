@@ -7,6 +7,7 @@ Related files:
 - theory/emergence/trace-to-generator.md
 - theory/ai/llms-as-probabilistic-automata.md
 - theory/core/simulation-theory-map.md
+- lab/experiments/trace_to_generator/ifs_inverse_note.md (Inverse IFS Note, Working Note)
 Failure conditions:
 - Treating prompt search success as proof of unique generator recovery.
 - Ignoring runtime and evaluator bias.

@@ -26,7 +26,7 @@ From that root, the repository asks two different questions.
 | **Epistemic Loop** | Can a system construct and revise a useful world-model? | Trace → Candidate Model → Construction → World-Coupling → Intervention → Revision → Self-Binding | selected phases measured in toy systems; composition into one loop hypothesized; experience out of scope |
 | **Viability Arc** | Can a system remain viable and correctable while optimizing? | Emergence → Optimization → Constraint Architecture → Survivability | conditional model results + synthetic ODE/ABM evidence; sufficiency and external applicability open |
 
-The [Epistemic Loop](from-trace-to-world-binding.md) and [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md) are navigation folds, not additional theories. They touch at world-coupling: better contact with reality improves capability, but does not supply values or safety constraints.
+The [Epistemic Loop](from-trace-to-world-binding.md) and [Canonical Path v2.1](../../meta/repository-meta/canonical-path-v2.md) are navigation folds, not additional theories. They touch at world-coupling: better contact with reality improves capability, but does not supply values or safety constraints.
 
 ---
 
@@ -98,7 +98,7 @@ The maintained problem statements live in [Open Problems](../reference/open-prob
 7. [The Agent Is Not Where the Model Ends](../identity/the-agent-is-not-where-the-model-ends.md)
 8. [Competence, Constraint, and Verification](competence-constraint-and-verification.md)
 9. [Constraint-Release Benchmark](../../lab/benchmarks/constraint-release/README.md)
-10. [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md)
+10. [Canonical Path v2.1](../../meta/repository-meta/canonical-path-v2.md)
 11. [The Viable Corridor](../../papers/viable-corridor.md)
 
 The repository is a research notebook: theory proposes, code constrains, fiction stress-tests consequences, and meta-governance keeps the claim surface below the evidence.

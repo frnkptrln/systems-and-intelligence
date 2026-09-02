@@ -8,15 +8,15 @@
 
 | Path | What it holds |
 |:---|:---|
-| `benchmarks/` | The benchmark suites, each with a README that is its result page: [inverse-reconstruction](benchmarks/inverse-reconstruction/README.md) (v0–v1.13), [witness-generation](benchmarks/witness-generation/README.md), [situated-stack](benchmarks/situated-stack/README.md), [constraint-release](benchmarks/constraint-release/README.md), [recursive-workbench](benchmarks/recursive-workbench/README.md) (the referee benchmark), [learned-searcher](benchmarks/learned-searcher/README.md) (protocol frozen, not run), [cognitive-stress-tests](benchmarks/cognitive-stress-tests/README.md), and [teo-framework](benchmarks/teo-framework/README.md) with `minimal_teo_benchmark.py`. |
-| `experiments/` | Bounded experiments: the Agentic Identity Suite scripts `exp1`–`exp8` and `mirror_problem.py` (index in [`AGENTIC_README.md`](AGENTIC_README.md)), [active_identifiability](experiments/active_identifiability/README.md), [context-attractor](experiments/context-attractor/README.md), [identity_abduction](experiments/identity_abduction/README.md), [trace_to_generator](experiments/trace_to_generator/README.md), [trace_to_generator_small](experiments/trace_to_generator_small/README.md). |
+| `benchmarks/` | The benchmark suites, each with a README that is its result page: [inverse-reconstruction](benchmarks/inverse-reconstruction/README.md) (v0–v1.13), [witness-generation](benchmarks/witness-generation/README.md), [situated-stack](benchmarks/situated-stack/README.md), [constraint-release](benchmarks/constraint-release/README.md), [recursive-workbench](benchmarks/recursive-workbench/README.md) (the referee benchmark), [learned-searcher](benchmarks/learned-searcher/README.md) (protocol frozen, not run), [cognitive-stress-tests](benchmarks/cognitive-stress-tests/README.md), [teo-framework](benchmarks/teo-framework/README.md) (a superseded early stub, kept as history), and the top-level script `minimal_teo_benchmark.py`, which compares a naive maximizer with the constrained agent from `core/minimal_agent.py`. |
+| `experiments/` | Bounded experiments: the Agentic Identity Suite scripts `exp1`–`exp3` and `exp5`–`exp8` (indexed in [`AGENTIC_README.md`](AGENTIC_README.md)), plus `exp4_coupling_phase_transition.py` and `mirror_problem.py`, which that index lists only briefly, [active_identifiability](experiments/active_identifiability/README.md), [context-attractor](experiments/context-attractor/README.md), [identity_abduction](experiments/identity_abduction/README.md), [trace_to_generator](experiments/trace_to_generator/README.md), [trace_to_generator_small](experiments/trace_to_generator_small/README.md). `config.yaml` holds the Agentic Identity Suite and provider configuration. |
 | `metrics/` | Identity Persistence, Δ-Kohärenz, persistence scores, embedding distance, observer attribution. |
 | `tools/` | The validators and build tools CI runs (`validate_links.py`, `validate_nav.py`, `validate_math.py`, `validate_katex.js`, `audit_repository_freshness.py`, `build_paper_pdf.py`, `mkdocs_repo_links.py`), the benchmark and paper figures, the web explorer, and helper scripts; see [`tools/README.md`](tools/README.md). |
 | `providers/` | Provider adapters (Anthropic, mock) behind one factory; see [`providers/README.md`](providers/README.md). |
 | `agents/` | The baseline mirror agent, the three-layer agent, and the manager that translates model output into the orchestration variables. |
 | `core/`, `orchestration/` | The multi-paradigm orchestration package described below. |
 | `data-analysis/`, `dashboard/`, `data/` | Emergence analysis and information measures ([`data-analysis/README.md`](data-analysis/README.md)), the SII dashboards, and session data. |
-| `config.yaml`, `live_demo.py`, `paradigm_wars.py` | Configuration and demonstration entry points for the orchestration package. |
+| `live_demo.py`, `paradigm_wars.py` | Demonstration entry points for the orchestration package. |
 
 Tests live at the repository root in `tests/`. They pin the benchmark headlines, the corridor paper's appendix values, the held-out == ceiling invariant of the referee benchmark, and the validators themselves; CI runs `pytest tests/` together with the validators in `tools/` on every push. New results go to new files; a pinned number does not change.
 
@@ -24,7 +24,7 @@ Tests live at the repository root in `tests/`. They pin the benchmark headlines,
 
 *An architecture for routing and combining LLM nodes using Physics, Biology, Economics, and Music.*
 
-Rather than viewing LLM agents as isolated chat interfaces or sequential tool-chain links, this package orchestrates them as components of a dynamic, multi-paradigm system. Based directly on the `"Systems & Intelligence" Architect Prompt`, the architecture mathematically routes compute and handles consensus via four paradigms:
+Rather than viewing LLM agents as isolated chat interfaces or sequential tool-chain links, this package orchestrates them as components of a dynamic, multi-paradigm system. The architecture routes compute and handles consensus via four paradigms:
 
 1. **Harmonic (Music):** Agents are oscillators. The system calculates the pairwise cosine similarity of their hidden utility vectors (Interaction Matrix $\mathbf{M}$) and runs eigenvalue analysis to find the "dominant melody." Used for consensus and brainstorming.
 2. **Homeostatic (Biology):** Agents are cells. The system audits their Von Neumann-Morgenstern (VNM) Transitivity. If Coherence $C$ drops, restorative feedback enforces stability.

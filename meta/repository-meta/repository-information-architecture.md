@@ -54,7 +54,7 @@ Characteristics:
 - rules in [`leads/README.md`](../research-alignment/leads/README.md); added 2026-09-02
 
 ### A. `book/` → Curated narrative
-Use this for the **reader-first canonical path**.  
+Use this for the **linear reading path**. The site publishes only `book/09`; the new-reader entrance is `docs/synthesis.md`.  
 Characteristics:
 - pedagogical ordering
 - lower branching, higher coherence
@@ -156,7 +156,7 @@ These files assert or compress claims about reality and therefore need clearer e
 *Situated-competence extension* (entry added 2026-09-02; placement proposed)
 
 - `theory/core/competence-constraint-and-verification.md` — named in the README as the extension's
-  central synthesis; the README says the extension adds no new primitive and is not a third arc
+  central synthesis; the README says the extension does not replace the model-identification question or add a new primitive, and this document places it beside the arcs rather than as a third one
 
 *Maps, reference, and packaging*
 
@@ -189,7 +189,7 @@ Recommended conceptual architecture:
 | Seeds | `ideas/` | Atomic notes before classification, clustering, or synthesis |
 | Core claims | `theory/` (sub-dirs: `ai/`, `computation/`, `core/`, `emergence/`, `human-organism-silicon-age/`, `identity/`, `narrative/`, `optimization/`, `reference/`, `symbiotic/`, `teo-framework/`, `veto/`), `papers/`, `book/` | Synthesis layer and publication packaging |
 | Models | `simulation-models/`, `lab/core/`, `lab/orchestration/` | Executable demonstrations and reusable primitives |
-| Lab | `logs/`, `fiction/`, `lab/benchmarks/`, `lab/experiments/`, `lab/tools/`, `lab/data-analysis/` | Experiments, stress tests, applied designs, narrative probes |
+| Lab | `logs/`, `fiction/`, `lab/benchmarks/`, `lab/experiments/`, `lab/tools/`, `lab/data-analysis/`, `lab/metrics/`, `lab/providers/`, `lab/agents/`, `lab/dashboard/`, `lab/data/` | Experiments, stress tests, applied designs, narrative probes |
 | Meta | `meta/` | Information architecture, epistemic notes, maintenance rules |
 
 The architecture should optimize for navigability, not taxonomy purity.
@@ -233,7 +233,7 @@ as next, as of 2026-09-02:
 
 | Arc | This section (pre-audit) | What `open-problems.md` names as next |
 |:---|:---|:---|
-| Viability arc | Human Vital Systems Control Plane Simulation | `open-problems.md` does not label its problems by arc and names no corridor or control-plane item as next. The arc's own open list is [Canonical Path v2 §9](canonical-path-v2.md#9-open-problems): proving sufficiency and deriving the critical coupling; operationalizing the effective parameters for real systems; a finite-size coherence result; validating P7/P8 on real agent systems; overshoot–collapse dynamics; and whether the corridor stays in this repository. The paper's post-v1.0 checklist and the "What's next" list in [`docs/index.md`](../../docs/index.md) overlap with these on rigorous sufficiency and a real-agent P7/P8 test; the checklist otherwise lists submission mechanics and external-review reads, and the index list adds external review and two identification-arc items. |
+| Viability arc | Human Vital Systems Control Plane Simulation | `open-problems.md` does not label its problems by arc and names no corridor or control-plane item as next. The arc's own open list is [Canonical Path v2.1 §9](canonical-path-v2.md#9-open-problems): proving sufficiency and deriving the critical coupling; operationalizing the effective parameters for real systems; a finite-size coherence result; validating P7/P8 on real agent systems; overshoot–collapse dynamics; and whether the corridor stays in this repository. The paper's post-v1.0 checklist and the "What's next" list in [`docs/index.md`](../../docs/index.md) overlap with these on rigorous sufficiency and a real-agent P7/P8 test; the checklist otherwise lists submission mechanics and external-review reads, and the index list adds external review and two identification-arc items. |
 | Identity branch | — | Selected: Problem 1: a preregistered longitudinal experiment with an interaction-shaped agent, a transcript-initialized control, and an optimized mimic. Problem 3: a preregistered experiment with relational history as the independent variable. Problem 8: an optimized mimic against the full measurement suite, then held-out constraints and lures. Problem 10: replicate the three-way comparison on real models with matched capabilities. Problem 7: a constructive architecture plus a preregistered perturbation suite with a trace-matched control. |
 | Model-identification arc | — | Problem 11's open remainder (five of eight items): learned searchers and program synthesizers under matched budgets, the IFS testbed, external SINDy/PySR baselines, re-simulation divergence, and a within-group cost gradient for the v1.13 pool arm. Problem 14: the frozen [Learned-Searcher](../../lab/benchmarks/learned-searcher/README.md) protocol, execution target deliberately unregistered. Adjacent, arc placement not decided: Problem 15, vary the referee properties independently against stronger proposers; Problem 18, compare exact replay, predictive, policy-preserving, bisimulation, and adaptively refined equivalences under matched budgets. |
 

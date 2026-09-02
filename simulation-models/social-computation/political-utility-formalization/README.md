@@ -13,7 +13,7 @@ This module formalizes political theory using the language of **AI Alignment and
 3. **`triage_utility.py`**: A visualization of the "Taboo Calculus." How a state optimizes its hidden utility function under crisis (The Mathematics of Sacrifice), exposing the cold trade-offs between economic growth and vulnerable lives.
 
 ## The Symmetry
-If you understand why it is difficult to build an AI that doesn't eventually manipulate its users to protect its servers (Reward Hacking/Instrumental Convergence), you understand why democratic representation inevitably decays into populism and bureaucratic self-preservation. **The underlying mathematical constraints are identical.** (See: [*The Fractal Architecture of Emergence*](../../../theory/emergence/fractal-architecture-of-emergence.md)).
+If you understand why it is difficult to build an AI that doesn't eventually manipulate its users to protect its servers (Reward Hacking/Instrumental Convergence), you understand why democratic representation inevitably decays into populism and bureaucratic self-preservation. They share a proxy-versus-target pattern in this model. *(Corrected 2026-09-02: the sentence had read "The underlying mathematical constraints are identical", which the simulation-theory map's "does NOT show" entry contradicts.)* (See: [*The Fractal Architecture of Emergence*](../../../theory/emergence/fractal-architecture-of-emergence.md)).
 
 ## Running the Simulations
 ```bash
