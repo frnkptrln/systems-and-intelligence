@@ -25,6 +25,9 @@ Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title kee
 
 ## Notes
 
+- [Polycontextural Observation Needs Translation Rules](2026-08-22-polycontextural-observation-needs-translation-rules.md) — treats incompatible but locally valid observer descriptions as a translation problem without adopting a metaphysics or claiming a formal implementation
+- [Experience Needs an Invalidation Boundary](2026-08-22-experience-needs-an-invalidation-boundary.md) — asks when accumulated traces become revisable experience rather than a durable error attractor
+- [Mechanistic Discovery Needs Methodological Separation](2026-08-22-mechanistic-discovery-needs-methodological-separation.md) — asks which information, write, and veto boundaries keep an automated discovery loop from validating its own preferred explanation
 - [Extended Competence May Be Constructed at Runtime](2026-08-12-extended-competence-may-be-constructed-at-runtime.md) — asks whether long-horizon competence belongs to a fixed local policy or is constructed by model-external state, verification, and recovery
 - [Persistence Can Narrow the Search Space](2026-08-11-persistence-can-narrow-search-space.md) — asks whether accumulated research memory improves local usefulness while pulling exploration toward existing conceptual attractors
 - [A Research Loop Can Become Its Own Environment](2026-08-10-research-loop-becomes-environment.md) — asks how cumulative research can preserve continuity without treating internal recurrence as new evidence
