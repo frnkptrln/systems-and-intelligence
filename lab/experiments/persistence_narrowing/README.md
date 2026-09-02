@@ -60,6 +60,24 @@ python -m pytest tests/test_persistence_narrowing.py -q
 
 The first command writes `results/persistence_narrowing.json` (the full grid) and `results/ci_subgrid.json` (1 seed, 2 rows). The test reproduces the `none` condition against the referee benchmark, checks P1 in every condition, and recomputes the CI subgrid against the committed file. Standard library only; a few minutes on one CPU for the full grid.
 
-## Results
+## Results (full grid, run 2026-09-02)
 
-Not yet run on the full grid at the time this README was committed. The results summary is added in the commit that adds the result files.
+`results/persistence_narrowing.json`: 24,576 runs, 13 s on one CPU. Means over 4,096 runs per cell.
+
+| Family | Condition | Observed | Held-out | Distinct proposals | Distinct accepted | Pull | Recalls | Invalidated |
+|:---|:---|---:|---:|---:|---:|---:|---:|---:|
+| full | none | 1.0000 | 0.8594 | 35.81 | 12.00 | 1.534 | 0.0 | 0.0 |
+| full | memory | 1.0000 | 0.8594 | 42.01 | 11.19 | 1.446 | 63.3 | 0.0 |
+| full | invalidation | 1.0000 | 0.8594 | 42.32 | 11.04 | 1.337 | 31.9 | 15.6 |
+| affine | none | 0.7936 | 0.7061 | 6.71 | 2.88 | 0.242 | 0.0 | 0.0 |
+| affine | memory | 0.8665 | 0.7561 | 12.32 | 3.92 | 0.177 | 66.4 | 0.0 |
+| affine | invalidation | 0.8661 | 0.7562 | 12.18 | 3.84 | 0.173 | 28.5 | 15.6 |
+
+Against the declared predictions:
+
+- **P1 holds.** `heldout_equals_ceiling_identity` is true in all three conditions; mean held-out equals mean ceiling (0.8594) in every condition of the `full` family. The memory is target-independent, and held-out cannot move there.
+- **P2 fails on the diversity measures and holds on pull.** Distinct proposals *rise* under `memory` in both families: a remembered artifact fitted to another world is usually a table the one-bit walk would not have proposed. Distinct accepted falls in the `full` family (12.00 → 11.19) but rises in the `affine` family (2.88 → 3.92), so the failure condition for P2 is met and P2 is false in this setting. Pull falls in both families: the final artifact ends closer to a remembered one.
+- **P3 holds.** In the `affine` family, observed rises from 0.7936 to 0.8665 under `memory`, and held-out rises with it from 0.7061 to 0.7561.
+- **P4 fails on "between".** Invalidation discards 15.6 remembered artifacts per run (of 16), so the memory is nearly emptied within the budget and the run continues as flips. Its measures do not lie between `none` and `memory`: distinct accepted and pull move slightly further from `none` than `memory` does, while the observed gain of P3 is kept in full (0.8661). Revocation of artifacts that fail visible tests gives nothing back here, because in this toy the memory took no diversity away.
+
+What this shows, and no more: under a frozen referee, a target-independent memory of earlier accepted artifacts widens the proposal set, pulls the endpoint toward remembered artifacts, and in the constrained family raises both the visible score and the hidden-rule agreement. "Narrowing" in the sense of the persistence note, if it exists, is not what counting distinct artifacts measures in this setting. A memory built from the *same* world would model the note's situation more closely, and would break the identity by construction; that is the boundary this experiment did not cross.
