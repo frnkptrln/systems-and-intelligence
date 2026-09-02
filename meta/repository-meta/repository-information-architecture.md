@@ -54,7 +54,7 @@ Characteristics:
 - rules in [`leads/README.md`](../research-alignment/leads/README.md); added 2026-09-02
 
 ### A. `book/` → Curated narrative
-Use this for the **reader-first canonical path**.  
+Use this for the **linear reading path**. The site publishes only `book/09`; the new-reader entrance is `docs/synthesis.md`.  
 Characteristics:
 - pedagogical ordering
 - lower branching, higher coherence
@@ -67,7 +67,7 @@ Characteristics:
 - may be longer and denser than book chapters
 - should clearly mark epistemic status (demonstrated / hypothesized / open / speculative)
 
-### C. `papers/` (and mirrored `docs/papers/`) → Publication packaging
+### C. `papers/` → Publication packaging (`docs/papers` is a symlink to it for site rendering)
 Use this for concise, citation-ready syntheses of a bounded scope.  
 Characteristics:
 - tighter than theory essays
@@ -156,14 +156,14 @@ These files assert or compress claims about reality and therefore need clearer e
 *Situated-competence extension* (entry added 2026-09-02; placement proposed)
 
 - `theory/core/competence-constraint-and-verification.md` — named in the README as the extension's
-  central synthesis; the README says the extension adds no new primitive and is not a third arc
+  central synthesis; the README says the extension does not replace the model-identification question or add a new primitive, and this document places it beside the arcs rather than as a third one
 
 *Maps, reference, and packaging*
 
 - `theory/core/simulation-theory-map.md`
 - `theory/reference/open-problems.md`
 - `book/`
-- `papers/` and `docs/papers/`
+- `papers/` (the site reaches it through the `docs/papers` symlink)
 
 TEO, the veto documents, and the minimal thermodynamic agent are the synthesis layer of the
 viability arc; they are not the whole synthesis layer. As of 2026-09-02 the identification arc's
@@ -187,9 +187,9 @@ Recommended conceptual architecture:
 |:---|:---|:---|
 | Entry point | `README.md`, `docs/index.md` | Short orientation and one reading path |
 | Seeds | `ideas/` | Atomic notes before classification, clustering, or synthesis |
-| Core claims | `theory/` (sub-dirs: `core/`, `veto/`, `emergence/`, `identity/`, `symbiotic/`, `narrative/`, `reference/`, `teo-framework/`, `human-organism-silicon-age/`), `papers/`, `book/` | Synthesis layer and publication packaging |
+| Core claims | `theory/` (sub-dirs: `ai/`, `computation/`, `core/`, `emergence/`, `human-organism-silicon-age/`, `identity/`, `narrative/`, `optimization/`, `reference/`, `symbiotic/`, `teo-framework/`, `veto/`), `papers/`, `book/` | Synthesis layer and publication packaging |
 | Models | `simulation-models/`, `lab/core/`, `lab/orchestration/` | Executable demonstrations and reusable primitives |
-| Lab | `logs/`, `fiction/`, `lab/benchmarks/`, `lab/experiments/`, `lab/tools/`, `lab/data-analysis/` | Experiments, stress tests, applied designs, narrative probes |
+| Lab | `logs/`, `fiction/`, `lab/benchmarks/`, `lab/experiments/`, `lab/tools/`, `lab/data-analysis/`, `lab/metrics/`, `lab/providers/`, `lab/agents/`, `lab/dashboard/`, `lab/data/` | Experiments, stress tests, applied designs, narrative probes |
 | Meta | `meta/` | Information architecture, epistemic notes, maintenance rules |
 
 The architecture should optimize for navigability, not taxonomy purity.
@@ -233,7 +233,7 @@ as next, as of 2026-09-02:
 
 | Arc | This section (pre-audit) | What `open-problems.md` names as next |
 |:---|:---|:---|
-| Viability arc | Human Vital Systems Control Plane Simulation | `open-problems.md` does not label its problems by arc and names no corridor or control-plane item as next. The arc's own open list is [Canonical Path v2 §9](canonical-path-v2.md#9-open-problems): proving sufficiency and deriving the critical coupling; operationalizing the effective parameters for real systems; a finite-size coherence result; validating P7/P8 on real agent systems; overshoot–collapse dynamics; and whether the corridor stays in this repository. The paper's post-v1.0 checklist and the "What's next" list in [`docs/index.md`](../../docs/index.md) overlap with these on rigorous sufficiency and a real-agent P7/P8 test; the checklist otherwise lists submission mechanics and external-review reads, and the index list adds external review and two identification-arc items. |
+| Viability arc | Human Vital Systems Control Plane Simulation | `open-problems.md` does not label its problems by arc and names no corridor or control-plane item as next. The arc's own open list is [Canonical Path v2.1 §9](canonical-path-v2.md#9-open-problems): proving sufficiency and deriving the critical coupling; operationalizing the effective parameters for real systems; a finite-size coherence result; validating P7/P8 on real agent systems; overshoot–collapse dynamics; and whether the corridor stays in this repository. The paper's post-v1.0 checklist and the "What's next" list in [`docs/index.md`](../../docs/index.md) overlap with these on rigorous sufficiency and a real-agent P7/P8 test; the checklist otherwise lists submission mechanics and external-review reads, and the index list adds external review and two identification-arc items. |
 | Identity branch | — | Selected: Problem 1: a preregistered longitudinal experiment with an interaction-shaped agent, a transcript-initialized control, and an optimized mimic. Problem 3: a preregistered experiment with relational history as the independent variable. Problem 8: an optimized mimic against the full measurement suite, then held-out constraints and lures. Problem 10: replicate the three-way comparison on real models with matched capabilities. Problem 7: a constructive architecture plus a preregistered perturbation suite with a trace-matched control. |
 | Model-identification arc | — | Problem 11's open remainder (five of eight items): learned searchers and program synthesizers under matched budgets, the IFS testbed, external SINDy/PySR baselines, re-simulation divergence, and a within-group cost gradient for the v1.13 pool arm. Problem 14: the frozen [Learned-Searcher](../../lab/benchmarks/learned-searcher/README.md) protocol, execution target deliberately unregistered. Adjacent, arc placement not decided: Problem 15, vary the referee properties independently against stronger proposers; Problem 18, compare exact replay, predictive, policy-preserving, bisimulation, and adaptively refined equivalences under matched budgets. |
 
@@ -342,7 +342,7 @@ To keep the repository "rounder":
 1. **One source of truth per concept.**  
    Everything else links to it.
 2. **No silent duplicates.**  
-   If mirrored for docs rendering, note the canonical file.
+   The site reaches repository layers through symlinks under `docs/`; if a file is ever copied instead, note the canonical file.
 3. **Map code ↔ claim.**  
    Each simulation README should name the theory claims it informs.
 4. **Separate modes of writing.**  
@@ -365,5 +365,4 @@ Each step checked against the repository on 2026-09-02:
    the logs' own `Depends on:` lines.
 3. Add "home file" references where `papers/` and `docs/papers/` intentionally mirror each other.  
    **Moot (verified 2026-09-02).** `docs/papers` is a symlink to `../papers`, so there is no mirror
-   to annotate. The wording "mirrored `docs/papers/`" in §1.C and the `docs/papers/` entry in §2
-   are left as written and reported as stale descriptions.
+   to annotate. The mirror wording in §1.C, §2, and §9 was corrected on 2026-09-02.

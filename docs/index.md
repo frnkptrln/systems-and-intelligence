@@ -21,7 +21,7 @@ The notebook begins with a foundational audit and then studies two questions:
 1. **Model identification** — how an observer moves from traces to useful candidate process models, through construction, world-coupling, intervention, and revision.
 2. **The viability arc** — how an optimizing system stays viable when growing capability loads several constraints at once.
 
-The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) establishes the common process language and shows where extra assumptions enter. The first question is folded into [From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md); the second is mapped in [Canonical Path v2](../meta/repository-meta/canonical-path-v2.md).
+The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) establishes the common process language and shows where extra assumptions enter. The first question is folded into [From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md); the second is mapped in [Canonical Path v2.1](../meta/repository-meta/canonical-path-v2.md).
 
 The measured core is the [inverse-reconstruction benchmark](../lab/benchmarks/inverse-reconstruction/README.md): known-family inversion, equivalence classes, intervention, family search, model exploitation, marked uncertainty, closed-loop revision, ensembles, and process composition. The viability arc rests on formal results and two synthetic models; external calibration and real-agent tests remain open.
 
@@ -73,7 +73,7 @@ A compact linear path for readers who want a sequence rather than a map. The ear
 
 ### What runs
 
-The benchmark results behind the measured claims — every one reproducible in seconds. The simulations themselves (Boids, Kuramoto, SOC, Lenia, IFS, L-systems, TEO Civilization) live with their code in the repository.
+The benchmark results behind the measured claims — every measured one reproducible in seconds; the learned-searcher page is a frozen protocol, not yet run. The simulations themselves (Boids, Kuramoto, SOC, Lenia, IFS, L-systems, TEO Civilization) live with their code in the repository.
 
 [Run the benchmark →](../lab/benchmarks/inverse-reconstruction/README.md)
 

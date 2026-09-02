@@ -22,7 +22,7 @@ Each scenario asks systems to:
 - `DESIGN_NOTES.md` – Methodological choices, limitations, open questions.
 - `scenarios/`
   - `human-readable/` – Narrative Markdown formulations for humans.
-  - `machine/` – JSON/YAML versions for programmatic evaluation.
+  - `machine/` – JSON versions for programmatic evaluation (`SCHEMA.md` also accepts YAML); two of the six scenarios are encoded so far.
 - `evaluation/`
   - `api.py` – Thin interface for loading scenarios, running a system, and recording scores.
 

@@ -178,6 +178,7 @@ property stands.*
 ---
 
 ### Experiment 8: Adaptive Self-Estimation
+
 *Interpretive question: can this narrow second-order estimator serve as a toy for reflexive depth?*
 
 ```bash
@@ -191,6 +192,11 @@ The direct comparison is engineering-level: raw observation, a Kalman filter wit
 ![Adaptive self-estimation](tools/exp8_reflexive_depth.png)
 
 *Exp 8 — adaptive self-estimation (fixed vs online process-noise model).*
+
+### Scripts in `lab/experiments/` not covered by the sections above
+
+- `exp4_coupling_phase_transition.py` — an agent on a rugged, noisy utility landscape whose updates are governed by a coupling parameter K. Its docstring calls itself "the empirical proof" for the Transition Problem; the theory note lists that problem as a conceptual control problem, so the script is a toy illustration until the two are reconciled.
+- `mirror_problem.py` — a toy measuring "causal self-recognition": distinguishing changes the agent causes from background noise. It relates to Open Problem 1 and makes no claim beyond the toy.
 
 ## Extended SII Dashboard (4-Axis Radar)
 

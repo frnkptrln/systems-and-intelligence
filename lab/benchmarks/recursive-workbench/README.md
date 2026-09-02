@@ -135,3 +135,4 @@ would now indicate leakage or another bug, not a discovery.
 - [The Witness Principle](../../../theory/core/the-witness-principle.md)
 - [Inverse-Reconstruction Benchmark](../inverse-reconstruction/README.md)
 - [Optimization and Its Blindness](../../../theory/optimization/optimization-and-its-blindness.md)
+- [Leakage impact note, 2026-08-19](LEAKAGE-IMPACT-2026-08-19.md) — the v0.1 leak and the v0.2 re-measurement

@@ -28,7 +28,7 @@ This is a research notebook, not a theory of everything. It contains established
 | If you want to… | Start here |
 |:---|:---|
 | understand the project without learning its internal vocabulary | **[Start Here: From Traces to Viable Intelligence](docs/synthesis.md)** |
-| explore the complete live notebook | **[Read the online notebook](https://frnkptrln.github.io/systems-and-intelligence)** |
+| read the curated site, the part offered as ready for a new reader | **[Read the online notebook](https://frnkptrln.github.io/systems-and-intelligence)** |
 | change rules and watch a system evolve | **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** |
 | inspect the mathematical foundation | **[Read the Foundations Reconstruction](theory/core/mathematical-axioms.md)** |
 | see the measured model-identification results | **[Run the Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md)** |
@@ -53,7 +53,9 @@ developmental process, grammar, proposal mechanism, or another declared map.
 The earlier universal claims remain visible as research history. Identity,
 consciousness, cooperative intelligence, culture, and the narrative work remain
 active layers around this spine, each with its own scope and status. The
-[Conceptual Map](theory/core/conceptual-map.md) shows how they connect.
+[Conceptual Map](theory/core/conceptual-map.md) shows how the identity and consciousness boundaries
+connect to the spine; cooperative intelligence, culture, and the narrative work are indexed in
+[`theory/README.md`](theory/README.md) and are not yet rows on the map.
 
 The situated-competence extension does not replace that question or add a new
 primitive. It asks which capacities a typed process can express under changed
@@ -115,12 +117,12 @@ More executable work:
 | [`theory/`](theory/README.md) | Formal and semi-formal arguments, maps, and reference material |
 | [`lab/`](lab/README.md) | Benchmarks, metrics, reusable tools, and experimental infrastructure |
 | [`simulation-models/`](theory/core/simulation-theory-map.md) | Executable toy systems grouped by research theme |
-| [`papers/`](papers/viable-corridor.md) | Tighter working drafts intended for external criticism |
-| [`book/`](book/09_from_rule_to_mind.md) | A longer, evolving reading path |
+| [`papers/`](papers/viable-corridor.md) | One frozen v1.0 submission draft awaiting external review; one archived early synthesis |
+| [`book/`](book/09_from_rule_to_mind.md) | Ten short chapters; chapter 09 is the site's compact linear route, the earlier ones are kept as a record |
 | [`fiction/`](fiction/README.md) and [`logs/`](logs/README.md) | Narrative stress tests and applied architecture notes, not evidence |
-| [`meta/`](meta/README.md) | Project architecture, epistemic rules, registries, and open problems |
+| [`meta/`](meta/README.md) | Project architecture, epistemic rules, the claim registers, and the research-alignment map |
 
-The live notebook carries the full navigation. The repository's [information architecture](meta/repository-meta/repository-information-architecture.md) explains how new material moves between these layers.
+The site publishes a curated subset of the repository with its own navigation; [What Stays in the Repository](docs/repository-map.md) lists the full inventory. The repository's [information architecture](meta/repository-meta/repository-information-architecture.md) explains how new material moves between these layers.
 
 ## Status and boundaries
 

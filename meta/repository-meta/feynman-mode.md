@@ -26,7 +26,7 @@ Each question has already earned its place in this repository's own history. Tha
 | 4 | Which assumption is actually load-bearing? | hidden forks | One flag (`entropy_couples_to_H`) flipped the substrate veto from unreachable to binding — and forced a real modeling decision (paper v0.5). |
 | 5 | Where am I using a beautiful word instead of a mechanism? | poetic hostnames posing as protocols | "Mycelial Veto" — flagged in the [Concept Registry](concept-registry.md) as having no operationalization. The registry exists to ask this question permanently. |
 | 6 | What would be embarrassing if a real reviewer read it? | frontdoor inflation | "Structurally closed." "Complete Grand Synthesis." Both shipped. Both later retired, with commit messages as receipts. |
-| 7 | What remains if I delete all the big words? | concept inflation | One sentence survived, and it now leads the README: generators are cheap, reconstruction is hard, and optimizers outrunning their constraints are dangerous. Everything else reports to it. |
+| 7 | What remains if I delete all the big words? | concept inflation | One sentence survived, in bounded form: known-family inversion is cheap, hardness lives in named dials, and optimizers outrunning their constraints are dangerous. It does not lead the README; its two halves live in [Identification Claims](identification-claims.md) Claim 1 and [Core Claims](core-claims.md). Everything else reports to it. (Cell corrected 2026-09-02; it had said the sentence "now leads the README", which the README never carried.) |
 
 ## Usage
 

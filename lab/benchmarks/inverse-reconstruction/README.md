@@ -331,7 +331,7 @@ committing-buys-nothing) became identities. Headline claims are guarded by
 
 ## Current roadmap (open)
 
-*(The benchmark sequence through v1.11 is run and documented above. The items below remain open.)*
+*(The benchmark sequence through v1.13 is run and documented above. The items below remain open.)*
 
 - **Is it selection or only the absence of selection?**: v1.13 moved the cost of support from the donor to the local group. Selection against the trait nearly vanished (−0.0075 versus −0.1056) and seeded cheaters fell below their starting frequency (2.6% versus 21.6%), but positive seeds reached only 44% and population size dropped. Because a group-mean levy makes within-group variation nearly cost-neutral, the retained support may be drift rather than advantage. The next arm must separate those: a **within-group cost gradient** that keeps relocation while restoring a measurable selection differential, plus longer horizons and weaker mutation to test whether 44% is a boundary or a plateau. Endogenous resource production and open topology remain beyond that.
 - **Learned searchers vs. the enumerator**: family_search.py measures one exhaustive search. Compare learned and symbolic searchers on the same DSL, targets, compute budget, and held-out interventions rather than assuming either has a generic advantage.

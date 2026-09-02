@@ -264,6 +264,18 @@ def test_corpus_counts_measure_the_markdown_tree(tmp_path):
     assert corpus_markdown_file_count(tmp_path) == 2
 
 
+def test_leads_lane_is_exempt_from_corpus_counts(tmp_path):
+    write(tmp_path, "theory/a.md", "one two three")
+    words_before = corpus_word_count(tmp_path)
+    files_before = corpus_markdown_file_count(tmp_path)
+
+    write(tmp_path, "meta/research-alignment/leads/README.md", "lane rules")
+    write(tmp_path, "meta/research-alignment/leads/2026-09.md", "four five six seven")
+
+    assert corpus_word_count(tmp_path) == words_before == 3
+    assert corpus_markdown_file_count(tmp_path) == files_before == 1
+
+
 # --- benchmark version range ------------------------------------------------
 
 

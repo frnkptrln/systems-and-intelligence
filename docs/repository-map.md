@@ -2,7 +2,7 @@
 
 **Status:** Orientation page. It describes the boundary between this site and the repository behind it.
 
-This site is not the repository. The repository holds roughly 250,000 words across 273 Markdown files — about twenty hours of reading. Publishing all of it was the old arrangement, and it made the site unreadable: a first-time reader had no way to tell which five percent carried the argument.
+This site is not the repository. The repository holds roughly 250,000 words across 271 Markdown files (the leads lane's intake files are not counted) — about twenty hours of reading. Publishing all of it was the old arrangement, and it made the site unreadable: a first-time reader had no way to tell which five percent carried the argument.
 
 So the site now publishes the part that is finished enough for someone who has not been following along. Everything else stays where it was written, next to the code it describes, and stays linked — any link on this site that points at an unpublished page goes to the file on GitHub instead of breaking.
 
@@ -12,22 +12,22 @@ Nothing here is hidden. It is simply not competing for your attention.
 
 | Layer | On the site | Why |
 |---|---|---|
-| Theory | 34 essays of 84 | The ones the project's own claim documents actually cite |
-| Reference | 4 | Glossary, open problems, limitations, and the negative space |
-| Papers | 2 of 2 | Bounded, citable, with a frozen claim set |
+| Theory | 34 essays of 84 | The ones the reading paths and the claim registers lean on |
+| Reference | 4, counted within the 34 above | Glossary, open problems, limitations, and the negative space |
+| Papers | 2 of 2 | 1 active (v1.0, frozen), 1 archived and not citable |
 | Stories | 19 of 19 | Self-contained and written for outside readers |
-| Benchmarks | 6 result pages | The measured evidence behind the claims |
+| Benchmarks | 6 result pages | Five carry measured evidence; the sixth is a frozen, not-yet-run protocol |
 | Interactive | 3 | They only work on the web |
 
 ## What stays in the repository
 
-### Simulation models — 45 READMEs
+### Simulation models — 41 READMEs
 
 [`simulation-models/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
 
 Run instructions and short notes averaging under 300 words each: Boids, Kuramoto, self-organized criticality, Lenia, IFS, L-systems, TEO Civilization, the agent ecology, and the rest. They belong beside the code they start, not in a reading sequence. Where the simulations bear on a claim, that connection is made on the site in [Simulation → Theory Map](../theory/core/simulation-theory-map.md).
 
-### Architecture logs — 21 notes
+### Architecture logs — 20 notes
 
 [`logs/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/logs)
 

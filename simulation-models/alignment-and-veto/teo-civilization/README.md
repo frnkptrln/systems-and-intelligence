@@ -5,8 +5,9 @@
 ## What does this simulate?
 
 `teo_simulation.py` integrates the coupled ODE system of the working paper
-**"The Viable Corridor: A Three-Constraint Theorem for Survivable Multi-Agent
-Optimization"** (`papers/viable-corridor.md`), **version 0.5**. It unifies four
+**"The Viable Corridor: A Constraint-Architecture Framework for Survivable Multi-Agent
+Optimization"** (`papers/viable-corridor.md`), now at **v1.0**; this script implements the
+**v0.5** equations, unchanged since. It unifies four
 control paradigms into one dynamical model:
 
 | Paradigm | Equation | Paper eq. | Origin |
