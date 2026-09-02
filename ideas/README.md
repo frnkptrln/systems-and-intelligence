@@ -34,6 +34,7 @@ Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title kee
 - [The Teacher Is Part of the Environment](2026-08-10-teacher-is-part-of-the-environment.md) — distinguishes supervision as measurement from supervision as coupling
 - [Representation Changes Reconstruction Difficulty](2026-08-09-representation-changes-reconstruction-difficulty.md) — representational grounding as a possible separation between identifiability and search accessibility
 - [Mechanism as a Reconstruction Target](2026-08-09-mechanism-as-reconstruction-target.md) — asks what extra intervention-transfer burden a mechanistic world model should satisfy
+- [Representational Grounding and Mechanistic World Models](2026-08-09-representational-grounding-and-mechanistic-world-models.md) — asks whether a representation change can lower the cost of model identification by exposing task-relevant invariants, and when a verified correspondence licenses importing reusable mechanism structure; first sanity check in [Identity Abduction](../lab/experiments/identity_abduction/README.md)
 - [Embodiment and the Non-Invariant Decomposition of Goals](2026-07-29-embodiment-and-the-non-invariant-decomposition-of-goals.md) — paper-specific research note; durable [effective-goal-space model](../theory/optimization/embodiment-and-the-non-invariant-decomposition-of-goals.md)
 - [The Graph Is a Materialized Prompt](2026-07-24-the-graph-is-a-materialized-prompt.md)
 - [Self-Improvement Needs a Referee](2026-07-24-self-improvement-needs-a-referee.md)

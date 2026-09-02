@@ -24,6 +24,10 @@ Repository Meta is a maintainer decision; the table below labels it by directory
 | `repository-meta/freshness-and-review.md` | Repository Meta | Freshness policy for changing external claims and internally derived state, with CI-backed drift checks. |
 | `repository-meta/speculative-writing-guidelines.md` | Repository Meta | Speculative writing conventions (placement, labeling, continuity, style baseline). |
 | `repository-meta/cultural-optimization-red-team-manual.md` | Repository Meta | Guardrails against Goodhart pressure in cultural optimization systems. |
+| `repository-meta/canonical-path-v2.md` | Repository Meta | Working Note — foundation migrated, terminology migration ongoing; the present canonical path through the repository. |
+| `repository-meta/feynman-mode.md` | Repository Meta | Governance — a standing check, not an essay; run before committing a concept, essay, or grand arc. |
+| `repository-meta/concept-registry.md` | Repository Meta | Reference — maintained alongside the concepts themselves; every load-bearing term with home, status, and anchor. |
+| `repository-meta/the-snow-story.md` | Repository Meta | Feynman probe — reader entry, any age; the repository retold so that a child can follow it. |
 | `repository-meta/core-claims.md` | Repository Meta | Claim register for the viability arc and identity branch, with artifact links and failure conditions. |
 | `repository-meta/identification-claims.md` | Repository Meta | Claim register for the model-identification arc, proposed 2026-09-02. |
 | `research-alignment/related-work-map.md` | Research Alignment (directory) | Concept-to-literature matrix with support/challenge, weakening conditions, and next tests. |
@@ -73,6 +77,22 @@ Lightweight conventions for placing and labeling speculative fiction/theory so n
 ### [Cultural Optimization Red Team Manual](repository-meta/cultural-optimization-red-team-manual.md)
 
 A practical anti-pattern and review ritual guide for authenticity/care optimization systems.
+
+### [Canonical Path v2](repository-meta/canonical-path-v2.md)
+
+Working Note — foundation migrated, terminology migration ongoing. The present canonical path: foundation, then the two research arcs, then the Viability Arc station by station.
+
+### [Feynman Mode](repository-meta/feynman-mode.md)
+
+Governance — a standing check, not an essay. Seven questions with receipts from the repository's own history; run before committing a concept, essay, or grand arc.
+
+### [Concept Registry](repository-meta/concept-registry.md)
+
+Reference — maintained alongside the concepts themselves. Every load-bearing term with its layer, home file, status, and operationalization.
+
+### [The Snow Story](repository-meta/the-snow-story.md)
+
+Feynman probe — reader entry, any age. The repository retold so that a child can follow it, every part pointing back to a model, experiment, or open question.
 
 ### [Core Claims](repository-meta/core-claims.md)
 

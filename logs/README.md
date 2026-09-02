@@ -2,7 +2,7 @@
 
 Welcome to the **Architecture Logs**.
 
-While the `theory/` section deals with the mathematical and systemic foundation of the minimal thermodynamic agent (TEO) framework and `lab/` plus `simulation-models/` host the executable work, these logs serve as a bridge.
+While `theory/` holds the process foundation (the [Foundations Reconstruction](../theory/core/mathematical-axioms.md)) and the arguments built on it, among them the TEO framework of the viability arc, and `lab/` plus `simulation-models/` host the executable work, these logs serve as a bridge.
 
 They are speculative **architectural blueprints and design notes** exploring how the *Thermodynamics of Orchestration* apply to large-scale, real-world deployments.
 
@@ -13,6 +13,7 @@ These logs investigate:
 2. The application of the **Substrate Veto** within a network governed by silicon agents and biological operators.
 3. The translation of TEO variables into protocol rules for a *Decentralized Operating System* (Digital State).
 4. The governance implications of optimization pressure on civic, cultural, and institutional systems.
+5. Since Log 016, the transfer of measured benchmark results (runtime bundles, provenance, the referee boundary, who pays for the veto) into deployment vocabulary.
 
 *Note: These entries read like a captain's log or an explorative journal. They are conceptually more applied than the core theory, but still speculative.*
 

@@ -14,20 +14,20 @@ Nothing here is hidden. It is simply not competing for your attention.
 |---|---|---|
 | Theory | 34 essays of 84 | The ones the project's own claim documents actually cite |
 | Reference | 4 | Glossary, open problems, limitations, and the negative space |
-| Papers | 2 of 2 | Bounded, citable, with a frozen claim set |
+| Papers | 2 of 2 | 1 active (v1.0, frozen), 1 archived and not citable |
 | Stories | 19 of 19 | Self-contained and written for outside readers |
 | Benchmarks | 6 result pages | The measured evidence behind the claims |
 | Interactive | 3 | They only work on the web |
 
 ## What stays in the repository
 
-### Simulation models — 45 READMEs
+### Simulation models — 41 READMEs
 
 [`simulation-models/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
 
 Run instructions and short notes averaging under 300 words each: Boids, Kuramoto, self-organized criticality, Lenia, IFS, L-systems, TEO Civilization, the agent ecology, and the rest. They belong beside the code they start, not in a reading sequence. Where the simulations bear on a claim, that connection is made on the site in [Simulation → Theory Map](../theory/core/simulation-theory-map.md).
 
-### Architecture logs — 21 notes
+### Architecture logs — 20 notes
 
 [`logs/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/logs)
 

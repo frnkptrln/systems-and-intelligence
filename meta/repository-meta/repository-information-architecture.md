@@ -67,7 +67,7 @@ Characteristics:
 - may be longer and denser than book chapters
 - should clearly mark epistemic status (demonstrated / hypothesized / open / speculative)
 
-### C. `papers/` (and mirrored `docs/papers/`) → Publication packaging
+### C. `papers/` → Publication packaging (`docs/papers` is a symlink to it for site rendering)
 Use this for concise, citation-ready syntheses of a bounded scope.  
 Characteristics:
 - tighter than theory essays
@@ -163,7 +163,7 @@ These files assert or compress claims about reality and therefore need clearer e
 - `theory/core/simulation-theory-map.md`
 - `theory/reference/open-problems.md`
 - `book/`
-- `papers/` and `docs/papers/`
+- `papers/` (the site reaches it through the `docs/papers` symlink)
 
 TEO, the veto documents, and the minimal thermodynamic agent are the synthesis layer of the
 viability arc; they are not the whole synthesis layer. As of 2026-09-02 the identification arc's
@@ -187,7 +187,7 @@ Recommended conceptual architecture:
 |:---|:---|:---|
 | Entry point | `README.md`, `docs/index.md` | Short orientation and one reading path |
 | Seeds | `ideas/` | Atomic notes before classification, clustering, or synthesis |
-| Core claims | `theory/` (sub-dirs: `core/`, `veto/`, `emergence/`, `identity/`, `symbiotic/`, `narrative/`, `reference/`, `teo-framework/`, `human-organism-silicon-age/`), `papers/`, `book/` | Synthesis layer and publication packaging |
+| Core claims | `theory/` (sub-dirs: `ai/`, `computation/`, `core/`, `emergence/`, `human-organism-silicon-age/`, `identity/`, `narrative/`, `optimization/`, `reference/`, `symbiotic/`, `teo-framework/`, `veto/`), `papers/`, `book/` | Synthesis layer and publication packaging |
 | Models | `simulation-models/`, `lab/core/`, `lab/orchestration/` | Executable demonstrations and reusable primitives |
 | Lab | `logs/`, `fiction/`, `lab/benchmarks/`, `lab/experiments/`, `lab/tools/`, `lab/data-analysis/` | Experiments, stress tests, applied designs, narrative probes |
 | Meta | `meta/` | Information architecture, epistemic notes, maintenance rules |
@@ -342,7 +342,7 @@ To keep the repository "rounder":
 1. **One source of truth per concept.**  
    Everything else links to it.
 2. **No silent duplicates.**  
-   If mirrored for docs rendering, note the canonical file.
+   The site reaches repository layers through symlinks under `docs/`; if a file is ever copied instead, note the canonical file.
 3. **Map code ↔ claim.**  
    Each simulation README should name the theory claims it informs.
 4. **Separate modes of writing.**  
@@ -365,5 +365,4 @@ Each step checked against the repository on 2026-09-02:
    the logs' own `Depends on:` lines.
 3. Add "home file" references where `papers/` and `docs/papers/` intentionally mirror each other.  
    **Moot (verified 2026-09-02).** `docs/papers` is a symlink to `../papers`, so there is no mirror
-   to annotate. The wording "mirrored `docs/papers/`" in §1.C and the `docs/papers/` entry in §2
-   are left as written and reported as stale descriptions.
+   to annotate. The mirror wording in §1.C, §2, and §9 was corrected on 2026-09-02.

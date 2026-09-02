@@ -90,5 +90,5 @@ Stable reference material, glossaries, and honest assessment.
 
 ## Sub-Frameworks
 
-- **[TEO Framework](teo-framework/README.md)** — Five sub-documents deriving IP, attractor geometry, love-as-constraint, and the paperclip failure.
+- **[TEO Framework](teo-framework/README.md)** — Six sub-documents: the Lerchner boundary (an earlier IP formalization), attractor geometry, the Dupoux integration, love as constraint, the paperclip failure, and thermodynamic tokenomics.
 - **[Human Organism in Silicon Age](human-organism-silicon-age/core-theses.md)** — Alignment, resistance, Gödel's Constitution, and the Symbiotic Nexus.

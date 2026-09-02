@@ -182,8 +182,9 @@ The repository deliberately mixes simulations, formal arguments, working hypothe
 3. [The Generator Question](../theory/core/the-generator-question.md) — the active organizing question and an auditable record of its superseded universal formulation.
 4. [Canonical Path v2](../meta/repository-meta/canonical-path-v2.md) — the Viability Arc and current migration map.
 5. [The Viable Corridor](../papers/viable-corridor.md) — necessity result, sufficiency conjecture, synthetic evidence, and limitations.
-6. [Core Claims](../meta/repository-meta/core-claims.md) — the maintained small claim set.
-7. [Related Work Map](../meta/research-alignment/related-work-map.md) — concept-to-literature matrix and the primary-source ledger with inclusion/exclusion decisions for the situated-competence extension.
+6. [Core Claims](../meta/repository-meta/core-claims.md) — the maintained small claim set for the viability arc and identity branch.
+7. [Identification Claims](../meta/repository-meta/identification-claims.md) — the register for the model-identification arc: four claims and one candidate, each with artifacts by evidential kind and a failure condition.
+8. [Related Work Map](../meta/research-alignment/related-work-map.md) — concept-to-literature matrix and the primary-source ledger with inclusion/exclusion decisions for the situated-competence extension.
 
 ### Follow a broader path
 
