@@ -13,7 +13,8 @@ This folder has two lanes so we don't mix conceptual reflection with repository 
 
 | File | Lane | Purpose |
 |---|---|---|
-| `conceptual-meta/agent-prompt-seed.md` | Conceptual Meta | Exploratory prompt artifact for autonomous identity seeding. |
+| `conceptual-meta/agent-operating-note.md` | Repository Meta (filed under conceptual-meta/) | What an agent working in the repository reads first and must not do; supersedes the prompt seed. |
+| `conceptual-meta/agent-prompt-seed.md` | Conceptual Meta | Superseded 2026-09-02 by `agent-operating-note.md`; retained as history. |
 | `repository-meta/repository-information-architecture.md` | Repository Meta | Canonical placement rules and lane-splitting logic for the whole repo. |
 | `repository-meta/repository-as-thought-system.md` | Repository Meta | Meta-orientation: how the repo's own structure can be read without becoming self-referential noise. |
 | `repository-meta/freshness-and-review.md` | Repository Meta | Freshness policy for changing external claims and internally derived state, with CI-backed drift checks. |
@@ -28,9 +29,16 @@ If a future file does not clearly fit one lane, add a one-line "Lane:" declarati
 
 ## Conceptual Meta
 
+### [Agent Operating Note](conceptual-meta/agent-operating-note.md)
+
+What an agent working inside the repository reads first, the invariants it keeps, the local gate it
+runs, and the decisions it leaves to the maintainer. Supersedes the prompt seed below.
+
 ### [Agent Prompt Seed](conceptual-meta/agent-prompt-seed.md)
 
-An experiment in autonomous identity seeding. A foundational prompt designed to initialize an agent with a set of thermodynamic and systemic axioms, forcing it to navigate the tension between entropy, growth, and alignment.
+Superseded 2026-09-02 by the operating note; retained as history. It was an experiment in
+autonomous identity seeding: a prompt designed to initialize an agent with a set of thermodynamic and
+systemic axioms, forcing it to navigate the tension between entropy, growth, and alignment.
 
 ---
 
