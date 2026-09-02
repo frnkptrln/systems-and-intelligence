@@ -35,6 +35,9 @@ exclude_docs: |
   !lab/benchmarks/recursive-workbench/README.md
   !lab/benchmarks/situated-stack/README.md
   !lab/benchmarks/witness-generation/README.md
+  # Bounded experiments with committed result files and a declared failure condition.
+  !lab/experiments/persistence_narrowing/README.md
+  !lab/experiments/representation_reconstruction/README.md
 
   meta/
   !meta/repository-meta/core-claims.md
@@ -62,6 +65,7 @@ exclude_docs: |
   !theory/identity/chord-vs-arpeggio-identity.md
   !theory/identity/consciousness-as-global-availability.md
   !theory/identity/minimal-thermodynamic-agent.md
+  !theory/identity/polycontextural-observation.md
   !theory/identity/the-agent-is-not-where-the-model-ends.md
   !theory/narrative/machines-of-loving-grace.md
   !theory/optimization/optimization-and-its-blindness.md
@@ -117,6 +121,7 @@ nav:
           - "Consciousness as Global Availability": theory/identity/consciousness-as-global-availability.md
           - "Chord vs. Arpeggio Identity": theory/identity/chord-vs-arpeggio-identity.md
           - "Minimal Thermodynamic Agent": theory/identity/minimal-thermodynamic-agent.md
+          - "Polycontextural Observation (reading note)": theory/identity/polycontextural-observation.md
       - "Veto & Alignment":
           - "The Substrate Veto": theory/veto/substrate-veto-thermodynamics.md
           - "AI Alignment Veto": theory/veto/ai-alignment-biological-veto.md
@@ -144,6 +149,9 @@ nav:
           - "Constraint Release": lab/benchmarks/constraint-release/README.md
           - "Recursive Workbench (referee)": lab/benchmarks/recursive-workbench/README.md
           - "Learned Searcher (protocol frozen)": lab/benchmarks/learned-searcher/README.md
+      - "Experiments":
+          - "Persistence and Search Narrowing": lab/experiments/persistence_narrowing/README.md
+          - "Representation and Reconstruction Difficulty": lab/experiments/representation_reconstruction/README.md
       - "Interactive":
           - "Web Emergence Explorer": interactive/web-explorer.md
           - "Tensor Logic Visualizer": interactive/tensor-logic.md

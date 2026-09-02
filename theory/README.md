@@ -73,6 +73,7 @@ Operational hypotheses about continuity, binding, and cognition.
 - **[Machine Consciousness as Generator Coherence](identity/machine-consciousness-as-generator-coherence.md)** — Working framing note; the title retains legacy vocabulary.
 - **[Psychedelics as Perturbation](identity/psychedelics-as-perturbation.md)** — Working Note: self-intervention as an identity probe; epistemics only.
 - **[The Post-Individual Operator](identity/the-post-individual-operator.md)** — Design fiction adjacent to theory; it predicts nothing.
+- **[Polycontextural Observation](identity/polycontextural-observation.md)** — Reading note: the observer-relative-description warning of an ideas note mapped onto the pages that already state it; no new result.
 
 ## Symbiotic Organ Hypothesis
 
