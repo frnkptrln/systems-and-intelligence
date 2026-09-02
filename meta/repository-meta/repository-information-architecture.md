@@ -1,5 +1,10 @@
 # 🧭 Repository Information Architecture
 
+**Lane:** Repository Meta  
+**Status:** Working repository policy — §0 written after the foundations audit; §2, §4, §5, §6, and §10 reconciled with it on 2026-09-02  
+**Last reviewed:** 2026-09-02  
+**Review trigger:** a new research arc, register, or lane; a maintainer decision on §5; any change to the spine table in the README.
+
 This document defines **where new content should live** so the project can scale without turning into one undifferentiated stream of notes.
 
 ---
@@ -105,6 +110,30 @@ exploration landscape and may surface selected seeds without promoting them.
 
 These files assert or compress claims about reality and therefore need clearer epistemic status, definitions, and failure conditions:
 
+*Foundation*
+
+- `theory/core/mathematical-axioms.md` — the Foundations Reconstruction; takes precedence over
+  legacy universal claims where they conflict
+- `theory/reference/what-this-project-does-not-claim.md` — the negative space, named in the README
+  spine beside the reconstruction (entry added 2026-09-02)
+
+*Model-identification arc* (entries added 2026-09-02)
+
+- `meta/repository-meta/identification-claims.md` — the arc's claim register, proposed 2026-09-02
+- `theory/core/the-generator-question.md` — the active bounded programme; its superseded universal
+  framing is retained in the same file as research history
+- `theory/core/from-trace-to-world-binding.md`
+- `theory/core/the-witness-principle.md`
+- `lab/benchmarks/inverse-reconstruction/README.md` — the arc's measured results; the code is the
+  executable, the README is the synthesis
+
+*Emergence claims, viability arc, and identity branch*
+
+- `meta/repository-meta/core-claims.md` — the register for the viability arc and identity branch
+- `theory/optimization/optimization-and-its-blindness.md` — the hinge the README spine names for the
+  viability arc (entry added 2026-09-02)
+- `papers/viable-corridor.md` — the arc's stabilized artifact, named in the README spine (entry
+  added 2026-09-02; the `papers/` lane as a whole is listed below)
 - `theory/core/emergence-manifesto-v1.3.md`
 - `theory/core/thermodynamics-of-orchestration.md`
 - `theory/identity/minimal-thermodynamic-agent.md`
@@ -112,10 +141,26 @@ These files assert or compress claims about reality and therefore need clearer e
 - `theory/veto/ai-alignment-biological-veto.md`
 - `theory/veto/biological-veto-architectural-requirements.md`
 - `theory/teo-framework/`
+
+*Situated-competence extension* (entry added 2026-09-02; placement proposed)
+
+- `theory/core/competence-constraint-and-verification.md` — named in the README as the extension's
+  central synthesis; the README says the extension adds no new primitive and is not a third arc
+
+*Maps, reference, and packaging*
+
 - `theory/core/simulation-theory-map.md`
 - `theory/reference/open-problems.md`
 - `book/`
 - `papers/` and `docs/papers/`
+
+TEO, the veto documents, and the minimal thermodynamic agent are the synthesis layer of the
+viability arc; they are not the whole synthesis layer. As of 2026-09-02 the identification arc's
+synthesis is proposed here as the foundation, the Generator Question in its bounded form, the loop
+note, the Witness Principle, the benchmark README, and the register listed above. The register also
+draws on `theory/core/decision-relevant-identifiability.md` and
+`lab/experiments/active_identifiability/README.md`; whether those two join this list is left to the
+maintainer.
 
 When a document moves from Thinking Space to Synthesis, it should gain explicit claims, definitions, links to proof artifacts, and a statement of what would count against it.
 
@@ -140,7 +185,15 @@ The architecture should optimize for navigability, not taxonomy purity.
 
 ---
 
-## 4) Three Non-Trivial Claims to Keep Testable
+## 4) Three Non-Trivial Viability and Identity Claims to Keep Testable
+
+The three claims below belong to the viability arc and the identity branch. Their register, with
+artifacts marked by evidential kind and with failure conditions, is [Core Claims](core-claims.md),
+which also carries a fourth claim (Vital Floors in Governance) that is not repeated here. The
+model-identification arc has its own register, [Identification Claims](identification-claims.md);
+its entries are anchored to measured or exact results inside declared testbeds, with unmeasured
+halves recorded as such, rather than to architecture hypotheses, so they are listed there and not in
+this section.
 
 1. **Substrate Veto:** Implemented optimizers have finite resource limits; the testable design claim
    is that an independently enforced, measured capacity constraint can bound selected actions before
@@ -153,6 +206,25 @@ Each claim should remain connected to at least one simulation, benchmark, or exp
 ---
 
 ## 5) Proof Artifact to Build Next
+
+**Status as of 2026-09-02:** unchanged since pre-audit; maintainer decision pending. The section
+below still names the control-plane simulation as the artifact to build next. A runnable toy with
+this purpose exists at
+[`simulation-models/alignment-and-veto/human-vital-systems/`](../../simulation-models/alignment-and-veto/human-vital-systems/README.md)
+(its own status line: "Proof artifact"; registered under Claim 4 of [Core Claims](core-claims.md)
+as a *runnable toy*, with the note that nothing there is calibrated against a real vital system).
+In the visible git history this section and that toy enter together in the root commit of
+2026-07-20, and the section has not been edited since. Whether the toy discharges this section, or
+whether the section describes a larger artifact that is still planned, is not decided here.
+
+Side by side with this section, what [Open Problems](../../theory/reference/open-problems.md) names
+as next, as of 2026-09-02:
+
+| Arc | This section (pre-audit) | What `open-problems.md` names as next |
+|:---|:---|:---|
+| Viability arc | Human Vital Systems Control Plane Simulation | `open-problems.md` does not label its problems by arc and names no corridor or control-plane item as next. The arc's own open list is [Canonical Path v2 §9](canonical-path-v2.md#9-open-problems): proving sufficiency and deriving the critical coupling; operationalizing the effective parameters for real systems; a finite-size coherence result; validating P7/P8 on real agent systems; overshoot–collapse dynamics; and whether the corridor stays in this repository. The paper's post-v1.0 checklist and the "What's next" list in [`docs/index.md`](../../docs/index.md) overlap with these on rigorous sufficiency and a real-agent P7/P8 test; the checklist otherwise lists submission mechanics and external-review reads, and the index list adds external review and two identification-arc items. |
+| Identity branch | — | Selected: Problem 1: a preregistered longitudinal experiment with an interaction-shaped agent, a transcript-initialized control, and an optimized mimic. Problem 3: a preregistered experiment with relational history as the independent variable. Problem 8: an optimized mimic against the full measurement suite, then held-out constraints and lures. Problem 10: replicate the three-way comparison on real models with matched capabilities. Problem 7: a constructive architecture plus a preregistered perturbation suite with a trace-matched control. |
+| Model-identification arc | — | Problem 11's open remainder (five of eight items): learned searchers and program synthesizers under matched budgets, the IFS testbed, external SINDy/PySR baselines, re-simulation divergence, and a within-group cost gradient for the v1.13 pool arm. Problem 14: the frozen [Learned-Searcher](../../lab/benchmarks/learned-searcher/README.md) protocol, execution target deliberately unregistered. Adjacent, arc placement not decided: Problem 15, vary the referee properties independently against stronger proposers; Problem 18, compare exact replay, predictive, policy-preserving, bisimulation, and adaptively refined equivalences under matched budgets. |
 
 ### Human Vital Systems Control Plane Simulation
 
@@ -189,6 +261,16 @@ Custom terms should be kept, but anchored to known concepts.
 | Biological Veto | distributed human regulator | biospheric carrying capacity | approval gates, commit authorization |
 | Chord/Arpeggio | stable attractor vs transient trajectory | phase-space stability | persistent state vs stateless response policy |
 | Vital Impact Card | observability and control dashboard | state variables near viability boundary | typed policy output, safety case, decision record |
+| Candidate family (model class) | model set / model structure in system identification (Ljung 1999) | parametrized family of Hamiltonians or effective theories | hypothesis class; version space (Mitchell 1982) |
+| Equivalence class (consistent-process-model class) | observational equivalence; minimal realization (Kalman) | parameter degeneracy; gauge equivalence; sloppy models | version space after evidence; bisimulation |
+| Coverage | persistence of excitation; informative experiments (Ljung 1999) | sampling of phase space; ergodicity of the orbit | test coverage; teaching dimension (Goldman & Kearns 1995) |
+| Intervention hierarchy (watching < perturbing < preparing) | open-loop vs closed-loop identification; input design | passive observation vs state preparation | seeing vs doing (Pearl 2009); membership queries (Angluin 1987); active learning |
+| Readout / witness | observation map, sensor model; distinguishing sequence (Moore 1956) | measurement operator; observable | distinguishing input (Lee & Yannakakis 1994); certificate checked by a verifier; oracle query |
+
+The rows from *Candidate family* downward were added on 2026-09-02 for the model-identification
+arc. They anchor terms already in use in the benchmark README, the Witness Principle, the Active
+Identifiability README, and the [Concept Registry](concept-registry.md); none is a new coinage,
+and the anchors are standard system-identification and causal-inference concepts.
 
 ---
 
@@ -254,6 +336,18 @@ To keep the repository "rounder":
 
 ## 10) Suggested Next Cleanup Steps
 
-1. Add a short `Status + Scope + Links` header template to every `logs/*.md`.
-2. Build a small index table mapping each `logs` entry to related `theory` and `simulation-models` files.
-3. Add "home file" references where `papers/` and `docs/papers/` intentionally mirror each other.
+Each step checked against the repository on 2026-09-02:
+
+1. Add a short `Status + Scope + Links` header template to every `logs/*.md`.  
+   **Done in substance (verified 2026-09-02).** All twenty logs carry a status line and a scope
+   line, and `logs/README.md` carries the template. The format is not uniform: logs 001–013 use a
+   bullet header (Mode, Status, Date, Scope, Depends on), logs 014–020 use bold fields with the same
+   names.
+2. Build a small index table mapping each `logs` entry to related `theory` and `simulation-models` files.  
+   **Not done (verified 2026-09-02).** `logs/README.md` has an ordered list with one-line
+   descriptions, not a mapping to theory and simulation files; the mapping exists only piecemeal in
+   the logs' own `Depends on:` lines.
+3. Add "home file" references where `papers/` and `docs/papers/` intentionally mirror each other.  
+   **Moot (verified 2026-09-02).** `docs/papers` is a symlink to `../papers`, so there is no mirror
+   to annotate. The wording "mirrored `docs/papers/`" in §1.C and the `docs/papers/` entry in §2
+   are left as written and reported as stale descriptions.
