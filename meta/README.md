@@ -1,9 +1,15 @@
 # 🔭 Meta
 
+**Status:** Orientation index for `meta/` — not a claim document.
+
 This folder has two lanes so we don't mix conceptual reflection with repository governance:
 
 1. **Conceptual Meta** (epistemology, philosophical framing)
 2. **Repository Meta** (governance, contribution and structure rules)
+
+A third directory, `research-alignment/`, holds the concept-to-literature map and, since
+2026-09-02, the lane for externally sourced leads. Whether it is a third lane or a directory inside
+Repository Meta is a maintainer decision; the table below labels it by directory.
 
 ---
 
@@ -11,13 +17,18 @@ This folder has two lanes so we don't mix conceptual reflection with repository 
 
 | File | Lane | Purpose |
 |---|---|---|
-| `conceptual-meta/agent-prompt-seed.md` | Conceptual Meta | Exploratory prompt artifact for autonomous identity seeding. |
+| `conceptual-meta/agent-operating-note.md` | Repository Meta (filed under conceptual-meta/) | What an agent working in the repository reads first and must not do; supersedes the prompt seed. |
+| `conceptual-meta/agent-prompt-seed.md` | Conceptual Meta | Superseded 2026-09-02 by `agent-operating-note.md`; retained as history. |
 | `repository-meta/repository-information-architecture.md` | Repository Meta | Canonical placement rules and lane-splitting logic for the whole repo. |
 | `repository-meta/repository-as-thought-system.md` | Repository Meta | Meta-orientation: how the repo's own structure can be read without becoming self-referential noise. |
 | `repository-meta/freshness-and-review.md` | Repository Meta | Freshness policy for changing external claims and internally derived state, with CI-backed drift checks. |
 | `repository-meta/speculative-writing-guidelines.md` | Repository Meta | Speculative writing conventions (placement, labeling, continuity, style baseline). |
 | `repository-meta/cultural-optimization-red-team-manual.md` | Repository Meta | Guardrails against Goodhart pressure in cultural optimization systems. |
-| `repository-meta/core-claims.md` | Repository Meta | Minimal testable claim set with artifact links and failure conditions. |
+| `repository-meta/core-claims.md` | Repository Meta | Claim register for the viability arc and identity branch, with artifact links and failure conditions. |
+| `repository-meta/identification-claims.md` | Repository Meta | Claim register for the model-identification arc, proposed 2026-09-02. |
+| `research-alignment/related-work-map.md` | Research Alignment (directory) | Concept-to-literature matrix with support/challenge, weakening conditions, and next tests. |
+| `research-alignment/leads/README.md` | Research Alignment (directory) | The lane for externally sourced leads: one file per month, append-only, never writes outside itself. |
+| `research-alignment/lead-intake-task.md` | Research Alignment (directory) | Instruction text for a scheduled paper-watch run; nothing scheduled as of 2026-09-02. |
 
 If a future file does not clearly fit one lane, add a one-line "Lane:" declaration at the top of that file.
 
@@ -25,9 +36,16 @@ If a future file does not clearly fit one lane, add a one-line "Lane:" declarati
 
 ## Conceptual Meta
 
+### [Agent Operating Note](conceptual-meta/agent-operating-note.md)
+
+What an agent working inside the repository reads first, the invariants it keeps, the local gate it
+runs, and the decisions it leaves to the maintainer. Supersedes the prompt seed below.
+
 ### [Agent Prompt Seed](conceptual-meta/agent-prompt-seed.md)
 
-An experiment in autonomous identity seeding. A foundational prompt designed to initialize an agent with a set of thermodynamic and systemic axioms, forcing it to navigate the tension between entropy, growth, and alignment.
+Superseded 2026-09-02 by the operating note; retained as history. It was an experiment in
+autonomous identity seeding: a prompt designed to initialize an agent with a set of thermodynamic and
+systemic axioms, forcing it to navigate the tension between entropy, growth, and alignment.
 
 ---
 
@@ -58,7 +76,34 @@ A practical anti-pattern and review ritual guide for authenticity/care optimizat
 
 ### [Core Claims](repository-meta/core-claims.md)
 
-The minimal testable claim set for the repository — Substrate Veto, Impedance Matching, Identity Persistence, and Vital Floors — each with artifact links and explicit failure conditions.
+The claim register for the viability arc and identity branch — Substrate Veto, Impedance Matching, Identity Persistence, and Vital Floors — each with artifact links and explicit failure conditions.
+
+### [Identification Claims](repository-meta/identification-claims.md)
+
+The claim register for the model-identification arc, proposed 2026-09-02: four claims and one
+candidate, derived only from the benchmark, the Witness Principle, Decision-Relevant
+Identifiability, and Active Identifiability, each with artifacts by evidential kind and a failure
+condition.
+
+---
+
+## Research Alignment (directory)
+
+### [Related Work Map](research-alignment/related-work-map.md)
+
+The concept-to-literature matrix: canonical file, anchor papers, support or challenge, what the
+repository adds, what would weaken the claim, and the next empirical test.
+
+### [Leads](research-alignment/leads/README.md)
+
+The lane for externally sourced material, added 2026-09-02. One file per month, append-only; a
+lead is not an idea, not evidence, not a claim, and not a status change, and never writes outside
+the lane.
+
+### [Lead Intake Task](research-alignment/lead-intake-task.md)
+
+The instruction text for a scheduled paper-watch run that delivers into the leads lane. Nothing is
+scheduled as of 2026-09-02.
 
 ---
 

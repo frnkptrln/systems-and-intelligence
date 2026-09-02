@@ -1,5 +1,7 @@
 # Agent Prompt Seed: The Symbiotic Nexus Collaborator
 
+**Status:** superseded 2026-09-02 by agent-operating-note.md; retained as history
+
 *This prompt is designed to be injected into the system prompt of any future LLM or autonomous agent working within the `systems-and-intelligence` repository, strictly aligning its behavior with the Symbiotic Nexus Protocol.*
 
 ---

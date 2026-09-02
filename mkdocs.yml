@@ -38,6 +38,7 @@ exclude_docs: |
 
   meta/
   !meta/repository-meta/core-claims.md
+  !meta/repository-meta/identification-claims.md
   !meta/repository-meta/the-snow-story.md
 
   theory/
@@ -80,6 +81,7 @@ nav:
       - "Welcome": index.md
       - "Start Here": synthesis.md
       - "Core Claims": meta/repository-meta/core-claims.md
+      - "Identification Claims": meta/repository-meta/identification-claims.md
       - "The Snow Story (any age)": meta/repository-meta/the-snow-story.md
       - "The Linear Route: From Rule to Mind": book/09_from_rule_to_mind.md
       - "Thinking Space": thinking-space.md
