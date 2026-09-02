@@ -25,7 +25,7 @@ Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title kee
 
 ## Notes
 
-- [Polycontextural Observation Needs Translation Rules](2026-08-22-polycontextural-observation-needs-translation-rules.md) — treats incompatible but locally valid observer descriptions as a translation problem without adopting a metaphysics or claiming a formal implementation
+- [Polycontextural Observation Needs Translation Rules](2026-08-22-polycontextural-observation-needs-translation-rules.md) — treats incompatible but locally valid observer descriptions as a translation problem without adopting a metaphysics or claiming a formal implementation; reading note: [Polycontextural Observation](../theory/identity/polycontextural-observation.md)
 - [Experience Needs an Invalidation Boundary](2026-08-22-experience-needs-an-invalidation-boundary.md) — asks when accumulated traces become revisable experience rather than a durable error attractor
 - [Mechanistic Discovery Needs Methodological Separation](2026-08-22-mechanistic-discovery-needs-methodological-separation.md) — asks which information, write, and veto boundaries keep an automated discovery loop from validating its own preferred explanation
 - [Extended Competence May Be Constructed at Runtime](2026-08-12-extended-competence-may-be-constructed-at-runtime.md) — asks whether long-horizon competence belongs to a fixed local policy or is constructed by model-external state, verification, and recovery
