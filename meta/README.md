@@ -28,6 +28,7 @@ Repository Meta is a maintainer decision; the table below labels it by directory
 | `repository-meta/identification-claims.md` | Repository Meta | Claim register for the model-identification arc, proposed 2026-09-02. |
 | `research-alignment/related-work-map.md` | Research Alignment (directory) | Concept-to-literature matrix with support/challenge, weakening conditions, and next tests. |
 | `research-alignment/leads/README.md` | Research Alignment (directory) | The lane for externally sourced leads: one file per month, append-only, never writes outside itself. |
+| `research-alignment/lead-intake-task.md` | Research Alignment (directory) | Instruction text for a scheduled paper-watch run; nothing scheduled as of 2026-09-02. |
 
 If a future file does not clearly fit one lane, add a one-line "Lane:" declaration at the top of that file.
 
@@ -98,6 +99,11 @@ repository adds, what would weaken the claim, and the next empirical test.
 The lane for externally sourced material, added 2026-09-02. One file per month, append-only; a
 lead is not an idea, not evidence, not a claim, and not a status change, and never writes outside
 the lane.
+
+### [Lead Intake Task](research-alignment/lead-intake-task.md)
+
+The instruction text for a scheduled paper-watch run that delivers into the leads lane. Nothing is
+scheduled as of 2026-09-02.
 
 ---
 
