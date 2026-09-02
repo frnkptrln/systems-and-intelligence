@@ -60,6 +60,44 @@ python -m pytest tests/test_representation_reconstruction.py -q
 
 The first command writes `results/representation_reconstruction.json` (the full grid) and `results/ci_subgrid.json` (the declared subgrid). The test checks that the rule maps are involutions, that the transformed truth is recovered on a covered trace, that class size is equal under the invertible maps on a sample, that a lossy encoding produces contradictions, and that the CI subgrid reproduces the committed file. Requires numpy (the repository's `requirements.txt`); a few minutes on one CPU for the full grid.
 
-## Results
+## Results (full grid, run 2026-09-02)
 
-Not yet run on the full grid at the time this README was committed. The results summary is added in the commit that adds the result files.
+`results/representation_reconstruction.json`: 18,432 runs, 144 s on one CPU. Means over 512 runs per cell (2 seeds × 256 rules).
+
+**Invertibility check** (all cells, 3,072 runs per map): class size equal to `raw` in 3,072 of 3,072 runs for `complement`, `reflect`, and `both`. At noise 0 the transformed truth is in the class in every run of every invertible representation, on both initial conditions.
+
+**Description-size shift** over the 256 rules:
+
+| Map | Rules whose minimal size changes | Cheaper | Dearer | Largest shift |
+|:---|---:|---:|---:|---:|
+| complement | 98 | 49 | 49 | 1 |
+| reflect | 0 | 0 | 0 | 0 |
+| both | 98 | 49 | 49 | 1 |
+
+**Cells at noise 0:**
+
+| IC | Representation | Class size | Contradiction fraction | Truth in class | Search cost | Cost = raw |
+|:---|:---|---:|---:|---:|---:|---:|
+| random | raw | 1.00 | 0.000 | 1.000 | 47,074 | — |
+| random | complement | 1.00 | 0.000 | 1.000 | 47,074 | 0.617 |
+| random | reflect | 1.00 | 0.000 | 1.000 | 47,074 | 1.000 |
+| random | both | 1.00 | 0.000 | 1.000 | 47,074 | 0.617 |
+| random | block_or2 | 1.24 | 0.938 | — | 1,546 | 0.186 |
+| random | majority3 | 1.00 | 0.912 | — | 18,684 | 0.475 |
+| single | raw | 5.89 | 0.000 | 1.000 | 30,684 | — |
+| single | complement | 5.89 | 0.000 | 1.000 | 29,511 | 0.711 |
+| single | reflect | 5.89 | 0.000 | 1.000 | 30,684 | 1.000 |
+| single | both | 5.89 | 0.000 | 1.000 | 29,511 | 0.711 |
+| single | block_or2 | 6.70 | 0.672 | — | 727 | 0.484 |
+| single | majority3 | 44.26 | 0.594 | — | 3,981 | 0.445 |
+
+With noise (0.1 and 0.2) every representation shows contradictions in every run, because the noise itself produces them; class size is 1 throughout; and the invertible representations' bit accuracy differs from `raw` only through the noise draw landing on different cells of the re-encoded grid (random ICs, noise 0.1: 0.907 raw, 0.907 complement, 0.912 reflect, 0.911 both). The full cell table is in the result file.
+
+Against the declared predictions:
+
+- **P1 holds, exactly.** Identifiability, measured as class size, did not move under any invertible re-encoding in any of the 9,216 runs.
+- **P2 holds.** Under `complement` the transformed truth's minimal description size changes for 98 rules (49 cheaper, 49 dearer, by one size step); under `reflect` for none. At full coverage the per-run search cost differs from `raw` in 38% of runs under `complement` while the family mean is unchanged (the map permutes the rules, so the mean over all 256 is invariant); under partial coverage (`single`) the mean itself moves (30,684 → 29,511), because the shortest consistent table changes non-uniformly. Construction cost moved; identifiability did not.
+- **P3 holds.** At noise 0 there are contradictions in 0 of 512 runs for `raw` and the invertible maps, in 94% (`block_or2`) and 91% (`majority3`) of random-IC runs, and in 67% and 59% of single-IC runs.
+- **Lossy search cost, not predicted:** far below `raw` at noise 0 (1,546 and 18,684 against 47,074 on random ICs). The majority-voted table of a lossy trace is a cheaper formula than the true rule. On single ICs `majority3` also leaves more neighborhoods unseen (mean class size 44.3 against 5.9). A lossy encoding makes the process look simpler and, there, less identified than it is; the "apparent identity" the origin note warned about shows up here as apparent simplicity with hidden contradictions.
+
+What this shows, and no more: in one declared family and one declared DSL, identifiability is invariant under invertible re-encoding and construction cost is not, which is the separation the origin note proposed; lossy re-encoding does not lower the cost of identifying the true rule, it changes the problem and hides that it did. Nothing here concerns representations chosen by a reasoner, or transfer between domains.
