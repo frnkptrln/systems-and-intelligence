@@ -1,5 +1,7 @@
 # 🔭 Meta
 
+**Status:** Orientation index for `meta/` — not a claim document.
+
 This folder has two lanes so we don't mix conceptual reflection with repository governance:
 
 1. **Conceptual Meta** (epistemology, philosophical framing)
@@ -17,7 +19,8 @@ This folder has two lanes so we don't mix conceptual reflection with repository 
 | `repository-meta/freshness-and-review.md` | Repository Meta | Freshness policy for changing external claims and internally derived state, with CI-backed drift checks. |
 | `repository-meta/speculative-writing-guidelines.md` | Repository Meta | Speculative writing conventions (placement, labeling, continuity, style baseline). |
 | `repository-meta/cultural-optimization-red-team-manual.md` | Repository Meta | Guardrails against Goodhart pressure in cultural optimization systems. |
-| `repository-meta/core-claims.md` | Repository Meta | Minimal testable claim set with artifact links and failure conditions. |
+| `repository-meta/core-claims.md` | Repository Meta | Claim register for the viability arc and identity branch, with artifact links and failure conditions. |
+| `repository-meta/identification-claims.md` | Repository Meta | Claim register for the model-identification arc, proposed 2026-09-02. |
 
 If a future file does not clearly fit one lane, add a one-line "Lane:" declaration at the top of that file.
 
@@ -58,7 +61,14 @@ A practical anti-pattern and review ritual guide for authenticity/care optimizat
 
 ### [Core Claims](repository-meta/core-claims.md)
 
-The minimal testable claim set for the repository — Substrate Veto, Impedance Matching, Identity Persistence, and Vital Floors — each with artifact links and explicit failure conditions.
+The claim register for the viability arc and identity branch — Substrate Veto, Impedance Matching, Identity Persistence, and Vital Floors — each with artifact links and explicit failure conditions.
+
+### [Identification Claims](repository-meta/identification-claims.md)
+
+The claim register for the model-identification arc, proposed 2026-09-02: four claims and one
+candidate, derived only from the benchmark, the Witness Principle, Decision-Relevant
+Identifiability, and Active Identifiability, each with artifacts by evidential kind and a failure
+condition.
 
 ---
 
