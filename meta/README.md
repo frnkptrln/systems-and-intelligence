@@ -7,6 +7,10 @@ This folder has two lanes so we don't mix conceptual reflection with repository 
 1. **Conceptual Meta** (epistemology, philosophical framing)
 2. **Repository Meta** (governance, contribution and structure rules)
 
+A third directory, `research-alignment/`, holds the concept-to-literature map and, since
+2026-09-02, the lane for externally sourced leads. Whether it is a third lane or a directory inside
+Repository Meta is a maintainer decision; the table below labels it by directory.
+
 ---
 
 ## Meta Inventory (current files)
@@ -22,6 +26,8 @@ This folder has two lanes so we don't mix conceptual reflection with repository 
 | `repository-meta/cultural-optimization-red-team-manual.md` | Repository Meta | Guardrails against Goodhart pressure in cultural optimization systems. |
 | `repository-meta/core-claims.md` | Repository Meta | Claim register for the viability arc and identity branch, with artifact links and failure conditions. |
 | `repository-meta/identification-claims.md` | Repository Meta | Claim register for the model-identification arc, proposed 2026-09-02. |
+| `research-alignment/related-work-map.md` | Research Alignment (directory) | Concept-to-literature matrix with support/challenge, weakening conditions, and next tests. |
+| `research-alignment/leads/README.md` | Research Alignment (directory) | The lane for externally sourced leads: one file per month, append-only, never writes outside itself. |
 
 If a future file does not clearly fit one lane, add a one-line "Lane:" declaration at the top of that file.
 
@@ -77,6 +83,21 @@ The claim register for the model-identification arc, proposed 2026-09-02: four c
 candidate, derived only from the benchmark, the Witness Principle, Decision-Relevant
 Identifiability, and Active Identifiability, each with artifacts by evidential kind and a failure
 condition.
+
+---
+
+## Research Alignment (directory)
+
+### [Related Work Map](research-alignment/related-work-map.md)
+
+The concept-to-literature matrix: canonical file, anchor papers, support or challenge, what the
+repository adds, what would weaken the claim, and the next empirical test.
+
+### [Leads](research-alignment/leads/README.md)
+
+The lane for externally sourced material, added 2026-09-02. One file per month, append-only; a
+lead is not an idea, not evidence, not a claim, and not a status change, and never writes outside
+the lane.
 
 ---
 

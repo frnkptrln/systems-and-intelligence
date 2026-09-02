@@ -21,7 +21,7 @@ Each note should contain:
 - an open question or tension;
 - optional links to related notes or repository material.
 
-Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title keeps the note readable. No numbering, taxonomy, or promotion queue is required.
+Use `YYYY-MM-DD-short-title.md`. The date preserves the encounter; the title keeps the note readable. No numbering, taxonomy, or promotion queue is required. Externally sourced material — a paper or result found outside the repository — goes to the [leads lane](../meta/research-alignment/leads/README.md), not here; a note in this directory that starts from such material is the maintainer's own observation, written after the lead.
 
 ## Notes
 

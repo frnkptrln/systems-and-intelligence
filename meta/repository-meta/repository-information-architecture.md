@@ -1,7 +1,7 @@
 # 🧭 Repository Information Architecture
 
 **Lane:** Repository Meta  
-**Status:** Working repository policy — §0 written after the foundations audit; §2, §4, §5, §6, and §10 reconciled with it on 2026-09-02  
+**Status:** Working repository policy — §0 written after the foundations audit; §1, §2, §4, §5, §6, §7, and §10 reconciled with it on 2026-09-02  
 **Last reviewed:** 2026-09-02  
 **Review trigger:** a new research arc, register, or lane; a maintainer decision on §5; any change to the spine table in the README.
 
@@ -41,6 +41,17 @@ Characteristics:
 - begins with an observation, question, hypothesis, analogy, or disturbance
 - preserves context and an open tension without requiring a category or destination
 - explicitly non-canonical until developed elsewhere
+
+### `meta/research-alignment/leads/` → Externally sourced leads
+Use this for **a paper, preprint, or result found outside the repository** that bears on a row of
+the [Related Work Map](../research-alignment/related-work-map.md) or on a register claim.  
+Characteristics:
+- one file per month, append-only within the month
+- each entry: source identifier, one sentence on the result, the row or claim it supports or
+  challenges, one sentence why, and who recorded it (maintainer or intake run)
+- never writes outside the lane; a lead is not an idea, not evidence, not a claim, and not a
+  status change
+- rules in [`leads/README.md`](../research-alignment/leads/README.md); added 2026-09-02
 
 ### A. `book/` → Curated narrative
 Use this for the **reader-first canonical path**.  
@@ -280,6 +291,11 @@ When adding a new artifact, ask:
 
 If it is still one small, unfinished observation, question, or hypothesis, record it as an
 exploratory note in `ideas/` without forcing it through the choices below.
+
+If it is an externally sourced lead — a paper, preprint, or result found outside the repository —
+record it in the [leads lane](../research-alignment/leads/README.md). A lead stays in the lane:
+matrix rows, registers, status lines, and `ideas/` change only through a maintainer-authored
+change.
 
 1. **Is this primarily runnable?**  
    → put in `simulation-models/`, `lab/core/`, or `lab/orchestration/`.
