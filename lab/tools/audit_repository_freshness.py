@@ -229,12 +229,30 @@ def _validate_nav():
     return module
 
 
+# Files under these prefixes are part of the repository but not of the corpus
+# that ``docs/repository-map.md`` describes to a reader. The leads lane is an
+# append-only intake surface written by an automated run; counting it would
+# turn every intake write into a count sync outside the lane (maintainer
+# decision D4, 2026-09-02). The files are still scanned for stale ranges and
+# review candidates; only the two corpus magnitudes leave them out.
+COUNT_EXEMPT_PREFIXES = ("meta/research-alignment/leads/",)
+
+
+def counted_markdown_files(repo: Path = REPO) -> list[Path]:
+    """Markdown files that the corpus word and file counts describe."""
+    return [
+        path
+        for path in markdown_files(repo)
+        if not path.relative_to(repo).as_posix().startswith(COUNT_EXEMPT_PREFIXES)
+    ]
+
+
 def corpus_word_count(repo: Path = REPO) -> int:
-    return sum(len(read_text(path).split()) for path in markdown_files(repo))
+    return sum(len(read_text(path).split()) for path in counted_markdown_files(repo))
 
 
 def corpus_markdown_file_count(repo: Path = REPO) -> int:
-    return len(markdown_files(repo))
+    return len(counted_markdown_files(repo))
 
 
 def _published_pages(repo: Path = REPO) -> set[str]:
