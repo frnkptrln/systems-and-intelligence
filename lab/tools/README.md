@@ -9,4 +9,4 @@ Validators, build tools, and figures used across the repository.
 - Figures: the `inverse_benchmark_*.png`, `exp*_*.png`, `teo_*.png`, and `viable_corridor.png` images that the benchmark pages and the paper embed; `viable_corridor.py` draws the corridor figure.
 - Helpers: `evolutionary_optimizer.py`, `morphospace_visualizer.py`, `migrate_sims.py`, and the `web-explorer/` cellular-automaton page published on the site.
 
-These are not standalone projects. Run them from the repository root, as CI does.
+These are not standalone projects. Run them from the repository root, as CI does. The KaTeX check needs a local `npm install katex` first (the installed `node_modules/` is ignored by git).

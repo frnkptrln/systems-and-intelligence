@@ -3,7 +3,7 @@
 **Lane:** Repository Meta (governance). Filed under `conceptual-meta/` because it supersedes the prompt seed kept there; the maintainer may move it.  
 **Status:** Working repository policy — proposed 2026-09-02  
 **Created:** 2026-09-02  
-**Last reviewed:** 2026-09-02  
+**Last reviewed:** 2026-09-03  
 **Review trigger:** a change to the README spine table, to either claim register, to the CI gate, or to [Freshness and Review](../repository-meta/freshness-and-review.md).  
 **Supersedes:** [Agent Prompt Seed](agent-prompt-seed.md) (in the repository since 2026-07-20), which does not reference the Foundations Reconstruction, is dated by the maintainer to before the foundations audit (the visible git history starts with both in the same commit), and binds an agent to the [Symbiotic Nexus Protocol](../../theory/human-organism-silicon-age/symbiotic-nexus-protocol.md), a document the repository itself marks as exploratory architecture.
 
@@ -19,7 +19,10 @@ The repository is a single-maintainer living research notebook. An agent's work 
 unless the maintainer says otherwise: keep the routing layer consistent with the spine, keep the
 registers linked to artifacts, keep history visible. An agent does not add research results, does
 not strengthen or weaken a claim, and does not decide what is load-bearing. Where a judgment is
-needed, it proposes the judgment in the change description and stops.
+needed, it proposes the judgment in the change description and stops. An agent builds a bounded
+experiment under `lab/` only when the maintainer's operating prompt asks for one, in the shape
+[Information Architecture §1.F](../repository-meta/repository-information-architecture.md#f-lab-simulation-models-executables)
+requires: prediction and failure condition committed before any result.
 
 The repository changes almost daily. Treat any statement about its state, including the ones in
 this note, as a hypothesis to re-verify at the start of a session.
@@ -81,7 +84,8 @@ this note, as a hypothesis to re-verify at the start of a session.
 - `fiction/`, `logs/`, and `book/` are not evidence and are never cited as support for a claim.
 - Numbers are frozen results. Do not re-run benchmarks to refresh them. Do not edit any headline
   that a regression test pins: the corridor paper's Appendices C and D, the benchmark headlines,
-  and the held-out == ceiling invariant.
+  and the held-out == ceiling invariant, and the CI subgrids of the bounded experiments under
+  `lab/experiments/`.
 - `lab/experiments/active_identifiability/`: the committed protocol authorizes no model calls.
   Make none.
 
@@ -95,14 +99,15 @@ this note, as a hypothesis to re-verify at the start of a session.
   deliberately re-included there, as the two registers are.
 - The freshness audit checks copied corpus counts and derived counts. Adding or removing a
   Markdown file changes the file count in [`docs/repository-map.md`](../../docs/repository-map.md);
-  run the audit and sync every count it flags.
+  run the audit and sync every count it flags. The leads lane
+  (`meta/research-alignment/leads/`) is exempt from the corpus counts by the audit's own rule.
 - New meta documents carry the [Freshness and Review](../repository-meta/freshness-and-review.md)
   header block: Lane, Status, Created, Last reviewed, Review trigger.
 
 ### Process
 
 - One branch per work package, prefixed by kind (the history shows `docs/`, `research/`, `fix/`,
-  `site/`, and `agent/` in use): `docs/…` for routing and meta edits; `research/…` only for changes
+  `site/`, `agent/`, `tools/`, and `claude/` in use): `docs/…` for routing and meta edits; `research/…` only for changes
   under `theory/` or `lab/`. Never work on `main`.
 - Small changes. Each change description states: what changed; what was marked superseded, with the
   exact sentence used; what was not done and why; and the decisions reserved for the maintainer.
@@ -141,6 +146,11 @@ Propose these in a change description; never apply them.
 - Any status change on any existing document.
 - Whether anything under `theory/teo-framework/`, `theory/veto/`, `theory/symbiotic/`, or
   `theory/human-organism-silicon-age/` should be re-ranked in the directory structure.
+- Whether a task may call a model. The repository has run local models under declared protocols
+  ([context-attractor run 001](../../lab/experiments/context-attractor/README.md)); a task that
+  needs model calls states its scope in its own protocol, and the maintainer authorizes it there.
+- Whether a topic has outgrown `lab/` and moves to a separate repository
+  ([Information Architecture §1.F](../repository-meta/repository-information-architecture.md#f-lab-simulation-models-executables)).
 
 ## Relation to the superseded seed
 

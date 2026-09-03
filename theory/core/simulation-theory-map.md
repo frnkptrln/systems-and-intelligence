@@ -522,7 +522,7 @@ error, evasion, decentralized actors, and distributional constraints?
 **What it does NOT show:** Open-ended process discovery when the model language itself is unknown, or that the fitted candidate is the unique real mechanism.
 **Open question:** How does recovery quality and cost change across declared model languages, search methods, compute budgets, and out-of-family targets?
 
-## Not yet mapped (as of 2026-09-02)
+## Not yet mapped (as of 2026-09-03)
 
 Directories that exist under `simulation-models/` or `lab/benchmarks/` and have no entry above. They are listed so that this map's inventory is complete; each carries its own README status.
 
@@ -536,4 +536,5 @@ Directories that exist under `simulation-models/` or `lab/benchmarks/` and have 
 - `lab/benchmarks/witness-generation/` — status "exact finite lemma and exhaustive cross-check"; the Witness Principle's finite baseline.
 - `lab/benchmarks/recursive-workbench/` — status "v0.2 — exact measurements in a declared toy setting"; the referee benchmark.
 - `lab/benchmarks/learned-searcher/` — status "protocol frozen; execution target unregistered; not yet run".
+- `lab/benchmarks/collective-agency/` — status "preregistration draft — no implementation and no measured result yet" (added 2026-09-03).
 

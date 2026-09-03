@@ -17,6 +17,7 @@ Nothing here is hidden. It is simply not competing for your attention.
 | Papers | 2 of 2 | 1 active (v1.0, frozen), 1 archived and not citable |
 | Stories | 19 of 19 | Self-contained and written for outside readers |
 | Benchmarks | 6 result pages | Five carry measured evidence; the sixth is a frozen, not-yet-run protocol |
+| Experiments | 2 result pages | Bounded experiments whose README declared prediction and failure condition before the result; result files and a pinning test are committed |
 | Interactive | 3 | They only work on the web |
 
 ## What stays in the repository

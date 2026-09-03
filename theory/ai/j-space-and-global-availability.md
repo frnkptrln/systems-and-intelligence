@@ -14,8 +14,7 @@ models. It is not evidence about consciousness, and this note does not use it as
 (Anthropic, published 2026-07-06), measured on Claude Sonnet 4.5, Haiku 4.5, Opus 4.5, and in parts
 Opus 4.6. Everything below that is not attributed to that paper is this repository's interpretation,
 tagged accordingly. The result is recent enough that every use of it here should remain provisional;
-this note records the source date and review date rather than relying on relative phrases such as
-"weeks old."
+this note records the source date and review date rather than relying on relative age phrases.
 
 **Repository anchors:** [Consciousness as Global Availability](../identity/consciousness-as-global-availability.md),
 [Foundations Reconstruction §4.6 and §7](../core/mathematical-axioms.md),
