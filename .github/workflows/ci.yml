@@ -22,6 +22,8 @@ jobs:
         run: pytest tests/test_referee_invariant.py -q
       - name: Internal link validation
         run: python lab/tools/validate_links.py
+      - name: Index completeness and link-label validation
+        run: python lab/tools/validate_indexes.py
       - name: Repository freshness and internal-drift audit
         run: python lab/tools/audit_repository_freshness.py --strict
 

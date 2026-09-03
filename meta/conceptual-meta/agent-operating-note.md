@@ -126,6 +126,7 @@ too when a change touches `papers/`, math rendering, or model code under `lab/`.
 pytest tests/ -q
 pytest tests/test_referee_invariant.py -q
 python lab/tools/validate_links.py
+python lab/tools/validate_indexes.py
 python lab/tools/audit_repository_freshness.py --strict
 python lab/tools/validate_nav.py
 python lab/tools/validate_math.py
