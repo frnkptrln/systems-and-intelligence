@@ -1,6 +1,6 @@
 # Collective Agency Benchmark
 
-**Status:** preregistered design sketch — no implementation and no measured result yet  
+**Status:** preregistration draft — no implementation and no measured result yet  
 **Question:** When does a collection become an agent?
 
 This benchmark asks a bounded systems question. It does **not** attempt to decide whether a collective is conscious, has phenomenal experience, or is ontologically irreducible. It tests whether a declared collective description gains predictive and interventionally useful structure beyond matched component-wise descriptions.
