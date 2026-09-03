@@ -135,7 +135,9 @@ def check_theory_index(repo: Path) -> list[Finding]:
 
 
 def _readme_dirs(base: Path) -> list[Path]:
-    return sorted(p.parent for p in base.glob("*/README.md")) if base.is_dir() else []
+    if not base.is_dir():
+        return []
+    return sorted(p.parent for p in base.glob("*/README.md") if p.parent.name not in SKIP_DIRS)
 
 
 def check_simulation_map(repo: Path) -> list[Finding]:
