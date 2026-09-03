@@ -37,6 +37,7 @@ papers/*.pdf
 
 # Generated artifacts
 migrate.py
+node_modules/
 .pytest_cache/
 lab/experiments/**/runs/**/prompt-cache/
 lab/experiments/**/runs/**/*prompt-cache.bin*

@@ -5,6 +5,7 @@ Experiment 4: The Coupling Phase Transition
 
 This experiment provides the empirical proof for "The Transition Problem"
 and the "Coupling-First Sequence". 
+(Status 2026-09-03: a toy illustration, not a proof; see lab/AGENTIC_README.md.)
 
 It models an agent navigating a rugged, noisy utility landscape.
 The agent's state updates are governed by the coupling parameter K, 

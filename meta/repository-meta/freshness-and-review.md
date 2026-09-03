@@ -226,3 +226,26 @@ drift. They should not be fixed with one mechanism.
 The intended pattern remains:
 
 > **Keep the question when it survives; replace the snapshot when it does not.**
+
+---
+
+## 10. Second application: 2026-09-02
+
+A full drift sweep over every self-describing surface (entry pages, the information architecture,
+the registers, the two theory maps, every directory README) found about sixty disagreements. By
+class:
+
+- link labels that showed a path other than their target (nineteen in one map);
+- counts and version strings copied instead of linked ("v2" for a v2.1 document, a benchmark range,
+  file and note counts);
+- indexes that had fallen behind their directories (theory sections, simulation and benchmark
+  directories with no map entry);
+- a status line on one surface contradicted by a label or summary on another;
+- map entries that claimed more than the simulation they described runs.
+
+The first three classes were deterministic and were fixed in place. The last two were fixed with
+the minimal true wording and a dated "(Corrected …)" note that quotes the old sentence, or left as a
+decision for the maintainer where either side could move. The audit now exempts the leads lane from
+the corpus counts; the classes that a validator could catch (label ≠ target, copied counts, index
+completeness) are the candidates for its next extension.
+

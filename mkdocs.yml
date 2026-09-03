@@ -17,8 +17,6 @@ exclude_docs: |
   # unpublished page to the file on GitHub, and docs/repository-map.md lists
   # the layers. Excluding is an editorial act, not a deletion.
 
-  lab/tools/web-explorer/README.md
-
   book/
   !book/09_from_rule_to_mind.md
 
