@@ -375,6 +375,8 @@ If the two selectors always coincide under the tested structures, the proposed d
 empirical leverage there. If they diverge as the exact example predicts, the benchmark gains a new
 axis: **epistemic resolution versus decision-relevant resolution**.
 
+*Receipt (2026-09-03): [Decision Layer on the Witness-Generation Benchmark](../../lab/experiments/decision_layer/README.md) — in 14 of 3,440 declared cells the class-reduction and information-gain selectors lose strictly on value of information, every one a full reversal, exactly where a coverage criterion predicts; the two selectors coincide everywhere else in that setting. Pinned by `tests/test_decision_layer.py`.*
+
 ---
 
 ## Rule
