@@ -94,6 +94,8 @@ Characteristics:
 - code first; docs explain assumptions, parameters, and expected behavior
 - when possible, map simulation outcomes back to specific theory claims
 
+**Boundary (2026-09-03).** `lab/` holds benchmarks and bounded experiments: a README that states setting, measures, prediction, and failure condition before the first result is committed; results in new files; a test that pins the headline. Research loops in which an agent generates, evaluates, and revises without the maintainer at each step live in separate repositories and report back with a dated results file and a link. A topic moves out when it outgrows this shape. An experiment page is published on the site only when it has that shape and its result files are committed; [`docs/repository-map.md`](../../docs/repository-map.md) counts the published experiment pages.
+
 ---
 
 ## 2) Operating Modes
@@ -298,7 +300,7 @@ matrix rows, registers, status lines, and `ideas/` change only through a maintai
 change.
 
 1. **Is this primarily runnable?**  
-   → put in `simulation-models/`, `lab/core/`, or `lab/orchestration/`.
+   → put in `simulation-models/`, `lab/core/`, or `lab/orchestration/`; a benchmark or a bounded experiment goes to `lab/benchmarks/` or `lab/experiments/` in the shape §1.F requires.
 2. **Is this primarily a formal argument?**  
    → put in `theory/`.
 3. **Is this optimized for linear reading?**  
