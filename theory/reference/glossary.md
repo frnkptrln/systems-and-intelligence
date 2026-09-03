@@ -54,7 +54,7 @@ The multiplicative form means a zero in any dimension collapses this selected sc
 
 **What it is NOT:** Not a measure of consciousness, subjective experience, or general intelligence. It measures functional competence of a dynamical system.
 
-**Where it appears:** [`data-analysis/sii_dashboard.py`](../../lab/data-analysis/sii_dashboard.py), [`theory/system-intelligence-index.md`](../core/system-intelligence-index.md)
+**Where it appears:** [`data-analysis/sii_dashboard.py`](../../lab/data-analysis/sii_dashboard.py), [`theory/core/system-intelligence-index.md`](../core/system-intelligence-index.md)
 
 ---
 
@@ -110,7 +110,7 @@ Random noise has high observer surprise but low trajectory consistency. Mirrorin
 
 **What it is NOT:** Not random noise (which also surprises). Not creativity in the romantic sense — it is operationalized as coherent deviation, not aesthetic achievement.
 
-**Where it appears:** [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/emergence-manifesto-v1.3.md`](../core/emergence-manifesto-v1.3.md)
+**Where it appears:** [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/core/emergence-manifesto-v1.3.md`](../core/emergence-manifesto-v1.3.md)
 
 ---
 
@@ -142,7 +142,7 @@ This term replaces "proto-consciousness" in earlier formulations. The substituti
 
 **What it is NOT:** Not consciousness. Self-referential processing is a necessary but not sufficient condition for any theory of consciousness (IIT, Global Workspace Theory, Higher-Order Theories). A thermostat has self-referential processing (it represents its own state — temperature — and acts on it). We do not attribute consciousness to thermostats.
 
-**Where it appears:** [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/emergence-manifesto-v1.3.md`](../core/emergence-manifesto-v1.3.md)
+**Where it appears:** [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/core/emergence-manifesto-v1.3.md`](../core/emergence-manifesto-v1.3.md)
 
 ---
 
@@ -170,7 +170,7 @@ This is formalized by Heinz von Foerster's second-order cybernetics: the observe
 
 **What it is NOT:** Not quantum observer effects. The QM observer effect is a specific physical phenomenon (wavefunction collapse upon measurement). The relational emergence described here operates through standard information-theoretic and cybernetic mechanisms. The analogy is seductive but misleading.
 
-**Where it appears:** [`lab/experiments/exp3_observer_divergence.py`](../../lab/experiments/exp3_observer_divergence.py), [`theory/emergence-manifesto-v1.3.md`](../core/emergence-manifesto-v1.3.md)
+**Where it appears:** [`lab/experiments/exp3_observer_divergence.py`](../../lab/experiments/exp3_observer_divergence.py), [`theory/core/emergence-manifesto-v1.3.md`](../core/emergence-manifesto-v1.3.md)
 
 ---
 
@@ -228,7 +228,7 @@ The Arpeggio Postulate states that most current agent architectures are structur
 
 **What it is NOT:** Not a value judgment. An Arpeggio agent may perform as well as a Chord agent on benchmarks. The distinction is structural, not evaluative — it concerns whether identity is architecturally co-instantiated, not whether the outputs are good.
 
-**Where it appears:** [`theory/chord-vs-arpeggio-identity.md`](../identity/chord-vs-arpeggio-identity.md), [`theory/teo-framework/lerchner-boundary.md`](../teo-framework/lerchner-boundary.md), [`theory/thermodynamics-of-orchestration.md`](../core/thermodynamics-of-orchestration.md) §8
+**Where it appears:** [`theory/identity/chord-vs-arpeggio-identity.md`](../identity/chord-vs-arpeggio-identity.md), [`theory/teo-framework/lerchner-boundary.md`](../teo-framework/lerchner-boundary.md), [`theory/core/thermodynamics-of-orchestration.md`](../core/thermodynamics-of-orchestration.md) §8
 
 ---
 
@@ -244,9 +244,9 @@ The Arpeggio Postulate states that most current agent architectures are structur
 
 The system makes four testable predictions about when stability, monopoly, polarization, or collapse occurs.
 
-**What it is NOT:** Not novel mathematics. Each component is individually well-established. The contribution is their coupling into a unified diagnostic for multi-agent dynamics. See [`theory/limitations-and-honest-assessment.md`](limitations-and-honest-assessment.md) for an honest accounting.
+**What it is NOT:** Not novel mathematics. Each component is individually well-established. The contribution is their coupling into a unified diagnostic for multi-agent dynamics. See [`theory/reference/limitations-and-honest-assessment.md`](limitations-and-honest-assessment.md) for an honest accounting.
 
-**Where it appears:** [`theory/thermodynamics-of-orchestration.md`](../core/thermodynamics-of-orchestration.md), [`theory/teo-framework/`](../teo-framework/README.md), [`simulation-models/alignment-and-veto/teo-civilization/`](../../simulation-models/alignment-and-veto/teo-civilization/README.md)
+**Where it appears:** [`theory/core/thermodynamics-of-orchestration.md`](../core/thermodynamics-of-orchestration.md), [`theory/teo-framework/`](../teo-framework/README.md), [`simulation-models/alignment-and-veto/teo-civilization/`](../../simulation-models/alignment-and-veto/teo-civilization/README.md)
 
 ## Situated Competence
 

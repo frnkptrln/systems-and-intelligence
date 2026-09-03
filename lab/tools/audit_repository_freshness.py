@@ -312,6 +312,46 @@ def published_benchmark_count(repo: Path = REPO) -> int:
     )
 
 
+def published_experiment_count(repo: Path = REPO) -> int:
+    """Bounded-experiment pages under ``lab/experiments/`` selected by ``exclude_docs``."""
+    return sum(
+        1
+        for page in _published_pages(repo)
+        if page.startswith("lab/experiments/") and Path(page).name == "README.md"
+    )
+
+
+def unpublished_theory_count(repo: Path = REPO) -> int:
+    published, total = _theory_counts(repo)
+    return total - published
+
+
+def reference_file_count(repo: Path = REPO) -> int:
+    return len(list((repo / "theory" / "reference").glob("*.md")))
+
+
+def simulation_readme_count(repo: Path = REPO) -> int:
+    """One README per simulation model, two levels below ``simulation-models/``."""
+    return len(list((repo / "simulation-models").glob("*/*/README.md")))
+
+
+def log_note_count(repo: Path = REPO) -> int:
+    """Numbered notes in ``logs/``, excluding the index."""
+    return sum(1 for path in (repo / "logs").glob("*.md") if path.name != "README.md")
+
+
+def paper_file_count(repo: Path = REPO) -> int:
+    return len(list((repo / "papers").glob("*.md")))
+
+
+def published_paper_count(repo: Path = REPO) -> int:
+    return sum(1 for page in _published_pages(repo) if page.startswith("papers/"))
+
+
+def interactive_page_count(repo: Path = REPO) -> int:
+    return len(list((repo / "docs" / "interactive").glob("*.md")))
+
+
 # Every entry is a magnitude a reader is asked to trust. Adding a claim here is
 # what keeps it honest; rewording the sentence out from under its pattern is
 # reported rather than silently unguarding the number.
@@ -358,6 +398,60 @@ DERIVED_COUNTS: tuple[DerivedCount, ...] = (
         re.compile(r"\|\s*Benchmarks\s*\|\s*([\d,]+) result pages\s*\|"),
         published_benchmark_count,
         "published benchmark result pages",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"\|\s*Experiments\s*\|\s*([\d,]+) result pages\s*\|"),
+        published_experiment_count,
+        "published experiment result pages",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"\|\s*Reference\s*\|\s*([\d,]+), counted within the [\d,]+ above"),
+        reference_file_count,
+        "reference pages",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"\|\s*Reference\s*\|\s*[\d,]+, counted within the ([\d,]+) above"),
+        published_theory_count,
+        "published theory essays named by the Reference row",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"\|\s*Papers\s*\|\s*([\d,]+) of [\d,]+\s*\|"),
+        published_paper_count,
+        "published papers",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"\|\s*Papers\s*\|\s*[\d,]+ of ([\d,]+)\s*\|"),
+        paper_file_count,
+        "paper files that exist",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"\|\s*Interactive\s*\|\s*([\d,]+)\s*\|"),
+        interactive_page_count,
+        "interactive pages",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"### Simulation models — ([\d,]+) READMEs"),
+        simulation_readme_count,
+        "simulation model READMEs",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"### Architecture logs — ([\d,]+) notes"),
+        log_note_count,
+        "architecture log notes",
+    ),
+    DerivedCount(
+        "docs/repository-map.md",
+        re.compile(r"### Theory essays not on the reading path — ([\d,]+)"),
+        unpublished_theory_count,
+        "theory essays not on the reading path",
     ),
 )
 

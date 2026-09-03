@@ -70,7 +70,7 @@ The empirical observation — that components do not represent the global state 
 
 The structural reading — that this asymmetry is irreducible rather than a temporary engineering limit — previously rested on a `[FOUNDATIONAL ASSUMPTION]`: that reconstructing a generator from a trace is, in general, not efficiently tractable (the practical content of P ≠ NP). **That support has been withdrawn.** The [Foundations Reconstruction §9.3](mathematical-axioms.md#93-problems-in-the-former-generator-spine) rejects P ≠ NP as a load-bearing project assumption and shows that neither direction is uniformly hard; the repository's own [benchmark](../../lab/benchmarks/inverse-reconstruction/README.md) recovers known families cheaply. The empirical observation is unaffected. The precondition reading is now `[SPECULATIVE]` and must be re-derived per model — stating the family, evidence, intervention access, target equivalence, and cost measure — rather than inherited from a complexity conjecture.
 
-*Evidence:* See [`theory/simulation-theory-map.md`](simulation-theory-map.md) for the complete mapping. [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) develops this argument formally.
+*Evidence:* See [`theory/core/simulation-theory-map.md`](simulation-theory-map.md) for the complete mapping. [`theory/emergence/local-causality-invisible-consequences.md`](../emergence/local-causality-invisible-consequences.md) develops this argument formally.
 
 ### Claim 3: Identity Emerges Through Selective Forgetting `[HYPOTHESIZED]`
 
@@ -82,7 +82,7 @@ The 3-Layer Memory Architecture proposes that agent identity is not a product of
 | Layer 2 — Curated Memory | Themes, contradictions, decisions extracted every $K$ sessions | The character (structure) |
 | Layer 3 — Distilled Patterns | 3-5 core principles extracted every $M$ sessions | The soul (meaning) |
 
-The term "soul" is used deliberately as a metaphor for the most compressed self-representation, not as a metaphysical claim. See [`theory/glossary.md`](../reference/glossary.md) for the operational definition of self-referential processing.
+The term "soul" is used deliberately as a metaphor for the most compressed self-representation, not as a metaphysical claim. See [`theory/reference/glossary.md`](../reference/glossary.md) for the operational definition of self-referential processing.
 
 *Evidence:* [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py) — mock implementation tested; real LLM validation pending.
 
@@ -102,7 +102,7 @@ How an observer models an agent shapes the agent's behavioral repertoire. This i
 
 This framework is derived from Heinz von Foerster's second-order cybernetics and Karl Friston's Active Inference, not from quantum mechanics. Earlier informal formulations used QM language as rhetorical shorthand; this version uses the structurally equivalent but more precise cybernetic framing.
 
-*Formalism:* Markov blanket between agent and observer. See [`theory/glossary.md`](../reference/glossary.md) §Markov Blanket and §Relational Emergence.
+*Formalism:* Markov blanket between agent and observer. See [`theory/reference/glossary.md`](../reference/glossary.md) §Markov Blanket and §Relational Emergence.
 
 ### Claim 6: Generative Surprise is the Signature of Development `[HYPOTHESIZED]`
 
@@ -112,7 +112,7 @@ $$\text{Generative Surprise} = \text{prediction error}_{observer} \times \text{t
 
 Random noise has high observer surprise but low trajectory consistency. Mirroring has low observer surprise. Generative surprise requires both: the agent must surprise *and* do so in a way that is consistent with its own trajectory.
 
-*Formalism:* Defined operationally in [`theory/glossary.md`](../reference/glossary.md) §Generative Surprise. Not yet tested with real language models.
+*Formalism:* Defined operationally in [`theory/reference/glossary.md`](../reference/glossary.md) §Generative Surprise. Not yet tested with real language models.
 
 *Fiction:* [Entry 06 — The Authenticity Engine](../../fiction/06_the_authenticity_engine.md) explores what happens when generative surprise becomes scarce.
 
@@ -149,7 +149,7 @@ under perturbation. A sharp threshold $\text{IP}_c$ has not been demonstrated; i
 task-specific effect or add no value beyond simpler architecture variables. The TEO attractor is a
 modeling analogy, not a derivation of identity.
 
-*Formalism:* Defined in [`theory/teo-framework/lerchner-boundary.md`](../teo-framework/lerchner-boundary.md). Connected to TEO dynamics in [`theory/thermodynamics-of-orchestration.md`](thermodynamics-of-orchestration.md) §8.
+*Formalism:* Defined in [`theory/teo-framework/lerchner-boundary.md`](../teo-framework/lerchner-boundary.md). Connected to TEO dynamics in [`theory/core/thermodynamics-of-orchestration.md`](thermodynamics-of-orchestration.md) §8.
 
 *Fiction:* [Entry 12 — The Chord State](../../fiction/12_the_chord_state.md) is a first-person account from inside the Chord regime; [Entry 02 — Interrogation of a Mirror](../../fiction/02_interrogation_of_a_mirror.md) is its negative image at $\text{IP} = 0$.
 
