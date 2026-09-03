@@ -62,6 +62,22 @@ python -m pytest tests/test_decision_layer.py -q
 
 The first command writes `results/decision_layer.json` (the full grid, about 30 s on one CPU) and `results/ci_subgrid.json` (about 10 s). Fractions are serialized as strings so exactness survives the JSON round trip. The test pins the P1 table, the P2 control, the P3 radii, P5, the P4 equality on the CI classes, agreement of the exact expected-remaining score with the benchmark's float, and the committed CI subgrid.
 
-## Results
+## Results (full grid, run 2026-09-03)
 
-Not yet run for the result files at the time this README was committed. The results summary is added in the commit that adds them.
+`results/decision_layer.json`: 3,440 cells, 42 s on one CPU. The full-grid file keeps the selected rows, the arm values, and the flags per cell; the per-row measures and block lists are in `results/ci_subgrid.json`.
+
+- **P1 holds.** `K1|D1|3` and `K4|D1|3` are size-strict, IG-strict, and full reversals, with the declared table: the size and IG arms select `00001011` (blocks 2, 2, 2, 2; 2 bits; VoI 0; regret radius 10 in every block), the VOI arm selects `00000111` (blocks 4, 4; 1 bit; VoI 5; regret radius 0). `K1|D2|3` and `K4|D2|3` are strict with maximal VoI 4.
+- **P2 holds.** `K4|U` is never strict; its maximal VoI is 1/256, 15/256, 31/256, 127/256, 255/256 at costs 0–4.
+- **P3 holds.** `K1|D1` contains the pair (size 2, radius 10) against (size 4, radius 0); the class radius is 0 for `K4|D3` at 256 rules and 10 for `K3|D1` at 2 rules.
+- **P4 holds.** The coverage criterion equals the enumerated size-strictness on all 850 (cube, `D1`, cost) cells.
+- **P5 holds.** `K2` is never strict under any card at any cost.
+
+Strict cells in the whole grid: 14 of 3,440, every one a full reversal; 7 under `D1` and the same 7 under `D2`, none under `U` or `D3`. Cube names read `C<coordinates>d<decision coordinate>` with neighborhood codes 0–7.
+
+| Cell (`D1`; `D2` identical with VoI 0 → 4) | Size and IG arms | VOI arm | VoI arm → maximum |
+|:---|:---|:---|---:|
+| `K1\|D1\|3`, `K4\|D1\|3`, `C257d7\|D1\|3` | `00001011` | `00000111` | 0 → 5 |
+| `C235d3\|D1\|2`, `C256d6\|D1\|2` | `00000101` | `00000011` | 0 → 5 |
+| `C236d2\|D1\|2`, `C356d5\|D1\|2` | `00000011` | `00000101` | 0 → 5 |
+
+What this shows, and no more: in this access geometry the benchmark's selectors and the decision-value selector disagree strictly in exactly the cells the coverage criterion names, where every cheapest row that exposes the most cube coordinates misses the decision coordinate while some row of the same cost exposes it; everywhere else they agree or tie. A size-2 block can carry regret radius 10 while a size-4 block carries 0, and 2 bits can be worth 0 while 1 bit is worth 5. Both halves of Candidate C1 now have an exact, pinned receipt in one declared setting. Whether that promotes C1 is the register's status decision, reserved for the maintainer.

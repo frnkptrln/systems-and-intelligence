@@ -312,7 +312,8 @@ def all_classes() -> dict:
     return classes
 
 
-def aggregate(class_names, cards=CARD_NAMES, costs=COSTS, exclude=()) -> dict:
+def aggregate(class_names, cards=CARD_NAMES, costs=COSTS, exclude=(), detail=True) -> dict:
+    """Exact aggregates; ``detail=False`` drops per-row measures and block lists (full grid)."""
     classes = all_classes()
     excluded = {tuple(e) for e in exclude}
     out = {
@@ -327,6 +328,7 @@ def aggregate(class_names, cards=CARD_NAMES, costs=COSTS, exclude=()) -> dict:
                 for name in class_names
             },
             "excluded_cells": [list(e) for e in exclude],
+            "detail": detail,
         },
         "cells": {},
         "risk_inversion": {},
@@ -346,6 +348,8 @@ def aggregate(class_names, cards=CARD_NAMES, costs=COSTS, exclude=()) -> dict:
                     continue
                 result = cell(rules, card, cost)
                 blocks_seen.update(tuple(p) for p in result["blocks_all_rows"])
+                if not detail:
+                    result = {k: v for k, v in result.items() if k not in ("measures", "blocks_all_rows")}
                 out["cells"][f"{name}|{card_name}|{cost}"] = result
                 key = f"{card_name}|{cost}"
                 strict_counts.setdefault(key, {"size": 0, "ig": 0, "full_reversal": 0, "cells": 0})
@@ -396,7 +400,7 @@ def main() -> None:
         print(json.dumps(to_jsonable(aggregate(**CI_SUBGRID)), indent=1))
         return
     full_names = tuple(NAMED_CLASSES) + tuple(cube_classes())
-    result = to_jsonable(aggregate(full_names))
+    result = to_jsonable(aggregate(full_names, detail=False))
     print(json.dumps(result["summary"], indent=1))
     if args.save:
         out = HERE / "results" / "decision_layer.json"
