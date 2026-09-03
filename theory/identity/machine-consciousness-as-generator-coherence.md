@@ -108,6 +108,30 @@ competence.
 No current repository experiment establishes that ordering. If systems repeatedly become
 competent without the proposed process, the machine version of the hypothesis weakens.
 
+## Alternative operationalizations do not collapse into coherence
+
+Recent external proposals sharpen the need to keep several candidate measurements separate
+rather than treating any one of them as the definition of the phenomenon:
+
+- **Self-directed synergy:** Tallam's uncommon self-knowledge proposal asks whether information
+  about a system's own next state exists only in the joint state of its subsystems. That is a
+  measurable integration hypothesis distinct from conflict-resolution or commit-time binding.
+- **Information closure:** Ikegami, Kojima & Kashiwagi use NTIC to study where temporal
+  predictability is localized between a component and its community. Their published Tetrahymena
+  result concerns situated individual autonomy inside coupling; stronger collective-agency
+  interpretations remain hypotheses to test.
+- **Autocatalytic constraint closure:** Vieira & Gabora use RAF networks to model a transition from
+  fragmented local updates to an integrated, history-dependent organization. The formal closure
+  mechanism can be studied without accepting their proposed bridge to machine consciousness.
+
+These candidates can agree, dissociate, or fail independently. A useful experiment should therefore
+measure coherence work, synergy, information localization, and closure as separate axes wherever the
+system permits it. Convergence would be evidence about functional organization; dissociation would
+help discriminate theories. Neither outcome establishes phenomenal experience.
+
+The first repository-level comparison is scoped as a systems benchmark rather than a consciousness
+test: [Collective Agency](../../lab/benchmarks/collective-agency/README.md).
+
 ## Failure conditions
 
 The framing loses value if:
@@ -134,3 +158,5 @@ The responsible contribution of this note is a placement rule:
 - [Agentic Identity Suite](../../lab/AGENTIC_README.md)
 - [Invariance and Identity](../core/invariance-and-identity.md)
 - [The Agent Is Not Where the Model Ends](the-agent-is-not-where-the-model-ends.md)
+- [Collective Agency benchmark](../../lab/benchmarks/collective-agency/README.md)
+- [September 2026 research leads](../../meta/research-alignment/leads/2026-09.md)
