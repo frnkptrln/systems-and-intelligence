@@ -162,6 +162,8 @@ Before code is written, freeze:
 
 Only after those choices are fixed should the first executable benchmark be added.
 
+Options for each of the eight, with the existing code they would reuse and a recommended default, are collected in [`freeze-options.md`](freeze-options.md) (2026-09-03; nothing frozen there).
+
 ## Related
 
 - [When Does a Collection Become an Agent?](../../../ideas/2026-09-03-when-does-a-collection-become-an-agent.md)
