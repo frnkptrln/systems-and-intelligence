@@ -38,6 +38,8 @@ distinguish their process models without defining “genuine identity” by the 
 
 **What a solution would look like:** A meta-prior or initial curation policy that is (a) general enough to apply to any agent, (b) specific enough to produce distinctive identities across agents in different interaction contexts, and (c) provably convergent — meaning that different initial priors lead to similar identity formation processes if the interaction data is the same. This would separate the contribution of the architecture from the contribution of the initial conditions.
 
+*See also (2026-09-03): [When Does a Collection Become an Agent?](../../ideas/2026-09-03-when-does-a-collection-become-an-agent.md) asks the curation question for collectives — which coarse-graining makes a collection's predictive and control structure usefully collective rather than merely coordinated.*
+
 ---
 
 ## Open Problem 3: Falsifiability of Relational Emergence
@@ -61,6 +63,8 @@ distinguish their process models without defining “genuine identity” by the 
 ## Open Problem 4: The Scale Question
 
 *Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
+
+*Preregistered, not run (2026-09-03): the [Collective Agency benchmark](../../lab/benchmarks/collective-agency/README.md) makes the macro-intervention criterion testable (its §3.5 and H3); options for its eight freeze decisions are collected in [freeze-options.md](../../lab/benchmarks/collective-agency/freeze-options.md).*
 
 **Problem statement:** Local information limits, distributed causal effects, and regime
 changes recur in several models. Under which state descriptions and coarse-grainings do
@@ -95,6 +99,8 @@ mapping, not every possible cross-scale comparison.
 ## Open Problem 6: The Downward Causation Question
 
 *Raised by: [`theory/emergence/fractal-architecture-of-emergence.md`](../emergence/fractal-architecture-of-emergence.md)*
+
+*Preregistered, not run (2026-09-03): the [Collective Agency benchmark](../../lab/benchmarks/collective-agency/README.md) makes the macro-intervention criterion testable (its §3.5 and H3); options for its eight freeze decisions are collected in [freeze-options.md](../../lab/benchmarks/collective-agency/freeze-options.md).*
 
 **Problem statement:** When does a macrovariable add interventionally useful information
 about later local dynamics beyond a chosen microdescription? Can this relation be compared
@@ -144,6 +150,8 @@ from a trace-equivalent system that merely emits the same reports?
 ## Open Problem 9: The Generative Operator Question
 
 *Raised by: [`theory/emergence/generative-form-systems.md`](../emergence/generative-form-systems.md)*
+
+*Candidate operator filed as a lead (2026-09-03): autocatalytic constraint closure (RAF networks; Vieira & Gabora 2026, [leads lane](../../meta/research-alignment/leads/2026-09.md)); the repository's reading is [Closure Can Open a New Possibility Space](../../ideas/2026-09-03-closure-can-open-a-new-possibility-space.md).*
 
 **Problem statement:** Which operators in this repository actually generate stable form, and which merely describe it after the fact? IFS attractors, L-systems, random graph thresholds, and renormalization all provide formal generative machinery. The repository's broader claims should be checked against that standard.
 
@@ -205,6 +213,7 @@ viability value are therefore separate objectives unless a declared assumption m
 - **v1.11:** a population with inherited support/link traits, paid dynamic links, reproduction, mutation, and death builds a functionally useful network, but contribution is selected downward in all 16 seeds and abundance falls. The preregistered endogenous co-stabilization criterion is not supported; collective function and evolutionary retention are distinct constraints.
 - **v1.12:** making contribution visible to partner formation does not restore retention either. Across four arms under one accounting — blind, partner choice, conditional reciprocity, assortment, with partner information explicitly paid for — no arm reverses the sign of support selection in a majority of seeds. Partner choice comes closest and does something different: it excludes non-contributors from the network almost completely (1.2% of linked agents versus 22.0% blind) while they persist in the population (27.1%). Visibility sorts the network; it does not retain the trait.
 - **v1.13:** moving the cost from the donor to the local group nearly removes the penalty without reversing it. A group-mean levy cuts selection against support from −0.1056 to −0.0075 (44% of seeds positive, up from 0%) and drops seeded cheaters to 2.6% against 21.6% — below their starting frequency, falsifying the preregistered prediction that pooling would ease free-riding. The cost is population size. Whether the retained trait is selected for or merely no longer selected against is unresolved: a group-mean levy makes within-group variation nearly cost-neutral, so drift may be carrying it.
+- **Bounded experiment, not a version (2026-09-02):** [Representation and Reconstruction Difficulty](../../lab/experiments/representation_reconstruction/README.md) — under invertible re-encoding of the trace the consistent class is unchanged in every run while the v1.2 construction cost moves; lossy re-encoding produces contradictions that the majority vote hides.
 
 **Open remainder:** learned searchers and program synthesizers under matched budgets; the time-order-free IFS testbed; external SINDy/PySR baselines; re-simulation divergence; separating selection from drift in the v1.13 pool arm via a within-group cost gradient; whether network exclusion is a stable outcome or a reservoir that returns when the network weakens; endogenous resource production; and the measurement question v1.12 raised, since on/off deltas and drift-from-start disagree for rules that reward a trait independently of the transfer.
 
@@ -329,6 +338,8 @@ evaluation describe partial defenses. The repository's narrower contribution is 
 which the referee boundary can be varied one property at a time with the ceiling computed
 analytically. Nothing here bears yet on learned loops, and the workbench's proposer does not model
 an adversary.
+
+A bounded experiment ([Persistence and Search Narrowing](../../lab/experiments/persistence_narrowing/README.md), 2026-09-02) adds one point by construction: a memory of earlier accepted artifacts that is independent of the target keeps the held-out == ceiling identity, and in this toy it widens rather than narrows the proposal set.
 
 **What a solution would look like:** Vary the referee properties independently — test
 write-protection on/off, query budget 0..q, evidence channel inside vs. outside the loop's write
