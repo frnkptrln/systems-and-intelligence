@@ -2,7 +2,7 @@
 
 **Status:** Orientation page. It describes the boundary between this site and the repository behind it.
 
-This site is not the repository. The repository holds roughly 250,000 words across 281 Markdown files (the leads lane's intake files are not counted) — about twenty hours of reading. Publishing all of it was the old arrangement, and it made the site unreadable: a first-time reader had no way to tell which five percent carried the argument.
+This site is not the repository. The repository holds roughly 250,000 words across 283 Markdown files (the leads lane's intake files are not counted) — about twenty hours of reading. Publishing all of it was the old arrangement, and it made the site unreadable: a first-time reader had no way to tell which five percent carried the argument.
 
 So the site now publishes the part that is finished enough for someone who has not been following along. Everything else stays where it was written, next to the code it describes, and stays linked — any link on this site that points at an unpublished page goes to the file on GitHub instead of breaking.
 
@@ -17,7 +17,7 @@ Nothing here is hidden. It is simply not competing for your attention.
 | Papers | 2 of 2 | 1 active (v1.0, frozen), 1 archived and not citable |
 | Stories | 19 of 19 | Self-contained and written for outside readers |
 | Benchmarks | 6 result pages | Five carry measured evidence; the sixth is a frozen, not-yet-run protocol |
-| Experiments | 2 result pages | Bounded experiments whose README declared prediction and failure condition before the result; result files and a pinning test are committed |
+| Experiments | 3 result pages | Bounded experiments whose README declared prediction and failure condition before the result; result files and a pinning test are committed |
 | Interactive | 3 | They only work on the web |
 
 ## What stays in the repository
@@ -38,7 +38,7 @@ Dated working notes on system design — the planetary compiler, provenance dept
 
 [`lab/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/lab)
 
-The orchestration layer, the provider layer, the inverse-search scaffold, the benchmark scenario schemas, and the six cognitive stress-test scenarios. The benchmark *results* and two bounded experiments with committed result files are published; the machinery that produces them is here.
+The orchestration layer, the provider layer, the inverse-search scaffold, the benchmark scenario schemas, and the six cognitive stress-test scenarios. The benchmark *results* and three bounded experiments with committed result files are published; the machinery that produces them is here.
 
 ### Repository meta
 
