@@ -205,6 +205,11 @@ Accordingly:
 
 ## Offline validation
 
+The historical Hugging Face smoke runner has been recovered as
+`run_open_model.py`. Its parser, subset selector, execution boundary, and
+JSON-stable summary live in `smoke_contract.py` so CI can test them without a
+model runtime. The committed draft protocol is rejected before any model
+download or call; the runner's presence is not execution authorization.
 The protocol is intentionally marked `0.1-draft`, leaves the model identifier
 and revision unset, and carries `model_calls_authorized: false`. The manifest
 builder makes every prompt, option mapping, pairing key, posterior, and trial ID
