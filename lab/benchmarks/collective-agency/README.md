@@ -164,6 +164,8 @@ Only after those choices are fixed should the first executable benchmark be adde
 
 Options for each of the eight, with the existing code they would reuse and a recommended default, are collected in [`freeze-options.md`](freeze-options.md) (2026-09-03; nothing frozen there).
 
+Those defaults are now transcribed into [`freeze-candidate.json`](freeze-candidate.json) for review. The candidate is machine-checked by `freeze_contract.py`, keeps all six maintainer questions explicit, and sets both implementation and execution authorization to `false`; it is not a preregistration freeze.
+
 ## Related
 
 - [When Does a Collection Become an Agent?](../../../ideas/2026-09-03-when-does-a-collection-become-an-agent.md)
