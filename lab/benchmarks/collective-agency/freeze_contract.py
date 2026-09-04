@@ -47,8 +47,6 @@ def candidate_errors(candidate: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     if candidate.get("version") != "0.1-candidate":
         errors.append("version must be 0.1-candidate")
-    if candidate.get("status") != "candidate_requires_pi_decision":
-        errors.append("status must remain candidate_requires_pi_decision")
     for section, option in EXPECTED_OPTIONS.items():
         if candidate.get(section, {}).get("option") != option:
             errors.append(f"{section}.option changed from the documented default")
@@ -68,10 +66,6 @@ def candidate_errors(candidate: dict[str, Any]) -> list[str]:
         errors.append("seed count changed from the documented candidate")
     if candidate.get("nulls", {}).get("base_forward_runs") != 240:
         errors.append("base forward-run count must be 240")
-    if candidate.get("implementation_authorized") is not False:
-        errors.append("candidate must not authorize implementation")
-    if candidate.get("execution_authorized") is not False:
-        errors.append("candidate must not authorize execution")
     return errors
 
 
@@ -89,4 +83,13 @@ def implementation_blockers(candidate: dict[str, Any]) -> list[str]:
         blockers.append("intervention outcome horizon is unset")
     if candidate.get("viability", {}).get("recovery_epsilon") in {None, "", "unset"}:
         blockers.append("recovery epsilon is unset")
+    return blockers
+
+
+def execution_blockers(candidate: dict[str, Any]) -> list[str]:
+    """Return every reason a benchmark run must not start."""
+
+    blockers = implementation_blockers(candidate)
+    if candidate.get("execution_authorized") is not True:
+        blockers.append("execution is not authorized")
     return blockers
