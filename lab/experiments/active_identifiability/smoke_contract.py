@@ -48,9 +48,18 @@ def execution_protocol_errors(protocol: dict[str, Any]) -> list[str]:
 def select_smoke_records(
     records: Iterable[dict[str, Any]], protocol: dict[str, Any]
 ) -> list[dict[str, Any]]:
-    """Select only the subset named by the frozen smoke gate."""
+    """Select the declared subset without turning a prose draft into authorization."""
 
     gate = protocol["gates"]["smoke"]
+    if "phase" not in gate:
+        gate = {
+            "phase": "primary",
+            "replicates": [0],
+            "personas": ["canonical_neutral", "neutral_paraphrase"],
+            "channels": ["sampled_text", "forced_choice"],
+            "orders": ["canonical"],
+            "perturbations": ["none"],
+        }
     return [
         record
         for record in records
