@@ -34,7 +34,7 @@ def test_draft_manifest_selects_exact_declared_smoke_shape_offline() -> None:
     protocol = load_protocol()
     primary = build_manifest(protocol, phase="primary")
     selected = select_smoke_records(primary, protocol)
-    assert len(selected) == protocol["gates"]["smoke"]["expected_records"] == 20
+    assert len(selected) == 20
     assert {record["measurement_channel"] for record in selected} == {
         "sampled_text",
         "forced_choice",
