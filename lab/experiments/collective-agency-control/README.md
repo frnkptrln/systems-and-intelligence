@@ -30,6 +30,10 @@ For each update and reading, enumerate the ensemble to compute next-macro
 entropy, mutual information from each current triplet and their joint state,
 and macro temporal mutual information, all in bits. Also report the mean
 conditional entropy of a component's next bit given its own current bit.
+The information is measured across the uniform ensemble. Macro parity is
+constant within each unperturbed trajectory; its entropy along any one such
+trajectory would be zero.
+
 These are exact-distribution information calculations, not fitted predictors,
 held-out scores, a general PID estimator, or an NTIC estimate.
 
