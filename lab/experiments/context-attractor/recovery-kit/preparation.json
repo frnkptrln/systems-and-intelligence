@@ -1,0 +1,14 @@
+{
+  "items_sha256": "f073fe9bb6876fc0c5bf880802568a18991f59d2e71823f8ee9f1433ba27ace1",
+  "packet_sha256": {
+    "E3.zip": "ec3771b5ebcb27a0fe85566f99e5737b6733945b5dba5e5d3bbaef7f2666de1e",
+    "E4.zip": "d33f68c17689c8cd623b6f78335eee693eb0aef110286faec3cb9ef2a099250e"
+  },
+  "protocol_sha256": "de1f4cc572a1208da9e9c34f757a4b31d116cb8ba5d19b3d4689cc8b85ec3b9f",
+  "source_hashes": {
+    "prepare_diversity_recovery.py": "47566360f5c260b55054ce2da8a193867bc84d97878a5548e52c923303b31740",
+    "run_blind_evaluation.py": "4ac9fb2138d183ba7842216faabf829b7cfb552e78b8e4c16c8717dfe8c07761",
+    "run_experiment.py": "cee10f372f0c67eaf71993400599dfb1b8fa9012007391eb17acdee94534d59b"
+  },
+  "status": "prepared_not_distributed_not_evaluated"
+}

@@ -11,6 +11,17 @@ Run 001 executed all 16 preregistered generations (8 B + 8 R) and preserved 80 r
 
 The available measures show small directional increases in utility and repository attraction for R, slightly lower seed proximity, and unchanged externality. They do not establish a harmful context attractor. P3 and P4 remain unresolved because both require a valid diversity measurement.
 
+## Diversity recovery preparation (2026-09-05)
+
+The [recovery addendum](recovery-kit/recovery-addendum.md) specifies the E3/E4
+independence, exact-cover, blind semantic-QC and freeze-before-unblinding steps
+for issue #59. `prepare_diversity_recovery.py prepare --output <new-directory>`
+exports deterministic packets containing only the original blind items,
+clustering instructions, schema and hashes. It launches no evaluation. The
+separate `validate <partition.json>` command reuses the exact-cover validator;
+its success does not establish semantic quality or authorize unblinding.
+The run remains `completed_partial`; P3/P4 remain unresolved.
+
 ## Question
 
 Does accumulated research context make generated research questions more useful while also pulling them toward the repository's existing conceptual structure?
