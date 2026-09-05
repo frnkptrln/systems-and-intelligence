@@ -1,0 +1,122 @@
+{
+  "version": "0.1-candidate",
+  "status": "candidate_requires_pi_decision",
+  "implementation_authorized": false,
+  "execution_authorized": false,
+  "system": {
+    "option": "1A",
+    "name": "kuramoto_graph",
+    "components": 16,
+    "integrator": "fixed_step_rk4",
+    "topologies": [
+      "all_to_all",
+      "ring",
+      "seeded_random_matched_degree"
+    ],
+    "coupling_grid": [
+      "0",
+      "0.5*Kc",
+      "Kc",
+      "2*Kc",
+      "4*Kc"
+    ]
+  },
+  "macro_state": {
+    "option": "2A_with_2B_sweep",
+    "base": "order_parameter_r_psi",
+    "bins_per_dimension": 8,
+    "block_levels": [
+      1,
+      2,
+      4
+    ]
+  },
+  "prediction": {
+    "option": "3A",
+    "score": "held_out_discretized_log_loss",
+    "smoothing": "laplace",
+    "horizons": [
+      1
+    ]
+  },
+  "synergy": {
+    "option": "4A_with_4C_correction",
+    "pid": "minimum_specific_information",
+    "sources": "adjacent_component_pairs",
+    "surrogates": 20
+  },
+  "closure": {
+    "definition": "I(X_next;X_now)-I(X_next;X_now|E_now)",
+    "primary": "5A_component_versus_rest",
+    "secondary": "5B_collective_versus_exogenous_drive",
+    "horizon": 1
+  },
+  "intervention": {
+    "option": "6A",
+    "name": "phase_contraction_reset",
+    "lambda": 0.5,
+    "matched_micro_controls": [
+      "random_direction_same_oscillators",
+      "whole_budget_one_oscillator",
+      "random_half_contraction"
+    ],
+    "outcome_horizon": "unset"
+  },
+  "viability": {
+    "option": "7B_with_7A_margin",
+    "coherence_margin": "r-r_min",
+    "shock_times": [
+      "T/4",
+      "T/2",
+      "3*T/4"
+    ],
+    "phase_scramble_fractions": [
+      0.1,
+      0.25
+    ],
+    "membership_counts": [
+      1,
+      "N/4"
+    ],
+    "recovery_epsilon": "unset"
+  },
+  "nulls": {
+    "threshold": "8A_K_equals_0_max_over_seeds",
+    "bias_report": "8B_surrogate_mean_plus_3sd",
+    "seeds_per_cell": 16,
+    "train_seeds": 8,
+    "held_out_seeds": 8,
+    "base_forward_runs": 240
+  },
+  "controls": [
+    "independent",
+    "broadcast",
+    "centralized_aggregator",
+    "synchronization",
+    "random_coupling",
+    "capacity_matched"
+  ],
+  "report_axes": [
+    "local_prediction",
+    "collective_gain",
+    "synergy",
+    "closure",
+    "downward_control",
+    "persistence",
+    "viability"
+  ],
+  "open_questions": [
+    "scipy_policy",
+    "state_reset_counts_as_realizable",
+    "continuous_binned_vs_discrete_exact",
+    "coarse_graining_levels",
+    "prediction_and_ntic_horizons",
+    "omit_undefined_correction_bandwidth_and_control_concentration"
+  ],
+  "claim_boundaries": [
+    "Report a profile, not a binary verdict or scalar.",
+    "Do not infer consciousness, phenomenal experience, or ontological irreducibility.",
+    "Do not interpret synchronization alone as collective agency.",
+    "Do not implement or execute until every open question is resolved in a reviewed freeze."
+  ]
+}
