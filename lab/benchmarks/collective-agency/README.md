@@ -1,6 +1,6 @@
 # Collective Agency Benchmark
 
-**Status:** preregistration draft — no implementation and no measured result yet  
+**Status:** preregistration draft — full benchmark not implemented; separate exact calibration controls are available  
 **Question:** When does a collection become an agent?
 
 This benchmark asks a bounded systems question. It does **not** attempt to decide whether a collective is conscious, has phenomenal experience, or is ontologically irreducible. It tests whether a declared collective description gains predictive and interventionally useful structure beyond matched component-wise descriptions.
@@ -11,8 +11,10 @@ A coordinated collection is not automatically a collective agent. The benchmark 
 
 1. **independent components** — little coupling and no stable macro-organization;
 2. **coordinated collection** — coupling improves task performance but predictive/control structure remains local or centrally imposed;
-3. **integrated collective** — joint state carries information unavailable from components independently;
+3. **joint-information regime** — joint state carries information unavailable from components individually; this alone does not establish causal integration;
 4. **candidate collective agent** — collective organization additionally supports stable macro-level prediction/control under perturbation.
+
+These are candidate distinctions, not a demonstrated progression: joint information can occur under uncoupled dynamics, and robust readout need not involve repair. The [exact calibration controls](../../experiments/collective-agency-control/README.md) make these limits explicit.
 
 Viability is measured separately. A tightly integrated system may be powerful and persistent while becoming brittle, uncorrectable, or resource-unstable.
 
@@ -47,13 +49,15 @@ Purpose: establish the component-wise baseline.
 
 Compare prediction from a declared macro/collective state against matched component-wise and centralized-summary baselines. Report held-out log loss or another preregistered proper score.
 
-A macro representation counts as useful only if its gain survives matched capacity and information budgets.
+A macro representation counts as useful only if its gain survives matched capacity and information budgets. A difference between joint and best-single mutual information is a separate diagnostic: it is neither a PID definition nor evidence of an advantage over an equally informed centralized predictor.
 
 ### 3.3 Synergistic predictive information
 
 Use Partial Information Decomposition or a justified approximation to estimate information about the system's own next state that is available only from components jointly rather than separately.
 
 This is inspired by uncommon self-knowledge, but the benchmark treats synergy as an architectural diagnostic, not a consciousness criterion.
+
+Declare the target, source partition, source order and every measured pair, not only an average. The candidate's adjacent-pair PID measures two-source structure; zero pairwise synergy cannot exclude information available only from three or more sources. The [three-of-three static control](../../experiments/collective-agency-control/README.md#information-distribution-and-known-erasures) has zero target information in every pair and full target information in the triple. Its coalition decoding profile is not a replacement for a higher-order PID or for the benchmark's temporal estimator.
 
 ### 3.4 Information closure / NTIC candidate
 
@@ -73,6 +77,8 @@ Track resource use, recovery after shocks, concentration of control, correction 
 
 Agency and viability are separate axes. A pathological singleton is an admissible outcome: high integration and control with poor survivability or correctability.
 
+Distinguish preservation of the chosen readout, reconstruction from surviving components, and restoration of the perturbed component state. Compare perturbed and unperturbed successors at the same horizon; a stable macro reading alone does not demonstrate repair. Declare the perturbation class (known erasure, unknown error, replacement, or transient state perturbation), report loss locations separately, and identify which source subsets retain the target information where feasible. Do not call a decoder's erasure tolerance system self-maintenance or general viability.
+
 ## 4. Controls
 
 At minimum include:
@@ -85,6 +91,15 @@ At minimum include:
 - **capacity-matched control:** additional compute or memory without organizational change.
 
 These controls are intended to prevent coordination, bandwidth, or raw capacity from being mistaken for collective agency.
+
+### Existing exact calibration controls
+
+Two executable controls now share [one result page](../../experiments/collective-agency-control/README.md#reading-the-controls-together):
+
+- **Predictive parity:** equal joint and macro temporal information across uncoupled, locally repairing and cross-group-repairing rules; majority readout remains correct even when no component errors are repaired.
+- **Information distribution:** broadcast, essential-component, two-of-three and three-of-three encodings separate joint-over-single gain, pairwise PID, minimal reconstructing coalitions and known-erasure tolerance.
+
+Use these as interpretation checks, not as substitutes for the six budget-matched controls above. They use different targets, partitions and perturbations and must not be pooled into one agency score. Neither runs the proposed oscillator benchmark or confirms H1–H5.
 
 ## 5. Preregistered candidate hypotheses
 
@@ -118,7 +133,9 @@ The benchmark framing weakens if:
 4. synergy or NTIC-like quantities are dominated by estimator choice or finite-sample bias;
 5. the claimed phase boundary moves arbitrarily with coarse-graining;
 6. the same label is applied to trivial synchronization and adaptive collective organization;
-7. functional results are promoted to claims about phenomenal experience.
+7. functional results are promoted to claims about phenomenal experience;
+8. a pairwise null is used to rule out all higher-order joint information;
+9. macro readout preservation or static reconstruction is counted as active component repair.
 
 ## 7. Reporting shape
 
@@ -128,10 +145,10 @@ Report a profile rather than a binary verdict:
 |---|---|
 | Local prediction | How much future structure remains component-local? |
 | Collective gain | Does a macro/collective representation improve held-out prediction? |
-| Synergy | Is predictive information available only jointly? |
+| Synergy | At which declared source order is predictive information available only jointly? |
 | Closure | Where is predictive organization localized under the declared partition? |
 | Downward control | Do macro interventions change later local dynamics beyond controls? |
-| Persistence | Does the organization survive dropout, replacement, and perturbation? |
+| Persistence | Which source subsets and readouts survive each declared loss or perturbation, and do components actually recover? |
 | Viability | Does the organization remain resource-stable, recoverable, and correctable? |
 
 The benchmark should not collapse these dimensions into one scalar until evidence shows that such a reduction preserves the distinctions that matter.
@@ -165,6 +182,8 @@ Only after those choices are fixed should the first executable benchmark be adde
 Options for each of the eight, with the existing code they would reuse and a recommended default, are collected in [`freeze-options.md`](freeze-options.md) (2026-09-03; nothing frozen there).
 
 Those defaults are now transcribed into [`freeze-candidate.json`](freeze-candidate.json) for review. The candidate is machine-checked by `freeze_contract.py`, keeps all six maintainer questions explicit, and sets both implementation and execution authorization to `false`; it is not a preregistration freeze.
+
+The calibration controls refine measurement interpretation only. They do not change `freeze-candidate.json`, resolve its open implementation choices, or authorize its execution.
 
 ## Related
 
