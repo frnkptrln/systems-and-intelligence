@@ -61,7 +61,7 @@ From the repository root, using only Python's standard library:
 ```bash
 python lab/experiments/collective-agency-control/run_control.py \
   --output lab/experiments/collective-agency-control/result.json
-python -m pytest tests/test_collective_agency_control.py -q
+python tests/test_collective_agency_control.py
 ```
 
 The definitions use familiar parity and repetition-code constructions. This
@@ -69,3 +69,27 @@ is a deliberately transparent measurement control, not a mathematical novelty
 claim. Identical state spaces do not imply equal computational or communication
 budgets. A centralized implementation can reproduce every transition here;
 there is no demonstrated macro-intervention advantage or agency verdict.
+
+## Observed result — 2026-09-05
+
+Exhaustive enumeration matches every prediction; the pinning test passes.
+The machine-readable output is in [`result.json`](result.json).
+
+| Update | Off-diagonal causal edges | Largest coupled component | Full state restored | Representative parity preserved | Majority parity preserved |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Uncoupled toggle | 0 | 1 | 0/24 | 16/24 | 24/24 |
+| Local repair | 12 | 3 | 24/24 | 24/24 | 24/24 |
+| Cross-group repair | 18 | 6 | 24/24 | 24/24 | 24/24 |
+
+All three systems have the predicted 1 bit of joint information and macro
+temporal information, with 0 bits from either triplet alone. Those measurements
+cannot identify their different causal organizations. Even perfect macro
+preservation under these errors can come from a robust observation rule over
+a system that repairs none of its component errors. Local own-bit prediction
+separates cross-group repair (1 bit of uncertainty) from the other two (0 bits),
+so the indistinguishability applies to the stated macro measurements, not all
+possible observations.
+
+For subsequent agency experiments, include this uncoupled control and report
+component recovery alongside macro persistence. Robust coarse-graining can be
+useful; it should not be counted as evidence of internal repair or agency.
