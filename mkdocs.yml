@@ -37,6 +37,9 @@ exclude_docs: |
   !lab/experiments/persistence_narrowing/README.md
   !lab/experiments/representation_reconstruction/README.md
   !lab/experiments/decision_layer/README.md
+  !lab/experiments/coherence_margin/README.md
+  !lab/experiments/coherence_margin/results/*.png
+  !lab/experiments/coherence_margin/results/*.json
 
   meta/
   !meta/repository-meta/core-claims.md
@@ -152,6 +155,7 @@ nav:
           - "Persistence and Search Narrowing": lab/experiments/persistence_narrowing/README.md
           - "Representation and Reconstruction Difficulty": lab/experiments/representation_reconstruction/README.md
           - "Decision Layer on the Witness Benchmark": lab/experiments/decision_layer/README.md
+          - "Synchronization Onset and the Coherence Floor": lab/experiments/coherence_margin/README.md
       - "Interactive":
           - "Web Emergence Explorer": interactive/web-explorer.md
           - "Tensor Logic Visualizer": interactive/tensor-logic.md

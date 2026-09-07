@@ -12,7 +12,7 @@
 </div>
 
 !!! note "Epistemic status — read this first"
-    This is a **research notebook**, not a theory of everything. The process foundation is established mathematics rather than a novel empirical theory. Identity remains test-relative; learning and intelligence require declared tasks; phenomenal consciousness is not derived. The inverse-reconstruction results are measured in small, controlled systems. The Viable Corridor necessity result is conditional on its model assumptions; **sufficiency is conjectured, not proved**; the civilizational mapping is **heuristic**, not measured; and the AI-specific predictions have not been tested on real agent ecologies. The explicit negative space is maintained at [What This Project Does NOT Claim](../theory/reference/what-this-project-does-not-claim.md).
+    This is a **research notebook**, not a theory of everything. The process foundation is established mathematics rather than a novel empirical theory. Identity remains test-relative; learning and intelligence require declared tasks; phenomenal consciousness is not derived. The inverse-reconstruction results are measured in small, controlled systems. The Viable Corridor necessity result is conditional on its model assumptions; **the original sufficiency conjecture is refuted in its Lorentzian continuum reading**; the civilizational mapping is **heuristic**, not measured; and the AI-specific predictions have not been tested on real agent ecologies. The explicit negative space is maintained at [What This Project Does NOT Claim](../theory/reference/what-this-project-does-not-claim.md).
 
 ## Two bounded questions
 
@@ -61,7 +61,7 @@ A compact linear path for readers who want a sequence rather than a map. The ear
 
 ### The formal core
 
-*The Viable Corridor* — constraint architecture and capability loading, v1.0 submission version, available as PDF. The real-agent test of its Class C predictions is future work; the earlier utility-and-stability synthesis is kept as an archived historical statement.
+*The Viable Corridor* — constraint architecture and capability loading, v1.0 with a dated sufficiency erratum, available as PDF. The real-agent test of its Class C predictions is future work; the earlier utility-and-stability synthesis is kept as an archived historical statement.
 
 [Read the Viable Corridor →](../papers/viable-corridor.md)
 
@@ -128,8 +128,8 @@ This site publishes about seventy pages. The repository behind it holds more tha
 **Near-term — the real frontier:**
 
 1. **Learned searchers vs. the family-search floor** — give LLMs or program synthesizers the same partial traces and query budgets as the exact CA baseline; pre-register consistency, truth recovery, description size, support violations, and cost. *The [task protocol is frozen](../lab/benchmarks/learned-searcher/README.md); whether to run it, and against which exact model, remains deliberately unregistered.*
-2. **External review of the Viable Corridor** — freeze the paper's conceptual scope while its dynamical assumptions, sufficiency gap, and empirical mapping receive a critical read.
-3. **Rigorous sufficiency** — replace single-trajectory evidence with open-set tests and, if possible, construct or bound $\gamma_c$.
+2. **External review of the Viable Corridor** — freeze the paper's conceptual scope while its dynamical assumptions, sufficiency gap, and empirical mapping receive a critical read. The [coherence-floor check](../lab/experiments/coherence_margin/README.md) refutes the Lorentzian continuum reading of the sufficiency conjecture and exposes its unspecified finite- versus infinite-population scope; the correction is recorded directly in §3.4.
+3. **Rigorous sufficiency** — replace single-trajectory evidence with open-set tests and, if possible, construct or bound $\gamma_c$ together with floor-dependent coherence conditions.
 4. **Separate the real-model questions correctly** — live Agentic Identity Suite runs test Mirror/Chord/binding claims; P7/P8 require a distinct real-agent ecology with hard/soft budgets and independently varied constraint architecture.
 5. **Separate selection from drift after cost relocation** — v1.13's local group funding nearly
    removes selection against support and suppresses seeded cheaters, but it does not meet the
