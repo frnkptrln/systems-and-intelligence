@@ -1,9 +1,90 @@
 # Synchronization Onset Is Not a Viability Margin
 
-**Status:** Bounded analytical and numerical investigation; predictions recorded
-before execution. This page reviews the coherence premise of Conjecture 1 in
+**Status:** Completed bounded model check, 2026-09-07; predictions committed
+before numerical execution. This page reviews the coherence premise of Conjecture 1 in
 [The Viable Corridor](../../../papers/viable-corridor.md#34-conjecture-1-sufficiency).
 It does not revise the frozen v1.0 manuscript or its results.
+
+**Result:** Synchronization onset is too weak to guarantee a declared positive
+coherence floor. In the Lorentzian scalar reduction, the exact floor condition
+is `K >= 2*Delta/(1-r_min^2)`, strictly stronger than onset. In the unchanged
+finite Gaussian TEO model, **21 of 64 above-onset runs** violate the floor
+while resources and substrate stay safe over the observation interval. These
+finite runs are witnesses, not a proof about every possible initial condition.
+
+![Stationary coherence, exact reduced trajectories, and all 80 finite Gaussian runs](results/coherence_margin.png)
+
+The shaded interval in panel A has a positive equilibrium below the required
+floor. Panel B separates onset, zero limiting margin, and positive limiting
+margin. Panel C shows every finite run's sampled minimum; small horizontal
+offsets separate seeds at the five declared couplings. The two distributions
+have different onset thresholds and must not be read as the same system.
+
+## Measured results
+
+All 45 scalar integrations agree with the closed-form solution to a maximum
+absolute error of `1.06e-11`. Lorentzian quadrature agrees with the exact
+threshold to `6.04e-14`. Independent quadrature of the Gaussian stationary
+branch gives:
+
+| Required coherence | Lorentzian floor, `Delta = 1` | Gaussian stationary floor, `sigma = 1` |
+|---|---:|---:|
+| 0.25 | 2.133333 | 1.628843 |
+| 0.50 | 2.666667 | 1.747903 |
+| 0.75 | 4.571429 | 2.070711 |
+
+The respective onset thresholds are `2` and `1.595769`. The Gaussian column
+specifies a stationary branch, not an all-time finite-population bound.
+
+The full finite TEO grid used `N = 50`, `r_min = 0.5`, seeds `0..15`, and
+`t = 0..80`. Every trajectory started above the floor. All solvers completed;
+every cell passed the numerical validity checks and kept the other two
+viability conditions over the observation interval.
+
+| Coupling `K` | Runs | Coherence-floor failures | Relation to Gaussian continuum onset |
+|---|---:|---:|---|
+| 0.8 | 16 | 16 | Below |
+| 1.6 | 16 | 10 | Above |
+| 1.7 | 16 | 9 | Above |
+| 2.0 | 16 | 2 | Above |
+| 3.0 | 16 | 0 | Above |
+
+These are counts in the declared grid, not estimated failure probabilities.
+The two failures at `K = 2.0`, already above the Gaussian stationary floor,
+also show why substituting a continuum equilibrium threshold into a finite
+trajectory classifier would be unsound.
+
+The preselected validation pair is seed `0` at `K = 1.6` and `K = 3.0`.
+The former first crosses the floor near `t = 5.150262`, with sampled minimum
+`r = 0.343711`; the latter remains above `0.943024`. Tightening the integration
+keeps both classifications unchanged. The largest change in their sampled
+minimum is `5.32e-9`, and in final coherence `2.26e-8`.
+
+All 80 cells, the 45 scalar checks, frequency draws, parameters, software
+versions and both validation reruns are in [results.json](results/results.json).
+The [vector figure](results/coherence_margin.svg) is generated from those
+results and the displayed exact solution.
+
+## Consequence for the conjecture
+
+The coherence condition in §3.4 needs a separate floor-dependent analysis,
+just as its resource condition already distinguishes any regulation from
+sufficient regulation. In the declared Lorentzian reduction, the stronger
+condition is exact; requiring a positive limiting margin makes it strict.
+In broader settings the appropriate condition must control a viable
+neighborhood under the actual phase dynamics, including transients and
+frequency-distribution assumptions. The Gaussian stationary calculation
+alone does not supply that condition.
+
+This is a concrete revision target for the pending dynamical-systems review.
+The old onset inequality can remain a necessary condition within its stated
+scope, but cannot carry the stronger sufficiency interpretation in this
+reduced case. Nothing here proves sufficiency of the entire coupled TEO
+model, changes the frozen capability-loading measurements, or establishes
+a statement about real agent ecologies.
+
+The design and predictions below were committed before numerical execution;
+they are retained so the result can be compared with what was actually asked.
 
 ## Question
 
@@ -138,8 +219,35 @@ Read against repository base `ef9c5117aaf192c73eff71c587053157bae9334c` on
 2026-09-07. The analytical prediction follows from the displayed equation;
 it is not a blind prediction or a claim of new oscillator mathematics. No
 numerical result of this investigation was inspected before this design was
-committed. The output will record the source commit, canonical solver hash,
-parameters and package versions.
+committed as `2856729`. The runner was committed as `6b87646` before the first
+execution. The output records that source commit, both source hashes,
+parameters and package versions. The canonical TEO solver is unchanged from
+the repository base.
+
+These are **local execution-history commit IDs**. Publication to GitHub took
+place afterwards through the connected app, which creates different commit
+IDs. The published [design commit](https://github.com/frnkptrln/systems-and-intelligence/commit/89e5cea506cae64858d5da86dbc438105e6dcc4a)
+and [runner commit](https://github.com/frnkptrln/systems-and-intelligence/commit/f59d5e0eb4fee6224aed3f9bb19e682897f27e80)
+have exactly the same Git trees as their respective local originals.
+The recorded SHA-256 hashes identify the executed source independently of
+this publication step. This was a locally predeclared check, not a public or
+blinded preregistration.
+
+## Reproduce
+
+From the repository root, with [requirements.txt](../../../requirements.txt)
+installed:
+
+```bash
+python lab/experiments/coherence_margin/coherence_margin.py --output /tmp/coherence-margin
+pytest tests/test_coherence_margin.py -q
+```
+
+The first command reruns the full declared grid and produces JSON, PNG and
+SVG files. The tests check independent scalar integration, the quadrature
+control, the committed grid headline and the selected finite witness against
+the canonical simulator. Core conclusions should reproduce within the stated
+tolerances; source-commit metadata changes when run from a later checkout.
 
 ## Related
 

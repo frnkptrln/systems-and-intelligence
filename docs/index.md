@@ -128,8 +128,8 @@ This site publishes about seventy pages. The repository behind it holds more tha
 **Near-term — the real frontier:**
 
 1. **Learned searchers vs. the family-search floor** — give LLMs or program synthesizers the same partial traces and query budgets as the exact CA baseline; pre-register consistency, truth recovery, description size, support violations, and cost. *The [task protocol is frozen](../lab/benchmarks/learned-searcher/README.md); whether to run it, and against which exact model, remains deliberately unregistered.*
-2. **External review of the Viable Corridor** — freeze the paper's conceptual scope while its dynamical assumptions, sufficiency gap, and empirical mapping receive a critical read.
-3. **Rigorous sufficiency** — replace single-trajectory evidence with open-set tests and, if possible, construct or bound $\gamma_c$.
+2. **External review of the Viable Corridor** — freeze the paper's conceptual scope while its dynamical assumptions, sufficiency gap, and empirical mapping receive a critical read. The [coherence-floor check](../lab/experiments/coherence_margin/README.md) identifies a concrete correction target: synchronization onset does not guarantee the declared minimum coherence.
+3. **Rigorous sufficiency** — replace single-trajectory evidence with open-set tests and, if possible, construct or bound $\gamma_c$ together with floor-dependent coherence conditions.
 4. **Separate the real-model questions correctly** — live Agentic Identity Suite runs test Mirror/Chord/binding claims; P7/P8 require a distinct real-agent ecology with hard/soft budgets and independently varied constraint architecture.
 5. **Separate selection from drift after cost relocation** — v1.13's local group funding nearly
    removes selection against support and suppresses seeded cheaters, but it does not meet the
