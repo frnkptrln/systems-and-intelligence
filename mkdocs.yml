@@ -39,7 +39,6 @@ exclude_docs: |
   !lab/experiments/decision_layer/README.md
   !lab/experiments/coherence_margin/README.md
   !lab/experiments/coherence_margin/results/*.png
-  !lab/experiments/coherence_margin/results/*.svg
   !lab/experiments/coherence_margin/results/*.json
 
   meta/
