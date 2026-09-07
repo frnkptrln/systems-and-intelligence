@@ -74,7 +74,7 @@
 | Concept | Home | Status | Operationalization / anchor |
 |:---|:---|:---|:---|
 | TEO (Thermodynamics of Emergent Orchestration) | [teo-framework/](../../theory/teo-framework/README.md); [derivation](../../theory/core/thermodynamics-of-orchestration.md) | formalized model | [teo-civilization sim](../../simulation-models/alignment-and-veto/teo-civilization/README.md) |
-| Viable Corridor | [papers/viable-corridor.md](../../papers/viable-corridor.md) | `[FORMAL]` (necessity) + `[CONJECTURE]` (sufficiency) + `[HEURISTIC]` (civilization mapping) | Appendix C (ODE) + D (ABM); working draft |
+| Viable Corridor | [papers/viable-corridor.md](../../papers/viable-corridor.md) | `[FORMAL]` (necessity) + `[CONJECTURE]` (sufficiency — refuted as stated in its Lorentzian continuum reading, paper §3.4 erratum; corrected, floor-dependent statement open) + `[HEURISTIC]` (civilization mapping) | Appendix C (ODE) + D (ABM); working draft |
 | Substrate Veto | [substrate-veto-thermodynamics.md](../../theory/veto/substrate-veto-thermodynamics.md) | hypothesis / model assumption | binds endogenously in the canonical TEO model |
 | Biological Veto / Bootloader | [ai-alignment-biological-veto.md](../../theory/veto/ai-alignment-biological-veto.md) | design hypothesis | [ai-alignment-veto toy](../../simulation-models/alignment-and-veto/ai-alignment-veto/README.md) |
 | Action Budgets (hard vs. soft) | IA-doc anchors; [paper P7](../../papers/viable-corridor.md) | **operationalized in-model** | [agent-ecology ABM](../../simulation-models/alignment-and-veto/agent-ecology/README.md) |

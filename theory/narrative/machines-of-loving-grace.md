@@ -45,8 +45,9 @@ Their meanings are model-specific:
 The formal paper proves conditional necessity results for components of this model and
 demonstrates a more interesting synthetic result in two implementations: increasing
 capability can load several constraint axes at once, so strengthening one axis alone need
-not preserve viability. Sufficiency remains a conjecture. The model has not been calibrated
-to a real civilization or production AI ecology.
+not preserve viability. The stated sufficiency conjunction is refuted in its Lorentzian
+continuum reading (paper §3.4 erratum), and a corrected, floor-dependent statement is open.
+The model has not been calibrated to a real civilization or production AI ecology.
 
 The defensible lesson is therefore not that love has been derived. It is that **viability
 can be a property of an entire constraint architecture rather than one optimized score**.

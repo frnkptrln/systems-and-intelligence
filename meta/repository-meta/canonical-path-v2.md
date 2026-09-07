@@ -118,12 +118,13 @@ of constraints rather than one compensating scalar.
 
 The formal synthesis derived from the TEO branch — a paper-style node, not the whole
 project. It proves componentwise necessity results under its assumptions, defines viability
-as a conjunction, conjectures sufficiency, and advances a clearly hedged structural-mapping
-hypothesis. Its strongest current result is model-internal **capability loading**: in two
+as a conjunction, states a sufficiency conjecture that is refuted as stated in its Lorentzian
+continuum reading (§3.4 erratum; a corrected, floor-dependent statement is open), and advances
+a clearly hedged structural-mapping hypothesis. Its strongest current result is model-internal **capability loading**: in two
 synthetic models, the selected capability intervention pushes multiple boundaries and
 single-axis controls leave another modeled failure exposed.
 
-- [The Viable Corridor](../../papers/viable-corridor.md) — necessity theorem `[FORMAL]`, sufficiency `[CONJECTURE]`, isomorphism `[HEURISTIC]` / `[EMPIRICAL CONJECTURE]`, derivations in Appendix A.
+- [The Viable Corridor](../../papers/viable-corridor.md) — necessity theorem `[FORMAL]`, sufficiency `[CONJECTURE]` (refuted as stated in its Lorentzian continuum reading, §3.4 erratum; corrected, floor-dependent statement open), isomorphism `[HEURISTIC]` / `[EMPIRICAL CONJECTURE]`, derivations in Appendix A.
 - Evidence: Appendix C (TEO ODE, Class A) and Appendix D (agent-based ecology, Class C) — see §6.
 
 ## 6. Agent Ecology and Alignment-Veto Simulations — `[SIMULATION ARTIFACT]`
@@ -152,7 +153,7 @@ Fiction is the project's instrument for noticing when a clean formal claim is im
 
 The honest frontier — what the arc has *not* closed.
 
-- Proving sufficiency / deriving $\gamma_c$ rigorously (not just single-trajectory existence). Paper §3.4, Appendix C.5.
+- Restating and proving sufficiency: the stated conjunction is refuted in its Lorentzian continuum reading (§3.4 erratum), so a corrected, floor-dependent statement must precede deriving $\gamma_c$ rigorously (not just single-trajectory existence). Paper §3.4, Appendix C.5.
 - Operationalizing $\gamma_{\text{eff}}$, $K_{\text{eff}}$, $D_{\max}$ for real systems; $K_c$ for societies. Paper §5.4.
 - A finite-$N$ / general-network version of the coherence (Kuramoto) result. Paper §3.3.
 - Validating P7/P8 on **real** AI-agent systems (the Appendix D evidence is synthetic). Companion paper.

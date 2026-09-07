@@ -73,8 +73,9 @@ The specific non-claims, each with the place where the boundary is stated:
     in-model content is capability loading and single-axis insufficiency.
     [The Viable Corridor, §7.1](../../papers/viable-corridor.md).
 
-12. **We do not claim sufficiency.** That the three constraints jointly suffice for viability is a
-    `[CONJECTURE]`, expected to require $\gamma > \gamma_c$; it is unproven, and the numerical
+12. **We do not claim sufficiency.** That the three constraints jointly suffice for viability was
+    stated as a `[CONJECTURE]`; as stated it is refuted in its Lorentzian continuum reading
+    (paper §3.4 erratum), a corrected, floor-dependent statement is open, and the numerical
     evidence is single-trajectory, not open-set. [Paper §3.4, Appendix C.5](../../papers/viable-corridor.md).
 
 13. **We do not claim civilization has been measured.** The AI ↔ civilization mapping is a

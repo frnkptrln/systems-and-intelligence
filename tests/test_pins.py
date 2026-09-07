@@ -128,7 +128,7 @@ class TestCorridorPaperFrozen(unittest.TestCase):
     with the paper and its revision history. The entire text remains guarded.
     """
 
-    FROZEN_SHA256 = "0f307964a8ee9e0f9b833c915c9a7431f73ab95f5cd694b613257f6f4a981bf5"
+    FROZEN_SHA256 = "7b89723b000e8a0227796f4fbb195e5d3966947db9cd283d9633275348cc74bd"
     MARKER = "## TODO (post-v1.0)"
 
     def test_text_above_the_todo_section_is_unchanged(self):
