@@ -1,0 +1,41 @@
+{
+  "benchmark_implemented": false,
+  "benchmark_run": false,
+  "budget_convention": "sum of shortest endpoint angular displacements on S1",
+  "candidate_sha256": "4d0a2bff9efca7e7e3fc494b7f3f1db8a4c2e5ed431af7b0a994758189778fcb",
+  "conclusion": "under this convention the fixed-strength macro and whole-budget-one-oscillator control cannot always be budget matched",
+  "execution_authorized": false,
+  "fixture": {
+    "components": 16,
+    "phases": "eight +pi/4, eight -pi/4"
+  },
+  "implementation_authorized": false,
+  "kind": "conditional_geometric_feasibility_certificate",
+  "required_review_decision": "freeze the circular/path budget convention and revise the control or strength rule before benchmark implementation",
+  "result": {
+    "coherence": 0.7071067811865476,
+    "component_displacements_rad": [
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414
+    ],
+    "macro_budget_rad": 6.283185307179586,
+    "mean_phase": 0.0,
+    "one_oscillator_match_feasible": false,
+    "one_oscillator_max_geodesic_budget_rad": 3.141592653589793
+  },
+  "same_strength_half_control_budget_rad": 3.141592653589793
+}
