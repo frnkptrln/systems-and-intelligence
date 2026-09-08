@@ -107,7 +107,8 @@ Under the paper's stated assumptions, this system makes model-internal predictio
    dephases toward the reported low-order regime.
 3. **When $\Omega(t)$ reaches $S_{\max}$:** the declared health law sets $H=0$.
 4. **Viability in the model:** the stated component conditions are necessary; sufficiency
-   remains conjectured and is expected to require $\gamma>\gamma_c$.
+   is not established — the stated sufficiency conjunction is refuted in its Lorentzian
+   continuum reading (paper §3.4 erratum), and a corrected, floor-dependent statement is open.
 
 > **Canonical derivation.** This page is the conceptual derivation; the citation-ready, source-of-truth version of these equations — including the strict-dominance assumption, the $K_c = 2/(\pi g(0))$ result, and the capability-loading result — is [The Viable Corridor](../../papers/viable-corridor.md) (§2–§3, Appendix A).
 

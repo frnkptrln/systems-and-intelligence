@@ -9,9 +9,9 @@ The figure shows the three TEO necessity conditions — gamma > 0 (homeostatic
 regulation), K > K_c (value coupling above the Kuramoto critical threshold),
 and bounded accumulated substrate overshoot Omega(t) < S_max — as
 half-spaces in parameter space. Their intersection is the *necessity region*
-that contains the viable corridor C. (Sufficiency is conjectured to require
-the stronger gamma > gamma_c; see §3.4 of the paper, so C is a proper subset
-of the region drawn here.)
+that contains the viable corridor C. (Sufficiency needs more: γ > γ_c and a
+floor-dependent K condition — erratum §3.4; so C is a proper subset of the
+region drawn here.)
 
 The third axis is drawn as instantaneous dS/dt for visual clarity, but the
 operative substrate constraint in the paper (v0.3) is the cumulative
@@ -215,7 +215,7 @@ def plot_viable_corridor(save_path: Path | None = None) -> None:
     ax.set_title(
         "The Viable Corridor in TEO Parameter Space\n"
         r"Necessity region: $\{\gamma > 0\} \cap \{K > K_c\} \cap \{\Omega(t) < S_{\max}\}$"
-        "\n(sufficiency conjectured to require $\\gamma > \\gamma_c$)",
+        "\n(sufficiency needs more: $\\gamma > \\gamma_c$ and a floor-dependent $K$ condition — erratum §3.4)",
         fontsize=11,
         pad=18,
     )

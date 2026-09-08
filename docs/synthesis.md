@@ -108,7 +108,7 @@ Once a system develops the ability to preserve and extend a pattern, optimizatio
 
 The repository therefore treats constraints as architecture rather than decoration. Hard caps, vital floors, action budgets, latency, vetoes, and repair paths shape which trajectories remain reachable. They are not merely brakes applied after intelligence has finished its work. They help determine whether the system can keep learning after error.
 
-[Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md) explains this hinge. [The Viable Corridor](../papers/viable-corridor.md) gives one formal model of the idea. Its necessity result is conditional on that model's assumptions; sufficiency remains a conjecture, and its larger social mapping is heuristic. The corridor is not a proved universal law or a formula for morality.
+[Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md) explains this hinge. [The Viable Corridor](../papers/viable-corridor.md) gives one formal model of the idea. Its necessity result is conditional on that model's assumptions; the stated sufficiency conjunction is refuted in its Lorentzian continuum reading (paper §3.4 erratum) with a corrected, floor-dependent statement open, and its larger social mapping is heuristic. The corridor is not a proved universal law or a formula for morality.
 
 ## 4. Why the two questions belong together
 
@@ -181,7 +181,7 @@ The repository deliberately mixes simulations, formal arguments, working hypothe
 2. [Inverse-Reconstruction Benchmark](../lab/benchmarks/inverse-reconstruction/README.md) — the measured core, including failed predictions and scope limits.
 3. [The Generator Question](../theory/core/the-generator-question.md) — the active organizing question and an auditable record of its superseded universal formulation.
 4. [Canonical Path v2.1](../meta/repository-meta/canonical-path-v2.md) — the Viability Arc and current migration map.
-5. [The Viable Corridor](../papers/viable-corridor.md) — necessity result, sufficiency conjecture, synthetic evidence, and limitations.
+5. [The Viable Corridor](../papers/viable-corridor.md) — necessity result, a sufficiency conjecture refuted as stated in its Lorentzian continuum reading (§3.4 erratum; corrected, floor-dependent statement open), synthetic evidence, and limitations.
 6. [Core Claims](../meta/repository-meta/core-claims.md) — the maintained small claim set for the viability arc and identity branch.
 7. [Identification Claims](../meta/repository-meta/identification-claims.md) — the register for the model-identification arc: four claims and one candidate, each with artifacts by evidential kind and a failure condition.
 8. [Related Work Map](../meta/research-alignment/related-work-map.md) — concept-to-literature matrix and the primary-source ledger with inclusion/exclusion decisions for the situated-competence extension.

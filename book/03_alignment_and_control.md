@@ -59,7 +59,9 @@ scope is explicit:
 coupling, and bounded cumulative substrate overshoot. Its necessity statement is nearly
 definitional: trajectories outside the region violate one of the conditions used to define it.
 The substantive in-model results concern capability loading and the failure of single-axis
-repairs. Joint sufficiency is still a conjecture, and the social mapping is not calibrated.
+repairs. Joint sufficiency is not established: the stated sufficiency conjunction is refuted in
+its Lorentzian continuum reading (paper §3.4 erratum) and a corrected, floor-dependent statement
+is open; the social mapping is not calibrated.
 
 The phrase *love as constraint* names the normative intuition that optimization should not consume
 its substrates, relationships, or capacity for correction. It is not a theorem and not the only

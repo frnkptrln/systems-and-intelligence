@@ -122,13 +122,13 @@ class TestExperimentResultFiles(unittest.TestCase):
 
 
 class TestCorridorPaperFrozen(unittest.TestCase):
-    """Pin v1.0 including the maintainer-authorized 2026-09-07 coherence erratum.
+    """Pin v1.0 including the 2026-09-07 coherence erratum and its consistency pass.
 
     An approved version or dated erratum updates ``FROZEN_SHA256`` together
     with the paper and its revision history. The entire text remains guarded.
     """
 
-    FROZEN_SHA256 = "1904d5ac944141256f96954d66d5c77094a6da6d94cb6b5100c67bf557b4a783"
+    FROZEN_SHA256 = "7b89723b000e8a0227796f4fbb195e5d3966947db9cd283d9633275348cc74bd"
     MARKER = "## TODO (post-v1.0)"
 
     def test_text_above_the_todo_section_is_unchanged(self):

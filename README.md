@@ -128,7 +128,7 @@ The site publishes a curated subset of the repository with its own navigation; [
 
 - The foundation is an audit and dependency map built from established mathematics, not a claim of novel mathematics.
 - The inverse-reconstruction results are measurements in small, controlled systems.
-- *The Viable Corridor* is a conditional model: necessity is argued under its assumptions, sufficiency remains conjectural, and broader social mappings are heuristic.
+- *The Viable Corridor* is a conditional model: necessity is argued under its assumptions, the stated sufficiency conjunction is refuted in its Lorentzian continuum reading (paper §3.4 erratum) with a corrected, floor-dependent statement open, and broader social mappings are heuristic.
 - Functional architectures can be tested; subjective experience is not inferred from behavior or organization.
 
 If a page sounds stronger than these boundaries allow, **[What This Project Does NOT Claim](theory/reference/what-this-project-does-not-claim.md)** controls the reading.

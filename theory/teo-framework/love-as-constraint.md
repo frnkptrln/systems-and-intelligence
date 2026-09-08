@@ -7,7 +7,8 @@
 > **Status:** conceptual model, not a theorem about love and not a universal theory of
 > optimization. The current formal treatment is [The Viable
 > Corridor](../../papers/viable-corridor.md). Its results hold inside the declared TEO
-> model; sufficiency of the corridor remains a conjecture.
+> model; the stated sufficiency conjunction is refuted in its Lorentzian continuum reading
+> (paper §3.4 erratum), and a corrected, floor-dependent statement is open.
 
 ## What the phrase means here
 
@@ -112,8 +113,10 @@ $$
 Here $\gamma$ is a homeostatic brake, $K$ is coupling strength under specified Kuramoto
 assumptions, and $\Omega$ is cumulative substrate overshoot. The paper proves conditional
 necessity results for components of the model, demonstrates capability loading in two
-synthetic models, and leaves sufficiency open. Identity Persistence is a possible additional
-axis, not part of that theorem.
+synthetic models, and leaves sufficiency open: the stated sufficiency conjunction is refuted
+in its Lorentzian continuum reading (paper §3.4 erratum), and a corrected, floor-dependent
+statement is open. Identity Persistence is a possible additional axis, not part of that
+theorem.
 
 ## What the paperclip example can show
 

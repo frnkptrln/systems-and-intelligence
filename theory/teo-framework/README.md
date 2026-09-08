@@ -5,7 +5,7 @@ combines selected resource, synchronization, regulation, and substrate variables
 coupled system of ordinary differential equations. Those choices are additions to the
 [reconstructed foundation](../core/mathematical-axioms.md), not consequences of it.
 
-> **Formalized in the paper.** The constraint conjunction developed here is given a citation-ready treatment — necessity theorem, sufficiency conjecture, and the capability-loading result — in [*The Viable Corridor*](../../papers/viable-corridor.md), which carries the current refined formalism (substrate-coupled value dynamics, cumulative overshoot). For where this node sits in the wider project, see [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md).
+> **Formalized in the paper.** The constraint conjunction developed here is given a citation-ready treatment — necessity theorem, a sufficiency conjecture that is refuted as stated in its Lorentzian continuum reading (§3.4 erratum; a corrected, floor-dependent statement is open), and the capability-loading result — in [*The Viable Corridor*](../../papers/viable-corridor.md), which carries the current refined formalism (substrate-coupled value dynamics, cumulative overshoot). For where this node sits in the wider project, see [Canonical Path v2](../../meta/repository-meta/canonical-path-v2.md).
 
 ---
 
