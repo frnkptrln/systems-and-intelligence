@@ -334,7 +334,7 @@ def _repo_lab_tools() -> Path:
     return Path(__file__).resolve().parents[3] / "lab" / "tools"
 
 
-def figure_p1(outdir: Path) -> Path:
+def figure_p1(outdir: Path, *, dpi: int = 200, vector: bool = False) -> Path:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -374,12 +374,14 @@ def figure_p1(outdir: Path) -> Path:
                  "(N=50, Gaussian frequencies)", fontsize=12)
     fig.tight_layout(rect=[0, 0, 1, 0.97])
     out = outdir / "teo_p1_necessity.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight")
+    fig.savefig(out, dpi=dpi, bbox_inches="tight")
+    if vector:
+        fig.savefig(out.with_suffix(".pdf"), bbox_inches="tight", metadata={"CreationDate": None, "ModDate": None})
     plt.close(fig)
     return out
 
 
-def figure_p2_gamma_sweep(outdir: Path) -> Path:
+def figure_p2_gamma_sweep(outdir: Path, *, dpi: int = 200, vector: bool = False) -> Path:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -408,12 +410,14 @@ def figure_p2_gamma_sweep(outdir: Path) -> Path:
     ax.grid(alpha=0.2)
     fig.tight_layout()
     out = outdir / "teo_p2_gamma_c.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight")
+    fig.savefig(out, dpi=dpi, bbox_inches="tight")
+    if vector:
+        fig.savefig(out.with_suffix(".pdf"), bbox_inches="tight", metadata={"CreationDate": None, "ModDate": None})
     plt.close(fig)
     return out
 
 
-def figure_p3_corridor(outdir: Path) -> Path:
+def figure_p3_corridor(outdir: Path, *, dpi: int = 200, vector: bool = False) -> Path:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -443,12 +447,14 @@ def figure_p3_corridor(outdir: Path) -> Path:
     ax.legend(loc="lower right")
     fig.tight_layout()
     out = outdir / "teo_p3_corridor.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight")
+    fig.savefig(out, dpi=dpi, bbox_inches="tight")
+    if vector:
+        fig.savefig(out.with_suffix(".pdf"), bbox_inches="tight", metadata={"CreationDate": None, "ModDate": None})
     plt.close(fig)
     return out
 
 
-def figure_p8_capability(outdir: Path) -> Path:
+def figure_p8_capability(outdir: Path, *, dpi: int = 200, vector: bool = False) -> Path:
     """P8 — capability δ is a shared driver that loads onto two constraints.
 
     Left: sweeping δ at a substrate-unconstrained D_max isolates the
@@ -534,7 +540,9 @@ def figure_p8_capability(outdir: Path) -> Path:
                  "(N=50, K=3.0>K_c)", fontsize=12)
     fig.tight_layout(rect=[0, 0, 1, 0.95])
     out = outdir / "teo_p8_capability.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight")
+    fig.savefig(out, dpi=dpi, bbox_inches="tight")
+    if vector:
+        fig.savefig(out.with_suffix(".pdf"), bbox_inches="tight", metadata={"CreationDate": None, "ModDate": None})
     plt.close(fig)
     return out
 

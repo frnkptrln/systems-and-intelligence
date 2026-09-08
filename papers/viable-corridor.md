@@ -799,7 +799,7 @@ Drafting-history checklists through v0.9 are preserved in the git history of thi
 **Submission mechanics (separate step, after this version):**
 - [ ] Convert to the *Artificial Life* Article format (LaTeX or Word; single column, double-spaced; APA v7 bibliography; 5–6 keywords already chosen above)
 - [ ] Cover letter: scope-fit statement plus the independent-researcher items the journal asks for (research question, what recent *Artificial Life* work this builds on, novelty, relevance to the ALife community)
-- [ ] Regenerate figures as vector/600-dpi versions (journal requirement; PNG currently)
+- [x] Regenerate figures as vector/600-dpi versions (2026-09-08 review package; see [build and disposition](viable-corridor-publication/README.txt))
 - [ ] If the venue decision changes to JASSS: cut main text to ≤8,000 words, package both models for the CoMSES Computational Model Library (ODD-style description), include the model handle in the manuscript
 - [ ] arXiv preprint (cs.MA primary, nlin.AO cross-list) — permitted by all three candidate venues
 

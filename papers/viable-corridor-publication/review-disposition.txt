@@ -1,0 +1,38 @@
+Review disposition — 8 September 2026
+
+Completed in this preparation
+- Current merged erratum, theory consistency and source captions checked.
+- Stale Figure 1 regenerated in the private review package from corrected source.
+- All six publication figures regenerated as vector PDF and 600-dpi PNG.
+- Full scientific manuscript typeset into a visibly erratum-bearing review PDF.
+- Source and artifact hashes, original seeds and build instructions recorded.
+
+Independent scientific review (all pending; no reviewer verdict invented)
+1. Dynamical systems: assumptions and necessity lemmas; continuum/finite-N scope;
+   the refuted conjunction and requirements for a corrected floor-dependent one.
+2. Alignment and framing: bounded interpretation of capability/constraint results
+   and the distinction between AI ecology simulations and real AI systems.
+3. Coupled systems and substrate: throughput/health/overshoot coupling, alternative
+   admissible models, and limitations of the civilizational mapping.
+Required evidence: dated independent reports attached to issue #60, followed by
+an explicit author disposition. This session's packaging audit is none of these.
+
+Bibliography and venue audit
+The existing References section says its entries were verified for v1.0. That
+historical statement is preserved; it is not a new APA-compliance certificate.
+Visible outstanding APA 7 items include abbreviated author lists (Bai et al.,
+Richardson et al., Rockstrom et al.), DOI/URL normalization, and report-series
+metadata for institutional sources including Pew. Complete full author lists and
+verify identifiers against original publications before submission. No guessed
+DOIs, author expansions or venue limits were inserted into the frozen paper.
+The new review copy is 75 double-spaced pages including figures and appendices;
+the manifest records the main-text word count. Confirm journal length and whether
+appendices belong in supplementary material before treating this as submission
+ready. Keywords in the website front matter remain available in the source.
+
+Publication decision
+No DOI, acceptance, journal submission or live-PDF replacement has occurred.
+The author must approve the final version and declarations after the reviews.
+The next missing step is obtaining independent reports and resolving their
+findings, followed by the editorial corrections above, not rerunning v1.0 as if
+the numerical evidence or merged erratum were missing.

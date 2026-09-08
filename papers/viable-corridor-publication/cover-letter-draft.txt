@@ -1,0 +1,27 @@
+DRAFT — not sent; author must approve venue, declarations and final manuscript.
+
+Dear Editors of Artificial Life,
+
+Please consider "The Viable Corridor: A Constraint-Architecture Framework for
+Survivable Multi-Agent Optimization" for consideration as an Article.
+
+The manuscript develops a coupled optimization, coherence and substrate model
+and separates three necessary constraints on robust long-time viability under
+stated assumptions. Seeded ODE and agent-ecology examples make the model's
+failure modes inspectable. The civilizational interpretation is presented as a
+hypothesis requiring operationalization, rather than an empirical result.
+
+This review version incorporates the 7 September 2026 erratum. The sufficiency
+conjunction originally stated in v1.0 is refuted in the Lorentzian continuum
+reading; a corrected floor-dependent formulation remains open. The historical
+calculations are preserved with their evidential limitations. Code, source
+hashes, figure-generation instructions and numerical controls accompany the
+manuscript.
+
+[Before sending: obtain the three independent scientific reviews; complete the
+venue and bibliography checks; confirm originality, concurrent-submission,
+conflict/funding, author contribution and tool-use declarations as required.
+This draft does not attest to those facts on the author's behalf.]
+
+Frank Peterlein
+Independent Researcher, Berlin
