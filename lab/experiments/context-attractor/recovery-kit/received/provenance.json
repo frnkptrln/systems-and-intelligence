@@ -1,0 +1,37 @@
+{
+  "status": "received_pending_independent_blind_semantic_qc",
+  "retrieved_at_utc": "2026-09-10T17:55:10Z",
+  "source": "GitHub issue 59 comment bodies retrieved using the authenticated GitHub connector",
+  "source_representation": "UTF-8 comment-body text with terminal LF; not original provider-response bytes",
+  "maintainer_clarification_url": "https://github.com/frnkptrln/systems-and-intelligence/issues/59#issuecomment-5551918663",
+  "independence_basis": "Maintainer attests separate incognito sessions, the first E3 and the second E4; no independent technical audit of session isolation",
+  "reported_model": "Claude Opus 5",
+  "reported_effort": "Hoch",
+  "exact_model_revision": null,
+  "session_ids": null,
+  "evaluation_timestamps": null,
+  "unexposed_sampling_settings": null,
+  "source_comment_sha256": {
+    "5551863709.md": "d550a7a26467f00b8ee8890c9e0c58b6655ed6f96bc865468ac67c1209e13537",
+    "5551901473.md": "faf4112eb845ce148446459b9bcf83af37c766eaf8468b550fb6717bcc3dcc58",
+    "5551918663.md": "d3748e11178d5bac6d9cfbdd931cb6959cc58d6bc580ef3bc20322666f56cae0"
+  },
+  "submissions": {
+    "E3": {
+      "source_url": "https://github.com/frnkptrln/systems-and-intelligence/issues/59#issuecomment-5551863709",
+      "packet_sha256": "ec3771b5ebcb27a0fe85566f99e5737b6733945b5dba5e5d3bbaef7f2666de1e",
+      "partition_sha256": "2590fdb8a70fe87943a6b2b07748eccad011ae369bfe553c3a0db1c738baccfb",
+      "reconstruction": "Exact fenced JSON block in source comment plus terminal LF; matches the previously recorded intake-file hash",
+      "families": 16,
+      "exact_cover": "passed"
+    },
+    "E4": {
+      "source_url": "https://github.com/frnkptrln/systems-and-intelligence/issues/59#issuecomment-5551901473",
+      "packet_sha256": "d33f68c17689c8cd623b6f78335eee693eb0aef110286faec3cb9ef2a099250e",
+      "partition_sha256": "a3cb96652c787eec196d629f3b52b56cd49d79e4c7f7881df7421e94170bdbbb",
+      "reconstruction": "Fenced JSON parsed and serialized with two-space indentation and terminal LF; matches the previously recorded intake-file hash",
+      "families": 15,
+      "exact_cover": "passed"
+    }
+  }
+}

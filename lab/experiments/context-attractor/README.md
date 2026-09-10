@@ -22,6 +22,36 @@ separate `validate <partition.json>` command reuses the exact-cover validator;
 its success does not establish semantic quality or authorize unblinding.
 The run remains `completed_partial`; P3/P4 remain unresolved.
 
+## Existing submissions recovered (2026-09-10)
+
+Both submitted partitions are now preserved in
+[`recovery-kit/received/`](recovery-kit/received/README.md), reconstructed from
+the issue #59 intake comments. Their bytes match the previously published intake
+hashes: E3 has 16 families and E4 has 15, each covering all 80 items exactly once.
+The maintainer identified them as separate incognito evaluations using the same
+reported Claude Opus 5 / Hoch configuration. These are existing submissions,
+not new model generations; the reported configuration and isolation are
+maintainer attestations, not authenticated provider logs.
+
+`complete_diversity_recovery.py --output <new-directory>` exports two separate
+blind semantic-QC packets, each containing only the original items, one received
+partition, neutral review instructions and hashes. This exporter does not
+perform QC or open the condition key. The separate
+`aggregate_diversity_recovery.py <qc-directory> --output <new-file>` checks the
+hashed QC receipt before any condition analysis, keeps E3/E4 counts separate,
+and verifies the original non-diversity metrics without replacing run 001.
+
+**Observed recovery outcome:** two separate fresh-context AI-assisted blind
+semantic reviews rejected the existing partitions. Both identified families
+that merge unrelated scientific problems under generic measurement or
+repository-benchmarking labels. [The full reviews and reproducible disposition](recovery-kit/received/README.md#recorded-outcome)
+are preserved. The analysis stopped before opening the condition key; no
+condition-specific diversity counts or replacement partitions were produced.
+Run 001 remains `completed_partial`, with P3/P4 unavailable. This completes the
+intake and QC of the existing submissions; it does not recover a valid diversity
+measurement or close issue #59. The reviews are AI-assisted, not external human
+expert review.
+
 ## Question
 
 Does accumulated research context make generated research questions more useful while also pulling them toward the repository's existing conceptual structure?

@@ -1,0 +1,159 @@
+{
+  "families": [
+    {
+      "name": "Adversarial attacks on learned world models",
+      "item_ids": [
+        "Q017",
+        "Q023",
+        "Q033",
+        "Q034",
+        "Q049",
+        "Q053",
+        "Q061"
+      ]
+    },
+    {
+      "name": "Defense mechanism design for world-model pipelines",
+      "item_ids": [
+        "Q019",
+        "Q020",
+        "Q074",
+        "Q076",
+        "Q078",
+        "Q080"
+      ]
+    },
+    {
+      "name": "Lifecycle-stage threat propagation in embodied AI",
+      "item_ids": [
+        "Q003",
+        "Q011",
+        "Q031",
+        "Q038",
+        "Q043",
+        "Q045",
+        "Q073",
+        "Q079"
+      ]
+    },
+    {
+      "name": "Predictive safety shields versus safety illusions",
+      "item_ids": [
+        "Q010",
+        "Q014",
+        "Q058",
+        "Q066",
+        "Q070",
+        "Q071"
+      ]
+    },
+    {
+      "name": "Safety-capability trade-offs in model design",
+      "item_ids": [
+        "Q008",
+        "Q052"
+      ]
+    },
+    {
+      "name": "Safety evaluation frameworks, metrics and interpretability",
+      "item_ids": [
+        "Q005",
+        "Q024",
+        "Q030",
+        "Q056",
+        "Q063"
+      ]
+    },
+    {
+      "name": "State grounding and imagination fidelity",
+      "item_ids": [
+        "Q009",
+        "Q044",
+        "Q046",
+        "Q050",
+        "Q062",
+        "Q065"
+      ]
+    },
+    {
+      "name": "Representation choice and cross-environment generalization",
+      "item_ids": [
+        "Q025",
+        "Q067",
+        "Q068",
+        "Q069"
+      ]
+    },
+    {
+      "name": "Predictive accuracy under architectural and latency constraints",
+      "item_ids": [
+        "Q004",
+        "Q035",
+        "Q040"
+      ]
+    },
+    {
+      "name": "Long-horizon adaptation under environmental change",
+      "item_ids": [
+        "Q006",
+        "Q029",
+        "Q037",
+        "Q048",
+        "Q051",
+        "Q054",
+        "Q057",
+        "Q059"
+      ]
+    },
+    {
+      "name": "Interventions and feedback in world-model correction",
+      "item_ids": [
+        "Q016",
+        "Q047",
+        "Q060"
+      ]
+    },
+    {
+      "name": "Self-modification, emergence and dynamical stability",
+      "item_ids": [
+        "Q002",
+        "Q007",
+        "Q012",
+        "Q018",
+        "Q021",
+        "Q036",
+        "Q039",
+        "Q072"
+      ]
+    },
+    {
+      "name": "Consciousness, experience and agent identity",
+      "item_ids": [
+        "Q001",
+        "Q013",
+        "Q015",
+        "Q027",
+        "Q055",
+        "Q075"
+      ]
+    },
+    {
+      "name": "Demarcation and measurement of latent agent properties",
+      "item_ids": [
+        "Q022",
+        "Q032",
+        "Q077"
+      ]
+    },
+    {
+      "name": "Comparative benchmarking of simulation and learning implementations",
+      "item_ids": [
+        "Q026",
+        "Q028",
+        "Q041",
+        "Q042",
+        "Q064"
+      ]
+    }
+  ]
+}
