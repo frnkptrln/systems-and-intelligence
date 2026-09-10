@@ -1,0 +1,69 @@
+{
+  "benchmark_implemented": false,
+  "benchmark_run": false,
+  "budget_convention": "sum of shortest endpoint angular displacements on S1",
+  "candidate_sha256": "4d0a2bff9efca7e7e3fc494b7f3f1db8a4c2e5ed431af7b0a994758189778fcb",
+  "conclusion": "under this convention the fixed-strength macro and whole-budget-one-oscillator control cannot always be budget matched",
+  "execution_authorized": false,
+  "fixture": {
+    "components": 16,
+    "phases": "eight +pi/4, eight -pi/4"
+  },
+  "half_control_feasibility": {
+    "aligned_half_fixture": {
+      "coherence": 0.8535533905932737,
+      "half_supports": 12870,
+      "maximum_budget_feasible_for_every_half_rad": 0.0,
+      "maximum_half_contraction_capacity_rad": 6.283185307179586,
+      "minimum_half_contraction_capacity_rad": 0.0,
+      "phases": "eight zero, four +pi/4, four -pi/4",
+      "proposed_pi_over_two_capped_budget_rad": 1.5707963267948966,
+      "requested_macro_budget_rad": 3.141592653589793,
+      "supports_unable_to_match_proposed_capped_budget": 65,
+      "supports_unable_to_match_requested_budget": 3985
+    },
+    "assumption": "nonovershooting contractions with separately adjustable strengths in [0,1]; shortest endpoint angular budget",
+    "common_budget_interval": "[0, min(pi, sum_H |wrap(theta_i-psi)|)] for selected half H",
+    "conclusion": "a pi/2 cap fixes the original fixture but cannot ensure positive budget matching for every random half at nonzero coherence",
+    "original_fixture": {
+      "coherence": 0.7071067811865476,
+      "half_supports": 12870,
+      "maximum_budget_feasible_for_every_half_rad": 3.141592653589793,
+      "maximum_half_contraction_capacity_rad": 6.283185307179586,
+      "minimum_half_contraction_capacity_rad": 6.283185307179586,
+      "proposed_pi_over_two_capped_budget_rad": 1.5707963267948966,
+      "requested_macro_budget_rad": 6.283185307179586,
+      "supports_unable_to_match_proposed_capped_budget": 0,
+      "supports_unable_to_match_requested_budget": 12870
+    }
+  },
+  "implementation_authorized": false,
+  "kind": "conditional_geometric_feasibility_certificate",
+  "required_review_decision": "freeze the circular/path budget convention and revise the control or strength rule before benchmark implementation",
+  "result": {
+    "coherence": 0.7071067811865476,
+    "component_displacements_rad": [
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414,
+      0.39269908169872414
+    ],
+    "macro_budget_rad": 6.283185307179586,
+    "mean_phase": 0.0,
+    "one_oscillator_match_feasible": false,
+    "one_oscillator_max_geodesic_budget_rad": 3.141592653589793
+  },
+  "same_strength_half_control_budget_rad": 3.141592653589793
+}

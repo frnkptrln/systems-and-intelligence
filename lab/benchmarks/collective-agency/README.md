@@ -3,6 +3,10 @@
 **Status:** preregistration draft — full benchmark not implemented; separate exact calibration controls are available  
 **Question:** When does a collection become an agent?
 
+**2026-09-08 preflight finding:** the fixed-strength intervention's displacement budget can exceed the maximum shortest-angle displacement of one oscillator. The [geometric certificate and proposed freeze amendment](intervention-budget-review.txt) document a 16-component, nonzero-coherence counterexample. The candidate and its implementation/execution gates remain unchanged.
+
+**2026-09-10 completed feasibility calculation:** enumerating all 12,870 half-supports shows that a global budget cap alone also cannot guarantee a matched half-contraction control. At one explicit positive-coherence state, 65 halves cannot spend a `pi/2` budget and one has zero capacity. The [certificate](intervention-budget-result.json) gives the exact common budget interval for each support; selecting a matching rule remains part of the freeze decision.
+
 This benchmark asks a bounded systems question. It does **not** attempt to decide whether a collective is conscious, has phenomenal experience, or is ontologically irreducible. It tests whether a declared collective description gains predictive and interventionally useful structure beyond matched component-wise descriptions.
 
 ## 1. Target distinction
