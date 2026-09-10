@@ -1,52 +1,65 @@
-The Viable Corridor — erratum-bearing publication review package
-Prepared 8 September 2026, from main 1bbf4b4 plus the publication-preparation diff.
+The Viable Corridor - publication review package
+Prepared 10 September 2026. This is a review package, not a submission.
 
-Scientific status
-The 7 September erratum is authoritative. The original sufficiency conjunction
-is refuted in the Lorentzian continuum reading. A corrected statement dependent
-on the coherence floor and population regime remains open. Historical v1.0
-figures and numerical measurements are retained as evidence with their existing
-scope. The three required independent scientific reviews remain outstanding.
+Deliverables
+- manuscript.pdf/.tex/.md: the complete erratum-bearing scientific manuscript,
+  including original abstract, Appendices A-D and references (73 pages).
+- article.pdf/.tex/.md: a shortened Article copy (52 pages). The cover contains
+  the title, author details, abstract and six keywords; Introduction starts on
+  page 2. Appendices and their figures are supplied separately.
+- supplementary-material.pdf/.tex/.md: original Appendices A-D and references
+  (18 pages), with title, author affiliation and correspondence details.
+- figures/: all six figures as vector PDF and 600-dpi PNG. The tracked repository
+  Figure 1 PNG is also regenerated from the corrected canonical script.
+- manifest.json: source/artifact hashes, original seeds, runtime versions, word
+  counts and immutable repository links. The manifest identifies the precise
+  build source; it does not identify the independently deployed website PDF.
+- arxiv-metadata.txt: unsent title, author, qualified abstract and category draft.
+- review-package.zip: the complete deliverable bundle, with integrity manifest.
+- cover-letter-draft.txt and review-disposition.txt: unsent cover draft and the
+  remaining external scientific/author decisions.
 
-Delivered
-manuscript.pdf and manuscript.tex: single-column 11pt, double-spaced review copy,
-including the full Abstract–References source and appendices. Website entrance,
-revision history and TODO are excluded. The frozen source is preserved; only the derived export refreshes the production
-caption sentence for its regenerated figure. The title page explicitly identifies the
-erratum and pending reviews. Equations are reflowed without changing their values;
-check/cross glyphs are written yes/no. All six figures are supplied as vector PDF
-and 600-dpi PNG. The review-package Figure 1 contains the coherence-floor correction. The tracked
-public PNG is unchanged pending explicit approval of its public upload.
-manifest.json records exact source/artifact SHA-256 values, environment, seeds,
-and the distinction between this review copy and the current live website PDF.
-cover-letter-draft.txt is an unsent draft, with no unsupported declarations.
-review-disposition.txt records the remaining scientific and editorial gates.
+Scientific scope
+The 7 September erratum is authoritative: the original sufficiency conjunction
+is refuted in its Lorentzian continuum reading. A population-specific,
+coherence-floor-dependent replacement remains open. The v1.0 measurements,
+original seeds and numerical definitions are unchanged. None of the three
+required independent scientific reviews is supplied by this editorial audit.
 
-Reproduce from the repository root (pandoc and xelatex must be installed):
+The Article is derived through article-edits.json: exact text replacements
+shorten the abstract and repeated framing/discussion without changing the
+canonical scientific body. The complete sufficiency/erratum section, limitations,
+appendix content and displayed equations are protected by regression checks.
+Mechanical bibliography corrections in the source include the Strogatz-Mirollo
+1991 author order, APA handling of long author lists, DOI links and individually
+identified Pew 2014/2016/2022 reports. All outputs use the source manuscript title.
+
+Reproduce from the repository root:
   python lab/tools/build_viable_publication.py --output /absolute/output/path
-Python dependencies: the repository requirements.txt and requirements-docs.txt.
-Default generation repeats the complete canonical TEO and 200-seed ABM figure
-calculations. --reuse-figures checks an existing manifest and figure-source hashes
-before reusing those files. There are no upload or submission operations.
+Required: Python dependencies from requirements.txt and requirements-docs.txt,
+pandoc, and xelatex. Alternatively, install Tectonic and add --engine tectonic;
+its first build downloads a TeX bundle and requires network access. DejaVu Serif
+must be installed. The builder checks its programs before starting simulations.
+Default generation repeats the canonical TEO and 200-seed ABM figure calculations.
+--reuse-figures requires every expected figure hash and figure-source hash to
+match an existing manifest. No upload or submission operation is included.
 
-Venue check
-The Artificial Life submission-guideline search excerpt was checked on
-2026-09-08: LaTeX/Word submissions and 600-dpi raster requirements are supported.
+Venue check, 2026-09-10
+Artificial Life's official indexed guidelines specify an Article band typically
+of 6,000-12,000 words; PDF initial submissions; LaTeX/Word accepted submissions;
+single-column, double-spaced text; APA 7; six or five keywords; and separate
+supplementary material. Vector figure exports and 600-dpi PNGs are supplied.
+The Article body, including references and editorial notice but excluding cover
+details and Supplement, is below 12,000 pandoc-plain whitespace words. Exact
+counts and their scope are in the manifest. The full review manuscript is longer.
+The direct guideline fetch returned HTTP 403; the official indexed text was
+available. Recheck the submission portal when actually submitting.
 https://direct.mit.edu/artl/pages/submission-guidelines
-The full page was unavailable (HTTP 403), so current end-to-end compliance is
-not certified. The manuscript's author-date bibliography is preserved; the
-specific remaining APA checks are in review-disposition.txt.
 
-Validation
-All 75 rendered pages were visually inspected in contact sheets, with figures,
-tables and the erratum present. XeLaTeX reported no missing glyphs or overfull
-horizontal lines after equation/path reflow. The regenerated numerical figures
-use the original defaults and seeds, without adding a new scientific result.
-Repository regression and integrity checks are recorded in the accompanying PR.
-No publication, deployment, expert outreach or submission was performed.
-
-Public artifact gate
-Automatic approval review rejected uploading the regenerated PNG to the public
-repository without explicit approval for scientific-artifact publication. This
-PR therefore contains export code and production notes only; the complete
-review package and proposed binary patch are delivered privately for review.
+Validation and release scope
+All final PDF pages are rendered for visual inspection; missing-glyph and overfull
+line warnings fail the build. Numerical regression checks preserve the historical
+results. This package changes neither the journal submission state nor the live
+website PDF. External scientific review and the author's final declarations and
+approval remain open; accepted-stage BibTeX and publication forms follow the
+journal's requirements if the manuscript is accepted.

@@ -1,0 +1,20 @@
+DRAFT arXiv metadata - prepared 10 September 2026; not submitted.
+
+Title: The Viable Corridor: A Constraint-Architecture Framework for Survivable Multi-Agent Optimization
+Author: Frank Peterlein
+Affiliation: Independent Researcher, Berlin
+Primary category: cs.MA (Multiagent Systems)
+Cross-list: nlin.AO (Adaptation and Self-Organizing Systems)
+
+Abstract (LaTeX inline notation):
+The Thermodynamics of Emergent Orchestration (TEO) combines replicator resource competition, Kuramoto value coupling, a homeostatic brake and substrate dissipation. Under stated assumptions, positive regulation ($\gamma>0$), above-onset coupling ($K>K_c$) and bounded accumulated overshoot ($\Omega(t)<S_{\max}$) are componentwise necessary for robust long-time viability. This structural result reflects the defined conjunction of constraints. The substantive claim is that capability can load several constraints simultaneously. A deterministic ODE and stochastic agent ecology demonstrate exits through multiple boundaries and recovery through joint strengthening where single-axis responses fail. Their shared author and toolchain limit the independence of this evidence. Sufficiency is not established: the conjunction is refuted in its Lorentzian continuum reading because above-onset coupling need not meet the coherence floor (erratum, §3.4). A population-specific, floor-dependent correction remains open. An uncalibrated structural-isomorphism hypothesis relates AI optimization and civilizational regimes. Predictions distinguish model checks, empirical mappings and future real-agent tests. No real system has been shown to meet the proposed definition.
+
+Comments: Model paper, v1.0 with the 7 September 2026 sufficiency erratum.
+Includes a shortened Article and accompanying Supplement; source and numerical
+controls remain available in the repository.
+Code: https://github.com/frnkptrln/systems-and-intelligence
+Exact review-build commit and artifact hashes: accompanying manifest.json.
+
+Before submission the author must confirm categories, license, authorship,
+originality/concurrent-submission declarations and the final scientific version.
+No arXiv identifier, DOI or journal reference is assigned by this metadata.

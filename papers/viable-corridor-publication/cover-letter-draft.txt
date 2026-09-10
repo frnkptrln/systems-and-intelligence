@@ -1,27 +1,35 @@
-DRAFT — not sent; author must approve venue, declarations and final manuscript.
+DRAFT - not sent; for author completion and approval after scientific review.
 
 Dear Editors of Artificial Life,
 
 Please consider "The Viable Corridor: A Constraint-Architecture Framework for
-Survivable Multi-Agent Optimization" for consideration as an Article.
+Survivable Multi-Agent Optimization" as an Article.
 
-The manuscript develops a coupled optimization, coherence and substrate model
-and separates three necessary constraints on robust long-time viability under
-stated assumptions. Seeded ODE and agent-ecology examples make the model's
-failure modes inspectable. The civilizational interpretation is presented as a
-hypothesis requiring operationalization, rather than an empirical result.
+The manuscript examines survivability in synthetic multi-agent systems, fitting
+the journal's interest in software models that clarify life-like phenomena. Its
+question is how constraint architecture, rather than individual capability alone,
+affects long-time viability. A coupled ODE and a stochastic agent ecology explore
+resource concentration, coherence and substrate limits. The contribution is a
+model-internal demonstration of capability loading multiple constraints and the
+limits of single-axis responses. The two models share an author and toolchain;
+transfer to real systems remains an uncalibrated hypothesis.
 
-This review version incorporates the 7 September 2026 erratum. The sufficiency
-conjunction originally stated in v1.0 is refuted in the Lorentzian continuum
-reading; a corrected floor-dependent formulation remains open. The historical
-calculations are preserved with their evidential limitations. Code, source
-hashes, figure-generation instructions and numerical controls accompany the
-manuscript.
+This version incorporates the 7 September 2026 erratum. The originally proposed
+sufficiency conjunction is refuted in its Lorentzian continuum reading; a
+population-specific, floor-dependent replacement remains open. Historical
+measurements are retained. The Article and accompanying Supplement include the
+model definitions, limitations and reproducibility information; separate figures
+are supplied in vector PDF and 600-dpi PNG.
 
-[Before sending: obtain the three independent scientific reviews; complete the
-venue and bibliography checks; confirm originality, concurrent-submission,
-conflict/funding, author contribution and tool-use declarations as required.
-This draft does not attest to those facts on the author's behalf.]
+Codex assisted with editorial shortening, reference-metadata checks, typesetting
+and production verification for this review package. The author remains
+responsible for the scientific content and must complete the disclosure of any
+assistance used during earlier manuscript development.
+
+[Before sending: obtain and address the three independent scientific reviews;
+approve the shortened manuscript and Supplement; confirm originality and that
+this work is not under review elsewhere; complete funding/conflict, contribution
+and tool-use declarations. This draft makes none of those attestations.]
 
 Frank Peterlein
 Independent Researcher, Berlin
