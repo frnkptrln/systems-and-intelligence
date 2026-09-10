@@ -89,6 +89,30 @@ def render_math(expr: str, inline: bool) -> str:
 
 
 FENCE = re.compile(r"```.*?```|~~~.*?~~~", re.DOTALL)
+FIGURE_IMAGE = re.compile(
+    r"^!\[(\*\*Figure [^\n]+?)\]\(([^)\n]+)\)[ \t]*$", re.MULTILINE
+)
+
+
+def visible_figure_captions(text: str) -> str:
+    """Expose scientific figure alt captions as prose before rendering math.
+
+    Ordinary image descriptions remain alt text. Figure captions retain their
+    exact Markdown and math, outside the image syntax where both can render.
+    Fenced examples must remain literal.
+    """
+    def promote(match: re.Match) -> str:
+        caption, target = match.groups()
+        return f"![Figure]({target})\n\n{caption}"
+
+    parts = []
+    cursor = 0
+    for fence in FENCE.finditer(text):
+        parts.append(FIGURE_IMAGE.sub(promote, text[cursor:fence.start()]))
+        parts.append(fence.group(0))
+        cursor = fence.end()
+    parts.append(FIGURE_IMAGE.sub(promote, text[cursor:]))
+    return "".join(parts)
 
 
 def substitute_math(text: str) -> str:
@@ -322,6 +346,7 @@ def build(paper: Path, output: Path) -> None:
 
     # Repository-relative links have no meaning in a detached PDF.
     body = body.replace("../../", "").replace("../", "")
+    body = visible_figure_captions(body)
     body = substitute_math(body)
 
     html_body = markdown.markdown(

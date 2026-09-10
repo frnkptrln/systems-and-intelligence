@@ -3,12 +3,12 @@ Prepared 10 September 2026. This is a review package, not a submission.
 
 Deliverables
 - manuscript.pdf/.tex/.md: the complete erratum-bearing scientific manuscript,
-  including original abstract, Appendices A-D and references (73 pages).
+  including original abstract, Appendices A-D and references (74 pages).
 - article.pdf/.tex/.md: a shortened Article copy (52 pages). The cover contains
   the title, author details, abstract and six keywords; Introduction starts on
   page 2. Appendices and their figures are supplied separately.
 - supplementary-material.pdf/.tex/.md: original Appendices A-D and references
-  (18 pages), with title, author affiliation and correspondence details.
+  (19 pages), with title, author affiliation and correspondence details.
 - figures/: all six figures as vector PDF and 600-dpi PNG. The tracked repository
   Figure 1 PNG is also regenerated from the corrected canonical script.
 - manifest.json: source/artifact hashes, original seeds, runtime versions, word
@@ -32,7 +32,9 @@ canonical scientific body. The complete sufficiency/erratum section, limitations
 appendix content and displayed equations are protected by regression checks.
 Mechanical bibliography corrections in the source include the Strogatz-Mirollo
 1991 author order, APA handling of long author lists, DOI links and individually
-identified Pew 2014/2016/2022 reports. All outputs use the source manuscript title.
+identified Pew 2014/2016/2022 reports. References use hanging indents; original
+scientific figure captions are visible with their Figure 1/C1-C4/D1 labels.
+All outputs use the source manuscript title.
 
 Reproduce from the repository root:
   python lab/tools/build_viable_publication.py --output /absolute/output/path

@@ -83,6 +83,37 @@ def article_body(body: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", body)
 
 
+def visible_figure_captions(body: str) -> str:
+    """Keep manuscript captions visible when implicit figure numbering is off.
+
+    Pandoc otherwise treats the entire Markdown image description as alt text,
+    so critical scope and numerical qualifications disappear from printed PDFs.
+    Explicit prose also preserves the source's Figure 1/C1-C4/D1 numbering.
+    """
+    def figure(match):
+        caption, target = match.groups()
+        label = re.search(r"Figure\s+(?:[A-D])?\d+", caption)
+        if not label:
+            raise ValueError(f"Missing figure label: {caption[:80]}")
+        return f"![{label[0]}]({target})\n\n{caption}"
+    return re.sub(r"!\[(.*?)\]\((figures/[^)]+)\)", figure, body, flags=re.DOTALL)
+
+
+def reference_paragraphs(body: str) -> str:
+    """Use hanging-indent references in the export, preserving each entry."""
+    before, marker, references = body.partition("## References\n\n")
+    if not marker:
+        raise ValueError("Missing References section")
+    note, marker, entries = references.partition("\n\n- ")
+    if not marker:
+        raise ValueError("Missing reference entries")
+    entries = "- " + entries
+    paragraphs = re.sub(r"(?m)^- ", "", entries).strip()
+    return (before + "## References\n\n" + note + "\n\n"
+            + r"\begingroup\setlength{\parindent}{-1.5em}\setlength{\leftskip}{1.5em}"
+            + "\n\n" + paragraphs + "\n\n" + r"\endgroup" + "\n")
+
+
 def manuscript(output: Path, engine: str = "xelatex", *, edition: str = "manuscript") -> dict:
     source = PAPER.read_text(encoding="utf-8")
     metadata = yaml.safe_load(source.split("---", 2)[1])
@@ -99,6 +130,8 @@ def manuscript(output: Path, engine: str = "xelatex", *, edition: str = "manuscr
     body = body.replace("✓", "yes").replace("✗", "no")
     body = body.replace("revision v0.5 in the log above", "revision v0.5 in the repository revision history")
     body = re.sub(r"(figures/[^)]+)\.png\)", r"\1.pdf)", body)
+    body = visible_figure_captions(body)
+    body = reference_paragraphs(body)
     # Resolve repository prose links; local image paths remain build inputs.
     def link(match):
         label, target = match.groups()
@@ -184,7 +217,7 @@ def manuscript(output: Path, engine: str = "xelatex", *, edition: str = "manuscr
     }[edition]
     info = {"source_sha256": sha(PAPER), "title": front["title"], "repository_link_commit": source_commit,
             "edition": edition,
-            "conversion": content_scope + "; website header, revision history and TODO excluded; figure/link paths resolved; check/cross marks rendered yes/no; long equations reflowed and paths made breakable; revision-log reference made explicit",
+            "conversion": content_scope + "; website header, revision history and TODO excluded; figure captions rendered as visible prose with original numbering; reference bullets rendered as hanging-indent paragraphs; figure/link paths resolved; check/cross marks rendered yes/no; long equations reflowed and paths made breakable; revision-log reference made explicit",
             "word_count_whitespace_main_including_abstract": len(main.split()),
             "word_count_pandoc_plain_main_including_abstract": len(plain.split()),
             "word_count_pandoc_plain_complete_body": len(all_plain.split()),
@@ -206,6 +239,7 @@ def manifest(output: Path, manuscript_info: dict, article_info: dict, supplement
                "papers/viable-corridor-publication/article-edits.json",
                "tests/test_corridor_headlines.py", "tests/test_coherence_margin.py",
                "tests/test_viable_publication.py",
+               "lab/tools/build_paper_pdf.py", "tests/test_site_paper_captions.py",
                "lab/experiments/coherence_margin/coherence_margin.py",
                "lab/experiments/coherence_margin/results/results.json"]
     sources += [str(p.relative_to(ROOT)) for p in sorted((ROOT / "papers/viable-corridor-publication").glob("*.txt"))]
