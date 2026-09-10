@@ -1,0 +1,35 @@
+DRAFT - not sent; for author completion and approval after scientific review.
+
+Dear Editors of Artificial Life,
+
+Please consider "The Viable Corridor: A Constraint-Architecture Framework for
+Survivable Multi-Agent Optimization" as an Article.
+
+The manuscript examines survivability in synthetic multi-agent systems, fitting
+the journal's interest in software models that clarify life-like phenomena. Its
+question is how constraint architecture, rather than individual capability alone,
+affects long-time viability. A coupled ODE and a stochastic agent ecology explore
+resource concentration, coherence and substrate limits. The contribution is a
+model-internal demonstration of capability loading multiple constraints and the
+limits of single-axis responses. The two models share an author and toolchain;
+transfer to real systems remains an uncalibrated hypothesis.
+
+This version incorporates the 7 September 2026 erratum. The originally proposed
+sufficiency conjunction is refuted in its Lorentzian continuum reading; a
+population-specific, floor-dependent replacement remains open. Historical
+measurements are retained. The Article and accompanying Supplement include the
+model definitions, limitations and reproducibility information; separate figures
+are supplied in vector PDF and 600-dpi PNG.
+
+Codex assisted with editorial shortening, reference-metadata checks, typesetting
+and production verification for this review package. The author remains
+responsible for the scientific content and must complete the disclosure of any
+assistance used during earlier manuscript development.
+
+[Before sending: obtain and address the three independent scientific reviews;
+approve the shortened manuscript and Supplement; confirm originality and that
+this work is not under review elsewhere; complete funding/conflict, contribution
+and tool-use declarations. This draft makes none of those attestations.]
+
+Frank Peterlein
+Independent Researcher, Berlin

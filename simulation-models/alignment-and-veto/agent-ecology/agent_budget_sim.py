@@ -216,7 +216,7 @@ def _repo_lab_tools() -> Path:
     return Path(__file__).resolve().parents[3] / "lab" / "tools"
 
 
-def figure_p7p8(outdir: Path, n_seeds: int = 200) -> Path:
+def figure_p7p8(outdir: Path, n_seeds: int = 200, *, dpi: int = 200, vector: bool = False) -> Path:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -274,7 +274,9 @@ def figure_p7p8(outdir: Path, n_seeds: int = 200) -> Path:
                  f"n={n_seeds} seeds/point)", fontsize=12)
     fig.tight_layout(rect=[0, 0, 1, 0.95])
     out = outdir / "teo_p7p8_agent_ecology.png"
-    fig.savefig(out, dpi=200, bbox_inches="tight")
+    fig.savefig(out, dpi=dpi, bbox_inches="tight")
+    if vector:
+        fig.savefig(out.with_suffix(".pdf"), bbox_inches="tight", metadata={"CreationDate": None, "ModDate": None})
     plt.close(fig)
     return out
 
