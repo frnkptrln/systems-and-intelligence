@@ -108,7 +108,10 @@ def reference_paragraphs(body: str) -> str:
     if not marker:
         raise ValueError("Missing reference entries")
     entries = "- " + entries
-    paragraphs = re.sub(r"(?m)^- ", "", entries).strip()
+    # The source ends with a separator before its excluded post-v1.0 TODO list.
+    entries = re.sub(r"\n---\s*$", "", entries)
+    paragraphs = re.sub(r"(?m)^- ", "\n\n", entries).strip()
+    paragraphs = re.sub(r"\n{3,}", "\n\n", paragraphs)
     return (before + "## References\n\n" + note + "\n\n"
             + r"\begingroup\setlength{\parindent}{-1.5em}\setlength{\leftskip}{1.5em}"
             + "\n\n" + paragraphs + "\n\n" + r"\endgroup" + "\n")

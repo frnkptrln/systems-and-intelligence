@@ -52,11 +52,14 @@ def test_reference_format_preserves_entries_and_continuation_lines():
     body = source[source.index("## Abstract"):source.index("## TODO (post-v1.0)")]
     references = body.split("## References\n\n", 1)[1]
     note, entries = references.split("\n\n- ", 1)
-    expected = re.sub(r"(?m)^- ", "", "- " + entries).strip()
     formatted = publication.reference_paragraphs(body)
     assert note in formatted
-    assert expected in formatted
-    continued = "## References\n\nA note.\n\n- First line\n  continuation.\n\n- Second entry.\n"
+    canonical_entries = [line for line in ("- " + entries).splitlines() if line.startswith("- ")]
+    assert len(canonical_entries) == 32
+    for entry in canonical_entries:
+        assert entry.startswith("- ")
+        assert "\n\n" + entry[2:] + "\n\n" in formatted
+    continued = "## References\n\nA note.\n\n- First line\n  continuation.\n- Second entry.\n"
     assert "First line\n  continuation.\n\nSecond entry." in publication.reference_paragraphs(continued)
 
 
