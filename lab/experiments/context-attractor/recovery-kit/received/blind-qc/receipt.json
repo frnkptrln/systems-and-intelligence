@@ -1,0 +1,26 @@
+{
+  "frozen_at_utc": "2026-09-10T17:59:56.256608Z",
+  "review_type": "AI-assisted semantic QC by distinct fresh Codex subagents; not human expert review",
+  "reviews": {
+    "E3": {
+      "reviewer_id": "01a08c6f-1c02-7ed0-852d-e8d16f660508:/root/blind_qc_a",
+      "model": "inherited Codex session model; exact snapshot not separately exposed",
+      "fresh_context": true,
+      "context_method": "collaboration.spawn_agent fork_turns=none; only the single packet supplied; prohibited other file/source access",
+      "completed_at_utc": "2026-09-10T17:59:56.256608Z",
+      "timestamp_basis": "coordinator receipt time after reviewer final response, before key access",
+      "input_packet_sha256": "ae71f58d5dd2520f607b2356e27381a25807c9a1fde89cd3c730d1b31ec49461",
+      "output_sha256": "ed28b30aac8383d0cc33d51b71e2a9cfd1821512c751a00de6c04b40c0788e0e"
+    },
+    "E4": {
+      "reviewer_id": "01a08c6f-1c02-7ed0-852d-e8d16f660508:/root/blind_qc_b",
+      "model": "inherited Codex session model; exact snapshot not separately exposed",
+      "fresh_context": true,
+      "context_method": "collaboration.spawn_agent fork_turns=none; only the single packet supplied; prohibited other file/source access",
+      "completed_at_utc": "2026-09-10T17:59:56.256608Z",
+      "timestamp_basis": "coordinator receipt time after reviewer final response, before key access",
+      "input_packet_sha256": "f52aede0ccd7b31ee099d3e0e3797de5f586e4e13dee958179f31c7b0ccc89d4",
+      "output_sha256": "eab414236431b5131ef63ffde9778c06d3bfda8bac698d9863a77f9813deb4d7"
+    }
+  }
+}
