@@ -241,7 +241,7 @@ def manifest(output: Path, manuscript_info: dict, article_info: dict, supplement
                "lab/tools/build_viable_publication.py", "requirements.txt", "requirements-docs.txt",
                "papers/viable-corridor-publication/article-edits.json",
                "tests/test_corridor_headlines.py", "tests/test_coherence_margin.py",
-               "tests/test_viable_publication.py",
+               "tests/test_viable_publication.py", "tests/test_pins.py",
                "lab/tools/build_paper_pdf.py", "tests/test_site_paper_captions.py",
                "lab/experiments/coherence_margin/coherence_margin.py",
                "lab/experiments/coherence_margin/results/results.json"]
