@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import itertools
 import json
 import math
 from pathlib import Path
@@ -38,6 +39,57 @@ def contraction_budget(phases: list[float], strength: float) -> dict:
     }
 
 
+def matching_capacity(phases: list[float], support: list[int]) -> dict:
+    """Static budget limits, allowing each contraction strength in [0, 1].
+
+    For a support H, D_H = sum_H |wrap(theta_i - psi)|. A contraction
+    spends exactly alpha * D_H; its endpoint budget ranges over [0, D_H].
+    The same-oscillator random-direction arm can copy the macro magnitudes.
+    A free single-oscillator kick has capacity pi. Therefore the four arms
+    have common budgets [0, min(D_H, pi)]. This characterizes feasibility;
+    it does not select a budget, support distribution, or intervention rule.
+    """
+    full = contraction_budget(phases, 1)
+    if (not support or any(type(i) is not int or not 0 <= i < len(phases)
+                           for i in support) or len(set(support)) != len(support)):
+        raise ValueError("support must contain distinct valid component indices")
+    capacity = sum(full["component_displacements_rad"][i] for i in support)
+    return {
+        "full_contraction_capacity_rad": full["macro_budget_rad"],
+        "support_contraction_capacity_rad": capacity,
+        "common_budget_max_rad": min(capacity, math.pi),
+    }
+
+
+def half_support_report(phases: list[float], strength: float) -> dict:
+    """Enumerate every half-support at one fixed state; no dynamics or RNG."""
+    if len(phases) % 2:
+        raise ValueError("half-support enumeration requires an even component count")
+    macro = contraction_budget(phases, strength)
+    # The pi/2 cap is a proposed alternative in the review, not a freeze choice.
+    proposed_budget = min(macro["macro_budget_rad"], math.pi / 2)
+    limits = [matching_capacity(phases, list(support))
+              for support in itertools.combinations(range(len(phases)), len(phases) // 2)]
+    return {
+        "coherence": macro["coherence"],
+        "requested_macro_budget_rad": macro["macro_budget_rad"],
+        "half_supports": len(limits),
+        "minimum_half_contraction_capacity_rad": min(
+            item["support_contraction_capacity_rad"] for item in limits),
+        "maximum_half_contraction_capacity_rad": max(
+            item["support_contraction_capacity_rad"] for item in limits),
+        "supports_unable_to_match_requested_budget": sum(
+            macro["macro_budget_rad"] > item["common_budget_max_rad"] + 1e-12
+            for item in limits),
+        "proposed_pi_over_two_capped_budget_rad": proposed_budget,
+        "supports_unable_to_match_proposed_capped_budget": sum(
+            proposed_budget > item["common_budget_max_rad"] + 1e-12
+            for item in limits),
+        "maximum_budget_feasible_for_every_half_rad": min(
+            item["common_budget_max_rad"] for item in limits),
+    }
+
+
 def report() -> dict:
     source = HERE / "freeze-candidate.json"
     candidate = json.loads(source.read_text())
@@ -58,6 +110,17 @@ def report() -> dict:
         "implementation_authorized": candidate["implementation_authorized"],
         "execution_authorized": candidate["execution_authorized"],
         "required_review_decision": "freeze the circular/path budget convention and revise the control or strength rule before benchmark implementation",
+        "half_control_feasibility": {
+            "assumption": "nonovershooting contractions with separately adjustable strengths in [0,1]; shortest endpoint angular budget",
+            "common_budget_interval": "[0, min(pi, sum_H |wrap(theta_i-psi)|)] for selected half H",
+            "original_fixture": half_support_report(phases, candidate["intervention"]["lambda"]),
+            "aligned_half_fixture": {
+                "phases": "eight zero, four +pi/4, four -pi/4",
+                **half_support_report([0.0] * 8 + [math.pi / 4] * 4 + [-math.pi / 4] * 4,
+                                      candidate["intervention"]["lambda"]),
+            },
+            "conclusion": "a pi/2 cap fixes the original fixture but cannot ensure positive budget matching for every random half at nonzero coherence",
+        },
     }
 
 

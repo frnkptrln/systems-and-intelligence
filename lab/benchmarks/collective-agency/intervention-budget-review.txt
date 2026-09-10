@@ -42,3 +42,32 @@ ineligible-state rules, in addition to resolving the six already recorded PI
 questions, outcome horizon and recovery epsilon. This check resolves none of
 those decisions by fiat. freeze-candidate.json and both false authorization flags
 are preserved byte-for-byte. No benchmark implementation has been started.
+
+Completed half-support calculation, 2026-09-10
+For a selected half H, let D_H = sum_H |wrap(theta_i-psi)|. If a contraction
+does not overshoot the mean (strength between zero and one), it can spend
+exactly the interval [0,D_H]. Allowing separate strengths for the macro and
+half arms, the four arms have common budgets exactly [0,min(D_H,pi)]: the
+whole-group capacity contains D_H, a random-direction arm can copy the macro
+magnitudes, and a single oscillator can move at most pi. For any admissible
+positive B, strengths B/D_all and B/D_H construct matching contractions.
+For B=0, use zero strengths. This is a feasibility proof, not a chosen rule.
+
+The checker now enumerates all C(16,8)=12,870 halves for two fixed states.
+In the original fixture every half can match a pi/2-capped macro budget after
+rescaling, although none can match the original 2*pi across all four arms.
+Now consider eight phases at zero, four at +pi/4 and four at -pi/4. Its mean
+phase is zero, coherence is (1+sqrt(2)/2)/2, and lambda=0.5 costs pi. A half
+with k off-mean components has capacity k*pi/4, and there are C(8,k)^2 such
+halves. Thus 3,985 halves cannot match the requested pi, and 65 still cannot
+match a pi/2 cap. The all-zero half has zero capacity at positive coherence.
+Consequently no positive shared budget works for every half in this state.
+
+This closes the geometric question behind the proposed amendment: a global
+cap alone is insufficient. A future rule must account for the selected half's
+capacity, permit zero-budget cases, exclude or redraw supports, change the
+half-control definition, or remove that arm. These choices alter the tested
+intervention or support distribution and remain external freeze decisions.
+The result file adds both exhaustive support counts; tests independently
+check the binomial counts, constructive bounds, circular symmetries, invalid
+supports, and reproducibility of the saved certificate. No outcomes were used.
