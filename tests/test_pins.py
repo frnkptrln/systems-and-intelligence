@@ -122,13 +122,13 @@ class TestExperimentResultFiles(unittest.TestCase):
 
 
 class TestCorridorPaperFrozen(unittest.TestCase):
-    """Pin v1.0 including the 2026-09-07 coherence erratum and its consistency pass.
+    """Pin v1.0, its 2026-09-07 erratum, and the 2026-09-10 editorial corrigendum.
 
-    An approved version or dated erratum updates ``FROZEN_SHA256`` together
-    with the paper and its revision history. The entire text remains guarded.
+    An approved version or dated erratum/corrigendum updates ``FROZEN_SHA256``
+    together with the paper and its revision history. The entire text remains guarded.
     """
 
-    FROZEN_SHA256 = "7b89723b000e8a0227796f4fbb195e5d3966947db9cd283d9633275348cc74bd"
+    FROZEN_SHA256 = "20fedfad9f7254a37ad7c44d61cba06362f5ddefc161b02d87d06dbb39af0fd5"
     MARKER = "## TODO (post-v1.0)"
 
     def test_text_above_the_todo_section_is_unchanged(self):
@@ -141,7 +141,7 @@ class TestCorridorPaperFrozen(unittest.TestCase):
             digest,
             self.FROZEN_SHA256,
             "papers/viable-corridor.md changed above its TODO section; v1.0 is frozen. "
-            "An approved version or dated erratum updates FROZEN_SHA256 in the same change.",
+            "An approved version or dated erratum/corrigendum updates FROZEN_SHA256 in the same change.",
         )
 
 

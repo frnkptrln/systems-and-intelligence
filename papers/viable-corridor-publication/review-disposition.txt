@@ -1,0 +1,43 @@
+Review disposition - 10 September 2026
+
+Completed
+The erratum-bearing source has a full review PDF, a shortened Article with a
+one-page abstract/keyword cover and a separate Supplement containing the original
+appendices. All six figures are vector PDF/600-dpi PNG. Figure 1 is regenerated
+from its corrected canonical source. Titles, source hashes, seeds, word counts
+and immutable repository links are recorded consistently. References now correct
+the Strogatz-Mirollo author order, long-author APA forms, selected identifiers and
+the Pew report series. Exact editorial replacements are reviewable in
+article-edits.json; the canonical scientific argument is retained.
+
+Independent scientific review - all pending
+1. Dynamical systems: assumptions and necessity lemmas; continuum/finite-N scope;
+   the refuted conjunction and requirements for a corrected floor-dependent one.
+2. Alignment and framing: bounded interpretation of capability/constraint results
+   and the distinction between synthetic agent ecologies and real AI systems.
+3. Coupled systems and substrate: throughput/health/overshoot coupling, alternative
+   admissible models and limitations of the civilizational mapping.
+Required evidence: dated independent reports attached to issue #60, followed by
+an explicit author disposition. Agent-based editorial and production checks do
+not replace those reports or independent model replication.
+
+Author/editorial decisions
+- Read and approve the shortened Article; the full source and exact replacements
+  remain available for comparison. No numerical result or claim is strengthened.
+- Resolve any scientific-review findings before submission. In particular, the
+  full historical conclusion still uses an onset-based rhetorical definition;
+  its surrounding erratum is authoritative. That repeated flourish is omitted
+  from the shortened Article, which preserves the explicit conditional result.
+- Confirm originality, concurrent-submission, funding/conflicts and complete
+  tool-use declarations. The MIT Press author policy requires disclosure of AI
+  assistance. The cover draft records this editorial assistance but cannot
+  attest to the manuscript's earlier development or author declarations.
+  https://direct.mit.edu/journals/pages/authors
+- At accepted submission, supply the journal's required BibTeX/source bundle,
+  filename conventions and publication forms. Initial review uses PDF. The
+  current readable references and TeX sources are supplied; a machine-readable
+  BibTeX conversion and acceptance declarations are not represented as complete.
+
+No journal submission, author/reviewer outreach, arXiv upload, DOI registration
+or live-PDF replacement was performed. Real-agent tests and independent model
+replication remain research work, not production tasks concealed by this package.

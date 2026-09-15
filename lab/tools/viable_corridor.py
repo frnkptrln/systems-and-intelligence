@@ -150,7 +150,7 @@ def _paperclip_trajectory(n=60):
     return gx, ky, sz
 
 
-def plot_viable_corridor(save_path: Path | None = None) -> None:
+def plot_viable_corridor(save_path: Path | None = None, *, dpi: int = 200) -> None:
     """Generate Figure 1: the Viable Corridor."""
     fig = plt.figure(figsize=(11, 8.5))
     ax = fig.add_subplot(111, projection="3d")
@@ -195,7 +195,7 @@ def plot_viable_corridor(save_path: Path | None = None) -> None:
         fontsize=11, color=COLOR_K, ha="left", va="center",
     )
     ax.text(
-        GAMMA_RANGE[1] + 0.02, K_RANGE[1], D_MAX, r"$D_{\max}$",
+        GAMMA_RANGE[1] - 0.14, K_RANGE[1] - 0.12, D_MAX + 0.09, r"$D_{\max}$",
         fontsize=11, color=COLOR_D, ha="left", va="center",
     )
     ax.text(
@@ -206,7 +206,9 @@ def plot_viable_corridor(save_path: Path | None = None) -> None:
     # --- Axes ---
     ax.set_xlabel(r"$\gamma$  (homeostatic regulation)", fontsize=11, labelpad=10)
     ax.set_ylabel(r"$K$  (value coupling)", fontsize=11, labelpad=10)
-    ax.set_zlabel(r"$dS/dt$  (entropy production)", fontsize=11, labelpad=10)
+    # A 2D artist keeps the third-axis label inside the exported tight bounds.
+    ax.text2D(1.04, 0.53, r"$dS/dt$  (entropy production)",
+              transform=ax.transAxes, rotation=90, fontsize=11, va="center")
     ax.set_xlim(GAMMA_RANGE)
     ax.set_ylim(K_RANGE)
     ax.set_zlim(DSDT_RANGE)
@@ -247,7 +249,8 @@ def plot_viable_corridor(save_path: Path | None = None) -> None:
     plt.tight_layout()
 
     if save_path is not None:
-        plt.savefig(save_path, dpi=200, bbox_inches="tight")
+        plt.savefig(save_path, dpi=dpi, bbox_inches="tight")
+        plt.close(fig)
         print(f"Saved: {save_path}")
     else:
         plt.show()
