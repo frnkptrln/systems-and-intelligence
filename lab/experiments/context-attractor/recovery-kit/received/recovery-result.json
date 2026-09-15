@@ -1,0 +1,15 @@
+{
+  "P3_P4_evaluable": false,
+  "condition_key_accessed": false,
+  "per_evaluator": null,
+  "qc_gate": {
+    "decisions": {
+      "E3": "fail",
+      "E4": "fail"
+    },
+    "frozen_at_utc": "2026-09-10T17:59:56.256608Z",
+    "passed": false,
+    "qc_receipt_sha256": "dff3f29de983ce04a68c0d3ccac1119b343cc28c137c38ebeb05ea8140671343"
+  },
+  "status": "blind_semantic_qc_failed"
+}

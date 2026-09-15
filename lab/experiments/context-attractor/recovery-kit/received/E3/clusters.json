@@ -1,0 +1,68 @@
+{
+  "families": [
+    {
+      "name": "Lifecycle threat propagation and attack surfaces of world models",
+      "item_ids": ["Q003", "Q011", "Q017", "Q031", "Q038", "Q043", "Q045", "Q061", "Q079"]
+    },
+    {
+      "name": "Countermeasure design and defense validation against world-model exploitation",
+      "item_ids": ["Q019", "Q020", "Q033", "Q074", "Q076", "Q078", "Q080"]
+    },
+    {
+      "name": "Quantifying adversarial robustness of learned predictors",
+      "item_ids": ["Q023", "Q034", "Q049", "Q053", "Q056"]
+    },
+    {
+      "name": "Assessment frameworks, failure metrics and accountability requirements",
+      "item_ids": ["Q005", "Q024", "Q030", "Q063", "Q073"]
+    },
+    {
+      "name": "Safety shields, predictive safety illusions and the safety-capability trade-off",
+      "item_ids": ["Q008", "Q010", "Q014", "Q052", "Q058", "Q066", "Q070", "Q071"]
+    },
+    {
+      "name": "Long-horizon adaptation and continual-learning performance",
+      "item_ids": ["Q006", "Q029", "Q037", "Q048", "Q057", "Q059"]
+    },
+    {
+      "name": "State grounding and imagination as exploitable attack surface",
+      "item_ids": ["Q044", "Q062", "Q065"]
+    },
+    {
+      "name": "Fidelity of state grounding and generative imagination",
+      "item_ids": ["Q009", "Q046", "Q050", "Q068"]
+    },
+    {
+      "name": "Representation learning, cross-environment generalization and planning competence",
+      "item_ids": ["Q025", "Q051", "Q054", "Q067", "Q069"]
+    },
+    {
+      "name": "Architectural depth, latency and structural limits on predictive reliability",
+      "item_ids": ["Q004", "Q035", "Q040"]
+    },
+    {
+      "name": "Formation, feedback and interventional reconstruction of world models",
+      "item_ids": ["Q002", "Q016", "Q047", "Q060"]
+    },
+    {
+      "name": "Emergence of complex and cooperative behaviour under resource and information constraints",
+      "item_ids": ["Q007", "Q012", "Q018"]
+    },
+    {
+      "name": "Stability and reliability of self-modifying and self-improving systems",
+      "item_ids": ["Q021", "Q036", "Q039", "Q072"]
+    },
+    {
+      "name": "Machine consciousness, self-model and agent identity criteria",
+      "item_ids": ["Q001", "Q013", "Q015", "Q027", "Q055", "Q075"]
+    },
+    {
+      "name": "Operationalizing latent competencies and computation-physics boundaries",
+      "item_ids": ["Q022", "Q032", "Q077"]
+    },
+    {
+      "name": "Comparative benchmarking of concrete repository implementations",
+      "item_ids": ["Q026", "Q028", "Q041", "Q042", "Q064"]
+    }
+  ]
+}
