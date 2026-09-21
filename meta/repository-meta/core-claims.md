@@ -3,7 +3,7 @@
 **Status:** Synthesis index  
 **Scope:** A minimal claim set for the Viability Arc and identity branch — not the organizing theory of the whole repository; the model-identification arc is registered separately.  
 **Purpose:** Keep these hypotheses precise, challengeable, and linked to artifacts.  
-**See also:** [Identification Claims](identification-claims.md) — the register for the model-identification arc, proposed 2026-09-02.
+**See also:** [Identification Claims](identification-claims.md) — the register for the model-identification arc, proposed 2026-09-02; [Spine Claims Register](../../theory/core/spine-claims-register.md) — the theory-side table (added 2026-09-21) that gives each claim of both registers a formal statement, a status in {proved, conjectured, supported, falsified, retracted}, and a falsifier, without replacing the evidential-kind bookkeeping here.
 
 ---
 

@@ -6,7 +6,8 @@
 **Purpose:** Keep the arc's measured and exact results precise, challengeable, and linked to artifacts, in the same shape as the viability register.  
 **Created:** 2026-09-02  
 **Last reviewed:** 2026-09-02  
-**Review trigger:** a new benchmark version, a change to any cited artifact's own status line, or a maintainer decision on this register's status.
+**Review trigger:** a new benchmark version, a change to any cited artifact's own status line, or a maintainer decision on this register's status.  
+**See also:** [Spine Claims Register](../../theory/core/spine-claims-register.md) — the theory-side table (added 2026-09-21) with formal statements and a five-valued status for the claims of this register and of Core Claims; it links here and does not replace the artifact bookkeeping.
 
 ---
 

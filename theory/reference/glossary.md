@@ -18,6 +18,8 @@
 
 **Operational definition:** A system property $G$ is *emergent* if it cannot be predicted from the rules governing individual components without executing the full system dynamics. Computationally: $K(G) > K(\text{rules})$, where $K$ is Kolmogorov complexity — the global state is informationally richer than the rules that produce it.
 
+*(Corrected 2026-09-21: the Kolmogorov inequality is kept as history but is not an operational definition. $K$ is uncomputable and machine-relative, no simulation in the repository computes it, and the [Manifesto's 2026-08-11 note](../core/emergence-manifesto-v1.3.md) already says so; [Foundations §9.3](../core/mathematical-axioms.md#93-problems-in-the-former-generator-spine) controls. What is operational is the first sentence read against a declared model: a property is emergent relative to a model family when no member of the family predicts it without executing the dynamics.)*
+
 **Weak vs. Strong:** This repo uses both. *Weak emergence* means the global property is surprising but in principle deducible from the rules (all simulations). *Strong emergence* means the global property is not even in-principle reducible to component-level descriptions (consciousness claims — marked `[SPECULATIVE]` where used). Unless explicitly marked, assume weak emergence.
 
 **What it is NOT:** Not optimization. Gradient descent converges on a solution; emergence produces structure without a target. Not randomness — emergent order is patterned, not noisy.
