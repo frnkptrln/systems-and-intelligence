@@ -4,6 +4,7 @@
 implements the repository's former generator spine.  
 **Last reviewed:** 2026-08-08  
 **Review trigger:** a materially different ARC-AGI-3 attribution result, held-out/private-set evidence, or a world-model/VLA study that changes the replay or intervention mapping.
+**Formal home (added 2026-09-21):** world model, replay under a test family, and the exploitation wedge are defined in [The Spine as a Discrete Object, D5](../core/spine-formal-definitions.md#d5-world-model-replay-exploitation-formalized-toy-operationalized-transfer-hypothesis); rows 11–12 of the [Spine Claims Register](../core/spine-claims-register.md) separate the measured toy from the transfer conjecture.
 
 ## Scope
 

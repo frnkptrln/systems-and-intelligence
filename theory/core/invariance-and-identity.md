@@ -6,6 +6,8 @@
 
 **Epistemic status:** Framing note over settled mathematics (Klein, Noether) and one philosophical anchor (Nozick); the *mapping* onto the repo's instruments is this project's contribution and is tagged where it claims. Personal origin: a sentence the author has carried since school — *"Ein Stern weicht nicht aus seiner Bahn"* (attributed, with honest uncertainty, to Goethe; the canonical relative is the Zahme Xenien's *"Wie das Gestirn, ohne Hast, aber ohne Rast"*) — once written out in old German script with quill and ink, which is perhaps why it stuck: slow encoding, performed once, in matter.
 
+**Formal home (added 2026-09-21):** the three declared parts of an invariance claim and the finite anchor (predictive equivalence as Moore-machine equivalence, minimized by partition refinement) are in [The Spine as a Discrete Object, D6](spine-formal-definitions.md#d6-invariance-and-test-relative-identity-established-the-identity-reading-hypothesis); the retracted identity reduction is row 33 of the [Spine Claims Register](spine-claims-register.md).
+
 **Related files:**
 
 - mathematical-axioms.md

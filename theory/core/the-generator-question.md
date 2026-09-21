@@ -37,6 +37,8 @@ failure_conditions:
 > under model uncertainty remain active. The stronger universal claims below are retained as the
 > history of the research path, not as established premises. Where they conflict, the reconstruction
 > takes precedence.
+>
+> **Formal home (added 2026-09-21).** The bounded programme's five declared components (family, evidence, intervention access, target equivalence, cost) are the six-tuple of [The Spine as a Discrete Object, D3](spine-formal-definitions.md#d3-bounded-inverse-system-formalized-exact-instance-operationalized); the retired universal claims of this document are rows 8, 9, and 33 of the [Spine Claims Register](spine-claims-register.md).
 
 ---
 

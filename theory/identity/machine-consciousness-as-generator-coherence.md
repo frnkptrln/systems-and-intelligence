@@ -9,6 +9,8 @@ perception, memory, prediction, action, self-model, and world-model. We call tha
 
 Nothing here claims that a current AI system is conscious.
 
+**Formal home (added 2026-09-21):** what this note can state formally is the Chord property (the committed action lies in the intersection of the active constraint sets) and its persistence under perturbation, [The Spine as a Discrete Object, D7](../core/spine-formal-definitions.md#d7-commit-time-composition-coherence-work-formalized-operationalized-in-toys-the-consciousness-reading-speculative-explicitly-not-derived); the consciousness reading is tagged speculative there, and rows 28–32 of the [Spine Claims Register](../core/spine-claims-register.md) record what is measured, what is conjectured, and what is not claimed.
+
 ---
 
 ## Translation after the foundations audit

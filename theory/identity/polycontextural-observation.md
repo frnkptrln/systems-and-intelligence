@@ -16,7 +16,7 @@ Each element of that question has a home in the repository. The mapping is the c
 
 | Element of the translation rule | Repository anchor | What the anchor supplies |
 |:---|:---|:---|
-| Descriptions valid only within an identification regime | [Invariance and Identity](../core/invariance-and-identity.md) | Identity as persistence under a declared transformation group; "the same" is regime-relative by construction |
+| Descriptions valid only within an identification regime | [Invariance and Identity](../core/invariance-and-identity.md) | Identity as persistence under a declared transformation family (corrected 2026-09-21 from "transformation group"; a group is sufficient, not required); "the same" is regime-relative by construction |
 | The observer's access decides what can be witnessed | [The Witness Principle](../core/the-witness-principle.md) | Witnesses exist only inside an access geometry; the [identification register](../../meta/repository-meta/identification-claims.md) carries this as a claim with artifacts |
 | Observation changes what remains equivalent | [Measurement as Weak Intervention](../core/measurement-as-weak-intervention.md) | Measurement is itself a small intervention on the observed process |
 | Query choice changes the surviving equivalence class | [Active Identifiability](../../lab/experiments/active_identifiability/README.md) | A frozen protocol (no model calls authorized) in which query selection, not more data, decides which candidate mechanisms stay indistinguishable |
@@ -24,6 +24,8 @@ Each element of that question has a home in the repository. The mapping is the c
 | A worked translation rule with exact accounting | [Representation and Reconstruction Difficulty](../../lab/experiments/representation_reconstruction/README.md) | Under an invertible re-encoding of a trace, the reconstructor's answer is the conjugate rule; the conjugation map is the translation rule, class size the preserved invariant; under a lossy encoding no translation rule exists and contradictions appear |
 
 The last row is the nearest thing the repository has to the note's question in executable form. It is a toy: two "observers" that receive the same process under two encodings, and a closed-form rule that carries claims from one to the other. It says nothing about observers whose regimes differ in what they can intervene on, which is where the ideas note locates the interesting cases.
+
+*Added 2026-09-21:* the "translation rule" the ideas note asks for is, in the finite setting, a map between two observer tuples $(\omega, Q, \ell)$; [The Spine as a Discrete Object, D11](../core/spine-formal-definitions.md#d11-no-view-from-nowhere-formalized-as-an-indexing-rule-anything-further-speculative) states the indexing rule this table instantiates.
 
 ## What would move this beyond a reading note
 

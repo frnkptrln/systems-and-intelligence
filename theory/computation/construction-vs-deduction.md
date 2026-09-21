@@ -5,6 +5,8 @@
 **Scope:** Distinguishes proving that an object exists, exhibiting a witness, searching for
 one, and building an artifact that works in a world.
 
+**Formal home (added 2026-09-21):** the four activities are stated as a decision problem, a search problem, and derivability in [The Spine as a Discrete Object, D1](../core/spine-formal-definitions.md#d1-construction-and-deduction-established-the-repositorys-claim-operationalized-for-one-language); the claim status is row 6–10 of the [Spine Claims Register](../core/spine-claims-register.md).
+
 ---
 
 ## Four different activities
