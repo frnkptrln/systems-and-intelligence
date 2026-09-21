@@ -29,7 +29,10 @@ import unittest
 
 import numpy as np
 
-from lab.metrics.generative_surprise import generative_surprise
+from lab.metrics.generative_surprise import (
+    generative_surprise,
+    generative_surprise_legacy,
+)
 
 
 def straight_line(n: int = 6, dim: int = 4, step: float = 1.0) -> list[np.ndarray]:
@@ -143,8 +146,8 @@ class TestDocumentedScale(unittest.TestCase):
     def test_mirror_has_zero_surprise(self):
         observed = straight_line()
         result = generative_surprise(observed, [o.copy() for o in observed])
-        self.assertTrue(all(e == 0.0 for e in result["error"]))
-        self.assertEqual(result["mean"], 0.0)
+        self.assertTrue(all(abs(e) < 1e-12 for e in result["error"]))
+        self.assertLess(result["mean"], 1e-12)
 
     def test_anti_prediction_has_unit_error(self):
         observed = straight_line()
@@ -159,6 +162,45 @@ class TestDocumentedScale(unittest.TestCase):
         zigzag = [np.array([1.0, 0.0]), np.array([2.0, 0.0]), np.array([1.0, 0.0])]
         result = generative_surprise(zigzag, [-v for v in zigzag], representations=zigzag)
         self.assertEqual(result["consistency"], [0.0])
+
+
+class TestLegacyProductReproducesTheDefects(unittest.TestCase):
+    """The historical product violates each property above; keep that visible."""
+
+    def test_legacy_score_exceeds_its_consistency_factor(self):
+        observed = straight_line()
+        predicted = [-10.0 * o for o in observed]
+        legacy = generative_surprise_legacy(observed, predicted, representations=observed)
+        self.assertGreater(legacy["mean"], legacy["consistency"])
+
+    def test_legacy_ranking_flips_under_rescaling(self):
+        a_obs = straight_line()
+        a_pred = [o + np.array([0.0, 0.5, 0.0, 0.0]) for o in a_obs]
+        b_obs = straight_line()
+        b_pred = [o + np.array([0.0, 0.1, 0.0, 0.0]) for o in b_obs]
+        a = generative_surprise_legacy(a_obs, a_pred, representations=a_obs)["mean"]
+        b_small = generative_surprise_legacy(b_obs, b_pred, representations=b_obs)["mean"]
+        b_large = generative_surprise_legacy(
+            [100.0 * o for o in b_obs],
+            [100.0 * p for p in b_pred],
+            representations=[100.0 * o for o in b_obs],
+        )["mean"]
+        self.assertGreater(a, b_small)
+        self.assertLess(a, b_large)
+
+    def test_legacy_missing_prediction_raises_the_score(self):
+        observed = straight_line()
+        predicted = [o + np.array([0.0, 0.5, 0.0, 0.0]) for o in observed]
+        with_prediction = generative_surprise_legacy(observed, predicted, representations=observed)
+        predicted[3] = np.zeros(4)
+        without = generative_surprise_legacy(observed, predicted, representations=observed)
+        self.assertGreater(without["mean"], with_prediction["mean"])
+
+    def test_legacy_score_can_be_negative(self):
+        zigzag = [np.array([1.0, 0.0]), np.array([2.0, 0.0]), np.array([1.0, 0.0]),
+                  np.array([2.0, 0.0])]
+        legacy = generative_surprise_legacy(zigzag, [-v for v in zigzag], representations=zigzag)
+        self.assertLess(legacy["mean"], 0.0)
 
 
 if __name__ == "__main__":

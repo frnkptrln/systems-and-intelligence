@@ -114,6 +114,8 @@ Random noise has high observer surprise but low trajectory consistency. Mirrorin
 
 *Formalism:* Defined operationally in [`theory/reference/glossary.md`](../reference/glossary.md) §Generative Surprise. Not yet tested with real language models.
 
+> **Corrected 2026-09-21.** The product above is the historical formula and is kept as written. As stated it is not a conjunction (the prediction-error factor is unbounded, so one large deviation times a small consistency outranks a coherent deviation), its ranking scales with the embedding, and it had no null-vector rule; no code computed it. The glossary now carries the normalized definition, $\mathrm{GS}_t = E_t \cdot C_t$ with both factors in $[0,1]$, implemented in [`lab/metrics/generative_surprise.py`](../../lab/metrics/generative_surprise.py) and guarded by [`tests/test_generative_surprise.py`](../../tests/test_generative_surprise.py); the historical product is retained there as `generative_surprise_legacy`. The claim's status is unchanged: the metric now exists, and it has still not been run on real language models.
+
 *Fiction:* [Entry 06 — The Authenticity Engine](../../fiction/06_the_authenticity_engine.md) explores what happens when generative surprise becomes scarce.
 
 ### Claim 7: A Substrate Veto Can Bound One Failure Mode (Toy-Model) `[DEMONSTRATED]`
@@ -194,7 +196,7 @@ The following environmental and architectural factors are correlated with increa
 | Identity through selective forgetting | 3-Layer Architecture | Agentic Identity Suite (mock) | `[HYPOTHESIZED]` |
 | Development vs. mirroring | Δ-Kohärenz (Ω) | Experiment 3 | `[OPEN PROBLEM]` |
 | Observer shapes observed | Markov Blanket, Active Inference $F$ | Experiment 3 | `[HYPOTHESIZED]` |
-| Generative surprise | Coherent deviation metric | Not yet tested | `[HYPOTHESIZED]` |
+| Generative surprise | Coherent deviation metric (normalized $E_t \cdot C_t$, [`lab/metrics/generative_surprise.py`](../../lab/metrics/generative_surprise.py); corrected 2026-09-21) | Not yet tested | `[HYPOTHESIZED]` |
 | Thermodynamic alignment | Free Energy coupling | AI Alignment Veto (toy model) | `[DEMONSTRATED]` for one failure mode in a stylized setting, per Claim 7 — not a general alignment result |
 | Criticality as intelligence zone | Phase transitions, SOC | Ising, Sandpile | `[SPECULATIVE]` |
 | Identity as co-instantiation | IP score, Chord Postulate | Morphospace Visualizer | `[HYPOTHESIZED]` |
