@@ -52,8 +52,14 @@ of 6,000-12,000 words; PDF initial submissions; LaTeX/Word accepted submissions;
 single-column, double-spaced text; APA 7; six or five keywords; and separate
 supplementary material. Vector figure exports and 600-dpi PNGs are supplied.
 The Article body, including references and editorial notice but excluding cover
-details and Supplement, is below 12,000 pandoc-plain whitespace words. Exact
-counts and their scope are in the manifest. The full review manuscript is longer.
+details and Supplement, was below 12,000 pandoc-plain whitespace words in the
+2026-09-10 package. After the 2026-09-24 source update (three added references
+and about 235 added main-text words) the same quantity is about 12,100
+words, slightly above that figure; the main text alone is about 11,200 words,
+within the 6,000-12,000 band. These figures are recomputed from the source with
+the builder's method; the export and its manifest were last generated on
+2026-09-10 from the pre-update source and will agree once the package is
+regenerated. The full review manuscript is longer.
 The direct guideline fetch returned HTTP 403; the official indexed text was
 available. Recheck the submission portal when actually submitting.
 https://direct.mit.edu/artl/pages/submission-guidelines
