@@ -191,6 +191,7 @@ The calibration controls refine measurement interpretation only. They do not cha
 
 ## Related
 
+- [The Spine as a Discrete Object, D12](../../../theory/core/spine-formal-definitions.md#d12-invariants-over-irreducible-internal-trajectories-the-multi-agent-reframing-established-definitions-proposition-proved-by-an-exact-control-the-reframed-research-question-hypothesis) — the reframing this benchmark is written to test, stated with causal dependency graphs, lumpings, and first integrals, and proved compatible on the exact control (2026-09-21)
 - [When Does a Collection Become an Agent?](../../../ideas/2026-09-03-when-does-a-collection-become-an-agent.md)
 - [Collective Self-Knowledge May Require Synergy](../../../ideas/2026-09-03-collective-self-knowledge-may-require-synergy.md)
 - [Macro Agency Needs Downward Control](../../../ideas/2026-09-03-macro-agency-needs-downward-control.md)

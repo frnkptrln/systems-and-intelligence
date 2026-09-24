@@ -24,6 +24,8 @@ The canonical claims and central formalisms of the repository.
 - **[Invariance and Identity](core/invariance-and-identity.md)** — Working Note: what survives a declared transformation family, and the projector audit for identity under self-modification.
 - **[Measurement as Weak Intervention](core/measurement-as-weak-intervention.md)** — Working Note: coupling is not identification; four regimes, three of them measured in the benchmark.
 - **[Decision-Relevant Identifiability](core/decision-relevant-identifiability.md)** — Working Note: class size is not decision risk and information gain is not value of information; exact finite receipts.
+- **[The Spine as a Discrete Object](core/spine-formal-definitions.md)** — Working Note (2026-09-21): one finite setting and twelve definitions, one per spine element, each tagged; the effective-goal-space monotonicity lemma and the irreducibility–lumpability proposition are proved and test-pinned; what resists formalization is tagged speculative.
+- **[Spine Claims Register](core/spine-claims-register.md)** — Working Note (2026-09-21): one table of load-bearing claims with formal statement, status in {proved, conjectured, supported, falsified, retracted}, pointer, and falsifier; carries the contradiction ledger of the same date.
 - **[Thermodynamic Hardware Manifesto](core/thermodynamic-hardware-manifesto.md)** — Engineering proposal, not a requirement derived from TEO; listed as speculative.
 
 ## Substrate & Veto

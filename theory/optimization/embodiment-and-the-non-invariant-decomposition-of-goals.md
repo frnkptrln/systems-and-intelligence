@@ -10,6 +10,8 @@ status: working conceptual model
 theorem. The paper-specific reconstruction and primary sources remain in the
 [research note](https://github.com/frnkptrln/systems-and-intelligence/blob/main/ideas/2026-07-29-embodiment-and-the-non-invariant-decomposition-of-goals.md).
 
+**Formal home (added 2026-09-21):** the effective goal space is restated in [The Spine as a Discrete Object, D10](../core/spine-formal-definitions.md#d10-effective-goal-space-and-the-monotonicity-lemma-proved-orthogonality-theses-hypothesis-no-theorem), with the monotonicity lemma $R_1 \subseteq R_2 \Rightarrow {\sim_2} \subseteq {\sim_1}$ (enlarging reachability can split goal classes and never merge them) proved there and pinned by [`tests/test_spine_definitions.py`](../../tests/test_spine_definitions.py); rows 17–19 of the [Spine Claims Register](../core/spine-claims-register.md) separate the lemma from the orthogonality theses.
+
 **Thesis.** Intelligence and goals can remain conceptually distinguishable even
 when a realised embodied system admits no implementation-, embodiment-, or
 measurement-invariant decomposition into a neutral optimiser plus an

@@ -102,6 +102,8 @@ mapping, not every possible cross-scale comparison.
 
 *Preregistered, not run (2026-09-03): the [Collective Agency benchmark](../../lab/benchmarks/collective-agency/README.md) makes the macro-intervention criterion testable (its §3.5 and H3); options for its eight freeze decisions are collected in [freeze-options.md](../../lab/benchmarks/collective-agency/freeze-options.md).*
 
+*Definitions (2026-09-21): causal dependency graph, component-irreducibility, lumping, and first integral are fixed in [The Spine as a Discrete Object, D12](../core/spine-formal-definitions.md#d12-invariants-over-irreducible-internal-trajectories-the-multi-agent-reframing-established-definitions-proposition-proved-by-an-exact-control-the-reframed-research-question-hypothesis), which proves on the exact control that an internally irreducible system can carry a closed macro-variable; the macro-intervention criterion of this problem is what would make such a variable control rather than compression.*
+
 **Problem statement:** When does a macrovariable add interventionally useful information
 about later local dynamics beyond a chosen microdescription? Can this relation be compared
 across more than one model family?
@@ -224,6 +226,8 @@ viability value are therefore separate objectives unless a declared assumption m
 ## Open Problem 12: The Practice-Reproduction Problem
 
 *Raised by: [From Action to Culture](../emergence/from-action-to-culture.md), with the cooperative consequence in [Cooperative Intelligence at the Separatrix](../symbiotic/cooperative-intelligence-at-the-separatrix.md).*
+
+*Definitions (2026-09-21): [The Spine as a Discrete Object, D9](../core/spine-formal-definitions.md#d9-recurrent-practice-and-the-return-path-formalized-as-a-definition-without-an-instrument-the-cultural-reading-speculative-beyond-it) states a practice as a reproduced language, the return path as a record-updated transition rule, and a culture as a cyclic practice network, so that this problem has a formal target; it supplies no instrument.*
 
 **Problem statement:** Given a represented rule or intention and the situations it is meant to govern, which combination of enactment, recurrence, variation, competence, material scaffold, normative force, transmission, feedback, and history lets a recognizable practice persist across context and actor turnover? Under what conditions does performance reproduce the pattern, revise it, or merely repeat it under coercion?
 

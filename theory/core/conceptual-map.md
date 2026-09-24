@@ -85,6 +85,8 @@ These results are receipts, not universal laws. Their scope is maintained in [Wh
 
 The maintained problem statements live in [Open Problems](../reference/open-problems.md). New concepts do not enter this map until they have a home, status, and instrument or explicit open problem in the [Concept Registry](../../meta/repository-meta/concept-registry.md).
 
+Since 2026-09-21 the spine elements above also have a finite formal statement each in [The Spine as a Discrete Object](spine-formal-definitions.md), and the claims they carry have a status and a falsifier in the [Spine Claims Register](spine-claims-register.md); both are working notes, and neither changes a home file's status.
+
 ---
 
 ## Recommended Route

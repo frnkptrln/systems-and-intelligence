@@ -18,6 +18,8 @@
 
 **Operational definition:** A system property $G$ is *emergent* if it cannot be predicted from the rules governing individual components without executing the full system dynamics. Computationally: $K(G) > K(\text{rules})$, where $K$ is Kolmogorov complexity — the global state is informationally richer than the rules that produce it.
 
+*(Corrected 2026-09-21: the Kolmogorov inequality is kept as history but is not an operational definition. $K$ is uncomputable and machine-relative, no simulation in the repository computes it, and the [Manifesto's 2026-08-11 note](../core/emergence-manifesto-v1.3.md) already says so; [Foundations §9.3](../core/mathematical-axioms.md#93-problems-in-the-former-generator-spine) controls. What is operational is the first sentence read against a declared model: a property is emergent relative to a model family when no member of the family predicts it without executing the dynamics.)*
+
 **Weak vs. Strong:** This repo uses both. *Weak emergence* means the global property is surprising but in principle deducible from the rules (all simulations). *Strong emergence* means the global property is not even in-principle reducible to component-level descriptions (consciousness claims — marked `[SPECULATIVE]` where used). Unless explicitly marked, assume weak emergence.
 
 **What it is NOT:** Not optimization. Gradient descent converges on a solution; emergence produces structure without a target. Not randomness — emergent order is patterned, not noisy.
@@ -100,17 +102,23 @@ The multiplicative form means a zero in any dimension collapses this selected sc
 
 **Informal:** An agent producing output that is coherent but unexpected — genuinely novel, not random.
 
-**Operational definition:** An output $o$ at time $t$ exhibits generative surprise if:
-1. It deviates from the partner's prediction (high surprise to observer)
-2. It is consistent with the agent's own trajectory (high trajectory_consistency in Δ-Kohärenz)
+**Operational definition (corrected 2026-09-21):** For step $t$ with output embedding $o_t$, observer prediction $p_t$, and self-representation change vectors $d_t = v_t - v_{t-1}$,
 
-$\text{Generative Surprise} = \text{prediction\_error}_{observer} \times \text{trajectory\_consistency}_{agent}$
+$$
+E_t = \frac{1 - \cos(o_t, p_t)}{2}, \qquad
+C_t = \max\lbrace 0, \cos(d_t, d_{t-1})\rbrace, \qquad
+\mathrm{GS}_t = E_t \cdot C_t ,
+$$
+
+all three in $[0, 1]$. $E_t$ is the observer's normalized prediction error (0 when the prediction is right up to a positive scale, 1 when anti-aligned); $C_t$ is the agent's per-step trajectory consistency (1 for a continued direction, 0 for an orthogonal or reversed step). Two properties follow and are checked by [`tests/test_generative_surprise.py`](../../tests/test_generative_surprise.py): the *conjunction bound* $\mathrm{GS}_t \le \min(E_t, C_t)$, so a high score requires both factors to be high; and *invariance* of every $E_t$, $C_t$, $\mathrm{GS}_t$ under $v \mapsto \lambda Q v$ for any $\lambda > 0$ and orthogonal $Q$ applied to all vectors, so rankings within and across trajectories do not depend on the scale or orientation of the embedding. **Null-vector convention:** a cosine with a null operand is undefined; every undefined factor is set to 0, so a missing prediction or a stalled trajectory can lower a step's score but never raise it, and the number of undefined terms is reported.
 
 Random noise has high observer surprise but low trajectory consistency. Mirroring has low observer surprise. Generative surprise requires both.
 
-**What it is NOT:** Not random noise (which also surprises). Not creativity in the romantic sense — it is operationalized as coherent deviation, not aesthetic achievement.
+*History.* Until 2026-09-21 this entry read $\text{Generative Surprise} = \text{prediction\_error}_{observer} \times \text{trajectory\_consistency}_{agent}$ with an unnormalized distance as the first factor and the trajectory-level cosine in $[-1, 1]$ as the second, and it named `lab/agents/three_layer_agent.py` as the place where the metric appears; that file never computed it. The product as written was not a conjunction (the unbounded error term let one large deviation outrank a coherent one), its ranking scaled with the embedding, and it had no null-vector rule. The historical product is retained as `generative_surprise_legacy` so the defects stay reproducible.
 
-**Where it appears:** [`lab/agents/three_layer_agent.py`](../../lab/agents/three_layer_agent.py), [`theory/core/emergence-manifesto-v1.3.md`](../core/emergence-manifesto-v1.3.md)
+**What it is NOT:** Not random noise (which also surprises). Not creativity in the romantic sense — it is operationalized as coherent deviation, not aesthetic achievement. Not a measure of development, agency, or selfhood; it inherits every limitation of the embedding and of the observer model that produced $p_t$.
+
+**Where it appears:** [`lab/metrics/generative_surprise.py`](../../lab/metrics/generative_surprise.py), [`theory/core/emergence-manifesto-v1.3.md`](../core/emergence-manifesto-v1.3.md) (Claim 6), [`lab/AGENTIC_README.md`](../../lab/AGENTIC_README.md)
 
 ---
 

@@ -39,6 +39,8 @@
 > does not determine expressed competence without constraints, embodiment,
 > selection, interaction history, tasks, and a lens. See
 > [Competence, Constraint, and Verification](../core/competence-constraint-and-verification.md).
+>
+> **Formal home (added 2026-09-21).** "Generator → Trace" and "Trace → Generator" are the forward map and its fiber in [The Spine as a Discrete Object, D2](../core/spine-formal-definitions.md#d2-forward-map-and-fiber-trace-generator-generator-trace-formalized-operationalized); the many-to-one claim of §3 is the statement that the fiber contains more than one equivalence class, measured for rule 90 as a class of size 8 ([Spine Claims Register](../core/spine-claims-register.md), row 2).
 
 ---
 

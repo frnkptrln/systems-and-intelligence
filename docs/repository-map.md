@@ -2,7 +2,7 @@
 
 **Status:** Orientation page. It describes the boundary between this site and the repository behind it.
 
-This site is not the repository. The repository holds roughly 280,000 words across 293 Markdown files (the leads lane's intake files are not counted) — about twenty hours of reading. Publishing all of it was the old arrangement, and it made the site unreadable: a first-time reader had no way to tell which five percent carried the argument.
+This site is not the repository. The repository holds roughly 280,000 words across 295 Markdown files (the leads lane's intake files are not counted) — about twenty hours of reading. Publishing all of it was the old arrangement, and it made the site unreadable: a first-time reader had no way to tell which five percent carried the argument.
 
 So the site now publishes the part that is finished enough for someone who has not been following along. Everything else stays where it was written, next to the code it describes, and stays linked — any link on this site that points at an unpublished page goes to the file on GitHub instead of breaking.
 
@@ -12,7 +12,7 @@ Nothing here is hidden. It is simply not competing for your attention.
 
 | Layer | On the site | Why |
 |---|---|---|
-| Theory | 35 essays of 85 | The ones the reading paths and the claim registers lean on |
+| Theory | 35 essays of 87 | The ones the reading paths and the claim registers lean on |
 | Reference | 4, counted within the 35 above | Glossary, open problems, limitations, and the negative space |
 | Papers | 2 of 2 | 1 active (v1.0, frozen), 1 archived and not citable |
 | Stories | 19 of 19 | Self-contained and written for outside readers |
@@ -52,7 +52,7 @@ The information architecture, the concept registry, the agent operating note and
 
 Ten short chapters, about 500 words each, written before the foundations audit. [From Rule to Mind](../book/09_from_rule_to_mind.md) survives on the site as the linear route through the current material; the earlier chapters remain as a record of how the argument used to be told.
 
-### Theory essays not on the reading path — 50
+### Theory essays not on the reading path — 52
 
 [`theory/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/theory)
 

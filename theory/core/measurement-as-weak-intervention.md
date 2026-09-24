@@ -6,6 +6,8 @@
 
 **Epistemic status:** Conceptual clarification, not an empirical discovery. Three of the four regimes below sit directly on measured in-repo results (benchmark v1.1 and v1.3); the fourth sits on established external literature (Goodhart, Campbell, Lucas) plus one pre-registered, *unexecuted* field test ([Log 018](../../logs/018_the-city-panel-protocol.md), H3). Tagged `[HYPOTHESIZED]` where the wiring itself is the claim.
 
+**Formal home (added 2026-09-21):** the four regimes, the two axes, and the reflexive case are stated over finite queries in [The Spine as a Discrete Object, D4](spine-formal-definitions.md#d4-measurement-intervention-footprint-formalized-regimes-13-operationalized-regime-4-speculative-as-an-institutional-claim); rows 3, 13, and 44 of the [Spine Claims Register](spine-claims-register.md) carry the status.
+
 **Related files:**
 
 - the-generator-question.md
@@ -88,7 +90,7 @@ experience.
 
 ## The rule
 
-The [invariance note](invariance-and-identity.md) ends in a discipline: never claim an invariant without naming the group. This note ends in its sibling, and the two are one habit:
+The [invariance note](invariance-and-identity.md) ends in a discipline: never claim an invariant without naming the transformation family, the represented quantity, and the equality notion. *(Corrected 2026-09-21; this sentence had said "without naming the group", the earlier form of the rule that [Foundations §4.5](mathematical-axioms.md#45-symmetry-and-invariance) found too strong.)* This note ends in its sibling, and the two are one habit:
 
 > **Never book a measurement without naming the class it collapses.** "We instrumented X" is an empty sentence until it says which candidate generators the instrument can tell apart — and, in regime 4, what the instrument's presence does to the generator it is pointed at.
 

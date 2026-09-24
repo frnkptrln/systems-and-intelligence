@@ -29,7 +29,13 @@ as definitions of identity:
 
 2. **Generative Surprise** — an exploratory idea that coherent deviations from a partner's
    predictions may help distinguish static mirroring from changing behavior. It is not a definition
-   of development, agency, or selfhood.
+   of development, agency, or selfhood. Since 2026-09-21 it has an implementation,
+   [`metrics/generative_surprise.py`](metrics/generative_surprise.py): a normalized product of the
+   observer's prediction error and the agent's per-step trajectory consistency, both in $[0, 1]$,
+   with a documented null-vector convention and a regression test
+   ([`tests/test_generative_surprise.py`](../tests/test_generative_surprise.py)). The historical
+   unnormalized product is kept there as `generative_surprise_legacy`. No experiment in this suite
+   has run it yet.
 
 3. **Δ-Kohärenz (Ω)** — one temporal-coherence statistic. Early versions treated it as a central
    identity measure; Experiments 5–7 showed that it can completely miss binding structure at the

@@ -26,6 +26,8 @@ resources, and admissible transformations. The second asks whether the
 control-bearing system can include embodiment, tools, persistent traces, or
 other environmental structure beyond a learned model or controller.
 
+**Formal home (added 2026-09-21):** the first formulation is stated as an indexing rule in [The Spine as a Discrete Object, D11](../core/spine-formal-definitions.md#d11-no-view-from-nowhere-formalized-as-an-indexing-rule-anything-further-speculative) (every claim is a function of readout, admissible queries, and lens; the tuple with full readout and all queries is not an admissible bounded system), and the orthogonality theses of §4 are rows 18–19 of the [Spine Claims Register](../core/spine-claims-register.md).
+
 ## 1. The abstraction error
 
 A common analysis begins with an abstract solver and later attaches a body,
