@@ -1,46 +1,38 @@
-# 📓 Architecture Logs
+# Logs
 
-Welcome to the **Architecture Logs**.
+**Status:** Working collection — exploratory journals and design notes.
 
-While `theory/` holds the process foundation (the [Foundations Reconstruction](../theory/core/mathematical-axioms.md)) and the arguments built on it, among them the TEO framework of the viability arc, and `lab/` plus `simulation-models/` host the executable work, these logs serve as a bridge.
+These entries keep a thought in motion. Some sketch a protocol or a city; others
+follow a question through an encounter, a design choice, or something that has
+stopped making sense. They can remain unfinished.
 
-They are speculative **architectural blueprints and design notes** exploring how the *Thermodynamics of Orchestration* apply to large-scale, real-world deployments.
+Start with [A Place for Unfinished Things](021_a-place-for-unfinished-things.md),
+the new entry on 25 September 2026. For an earlier thread, try
+[Latency as Mercy](012_latency-as-mercy.md),
+[The Last Unmeasured Room](011_the-last-unmeasured-room-protocol.md), or
+[Who Pays for the Veto?](019_who_pays_for_the_veto.md).
 
-### Directory Scope
+The logs keep their own dates, scopes, and draft statuses. Applied architecture is
+one recurring interest. A new log can also record an observation, an unresolved
+connection, or a change of direction before there is an architecture to propose.
+[Stories](../fiction/README.md), [essays](../docs/essays.md), and
+[experiments](../lab/README.md) offer other ways to continue.
 
-These logs investigate:
-1. Planetary engineering and cosmological boundaries for decentralized systems.
-2. The application of the **Substrate Veto** within a network governed by silicon agents and biological operators.
-3. The translation of TEO variables into protocol rules for a *Decentralized Operating System* (Digital State).
-4. The governance implications of optimization pressure on civic, cultural, and institutional systems.
-5. Since Log 016, the transfer of measured benchmark results (runtime bundles, provenance, the referee boundary, who pays for the veto) into deployment vocabulary.
+## Writing a log
 
-*Note: These entries read like a captain's log or an explorative journal. They are conceptually more applied than the core theory, but still speculative.*
+Give the entry a date, a short status, and enough context to recover the question.
+Link to neighbouring work when the connection helps. State the assumptions when
+proposing an architecture; distinguish an imagined case from an observation. A log
+need not promise a later paper or supply a result to justify its existence.
 
----
-
-## How to distinguish this folder from others
-
-Use this folder when a text is:
-- about **applied system design choices** (protocol, governance, deployment constraints),
-- still **open-ended / iterative**,
-- and too detailed or too operational for `theory/`.
-
-Use other folders when:
-- it is a formal argument/derivation → `theory/`
-- it is a linear narrative chapter → `book/`
-- it is publication packaging → `papers/`
-- it is narrative scenario simulation-through-story → `fiction/`
-
-For the full taxonomy, see [`meta/repository-meta/repository-information-architecture.md`](../meta/repository-meta/repository-information-architecture.md).
-
-## Suggested entry template (for future logs)
-
-```md
-Status: Draft | Working Note | Formalized
-Scope: <what decision/problem this log addresses>
-Depends on: <theory docs / simulations>
+```text
+Status: Draft | Working Note
+Date: YYYY-MM-DD
+Scope: the encounter, question, or design being explored
 ```
+
+The [Journal](../docs/journal.md) is a selective chronology across the notebook.
+This directory keeps the numbered sequence of the logs themselves.
 
 ## Current log sequence
 
@@ -72,3 +64,9 @@ Depends on: <theory docs / simulations>
 18. [`018_the-city-panel-protocol.md`](018_the-city-panel-protocol.md) — Pre-registered city-scale field test of the corridor's three axes
 19. [`019_who_pays_for_the_veto.md`](019_who_pays_for_the_veto.md) — The benchmark's selection result aimed at the constraint architecture: a veto that can be exercised is still not stable if only its carrier pays
 20. [`020_the-referee-boundary.md`](020_the-referee-boundary.md) — The referee benchmark's three regimes as a deployment checklist: which side of the loop's write access each evaluator constituent lives on
+
+### The notebook as a place
+
+21. [`021_a-place-for-unfinished-things.md`](021_a-place-for-unfinished-things.md) — An open design journal on entrances, unfinished work, and connections that leave the next question undecided.
+
+*Editorial note, 2026-09-25: “Applied architecture journals” remains a description of much of this sequence. The collection now also welcomes wider exploratory journals; earlier entries keep their original statuses and scope.*

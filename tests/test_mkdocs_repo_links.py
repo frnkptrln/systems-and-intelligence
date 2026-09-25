@@ -68,6 +68,14 @@ class TestRewriteBehavior(unittest.TestCase):
         ):
             self.assertEqual(self._run(markdown), markdown)
 
+    def test_reader_entrances_keep_repository_links_on_site(self):
+        for source in ('essays.md', 'journal.md', 'paths.md'):
+            with self.subTest(source=source):
+                self.assertEqual(
+                    self._run('[Read](../logs/021_note.md#question)', source),
+                    '[Read](logs/021_note.md#question)',
+                )
+
     def test_non_root_pages_are_untouched(self):
         markdown = "[x](../theory/core/conceptual-map.md)"
         self.assertEqual(
@@ -98,6 +106,17 @@ class TestUnpublishedRedirect(unittest.TestCase):
         self.assertEqual(
             self._run("[x](conceptual-map.md)", "theory/core/a.md", set()),
             f"[x]({self.BLOB}theory/core/conceptual-map.md)",
+        )
+
+    def test_repository_layers_return_to_published_reader_paths(self):
+        self.assertEqual(
+            self._run('[Walk](../../docs/paths.md#memory-and-return)',
+                      'theory/narrative/story.md', {'paths.md'}),
+            '[Walk](../../paths.md#memory-and-return)',
+        )
+        self.assertEqual(
+            self._run('[Walk](../docs/paths.md)', 'logs/README.md', set()),
+            f'[Walk]({self.BLOB}docs/paths.md)',
         )
 
     def test_anchors_survive_the_redirect(self):

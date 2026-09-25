@@ -1,71 +1,90 @@
-# What Stays in the Repository
+# About the Collection
 
-**Status:** Orientation page. It describes the boundary between this site and the repository behind it.
+**Status:** Orientation page. It describes the public notebook and the working repository behind it.
 
-This site is not the repository. The repository holds roughly 280,000 words across 295 Markdown files (the leads lane's intake files are not counted) — about twenty hours of reading. Publishing all of it was the old arrangement, and it made the site unreadable: a first-time reader had no way to tell which five percent carried the argument.
+Systems & Intelligence is a growing collection of essays, stories, logs, models,
+and research. The repository holds roughly 295,000 words across 301 Markdown files
+(the leads lane's intake files are not counted).
 
-So the site now publishes the part that is finished enough for someone who has not been following along. Everything else stays where it was written, next to the code it describes, and stays linked — any link on this site that points at an unpublished page goes to the file on GitHub instead of breaking.
-
-Nothing here is hidden. It is simply not competing for your attention.
+The site offers several ways into that collection. Some pages present measured
+results. Others offer a working argument, an unfinished design, or an imagined
+world. Each keeps its own status: being readable on the site does not turn a draft
+into a result. [Paths](paths.md), [Essays](essays.md), and the [Journal](journal.md)
+provide selections; the navigation keeps the published collection accessible.
 
 ## What the site publishes
 
-| Layer | On the site | Why |
+| Layer | On the site | What you will find |
 |---|---|---|
-| Theory | 35 essays of 87 | The ones the reading paths and the claim registers lean on |
-| Reference | 4, counted within the 35 above | Glossary, open problems, limitations, and the negative space |
-| Papers | 2 of 2 | 1 active (v1.0, frozen), 1 archived and not citable |
-| Stories | 19 of 19 | Self-contained and written for outside readers |
+| Theory | 36 essays of 88 | Formal notes, conceptual essays, and research pages with their own status |
+| Reference | 4, counted within the 36 above | Glossary, open problems, limitations, and claims boundaries |
+| Papers | 2 of 2 | 1 active submission draft and 1 archived early synthesis |
+| Stories | 20 of 20 | The original dossiers and a new standalone story |
+| Logs | 21 working entries | The full numbered sequence, with its draft statuses retained |
 | Benchmarks | 6 result pages | Five carry measured evidence; the sixth is a frozen, not-yet-run protocol |
-| Experiments | 4 result pages | Bounded experiments whose README declared prediction and failure condition before the result; result files and a pinning test are committed |
-| Interactive | 3 | They only work on the web |
+| Experiments | 4 result pages | Bounded experiments with committed results and stated limits |
+| Interactive | 3 | Browser pieces that invite you to change something |
 
-## What stays in the repository
+## The rest of the workshop
+
+Some material is best approached beside its source code or through a specific
+research question. Links to pages outside the published selection lead to GitHub.
+This is a publishing choice about a particular text, not a ranking of the worth
+of unfinished work.
 
 ### Simulation models — 41 READMEs
 
 [`simulation-models/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/simulation-models)
+contains the runnable models and their instructions. The
+[Simulation → Theory Map](../theory/core/simulation-theory-map.md) explains which
+questions they touch. The browser explorer is available directly on the site.
 
-Run instructions and short notes averaging under 300 words each: Boids, Kuramoto, self-organized criticality, Lenia, IFS, L-systems, TEO Civilization, the agent ecology, and the rest. They belong beside the code they start, not in a reading sequence. Where the simulations bear on a claim, that connection is made on the site in [Simulation → Theory Map](../theory/core/simulation-theory-map.md).
+### Architecture logs — 21 notes
 
-### Architecture logs — 20 notes
-
-[`logs/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/logs)
-
-Dated working notes on system design — the planetary compiler, provenance depth, latency as mercy, who pays for the veto. They are a thinking record, and they read like one. Numbered in the order they were written.
+The [logs](../logs/README.md) are now also readable on this site. Much of the
+sequence explores applied architecture; newer entries can also be wider journals
+of thought. Their original dates and scopes remain visible.
 
 ### Lab tooling and scaffolds
 
-[`lab/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/lab)
-
-The orchestration layer, the provider layer, the inverse-search scaffold, the benchmark scenario schemas, and the six cognitive stress-test scenarios. The benchmark *results* and four bounded experiments with committed result files are published; the machinery that produces them is here.
+[`lab/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/lab) holds
+the machinery behind the experiments: providers, metrics, protocols, and tools.
+The public results pages link back to those materials.
 
 ### Repository meta
 
 [`meta/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/meta)
-
-The information architecture, the concept registry, the agent operating note and the prompt seed it superseded, the red-team manual, the canonical path, the research-alignment map, and the leads lane. These are instructions to the author and to the agents working on the repository — addressed to whoever is writing, not to whoever is reading.
+contains instructions for maintaining the work, claim registers, research alignment,
+and the record of corrections. Selected registers are published under Research.
+These documents remain available without having to introduce every reader through them.
 
 ### Early book chapters
 
-[`book/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/book)
-
-Ten short chapters, about 500 words each, written before the foundations audit. [From Rule to Mind](../book/09_from_rule_to_mind.md) survives on the site as the linear route through the current material; the earlier chapters remain as a record of how the argument used to be told.
+The earlier [`book/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/book)
+chapters preserve an earlier way of telling the project. The published
+[From Rule to Mind](../book/09_from_rule_to_mind.md) is a course outline.
+[Begin with a Sound](synthesis.md) is the continuous reading entrance.
 
 ### Theory essays not on the reading path — 52
 
-[`theory/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/theory)
-
-Sketches, speculative branches, and essays whose vocabulary the foundations audit superseded. Close to half of the theory files are under 800 words. Some will grow into published essays; some are notes that did their work by being written. The ones marked `legacy` or `superseded` are kept because the audit trail matters, not because they should be read first.
+The [full theory index](../theory/README.md) reaches sketches, specialized notes,
+and historical material as well as the published selection. Their individual
+statuses matter; some preserve superseded claims with visible corrections.
 
 ### Exploratory notes
 
 [`ideas/`](https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas)
+keeps small dated observations close to the work. The
+[Thinking Space](thinking-space.md) is a public way into open questions. Longer
+unfinished thoughts also have a home in essays and logs.
 
-Dated first drafts of thoughts, never part of the site.
+## How this boundary changed
 
-## How to read the boundary
+On 25 September 2026 the logs returned to the site, and essays, stories, and research
+received connected reader paths. The former rule was: “If a page is on this site,
+it is being offered as ready.” The boundary now distinguishes the kind and state of
+each text. An open question can be ready for an encounter without being settled.
 
-If a page is on this site, it is being offered as ready. If it is in the repository only, it is working material — real, kept, and available, but not yet something the project is asking anyone to read in order.
-
-That distinction is the whole point. A research notebook that publishes everything cannot say *this part is finished*, because publishing is the only way it has to say it.
+Nothing about that editorial change strengthens a scientific claim. The
+[research boundaries](../theory/reference/what-this-project-does-not-claim.md),
+recorded corrections, and experimental results keep their existing authority.

@@ -8,3 +8,13 @@
   flag as a side effect.
 -#}
 {% block tabs %}{% endblock %}
+
+{% block content %}
+  {{ super() }}
+  <nav class="notebook-return" aria-label="Continue through the notebook">
+    <span>Keep wandering</span>
+    <a href="{{ 'paths/' | url }}">Find a path</a>
+    <a href="{{ 'journal/' | url }}">Open the journal</a>
+    <a href="https://frnkptrln.github.io/">Return to the foyer</a>
+  </nav>
+{% endblock %}

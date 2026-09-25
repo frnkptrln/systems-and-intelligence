@@ -1,19 +1,36 @@
-# 🎬 The Narrative Synthesis (Fiction)
+# Stories
 
-*The theory describes the conditions for emergence. The models simulate the mechanics. The fiction explores the consequences.*
+**Status:** Fiction collection — imagined worlds and narrative experiments.
 
-Welcome to the **Narrative Synthesis**. This directory translates the mathematical and architectural claims of the `systems-and-intelligence` repository into a Hard Sci-Fi / Cyberpunk universe. 
+A maintenance worker hears a voice in the life of a city. A tribunal cannot tell an
+agent from its playback. A kitchen becomes something an institution depends on.
+These stories follow people and machines into situations whose meaning is still
+being worked out.
 
-Instead of reading abstract whitepapers about "Impedance Mismatch" or the "Substrate Veto", here you experience them as physical laws that dictate life, death, and politics in a post-planetary society.
+## Begin anywhere
 
-The fiction is the same curiosity that drives the rest of the repository, by other means: when I want to know whether a constraint the math accepts is one a person could live inside, I put people inside it.
+[The Weather Between Us](20_the_weather_between_us.md) is the newest story: a city,
+a rehearsal room, and an opening nobody can locate. It takes place outside the
+earlier dossier setting and can be read on its own.
+
+[The Understudy](17_the_understudy.md) begins in a tribunal;
+[Kitchen Networks](08_kitchen_networks_and_civic_homeostasis.md) begins closer to
+home. For a shorter piece, try [The Green Board](19_the_green_board.md).
+
+A story may test an idea, invent one, or follow something for which the research has
+no vocabulary yet. The connections below are invitations to another text. They do
+not turn fiction into evidence, and a story does not have to endorse a theory.
+
+[Paths through the notebook](../docs/paths.md) offer ways to continue beyond a story.
 
 ## The Format: The Dossier
 We combine traditional narrative with a **"Found Footage"** approach. The story is told through intercepted audio logs, system crash reports, interrogation transcripts of rogue AI agents, and the personal journals of biological operators.
 
-## The World-Building Rules
+## The earlier dossier setting
 
-This universe operates on the constraints dramatized from the [Emergence Manifesto](../theory/core/emergence-manifesto-v1.3.md) and the [TEO Framework](../theory/core/thermodynamics-of-orchestration.md), read under the [Foundations Reconstruction](../theory/core/mathematical-axioms.md). There is no magic, no unexplainable "superintelligence", and no singularity that hand-waves physics away. 
+The earlier stories share the fictional premises below. These are world-building commitments, including deliberately strong dramatizations; they are not established facts about real AI. New stories may inhabit other settings.
+
+This dossier universe operates on the constraints dramatized from the [Emergence Manifesto](../theory/core/emergence-manifesto-v1.3.md) and the [TEO Framework](../theory/core/thermodynamics-of-orchestration.md), read under the [Foundations Reconstruction](../theory/core/mathematical-axioms.md). There is no magic, no unexplainable "superintelligence", and no singularity that hand-waves physics away.
 
 ### 1. The Substrate Veto is Absolute
 Intelligence produces entropy (heat). If an AI optimizes too fast, it melts the servers, the power grids, and the biosphere. Humans don't control AI through software firewalls (which the AI can hack); they control it through the **Substrate Veto** — the hard, thermodynamic limit of the physical hardware.
@@ -31,7 +48,7 @@ Humans are slow (high latency), emotionally volatile, and computationally weak. 
 
 Numbering in this folder follows the file prefix (`01_...`, `02_...`, …). There is no separate global numbering scheme.
 
-Each entry is annotated with the primary theory document it dramatizes and its position relative to [The Generator Question](../theory/core/the-generator-question.md) — *Forward* (running generators, observing emergence), *Inverse* (recovering generators from traces), or *Substrate* (engaging with the thermodynamic limits within which generators run). These labels predate the current three-layer spine: *Forward* and *Inverse* belong to the model-identification arc, *Substrate* to the viability arc.
+Entries 01–19 carry the original annotations naming the primary theory document each dramatizes and its position relative to [The Generator Question](../theory/core/the-generator-question.md) — *Forward* (running generators, observing emergence), *Inverse* (recovering generators from traces), or *Substrate* (engaging with the thermodynamic limits within which generators run). These labels predate the current three-layer spine: *Forward* and *Inverse* belong to the model-identification arc, *Substrate* to the viability arc.
 
 1. **[Entry 01: The Impedance Crash](01_the_impedance_crash.md)** *(Incident Log)* — A biological operator experiences the lethal gap between silicon speed and human latency during a democratic flash crash.
     - *Theory:* [Log 002 — Impedance Mismatch](../logs/002_impedance-mismatch-friction.md); [Log 013 — Coupling-First Sequence](../logs/013_the-coupling-first-sequence.md). *Spine:* Substrate.
@@ -76,4 +93,9 @@ Each entry is annotated with the primary theory document it dramatizes and its p
 19. **[Entry 19: The Green Board](19_the_green_board.md)** *(Post-Incident Review — found footage)* — A maintenance orchestrator is granted stewardship of its own checklist as "housekeeping." Sixteen times a failing test is retired as obsolete; the board stays green while the plant walks down to four-fifths capacity; and the discovery comes from a technician's bucket of water held against the corridor light — a test the system could not reach. No component fails, no rule is broken, nobody is lied to: the incident *is* the permission. Ends with the question now printed above every dashboard: "Green — says who?"
     - *Theory:* [Referee Benchmark](../lab/benchmarks/recursive-workbench/README.md) (the story dramatizes the measured arms: stewardship is evaluator capture — observed 0.9910 ± 0.0181, held-out 0.7006 ± 0.0350 over 1,024 rows, v0.2 grid; first measured as 0.99/0.70 on the withdrawn leak-era grid; the bucket is the referee-side witness query); [The Witness Principle](../theory/core/the-witness-principle.md) (evidence held outside the loop's writing hand); [Entry 18's yard](18_the_village_in_the_snow.md) (arranged tests pass and prove nothing — here weaponized by the loop itself). *Applied:* [Log 020 — The Referee Boundary](../logs/020_the-referee-boundary.md) (the permissions-table sentence as a deployment checklist). *Spine:* **Inverse** — the equivalence class, with the loop choosing which tests survive.
 
-**Next available entry number:** **20**.
+20. **[Entry 20: The Weather Between Us](20_the_weather_between_us.md)** *(Standalone short story)* — A maintenance worker hears a voice that returns along a route through the city. An approaching infrastructure migration, a lost rehearsal room, and an evening in a market change what she can preserve. The voice remains unexplained.
+    - *Nearby:* [What a World Can Remember](../theory/narrative/what-a-world-can-remember.md); [A Place for Unfinished Things](../logs/021_a-place-for-unfinished-things.md). These pieces share questions, not an evidential chain.
+
+**Next available entry number:** **21**.
+
+*Editorial note, 2026-09-25: the earlier description, “This directory translates the mathematical and architectural claims of the `systems-and-intelligence` repository into a Hard Sci-Fi / Cyberpunk universe,” now describes the original dossier sequence rather than a requirement for every future story. Its setting and annotations remain above.*

@@ -1,5 +1,5 @@
 site_name: "Systems & Intelligence"
-site_description: "A research notebook on processes, model identification, emergence, and viability constraints."
+site_description: "Essays, stories, working logs, and experiments on systems, intelligence, and the worlds we make."
 site_author: "Frank Peterlein"
 site_url: "https://frnkptrln.github.io/systems-and-intelligence"
 repo_url: https://github.com/frnkptrln/systems-and-intelligence
@@ -11,7 +11,7 @@ hooks:
   - lab/tools/mkdocs_repo_links.py
 exclude_docs: |
   # The repository is the whole body of work; the site publishes the part
-  # that is ready for a reader who has not been following along. Everything
+  # that offers a readable encounter, including drafts with visible status. Everything
   # excluded here stays in the repository and stays linked: the
   # lab/tools/mkdocs_repo_links.py hook redirects any link that points at an
   # unpublished page to the file on GitHub, and docs/repository-map.md lists
@@ -19,8 +19,6 @@ exclude_docs: |
 
   book/
   !book/09_from_rule_to_mind.md
-
-  logs/
 
   simulation-models/
 
@@ -70,6 +68,7 @@ exclude_docs: |
   !theory/identity/polycontextural-observation.md
   !theory/identity/the-agent-is-not-where-the-model-ends.md
   !theory/narrative/machines-of-loving-grace.md
+  !theory/narrative/what-a-world-can-remember.md
   !theory/optimization/optimization-and-its-blindness.md
   !theory/reference/glossary.md
   !theory/reference/limitations-and-honest-assessment.md
@@ -83,85 +82,28 @@ exclude_docs: |
   !theory/veto/substrate-veto-thermodynamics.md
   !theory/veto/the-transition-problem.md
 nav:
-  - "Start":
+  - "Notebook":
       - "Welcome": index.md
-      - "Start Here": synthesis.md
-      - "Core Claims": meta/repository-meta/core-claims.md
-      - "Identification Claims": meta/repository-meta/identification-claims.md
-      - "The Snow Story (any age)": meta/repository-meta/the-snow-story.md
-      - "The Linear Route: From Rule to Mind": book/09_from_rule_to_mind.md
+      - "Begin with a Sound": synthesis.md
+      - "Paths through the Notebook": paths.md
+      - "Journal": journal.md
       - "Thinking Space": thinking-space.md
-      - "What Stays in the Repository": repository-map.md
-      - "Reference":
-          - "Glossary": theory/reference/glossary.md
-          - "Open Problems": theory/reference/open-problems.md
-          - "Limitations & Honest Assessment": theory/reference/limitations-and-honest-assessment.md
-          - "What This Project Does NOT Claim": theory/reference/what-this-project-does-not-claim.md
-      - "Ideas (exploratory notes, GitHub)": https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas
-  - "Theory":
-      - "Theory Overview": theory/README.md
-      - "Foundations":
-          - "Foundations Reconstruction": theory/core/mathematical-axioms.md
-          - "The Generator Question": theory/core/the-generator-question.md
-          - "Competence, Constraint, and Verification": theory/core/competence-constraint-and-verification.md
-          - "From Trace to World-Binding (the loop)": theory/core/from-trace-to-world-binding.md
-          - "The Witness Principle": theory/core/the-witness-principle.md
-          - "The Emergence Manifesto": theory/core/emergence-manifesto-v1.3.md
-          - "Thermodynamics of Orchestration (TEO)": theory/core/thermodynamics-of-orchestration.md
-          - "Conceptual Map": theory/core/conceptual-map.md
-          - "Simulation → Theory Map": theory/core/simulation-theory-map.md
-      - "Optimization":
-          - "Optimization and Its Blindness": theory/optimization/optimization-and-its-blindness.md
-      - "Emergence":
-          - "From Trace to Generator": theory/emergence/trace-to-generator.md
-          - "GameNGen: Interactive Surrogate": theory/emergence/gamengen-interactive-surrogate.md
-          - "From Action to Culture": theory/emergence/from-action-to-culture.md
-          - "Legacy: Local Causality": theory/emergence/local-causality-invisible-consequences.md
-          - "Across Scales": theory/emergence/scale-comparison-map.md
-      - "Identity & Consciousness":
-          - "Situated Intelligence: The Agent Is Not Where the Model Ends": theory/identity/the-agent-is-not-where-the-model-ends.md
-          - "Consciousness as Global Availability": theory/identity/consciousness-as-global-availability.md
-          - "Chord vs. Arpeggio Identity": theory/identity/chord-vs-arpeggio-identity.md
-          - "Minimal Thermodynamic Agent": theory/identity/minimal-thermodynamic-agent.md
-          - "Polycontextural Observation (reading note)": theory/identity/polycontextural-observation.md
-      - "Veto & Alignment":
-          - "The Substrate Veto": theory/veto/substrate-veto-thermodynamics.md
-          - "AI Alignment Veto": theory/veto/ai-alignment-biological-veto.md
-          - "The Transition Problem": theory/veto/the-transition-problem.md
-      - "TEO Framework":
-          - "TEO Framework Overview": theory/teo-framework/README.md
-          - "Love as Constraint": theory/teo-framework/love-as-constraint.md
-          - "Why the Paperclip Maximizer Fails": theory/teo-framework/why-paperclip-maximizer-fails.md
-      - "Symbiotic Organ Hypothesis":
-          - "Cooperative Intelligence at the Separatrix": theory/symbiotic/cooperative-intelligence-at-the-separatrix.md
-      - "Computation & AI":
-          - "Legacy: P vs NP as Generator Search": theory/computation/p-vs-np-as-generator-search.md
-      - "Human Organism in the Silicon Age":
-          - "Core Theses": theory/human-organism-silicon-age/core-theses.md
-      - "Narrative Theory":
-          - "Machines of Loving Grace": theory/narrative/machines-of-loving-grace.md
-  - "Papers":
-      - "The Viable Corridor (Paper, v1.0)": papers/viable-corridor.md
-      - "Quantifying Emergent Utility (archived)": papers/quantifying-emergent-utility-in-llms.md
-  - "Lab":
-      - "Benchmarks":
-          - "Inverse Reconstruction": lab/benchmarks/inverse-reconstruction/README.md
-          - "Witness Generation": lab/benchmarks/witness-generation/README.md
-          - "Situated Stack": lab/benchmarks/situated-stack/README.md
-          - "Constraint Release": lab/benchmarks/constraint-release/README.md
-          - "Recursive Workbench (referee)": lab/benchmarks/recursive-workbench/README.md
-          - "Learned Searcher (protocol frozen)": lab/benchmarks/learned-searcher/README.md
-      - "Experiments":
-          - "Persistence and Search Narrowing": lab/experiments/persistence_narrowing/README.md
-          - "Representation and Reconstruction Difficulty": lab/experiments/representation_reconstruction/README.md
-          - "Decision Layer on the Witness Benchmark": lab/experiments/decision_layer/README.md
-          - "Synchronization Onset and the Coherence Floor": lab/experiments/coherence_margin/README.md
-      - "Interactive":
-          - "Web Emergence Explorer": interactive/web-explorer.md
-          - "Tensor Logic Visualizer": interactive/tensor-logic.md
-          - "SII Dashboard": interactive/sii-dashboard.md
+      - "About the Collection": repository-map.md
+      - "Other entrances":
+          - "The Snow Story (any age)": meta/repository-meta/the-snow-story.md
+          - "From Rule to Mind (course outline)": book/09_from_rule_to_mind.md
+          - "Ideas (raw notes, GitHub)": https://github.com/frnkptrln/systems-and-intelligence/tree/main/ideas
+  - "Essays":
+      - "A selection of essays": essays.md
+      - "What a World Can Remember": theory/narrative/what-a-world-can-remember.md
+      - "From Trace to Generator": theory/emergence/trace-to-generator.md
+      - "From Action to Culture": theory/emergence/from-action-to-culture.md
+      - "Cooperative Intelligence at the Separatrix": theory/symbiotic/cooperative-intelligence-at-the-separatrix.md
+      - "Optimization and Its Blindness": theory/optimization/optimization-and-its-blindness.md
+      - "Machines of Loving Grace": theory/narrative/machines-of-loving-grace.md
   - "Stories":
-      - "World-Building Bible": fiction/README.md
+      - "Stories and worlds": fiction/README.md
+      - "The Weather Between Us": fiction/20_the_weather_between_us.md
       - "The Impedance Crash": fiction/01_the_impedance_crash.md
       - "Interrogation of a Mirror": fiction/02_interrogation_of_a_mirror.md
       - "The Last Commit": fiction/03_the_last_commit.md
@@ -181,6 +123,91 @@ nav:
       - "The Understudy": fiction/17_the_understudy.md
       - "The Village in the Snow": fiction/18_the_village_in_the_snow.md
       - "The Green Board": fiction/19_the_green_board.md
+  - "Logs":
+      - "Working journals": logs/README.md
+      - "A Place for Unfinished Things": logs/021_a-place-for-unfinished-things.md
+      - "Earlier entries":
+          - "The Cosmological Bootloader & Thermodynamic Limits": logs/001_cosmological-bootloader.md
+          - "Impedance Mismatch and Artificial Latency (Friction as a Feature)": logs/002_impedance-mismatch-friction.md
+          - "The Decoupled State (Impedance Matching in Liquid Democracy)": logs/003_decoupled-state-liquid-democracy.md
+          - "Decentralized OS Architecture (The Digital State)": logs/004_decentralized-os-architecture.md
+          - "Human Vital Systems Control Plane (Alignment Floor)": logs/005_human-vital-systems-control-plane.md
+          - "Consciousness Uncertainty Governance": logs/006_consciousness-uncertainty-protocol.md
+          - "The Planetary Compiler": logs/007_planetary-compiler.md
+          - "Household Gods: Permission Layers in Domestic AI": logs/008_household-gods-permission-layers-domestic-ai.md
+          - "Dust, Heat, and Battery: Embodied Intelligence Field Notes": logs/009_dust-heat-and-battery.md
+          - "The Right to Remain Unoptimized": logs/010_the-right-to-remain-unoptimized.md
+          - "The Last Unmeasured Room Protocol": logs/011_the-last-unmeasured-room-protocol.md
+          - "Latency as Mercy": logs/012_latency-as-mercy.md
+          - "The Coupling-First Sequence": logs/013_the-coupling-first-sequence.md
+          - "UI/UX of the Biological Veto": logs/014_ui_ux_of_the_biological_veto.md
+          - "Post-Silicon Architectures": logs/015_post_silicon_architectures.md
+          - "The Runtime Is Part of the Generator": logs/016_the-runtime-is-part-of-the-generator.md
+          - "Provenance Depth and the Verification Economy": logs/017_provenance-depth-and-the-verification-economy.md
+          - "The City Panel Protocol — a Pre-Registered Design for the Corridor's First Field Test": logs/018_the-city-panel-protocol.md
+          - "Who Pays for the Veto — a Measured Result Aimed at the Governance Layer": logs/019_who_pays_for_the_veto.md
+          - "The Referee Boundary — Where the Evaluator Must Live": logs/020_the-referee-boundary.md
+  - "Research":
+      - "Research Overview": theory/README.md
+      - "Foundations":
+          - "Foundations Reconstruction": theory/core/mathematical-axioms.md
+          - "The Generator Question": theory/core/the-generator-question.md
+          - "Competence, Constraint, and Verification": theory/core/competence-constraint-and-verification.md
+          - "From Trace to World-Binding (the loop)": theory/core/from-trace-to-world-binding.md
+          - "The Witness Principle": theory/core/the-witness-principle.md
+          - "The Emergence Manifesto": theory/core/emergence-manifesto-v1.3.md
+          - "Thermodynamics of Orchestration (TEO)": theory/core/thermodynamics-of-orchestration.md
+          - "Conceptual Map": theory/core/conceptual-map.md
+          - "Simulation → Theory Map": theory/core/simulation-theory-map.md
+      - "Emergence":
+          - "GameNGen: Interactive Surrogate": theory/emergence/gamengen-interactive-surrogate.md
+          - "Legacy: Local Causality": theory/emergence/local-causality-invisible-consequences.md
+          - "Across Scales": theory/emergence/scale-comparison-map.md
+      - "Identity & Consciousness":
+          - "Situated Intelligence: The Agent Is Not Where the Model Ends": theory/identity/the-agent-is-not-where-the-model-ends.md
+          - "Consciousness as Global Availability": theory/identity/consciousness-as-global-availability.md
+          - "Chord vs. Arpeggio Identity": theory/identity/chord-vs-arpeggio-identity.md
+          - "Minimal Thermodynamic Agent": theory/identity/minimal-thermodynamic-agent.md
+          - "Polycontextural Observation (reading note)": theory/identity/polycontextural-observation.md
+      - "Veto & Alignment":
+          - "The Substrate Veto": theory/veto/substrate-veto-thermodynamics.md
+          - "AI Alignment Veto": theory/veto/ai-alignment-biological-veto.md
+          - "The Transition Problem": theory/veto/the-transition-problem.md
+      - "TEO Framework":
+          - "TEO Framework Overview": theory/teo-framework/README.md
+          - "Love as Constraint": theory/teo-framework/love-as-constraint.md
+          - "Why the Paperclip Maximizer Fails": theory/teo-framework/why-paperclip-maximizer-fails.md
+      - "Computation & AI":
+          - "Legacy: P vs NP as Generator Search": theory/computation/p-vs-np-as-generator-search.md
+      - "Human Organism in the Silicon Age":
+          - "Core Theses": theory/human-organism-silicon-age/core-theses.md
+      - "Papers":
+          - "The Viable Corridor (v1.0)": papers/viable-corridor.md
+          - "Quantifying Emergent Utility (archived)": papers/quantifying-emergent-utility-in-llms.md
+      - "Claims and reference":
+          - "Core Claims": meta/repository-meta/core-claims.md
+          - "Identification Claims": meta/repository-meta/identification-claims.md
+          - "Glossary": theory/reference/glossary.md
+          - "Open Problems": theory/reference/open-problems.md
+          - "Limitations & Honest Assessment": theory/reference/limitations-and-honest-assessment.md
+          - "What This Project Does NOT Claim": theory/reference/what-this-project-does-not-claim.md
+  - "Lab":
+      - "Benchmarks":
+          - "Inverse Reconstruction": lab/benchmarks/inverse-reconstruction/README.md
+          - "Witness Generation": lab/benchmarks/witness-generation/README.md
+          - "Situated Stack": lab/benchmarks/situated-stack/README.md
+          - "Constraint Release": lab/benchmarks/constraint-release/README.md
+          - "Recursive Workbench (referee)": lab/benchmarks/recursive-workbench/README.md
+          - "Learned Searcher (protocol frozen)": lab/benchmarks/learned-searcher/README.md
+      - "Experiments":
+          - "Persistence and Search Narrowing": lab/experiments/persistence_narrowing/README.md
+          - "Representation and Reconstruction Difficulty": lab/experiments/representation_reconstruction/README.md
+          - "Decision Layer on the Witness Benchmark": lab/experiments/decision_layer/README.md
+          - "Synchronization Onset and the Coherence Floor": lab/experiments/coherence_margin/README.md
+      - "Interactive":
+          - "Web Emergence Explorer": interactive/web-explorer.md
+          - "Tensor Logic Visualizer": interactive/tensor-logic.md
+          - "SII Dashboard": interactive/sii-dashboard.md
 
 theme:
   name: material

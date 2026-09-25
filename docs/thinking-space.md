@@ -7,6 +7,12 @@ failure condition. The Thinking Space is not an intake queue for the canonical s
 
 This is where the repository is allowed not to know.
 
+To enter through a longer piece, read [What a World Can Remember](../theory/narrative/what-a-world-can-remember.md),
+or follow [The Weather Between Us](../fiction/20_the_weather_between_us.md) into a city.
+The [Journal](journal.md) records selected arrivals; [Paths](paths.md) connects
+stories, essays, logs, and experiments. Small notes are one available form, not a
+size limit on an unfinished thought.
+
 Executable probes, architecture logs, theoretical fragments, fiction, contradictions, and
 unfinished design moves can remain here without promising that they will mature into theory. Some
 will become experiments or open problems. Some will be revised beyond recognition. Some may remain
@@ -132,10 +138,9 @@ availability, and commit-time composition. Real-model and longitudinal tests rem
 
 <div class="card" markdown>
 
-### :material-file-document-outline: Architecture logs
+### :material-file-document-outline: Logs
 
-Applied design notes can hold options, unresolved trade-offs, and deployment questions without
-presenting them as demonstrated architecture.
+Working journals can hold an encounter, a question, a design option, or a change of direction. Some develop architectures; others stay with an unresolved thought.
 
 [Read the logs →](../logs/README.md)
 
@@ -145,8 +150,7 @@ presenting them as demonstrated architecture.
 
 ### :material-book-open-page-variant: Fiction
 
-Narrative stress tests expose lived consequences, missing perspectives, and tensions that a clean
-formalization can hide. They are instruments of attention, not evidence.
+Stories explore lived consequences, invent worlds, and find questions the existing research may not know how to ask. Their value need not depend on a contribution to the theory; they are not evidence for its claims.
 
 [Read the fiction →](../fiction/README.md)
 
