@@ -35,7 +35,10 @@ ROOT_LAYERS = (
     'theory',
 )
 
-ROOT_PAGES = {'index.md', 'synthesis.md', 'thinking-space.md', 'repository-map.md'}
+ROOT_PAGES = {
+    'index.md', 'synthesis.md', 'thinking-space.md', 'repository-map.md',
+    'essays.md', 'journal.md', 'paths.md',
+}
 REPO_ROOT_LINK = re.compile(
     r'(\]\()\.\./'
     r'(?=(?:' + '|'.join(re.escape(layer) for layer in ROOT_LAYERS) + r')/)'
@@ -107,6 +110,13 @@ def _redirect_unpublished(markdown, page, config, files):
         if target.startswith('/') or target.lower().endswith(IMAGE_SUFFIXES):
             return match.group(0)
         resolved = posixpath.normpath(posixpath.join(here, target))
+        # A repository-layer page links to ../docs/paths.md on GitHub.
+        # In the built site that same reader page lives at paths.md.
+        if resolved.startswith('docs/'):
+            site_target = resolved[len('docs/'):]
+            if _is_published(files.get_file_from_path(site_target)):
+                relative = posixpath.relpath(site_target, here or '.')
+                return f']({relative}{anchor})'
         if resolved.startswith('..'):
             # Points outside docs_dir entirely; leave it for MkDocs to report.
             return match.group(0)

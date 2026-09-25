@@ -8,7 +8,7 @@
 
    Reading comes first: the foyer can afford display type and negative
    space, a notebook of long essays cannot. Type is set at 16px with a
-   1.68 measure, and the display weights stay light rather than large.
+   1.78 line height, and the display weights stay light rather than large.
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap');
@@ -82,14 +82,42 @@ body {
 
 .md-typeset {
   font-size: 0.8rem;
-  line-height: 1.68;
+  line-height: 1.78;
   letter-spacing: 0;
   color: var(--si-fg-soft);
 }
 
 .md-typeset p,
 .md-typeset li {
-  font-weight: 300;
+  font-weight: 400;
+}
+
+/* A quiet way back from every long read, including the older pages. */
+.notebook-return {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.3rem;
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--si-line);
+  font-size: 0.7rem;
+}
+
+.notebook-return span {
+  flex-basis: 100%;
+  color: var(--si-fg-soft);
+  font-family: var(--md-code-font);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+.notebook-return a {
+  color: var(--si-link);
+}
+
+.notebook-return a:focus-visible {
+  outline: 2px solid var(--si-green);
+  outline-offset: 4px;
 }
 
 .md-typeset strong {
@@ -637,6 +665,13 @@ body {
 .md-typeset .hero-banner em {
   color: var(--si-fg-soft);
   font-style: normal;
+}
+
+.md-typeset .notebook-actions p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-block: 1.2rem 0;
 }
 
 /* --- Footer ------------------------------------------------------------ */

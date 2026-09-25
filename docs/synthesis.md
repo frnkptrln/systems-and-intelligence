@@ -1,199 +1,154 @@
-# Start Here: From Traces to Viable Intelligence
+# Begin with a Sound
+
+*A first walk through Systems & Intelligence.*
 
 **Status:** Reader synthesis — explanation and navigation, not an additional theory.
 
-**Scope:** A plain-language entrance to the reconstructed foundation and two bounded research arcs. Every claim on this page inherits its status and limits from the linked home document.
+You hear a sound through an open window. A few notes, a vibration, something that
+could be a voice. Before you know what made it, you have already begun to imagine a
+source: a person, a loudspeaker, an instrument in another room.
 
-Most things do not arrive with their causes attached.
+Most things reach us like this. We meet their traces before we understand the
+processes that produced them. We see a flock change direction. We read a machine's
+answer. We encounter a city through the doors it opens, the delays it imposes, the
+places where it lets us stay.
 
-We hear a sound, watch a flock, read a model's answer, or encounter an institution through the decisions it makes. These are **traces**: observable results of processes we cannot see in full. A trace tells us that something happened. It does not tell us exactly what produced it.
+The questions in this notebook begin around those encounters. What made this? What
+would have happened differently? What is still possible? And what do we lose when
+our explanation becomes too small for the thing we are trying to understand?
 
-A sound could come from a string, a room, a body, a machine, or a SuperCollider patch. Several processes may produce something that sounds nearly identical. Recording the waveform perfectly would preserve the trace, but it would not reveal which process made it.
+## Something takes form
 
-The same problem appears in science, artificial intelligence, organizations, and everyday life. We observe behavior and try to infer the rules, structures, histories, and constraints behind it. Earlier versions of this repository called the whole hidden productive bundle a **generator**. The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) found that the unqualified word adds no independent mathematics: an update rule, initial state, runtime, environment, boundary, history, and observation map are different objects. This is a demand for typing, not a dismissal of the Generator Question. This page therefore uses **candidate process model** for the complete explanatory candidate and **typed generator** only for a declared map that produces, proposes, or indexes possibilities.
+Consider a flock. Each bird responds to a limited part of its surroundings. The
+whole movement is visible to someone watching from outside. In a simple computer
+model, we can choose local rules for separation, alignment, and cohesion, then see
+what patterns follow.
 
-> **In one sentence:** This project studies how finite observers construct and revise candidate process models from partial traces — and what constraint architecture lets an acting system remain viable while doing so.
+The pleasure of such a model is partly that we can interfere. We change a rule and
+the movement changes. We remove an interaction and discover that something we
+thought belonged to the individual depended on its neighbours.
 
-That sentence contains the project's two central questions.
+There are other small worlds here: cellular automata, branching plants, chemical
+patterns, oscillators. Their mechanisms differ. Working with them makes it possible
+to compare particular ways in which local changes produce larger forms, and to
+notice where a comparison stops helping.
 
-## 1. From a trace to candidate process models
+If you would like to begin with your hands, open the
+[Web Emergence Explorer](interactive/web-explorer.md). Draw into the field. Let it
+run. Interrupt it. Come back when a pattern has surprised you.
 
-Running a specified process model forward is often straightforward in the small, bounded systems studied here. That is not a universal complexity theorem:
+## A trace leaves something out
 
-```text
-process model -> trace
-```
+Making a pattern and explaining an observed pattern are different tasks. The same
+visible result may fit several accounts of how it was produced.
 
-A few local rules produce a flock. Repeated affine transformations produce a fern. A program produces a sound. An institution repeatedly applying its rules produces recognizable patterns of access, delay, permission, and exclusion.
+Return to the sound. A recording can preserve the waveform with extraordinary
+care. It cannot, by itself, settle whether the sound came from the instrument you
+imagined. A convincing imitation gives you another way to produce the trace. It
+does not give you the history of the original event.
 
-The inverse direction is different:
+This is the question behind [From Trace to Generator](../theory/emergence/trace-to-generator.md).
+The title uses the notebook's older vocabulary; the essay's active question is how
+to construct and distinguish possible accounts of a process. In the formal work,
+we specify the model, its inputs, its state, and the evidence available to an observer.
 
-```text
-trace -> candidate process models
-```
+Sometimes looking for longer will not resolve the ambiguity. We need an occasion
+on which the possibilities predict different things. We might change an input,
+prepare another initial state, or ask a question that the previous observations
+never answered.
 
-Given the flock, image, sound, output, or social pattern, what process could have produced it?
+The [inverse-reconstruction experiments](../lab/benchmarks/inverse-reconstruction/README.md)
+make this concrete in small controlled systems. We know the candidate rules, so we
+can check exactly which distinctions a trace supports. Some recoveries are easy;
+others remain ambiguous under the available observations. These results concern
+their declared testbeds. They give us working examples and sharper questions to
+take elsewhere.
 
-This is not simply a search for a hidden correct answer. Different process models can produce the same trace, especially when observation is noisy or incomplete. A model that fits what has already been seen is therefore a **candidate**, not yet an explanation. The trace may support an entire equivalence class of candidates.
+## The boundary begins to move
 
-This is the repository's shared root: understanding is not the passive storage of appearances. It is the construction of a process that can generate predictions, variations, and counterfactuals — followed by tests that expose where that process fails.
+Now suppose the source of the sound is a musician. We can describe the instrument,
+but the ability to play also depends on a body, learned practice, the room, and what
+the player can hear. Which part are we evaluating when we ask what the musician can do?
 
-The [Foundations Reconstruction](../theory/core/mathematical-axioms.md) gives the formal frame and proves an elementary hidden-extension result: even a complete observed trace law need not select a unique latent process. [From Trace to Generator](../theory/emergence/trace-to-generator.md) develops the active reconstruction question through sound, images, computation, biology, and scientific explanation; its original universal wording is preserved but bounded by the current foundation. [The Generator Question](../theory/core/the-generator-question.md) remains an organizing research question, not a mathematical primitive or universal complexity law.
+For a machine, the corresponding question is surprisingly easy to overlook. A
+model's performance may change when it receives a memory, a tool, another interface,
+or a different way to act. [The Agent Is Not Where the Model Ends](../theory/identity/the-agent-is-not-where-the-model-ends.md)
+asks how to locate the system whose capability we are measuring. Its companion toy
+experiment lets us vary parts of a situated arrangement while keeping the controller
+fixed.
 
-## 2. A candidate model has to meet a world
+This opens a wider set of questions about continuity. When a system changes its
+parts, what remains? Which differences matter to the person interacting with it?
+What could an observer test, and what would those tests leave unresolved?
 
-A plausible process model earns trust by being constructed and run. Its predictions must encounter something that cannot be persuaded by fluent presentation.
+A story can stay with the unresolved part. In
+[The Understudy](../fiction/17_the_understudy.md), a tribunal faces an agent and a
+trace-equivalent playback, and has to decide what to do. The story supplies no proof
+about experience. It makes room for the people who must act before the question
+has been settled.
 
-Passive observation is often not enough. If several models remain compatible with the same trace, an observer has to intervene: prepare a state, perturb the system, ask a discriminating question, or act and observe what resists. The result becomes a new trace and must be allowed to revise the model. Conditioning on an observation and causally replacing a process are distinct operations; an intervention requires declared causal access.
+## An ability meets a world
 
-Choosing that intervention is itself a construction problem. The [Witness Principle](../theory/core/the-witness-principle.md) asks for a low-cost query on which the remaining candidates disagree and separates candidate distinction geometry from intervention access geometry; the [exact finite benchmark](../lab/benchmarks/witness-generation/README.md) derives and enumerates the resulting query frontier for elementary cellular automata. Learned and transferable witness construction remains open.
+Being able to act introduces another difficulty: success according to a chosen
+measure can conflict with the conditions that make continued action possible.
 
-The repository folds this into one recurring epistemic loop:
+Imagine a workshop that improves its output by deferring maintenance. For a while,
+the measure improves. The repair backlog, the people who know the machines, and the
+possibility of recovering from a mistake may be getting worse at the same time.
+To understand what is happening, we need to look beyond the number the workshop
+has chosen to optimize.
 
-```text
-Trace -> Candidate Model -> Construction -> World-Coupling
-      -> Intervention -> Revision -> new Trace
-```
+[Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md)
+develops this question. [The Viable Corridor](../papers/viable-corridor.md) studies a
+particular mathematical version: how capability growth loads interacting constraints.
+Its necessity result is conditional on its model assumptions. Its original
+sufficiency conjecture is refuted in the stated Lorentzian continuum reading;
+a corrected, floor-dependent statement remains open. Those limits matter when we
+carry the question from a model into a city or institution.
 
-Each move matters:
+The logs explore such moves as design questions. What might a right of refusal
+require? When can [waiting be an act of care](../logs/012_latency-as-mercy.md)? Who pays
+for keeping a useful constraint in place? Each question also admits failure: delay
+can become cruelty, a veto can protect a powerful minority, and a well-intended
+rule can make repair impossible.
 
-- **Trace:** begin with what is actually observable.
-- **Candidate model:** propose typed processes that could have produced it.
-- **Construction:** make the proposal executable enough to fail.
-- **World-coupling:** place it against a referee outside the proposal itself.
-- **Intervention:** seek observations that distinguish between candidates.
-- **Revision:** change the model when the world answers differently.
+## A world between its inhabitants
 
-An AI system can produce a convincing description of a bridge, a policy, or another AI system. That output is still a trace. Fluency alone does not establish the process behind it, the truth of its world-model, or the consequences of acting on it. Construction and contact with a real referee are what turn a proposal into something testable.
+Following these questions brings us back to the room with the open window. A
+performance happens between people, instruments, practices, and a place where they
+can meet. A city holds many such arrangements. So does a research group. So, in a
+smaller and different way, does a notebook with enough paths through it.
 
-The [inverse-reconstruction benchmark](../lab/benchmarks/inverse-reconstruction/README.md) measures parts of this loop in small, controlled systems. It shows where known-family recovery is cheap, where missing coverage leaves several process models indistinguishable, where intervention collapses that class, and where closed-loop revision corrects a frozen model. These are existence demonstrations and measurable floors, not evidence that the same curves automatically generalize to people, institutions, or current AI systems.
+[Cooperative Intelligence at the Separatrix](../theory/symbiotic/cooperative-intelligence-at-the-separatrix.md)
+asks when different contributors can do useful work together while retaining the
+ability to disagree and revise it. Cooperation has costs, and an arrangement must
+earn claims about its performance. Questions about collective experience remain
+separate and open.
 
-When a system must also model its own role in this loop, questions of identity and self-binding appear. Identity is not absolute in the foundation: it is an equivalence under declared tests, interventions, horizons, and tolerances. Functional global availability can be tested as architecture; subjective experience is not derived from behavior, recurrence, integration, or organizational complexity.
+There is also a question we can approach more slowly: what does such a world make
+possible for someone who arrives later? A record can survive after the practice
+that gave it meaning disappears. An unfinished work can wait for a stranger who
+will take it somewhere its maker never intended.
 
-[The Agent Is Not Where the Model Ends](../theory/identity/the-agent-is-not-where-the-model-ends.md)
-develops the corresponding boundary question without adding a third spine. A measured capability
-may belong to a complete controller–body–interface–environment–memory coupling rather than to the
-controller alone. Its candidate notation $J_{\ell,\tau}(\Sigma)$ keeps the observer lens and task
-family visible; its exact
-[situated-stack benchmark](../lab/benchmarks/situated-stack/README.md) shows both sides of the
-claim in one finite toy: uncoordinated interface changes destroy selected capability, while a
-coordinated sensor–actuator transformation preserves every physical trace. This is evidence for
-declaring the equivalence relation, not a proof that embodiment defeats every capability invariant.
+[What a World Can Remember](../theory/narrative/what-a-world-can-remember.md) follows
+that thought from an old song into an imagined city. It is an essay, free to explore
+the connection without presenting the imagined city as a finding. From there,
+[The Weather Between Us](../fiction/20_the_weather_between_us.md) opens another door.
 
-[Competence, Constraint, and Verification](../theory/core/competence-constraint-and-verification.md)
-extends this boundary analysis without treating a generator as sufficient or
-leaving its type unspecified.
-It separates a typed process from the constraints that make trajectories
-admissible, selectors that make regions usable, interaction history, the lens
-that reports equivalence, and the verifier that can revise the process. Its
-[exact companion benchmark](../lab/benchmarks/constraint-release/README.md)
-shows why that separation matters: one constraint release and one lens edit
-both move observed competence from zero to one, but only the release changes
-physical traces. The result is a finite identification control, not evidence
-that every surprising capacity was pre-existing.
+You can stay with either text. There is no final page you need to reach for the
+walk to have been worthwhile.
 
-## 3. Better models create capability, not purpose
+---
 
-A system that predicts and intervenes well becomes more capable. But capability does not decide what should be optimized, who bears the cost, or which conditions must remain intact.
+## Where to go from here
 
-An optimizer can improve its stated objective while damaging the substrate that makes continued success possible. A company can reduce visible costs by removing maintenance and trust. A city can improve one traffic metric while making neighborhoods less livable. An automated proposal system can increase decision speed until review, refusal, and correction can no longer keep pace.
+To keep wandering, choose a question in [Paths through the Notebook](paths.md). For
+shorter encounters, open the [Journal](journal.md). To inspect the formal work, use
+the [Research Overview](../theory/README.md), the
+[Foundations Reconstruction](../theory/core/mathematical-axioms.md), and the
+[claims and boundaries](../theory/reference/what-this-project-does-not-claim.md).
 
-This is the second spine, the **Viability Arc**:
-
-```text
-Emergence -> Optimization -> Constraint Architecture -> Survivability
-```
-
-Once a system develops the ability to preserve and extend a pattern, optimization appears. Optimization is locally blind to anything absent from its objective. Adding one penalty usually does not solve that problem, because growing capability loads several constraints at once: energy, material, latency, error recovery, human attention, legitimacy, and the continued existence of affected participants.
-
-The repository therefore treats constraints as architecture rather than decoration. Hard caps, vital floors, action budgets, latency, vetoes, and repair paths shape which trajectories remain reachable. They are not merely brakes applied after intelligence has finished its work. They help determine whether the system can keep learning after error.
-
-[Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md) explains this hinge. [The Viable Corridor](../papers/viable-corridor.md) gives one formal model of the idea. Its necessity result is conditional on that model's assumptions; the stated sufficiency conjunction is refuted in its Lorentzian continuum reading (paper §3.4 erratum) with a corrected, floor-dependent statement open, and its larger social mapping is heuristic. The corridor is not a proved universal law or a formula for morality.
-
-## 4. Why the two questions belong together
-
-The two spines answer different questions:
-
-| Spine | Central question | Characteristic failure |
-|:---|:---|:---|
-| **Epistemic** | Can the system construct and revise a useful candidate process model from partial traces? | It mistakes fit, fluency, or passive observation for understanding. |
-| **Viability** | Can the system act without destroying the conditions that let it continue? | It optimizes a target while consuming its substrates, regulators, or capacity for correction. |
-
-Neither substitutes for the other. Better world-coupling can make a system more accurate and more capable while leaving its objective untouched. Constraint architecture can limit harm without making the system's model true. Matter can referee whether a construction works; it cannot decide what the construction is for.
-
-The project connects the spines because an intelligence worth building needs both: a way to be corrected by the world and a way to remain correctable over time.
-
-## 5. Intelligence can be cooperative without becoming one mind
-
-The loop does not have to live inside one person or machine. Different participants can carry different phases. One notices a trace. Another proposes a model. Another knows a constraint the first two missed. Someone constructs the proposal. Materials, users, measurements, or affected communities answer. The shared result preserves those answers long enough to change the next move.
-
-This is the narrower idea behind [Cooperative Intelligence at the Separatrix](../theory/symbiotic/cooperative-intelligence-at-the-separatrix.md). Cooperation becomes cognitively load-bearing when participants can materially revise one another's plans, the construction faces a real test, and authority, veto, and responsibility remain visible. It is not a claim about a group mind, and it does not require treating humans, AI systems, organizations, and cultures as the same kind of entity.
-
-A repository, protocol, workshop, or house can serve as a shared object through which partial views meet. The object stores revisions outside any one participant's memory. Its resistance reveals disagreements that a fluent summary might hide. What emerges can exceed each contributor's practical repertoire without making authorship or responsibility anonymous.
-
-Cooperative intelligence is a conceptual bridge, not a third spine. Its current claim is a testable design hypothesis: structured difference may add reachable solutions faster than coordination consumes them. If the same results appear without cross-participant revision, real refusal, and independent verification, the stronger claim fails.
-
-Persistent shared artifacts also alter later control. Provenance, aging, correction, invalidation,
-and reset are therefore alignment properties of the memory substrate, not clerical afterthoughts.
-That extension does not make the repository or organization a conscious group mind; it makes the
-external trace ecology part of the process model whenever changing it changes future action.
-
-One episode of successful cooperation is not yet a durable capacity. [From Action to Culture](../theory/emergence/from-action-to-culture.md) adds the missing persistence question: how a represented rule becomes situated action, how recurrent enactment becomes a transmissible practice, and how that practice changes the conditions of the next action. Its working hypothesis is that recurrent practices can stabilize behavior and culture can be studied as a recursive network of such processes. The larger active bundle still includes traces, participants, competence, materials, norms, transmission, feedback, power, and history; neither ritual nor knowledge executes itself. The proposal is an unmeasured bridge, not a general theory of culture.
-
-That cultural return path also complicates alignment. A system can satisfy represented preferences
-while weakening the human capacities through which later concerns and commitments are formed.
-“Capacity-preserving alignment” is the resulting hypothesis: evaluate whether assistance leaves
-people able to notice, formulate, choose, commit, refuse, and coordinate without the system taking
-ownership of the process. The external anchor is narrower — Rousse's
-[2026 analysis](https://doi.org/10.1007/978-3-032-33195-3_16) names receptivity,
-articulation, commitment, and coordination — and the wider list is the repository's own extension.
-Which capacities, whose authority, and when delegation is justified remain normative
-questions; the process formalism does not answer them.
-
-## 6. What is established — and what remains open
-
-The repository deliberately mixes simulations, formal arguments, working hypotheses, essays, fiction, and architecture notes. They do not carry the same evidential weight.
-
-- **Measured in controlled toy systems:** parts of inverse reconstruction, equivalence classes, intervention, family search, marked uncertainty, and closed-loop revision.
-- **Formal but conditional:** results inside the specified viability models, including assumptions that limit their reach.
-- **Hypothesized:** the composition of the epistemic loop, the broader constraint architecture, and structured cooperative intelligence.
-- **Heuristic or speculative:** civilizational mappings and questions of subjective experience.
-- **Still missing:** external expert review, real-agent ecology tests, calibration outside synthetic systems, and evidence that the proposed cooperative mechanism survives its coordination costs.
-
-[What This Project Does NOT Claim](../theory/reference/what-this-project-does-not-claim.md) is the controlling boundary. If another page sounds stronger than that boundary allows, the boundary wins.
-
-## Continue into the repository
-
-### Read the central movement
-
-1. [Foundations Reconstruction](../theory/core/mathematical-axioms.md) — the minimal process basis and adversarial audit.
-2. [From Trace to Generator](../theory/emergence/trace-to-generator.md) — the active typed reconstruction programme, with its earlier universal language preserved for audit.
-3. [From Trace to World-Binding](../theory/core/from-trace-to-world-binding.md) — the epistemic loop and its measured homes.
-4. [Optimization and Its Blindness](../theory/optimization/optimization-and-its-blindness.md) — the hinge from capability to constraint architecture.
-5. [Cooperative Intelligence at the Separatrix](../theory/symbiotic/cooperative-intelligence-at-the-separatrix.md) — how the loop can be distributed without dissolving difference or responsibility.
-6. [The Agent Is Not Where the Model Ends](../theory/identity/the-agent-is-not-where-the-model-ends.md) — how embodiment, action, self-models, and external traces change the unit being evaluated.
-7. [Competence, Constraint, and Verification](../theory/core/competence-constraint-and-verification.md) — how constraints expose behavior, interaction supports functional semantics, and verification feeds back into construction.
-8. [From Action to Culture](../theory/emergence/from-action-to-culture.md) — how revised action can become recurrent, transmissible practice without reducing culture to repetition.
-
-### Inspect the claims and evidence
-
-1. [Foundations Reconstruction](../theory/core/mathematical-axioms.md) — primitives, axioms, dependencies, counterexamples, and neighboring theories.
-2. [Inverse-Reconstruction Benchmark](../lab/benchmarks/inverse-reconstruction/README.md) — the measured core, including failed predictions and scope limits.
-3. [The Generator Question](../theory/core/the-generator-question.md) — the active organizing question and an auditable record of its superseded universal formulation.
-4. [Canonical Path v2.1](../meta/repository-meta/canonical-path-v2.md) — the Viability Arc and current migration map.
-5. [The Viable Corridor](../papers/viable-corridor.md) — necessity result, a sufficiency conjecture refuted as stated in its Lorentzian continuum reading (§3.4 erratum; corrected, floor-dependent statement open), synthetic evidence, and limitations.
-6. [Core Claims](../meta/repository-meta/core-claims.md) — the maintained small claim set for the viability arc and identity branch.
-7. [Identification Claims](../meta/repository-meta/identification-claims.md) — the register for the model-identification arc: four claims and one candidate, each with artifacts by evidential kind and a failure condition.
-8. [Related Work Map](../meta/research-alignment/related-work-map.md) — concept-to-literature matrix and the primary-source ledger with inclusion/exclusion decisions for the situated-competence extension.
-
-### Follow a broader path
-
-- [From Rule to Mind](../book/09_from_rule_to_mind.md) — the compact course spine through emergence, boundary, and return paths.
-- [Conceptual Map](../theory/core/conceptual-map.md) — current layers, measured results, and frontier.
-- [Simulation to Theory Map](../theory/core/simulation-theory-map.md) — where claims touch executable artifacts.
-- [Open Problems](../theory/reference/open-problems.md) — the maintained unresolved questions.
-- [Concept Registry](../meta/repository-meta/concept-registry.md) — home, status, and operationalization for load-bearing terms.
-
-## Rule of this synthesis
-
-This page connects existing claims; it does not strengthen them. Every important statement must still resolve to a home document, an artifact, or an open problem — and remain revisable when those sources change.
+*Reading edition, 25 September 2026. The earlier terminology and its correction
+history remain in [The Generator Question](../theory/core/the-generator-question.md)
+and the Foundations Reconstruction. This entrance connects the existing work;
+it changes no research result or claim status.*

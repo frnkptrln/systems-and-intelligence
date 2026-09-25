@@ -5,7 +5,7 @@
 [![Docs](https://github.com/frnkptrln/systems-and-intelligence/actions/workflows/deploy-docs.yml/badge.svg)](https://frnkptrln.github.io/systems-and-intelligence)
 
 <div align="center">
-  <p><strong>A living research notebook on processes, model identification, emergence, and viability.</strong></p>
+  <p><strong>An open notebook of essays, stories, experiments, and research on systems and intelligence.</strong></p>
   <a href="simulation-models/emergent-dynamics/boids-flocking/README.md">
     <img src="docs/assets/gifs/boids_demo.gif" width="620" alt="Animated Boids simulation showing flocking emerging from local rules" />
   </a>
@@ -14,7 +14,7 @@
 
 Most things do not arrive with their causes attached. We hear a sound, watch a flock, read a model's answer, or encounter an institution through its decisions. What we receive are **traces** of processes we cannot see in full.
 
-This repository studies two bounded questions:
+Within that wider notebook, the formal research currently studies two bounded questions:
 
 1. **Model identification:** What can a finite observer identify about a process from partial traces, and what changes when observation is joined by construction, intervention, and revision?
 2. **Viability:** What constraint architecture lets an optimizing system remain correctable and viable as its capabilities grow?
@@ -23,12 +23,25 @@ The shared foundation is deliberately modest: typed stochastic processes, compos
 
 This is a research notebook, not a theory of everything. It contains established mathematics, controlled toy experiments, working hypotheses, simulations, essays, and fiction; their evidential status is kept separate.
 
+## Reading and wandering
+
+The notebook has room for a thought whose significance is still being discovered.
+Essays can cross fields, logs can keep an unresolved encounter, and fiction can
+invent a question or a world. The formal research retains its own evidence and
+scope requirements.
+
+The reading edition of 25 September 2026 adds **[What a World Can Remember](theory/narrative/what-a-world-can-remember.md)**,
+**[The Weather Between Us](fiction/20_the_weather_between_us.md)**, and
+**[A Place for Unfinished Things](logs/021_a-place-for-unfinished-things.md)**.
+The **[Journal](docs/journal.md)** and **[Paths through the Notebook](docs/paths.md)**
+connect them to earlier work.
+
 ## Choose an entrance
 
 | If you want to… | Start here |
 |:---|:---|
-| understand the project without learning its internal vocabulary | **[Start Here: From Traces to Viable Intelligence](docs/synthesis.md)** |
-| read the curated site, the part offered as ready for a new reader | **[Read the online notebook](https://frnkptrln.github.io/systems-and-intelligence)** |
+| understand the project without learning its internal vocabulary | **[Begin with a Sound](docs/synthesis.md)** |
+| read essays, stories, working logs, and research in the online notebook | **[Read the online notebook](https://frnkptrln.github.io/systems-and-intelligence)** |
 | change rules and watch a system evolve | **[Run the Web Emergence Explorer](https://frnkptrln.github.io/systems-and-intelligence/interactive/web-explorer/)** |
 | inspect the mathematical foundation | **[Read the Foundations Reconstruction](theory/core/mathematical-axioms.md)** |
 | see the measured model-identification results | **[Run the Inverse-Reconstruction Benchmark](lab/benchmarks/inverse-reconstruction/README.md)** |
@@ -119,10 +132,10 @@ More executable work:
 | [`simulation-models/`](theory/core/simulation-theory-map.md) | Executable toy systems grouped by research theme |
 | [`papers/`](papers/viable-corridor.md) | One frozen v1.0 submission draft awaiting external review; one archived early synthesis |
 | [`book/`](book/09_from_rule_to_mind.md) | Ten short chapters; chapter 09 is the site's compact linear route, the earlier ones are kept as a record |
-| [`fiction/`](fiction/README.md) and [`logs/`](logs/README.md) | Narrative stress tests and applied architecture notes, not evidence |
+| [`fiction/`](fiction/README.md) and [`logs/`](logs/README.md) | Stories, exploratory journals, and applied design notes; their questions may remain open |
 | [`meta/`](meta/README.md) | Project architecture, epistemic rules, the claim registers, and the research-alignment map |
 
-The site publishes a curated subset of the repository with its own navigation; [What Stays in the Repository](docs/repository-map.md) lists the full inventory. The repository's [information architecture](meta/repository-meta/repository-information-architecture.md) explains how new material moves between these layers.
+The site publishes a curated subset of the repository with its own navigation; [About the Collection](docs/repository-map.md) lists the full inventory. The repository's [information architecture](meta/repository-meta/repository-information-architecture.md) explains how new material moves between these layers.
 
 ## Status and boundaries
 
