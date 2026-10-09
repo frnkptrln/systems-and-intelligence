@@ -17,9 +17,14 @@ formations arise from these purely local interactions.
 Press ESC in the matplotlib window to exit.
 """
 
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import platform
+import sys
+
 import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.collections import LineCollection
 
 # ─────────────────────────────────────────────
 # Parameters
@@ -77,6 +82,8 @@ class Flock:
     __slots__ = ("pos", "vel", "N", "trail")
 
     def __init__(self, n, rng):
+        if not isinstance(n, int) or isinstance(n, bool) or n < 1:
+            raise ValueError("the flock must contain a positive integer number of boids")
         self.N = n
         self.pos = rng.uniform(0, WORLD_SIZE, (n, 2))
         angle = rng.uniform(0, 2 * np.pi, n)
@@ -114,6 +121,7 @@ class Flock:
         sep_mag = np.maximum(sep_mag, 1e-8)
         sep_force = sep_force / sep_mag * MAX_SPEED - self.vel
         sep_force = limit(sep_force, MAX_FORCE)
+        sep_force[~mask_sep.any(axis=1)] = 0
 
         # 2. ALIGNMENT
         mask_ali = dist < R_ALIGNMENT
@@ -127,6 +135,7 @@ class Flock:
         ali_mag = np.maximum(ali_mag, 1e-8)
         ali_force = ali_force / ali_mag * MAX_SPEED - self.vel
         ali_force = limit(ali_force, MAX_FORCE)
+        ali_force[~mask_ali.any(axis=1)] = 0
 
         # 3. COHESION
         mask_coh = dist < R_COHESION
@@ -134,15 +143,15 @@ class Flock:
         for i in range(self.N):
             neighbours = mask_coh[i]
             if neighbours.any():
-                centre = self.pos[neighbours].mean(axis=0)
-                desired = torus_diff(
-                    centre[None, :], self.pos[i:i+1], WORLD_SIZE
-                ).flatten()
-                coh_force[i] = desired
+                # Average in this boid's local coordinate frame. Averaging
+                # absolute wrapped positions puts seam-crossing neighbours
+                # near the middle of the world, where none of them are.
+                coh_force[i] = -diff[i, neighbours].mean(axis=0)
         coh_mag = np.linalg.norm(coh_force, axis=1, keepdims=True)
         coh_mag = np.maximum(coh_mag, 1e-8)
         coh_force = coh_force / coh_mag * MAX_SPEED - self.vel
         coh_force = limit(coh_force, MAX_FORCE)
+        coh_force[~mask_coh.any(axis=1)] = 0
 
         # Combine
         accel = (
@@ -166,9 +175,13 @@ class Flock:
 # Visualisation
 # ─────────────────────────────────────────────
 
-def run():
-    rng = np.random.default_rng(SEED)
-    flock = Flock(NUM_BOIDS, rng)
+def run(n=NUM_BOIDS, seed=SEED, max_steps=MAX_STEPS):
+    # Headless runs need only NumPy; import the display stack on demand.
+    import matplotlib.pyplot as plt
+    from matplotlib.collections import LineCollection
+
+    rng = np.random.default_rng(seed)
+    flock = Flock(n, rng)
 
     plt.ion()
     fig, ax = plt.subplots(figsize=(8, 8))
@@ -205,8 +218,8 @@ def run():
             exit_flag["stop"] = True
     fig.canvas.mpl_connect("key_press_event", on_key)
 
-    for step in range(1, MAX_STEPS + 1):
-        if exit_flag["stop"]:
+    for step in range(1, max_steps + 1):
+        if exit_flag["stop"] or not plt.fignum_exists(fig.number):
             print("\nSimulation ended (ESC).")
             break
 
@@ -236,7 +249,7 @@ def run():
 
             title.set_text(
                 f"Boids – Emergent Flocking  |  "
-                f"N={NUM_BOIDS}  |  Step {step}"
+                f"N={n}  |  Step {step}"
             )
 
             fig.canvas.draw_idle()
@@ -246,5 +259,85 @@ def run():
     plt.close(fig)
 
 
+def observables(flock, step):
+    """Speed and mean unit-heading magnitude; stationary headings count as zero."""
+    speed = np.linalg.norm(flock.vel, axis=1)
+    headings = np.divide(flock.vel, speed[:, None], out=np.zeros_like(flock.vel),
+                         where=speed[:, None] > 0)
+    return {
+        "step": step,
+        "mean_speed": float(speed.mean()),
+        "maximum_speed": float(speed.max()),
+        "polarization": float(np.clip(np.linalg.norm(headings.mean(axis=0)), 0, 1)),
+    }
+
+
+def run_report(n=NUM_BOIDS, seed=SEED, steps=200, sample_every=10):
+    """Run the same dynamics without a window and return a reproducible record."""
+    for name, value, minimum in (("seed", seed, 0), ("steps", steps, 0),
+                                  ("sample_every", sample_every, 1)):
+        if not isinstance(value, int) or isinstance(value, bool) or value < minimum:
+            raise ValueError(f"{name} must be an integer >= {minimum}")
+    flock = Flock(n, np.random.default_rng(seed))
+    samples = [observables(flock, 0)]
+    for step in range(1, steps + 1):
+        flock.step()
+        if step % sample_every == 0 or step == steps:
+            samples.append(observables(flock, step))
+    return {
+        "schema": "boids-run/1",
+        "dynamics": "boids-torus-v2",
+        "source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "python_version": platform.python_version(),
+        "numpy_version": np.__version__,
+        "seed": seed,
+        "boids": n,
+        "steps": steps,
+        "sample_every": sample_every,
+        "parameters": {
+            "world_size": WORLD_SIZE, "max_speed": MAX_SPEED, "max_force": MAX_FORCE,
+            "separation_radius": R_SEPARATION, "alignment_radius": R_ALIGNMENT,
+            "cohesion_radius": R_COHESION, "separation_weight": W_SEPARATION,
+            "alignment_weight": W_ALIGNMENT, "cohesion_weight": W_COHESION,
+        },
+        "samples": samples,
+        "final_state": {"positions": flock.pos.tolist(), "velocities": flock.vel.tolist()},
+        "interpretation": "Descriptive simulation observables, not measurements of agency or intelligence.",
+    }
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--seed", type=int, default=SEED)
+    parser.add_argument("--boids", type=int, default=NUM_BOIDS)
+    parser.add_argument("--steps", type=int, default=MAX_STEPS)
+    parser.add_argument("--headless", action="store_true", help="write a JSON run record without opening a window")
+    parser.add_argument("--sample-every", type=int, default=10, help="headless observation interval in simulation steps")
+    parser.add_argument("--output", type=Path, help="new JSON file (headless only); otherwise print to stdout")
+    args = parser.parse_args(argv)
+    if args.boids < 1 or args.steps < 0 or args.seed < 0 or args.sample_every < 1:
+        parser.error("boids and sample-every must be positive; seed and steps must be nonnegative")
+    if args.output and not args.headless:
+        parser.error("--output requires --headless")
+    if args.output and args.output.exists():
+        parser.error("output already exists; choose a new filename")
+    if not args.headless:
+        run(n=args.boids, seed=args.seed, max_steps=args.steps)
+        return 0
+    report = run_report(n=args.boids, seed=args.seed, steps=args.steps, sample_every=args.sample_every)
+    payload = json.dumps(report, indent=2, sort_keys=True, allow_nan=False) + "\n"
+    if args.output:
+        try:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            with args.output.open("x", encoding="utf-8") as handle:
+                handle.write(payload)
+        except OSError as error:
+            parser.error(f"cannot create output: {error.strerror}")
+        print(f"Wrote {args.output}")
+    else:
+        sys.stdout.write(payload)
+    return 0
+
+
 if __name__ == "__main__":
-    run()
+    raise SystemExit(main())
