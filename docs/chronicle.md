@@ -1,6 +1,6 @@
-# Journal
+# Chronicle
 
-**Status:** Dated reading notes — a selective journal, not a complete change log.
+**Status:** Dated reading notes — a selective chronicle of the notebook, not a complete change log.
 
 What has arrived, what has reopened, and what might be worth returning to.
 

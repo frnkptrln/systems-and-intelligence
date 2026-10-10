@@ -5,7 +5,7 @@
 [![Docs](https://github.com/frnkptrln/systems-and-intelligence/actions/workflows/deploy-docs.yml/badge.svg)](https://frnkptrln.github.io/systems-and-intelligence)
 
 <div align="center">
-  <p><strong>An open notebook of essays, stories, experiments, and research on systems and intelligence.</strong></p>
+  <p><strong>A research notebook on systems and intelligence — and the essays, stories and working logs that grew around it.</strong></p>
   <a href="simulation-models/emergent-dynamics/boids-flocking/README.md">
     <img src="docs/assets/gifs/boids_demo.gif" width="620" alt="Animated Boids simulation showing flocking emerging from local rules" />
   </a>
@@ -33,7 +33,7 @@ scope requirements.
 The reading edition of 25 September 2026 adds **[What a World Can Remember](theory/narrative/what-a-world-can-remember.md)**,
 **[The Weather Between Us](fiction/20_the_weather_between_us.md)**, and
 **[A Place for Unfinished Things](logs/021_a-place-for-unfinished-things.md)**.
-The **[Journal](docs/journal.md)** and **[Paths through the Notebook](docs/paths.md)**
+The **[Chronicle](docs/chronicle.md)** and **[Paths through the Notebook](docs/paths.md)**
 connect them to earlier work.
 
 ## Choose an entrance

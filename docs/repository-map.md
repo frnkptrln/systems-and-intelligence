@@ -9,7 +9,7 @@ and research. The repository holds roughly 295,000 words across 301 Markdown fil
 The site offers several ways into that collection. Some pages present measured
 results. Others offer a working argument, an unfinished design, or an imagined
 world. Each keeps its own status: being readable on the site does not turn a draft
-into a result. [Paths](paths.md), [Essays](essays.md), and the [Journal](journal.md)
+into a result. [Paths](paths.md), [Essays](essays.md), and the [Chronicle](chronicle.md)
 provide selections; the navigation keeps the published collection accessible.
 
 ## What the site publishes

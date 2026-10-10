@@ -143,7 +143,7 @@ walk to have been worthwhile.
 ## Where to go from here
 
 To keep wandering, choose a question in [Paths through the Notebook](paths.md). For
-shorter encounters, open the [Journal](journal.md). To inspect the formal work, use
+shorter encounters, open the [Chronicle](chronicle.md). To inspect the formal work, use
 the [Research Overview](../theory/README.md), the
 [Foundations Reconstruction](../theory/core/mathematical-axioms.md), and the
 [claims and boundaries](../theory/reference/what-this-project-does-not-claim.md).

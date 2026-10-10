@@ -37,7 +37,7 @@ ROOT_LAYERS = (
 
 ROOT_PAGES = {
     'index.md', 'synthesis.md', 'thinking-space.md', 'repository-map.md',
-    'essays.md', 'journal.md', 'paths.md',
+    'essays.md', 'chronicle.md', 'paths.md',
 }
 REPO_ROOT_LINK = re.compile(
     r'(\]\()\.\./'

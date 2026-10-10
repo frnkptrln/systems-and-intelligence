@@ -9,7 +9,7 @@ This is where the repository is allowed not to know.
 
 To enter through a longer piece, read [What a World Can Remember](../theory/narrative/what-a-world-can-remember.md),
 or follow [The Weather Between Us](../fiction/20_the_weather_between_us.md) into a city.
-The [Journal](journal.md) records selected arrivals; [Paths](paths.md) connects
+The [Chronicle](chronicle.md) records selected arrivals; [Paths](paths.md) connects
 stories, essays, logs, and experiments. Small notes are one available form, not a
 size limit on an unfinished thought.
 

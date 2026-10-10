@@ -51,7 +51,7 @@ voice that no single machine contains.
 question back here: how do we make a growing notebook into somewhere a new thought can
 arrive?
 
-[Follow the dated entries →](journal.md)
+[Follow the dated entries →](chronicle.md)
 
 ## Follow a question
 

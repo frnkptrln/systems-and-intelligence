@@ -1,5 +1,5 @@
 site_name: "Systems & Intelligence"
-site_description: "Essays, stories, working logs, and experiments on systems, intelligence, and the worlds we make."
+site_description: "A research notebook on systems and intelligence — and the essays, stories and working logs that grew around it."
 site_author: "Frank Peterlein"
 site_url: "https://frnkptrln.github.io/systems-and-intelligence"
 repo_url: https://github.com/frnkptrln/systems-and-intelligence
@@ -86,7 +86,7 @@ nav:
       - "Welcome": index.md
       - "Begin with a Sound": synthesis.md
       - "Paths through the Notebook": paths.md
-      - "Journal": journal.md
+      - "Chronicle": chronicle.md
       - "Thinking Space": thinking-space.md
       - "About the Collection": repository-map.md
       - "Other entrances":

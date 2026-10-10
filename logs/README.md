@@ -31,7 +31,7 @@ Date: YYYY-MM-DD
 Scope: the encounter, question, or design being explored
 ```
 
-The [Journal](../docs/journal.md) is a selective chronology across the notebook.
+The [Chronicle](../docs/chronicle.md) is a selective chronology across the notebook.
 This directory keeps the numbered sequence of the logs themselves.
 
 ## Current log sequence

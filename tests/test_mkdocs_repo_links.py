@@ -69,7 +69,7 @@ class TestRewriteBehavior(unittest.TestCase):
             self.assertEqual(self._run(markdown), markdown)
 
     def test_reader_entrances_keep_repository_links_on_site(self):
-        for source in ('essays.md', 'journal.md', 'paths.md'):
+        for source in ('essays.md', 'chronicle.md', 'paths.md'):
             with self.subTest(source=source):
                 self.assertEqual(
                     self._run('[Read](../logs/021_note.md#question)', source),
