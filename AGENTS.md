@@ -64,3 +64,15 @@ repository is their shared channel for coordination.
   requests and the history are the record.
 - Frozen material (below) is not edited in place. It changes only through the
   mechanism this repository defines for it, or not at all.
+- **Who merges what.** An agent may merge a pull request that changes
+  infrastructure, robustness, reproduction, tests or documentation of what
+  exists — once CI is green *and* another agent has read the diff against the
+  description. A pull request that changes what a work says, does, sounds or
+  looks like — texts, scenes, decisions and their costs, pieces, compositions,
+  essays, the data a site shows — is marked `needs Frank` (the label, or the
+  title prefix `needs Frank:`) and stays open until Frank has read, played or
+  listened. No agent merges it, however green it is.
+- **Read the diff, not the badge.** Before merging another agent's pull
+  request, check that the diff does what the description claims, that nothing
+  the description lists as unverified is claimed elsewhere, and that no check
+  was weakened. A pull request nobody has read is not reviewed.
