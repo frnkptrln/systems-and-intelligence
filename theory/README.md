@@ -1,6 +1,11 @@
 # 📖 Theory
 
-*Formal derivations, structural claims, and conceptual frameworks. Each file follows the lane-splitting convention: theory documents derive from first principles, not from iterative design logs.*
+*Formal arguments, working hypotheses, and conceptual essays.*
+
+For a reader's selection, start with [Essays](../docs/essays.md) or
+[Paths through the Notebook](../docs/paths.md). This page is the full research
+index. Each document states what kind of work it offers; a philosophical essay
+need not be a derivation or a measured result.
 
 Most of these essays exist for no better reason than that a question interested me intrinsically and wouldn't let go. The status tags and lane conventions are the discipline that keeps that curiosity honest.
 
@@ -88,6 +93,8 @@ Exploratory architectures for memory, protected difference, and reversible coord
 - **[The Breathing Machine](symbiotic/the-breathing-machine.md)** — A testable rhythm of independent work, integration, challenge, and release.
 
 ## Narrative-Adjacent Essays
+
+- **[What a World Can Remember](narrative/what-a-world-can-remember.md)** — Philosophical essay: a returning song, the difference between a record and an occasion, and an imagined city.
 
 Essays with strong literary voice that bridge theory and fiction.
 

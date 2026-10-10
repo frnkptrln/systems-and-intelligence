@@ -2,7 +2,7 @@
 
 **Lane:** Repository Meta  
 **Status:** Working repository policy — §0 written after the foundations audit; §1, §2, §4, §5, §6, §7, and §10 reconciled with it on 2026-09-02  
-**Last reviewed:** 2026-09-02  
+**Last reviewed:** 2026-09-25\
 **Review trigger:** a new research arc, register, or lane; a maintainer decision on §5; any change to the spine table in the README.
 
 This document defines **where new content should live** so the project can scale without turning into one undifferentiated stream of notes.
@@ -61,9 +61,10 @@ Characteristics:
 - links outward to theory/code, but does not duplicate all details
 
 ### B. `theory/` → Formal + conceptual essays
-Use this for claims, derivations, definitions, and argument structure.  
+Use this for claims, derivations, definitions, arguments, and philosophical essays.\
 Characteristics:
-- can be exploratory, but should still target falsifiability
+- scientific claims need specified assumptions, evidence, and failure conditions
+- a philosophical or interpretive essay can explore a connection without becoming a scientific claim; make its kind explicit
 - may be longer and denser than book chapters
 - should clearly mark epistemic status (demonstrated / hypothesized / open / speculative)
 
@@ -74,19 +75,20 @@ Characteristics:
 - explicit method / limitations framing
 - less world-building, more formal communication
 
-### D. `logs/` → Applied architecture journals
-Use this for "**if we built this for real**" design logs.  
+### D. `logs/` → Exploratory journals and applied design
+Use this for a dated encounter, unresolved question, design sketch, or change of direction.\
 Characteristics:
-- architectural options, protocol sketches, operational constraints
-- more applied than theory, less polished than papers
-- can include unknowns and design forks
+- enough context to recover why the thought mattered
+- can include architectural options, protocol sketches, unknowns, and design forks
+- may remain unfinished and need not promise a later result
 
-### E. `fiction/` → Narrative stress-testing
-Use this for scenario-driven exploration constrained by the theory.  
+### E. `fiction/` → Stories and imagined worlds
+Use this for narrative work, including dossiers, transcripts, and standalone stories.\
 Characteristics:
-- story format (dossier, transcript, short story, etc.)
-- translates formal constraints into lived consequences
-- should not silently contradict core physical/theoretical constraints
+- can explore consequences, invent questions, challenge a framing, or exist as a story
+- may use an existing fictional setting or declare a different one
+- fictional premises are not empirical claims; research does not inherit evidence from a story
+- no obligation to illustrate or endorse the current theory
 
 ### F. `lab/`, `simulation-models/` → Executables
 Use this for runnable artifacts and reusable implementation primitives.  
@@ -107,8 +109,8 @@ The repository should remain split into two modes. The point is not to make all 
 Contradictions, partial models, scenario tests, and fragments are allowed here. These files should remain visibly exploratory:
 
 - `ideas/` — small, unclassified notes before clustering or synthesis
-- `logs/` — applied architecture journals and deployment sketches
-- `fiction/` — narrative stress tests constrained by the theory
+- `logs/` — exploratory journals, applied architecture notes, and deployment sketches
+- `fiction/` — stories and imagined worlds, including narrative stress tests
 - `simulation-models/` — toy models, visualizations, and executable probes
 - `lab/` — the unified python framework, agentic experiments, cognitive benchmarks, and data-analysis tools
 - `meta/` — epistemic framing, repository structure, and maintenance notes
@@ -178,6 +180,19 @@ maintainer.
 When a document moves from Thinking Space to Synthesis, it should gain explicit claims, definitions, links to proof artifacts, and a statement of what would count against it.
 
 ---
+
+### Editorial opening — 2026-09-25
+
+The maintainer asked for free, creative thought, longer essays, new logs and science fiction,
+and a notebook that can be read as a connected world. The site may therefore offer a readable
+working text with its draft status visible. Publication is not promotion into the claim registers.
+The existing research gates continue to apply to scientific claims and measured experiments.
+
+Earlier wording retained as editorial history: fiction was “scenario-driven exploration
+constrained by the theory”; logs were “Applied architecture journals”; conceptual essays “should
+still target falsifiability.” These are no longer blanket requirements on creative or interpretive
+writing. Scientific statements inside any form remain accountable for their evidence and scope.
+The folder structure and the status of every existing research document are unchanged.
 
 ## 3) Minimal Architecture
 
@@ -307,9 +322,9 @@ change.
    → put in `book/`.
 4. **Is this publication-facing and compact?**  
    → put in `papers/`.
-5. **Is this an applied design notebook with open decisions?**  
+5. **Is this a dated exploratory journal or an applied design notebook with open decisions?**\
    → put in `logs/`.
-6. **Is this a narrative scenario to test implications?**  
+6. **Is this a story or an exploration of an imagined world?**\
    → put in `fiction/`.
 
 If two answers are true, choose one **home location** and cross-link instead of duplicating.
@@ -348,7 +363,7 @@ To keep the repository "rounder":
 3. **Map code ↔ claim.**  
    Each simulation README should name the theory claims it informs.
 4. **Separate modes of writing.**  
-   Theory argues, logs design, fiction dramatizes, papers compress.
+   Let each text declare its kind. Scientific arguments carry evidence; essays explore and argue; logs keep encounters and designs; fiction imagines; papers present bounded research. These are available forms, not a mandatory sequence.
 
 ---
 
