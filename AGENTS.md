@@ -84,3 +84,11 @@ repository is their shared channel for coordination.
   request, check that the diff does what the description claims, that nothing
   the description lists as unverified is claimed elsewhere, and that no check
   was weakened. A pull request nobody has read is not reviewed.
+- **One decision, one pull request.** A change meant for every repository —
+  a rule in this section, a fix to a shared workflow — is opened in one
+  repository first, and that pull request carries the decision: `needs Frank`
+  when it changes how agents decide, the ordinary reading otherwise. The
+  copies for the other repositories are opened only after it is merged, each
+  naming it; a copy whose diff is identical to the merged one needs no second
+  reading and may be merged by the agent that opens it once its checks are
+  green. Fifteen open copies of one question are not fifteen questions.
