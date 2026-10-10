@@ -55,7 +55,7 @@ def test_reference_format_preserves_entries_and_continuation_lines():
     formatted = publication.reference_paragraphs(body)
     assert note in formatted
     canonical_entries = [line for line in ("- " + entries).splitlines() if line.startswith("- ")]
-    assert len(canonical_entries) == 32
+    assert len(canonical_entries) == 35
     for entry in canonical_entries:
         assert entry.startswith("- ")
         assert "\n\n" + entry[2:] + "\n\n" in formatted

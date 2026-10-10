@@ -122,13 +122,14 @@ class TestExperimentResultFiles(unittest.TestCase):
 
 
 class TestCorridorPaperFrozen(unittest.TestCase):
-    """Pin v1.0, its 2026-09-07 erratum, and the 2026-09-10 editorial corrigendum.
+    """Pin v1.0, its 2026-09-07 erratum, the 2026-09-10 editorial corrigendum and the
+    2026-09-24 data-and-reference update.
 
     An approved version or dated erratum/corrigendum updates ``FROZEN_SHA256``
     together with the paper and its revision history. The entire text remains guarded.
     """
 
-    FROZEN_SHA256 = "20fedfad9f7254a37ad7c44d61cba06362f5ddefc161b02d87d06dbb39af0fd5"
+    FROZEN_SHA256 = "5804a856fe9a5f94a0420d147d2b3b3af4d181fc9fee93aaff5069d56549d30b"
     MARKER = "## TODO (post-v1.0)"
 
     def test_text_above_the_todo_section_is_unchanged(self):
