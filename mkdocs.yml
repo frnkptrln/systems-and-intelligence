@@ -9,6 +9,7 @@ edit_uri: blob/main/
 docs_dir: 'docs'
 hooks:
   - lab/tools/mkdocs_repo_links.py
+  - lab/tools/mkdocs_vendor_check.py
 exclude_docs: |
   # The repository is the whole body of work; the site publishes the part
   # that offers a readable encounter, including drafts with visible status. Everything
@@ -212,11 +213,11 @@ nav:
 theme:
   name: material
   custom_dir: docs/overrides
-  font:
-    # Matches the foyer at frnkptrln.github.io, so the notebook reads as the
-    # room behind that door rather than a separate site.
-    text: Space Grotesk
-    code: JetBrains Mono
+  # The type matches the foyer at frnkptrln.github.io (Space Grotesk, JetBrains
+  # Mono), so the notebook reads as the room behind that door rather than a
+  # separate site. The fonts are self-hosted from docs/assets/vendor/ and set
+  # in stylesheets/extra.css; `false` stops the theme loading Google Fonts.
+  font: false
   icon:
     repo: fontawesome/brands/github
     logo: material/square-outline
@@ -242,14 +243,17 @@ theme:
     - content.tabs.link
     - header.autohide
 
+# Served from the site itself: docs/assets/vendor/ is copied from the npm
+# packages pinned in package.json (`npm ci && npm run vendor`), and
+# lab/tools/check_site_assets.py fails CI if a page loads a third-party host.
 extra_css:
   - stylesheets/extra.css
-  - https://unpkg.com/katex@0.18.1/dist/katex.min.css
+  - assets/vendor/katex/katex.min.css
 
 extra_javascript:
   - javascripts/katex.js
-  - https://unpkg.com/katex@0.18.1/dist/katex.min.js
-  - https://unpkg.com/katex@0.18.1/dist/contrib/auto-render.min.js
+  - assets/vendor/katex/katex.min.js
+  - assets/vendor/katex/contrib/auto-render.min.js
 
 markdown_extensions:
   - abbr

@@ -1,0 +1,17 @@
+{
+  "name": "systems-and-intelligence-site-assets",
+  "private": true,
+  "description": "Browser assets the published site serves itself. Pinned here, checked by the lockfile's integrity hashes, copied into docs/assets/vendor/ by lab/tools/vendor_assets.mjs.",
+  "scripts": {
+    "vendor": "node lab/tools/vendor_assets.mjs"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/space-grotesk": "5.3.0",
+    "chart.js": "4.5.1",
+    "katex": "0.18.1",
+    "plotly.js-dist-min": "2.27.0",
+    "tailwindcss": "3.4.19"
+  }
+}

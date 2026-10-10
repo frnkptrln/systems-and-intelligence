@@ -25,7 +25,9 @@ jobs:
         with:
           node-version: 22
       - run: pip install -r requirements-docs.txt
-      - run: npm install --no-save --no-package-lock katex@0.18.1
+      - run: npm ci --ignore-scripts
+      - name: Self-hosted site assets
+        run: npm run vendor
       - name: Documentation navigation validation
         run: python lab/tools/validate_nav.py
       - name: Mathematical Markdown validation
@@ -35,6 +37,8 @@ jobs:
       - name: Build the paper PDF
         run: python lab/tools/build_paper_pdf.py
       - run: mkdocs build --strict
+      - name: No third-party loads on the site
+        run: python lab/tools/check_site_assets.py site
       - name: KaTeX rendering validation
         run: node lab/tools/validate_katex.js site
       - name: Upload artifact

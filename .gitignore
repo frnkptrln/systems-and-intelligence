@@ -31,6 +31,10 @@ Thumbs.db
 
 site/
 
+# Self-hosted browser assets, copied from node_modules by
+# lab/tools/vendor_assets.mjs (`npm ci && npm run vendor`).
+docs/assets/vendor/
+
 # Paper PDFs are build artifacts: CI regenerates them from the Markdown
 # source before every docs build, so a committed copy could only be stale.
 papers/*.pdf
