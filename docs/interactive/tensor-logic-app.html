@@ -6,7 +6,7 @@
   <title>Tensor Logic Visualisation</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+    @import url('../assets/vendor/fonts/inter.css');
 
     body {
       font-family: 'Inter', sans-serif;
@@ -252,9 +252,10 @@
   </footer>
 
   <!-- LIBRARIES (am Ende, damit sie sicher vor unserem Script geladen werden) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <!-- Self-hosted (lab/tools/vendor_assets.mjs): the Tailwind stylesheet the Play CDN used to generate in the browser, chart.js, plotly. -->
+  <link rel="stylesheet" href="../assets/vendor/tailwind/interactive.css" />
+  <script src="../assets/vendor/chart.js/chart.umd.min.js"></script>
+  <script src="../assets/vendor/plotly/plotly.min.js"></script>
 
   <!-- MAIN SCRIPT -->
   <script>

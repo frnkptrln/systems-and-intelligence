@@ -130,7 +130,9 @@ python lab/tools/validate_indexes.py
 python lab/tools/audit_repository_freshness.py --strict
 python lab/tools/validate_nav.py
 python lab/tools/validate_math.py
+npm ci --ignore-scripts && npm run vendor
 mkdocs build --strict
+python lab/tools/check_site_assets.py site
 ```
 
 If `pytest` on the path is bound to a different interpreter than `python`, use `python -m pytest`

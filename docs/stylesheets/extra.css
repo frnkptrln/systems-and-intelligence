@@ -11,7 +11,10 @@
    1.78 line height, and the display weights stay light rather than large.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap');
+/* Self-hosted: copied from the pinned fontsource packages into
+   docs/assets/vendor/fonts/ by lab/tools/vendor_assets.mjs. */
+@import url('../assets/vendor/fonts/space-grotesk.css');
+@import url('../assets/vendor/fonts/jetbrains-mono.css');
 
 /* --- Foyer tokens ------------------------------------------------------ */
 

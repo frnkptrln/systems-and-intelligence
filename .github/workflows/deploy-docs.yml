@@ -15,15 +15,19 @@ jobs:
   build:
     runs-on: ubuntu-24.04  # the image these checks were verified on; ubuntu-latest becomes 26.04 from 19 Oct 2026
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: 3.x
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
       - run: pip install -r requirements-docs.txt
-      - run: npm install --no-save --no-package-lock katex@0.18.1
+      - run: npm ci --ignore-scripts
+      - name: Self-hosted site assets
+        run: npm run vendor
       - name: Documentation navigation validation
         run: python lab/tools/validate_nav.py
       - name: Mathematical Markdown validation
@@ -33,10 +37,12 @@ jobs:
       - name: Build the paper PDF
         run: python lab/tools/build_paper_pdf.py
       - run: mkdocs build --strict
+      - name: No third-party loads on the site
+        run: python lab/tools/check_site_assets.py site
       - name: KaTeX rendering validation
         run: node lab/tools/validate_katex.js site
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: ./site
 
@@ -49,4 +55,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

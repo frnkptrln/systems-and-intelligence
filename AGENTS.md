@@ -13,7 +13,9 @@ python lab/tools/validate_indexes.py
 python lab/tools/validate_math.py
 python lab/tools/validate_nav.py                 # every publishable page is in the nav
 python lab/tools/audit_repository_freshness.py --strict
+npm ci --ignore-scripts && npm run vendor          # self-hosted KaTeX, fonts, chart libraries
 python -m mkdocs build --strict                  # the site must build cleanly
+python lab/tools/check_site_assets.py site       # no page loads a third-party host
 ```
 
 ## Frozen material
