@@ -28,6 +28,9 @@ python -m mkdocs build --strict                  # the site must build cleanly
   original wording, as in the decision-layer README.
 - The spine claims register and the contradiction ledger record claims and
   their status; they are updated, not pruned.
+- `docs/repository-map.md` states the corpus word and Markdown file counts;
+  the freshness audit checks the file count exactly. Adding or removing a
+  Markdown file anywhere in the repository means updating that sentence.
 
 ## Editorial conventions
 
