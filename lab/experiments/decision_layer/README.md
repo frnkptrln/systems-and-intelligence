@@ -36,6 +36,7 @@ Per cell: the three selected rows, the cost's maximal VoI, the VoI each arm achi
 ## Prediction (declared before the result files are committed)
 
 - **P1.** `K1|D1|3` and `K4|D1|3` are size-strict, IG-strict, and full reversals. The size and IG arm select `00001011` (blocks 2, 2, 2, 2; 2 bits; VoI 0; regret radius 10 in every block); the VOI arm selects `00000111` (blocks 4, 4; 1 bit; VoI 5; regret radius 0). `K1|D2|3` is strict with maximal VoI 4.
+  **Editorial correction, 2026-10-10:** the parenthetical block counts and 2→1 information bits above describe K1 only. For K4 the corresponding counts are 128 blocks of size 2 (7 bits) and 64 blocks of size 4 (6 bits). The original prediction wording is retained to keep its history visible; the rows, VoI values and regret radii are unchanged.
 - **P2.** `K4|U` is never strict, and its maximal VoI at cost c is (2^k − 1)/256 with k the coordinates exposed: 1/256, 15/256, 31/256, 127/256 at costs 0–3.
 - **P3.** `K1|D1` has a risk-inversion pair: a size-2 block with radius 10 and a size-4 block with radius 0. The class radius is 0 for `K4|D3` (256 rules) and 10 for `K3|D1` (2 rules): the essay's Cases A and B.
 - **P4.** On every (cube, `D1`, cost) cell the coverage criterion equals the enumerated size-strictness.
@@ -66,7 +67,7 @@ The first command writes `results/decision_layer.json` (the full grid, about 30 
 
 `results/decision_layer.json`: 3,440 cells, 42 s on one CPU. The full-grid file keeps the selected rows, the arm values, and the flags per cell; the per-row measures and block lists are in `results/ci_subgrid.json`.
 
-- **P1 holds.** `K1|D1|3` and `K4|D1|3` are size-strict, IG-strict, and full reversals, with the declared table: the size and IG arms select `00001011` (blocks 2, 2, 2, 2; 2 bits; VoI 0; regret radius 10 in every block), the VOI arm selects `00000111` (blocks 4, 4; 1 bit; VoI 5; regret radius 0). `K1|D2|3` and `K4|D2|3` are strict with maximal VoI 4.
+- **P1 flags hold; the K4 information counts are corrected here on 2026-10-10.** Both classes are size-strict, IG-strict and full reversals. SIZE/IG select `00001011`; VOI selects `00000111`. In K1 these give four blocks of size 2 (2 bits) versus two blocks of size 4 (1 bit). In K4 they give 128 blocks of size 2 (7 bits) versus 64 blocks of size 4 (6 bits). For both classes VoI is 0 versus 5 and block regret radius is 10 versus 0. These counts agree with the existing `results/ci_subgrid.json`; no result file or calculation changed. `K1|D2|3` and `K4|D2|3` remain strict with maximal VoI 4.
 - **P2 holds.** `K4|U` is never strict; its maximal VoI is 1/256, 15/256, 31/256, 127/256, 255/256 at costs 0–4.
 - **P3 holds.** `K1|D1` contains the pair (size 2, radius 10) against (size 4, radius 0); the class radius is 0 for `K4|D3` at 256 rules and 10 for `K3|D1` at 2 rules.
 - **P4 holds.** The coverage criterion equals the enumerated size-strictness on all 850 (cube, `D1`, cost) cells.

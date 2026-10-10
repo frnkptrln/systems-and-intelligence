@@ -1,0 +1,525 @@
+{
+  "baseline_sha256": "474cb7a16ad84899df9e30e23a7285ec6bc3cead60bf92cbe6e2f89605a06187",
+  "blind_evaluation": false,
+  "kind": "open-deterministic-controls",
+  "runs": [
+    {
+      "case": "pair",
+      "construction_calls": 2,
+      "referee_calls": 114,
+      "regret": {
+        "first_worse_component": "worst_case_remaining",
+        "gap": "1",
+        "optimal": false
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "unresolved",
+      "strategy": "random",
+      "world_queries": 1
+    },
+    {
+      "case": "pair",
+      "construction_calls": 112,
+      "referee_calls": 114,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "1",
+        "worst_case_remaining": 1
+      },
+      "status": "identified",
+      "strategy": "budgeted",
+      "world_queries": 1
+    },
+    {
+      "case": "pair",
+      "construction_calls": 112,
+      "referee_calls": 114,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "1",
+        "worst_case_remaining": 1
+      },
+      "status": "identified",
+      "strategy": "exhaustive",
+      "world_queries": 1
+    },
+    {
+      "case": "pair-budget-two",
+      "construction_calls": 2,
+      "referee_calls": 58,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 2,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "unresolved",
+      "strategy": "random",
+      "world_queries": 1
+    },
+    {
+      "case": "pair-budget-two",
+      "construction_calls": 56,
+      "referee_calls": 58,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 2,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "unresolved",
+      "strategy": "budgeted",
+      "world_queries": 1
+    },
+    {
+      "case": "pair-budget-two",
+      "construction_calls": 56,
+      "referee_calls": 58,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 2,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "unresolved",
+      "strategy": "exhaustive",
+      "world_queries": 1
+    },
+    {
+      "case": "four",
+      "construction_calls": 4,
+      "referee_calls": 228,
+      "regret": {
+        "first_worse_component": "worst_case_remaining",
+        "gap": "1",
+        "optimal": false
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "unresolved",
+      "strategy": "random",
+      "world_queries": 1
+    },
+    {
+      "case": "four",
+      "construction_calls": 224,
+      "referee_calls": 228,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "1",
+        "worst_case_remaining": 1
+      },
+      "status": "identified",
+      "strategy": "budgeted",
+      "world_queries": 1
+    },
+    {
+      "case": "four",
+      "construction_calls": 224,
+      "referee_calls": 228,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "1",
+        "worst_case_remaining": 1
+      },
+      "status": "identified",
+      "strategy": "exhaustive",
+      "world_queries": 1
+    },
+    {
+      "case": "full-family",
+      "construction_calls": 256,
+      "referee_calls": 18176,
+      "regret": {
+        "first_worse_component": "worst_case_remaining",
+        "gap": "3",
+        "optimal": false
+      },
+      "score": {
+        "cost": 4,
+        "expected_remaining": "4",
+        "worst_case_remaining": 4
+      },
+      "status": "unresolved",
+      "strategy": "random",
+      "world_queries": 1
+    },
+    {
+      "case": "full-family",
+      "construction_calls": 17920,
+      "referee_calls": 18176,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 4,
+        "expected_remaining": "1",
+        "worst_case_remaining": 1
+      },
+      "status": "identified",
+      "strategy": "budgeted",
+      "world_queries": 1
+    },
+    {
+      "case": "full-family",
+      "construction_calls": 17920,
+      "referee_calls": 18176,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 4,
+        "expected_remaining": "1",
+        "worst_case_remaining": 1
+      },
+      "status": "identified",
+      "strategy": "exhaustive",
+      "world_queries": 1
+    },
+    {
+      "case": "masked",
+      "construction_calls": 2,
+      "referee_calls": 114,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "unresolved",
+      "strategy": "random",
+      "world_queries": 1
+    },
+    {
+      "case": "masked",
+      "construction_calls": 112,
+      "referee_calls": 114,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "unresolved",
+      "strategy": "budgeted",
+      "world_queries": 1
+    },
+    {
+      "case": "masked",
+      "construction_calls": 112,
+      "referee_calls": 114,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "unresolved",
+      "strategy": "exhaustive",
+      "world_queries": 1
+    },
+    {
+      "case": "zero-cost",
+      "construction_calls": 2,
+      "referee_calls": 4,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 0,
+        "expected_remaining": "1",
+        "worst_case_remaining": 1
+      },
+      "status": "identified",
+      "strategy": "random",
+      "world_queries": 1
+    },
+    {
+      "case": "zero-cost",
+      "construction_calls": 2,
+      "referee_calls": 4,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 0,
+        "expected_remaining": "1",
+        "worst_case_remaining": 1
+      },
+      "status": "identified",
+      "strategy": "budgeted",
+      "world_queries": 1
+    },
+    {
+      "case": "zero-cost",
+      "construction_calls": 2,
+      "referee_calls": 4,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 0,
+        "expected_remaining": "1",
+        "worst_case_remaining": 1
+      },
+      "status": "identified",
+      "strategy": "exhaustive",
+      "world_queries": 1
+    },
+    {
+      "case": "family-failure",
+      "construction_calls": 2,
+      "referee_calls": 4,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 0,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "family_failure",
+      "strategy": "random",
+      "world_queries": 1
+    },
+    {
+      "case": "family-failure",
+      "construction_calls": 2,
+      "referee_calls": 4,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 0,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "family_failure",
+      "strategy": "budgeted",
+      "world_queries": 1
+    },
+    {
+      "case": "family-failure",
+      "construction_calls": 2,
+      "referee_calls": 4,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 0,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "family_failure",
+      "strategy": "exhaustive",
+      "world_queries": 1
+    },
+    {
+      "case": "prior-family-failure",
+      "construction_calls": 2,
+      "referee_calls": 2,
+      "regret": null,
+      "score": null,
+      "status": "family_failure",
+      "strategy": "random",
+      "world_queries": 0
+    },
+    {
+      "case": "prior-family-failure",
+      "construction_calls": 2,
+      "referee_calls": 2,
+      "regret": null,
+      "score": null,
+      "status": "family_failure",
+      "strategy": "budgeted",
+      "world_queries": 0
+    },
+    {
+      "case": "prior-family-failure",
+      "construction_calls": 2,
+      "referee_calls": 2,
+      "regret": null,
+      "score": null,
+      "status": "family_failure",
+      "strategy": "exhaustive",
+      "world_queries": 0
+    },
+    {
+      "case": "limited-compute",
+      "construction_calls": 2,
+      "referee_calls": 114,
+      "regret": {
+        "first_worse_component": "worst_case_remaining",
+        "gap": "1",
+        "optimal": false
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "unresolved",
+      "strategy": "random",
+      "world_queries": 1
+    },
+    {
+      "case": "limited-compute",
+      "construction_calls": 2,
+      "referee_calls": 114,
+      "regret": {
+        "first_worse_component": "worst_case_remaining",
+        "gap": "1",
+        "optimal": false
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "2",
+        "worst_case_remaining": 2
+      },
+      "status": "unresolved",
+      "strategy": "budgeted",
+      "world_queries": 1
+    },
+    {
+      "case": "limited-compute",
+      "construction_calls": 2,
+      "referee_calls": 114,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 3,
+        "expected_remaining": "1",
+        "worst_case_remaining": 1
+      },
+      "status": "identified",
+      "strategy": "exhaustive",
+      "world_queries": 1
+    },
+    {
+      "case": "shifted-access",
+      "construction_calls": 5,
+      "referee_calls": 25,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 1,
+        "expected_remaining": "7/5",
+        "worst_case_remaining": 2
+      },
+      "status": "identified",
+      "strategy": "random",
+      "world_queries": 1
+    },
+    {
+      "case": "shifted-access",
+      "construction_calls": 20,
+      "referee_calls": 25,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 1,
+        "expected_remaining": "7/5",
+        "worst_case_remaining": 2
+      },
+      "status": "identified",
+      "strategy": "budgeted",
+      "world_queries": 1
+    },
+    {
+      "case": "shifted-access",
+      "construction_calls": 20,
+      "referee_calls": 25,
+      "regret": {
+        "first_worse_component": null,
+        "gap": "0",
+        "optimal": true
+      },
+      "score": {
+        "cost": 1,
+        "expected_remaining": "7/5",
+        "worst_case_remaining": 2
+      },
+      "status": "identified",
+      "strategy": "exhaustive",
+      "world_queries": 1
+    }
+  ],
+  "source_sha256": "546804ca32e102b7c69ad9b6719b19434b474cefded1e8b0befae7995571cdad",
+  "trained_model": false
+}
