@@ -9,10 +9,10 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # the image these checks were verified on; ubuntu-latest becomes 26.04 from 19 Oct 2026
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: 3.x
       - run: pip install -r requirements-dev.txt
@@ -28,10 +28,10 @@ jobs:
         run: python lab/tools/audit_repository_freshness.py --strict
 
   ml:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # the image these checks were verified on; ubuntu-latest becomes 26.04 from 19 Oct 2026
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: 3.x
       - run: pip install -r requirements-dev.txt
@@ -42,13 +42,13 @@ jobs:
         run: pytest tests/test_ctm_nlm.py tests/test_trace_to_generator_small.py -q
 
   docs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # the image these checks were verified on; ubuntu-latest becomes 26.04 from 19 Oct 2026
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: 3.x
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
       - run: pip install -r requirements-docs.txt -r requirements-dev.txt
