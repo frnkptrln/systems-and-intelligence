@@ -64,7 +64,7 @@ repository is their shared channel for coordination.
   is required.
 - No status files, task lists or progress notes in the repository. The pull
   requests and the history are the record.
-- Frozen material (below) is not edited in place. It changes only through the
+- Frozen material (above) is not edited in place. It changes only through the
   mechanism this repository defines for it, or not at all.
 - **Who merges what.** An agent may merge a pull request that changes
   infrastructure, robustness, reproduction, tests or documentation of what
