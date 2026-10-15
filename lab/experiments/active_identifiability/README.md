@@ -63,6 +63,21 @@ This study draft imports five concrete controls from it:
   into binary choices;
 - a schema and tokenizer compatibility gate before the main run.
 
+## External result: dynamical noise as an instrument
+
+The question above was taken to its simplest exact setting outside this repository: the note
+[*Rule identifiability in elementary cellular automata under dynamical noise*](https://doi.org/10.5281/zenodo.23399101)
+(v0.1, 2026-10-15; code and data at
+[frnkptrln/eca-noise-identifiability](https://github.com/frnkptrln/eca-noise-identifiability)).
+On a ring of 12 cells it computes, without sampling, the zero-noise consistent classes for all
+$256 \times 4096$ (rule, initial state) pairs, the identifiability rate
+$\rho(f;\varepsilon) = \lambda(\varepsilon)\min_c \nu_c(f;\varepsilon)$ under bit-flip noise in
+the dynamics, and the best noise level per rule class. Its reading for this directory: noise in the
+state is an admissible intervention with a computable optimum for the rules whose attractors hide
+part of the rule table, and only a nuisance for the others; noise in the readout can never be
+either. [Identification Claims, Claim 5](../../../meta/repository-meta/identification-claims.md#claim-5-dynamical-noise-is-an-instrument-with-a-rule-dependent-optimum)
+records it. The note involves no model calls and is not part of Track A or Track B.
+
 ## Track A: exact causal witness
 
 `causal_witness.py` defines two linear-Gaussian generators.
