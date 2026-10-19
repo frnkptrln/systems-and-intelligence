@@ -81,3 +81,106 @@ Against the declared predictions:
 - **P4 fails on "between".** Invalidation discards 15.6 remembered artifacts per run (of 16), so the memory is nearly emptied within the budget and the run continues as flips. Its measures do not lie between `none` and `memory`: distinct accepted and pull move slightly further from `none` than `memory` does, while the observed gain of P3 is kept in full (0.8661). Revocation of artifacts that fail visible tests gives nothing back here, because in this toy the memory took no diversity away.
 
 What this shows, and no more: under a frozen referee, a target-independent memory of earlier accepted artifacts widens the proposal set, pulls the endpoint toward remembered artifacts, and in the constrained family raises both the visible score and the hidden-rule agreement. "Narrowing" in the sense of the persistence note, if it exists, is not what counting distinct artifacts measures in this setting. A memory built from the *same* world would model the note's situation more closely, and would break the identity by construction; that is the boundary this experiment did not cross.
+
+## Archive-content control — 19 October 2026
+
+**Status:** Post-hoc control of the result above, not a preregistered prediction.
+The original experiment and its archived results are unchanged.
+
+Remembered artifacts replace half of the local proposal opportunities with
+potentially larger jumps. Does the earlier fitting of those artifacts help
+beyond a generic global proposal reservoir? Does moving the same archive in
+state space change its effect while retaining its internal geometry?
+
+[`archive_control.py`](archive_control.py) reuses `run_loop` unchanged and
+compares four arms:
+
+- `none`: the original memory-free walk.
+- `fitted`: the original 16 prior-world artifacts, including their order and
+  duplicates; this reproduces the original `memory` condition.
+- `uniform`: 16 independent, uniform state vectors drawn **with replacement**.
+- `translated`: one common nonzero XOR mask applied to every fitted entry.
+  The mask is drawn once per family/seed, independently of evaluation targets.
+  It preserves duplicate indices and every pairwise parameter-space and
+  rule-table Hamming distance, including in the affine family.
+
+The uniform and translation streams are respectively
+`archive-control:uniform:{family}:{seed}` and
+`archive-control:xor:{family}:{seed}`. All three archive arms keep 16 entries
+and use exactly the same recall decisions, sampled entry indices and flip
+slots within each seed/row. Recall probability is `1/2`, not a fixed quota of
+64 calls. No invalidation or deduplication changes the schedule. The original
+referee, acceptance rule, zero start, evidence and 128-proposal evaluation
+budget stay fixed.
+
+The full grid is two families, four arms, two archive seeds, eight rows and
+all 256 hidden rules: **32,768 evaluation runs**, 4,096 per family/arm.
+There are only **two archive draws per family**. Reusing an archive across
+many rows and rules does not create independent archive replications.
+Fitted archives require 16 earlier fits of 128 proposals (2,048 prior
+proposals each); translated archives reuse that work. Preparation cost is
+not matched to uniform draws, so the comparison is not a total-compute or
+sample-efficiency result.
+
+### Fixed-grid results
+
+| Family | Archive | Observed | Held-out | Distinct proposals | Distinct accepted |
+|:---|:---|---:|---:|---:|---:|
+| full | none | 1.0000 | 0.8594 | 35.81 | 12.00 |
+| full | fitted | 1.0000 | 0.8594 | 42.01 | 11.19 |
+| full | uniform | 1.0000 | 0.8594 | 41.90 | 11.37 |
+| full | translated | 1.0000 | 0.8594 | 41.76 | 11.32 |
+| affine | none | 0.7936 | 0.7061 | 6.71 | 2.88 |
+| affine | fitted | 0.8665 | 0.7561 | 12.32 | 3.92 |
+| affine | uniform | 0.8812 | 0.7661 | 13.06 | 4.05 |
+| affine | translated | 0.8686 | 0.7575 | 12.45 | 3.89 |
+
+The original `none` and `memory` cells reproduce exactly. On this fixed grid,
+the uniform reservoir exceeds the fitted archive's mean affine visible
+score in both archive seeds, and its pooled held-out score is higher too.
+Thus the earlier improvement over a local walk does not establish a special
+advantage of fitting prior-world artifacts: a generic global proposal
+reservoir also helps here. This is not a population estimate from two
+archives, nor evidence that prior experience is generally unhelpful.
+
+Translation changes outcomes despite preserving internal geometry. It also
+changes the archive's position relative to the unchanged zero start and
+visible target values; it does not isolate a semantic or training effect.
+The affine fitted/uniform/translated banks contain respectively 10/10/10
+unique states at seed 0 and 9/11/9 at seed 1. Uniform replacement therefore
+does not control duplicate multiplicity or geometry. The JSON preserves the
+ordered entries, multiplicities, pair-distance histograms, masks and
+per-seed contrasts. `pull` is omitted because each native loop result uses
+its own archive as reference, which would change across arms.
+
+### Information and execution checks
+
+Saturation and the information identity are checked separately. For each
+family/seed/row/arm, write `H` for summed held-out correct coordinates, `P`
+for summed visible passes and `T` for summed visible test counts over all
+256 rules. With target-independent archives and random streams, the unseen
+rule bits remain free, giving
+
+$$
+2H = 2P + 256\cdot 8 - T.
+$$
+
+The earlier ceiling formula `2H = T + 256*8` additionally assumes `P = T`.
+A failure to fit every visible test is not by itself evidence of target
+leakage. Every new block passes the general identity; all four full-family
+arms also saturate visible evidence. This identity is a design check, not a
+complete proof that an arbitrary implementation has no information leak.
+
+Tests compare the actual RNG call traces across archive arms, transport the
+complete pairwise geometry, exercise an unsaturated zero-budget case and a
+corrupted information check, and compare the reproduced original cells.
+The [dated result](results/archive-control-2026-10-19.json) records exact
+fractional means, per-seed contrasts, row checks and hashes of all three
+source modules. The run uses only the Python standard library; it makes no
+model calls and makes no claim about semantic novelty or LLM research.
+
+```bash
+python lab/experiments/persistence_narrowing/archive_control.py --seeds 2 --rows 8
+python lab/experiments/persistence_narrowing/archive_control.py --format markdown
+python -m pytest tests/test_persistence_archive_control.py -q
+```
