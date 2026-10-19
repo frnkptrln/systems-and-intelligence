@@ -123,3 +123,143 @@ def describe_case(case: Case) -> dict:
         "additional_successful_starts": gain_count(case),
         "costs": intervention_costs(case.release_mask),
     }
+
+
+def cost_histograms(cases: tuple[Case, ...]) -> dict:
+    """Count equally weighted (graph, reference mask, release subset) cases."""
+
+    counts: dict[str, dict[int, Counter]] = {}
+    for case in cases:
+        gain = gain_count(case)
+        for code, cost in intervention_costs(case.release_mask).items():
+            counts.setdefault(code, {}).setdefault(cost, Counter())[gain] += 1
+    report = {}
+    for code, costs in counts.items():
+        report[code] = {}
+        for cost, gains in sorted(costs.items()):
+            n = sum(gains.values())
+            total = sum(gain * count for gain, count in gains.items())
+            report[code][str(cost)] = {
+                "case_count": n,
+                "gain_counts": [gains[gain] for gain in range(len(STARTS) + 1)],
+                "mean_competence_gain": str(Fraction(total, len(STARTS) * n)),
+                "zero_gain_fraction": str(Fraction(gains[0], n)),
+            }
+    return report
+
+
+def run_experiment() -> dict:
+    """Return exact distributions and the same-case relabeling controls."""
+
+    cases = tuple(enumerate_cases())
+    histograms = cost_histograms(cases)
+    cost_changes = 0
+    for mapping in RELABELINGS:
+        transported = tuple(relabel(case, mapping) for case in cases)
+        for before, after in zip(cases, transported):
+            if gain_count(before) != gain_count(after):
+                raise AssertionError("state relabeling changed physical gain")
+            before_cost = intervention_costs(before.release_mask)
+            after_cost = intervention_costs(after.release_mask)
+            cost_changes += (
+                before_cost["prefix_address_payload_bits"]
+                != after_cost["prefix_address_payload_bits"]
+            )
+        if cost_histograms(transported) != histograms:
+            raise AssertionError("full-ensemble symmetry check failed")
+
+    # Hold graph AND reference fixed: equal costs, unequal gains.
+    no_gain = Case((1, 2, 3), 0b110, 0b010)
+    positive_gain = Case((1, 2, 3), 0b110, 0b100)
+    # Hold the physical case fixed while changing its opaque state labels.
+    chain = Case((1, 2, 3), 0b100, 0b100)
+    renamed_chain = relabel(chain, (2, 1, 0))
+    return {
+        "schema": "constraint-release-graph-ensemble/1",
+        "source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "specification": {
+            "non_goal_states": STARTS,
+            "absorbing_goal": GOAL,
+            "action": "advance",
+            "horizon": HORIZON,
+            "weighting": "uniform over labelled (graph, reference mask, release subset)",
+            "gain": "additional successful starts divided by three",
+            "cost_side_information": "graph, reference mask, k, codebook and framing",
+            "prefix_source_codes": PREFIX_CODES,
+            "selection_cost_included": False,
+        },
+        "counts": {
+            "graphs": len({case.targets for case in cases}),
+            "reference_masks": 1 << len(STARTS),
+            "paired_cases": len(cases),
+        },
+        "cost_histograms": histograms,
+        "relabeling": {
+            "permutations": len(RELABELINGS),
+            "transported_cases": len(cases) * len(RELABELINGS),
+            "prefix_cost_changed_cases": cost_changes,
+            "individual_gain_invariant": True,
+            "pooled_histograms_invariant": True,
+        },
+        "witnesses": {
+            "equal_cost_different_gain": {
+                "no_gain": describe_case(no_gain),
+                "positive_gain": describe_case(positive_gain),
+            },
+            "same_release_different_prefix_cost": {
+                "before": describe_case(chain),
+                "after": describe_case(renamed_chain),
+                "mapping": (2, 1, 0),
+            },
+        },
+    }
+
+
+def render_markdown(report: dict) -> str:
+    lines = [
+        "# Exact graph-ensemble calibration",
+        "",
+        "64 labelled graphs; 8 reference masks; 1,216 admissible paired cases.",
+        "All three non-goal starts; exact-goal lens; fixed advance policy.",
+        "",
+    ]
+    for code, histogram in report["cost_histograms"].items():
+        lines.extend([
+            f"## {code}",
+            "",
+            "| cost | cases | gain counts (0, 1/3, 2/3, 1) | mean gain | zero fraction |",
+            "|---:|---:|:---|:---|:---|",
+        ])
+        for cost, row in histogram.items():
+            lines.append(
+                f"| {cost} | {row['case_count']} | {row['gain_counts']} | "
+                f"{row['mean_competence_gain']} | {row['zero_gain_fraction']} |"
+            )
+        lines.append("")
+    lines.extend([
+        "Relabeling preserves every physical gain and every pooled histogram.",
+        f"Prefix payload changes in {report['relabeling']['prefix_cost_changed_cases']:,} "
+        f"of {report['relabeling']['transported_cases']:,} transported cases.",
+        "",
+        "Counts condition on different reference masks across release sizes;",
+        "their means are not a causal dose-response curve. Hamming counts edits;",
+        "address payloads assume known k, graph, reference and framing. These are",
+        "declared codes, not minimum message lengths or universal complexity.",
+        "Monotonicity and pooled relabeling invariance follow from this construction.",
+    ])
+    return "\n".join(lines)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    args = parser.parse_args()
+    report = run_experiment()
+    if args.format == "json":
+        print(json.dumps(report, indent=2, sort_keys=True))
+    else:
+        print(render_markdown(report))
+
+
+if __name__ == "__main__":
+    main()
