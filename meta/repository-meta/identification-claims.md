@@ -2,7 +2,7 @@
 
 **Lane:** Repository Meta  
 **Status:** Draft — a synthesis index proposed on 2026-09-02; which entries are load-bearing is a maintainer decision  
-**Scope:** A minimal claim set for the model-identification arc, derived only from what four existing artifacts already assert: the [Inverse-Reconstruction Benchmark](../../lab/benchmarks/inverse-reconstruction/README.md), [The Witness Principle](../../theory/core/the-witness-principle.md), [Decision-Relevant Identifiability](../../theory/core/decision-relevant-identifiability.md), and [Active Identifiability](../../lab/experiments/active_identifiability/README.md). Companion to [Core Claims](core-claims.md), which covers the viability arc and the identity branch.  
+**Scope:** A minimal claim set for the model-identification arc, derived only from what four existing artifacts already assert: the [Inverse-Reconstruction Benchmark](../../lab/benchmarks/inverse-reconstruction/README.md), [The Witness Principle](../../theory/core/the-witness-principle.md), [Decision-Relevant Identifiability](../../theory/core/decision-relevant-identifiability.md), and [Active Identifiability](../../lab/experiments/active_identifiability/README.md) — and, for Claim 5, one external artifact, the note [Rule identifiability in elementary cellular automata under dynamical noise](https://doi.org/10.5281/zenodo.23399101) (v0.1, 2026-10-15). Companion to [Core Claims](core-claims.md), which covers the viability arc and the identity branch.  
 **Purpose:** Keep the arc's measured and exact results precise, challengeable, and linked to artifacts, in the same shape as the viability register.  
 **Created:** 2026-09-02  
 **Last reviewed:** 2026-09-02  
@@ -225,6 +225,65 @@ verification.
 
 ---
 
+## Claim 5: Dynamical Noise Is an Instrument with a Rule-Dependent Optimum
+
+**Claim:** On a ring of 12 cells, for the family of 256 elementary rules with the observer knowing
+the family, the noise level and the initial state: without noise, a trajectory determines the rule
+from 66.9% of the $256 \times 4096$ (rule, initial state) pairs and never from the others — the
+visited neighbourhood set stops growing when the orbit closes, so the consistent class
+$2^{8-|N_\infty|}$ is final (the plateau of Claim 3, counted exactly). With dynamical bit-flip noise
+$\varepsilon$ in the state, every trace law has full support and identifiability becomes a rate,
+$\rho(f;\varepsilon) = \lambda(\varepsilon)\,\min_c \nu_c(f;\varepsilon)$: a pure noise factor
+times the stationary frequency of the rarest neighbourhood, with the one-bit neighbour on that code
+as the hardest alternative. For 42 of the 88 rule classes some neighbourhood occurs on no cycle of
+the deterministic map, so $\rho \to 0$ at both ends of $[0, \tfrac12]$ and the best noise level is
+interior (proved); 19 further classes behave the same way and 27 keep rising as
+$\varepsilon \to 0$ (numerical trend); the interior optima lie at
+$\varepsilon^* \in [0.010, 0.293]$. Eight classes (the affine rules) have
+$\rho = \tfrac{3}{2}\lambda(\varepsilon)$ exactly. Readout noise cannot do any of this: by the
+data-processing inequality it can only lower the evidence.
+
+**Not obvious because:** In this register noise is a degradation dial (Claim 2), and in the
+benchmark it is applied to the read-out trace, where it can only hurt. Placed in the dynamics, the
+same bit flips are an admissible intervention in the sense of Claim 3 — they move the system off the
+attractor that hides part of its rule — and the amount that helps is computable from the rule's
+stationary neighbourhood frequencies. The result also marks the limit of the instrument: for the
+rules whose noise-selected attractors already exercise the whole rule table, noise only lowers the
+rate, and which case one is in cannot be read off a posterior over the declared family (the note's
+boundary check: a majority-of-five generator makes the radius-1 observer converge on rule 232 with,
+at $\varepsilon = 0.01$, sixteen times the rate at which the misspecification becomes visible).
+
+**Artifacts:**
+
+- *exact lemma* — [Rule identifiability in elementary cellular automata under dynamical noise](https://doi.org/10.5281/zenodo.23399101),
+  v0.1 (2026-10-15): zero-noise classes for all $256 \times 4096$ pairs; stationary laws of the
+  4096-state chain by a dense solve verified by power iteration from three initial laws, with 13 of
+  1,496 grid entries flagged unresolved (metastable) and excluded; $\varepsilon^*$ by
+  golden-section search; the finite-horizon margins for every initial state; a symmetry check over
+  all 256 rules (deviation $5.9 \cdot 10^{-11}$); the decomposition, one-bit-neighbour and
+  ends-of-the-curve lemmas with proofs. No sampling, no seeds. Code and data with a SHA-256 manifest
+  at [frnkptrln/eca-noise-identifiability](https://github.com/frnkptrln/eca-noise-identifiability),
+  with the report of an independent verification session
+- *measured* — [Benchmark v1.1, the intervention experiment](../../lab/benchmarks/inverse-reconstruction/README.md#v1-part-1-the-intervention-experiment-run)
+  (the same plateau for rule 90 from a single seed, and its collapse under single-bit flips, in the
+  benchmark's own setting: readout noise, majority decoding, width 64)
+
+**Current status:** Exact for $n = 12$. The classification of the 46 classes whose cycles jointly
+cover all eight codes rests on the trend of $\rho$ between the two smallest resolved noise levels,
+not on the large-deviation weights of the cycles, which neither the note nor this repository
+computes; unimodality of the rate curves is observed on the grid (two classes, rules 41 and 108,
+are not unimodal), not proved. The note declares its boundaries — the true rule in the family,
+$\varepsilon$ known, complete observation, $n = 12$ — and probes the first of them only with the
+boundary check above. The register records the note's own vocabulary (consistent class, rate
+$\rho$, best noise level $\varepsilon^*$); the labels R1–R3 of the 2026-08 research report that
+preceded it are retired.
+
+**Failure condition:** Weakened if a resolved grid entry recomputes differently from the
+definitions; if the large-deviation weights of the cycles contradict the numerical classification
+of a class whose cycles jointly cover all codes; or if a readout channel is exhibited that separates
+two rules the deterministic orbit does not separate, which the data-processing inequality forbids.
+Restating the claim for $n \ne 12$, for observers who do not know $\varepsilon$, or for generators
+outside the family would be an extension, not a strengthening.
 
 ---
 
