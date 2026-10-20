@@ -1,0 +1,365 @@
+{
+  "cost_histograms": {
+    "fixed_address_payload_bits": {
+      "2": {
+        "case_count": 768,
+        "gain_counts": [
+          522,
+          195,
+          42,
+          9
+        ],
+        "mean_competence_gain": "17/128",
+        "zero_gain_fraction": "87/128"
+      },
+      "4": {
+        "case_count": 384,
+        "gain_counts": [
+          201,
+          84,
+          75,
+          24
+        ],
+        "mean_competence_gain": "17/64",
+        "zero_gain_fraction": "67/128"
+      },
+      "6": {
+        "case_count": 64,
+        "gain_counts": [
+          27,
+          12,
+          9,
+          16
+        ],
+        "mean_competence_gain": "13/32",
+        "zero_gain_fraction": "27/64"
+      }
+    },
+    "hamming_edits": {
+      "1": {
+        "case_count": 768,
+        "gain_counts": [
+          522,
+          195,
+          42,
+          9
+        ],
+        "mean_competence_gain": "17/128",
+        "zero_gain_fraction": "87/128"
+      },
+      "2": {
+        "case_count": 384,
+        "gain_counts": [
+          201,
+          84,
+          75,
+          24
+        ],
+        "mean_competence_gain": "17/64",
+        "zero_gain_fraction": "67/128"
+      },
+      "3": {
+        "case_count": 64,
+        "gain_counts": [
+          27,
+          12,
+          9,
+          16
+        ],
+        "mean_competence_gain": "13/32",
+        "zero_gain_fraction": "27/64"
+      }
+    },
+    "prefix_address_payload_bits": {
+      "1": {
+        "case_count": 256,
+        "gain_counts": [
+          174,
+          65,
+          14,
+          3
+        ],
+        "mean_competence_gain": "17/128",
+        "zero_gain_fraction": "87/128"
+      },
+      "2": {
+        "case_count": 512,
+        "gain_counts": [
+          348,
+          130,
+          28,
+          6
+        ],
+        "mean_competence_gain": "17/128",
+        "zero_gain_fraction": "87/128"
+      },
+      "3": {
+        "case_count": 256,
+        "gain_counts": [
+          134,
+          56,
+          50,
+          16
+        ],
+        "mean_competence_gain": "17/64",
+        "zero_gain_fraction": "67/128"
+      },
+      "4": {
+        "case_count": 128,
+        "gain_counts": [
+          67,
+          28,
+          25,
+          8
+        ],
+        "mean_competence_gain": "17/64",
+        "zero_gain_fraction": "67/128"
+      },
+      "5": {
+        "case_count": 64,
+        "gain_counts": [
+          27,
+          12,
+          9,
+          16
+        ],
+        "mean_competence_gain": "13/32",
+        "zero_gain_fraction": "27/64"
+      }
+    }
+  },
+  "counts": {
+    "graphs": 64,
+    "paired_cases": 1216,
+    "reference_masks": 8
+  },
+  "relabeling": {
+    "individual_gain_invariant": true,
+    "permutations": 6,
+    "pooled_histograms_invariant": true,
+    "prefix_cost_changed_cases": 3072,
+    "transported_cases": 7296
+  },
+  "schema": "constraint-release-graph-ensemble/1",
+  "source_sha256": "07d082b8f56c02599a00cb61f49aba44f2b82808a6574a4db8b0c7509c4349ae",
+  "specification": {
+    "absorbing_goal": 3,
+    "action": "advance",
+    "cost_side_information": "graph, reference mask, k, codebook and framing",
+    "gain": "additional successful starts divided by three",
+    "horizon": 3,
+    "non_goal_states": [
+      0,
+      1,
+      2
+    ],
+    "prefix_source_codes": [
+      "0",
+      "10",
+      "11"
+    ],
+    "selection_cost_included": false,
+    "weighting": "uniform over labelled (graph, reference mask, release subset)"
+  },
+  "witnesses": {
+    "equal_cost_different_gain": {
+      "no_gain": {
+        "additional_successful_starts": 0,
+        "after_traces": [
+          [
+            0,
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "before_traces": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "blocked_mask": 6,
+        "costs": {
+          "fixed_address_payload_bits": 2,
+          "hamming_edits": 1,
+          "prefix_address_payload_bits": 2
+        },
+        "release_mask": 2,
+        "targets": [
+          1,
+          2,
+          3
+        ]
+      },
+      "positive_gain": {
+        "additional_successful_starts": 1,
+        "after_traces": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "before_traces": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "blocked_mask": 6,
+        "costs": {
+          "fixed_address_payload_bits": 2,
+          "hamming_edits": 1,
+          "prefix_address_payload_bits": 2
+        },
+        "release_mask": 4,
+        "targets": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "same_release_different_prefix_cost": {
+      "after": {
+        "additional_successful_starts": 3,
+        "after_traces": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0,
+            3
+          ],
+          [
+            2,
+            1,
+            0,
+            3
+          ]
+        ],
+        "before_traces": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            1,
+            0,
+            0
+          ]
+        ],
+        "blocked_mask": 1,
+        "costs": {
+          "fixed_address_payload_bits": 2,
+          "hamming_edits": 1,
+          "prefix_address_payload_bits": 1
+        },
+        "release_mask": 1,
+        "targets": [
+          3,
+          0,
+          1
+        ]
+      },
+      "before": {
+        "additional_successful_starts": 3,
+        "after_traces": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "before_traces": [
+          [
+            0,
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "blocked_mask": 4,
+        "costs": {
+          "fixed_address_payload_bits": 2,
+          "hamming_edits": 1,
+          "prefix_address_payload_bits": 2
+        },
+        "release_mask": 4,
+        "targets": [
+          1,
+          2,
+          3
+        ]
+      },
+      "mapping": [
+        2,
+        1,
+        0
+      ]
+    }
+  }
+}

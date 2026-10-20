@@ -112,10 +112,99 @@ by the evaluator.
   constructed during reorganization.
 - It does not support a Platonic-space interpretation of capability.
 
+## Graph ensemble calibration — 19 October 2026
+
+The original four-arm result above is unchanged. This extension takes a small,
+finite step toward the first open experiment below: does the size of a release
+determine its competence gain once the shared-gate construction is replaced?
+It enumerates a declared graph family rather than sampling more labelings of
+the original path.
+
+**Setting.** States `0, 1, 2` each have one outgoing `advance` edge, whose
+target can be any of `0, 1, 2, 3`; goal `3` is absorbing. Thus there are
+`4^3 = 64` labeled functional graphs, including self-loops and cycles. Every
+comparison fixes the graph, policy, three equally weighted starts, and exact
+goal lens. A reference mask `B` blocks source edges; a nonempty subset `R` of
+`B` is released. A blocked edge stalls permanently. Success means reaching
+`3` within three steps. That horizon is sufficient by construction: a longer
+path would repeat a non-goal state and remain in a deterministic cycle.
+
+All eight reference masks are considered; the empty mask admits no nonempty
+release. There are `3^3 - 2^3 = 19` admissible `(B, R)` pairs per graph and
+**1,216 paired cases** in total. Gain is the number of additional successful
+starts divided by three. Previously successful starts cannot be lost in this
+static, one-action family; nonnegative gain is a structural property here.
+
+**Three conditional costs.** Source labels address the edges to release.
+
+| cost | definition | what is counted |
+|:---|:---|:---|
+| Hamming edits | `k = size(R)` | changed constraint bits |
+| fixed-address payload | `2k` bits | two bits per released source |
+| prefix-address payload | sum of codeword lengths | source `0/1/2` uses `0/10/11` |
+
+The graph, reference, codebook, and number `k` are free side information;
+framing and the work of choosing a release are excluded. These are declared
+payloads and an edit metric, not minimum message lengths, full intervention
+costs, or Kolmogorov complexity. Fixed-address cost only rescales Hamming
+count, so their identical rankings supply no independent robustness evidence.
+
+**Exact enumeration.** Counts below classify each case by its competence gain.
+
+| released edges `k` | cases | gain `0` | gain `1/3` | gain `2/3` | gain `1` | mean gain | zero-gain fraction |
+|:---|---:|---:|---:|---:|---:|:---|:---|
+| 1 | 768 | 522 | 195 | 42 | 9 | `17/128` | `87/128` |
+| 2 | 384 | 201 | 84 | 75 | 24 | `17/64` | `67/128` |
+| 3 | 64 | 27 | 12 | 9 | 16 | `13/32` | `27/64` |
+
+These are exact counts under the counting measure on `(graph, B, R)`, not
+estimates from independent observations. References admitting more release
+subsets receive more weight; the three `k` rows contain different populations.
+Their increasing means do not isolate a causal dose response to release size.
+Labeled graphs also count separately when related by an isomorphism.
+
+Equal costs do not determine equal gains even within one graph and reference.
+For the chain `g = (1, 2, 3)`, with `B = {1, 2}`, releasing `{1}` gives gain
+`0`, whereas releasing `{2}` gives gain `1/3`. Both interventions cost one
+Hamming edit, two fixed-address bits, and two prefix-address bits. The position
+of the remaining blockage matters as well as the release size.
+
+**Transported recodings.** All six permutations of the non-goal states carry
+the graph, blocked edges, released edges, and starts together, keeping goal
+`3` fixed. Across **7,296 transported cases**, gain is invariant, while prefix
+payload cost changes in **3,072**. For example, the same chain with
+`B = R = {2}` has full gain `1`; swapping labels `0` and `2` preserves that
+gain but changes prefix cost from two bits to one. The physical intervention
+is the same under transport; the shorter codeword belongs to another label.
+Pooled cost/gain histograms remain invariant because each permutation maps
+the complete ensemble bijectively onto itself. This aggregate symmetry does
+not make an individual intervention's code length invariant, and the six
+recodings are not independent replications.
+
+The extension therefore gives a finite calibration and explicit witnesses:
+release count alone does not determine gain, and one concrete payload code
+changes under relabeling of the same physical release. It does not allocate
+causal credit uniquely or establish a general complexity–competence law.
+Only the constraint varies within each pair; the original lens-only and
+process-edit controls remain the separate identification demonstration above.
+There is no learning, historical selection model, biological system, or LLM.
+Other graph families, task weights, codes, noise, and adaptation remain open.
+
+Run from this directory using only the Python standard library:
+
+```bash
+python graph_ensemble.py
+python graph_ensemble.py --format json
+```
+
+The dated [enumeration record](results/graph-ensemble-2026-10-19.json) preserves
+the exact aggregate output, inspectable witnesses, and reproduction metadata.
+
 ## Next falsifiable steps
 
-1. Replace the shared gate with graph ensembles and compare competence gain
-   against several intervention codes, not just edge Hamming distance.
+1. Extend the finite graph calibration above to other transition families,
+   task distributions, and intervention codes; the four-state enumeration
+   addresses a bounded instance, leaving the broader comparison open.
 2. Add noisy trajectories and ask when a statistical test can distinguish
    amplification from exposure.
 3. Let a selector search for releases under a fixed budget; compare random,
