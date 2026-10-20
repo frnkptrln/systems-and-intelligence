@@ -1,0 +1,2432 @@
+{
+  "families": {
+    "affine": {
+      "arms": {
+        "fitted": {
+          "means": {
+            "accepted": "58723/4096",
+            "distinct_accepted": "8029/2048",
+            "distinct_proposals": "50473/4096",
+            "heldout": "3097/4096",
+            "observed": "1490581/1720320",
+            "recalls": "531/8"
+          },
+          "runs": 4096
+        },
+        "none": {
+          "means": {
+            "accepted": "36529/4096",
+            "distinct_accepted": "11779/4096",
+            "distinct_proposals": "3437/512",
+            "heldout": "723/1024",
+            "observed": "227543/286720",
+            "recalls": "0"
+          },
+          "runs": 4096
+        },
+        "translated": {
+          "means": {
+            "accepted": "57181/4096",
+            "distinct_accepted": "997/256",
+            "distinct_proposals": "1593/128",
+            "heldout": "12411/16384",
+            "observed": "1494221/1720320",
+            "recalls": "531/8"
+          },
+          "runs": 4096
+        },
+        "uniform": {
+          "means": {
+            "accepted": "50795/4096",
+            "distinct_accepted": "2073/512",
+            "distinct_proposals": "26753/2048",
+            "heldout": "12551/16384",
+            "observed": "378977/430080",
+            "recalls": "531/8"
+          },
+          "runs": 4096
+        }
+      },
+      "by_seed": [
+        {
+          "archives": {
+            "fitted": {
+              "entries": [
+                "1100",
+                "0111",
+                "1000",
+                "1110",
+                "1001",
+                "0000",
+                "0101",
+                "0000",
+                "0000",
+                "1001",
+                "0000",
+                "0010",
+                "0110",
+                "0010",
+                "0000",
+                "1101"
+              ],
+              "multiplicities": {
+                "0000": 5,
+                "0010": 2,
+                "0101": 1,
+                "0110": 1,
+                "0111": 1,
+                "1000": 1,
+                "1001": 2,
+                "1100": 1,
+                "1101": 1,
+                "1110": 1
+              },
+              "parameter_distance_from_zero": {
+                "0": 5,
+                "1": 3,
+                "2": 5,
+                "3": 3
+              },
+              "parameter_pair_distances": {
+                "0": 12,
+                "1": 28,
+                "2": 43,
+                "3": 32,
+                "4": 5
+              },
+              "table_pair_distances": {
+                "0": 12,
+                "4": 104,
+                "8": 4
+              },
+              "unique_states": 10
+            },
+            "translated": {
+              "entries": [
+                "1011",
+                "0000",
+                "1111",
+                "1001",
+                "1110",
+                "0111",
+                "0010",
+                "0111",
+                "0111",
+                "1110",
+                "0111",
+                "0101",
+                "0001",
+                "0101",
+                "0111",
+                "1010"
+              ],
+              "multiplicities": {
+                "0000": 1,
+                "0001": 1,
+                "0010": 1,
+                "0101": 2,
+                "0111": 5,
+                "1001": 1,
+                "1010": 1,
+                "1011": 1,
+                "1110": 2,
+                "1111": 1
+              },
+              "parameter_distance_from_zero": {
+                "0": 1,
+                "1": 2,
+                "2": 4,
+                "3": 8,
+                "4": 1
+              },
+              "parameter_pair_distances": {
+                "0": 12,
+                "1": 28,
+                "2": 43,
+                "3": 32,
+                "4": 5
+              },
+              "table_pair_distances": {
+                "0": 12,
+                "4": 104,
+                "8": 4
+              },
+              "unique_states": 10
+            },
+            "uniform": {
+              "entries": [
+                "0001",
+                "0010",
+                "0011",
+                "1000",
+                "0111",
+                "0100",
+                "0111",
+                "0101",
+                "0011",
+                "0011",
+                "0110",
+                "1101",
+                "1101",
+                "1001",
+                "1001",
+                "1001"
+              ],
+              "multiplicities": {
+                "0001": 1,
+                "0010": 1,
+                "0011": 3,
+                "0100": 1,
+                "0101": 1,
+                "0110": 1,
+                "0111": 2,
+                "1000": 1,
+                "1001": 3,
+                "1101": 2
+              },
+              "parameter_distance_from_zero": {
+                "1": 4,
+                "2": 8,
+                "3": 4
+              },
+              "parameter_pair_distances": {
+                "0": 8,
+                "1": 34,
+                "2": 41,
+                "3": 30,
+                "4": 7
+              },
+              "table_pair_distances": {
+                "0": 8,
+                "4": 103,
+                "8": 9
+              },
+              "unique_states": 10
+            }
+          },
+          "arms": {
+            "fitted": {
+              "means": {
+                "accepted": "13969/1024",
+                "distinct_accepted": "507/128",
+                "distinct_proposals": "13109/1024",
+                "heldout": "1551/2048",
+                "observed": "30249/35840",
+                "recalls": "66"
+              },
+              "runs": 2048
+            },
+            "none": {
+              "means": {
+                "accepted": "847/128",
+                "distinct_accepted": "1379/512",
+                "distinct_proposals": "1651/256",
+                "heldout": "2891/4096",
+                "observed": "83261/107520",
+                "recalls": "0"
+              },
+              "runs": 2048
+            },
+            "translated": {
+              "means": {
+                "accepted": "6607/512",
+                "distinct_accepted": "499/128",
+                "distinct_proposals": "6619/512",
+                "heldout": "6221/8192",
+                "observed": "3793/4480",
+                "recalls": "66"
+              },
+              "runs": 2048
+            },
+            "uniform": {
+              "means": {
+                "accepted": "3185/256",
+                "distinct_accepted": "2003/512",
+                "distinct_proposals": "6417/512",
+                "heldout": "6251/8192",
+                "observed": "22889/26880",
+                "recalls": "66"
+              },
+              "runs": 2048
+            }
+          },
+          "contrasts": {
+            "fitted_minus_none": {
+              "accepted": "7193/1024",
+              "distinct_accepted": "649/512",
+              "distinct_proposals": "6505/1024",
+              "heldout": "211/4096",
+              "observed": "3743/53760",
+              "recalls": "66"
+            },
+            "fitted_minus_translated": {
+              "accepted": "755/1024",
+              "distinct_accepted": "1/16",
+              "distinct_proposals": "-129/1024",
+              "heldout": "-17/8192",
+              "observed": "-19/7168",
+              "recalls": "0"
+            },
+            "fitted_minus_uniform": {
+              "accepted": "1229/1024",
+              "distinct_accepted": "25/512",
+              "distinct_proposals": "275/1024",
+              "heldout": "-47/8192",
+              "observed": "-809/107520",
+              "recalls": "0"
+            },
+            "translated_minus_none": {
+              "accepted": "3219/512",
+              "distinct_accepted": "617/512",
+              "distinct_proposals": "3317/512",
+              "heldout": "439/8192",
+              "observed": "7771/107520",
+              "recalls": "66"
+            },
+            "uniform_minus_none": {
+              "accepted": "1491/256",
+              "distinct_accepted": "39/32",
+              "distinct_proposals": "3115/512",
+              "heldout": "469/8192",
+              "observed": "79/1024",
+              "recalls": "66"
+            }
+          },
+          "row_checks": [
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1488,
+                  "information_identity": true,
+                  "visible_passed_sum": 1104,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1280
+                },
+                "none": {
+                  "heldout_correct_sum": 1376,
+                  "information_identity": true,
+                  "visible_passed_sum": 992,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1280
+                },
+                "translated": {
+                  "heldout_correct_sum": 1488,
+                  "information_identity": true,
+                  "visible_passed_sum": 1104,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1280
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1496,
+                  "information_identity": true,
+                  "visible_passed_sum": 1112,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1280
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 64,
+              "row": 0
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1556,
+                  "information_identity": true,
+                  "visible_passed_sum": 1300,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1416,
+                  "information_identity": true,
+                  "visible_passed_sum": 1160,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1556,
+                  "information_identity": true,
+                  "visible_passed_sum": 1300,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1556,
+                  "information_identity": true,
+                  "visible_passed_sum": 1300,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 68,
+              "row": 1
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1560,
+                  "information_identity": true,
+                  "visible_passed_sum": 1304,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1456,
+                  "information_identity": true,
+                  "visible_passed_sum": 1200,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1560,
+                  "information_identity": true,
+                  "visible_passed_sum": 1304,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1568,
+                  "information_identity": true,
+                  "visible_passed_sum": 1312,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 70,
+              "row": 2
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1548,
+                  "information_identity": true,
+                  "visible_passed_sum": 1292,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1468,
+                  "information_identity": true,
+                  "visible_passed_sum": 1212,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1552,
+                  "information_identity": true,
+                  "visible_passed_sum": 1296,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1560,
+                  "information_identity": true,
+                  "visible_passed_sum": 1304,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 56,
+              "row": 3
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1552,
+                  "information_identity": true,
+                  "visible_passed_sum": 1296,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1440,
+                  "information_identity": true,
+                  "visible_passed_sum": 1184,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1560,
+                  "information_identity": true,
+                  "visible_passed_sum": 1304,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1560,
+                  "information_identity": true,
+                  "visible_passed_sum": 1304,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 68,
+              "row": 4
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1596,
+                  "information_identity": true,
+                  "visible_passed_sum": 1468,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                },
+                "none": {
+                  "heldout_correct_sum": 1520,
+                  "information_identity": true,
+                  "visible_passed_sum": 1392,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                },
+                "translated": {
+                  "heldout_correct_sum": 1606,
+                  "information_identity": true,
+                  "visible_passed_sum": 1478,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1618,
+                  "information_identity": true,
+                  "visible_passed_sum": 1490,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 57,
+              "row": 5
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1552,
+                  "information_identity": true,
+                  "visible_passed_sum": 1296,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1464,
+                  "information_identity": true,
+                  "visible_passed_sum": 1208,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1552,
+                  "information_identity": true,
+                  "visible_passed_sum": 1296,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1576,
+                  "information_identity": true,
+                  "visible_passed_sum": 1320,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 73,
+              "row": 6
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1556,
+                  "information_identity": true,
+                  "visible_passed_sum": 1300,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1424,
+                  "information_identity": true,
+                  "visible_passed_sum": 1168,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1568,
+                  "information_identity": true,
+                  "visible_passed_sum": 1312,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1568,
+                  "information_identity": true,
+                  "visible_passed_sum": 1312,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 72,
+              "row": 7
+            }
+          ],
+          "seed": 0,
+          "xor_mask": "0111",
+          "xor_multiset_unchanged": false
+        },
+        {
+          "archives": {
+            "fitted": {
+              "entries": [
+                "0000",
+                "1010",
+                "0000",
+                "0010",
+                "0100",
+                "0001",
+                "1010",
+                "0110",
+                "0001",
+                "1101",
+                "1001",
+                "0001",
+                "1001",
+                "0010",
+                "1000",
+                "1010"
+              ],
+              "multiplicities": {
+                "0000": 2,
+                "0001": 3,
+                "0010": 2,
+                "0100": 1,
+                "0110": 1,
+                "1000": 1,
+                "1001": 2,
+                "1010": 3,
+                "1101": 1
+              },
+              "parameter_distance_from_zero": {
+                "0": 2,
+                "1": 7,
+                "2": 6,
+                "3": 1
+              },
+              "parameter_pair_distances": {
+                "0": 9,
+                "1": 36,
+                "2": 43,
+                "3": 28,
+                "4": 4
+              },
+              "table_pair_distances": {
+                "0": 9,
+                "4": 103,
+                "8": 8
+              },
+              "unique_states": 9
+            },
+            "translated": {
+              "entries": [
+                "0010",
+                "1000",
+                "0010",
+                "0000",
+                "0110",
+                "0011",
+                "1000",
+                "0100",
+                "0011",
+                "1111",
+                "1011",
+                "0011",
+                "1011",
+                "0000",
+                "1010",
+                "1000"
+              ],
+              "multiplicities": {
+                "0000": 2,
+                "0010": 2,
+                "0011": 3,
+                "0100": 1,
+                "0110": 1,
+                "1000": 3,
+                "1010": 1,
+                "1011": 2,
+                "1111": 1
+              },
+              "parameter_distance_from_zero": {
+                "0": 2,
+                "1": 6,
+                "2": 5,
+                "3": 2,
+                "4": 1
+              },
+              "parameter_pair_distances": {
+                "0": 9,
+                "1": 36,
+                "2": 43,
+                "3": 28,
+                "4": 4
+              },
+              "table_pair_distances": {
+                "0": 9,
+                "4": 103,
+                "8": 8
+              },
+              "unique_states": 9
+            },
+            "uniform": {
+              "entries": [
+                "1000",
+                "0000",
+                "0011",
+                "1000",
+                "1100",
+                "0001",
+                "0000",
+                "1100",
+                "0100",
+                "1111",
+                "1001",
+                "1110",
+                "1011",
+                "1100",
+                "1111",
+                "0101"
+              ],
+              "multiplicities": {
+                "0000": 2,
+                "0001": 1,
+                "0011": 1,
+                "0100": 1,
+                "0101": 1,
+                "1000": 2,
+                "1001": 1,
+                "1011": 1,
+                "1100": 3,
+                "1110": 1,
+                "1111": 2
+              },
+              "parameter_distance_from_zero": {
+                "0": 2,
+                "1": 4,
+                "2": 6,
+                "3": 2,
+                "4": 2
+              },
+              "parameter_pair_distances": {
+                "0": 6,
+                "1": 32,
+                "2": 45,
+                "3": 28,
+                "4": 9
+              },
+              "table_pair_distances": {
+                "0": 6,
+                "4": 107,
+                "8": 7
+              },
+              "unique_states": 11
+            }
+          },
+          "arms": {
+            "fitted": {
+              "means": {
+                "accepted": "30785/2048",
+                "distinct_accepted": "3973/1024",
+                "distinct_proposals": "24255/2048",
+                "heldout": "773/1024",
+                "observed": "152921/172032",
+                "recalls": "267/4"
+              },
+              "runs": 2048
+            },
+            "none": {
+              "means": {
+                "accepted": "22977/2048",
+                "distinct_accepted": "6263/2048",
+                "distinct_proposals": "893/128",
+                "heldout": "2893/4096",
+                "observed": "69917/86016",
+                "recalls": "0"
+              },
+              "runs": 2048
+            },
+            "translated": {
+              "means": {
+                "accepted": "30753/2048",
+                "distinct_accepted": "249/64",
+                "distinct_proposals": "6125/512",
+                "heldout": "3095/4096",
+                "observed": "153193/172032",
+                "recalls": "267/4"
+              },
+              "runs": 2048
+            },
+            "uniform": {
+              "means": {
+                "accepted": "25315/2048",
+                "distinct_accepted": "2143/512",
+                "distinct_proposals": "13919/1024",
+                "heldout": "1575/2048",
+                "observed": "39173/43008",
+                "recalls": "267/4"
+              },
+              "runs": 2048
+            }
+          },
+          "contrasts": {
+            "fitted_minus_none": {
+              "accepted": "61/16",
+              "distinct_accepted": "1683/2048",
+              "distinct_proposals": "9967/2048",
+              "heldout": "199/4096",
+              "observed": "13087/172032",
+              "recalls": "267/4"
+            },
+            "fitted_minus_translated": {
+              "accepted": "1/64",
+              "distinct_accepted": "-11/1024",
+              "distinct_proposals": "-245/2048",
+              "heldout": "-3/4096",
+              "observed": "-17/10752",
+              "recalls": "0"
+            },
+            "fitted_minus_uniform": {
+              "accepted": "2735/1024",
+              "distinct_accepted": "-313/1024",
+              "distinct_proposals": "-3583/2048",
+              "heldout": "-29/2048",
+              "observed": "-1257/57344",
+              "recalls": "0"
+            },
+            "translated_minus_none": {
+              "accepted": "243/64",
+              "distinct_accepted": "1705/2048",
+              "distinct_proposals": "2553/512",
+              "heldout": "101/2048",
+              "observed": "4453/57344",
+              "recalls": "267/4"
+            },
+            "uniform_minus_none": {
+              "accepted": "1169/1024",
+              "distinct_accepted": "2309/2048",
+              "distinct_proposals": "6775/1024",
+              "heldout": "257/4096",
+              "observed": "8429/86016",
+              "recalls": "267/4"
+            }
+          },
+          "row_checks": [
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1650,
+                  "information_identity": true,
+                  "visible_passed_sum": 1522,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                },
+                "none": {
+                  "heldout_correct_sum": 1480,
+                  "information_identity": true,
+                  "visible_passed_sum": 1352,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                },
+                "translated": {
+                  "heldout_correct_sum": 1650,
+                  "information_identity": true,
+                  "visible_passed_sum": 1522,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1684,
+                  "information_identity": true,
+                  "visible_passed_sum": 1556,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 68,
+              "row": 0
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1520,
+                  "information_identity": true,
+                  "visible_passed_sum": 1008,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1024
+                },
+                "none": {
+                  "heldout_correct_sum": 1472,
+                  "information_identity": true,
+                  "visible_passed_sum": 960,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1024
+                },
+                "translated": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 61,
+              "row": 1
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1472,
+                  "information_identity": true,
+                  "visible_passed_sum": 960,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1024
+                },
+                "none": {
+                  "heldout_correct_sum": 1376,
+                  "information_identity": true,
+                  "visible_passed_sum": 864,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1024
+                },
+                "translated": {
+                  "heldout_correct_sum": 1472,
+                  "information_identity": true,
+                  "visible_passed_sum": 960,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1024
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 74,
+              "row": 2
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1544,
+                  "information_identity": true,
+                  "visible_passed_sum": 1288,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1440,
+                  "information_identity": true,
+                  "visible_passed_sum": 1184,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1280,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1556,
+                  "information_identity": true,
+                  "visible_passed_sum": 1300,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 62,
+              "row": 3
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1658,
+                  "information_identity": true,
+                  "visible_passed_sum": 1658,
+                  "visible_saturation": false,
+                  "visible_total_sum": 2048
+                },
+                "none": {
+                  "heldout_correct_sum": 1572,
+                  "information_identity": true,
+                  "visible_passed_sum": 1572,
+                  "visible_saturation": false,
+                  "visible_total_sum": 2048
+                },
+                "translated": {
+                  "heldout_correct_sum": 1658,
+                  "information_identity": true,
+                  "visible_passed_sum": 1658,
+                  "visible_saturation": false,
+                  "visible_total_sum": 2048
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1688,
+                  "information_identity": true,
+                  "visible_passed_sum": 1688,
+                  "visible_saturation": false,
+                  "visible_total_sum": 2048
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 68,
+              "row": 4
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "none": {
+                  "heldout_correct_sum": 1408,
+                  "information_identity": true,
+                  "visible_passed_sum": 896,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1024
+                },
+                "translated": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 61,
+              "row": 5
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1424,
+                  "information_identity": true,
+                  "visible_passed_sum": 912,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1024
+                },
+                "none": {
+                  "heldout_correct_sum": 1312,
+                  "information_identity": true,
+                  "visible_passed_sum": 800,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1024
+                },
+                "translated": {
+                  "heldout_correct_sum": 1424,
+                  "information_identity": true,
+                  "visible_passed_sum": 912,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1024
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1456,
+                  "information_identity": true,
+                  "visible_passed_sum": 944,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1024
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 73,
+              "row": 6
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1564,
+                  "information_identity": true,
+                  "visible_passed_sum": 1436,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                },
+                "none": {
+                  "heldout_correct_sum": 1512,
+                  "information_identity": true,
+                  "visible_passed_sum": 1384,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                },
+                "translated": {
+                  "heldout_correct_sum": 1568,
+                  "information_identity": true,
+                  "visible_passed_sum": 1440,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1608,
+                  "information_identity": true,
+                  "visible_passed_sum": 1480,
+                  "visible_saturation": false,
+                  "visible_total_sum": 1792
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 67,
+              "row": 7
+            }
+          ],
+          "seed": 1,
+          "xor_mask": "0010",
+          "xor_multiset_unchanged": false
+        }
+      ],
+      "contrasts": {
+        "fitted_minus_none": {
+          "accepted": "11097/2048",
+          "distinct_accepted": "4279/4096",
+          "distinct_proposals": "22977/4096",
+          "heldout": "205/4096",
+          "observed": "125323/1720320",
+          "recalls": "531/8"
+        },
+        "fitted_minus_translated": {
+          "accepted": "771/2048",
+          "distinct_accepted": "53/2048",
+          "distinct_proposals": "-503/4096",
+          "heldout": "-23/16384",
+          "observed": "-13/6144",
+          "recalls": "0"
+        },
+        "fitted_minus_uniform": {
+          "accepted": "991/512",
+          "distinct_accepted": "-263/2048",
+          "distinct_proposals": "-3033/4096",
+          "heldout": "-163/16384",
+          "observed": "-25327/1720320",
+          "recalls": "0"
+        },
+        "translated_minus_none": {
+          "accepted": "5163/1024",
+          "distinct_accepted": "4173/4096",
+          "distinct_proposals": "2935/512",
+          "heldout": "843/16384",
+          "observed": "128963/1720320",
+          "recalls": "531/8"
+        },
+        "uniform_minus_none": {
+          "accepted": "7133/2048",
+          "distinct_accepted": "4805/4096",
+          "distinct_proposals": "13005/2048",
+          "heldout": "983/16384",
+          "observed": "15065/172032",
+          "recalls": "531/8"
+        }
+      }
+    },
+    "full": {
+      "arms": {
+        "fitted": {
+          "means": {
+            "accepted": "91245/4096",
+            "distinct_accepted": "45851/4096",
+            "distinct_proposals": "43019/1024",
+            "heldout": "55/64",
+            "observed": "1",
+            "recalls": "1013/16"
+          },
+          "runs": 4096
+        },
+        "none": {
+          "means": {
+            "accepted": "295/8",
+            "distinct_accepted": "3071/256",
+            "distinct_proposals": "73331/2048",
+            "heldout": "55/64",
+            "observed": "1",
+            "recalls": "0"
+          },
+          "runs": 4096
+        },
+        "translated": {
+          "means": {
+            "accepted": "22963/1024",
+            "distinct_accepted": "46375/4096",
+            "distinct_proposals": "171061/4096",
+            "heldout": "55/64",
+            "observed": "1",
+            "recalls": "1013/16"
+          },
+          "runs": 4096
+        },
+        "uniform": {
+          "means": {
+            "accepted": "91883/4096",
+            "distinct_accepted": "23289/2048",
+            "distinct_proposals": "85815/2048",
+            "heldout": "55/64",
+            "observed": "1",
+            "recalls": "1013/16"
+          },
+          "runs": 4096
+        }
+      },
+      "by_seed": [
+        {
+          "archives": {
+            "fitted": {
+              "entries": [
+                "11000010",
+                "01011000",
+                "11011101",
+                "01111110",
+                "01100111",
+                "01001010",
+                "10100100",
+                "11101101",
+                "10111011",
+                "01001011",
+                "11100101",
+                "01100111",
+                "11000110",
+                "00010100",
+                "10001001",
+                "11010011"
+              ],
+              "multiplicities": {
+                "00010100": 1,
+                "01001010": 1,
+                "01001011": 1,
+                "01011000": 1,
+                "01100111": 2,
+                "01111110": 1,
+                "10001001": 1,
+                "10100100": 1,
+                "10111011": 1,
+                "11000010": 1,
+                "11000110": 1,
+                "11010011": 1,
+                "11011101": 1,
+                "11100101": 1,
+                "11101101": 1
+              },
+              "parameter_distance_from_zero": {
+                "2": 1,
+                "3": 5,
+                "4": 2,
+                "5": 4,
+                "6": 4
+              },
+              "parameter_pair_distances": {
+                "0": 1,
+                "1": 3,
+                "2": 7,
+                "3": 28,
+                "4": 36,
+                "5": 30,
+                "6": 13,
+                "7": 2
+              },
+              "table_pair_distances": {
+                "0": 1,
+                "1": 3,
+                "2": 7,
+                "3": 28,
+                "4": 36,
+                "5": 30,
+                "6": 13,
+                "7": 2
+              },
+              "unique_states": 15
+            },
+            "translated": {
+              "entries": [
+                "10000000",
+                "00011010",
+                "10011111",
+                "00111100",
+                "00100101",
+                "00001000",
+                "11100110",
+                "10101111",
+                "11111001",
+                "00001001",
+                "10100111",
+                "00100101",
+                "10000100",
+                "01010110",
+                "11001011",
+                "10010001"
+              ],
+              "multiplicities": {
+                "00001000": 1,
+                "00001001": 1,
+                "00011010": 1,
+                "00100101": 2,
+                "00111100": 1,
+                "01010110": 1,
+                "10000000": 1,
+                "10000100": 1,
+                "10010001": 1,
+                "10011111": 1,
+                "10100111": 1,
+                "10101111": 1,
+                "11001011": 1,
+                "11100110": 1,
+                "11111001": 1
+              },
+              "parameter_distance_from_zero": {
+                "1": 2,
+                "2": 2,
+                "3": 4,
+                "4": 2,
+                "5": 3,
+                "6": 3
+              },
+              "parameter_pair_distances": {
+                "0": 1,
+                "1": 3,
+                "2": 7,
+                "3": 28,
+                "4": 36,
+                "5": 30,
+                "6": 13,
+                "7": 2
+              },
+              "table_pair_distances": {
+                "0": 1,
+                "1": 3,
+                "2": 7,
+                "3": 28,
+                "4": 36,
+                "5": 30,
+                "6": 13,
+                "7": 2
+              },
+              "unique_states": 15
+            },
+            "uniform": {
+              "entries": [
+                "00101000",
+                "11000111",
+                "11000010",
+                "00101111",
+                "00100000",
+                "00010011",
+                "00101100",
+                "11110110",
+                "00001111",
+                "00000111",
+                "11100111",
+                "10101110",
+                "11001010",
+                "01001100",
+                "01000101",
+                "00111101"
+              ],
+              "multiplicities": {
+                "00000111": 1,
+                "00001111": 1,
+                "00010011": 1,
+                "00100000": 1,
+                "00101000": 1,
+                "00101100": 1,
+                "00101111": 1,
+                "00111101": 1,
+                "01000101": 1,
+                "01001100": 1,
+                "10101110": 1,
+                "11000010": 1,
+                "11000111": 1,
+                "11001010": 1,
+                "11100111": 1,
+                "11110110": 1
+              },
+              "parameter_distance_from_zero": {
+                "1": 1,
+                "2": 1,
+                "3": 6,
+                "4": 2,
+                "5": 4,
+                "6": 2
+              },
+              "parameter_pair_distances": {
+                "1": 6,
+                "2": 15,
+                "3": 22,
+                "4": 37,
+                "5": 25,
+                "6": 12,
+                "7": 2,
+                "8": 1
+              },
+              "table_pair_distances": {
+                "1": 6,
+                "2": 15,
+                "3": 22,
+                "4": 37,
+                "5": 25,
+                "6": 12,
+                "7": 2,
+                "8": 1
+              },
+              "unique_states": 16
+            }
+          },
+          "arms": {
+            "fitted": {
+              "means": {
+                "accepted": "21235/1024",
+                "distinct_accepted": "9897/1024",
+                "distinct_proposals": "42763/1024",
+                "heldout": "7/8",
+                "observed": "1",
+                "recalls": "485/8"
+              },
+              "runs": 2048
+            },
+            "none": {
+              "means": {
+                "accepted": "269/8",
+                "distinct_accepted": "1249/128",
+                "distinct_proposals": "1099/32",
+                "heldout": "7/8",
+                "observed": "1",
+                "recalls": "0"
+              },
+              "runs": 2048
+            },
+            "translated": {
+              "means": {
+                "accepted": "21397/1024",
+                "distinct_accepted": "315/32",
+                "distinct_proposals": "42377/1024",
+                "heldout": "7/8",
+                "observed": "1",
+                "recalls": "485/8"
+              },
+              "runs": 2048
+            },
+            "uniform": {
+              "means": {
+                "accepted": "21445/1024",
+                "distinct_accepted": "5119/512",
+                "distinct_proposals": "21783/512",
+                "heldout": "7/8",
+                "observed": "1",
+                "recalls": "485/8"
+              },
+              "runs": 2048
+            }
+          },
+          "contrasts": {
+            "fitted_minus_none": {
+              "accepted": "-13197/1024",
+              "distinct_accepted": "-95/1024",
+              "distinct_proposals": "7595/1024",
+              "heldout": "0",
+              "observed": "0",
+              "recalls": "485/8"
+            },
+            "fitted_minus_translated": {
+              "accepted": "-81/512",
+              "distinct_accepted": "-183/1024",
+              "distinct_proposals": "193/512",
+              "heldout": "0",
+              "observed": "0",
+              "recalls": "0"
+            },
+            "fitted_minus_uniform": {
+              "accepted": "-105/512",
+              "distinct_accepted": "-341/1024",
+              "distinct_proposals": "-803/1024",
+              "heldout": "0",
+              "observed": "0",
+              "recalls": "0"
+            },
+            "translated_minus_none": {
+              "accepted": "-13035/1024",
+              "distinct_accepted": "11/128",
+              "distinct_proposals": "7209/1024",
+              "heldout": "0",
+              "observed": "0",
+              "recalls": "485/8"
+            },
+            "uniform_minus_none": {
+              "accepted": "-12987/1024",
+              "distinct_accepted": "123/512",
+              "distinct_proposals": "4199/512",
+              "heldout": "0",
+              "observed": "0",
+              "recalls": "485/8"
+            }
+          },
+          "row_checks": [
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1664,
+                  "information_identity": true,
+                  "visible_passed_sum": 1280,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1280
+                },
+                "none": {
+                  "heldout_correct_sum": 1664,
+                  "information_identity": true,
+                  "visible_passed_sum": 1280,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1280
+                },
+                "translated": {
+                  "heldout_correct_sum": 1664,
+                  "information_identity": true,
+                  "visible_passed_sum": 1280,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1280
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1664,
+                  "information_identity": true,
+                  "visible_passed_sum": 1280,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1280
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 71,
+              "row": 0
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 52,
+              "row": 1
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 58,
+              "row": 2
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 75,
+              "row": 3
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 57,
+              "row": 4
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                },
+                "none": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                },
+                "translated": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 58,
+              "row": 5
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 60,
+              "row": 6
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 54,
+              "row": 7
+            }
+          ],
+          "seed": 0,
+          "xor_mask": "01000010",
+          "xor_multiset_unchanged": false
+        },
+        {
+          "archives": {
+            "fitted": {
+              "entries": [
+                "10000011",
+                "00101000",
+                "11010011",
+                "01100100",
+                "11011000",
+                "11001010",
+                "10111010",
+                "01011011",
+                "00110011",
+                "01101100",
+                "10000110",
+                "10011000",
+                "11101011",
+                "10011101",
+                "00110101",
+                "11011100"
+              ],
+              "multiplicities": {
+                "00101000": 1,
+                "00110011": 1,
+                "00110101": 1,
+                "01011011": 1,
+                "01100100": 1,
+                "01101100": 1,
+                "10000011": 1,
+                "10000110": 1,
+                "10011000": 1,
+                "10011101": 1,
+                "10111010": 1,
+                "11001010": 1,
+                "11010011": 1,
+                "11011000": 1,
+                "11011100": 1,
+                "11101011": 1
+              },
+              "parameter_distance_from_zero": {
+                "2": 1,
+                "3": 4,
+                "4": 5,
+                "5": 5,
+                "6": 1
+              },
+              "parameter_pair_distances": {
+                "1": 3,
+                "2": 11,
+                "3": 25,
+                "4": 32,
+                "5": 31,
+                "6": 13,
+                "7": 4,
+                "8": 1
+              },
+              "table_pair_distances": {
+                "1": 3,
+                "2": 11,
+                "3": 25,
+                "4": 32,
+                "5": 31,
+                "6": 13,
+                "7": 4,
+                "8": 1
+              },
+              "unique_states": 16
+            },
+            "translated": {
+              "entries": [
+                "01001001",
+                "11100010",
+                "00011001",
+                "10101110",
+                "00010010",
+                "00000000",
+                "01110000",
+                "10010001",
+                "11111001",
+                "10100110",
+                "01001100",
+                "01010010",
+                "00100001",
+                "01010111",
+                "11111111",
+                "00010110"
+              ],
+              "multiplicities": {
+                "00000000": 1,
+                "00010010": 1,
+                "00010110": 1,
+                "00011001": 1,
+                "00100001": 1,
+                "01001001": 1,
+                "01001100": 1,
+                "01010010": 1,
+                "01010111": 1,
+                "01110000": 1,
+                "10010001": 1,
+                "10100110": 1,
+                "10101110": 1,
+                "11100010": 1,
+                "11111001": 1,
+                "11111111": 1
+              },
+              "parameter_distance_from_zero": {
+                "0": 1,
+                "2": 2,
+                "3": 7,
+                "4": 2,
+                "5": 2,
+                "6": 1,
+                "8": 1
+              },
+              "parameter_pair_distances": {
+                "1": 3,
+                "2": 11,
+                "3": 25,
+                "4": 32,
+                "5": 31,
+                "6": 13,
+                "7": 4,
+                "8": 1
+              },
+              "table_pair_distances": {
+                "1": 3,
+                "2": 11,
+                "3": 25,
+                "4": 32,
+                "5": 31,
+                "6": 13,
+                "7": 4,
+                "8": 1
+              },
+              "unique_states": 16
+            },
+            "uniform": {
+              "entries": [
+                "00100011",
+                "00101010",
+                "11010000",
+                "01000011",
+                "11011100",
+                "01001010",
+                "00101011",
+                "00011010",
+                "10110000",
+                "10011001",
+                "01101100",
+                "00011111",
+                "10110101",
+                "11111000",
+                "00100011",
+                "01011101"
+              ],
+              "multiplicities": {
+                "00011010": 1,
+                "00011111": 1,
+                "00100011": 2,
+                "00101010": 1,
+                "00101011": 1,
+                "01000011": 1,
+                "01001010": 1,
+                "01011101": 1,
+                "01101100": 1,
+                "10011001": 1,
+                "10110000": 1,
+                "10110101": 1,
+                "11010000": 1,
+                "11011100": 1,
+                "11111000": 1
+              },
+              "parameter_distance_from_zero": {
+                "3": 8,
+                "4": 3,
+                "5": 5
+              },
+              "parameter_pair_distances": {
+                "0": 1,
+                "1": 3,
+                "2": 17,
+                "3": 17,
+                "4": 39,
+                "5": 17,
+                "6": 21,
+                "7": 2,
+                "8": 3
+              },
+              "table_pair_distances": {
+                "0": 1,
+                "1": 3,
+                "2": 17,
+                "3": 17,
+                "4": 39,
+                "5": 17,
+                "6": 21,
+                "7": 2,
+                "8": 3
+              },
+              "unique_states": 15
+            }
+          },
+          "arms": {
+            "fitted": {
+              "means": {
+                "accepted": "48775/2048",
+                "distinct_accepted": "26057/2048",
+                "distinct_proposals": "43275/1024",
+                "heldout": "27/32",
+                "observed": "1",
+                "recalls": "66"
+              },
+              "runs": 2048
+            },
+            "none": {
+              "means": {
+                "accepted": "321/8",
+                "distinct_accepted": "911/64",
+                "distinct_proposals": "38163/1024",
+                "heldout": "27/32",
+                "observed": "1",
+                "recalls": "0"
+              },
+              "runs": 2048
+            },
+            "translated": {
+              "means": {
+                "accepted": "24529/1024",
+                "distinct_accepted": "26215/2048",
+                "distinct_proposals": "86307/2048",
+                "heldout": "27/32",
+                "observed": "1",
+                "recalls": "66"
+              },
+              "runs": 2048
+            },
+            "uniform": {
+              "means": {
+                "accepted": "48993/2048",
+                "distinct_accepted": "13051/1024",
+                "distinct_proposals": "42249/1024",
+                "heldout": "27/32",
+                "observed": "1",
+                "recalls": "66"
+              },
+              "runs": 2048
+            }
+          },
+          "contrasts": {
+            "fitted_minus_none": {
+              "accepted": "-33401/2048",
+              "distinct_accepted": "-3095/2048",
+              "distinct_proposals": "639/128",
+              "heldout": "0",
+              "observed": "0",
+              "recalls": "66"
+            },
+            "fitted_minus_translated": {
+              "accepted": "-283/2048",
+              "distinct_accepted": "-79/1024",
+              "distinct_proposals": "243/2048",
+              "heldout": "0",
+              "observed": "0",
+              "recalls": "0"
+            },
+            "fitted_minus_uniform": {
+              "accepted": "-109/1024",
+              "distinct_accepted": "-45/2048",
+              "distinct_proposals": "513/512",
+              "heldout": "0",
+              "observed": "0",
+              "recalls": "0"
+            },
+            "translated_minus_none": {
+              "accepted": "-16559/1024",
+              "distinct_accepted": "-2937/2048",
+              "distinct_proposals": "9981/2048",
+              "heldout": "0",
+              "observed": "0",
+              "recalls": "66"
+            },
+            "uniform_minus_none": {
+              "accepted": "-33183/2048",
+              "distinct_accepted": "-1525/1024",
+              "distinct_proposals": "2043/512",
+              "heldout": "0",
+              "observed": "0",
+              "recalls": "66"
+            }
+          },
+          "row_checks": [
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                },
+                "none": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                },
+                "translated": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 58,
+              "row": 0
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "none": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "translated": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 71,
+              "row": 1
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "none": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "translated": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 64,
+              "row": 2
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "none": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "translated": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1792,
+                  "information_identity": true,
+                  "visible_passed_sum": 1536,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1536
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 68,
+              "row": 3
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 2048,
+                  "information_identity": true,
+                  "visible_passed_sum": 2048,
+                  "visible_saturation": true,
+                  "visible_total_sum": 2048
+                },
+                "none": {
+                  "heldout_correct_sum": 2048,
+                  "information_identity": true,
+                  "visible_passed_sum": 2048,
+                  "visible_saturation": true,
+                  "visible_total_sum": 2048
+                },
+                "translated": {
+                  "heldout_correct_sum": 2048,
+                  "information_identity": true,
+                  "visible_passed_sum": 2048,
+                  "visible_saturation": true,
+                  "visible_total_sum": 2048
+                },
+                "uniform": {
+                  "heldout_correct_sum": 2048,
+                  "information_identity": true,
+                  "visible_passed_sum": 2048,
+                  "visible_saturation": true,
+                  "visible_total_sum": 2048
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 65,
+              "row": 4
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "none": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "translated": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 69,
+              "row": 5
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "none": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "translated": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1536,
+                  "information_identity": true,
+                  "visible_passed_sum": 1024,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1024
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 70,
+              "row": 6
+            },
+            {
+              "arms": {
+                "fitted": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                },
+                "none": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                },
+                "translated": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                },
+                "uniform": {
+                  "heldout_correct_sum": 1920,
+                  "information_identity": true,
+                  "visible_passed_sum": 1792,
+                  "visible_saturation": true,
+                  "visible_total_sum": 1792
+                }
+              },
+              "paired_recalls": true,
+              "recalls_per_archive_run": 63,
+              "row": 7
+            }
+          ],
+          "seed": 1,
+          "xor_mask": "11001010",
+          "xor_multiset_unchanged": false
+        }
+      ],
+      "contrasts": {
+        "fitted_minus_none": {
+          "accepted": "-59795/4096",
+          "distinct_accepted": "-3285/4096",
+          "distinct_proposals": "12707/2048",
+          "heldout": "0",
+          "observed": "0",
+          "recalls": "1013/16"
+        },
+        "fitted_minus_translated": {
+          "accepted": "-607/4096",
+          "distinct_accepted": "-131/1024",
+          "distinct_proposals": "1015/4096",
+          "heldout": "0",
+          "observed": "0",
+          "recalls": "0"
+        },
+        "fitted_minus_uniform": {
+          "accepted": "-319/2048",
+          "distinct_accepted": "-727/4096",
+          "distinct_proposals": "223/2048",
+          "heldout": "0",
+          "observed": "0",
+          "recalls": "0"
+        },
+        "translated_minus_none": {
+          "accepted": "-14797/1024",
+          "distinct_accepted": "-2761/4096",
+          "distinct_proposals": "24399/4096",
+          "heldout": "0",
+          "observed": "0",
+          "recalls": "1013/16"
+        },
+        "uniform_minus_none": {
+          "accepted": "-59157/4096",
+          "distinct_accepted": "-1279/2048",
+          "distinct_proposals": "3121/512",
+          "heldout": "0",
+          "observed": "0",
+          "recalls": "1013/16"
+        }
+      }
+    }
+  },
+  "parameters": {
+    "arms": [
+      "none",
+      "fitted",
+      "uniform",
+      "translated"
+    ],
+    "evaluation_budget": 128,
+    "evaluation_runs": 32768,
+    "families": [
+      "full",
+      "affine"
+    ],
+    "memory_worlds": 16,
+    "p_recall": "1/2",
+    "prior_fit_proposals_per_fitted_archive": 2048,
+    "pull_reported": false,
+    "rows": 8,
+    "rules": 256,
+    "seeds": 2,
+    "translation": "one uniformly drawn nonzero state-space XOR mask per family/seed",
+    "uniform_sampling": "independent bits with replacement; order and duplicates retained",
+    "uniform_stream": "archive-control:uniform:{family}:{seed}",
+    "xor_stream": "archive-control:xor:{family}:{seed}"
+  },
+  "schema": "persistence-archive-control/1",
+  "sources_sha256": {
+    "lab/benchmarks/recursive-workbench/referee_benchmark.py": "819fe7cfc78635866412194ff16946b1641c42d666f192274a7ecb868d89ecae",
+    "lab/experiments/persistence_narrowing/archive_control.py": "2dbd286c05f4c5e5d2be20e12c626ebd3b6c775fba3aea9579ab19add0b6f0af",
+    "lab/experiments/persistence_narrowing/persistence_narrowing.py": "8e38354403c51d96a4975b21bdc95cf559e78876b2d0063e0256a7bcacd2a0a1"
+  },
+  "status": "post-hoc fixed-grid control"
+}
