@@ -1,6 +1,6 @@
 # systems-and-intelligence
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/code-MIT-yellow.svg)](LICENSE) [![Texts and data: CC BY 4.0](https://img.shields.io/badge/texts%20and%20data-CC%20BY%204.0-lightgrey.svg)](LICENSES/CC-BY-4.0.txt)
 [![CI](https://github.com/frnkptrln/systems-and-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/frnkptrln/systems-and-intelligence/actions/workflows/ci.yml)
 [![Docs](https://github.com/frnkptrln/systems-and-intelligence/actions/workflows/deploy-docs.yml/badge.svg)](https://frnkptrln.github.io/systems-and-intelligence)
 
@@ -152,4 +152,4 @@ This project is maintained by **Frank Peterlein** as an independent research not
 
 Why it exists, in one honest sentence: curiosity — some questions do not let go.
 
-Corrections, counterexamples, critical review, and reproducible experiments are welcome. Licensed under the [MIT License](LICENSE).
+Corrections, counterexamples, critical review, and reproducible experiments are welcome. The code is licensed under the [MIT License](LICENSE); the texts and data (papers, theory notes, essays, fiction, the book, logs, ideas, documentation, results) under [CC BY 4.0](LICENSES/CC-BY-4.0.txt).
