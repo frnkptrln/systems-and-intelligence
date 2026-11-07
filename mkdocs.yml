@@ -127,6 +127,7 @@ nav:
   - "Logs":
       - "Working journals": logs/README.md
       - "A Place for Unfinished Things": logs/021_a-place-for-unfinished-things.md
+      - "The Folder as Return Path — Three Agent Studies Read for Open Problem 12": logs/022_the-folder-as-return-path.md
       - "Earlier entries":
           - "The Cosmological Bootloader & Thermodynamic Limits": logs/001_cosmological-bootloader.md
           - "Impedance Mismatch and Artificial Latency (Friction as a Feature)": logs/002_impedance-mismatch-friction.md
