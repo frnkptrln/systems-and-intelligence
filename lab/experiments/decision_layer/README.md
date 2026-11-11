@@ -27,7 +27,7 @@ The essay separates two things the benchmark's own scores run together: the size
 
 **Coverage criterion (P4).** For a cube class, a cell is predicted strict from coverage signatures alone: some cost-c row exposes the decision coordinate, and every row that exposes the most cube coordinates omits it.
 
-**Grid.** 172 classes × 4 cards × 5 costs = 3,440 cells. CI subgrid: `K1`–`K4` × 4 cards × costs 0–4, without `K4|U|4` (the one expensive cell).
+**Grid.** 172 named classes × 4 cards × 5 costs = 3,440 named cells. `K1` duplicates `C257d7`, and `K2` duplicates `C025d0`; thus there are 170 distinct (candidate class, decision coordinate) configurations and 3,400 distinct (class, card, cost) cells. Named entries are retained for the declared controls and reproducibility. CI subgrid: `K1`–`K4` × 4 cards × costs 0–4, without `K4|U|4` (the one expensive cell).
 
 ## Measures
 
@@ -73,7 +73,7 @@ The first command writes `results/decision_layer.json` (the full grid, about 30 
 - **P4 holds.** The coverage criterion equals the enumerated size-strictness on all 850 (cube, `D1`, cost) cells.
 - **P5 holds.** `K2` is never strict under any card at any cost.
 
-Strict cells in the whole grid: 14 of 3,440, every one a full reversal; 7 under `D1` and the same 7 under `D2`, none under `U` or `D3`. Cube names read `C<coordinates>d<decision coordinate>` with neighborhood codes 0–7.
+Strict cells in the named grid: 14 of 3,440, every one a full reversal; 7 under `D1` and the same 7 under `D2`, none under `U` or `D3`. **After deduplication by candidate class, decision coordinate, card, and cost: 12 full reversals among 3,400 distinct cells.** `K1` is the same configuration as `C257d7` (contributing two duplicated reversals, under `D1` and `D2`); `K2` is the same as `C025d0` (contributing 20 duplicated non-strict cells). These are two counting conventions for the same runs, not a change in observed outcomes. Cube names read `C<coordinates>d<decision coordinate>` with neighborhood codes 0–7.
 
 | Cell (`D1`; `D2` identical with VoI 0 → 4) | Size and IG arms | VOI arm | VoI arm → maximum |
 |:---|:---|:---|---:|
