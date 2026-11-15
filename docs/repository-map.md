@@ -3,7 +3,7 @@
 **Status:** Orientation page. It describes the public notebook and the working repository behind it.
 
 Systems & Intelligence is a growing collection of essays, stories, logs, models,
-and research. The repository holds roughly 298,000 words across 302 Markdown files
+and research. The repository holds roughly 304,000 words across 303 Markdown files
 (the leads lane's intake files are not counted).
 
 The site offers several ways into that collection. Some pages present measured
@@ -39,7 +39,7 @@ contains the runnable models and their instructions. The
 [Simulation → Theory Map](../theory/core/simulation-theory-map.md) explains which
 questions they touch. The browser explorer is available directly on the site.
 
-### Architecture logs — 21 notes
+### Architecture logs — 22 notes
 
 The [logs](../logs/README.md) are now also readable on this site. Much of the
 sequence explores applied architecture; newer entries can also be wider journals
