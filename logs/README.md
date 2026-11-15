@@ -69,4 +69,8 @@ This directory keeps the numbered sequence of the logs themselves.
 
 21. [`021_a-place-for-unfinished-things.md`](021_a-place-for-unfinished-things.md) — An open design journal on entrances, unfinished work, and connections that leave the next question undecided.
 
+### Instruments outside the notebook
+
+22. [`022_the-folder-as-return-path.md`](022_the-folder-as-return-path.md) — Three pre-registered agent studies (September–November 2026) read through D9 and Open Problem 12: what reproduced under agent turnover was the artifact, not the act; three predictions the notebook could make next
+
 *Editorial note, 2026-09-25: “Applied architecture journals” remains a description of much of this sequence. The collection now also welcomes wider exploratory journals; earlier entries keep their original statuses and scope.*
