@@ -72,5 +72,6 @@ This directory keeps the numbered sequence of the logs themselves.
 ### Instruments outside the notebook
 
 22. [`022_the-folder-as-return-path.md`](022_the-folder-as-return-path.md) — Three pre-registered agent studies (September–November 2026) read through D9 and Open Problem 12: what reproduced under agent turnover was the artifact, not the act; three predictions the notebook could make next
+23. [`023_draft-preregistration-practice-reproduction.md`](023_draft-preregistration-practice-reproduction.md) — Draft, unbound: the three predictions of Log 022 as a design with cells, sample sizes and reading rules fixed in advance, and what each outcome would do to register row 43.
 
 *Editorial note, 2026-09-25: “Applied architecture journals” remains a description of much of this sequence. The collection now also welcomes wider exploratory journals; earlier entries keep their original statuses and scope.*
