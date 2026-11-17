@@ -185,6 +185,8 @@ The evidential boundary should remain explicit.
 
 Nothing here establishes a new general theory of culture. The closest thing to a new contribution is a routing claim inside this repository: the passage from knowledge to durable collective action is best treated as a generator-and-return-path problem, with recurrent practice as the missing bridge. Whether that integration yields new predictions remains to be tested.
 
+*Added 2026-11-17:* the repository hypothesis above has since been tested on populations of coding agents, in three pre-registered studies built outside the notebook. Under personnel turnover the reproduced object was the artifact — a deliverable carrying the result of the rule-break — not the act of breaking the rule. [Log 022](../../logs/022_the-folder-as-return-path.md) gives the reading, the numbers and what they do not establish.
+
 ## 8. A concrete research programme
 
 A useful first study should stay below the scale of “society.” Choose a bounded practice whose representations and performances can both be observed—for example code review, a laboratory calibration procedure, a consent protocol, or a recurring meeting in which decisions are authorized.
