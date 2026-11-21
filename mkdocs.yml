@@ -39,6 +39,9 @@ exclude_docs: |
   !lab/experiments/coherence_margin/README.md
   !lab/experiments/coherence_margin/results/*.png
   !lab/experiments/coherence_margin/results/*.json
+  !lab/experiments/corridor_sufficiency/README.md
+  !lab/experiments/corridor_sufficiency/results/*.png
+  !lab/experiments/corridor_sufficiency/results/*.json
 
   meta/
   !meta/repository-meta/core-claims.md
@@ -207,6 +210,7 @@ nav:
           - "Representation and Reconstruction Difficulty": lab/experiments/representation_reconstruction/README.md
           - "Decision Layer on the Witness Benchmark": lab/experiments/decision_layer/README.md
           - "Synchronization Onset and the Coherence Floor": lab/experiments/coherence_margin/README.md
+          - "A Finite-N Sufficiency Theorem for the Corridor": lab/experiments/corridor_sufficiency/README.md
       - "Interactive":
           - "Web Emergence Explorer": interactive/web-explorer.md
           - "Tensor Logic Visualizer": interactive/tensor-logic.md
