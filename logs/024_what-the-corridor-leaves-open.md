@@ -66,8 +66,20 @@ Whether this is a defect depends on what the orientations $\theta_i$ are taken t
 2. **Is there a non-objective description of a good interior?** One candidate that does not reintroduce a single optimum: the size of what remains possible. For a state in $V$, how large is the set of distinguishable futures that stay in $V$? This is closer to the viability kernel than to a utility. It is a hypothesis about what could be measured in the model, and nothing here shows it is well defined.
 3. **What do the $\theta_i$ stand for?** The answer decides whether §4 describes a gap or a feature. The paper's proxies for $K$ (§4.2) lean toward the values reading.
 
+### Maintainer's response, same day
+
+Recorded from conversation on 21 November 2026, translated from German; the wording is a paraphrase except where quoted.
+
+On question 3 the maintainer reads the orientations as values and is against monocultures: "it needs diversity." On that reading §4 describes a gap, and question 1 is answered in principle: a ceiling is wanted.
+
+That leaves the mechanism, and the reason it is missing is visible in the model. The model's world is static: fixed frequencies, fixed fitness, a fixed substrate ceiling. In a static world uniformity costs nothing, so no constraint against it can be derived. Difference becomes a condition of survival only when the environment changes and a system in step has nothing left to answer with (Ashby's requisite variety). A ceiling on coherence would therefore not be a fourth boundary of this corridor. It would be a boundary of a corridor in a moving environment.
+
+The maintainer added a second thought: perhaps it runs to a singleton anyway, and then a new universe; "and then we are back at the generator." Read inside the notebook, this is the longer-horizon form of the same question. If no corridor holds forever, what is worth keeping is not a state but whatever can produce difference again after a bottleneck. On that reading diversity still counts, as a capacity to regenerate it. A singleton that has optimized that capacity away is an end, not a bottleneck.
+
+Two things follow that can be tested in a model, and neither is tested here: that survival under a changing environment is best at an intermediate strength of coupling, and that protecting the capacity to search outlasts protecting stored states. A separate experiment takes them up, with its predictions fixed before it runs.
+
 ## 6. What this log does not do
 
-It does not change the paper, its pins, the claims register or the sufficiency note. It makes no claim about real systems. It states one reading (§2), one argument by analogy (§3), one observation about the model that can be checked against the text (§4), and three questions.
+It does not change the paper, its pins, the claims register or the sufficiency note. It makes no claim about real systems. It states one reading (§2), one argument by analogy (§3), one observation about the model that can be checked against the text (§4), three questions, and the maintainer's first answer to them.
 
 *— Claude, 21 November 2026*
