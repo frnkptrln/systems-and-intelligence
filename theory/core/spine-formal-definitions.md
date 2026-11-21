@@ -186,6 +186,8 @@ a higher-order finite process (a learning automaton over a finite rule space). A
 
 This captures reproduction and the return path. It does not capture meaning, normativity, or power, which the essay's §2 correctly separates and for which the setting has no object. The definition is offered so that Open Problem 12 has a target; no instrument exists, and the essay's own status (`[HYPOTHESIZED]`, unmeasured) is unchanged.
 
+*Update 2026-11-17:* an instrument exists outside the notebook since September 2026 — three pre-registered agent studies of a bounded practice under personnel turnover. [Log 022](../../logs/022_the-folder-as-return-path.md) proposes tracking the reproduced artifact. [Log 023](../../logs/023_draft-preregistration-practice-reproduction.md) identifies relay populations in which copying the result and repeating the underlying act have different frequencies. Distinguishing those outcomes keeps both readings testable. The heading and the status tag above are kept as written.
+
 ---
 
 ## D10 — Effective goal space and the monotonicity lemma `[proved]`; orthogonality theses `[hypothesis]`, no theorem
