@@ -90,3 +90,24 @@ def test_the_grid_is_the_one_the_readme_fixes():
     base = cc.Params()
     assert (base.N, base.w, base.q, base.mu, base.R_max, base.T) == (200, 1, 0.5, 0.5, 2000, 160_000)
     assert base.p_drift == 0.01 and base.p_shock == 1 / 4000
+
+
+def test_committed_results_match_the_readme_tables():
+    import json
+
+    report = json.loads((EXP / "results/results.json").read_text())
+    assert report["smoke"] is False and report["base_seed"] == cc.BASE_SEED
+    rows = report["cells"]
+    assert len(rows) == 36 and all(row["replicates"] == 40 for row in rows)
+
+    def survived(experiment, M, K=0.9, reserve="none"):
+        (row,) = [r for r in rows if r["experiment"] == experiment and r["params"]["M"] == M
+                  and r["params"]["K"] == K and r["params"]["reserve"] == reserve]
+        return row["survived"]
+
+    assert [survived("E1", 100, K) for K in cc.K_GRID] == [0, 11, 40, 40, 34, 1, 0, 0, 0]
+    assert [survived("E1", 12, K) for K in cc.K_GRID] == [40] * 9
+    table = {(exp, M): [survived(exp, M, reserve=r) for r in cc.RESERVES]
+             for exp in ("E2", "E3") for M in (60, 240, 960)}
+    assert table == {("E2", 60): [0, 40, 40], ("E2", 240): [0, 30, 24], ("E2", 960): [0, 0, 0],
+                     ("E3", 60): [40, 40, 40], ("E3", 240): [0, 40, 40], ("E3", 960): [0, 0, 4]}
