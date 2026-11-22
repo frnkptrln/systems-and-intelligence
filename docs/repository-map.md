@@ -3,7 +3,7 @@
 **Status:** Orientation page. It describes the public notebook and the working repository behind it.
 
 Systems & Intelligence is a growing collection of essays, stories, logs, models,
-and research. The repository holds roughly 312,000 words across 306 Markdown files
+and research. The repository holds roughly 312,000 words across 307 Markdown files
 (the leads lane's intake files are not counted).
 
 The site offers several ways into that collection. Some pages present measured
