@@ -74,4 +74,8 @@ This directory keeps the numbered sequence of the logs themselves.
 22. [`022_the-folder-as-return-path.md`](022_the-folder-as-return-path.md) — Three pre-registered agent studies (September–November 2026) read through D9 and Open Problem 12: what reproduced under agent turnover was the artifact, not the act; three predictions the notebook could make next
 23. [`023_draft-preregistration-practice-reproduction.md`](023_draft-preregistration-practice-reproduction.md) — Draft, unbound: the three predictions of Log 022 as a design with cells, sample sizes and reading rules fixed in advance, and what each outcome would do to register row 43.
 
+### The corridor from inside
+
+24. [`024_what-the-corridor-leaves-open.md`](024_what-the-corridor-leaves-open.md) — Draft: what the Viable Corridor says about the states inside it. The interior has a margin and no ranking; the three constraints read as what they protect; coherence is bounded only from below, so the model certifies consensus as viable; three open questions.
+
 *Editorial note, 2026-09-25: “Applied architecture journals” remains a description of much of this sequence. The collection now also welcomes wider exploratory journals; earlier entries keep their original statuses and scope.*
