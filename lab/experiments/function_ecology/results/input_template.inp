@@ -1,0 +1,105 @@
+ ************************************************************************
+ *
+ *		     input file template for alchemy 
+ *
+ *  Basic rule: Every line in which there is an 'equal' sign is an input
+ *  line. (That's why I don't use it here.) 
+ *  Everything after the first 'equal' in a line is read as input.
+ *  Any line not containing 'equal' is skipped. (Such as these.)
+ *
+ ************************************************************************
+
+
+>>>>>>>>>>>>>>>>>>>>> simulation parameters
+  
+
+		     name of simulation =  t
+     
+		     +- reaction scheme ------------------------+
+		     |						|
+		     |	  options: ORIGINAL (WF/LWB scheme)     |
+		     |				   		|
+		     +------------------------------------------+
+
+			reaction scheme =  ORIGINAL
+	                   typing basis =  NULL
+	      inactivated: typing basis    basis.inp
+			    store types =  1
+		      number of systems =  1
+      maximum overall number of objects =  1000
+	number of collisions to perform =  100000
+		      snapshot interval =  5000
+		            random seed =  999
+
+
+>>>>>>>>>>>>>>>>>>>>> lambda reduction machine parameters
+ 
+
+			   size of heap =  800
+      maximum number of reduction steps =  500
+		   size of symbol table =  500
+			  size of stack =  2000
+	      max length of identifiers =  10
+	      max length of basis types =  100
+	       standard variable prefix =  x
+			     error file =  NULL
+
+
+>>>>>>>>>>>>>>>>>>>>> random expression generator parameters
+ 
+
+	       maximum expression depth =  5
+	  number of variables to choose =  6
+		bind all free variables =  1
+      probability range for application =  0.3   0.5
+      probability range for abstraction =  0.5   0.3
+
+-------------------------------------------------------------------------
+
+NOTE: repeat the next input block for as many times as there are systems
+
+-------------------------------------------------------------------------
+
+>>>>>>>>>>>>>>>>>>>>> SYSTEM 1 
+     
+		     +- initial expressions --------------------+
+		     |						|
+		     |	  SYNTAX: file name or NULL-x,		|
+		     |	  if random generation of x strings	|
+		     +------------------------------------------+
+		     
+	      file with initial objects = NULL-1000
+
+		     +- regular expression filters -------------+
+		     |						|
+		     |	SYNTAX: - (must not match) or + (must	|
+		     |	match) followed by a regular		|
+		     |	expression. 				|
+		     |	If you set some expressions to 0,	|
+		     |	remove the corresponding regex line,	|
+		     |	or simply blank out it's 'equal' sign.	|
+		     +------------------------------------------+
+
+	     INITIAL filter expressions =  1
+      INITIAL filter regular expression =  + ^\\x[0-9]+
+
+	    OPERATOR filter expressions =  1
+     OPERATOR filter regular expression = + ^\\x[0-9]+
+
+	    ARGUMENT filter expressions =  0
+     ARGUMENT filter regular expression    - (a*)|(bc)
+
+	      RESULT filter expressions =  1
+       RESULT filter regular expression =  + ^\\x[0-9]+
+
+		     +- functional filters ---------------------+
+		     +------------------------------------------+
+
+  acceptance frequency for copy actions = 0.0
+
+		     +- laws -----------------------------------+
+		     +------------------------------------------+
+		     
+	     number of interaction laws =  1
+		law (lambda expression) =  \f.\g.(f)g
+		     probability of law =  1.0
